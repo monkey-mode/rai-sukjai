@@ -1,12 +1,12 @@
-// Run with: node --test tests/
-// Loads the DOM-free <script id="game-logic"> block from index.html into a VM context.
+// Run with: node --test tests/*.test.mjs
+// Loads the DOM-free game logic scripts (same order as index.html) into one VM context.
 import fs from 'node:fs';
 import vm from 'node:vm';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-const src = html.match(/<script id="game-logic">([\s\S]*?)<\/script>/)[1];
+const LOGIC = ['config', 'calendar', 'state', 'endDay', 'actions'];
+const src = LOGIC.map(f => fs.readFileSync(new URL(`../js/logic/${f}.js`, import.meta.url), 'utf8')).join('\n');
 const ctx = vm.createContext({});
 vm.runInContext(src + `
 ;this.G = { CONFIG, WITHERED, endDay, newGame, sanitizeState, mulberry32, dateOf, seasonOf, rainChance,
