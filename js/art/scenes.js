@@ -2,6 +2,11 @@
 'use strict';
 
 function farmBG() {
+  // With the asset background, the game still adds what moves or must sit in front: clouds, buffalo, fence.
+  if (Assets.has('bg.farm')) {
+    return Assets.image('bg.farm') + cloud(250, 72, 1, '') + cloud(470, 52, .75, 'd2') + cloud(160, 40, .6, 'd2') +
+      buffalo() + fence(610, 800, 350);
+  }
   let s = `<defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cdea"/><stop offset=".8" stop-color="#fbe6b2"/></linearGradient></defs>`;
   s += `<rect width="800" height="260" fill="url(#gSky)"/>`;
   s += circ(120, 94, 24, '#ffd54a', 3);
@@ -27,6 +32,15 @@ function farmBG() {
 }
 
 function marketBG() {
+  const back = Assets.has('bg.market') ? Assets.image('bg.market') + marketSign() : marketBackdrop();
+  return back + auntieDaeng(104, 440) + marketCounter();
+}
+
+function marketSign() {
+  return `<text x="104" y="126" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text>`;
+}
+
+function marketBackdrop() {
   let s = `<rect width="800" height="600" fill="#c78b52"/>`;
   let pl = '';
   for (let y = 70; y < 470; y += 22) pl += `M0 ${y}H800`;
@@ -46,7 +60,12 @@ function marketBG() {
   s += `<path d="M4 46H204V96" fill="none" stroke="${O}" stroke-width="3"/>`;
   s += `<g transform="translate(104 122)"><rect x="-70" y="-14" width="140" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.6"/>` +
     `<text x="0" y="4" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text></g>`;
-  s += auntieDaeng(104, 440);
+  return s;
+}
+
+function marketCounter() {
+  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 104, 480);
+  let s = '';
   s += `<rect x="4" y="380" width="200" height="100" fill="#a8693a" ${SW} stroke-width="3"/>` + line('M4 404H204M4 440H204', '#7a4a26', 2);
   s += ell(44, 380, 30, 10, '#d6ad62', 0, 2) + ell(116, 382, 32, 10, '#d6ad62', 0, 2) + ell(176, 380, 24, 9, '#d6ad62', 0, 2);
   [[34, 372, 3], [48, 370, 3], [58, 374, 3], [104, 372, 6], [120, 370, 6], [132, 374, 6], [168, 372, 2], [182, 373, 2]].forEach(([x, y, c]) => { s += `<g transform="translate(${x} ${y}) scale(.6)">${produceIcon(c)}</g>`; });
@@ -54,6 +73,7 @@ function marketBG() {
 }
 
 function penBG() {
+  if (Assets.has('bg.pen')) return Assets.image('bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect width="800" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
   s += `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
   s += `<rect y="160" width="800" height="440" fill="#a9c95e"/>` + line('M0 160H800', O, 2.5);

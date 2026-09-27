@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 44" width="90" height="44">
+<!-- scenery.cloud · puffy cartoon cloud, flat bottom -->
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M10 35Q3 35 4.5 28Q6 20.5 14 21.5Q14.5 11.5 25.5 11Q30.5 3 42 5Q52 0.5 58.5 9Q68.5 6 72.5 15.5Q83.5 14.5 84.5 25Q88.5 35 78 35Z" fill="#fffaf0" stroke="#3a2213" stroke-width="2.5"/><path d="M11 33.5Q30 28.5 49 30.5Q66 27.5 79 33.5Z" fill="#e4eef3" stroke="none"/><path d="M16 25Q17 19 23 19M31 14Q34 9 41 9M61 13Q66 11 70 15" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+</g>
+</svg>

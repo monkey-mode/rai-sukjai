@@ -2,6 +2,7 @@
 'use strict';
 
 function cloud(x, y, sc, cls) {
+  if (Assets.has('scenery.cloud')) return `<g class="drift ${cls}"><g transform="translate(${x} ${y}) scale(${sc})">${Assets.image('scenery.cloud', 3, -8)}</g></g>`;
   return `<g class="drift ${cls}"><g transform="translate(${x} ${y}) scale(${sc})"><path d="M-30 8Q-35 -6 -18 -6Q-14 -20 2 -16Q10 -27 22 -14Q37 -14 34 0Q41 9 29 10Z" fill="#fffaf0" ${SW} stroke-width="2.5"/></g></g>`;
 }
 

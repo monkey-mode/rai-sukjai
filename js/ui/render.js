@@ -51,7 +51,8 @@ function renderFarm() {
 function renderPen() {
   let s = '';
   // nest with eggs
-  s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}`;
+  const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', 300, 312) : `${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}`;
+  s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${nestArt}`;
   const shown = Math.min(S.eggs, 12);
   for (let i = 0; i < shown; i++) {
     const col = i % 6, row = Math.floor(i / 6);
@@ -62,18 +63,22 @@ function renderPen() {
     `<text x="300" y="364" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
   // trough
   const fill = S.trough / CONFIG.DUCK.troughMax;
-  s += `<g data-act="trough" class="hot"><title>รางอาหาร · Trough</title><rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/>` +
+  const troughAsset = Assets.has('prop.trough');
+  s += `<g data-act="trough" class="hot"><title>รางอาหาร · Trough</title>`;
+  s += troughAsset ? Assets.image('prop.trough', 445, 500) : `<rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/>` +
     `<rect x="378" y="458" width="134" height="18" rx="3" fill="#5a3a22"/>`;
   if (fill > 0) s += `<rect x="378" y="${458 + 18 * (1 - fill)}" width="134" height="${18 * fill}" rx="3" fill="#e8c77a"/>` +
     line(Array.from({ length: S.trough * 4 }, (_, i) => `M${384 + i * 6.5} ${470 - (i % 3) * 3}h1`).join(''), '#8a5a22', 2);
-  s += `<rect x="378" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/><rect x="504" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/></g>`;
+  if (!troughAsset) s += `<rect x="378" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/><rect x="504" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/>`;
+  s += '</g>';
   s += `<text x="445" y="518" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">รางอาหาร ${S.trough}/${CONFIG.DUCK.troughMax}</text>` +
     `<text x="445" y="530" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Trough — click to add feed (have ${S.inventory.feed})</text>`;
   // basket
   const hasEgg = S.hand && S.hand.type === 'egg';
-  s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title><path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
+  const basketArt = Assets.has('prop.egg_basket') ? Assets.image('prop.egg_basket', 650, 496) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
     `<path d="M612 452H688L680 494H620Z" fill="#d6ad62" ${SW} stroke-width="3"/>` + line('M616 466H684M618 480H682M634 452V494M650 452V494M666 452V494', '#9a7338', 1.4) +
-    `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g></g>`;
+    `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g>`;
+  s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`;
   s += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
     `<text x="650" y="524" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Egg basket — drop eggs to sell</text>`;
   if (S.ducks === 0) s += `<text x="500" y="370" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;

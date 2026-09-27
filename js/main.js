@@ -109,6 +109,8 @@ showTitle();
 Assets.load().then(ids => {
   if (!ids.length) return;
   for (const k in plantCache) delete plantCache[k];
+  ui.bgScene = null; ui.animKey = null;
   if (S) render();
+  else { bgEl.innerHTML = farmBG(); ui.bgScene = 'farm'; }
 });
 window.__raiSukjai = { get state() { return S; } };

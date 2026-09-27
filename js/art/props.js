@@ -3,6 +3,9 @@
 
 function dragonJar(x, top) {
   const b = top + 88;
+  if (Assets.has('prop.dragon_jar')) {
+    return `<g data-act="jar" class="jar"><title>โอ่งมังกร · Dragon jar</title><ellipse cx="${x}" cy="${b}" rx="32" ry="6" fill="rgba(0,0,0,.2)"/>${Assets.image('prop.dragon_jar', x, b)}</g>`;
+  }
   return `<g data-act="jar" class="jar"><title>โอ่งมังกร · Dragon jar</title>
   <ellipse cx="${x}" cy="${b}" rx="32" ry="6" fill="rgba(0,0,0,.2)"/>
   <path d="M${x - 20} ${top + 8}Q${x - 46} ${top + 40} ${x - 22} ${b}L${x + 22} ${b}Q${x + 46} ${top + 40} ${x + 20} ${top + 8}Z" fill="#7b3a1a" ${SW} stroke-width="3"/>
@@ -18,6 +21,7 @@ function dragonJar(x, top) {
 function oxCart(x, y, glow) {
   let s = `<g data-act="cart" class="hot ${glow ? 'glow' : ''}"><title>เกวียน · Market cart</title>`;
   s += `<ellipse cx="${x + 85}" cy="${y + 2}" rx="75" ry="6" fill="rgba(0,0,0,.18)"/>`;
+  if (Assets.has('prop.ox_cart')) return s + Assets.image('prop.ox_cart', x + 66, y + 1) + cartSign(x, y) + '</g>';
   s += oline(`M${x + 30} ${y - 46}L${x - 12} ${y - 36}Q${x - 20} ${y - 36} ${x - 20} ${y - 46}`, '#9a6a3c', 5);
   s += `<path d="M${x + 22} ${y - 66}L${x + 150} ${y - 66}L${x + 146} ${y - 42}L${x + 26} ${y - 42}Z" fill="#a8693a" ${SW} stroke-width="2.6"/>`;
   s += line(`M${x + 30} ${y - 58}H${x + 144}M${x + 30} ${y - 50}H${x + 144}`, '#7a4a26', 1.4);
@@ -30,16 +34,23 @@ function oxCart(x, y, glow) {
   let sp = '';
   for (let a = 0; a < 180; a += 22.5) { const rad = a * Math.PI / 180; sp += `M${r(wx + Math.cos(rad) * 23)} ${r(wy + Math.sin(rad) * 23)}L${r(wx - Math.cos(rad) * 23)} ${r(wy - Math.sin(rad) * 23)}`; }
   s += line(sp, '#7a4a26', 2.6) + circ(wx, wy, 6, '#5a3a1e', 2);
-  s += `<g transform="translate(${x + 110} ${y - 132})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
-    `<text x="8" y="15" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ขายผลผลิต</text>` +
-    `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g>`;
+  s += cartSign(x, y);
   return s + '</g>';
 }
 
+function cartSign(x, y) {
+  let s = '';
+  s += `<g transform="translate(${x + 110} ${y - 132})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
+    `<text x="8" y="15" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ขายผลผลิต</text>` +
+    `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g>`;
+  return s;
+}
+
 function signpost(dim) {
-  const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title><path d="M706 ${y}H780L796 ${y + 18}L780 ${y + 36}H706Z" fill="#c98c4a" ${SW} stroke-width="2.6"/>` +
+  const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title>${Assets.has('prop.signboard') ? Assets.image('prop.signboard', 705, y - 1) : `<path d="M706 ${y}H780L796 ${y + 18}L780 ${y + 36}H706Z" fill="#c98c4a" ${SW} stroke-width="2.6"/>`}` +
     `<text x="746" y="${y + 17}" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="14" fill="${O}">${th}</text>` +
     `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en} · −5⚡</text></g>`;
-  return `<rect x="748" y="400" width="8" height="132" fill="#8a5a2e" ${SW} stroke-width="2"/>` +
+  const pole = Assets.has('prop.signpole') ? Assets.image('prop.signpole', 752, 532) : `<rect x="748" y="400" width="8" height="132" fill="#8a5a2e" ${SW} stroke-width="2"/>`;
+  return pole +
     board('go-market', 408, 'ไปตลาด', 'Market') + board('go-pen', 460, 'คอกเป็ด', 'Duck pen');
 }
