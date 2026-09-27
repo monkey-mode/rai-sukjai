@@ -85,9 +85,12 @@ const FARM_ZONES = {
   canal: [-2.75, -8, -2.15, 11],     // irrigation canal and its muddy banks
   paddies: [-9.8, -9, -2.7, 11],     // flooded rice fields: trees only on a FARM_MOUNDS island
   paddock: [8, -5, 12.6, -2],        // buffalo paddock
-  house: [2.3, -4.7, 6.3, -1.1],     // stilt house footprint plus its stairs
+  house: [2.3, -4.9, 6.4, -1.4],     // Thai house footprint under its eaves (FARM_HOUSE)
+  stairs: [4.2, -1.4, 5.0, -0.8],    // the house's stair down to the yard
   shrine: [0.7, -2.1, 1.7, -1.1],    // Phra Phum shrine and its offerings (FARM_SHRINE)
 };
+// The Thai house sprite's anchor (ground at its back corner) and its depth for sorting (grid gx + gy of its middle).
+const FARM_HOUSE = { at: [2.4, -4.8], depth: 1.0 };
 // The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
 const FARM_SHRINE = [1.2, -1.6];
 // Raised grassy islands (โคก) in the paddies where trees may stand: [gx, gy, rgx, rgy] centre and radii.
@@ -100,9 +103,9 @@ const FARM_CLEARING = [-6.2, -6.5];
 const BANANA_SPOTS = [
   [-1.55, -0.4, 'fruiting', .8],   // grass bank between the canal and the yard
   [-1.55, 3.8, 'old', .8],         // canal bank
-  [4.4, -0.95, 'young', .75],      // in front of the stilt house, right of the stairs
+  [3.3, -1.0, 'young', .75],       // in front of the house's left wing, beside the stair
   [-3.7, 1.0, 'harvested', .75],   // on the paddy mound
-  [6.6, -1.3, 'ripe', .78],        // open grass between the house and the paddock
+  [6.9, -0.95, 'ripe', .78],       // open grass between the house and the paddock
 ];
 
 // Palms on the farm: [gx, gy, variant, scale]. Same rules as the bananas: a different variant per spot,

@@ -40,6 +40,7 @@ const ASSET_SPECS = (() => {
   add('scenery.palm_sugar_pair_iso', 'assets/scenery/palm_sugar_pair_iso.svg', 110, 198, 57, 189);
   add('scenery.palm_sugar_tall_iso', 'assets/scenery/palm_sugar_tall_iso.svg', 84, 199, 42, 191);
   add('scenery.spirit_house_iso', 'assets/scenery/spirit_house_iso.svg', 76, 170, 38, 157);
+  add('scenery.thai_house_iso', 'assets/scenery/thai_house_iso.svg', 277, 252, 126, 146);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
   return list;

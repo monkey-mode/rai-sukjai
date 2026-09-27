@@ -12,7 +12,7 @@ function farmBG() {
     [bGrid[0] + bGrid[1], buffalo(b[0], b[1])],
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
   ];
-  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite()]));
+  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean)));
   return farmBackdropIso() + clouds + depthSorted(items);
 }
 
@@ -21,6 +21,13 @@ function depthSorted(items) {
 }
 
 // Banana clump and palm sprites as [depth, svg] items, each with a ground shadow.
+// The Thai house as a [depth, svg] item (none without its asset: the old house was part of the painted background).
+function houseSprite() {
+  if (!Assets.has('scenery.thai_house_iso')) return null;
+  const [x, y] = isoPt(...FARM_HOUSE.at);
+  return [FARM_HOUSE.depth, Assets.image('scenery.thai_house_iso', x, y)];
+}
+
 // The spirit house as a [depth, svg] item at FARM_SHRINE: the iso asset, or the code-drawn shrine.
 function spiritHouseSprite() {
   const [gx, gy] = FARM_SHRINE, [x, y] = isoPt(gx, gy);
