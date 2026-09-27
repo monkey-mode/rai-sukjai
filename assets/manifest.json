@@ -2739,6 +2739,222 @@
       "review": null
     },
     {
+      "id": "scenery.palm_coconut_lean_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "มะพร้าวต้นสูงเอน",
+      "name_en": "Coconut palm — tall, leaning",
+      "output": "assets/scenery/palm_coconut_lean_iso.svg",
+      "format": "svg",
+      "canvas": [
+        153,
+        184
+      ],
+      "anchor": [
+        113,
+        178
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A tall coconut palm (มะพร้าว) with a ringed trunk curving and leaning to the left, a full crown of drooping pinnate fronds and a cluster of green coconuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (113,178) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_coconut_lean_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (14 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_coconut_twin_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "มะพร้าวสองต้น",
+      "name_en": "Coconut palm — twin trunks",
+      "output": "assets/scenery/palm_coconut_twin_iso.svg",
+      "format": "svg",
+      "canvas": [
+        189,
+        176
+      ],
+      "anchor": [
+        95,
+        170
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "Two coconut trunks growing from one base and splitting into a V, each with its own crown of fronds and coconuts, one taller than the other. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (95,170) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_coconut_twin_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (22 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_coconut_dwarf_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "มะพร้าวน้ำหอม",
+      "name_en": "Coconut palm — dwarf (nam hom)",
+      "output": "assets/scenery/palm_coconut_dwarf_iso.svg",
+      "format": "svg",
+      "canvas": [
+        132,
+        95
+      ],
+      "anchor": [
+        66,
+        90
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A short, thick dwarf aromatic coconut palm (มะพร้าวน้ำหอม) with a dense, low, round crown and many pale-green nuts (one turning orange). ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (66,90) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_coconut_dwarf_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (17 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_coconut_windswept_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "มะพร้าวลู่ลม",
+      "name_en": "Coconut palm — windswept",
+      "output": "assets/scenery/palm_coconut_windswept_iso.svg",
+      "format": "svg",
+      "canvas": [
+        200,
+        160
+      ],
+      "anchor": [
+        12,
+        154
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A coconut palm leaning strongly to the right with its fronds swept to one side by the wind. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (12,154) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_coconut_windswept_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (12 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_sugar_tall_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "ต้นตาลสูง",
+      "name_en": "Sugar palm — tall",
+      "output": "assets/scenery/palm_sugar_tall_iso.svg",
+      "format": "svg",
+      "canvas": [
+        90,
+        206
+      ],
+      "anchor": [
+        45,
+        201
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A tall, perfectly straight sugar palm (ต้นตาล) with criss-cross leaf-base scars, a round crown of stiff fan leaves, dead fans hanging below and dark fruit clusters. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (45,201) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_sugar_tall_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (17 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_sugar_ladder_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "ต้นตาลพะอง",
+      "name_en": "Sugar palm — with bamboo ladder",
+      "output": "assets/scenery/palm_sugar_ladder_iso.svg",
+      "format": "svg",
+      "canvas": [
+        86,
+        198
+      ],
+      "anchor": [
+        43,
+        189
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A sugar palm with a bamboo climbing ladder (พะอง) lashed to the trunk (rung stubs, rope ties) and bamboo sap tubes (กระบอกตาล) hanging under the crown for palm-sugar tapping. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (43,189) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_sugar_ladder_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (19 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_sugar_pair_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "ต้นตาลคู่",
+      "name_en": "Sugar palms — pair",
+      "output": "assets/scenery/palm_sugar_pair_iso.svg",
+      "format": "svg",
+      "canvas": [
+        109,
+        203
+      ],
+      "anchor": [
+        55,
+        197
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "Two sugar palms growing side by side, one noticeably taller, each with its own fan-leaf crown. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (55,197) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_sugar_pair_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (35 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.palm_betel_cluster_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "ต้นหมาก",
+      "name_en": "Betel (areca) palms — cluster",
+      "output": "assets/scenery/palm_betel_cluster_iso.svg",
+      "format": "svg",
+      "canvas": [
+        123,
+        177
+      ],
+      "anchor": [
+        63,
+        170
+      ],
+      "variant_group": "palm_iso",
+      "prompt": "A cluster of three slender areca/betel-nut palms (ต้นหมาก) of different heights: thin pale ringed trunks, smooth green crownshafts, small feathery crowns and bunches of orange nuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (63,170) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/palm_betel_cluster_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (37 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "review": null
+    },
+    {
       "id": "bg.farm",
       "category": "background",
       "priority": 3,
@@ -2754,14 +2970,14 @@
         0,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nTop (y 0–160): sky gradient, yellow sun top-left, birds, far pale hills, a small distant temple and chedi around x 200, and a tree line on the horizon at y 160. Behind the yard's upper-left edge: rice paddies laid out on the iso grid as a few large fields in muted greens that harmonise with the grass and yard (rice planted in rows, a couple of flooded seedling beds, at most one golden field), slim low grassy dikes with soft edges (no heavy outlines), and a light haze toward the horizon; sugar palms, a small field hut, a scarecrow, egrets. An irrigation canal (grid gx -1.42 to -1.06) runs along the yard side of the paddies with natural wavy muddy banks, soft water, reeds, lily pads and a plank footbridge. Behind the yard's upper-right edge: grass, a coconut tree, the spirit house (ศาลพระภูมิ) around grid (0.7,-2.1), and the wooden stilt house (บ้านใต้ถุนสูง) in 3/4 view on grid gx 2.3–6.3, gy -4.7–-2.3: posts, floor at z≈64, plank walls to z≈116 with opened shutters, door on the gable end, steep red gable roof with ridge along gx at z≈160 and crossed kalae boards, a hammock, bench and water jar underneath, and a ladder stair down toward the yard. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw banana clumps (the game places the scenery.banana_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. The HUD covers y 0–46 and the toolbar y 532–600.",
+      "prompt": "Full-stage ISOMETRIC background for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nTop (y 0–160): sky gradient, yellow sun top-left, birds, far pale hills, a small distant temple and chedi around x 200, and a tree line on the horizon at y 160. Behind the yard's upper-left edge: rice paddies laid out on the iso grid as a few large fields in muted greens that harmonise with the grass and yard (rice planted in rows, a couple of flooded seedling beds, at most one golden field), slim low grassy dikes with soft edges (no heavy outlines), and a light haze toward the horizon; sugar palms, a small field hut, a scarecrow, egrets. An irrigation canal (grid gx -1.42 to -1.06) runs along the yard side of the paddies with natural wavy muddy banks, soft water, reeds, lily pads and a plank footbridge. Behind the yard's upper-right edge: grass, a coconut tree, the spirit house (ศาลพระภูมิ) around grid (0.7,-2.1), and the wooden stilt house (บ้านใต้ถุนสูง) in 3/4 view on grid gx 2.3–6.3, gy -4.7–-2.3: posts, floor at z≈64, plank walls to z≈116 with opened shutters, door on the gable end, steep red gable roof with ridge along gx at z≈160 and crossed kalae boards, a hammock, bench and water jar underneath, and a ladder stair down toward the yard. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw banana clumps or palms (the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. The HUD covers y 0–46 and the toolbar y 532–600.",
       "reference": "assets/reference/bg.farm.svg",
       "reference_render": "farmBG()",
       "status": "done",
       "file": "assets/backgrounds/farm.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:18:32Z",
-      "notes": "Isometric background (197 KB). Rice fields: large paddy fields in muted greens matching the grass and yard (mature and young rice planted in rows, two flooded seedling beds with sky reflections, one ripening golden field), slim grassy dikes with soft olive edges, and a haze toward the horizon so the far fields melt into the tree line; egrets, field hut, scarecrow. Canal: wavy muddy banks, soft sky-tinted water with ripples, reeds and lily pads, a plank footbridge. Trees: sugar palms with fan fronds, fruit and shadows; pinnate coconut palms with ringed curved trunks; no banana clumps (the game places the banana_*_iso variant sprites). Phra Phum shrine in 3/4 view: plinth, pillar, garlanded gold tray, red house with gold door, two roof tiers with chofa and a spire, soda bottles, incense and zebra figurines. Plus the stilt house, paddock (back fences, hay) and the yard/bunds matching isoFarmGround().",
+      "updated_at": "2026-09-27T13:27:11Z",
+      "notes": "Isometric background (146 KB). Rice fields: large paddy fields in muted greens matching the grass and yard (mature and young rice planted in rows, two flooded seedling beds with sky reflections, one ripening golden field), slim grassy dikes with soft olive edges, and a haze toward the horizon so the far fields melt into the tree line; egrets, field hut, scarecrow. Canal: wavy muddy banks, soft sky-tinted water with ripples, reeds and lily pads, a plank footbridge. Trees: sugar palms with fan fronds, fruit and shadows; pinnate coconut palms with ringed curved trunks; no banana clumps (the game places the banana_*_iso variant sprites). Phra Phum shrine in 3/4 view: plinth, pillar, garlanded gold tray, red house with gold door, two roof tiers with chofa and a spire, soda bottles, incense and zebra figurines. Plus the stilt house, paddock (back fences, hay) and the yard/bunds matching isoFarmGround(). No palms either: the game places the scenery.palm_*_iso sprites.",
       "review": null
     },
     {

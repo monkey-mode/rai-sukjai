@@ -5,20 +5,31 @@
 // paddock's back fence; the game adds what moves or stands in front: clouds, buffalo, the paddock front fence.
 function farmBG() {
   const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
-  const front = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2') +
-    buffalo(b[0], b[1]) + isoFence([px0, py1], [px1, py1]);
-  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + bananaClumps() + front;
-  return farmBackdropIso() + front;
+  const clouds = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2');
+  // the buffalo and the paddock's front fence join the plant sprites in one back-to-front pass
+  const bGrid = [((b[0] - ISO.OX) / 32 + (b[1] - ISO.OY) / 16) / 2, ((b[1] - ISO.OY) / 16 - (b[0] - ISO.OX) / 32) / 2];
+  const items = [
+    [bGrid[0] + bGrid[1], buffalo(b[0], b[1])],
+    [px0 + py1, isoFence([px0, py1], [px1, py1])],
+  ];
+  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites()));
+  return farmBackdropIso() + clouds + depthSorted(items);
 }
 
-// Banana clump sprites, back to front, each with a ground shadow.
-function bananaClumps() {
-  return BANANA_SPOTS.slice().sort((a, b) => (a[0] + a[1]) - (b[0] + b[1])).map(([gx, gy, v, sc]) => {
-    const id = `scenery.banana_${v}_iso`;
-    if (!Assets.has(id)) return '';
+function depthSorted(items) {
+  return items.slice().sort((a, c) => a[0] - c[0]).map(i => i[1]).join('');
+}
+
+// Banana clump and palm sprites as [depth, svg] items, each with a ground shadow.
+function plantSprites() {
+  const put = (id, gx, gy, sc, rx) => {
+    if (!Assets.has(id)) return null;
     const [x, y] = isoPt(gx, gy);
-    return `<g transform="translate(${r(x)} ${r(y)}) scale(${sc})"><ellipse cx="4" cy="1" rx="26" ry="9" fill="rgba(58,34,19,.18)"/>${Assets.image(id)}</g>`;
-  }).join('');
+    return [gx + gy, `<g transform="translate(${r(x)} ${r(y)}) scale(${sc})"><ellipse cx="4" cy="1" rx="${rx}" ry="${r(rx * .35)}" fill="rgba(58,34,19,.18)"/>${Assets.image(id)}</g>`];
+  };
+  return BANANA_SPOTS.map(([gx, gy, v, sc]) => put(`scenery.banana_${v}_iso`, gx, gy, sc, 26))
+    .concat(PALM_SPOTS.map(([gx, gy, v, sc]) => put(`scenery.palm_${v}_iso`, gx, gy, sc, 18)))
+    .filter(Boolean);
 }
 
 // Code-drawn fallback for the isometric farm background.
