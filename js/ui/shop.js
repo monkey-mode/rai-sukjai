@@ -5,10 +5,9 @@ function renderPanel() {
   if (S.scene === 'market') {
     const greet = [['มาแล้วเหรอหลาน วันนี้เอาอะไรดีจ๊ะ', "Welcome, dear! What'll it be?"], ['ผักสด ๆ ทั้งนั้นจ้ะ', 'All fresh today!'], ['ปุ๋ยดีผักก็งามนะ', 'Good fertilizer, good greens']][ui.greet % 3];
     panel.innerHTML = `<div class="bubble" style="left:14px;top:34px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
-    ${ui.shopOpen ? `<div class="shop-board"><button class="shop-x" data-act="shop-close" title="ปิด · Close">×</button><h3>ร้านป้าแดง <span class="en">Auntie Daeng's shop</span><span class="money-now k">฿${fmt(S.money)}</span></h3>
-    <div class="tabs">${SHOP_TABS.map(t => `<button class="tab ${t.id === shopTab().id ? 'on' : ''}" data-act="shop-tab" data-tab="${t.id}">${t.th}<small>${t.en}</small></button>`).join('')}</div>
-    ${shopTab().body()}</div>`
-    : `<button class="shop-open glow" data-act="shop-open">🛒 ซื้อของ<small>Open the shop</small></button>`}
+    ${ui.shopOpen ? shopBoard(SELLERS[ui.shopOpen])
+    : `<button class="shop-open glow" data-act="shop-open" data-seller="daeng">🛒 ซื้อของป้าแดง<small>Seeds & supplies</small></button>` +
+      `<button class="shop-open mee glow" data-act="shop-open" data-seller="mee">🦆 ซื้อสัตว์ลุงมี<small>Livestock</small></button>`}
     <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
   } else if (S.scene === 'pen') {
     const D = CONFIG.DUCK;
@@ -23,13 +22,16 @@ function renderPanel() {
   } else panel.innerHTML = '';
 }
 
-// Auntie Daeng's shop tabs. A future feature adds its goods by adding a tab (or cards to one) here.
-const SHOP_TABS = [
-  { id: 'seeds', th: 'เมล็ดพันธุ์', en: 'Seeds', body: () => `<div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div>` },
-  { id: 'supplies', th: 'ของใช้', en: 'Supplies', body: () => `<div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div>` },
-  { id: 'livestock', th: 'สัตว์เลี้ยง', en: 'Livestock', body: () => `<div class="supplies">${duckCard()}${feedCard()}${soonCard('ควาย', 'Water buffalo', 'ไถนา ขนของ ช่วยงานในไร่')}</div>` },
-];
-const shopTab = () => SHOP_TABS.find(t => t.id === ui.shopTab) || SHOP_TABS[0];
+// Market sellers, each with their own shop. A future feature adds a seller (and a spot in the market) here.
+const SELLERS = {
+  daeng: { th: 'ร้านป้าแดง', en: "Auntie Daeng's stall — seeds & supplies",
+    body: () => `<div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div><div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div>` },
+  mee: { th: 'ตลาดสัตว์ลุงมี', en: "Uncle Mee's livestock",
+    body: () => `<div class="supplies">${duckCard()}${feedCard()}${soonCard('ควาย', 'Water buffalo', 'ไถนา ขนของ ช่วยงานในไร่')}</div>` },
+};
+function shopBoard(sl) {
+  return `<div class="shop-board ${ui.shopOpen}"><button class="shop-x" data-act="shop-close" title="ปิด · Close">×</button><h3>${sl.th} <span class="en">${sl.en}</span><span class="money-now k">฿${fmt(S.money)}</span></h3>${sl.body()}</div>`;
+}
 
 // Livestock cards reuse the duck pen's actions (Uncle Mee sells the same things at the pen).
 function duckCard() {

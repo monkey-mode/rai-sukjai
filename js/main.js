@@ -14,10 +14,9 @@ function handleAct(act, ds) {
     case 'how': return showHow();
     case 'continue': { const s = load(); if (s) { startGame(s); if (s.gameOver) showGameOver(); } return; }
     case 'confirm-new': return showConfirmNew();
-    case 'shop-open': ui.shopOpen = true; return renderPanel();
+    case 'shop-open': ui.shopOpen = ds.seller || 'daeng'; return renderPanel();
     case 'shop-close': ui.shopOpen = false; return renderPanel();
-    case 'shop-tab': ui.shopTab = ds.tab; return renderPanel();
-    case 'shop-livestock': ui.shopOpen = true; ui.shopTab = 'livestock'; return renderPanel();
+    case 'shop-livestock': ui.shopOpen = 'mee'; return renderPanel();
     case 'new-game': store.del(SAVE_KEY); return startGame(newGame());
   }
   if (!S || S.gameOver || ui.busy) return;

@@ -116,10 +116,9 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .shop-open{position:absolute;left:222px;top:330px;font-size:18px;padding:8px 16px;background:#9be15d}
 .shop-board h3{padding-right:40px;margin:0;font-family:'Kanit';font-size:19px;display:flex;align-items:baseline;gap:8px}
 .money-now{margin-left:auto;font-size:15px;color:#2f7a2f}
-.tabs{display:flex;gap:6px;margin:6px 0 2px}
-.tab{padding:3px 12px;font-size:14px;background:#f3e2b8;box-shadow:0 2px 0 var(--ink)}
-.tab small{font-size:9px}
-.tab.on{background:#ffd54a;outline:3px solid #fff6c8;outline-offset:-5px}
+.shop-board.mee{left:auto;right:8px;width:430px}
+.shop-board.mee .supplies{grid-template-columns:1fr}
+.shop-open.mee{left:560px;top:450px;background:#8fd3ef}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:4px}
 .scard{background:#fffaf0;border:2px solid var(--ink);border-radius:11px;padding:4px 6px 5px;height:182px;display:flex;flex-direction:column;position:relative}
 .scard .top{display:flex;gap:5px;align-items:center}
