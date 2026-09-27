@@ -2393,6 +2393,276 @@
       "review": null
     },
     {
+      "id": "prop.egg_pile_1",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 1 ฟอง",
+      "name_en": "Egg pile — 1 egg",
+      "output": "assets/props/egg_pile_1.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 1 duck egg (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_1.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_2",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 2 ฟอง",
+      "name_en": "Egg pile — 2 eggs",
+      "output": "assets/props/egg_pile_2.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 2 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_2.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_3",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 3 ฟอง",
+      "name_en": "Egg pile — 3 eggs",
+      "output": "assets/props/egg_pile_3.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 3 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_3.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_4",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 4 ฟอง",
+      "name_en": "Egg pile — 4 eggs",
+      "output": "assets/props/egg_pile_4.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 4 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_4.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_5",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 5 ฟอง",
+      "name_en": "Egg pile — 5 eggs",
+      "output": "assets/props/egg_pile_5.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 5 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_5.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_6",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 6 ฟอง",
+      "name_en": "Egg pile — 6 eggs",
+      "output": "assets/props/egg_pile_6.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 6 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_6.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_7",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 7 ฟอง",
+      "name_en": "Egg pile — 7 eggs",
+      "output": "assets/props/egg_pile_7.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 7 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_7.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_8",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 8 ฟอง",
+      "name_en": "Egg pile — 8 eggs",
+      "output": "assets/props/egg_pile_8.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 8 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_8.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_9",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 9 ฟอง",
+      "name_en": "Egg pile — 9 eggs",
+      "output": "assets/props/egg_pile_9.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 9 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_9.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
+      "id": "prop.egg_pile_10",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "กองไข่ 10 ฟอง",
+      "name_en": "Egg pile — 10 eggs",
+      "output": "assets/props/egg_pile_10.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "variant_group": "egg_pile",
+      "prompt": "A pile of exactly 10 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. ISOMETRIC 3/4 view with the farm's 2:1 projection, thick dark outlines, light from the upper-left, a soft shadow under the pile. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: one pile sits in the nest's hollow, and above 10 eggs extra piles are placed on the ground in front of the nest.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/props/egg_pile_10.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:34:17Z",
+      "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
+      "review": null
+    },
+    {
       "id": "prop.egg_basket",
       "category": "prop",
       "priority": 2,

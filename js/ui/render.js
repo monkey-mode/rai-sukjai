@@ -56,19 +56,38 @@ function renderFarm() {
 // Iso trough: ground point under its centre, and the half-size of its cavity (world px) for the feed surface.
 const TROUGH = { at: [445, 472], inner: [58, 14] };
 
+// Egg piles: the nest's hollow, then spots on the ground in front of the nest (back to front) for every further 10.
+const NEST_PILE = [300, 302];
+const EGG_SPOTS = [[256, 350], [344, 352], [300, 370], [344, 390]];   // clear of the duck walk (x >= 380)
+// Split an egg count into piles of at most 10 (the nest first), at most one per spot.
+function eggPiles(eggs) {
+  const piles = [];
+  for (let left = eggs; left > 0 && piles.length <= EGG_SPOTS.length; left -= 10) piles.push(Math.min(10, left));
+  return piles;
+}
+
 function renderPen() {
   let s = '';
   // nest with eggs
   const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', 300, 312) : `${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}`;
   s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${nestArt}`;
-  const shown = Math.min(S.eggs, 12);
-  for (let i = 0; i < shown; i++) {
-    const col = i % 6, row = Math.floor(i / 6);
-    s += `<g transform="translate(${262 + col * 15 + row * 7} ${306 - row * 9}) scale(.75)">${eggIcon()}</g>`;
+  let labelY = 352;
+  if (Assets.has('prop.egg_pile_1')) {
+    // up to 10 eggs pile up in the nest; each further 10 is another pile on the ground in front of it
+    const piles = eggPiles(S.eggs);
+    if (piles.length) s += Assets.image(`prop.egg_pile_${piles[0]}`, NEST_PILE[0], NEST_PILE[1]);
+    s += piles.slice(1).map((n, i) => [EGG_SPOTS[i], n]).sort((a, c) => a[0][1] - c[0][1]).map(([[x, y], n]) => Assets.image(`prop.egg_pile_${n}`, x, y)).join('');
+    if (piles.length > 1) labelY = piles.length > 4 ? 412 : 400;
+  } else {
+    const shown = Math.min(S.eggs, 12);
+    for (let i = 0; i < shown; i++) {
+      const col = i % 6, row = Math.floor(i / 6);
+      s += `<g transform="translate(${262 + col * 15 + row * 7} ${306 - row * 9}) scale(.75)">${eggIcon()}</g>`;
+    }
   }
   s += `</g>`;
-  s += `<text x="300" y="352" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
-    `<text x="300" y="364" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
+  s += `<text x="300" y="${labelY}" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
+    `<text x="300" y="${labelY + 12}" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
   // trough
   const fill = S.trough / CONFIG.DUCK.troughMax;
   const troughAsset = Assets.has('prop.trough');

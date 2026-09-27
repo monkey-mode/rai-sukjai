@@ -26,6 +26,7 @@ const ASSET_SPECS = (() => {
   add('prop.signpole', 'assets/props/signpole.svg', 12, 134, 6, 134);
   add('prop.trough', 'assets/props/trough.svg', 162, 112, 81, 75);
   add('prop.nest', 'assets/props/nest.svg', 139, 72, 70, 36);
+  for (let n = 1; n <= 10; n++) add(`prop.egg_pile_${n}`, `assets/props/egg_pile_${n}.svg`, 50, 50, 24, 35);
   add('prop.egg_basket', 'assets/props/egg_basket.svg', 98, 100, 49, 78);
   add('prop.market_counter', 'assets/props/market_counter.svg', 190, 157, 95, 111);
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
