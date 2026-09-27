@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ไร่สุขใจ · Isometric models prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<!-- THROWAWAY PROTOTYPE: the buffalo and dragon jar built as 3D models (ellipsoids / a solid of revolution)
+     and projected with the farm's exact isometric math, next to the current hand-drawn assets.
+     Does not change the game. Delete once the direction is decided. -->
+<style>
+  html,body{margin:0;min-height:100%;background:#2a1a0f;font-family:'Sarabun',sans-serif;color:#3a2213}
+  #wrap{max-width:980px;margin:0 auto;padding:12px}
+  header{background:linear-gradient(#9a6436,#7a4a26);color:#fff4d6;border:3px solid #3a2213;border-radius:14px 14px 0 0;padding:8px 14px}
+  header b{font-family:'Kanit';font-size:20px}
+  header small{display:block;opacity:.85}
+  #bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff4d6;border:3px solid #3a2213;border-top:0;padding:8px 12px}
+  button,label{font-family:'Kanit';font-size:14px}
+  button{border:2.5px solid #3a2213;border-radius:9px;background:#ffe9b0;color:#3a2213;box-shadow:0 3px 0 #3a2213;padding:3px 10px;cursor:pointer}
+  button.on{background:#ffd54a}
+  button small{display:block;font-family:'Sarabun';font-size:10px;opacity:.8}
+  #dir{font-family:'Kanit';min-width:120px;text-align:center}
+  svg{display:block;width:100%;height:auto;background:#bccb6c;border:3px solid #3a2213;border-top:0;border-radius:0 0 14px 14px}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <header><b>ต้นแบบโมเดลไอโซเมตริก · ควาย & โอ่งมังกร</b>
+    <small>Isometric models prototype: buffalo and dragon jar built in 3D and projected with the farm's 2:1 iso math (left), next to the current hand-drawn assets (right)</small></header>
+  <div id="bar">
+    <button id="left">◀ หมุน<small>Turn</small></button>
+    <span id="dir"></span>
+    <button id="right">หมุน ▶<small>Turn</small></button>
+    <button id="spin" class="on">หมุนอัตโนมัติ<small>Auto-rotate</small></button>
+    <button id="walk">เดิน<small>Walk</small></button>
+    <button id="graze">ก้มกินหญ้า<small>Graze</small></button>
+    <button id="all">ครบ 8 ทิศ<small>All 8 directions</small></button>
+  </div>
+  <svg id="scene" viewBox="0 0 960 560"><g id="static"></g><g id="live"></g></svg>
+</div>
+
+<script src="js/logic/config.js"></script>
+<script src="js/art/draw.js"></script>
+<script src="js/art/assets.js"></script>
+<script>
+'use strict';
+// ---------- projection: same 2:1 iso as js/art/iso.js (1 world unit = 1 px along an axis) ----------
+const K = 0.894, H = 0.447;
+const proj = (x, y, z) => [(x - y) * K, (x + y) * H - z];           // world -> screen offset
+const fmt = n => Math.round(n * 10) / 10;
+
+// Convex hull (monotone chain) of projected points -> smooth-ish closed path.
+function hull(pts) {
+  pts = pts.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const cross = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const lo = [], up = [];
+  for (const p of pts) { while (lo.length >= 2 && cross(lo[lo.length - 2], lo[lo.length - 1], p) <= 0) lo.pop(); lo.push(p); }
+  for (const p of pts.slice().reverse()) { while (up.length >= 2 && cross(up[up.length - 2], up[up.length - 1], p) <= 0) up.pop(); up.push(p); }
+  return lo.slice(0, -1).concat(up.slice(0, -1));
+}
+const pathOf = pts => 'M' + pts.map(p => fmt(p[0]) + ' ' + fmt(p[1])).join('L') + 'Z';
+
+// ---------- a model is a list of ellipsoids in local space (forward = +x, left = +y, up = +z) ----------
+// Each: { c:[x,y,z], r:[rx,ry,rz], fill, pivot?: 'head'|'tail', noLine? }
+function buffaloParts() {
+  const g = '#5d626b', gd = '#4a4e56', gl = '#8a8f98', horn = '#e2d6c0';
+  const P = [];
+  const add = (c, r, fill, extra = {}) => P.push(Object.assign({ c, r, fill }, extra));
+  // a smooth tube: many overlapping spheres interpolated along control points [x, y, z, radius]
+  const tube = (ctrl, fill, extra, per = 5) => {
+    for (let i = 0; i < ctrl.length - 1; i++) for (let k = 0; k < per; k++) {
+      const t = k / per, a = ctrl[i], b = ctrl[i + 1], q = a.map((v, n) => v + (b[n] - v) * t);
+      add([q[0], q[1], q[2]], [q[3], q[3], q[3]], fill, extra);
+    }
+    const e = ctrl[ctrl.length - 1]; add([e[0], e[1], e[2]], [e[3], e[3], e[3]], fill, extra);
+  };
+  // legs (hooves first), body masses, neck
+  for (const [x, y] of [[22, 11], [22, -11], [-24, 11], [-24, -11]]) {
+    add([x, y, 3], [5, 5, 3], '#2e3035');
+    add([x, y, 13], [4.6, 4.6, 12], x > 0 ? g : gd);
+  }
+  P.forEach(p => { p.group = 'body'; });
+  add([-24, 0, 36], [16, 18, 15], g);                 // rump
+  add([0, 0, 35], [36, 20, 17], g);                   // barrel
+  add([18, 0, 40], [16, 18, 15], g);                  // shoulders
+  add([32, 0, 38], [11, 11, 11], g, { pivot: 'head' });           // neck
+  // head group (pivots at the neck for grazing)
+  add([45, 0, 33], [11, 10, 10], g, { pivot: 'head' });
+  add([54, 0, 26], [7, 8.5, 6.5], gl, { pivot: 'head' });          // muzzle
+  for (const s of [1, -1]) {
+    add([42, 11 * s, 37], [3, 5.5, 2.2], gd, { pivot: 'head' });   // ears
+    add([50, 6 * s, 35], [1.8, 1.8, 1.8], '#fff', { pivot: 'head', eye: true });
+    // horns: a chain of shrinking spheres sweeping out and back
+    tube([[44, 7 * s, 41, 3.8], [42, 14 * s, 44, 3.4], [37, 21 * s, 46, 3], [31, 26 * s, 46, 2.5], [27, 28 * s, 43, 1.9], [25, 28 * s, 40, 1.2]], horn, { pivot: 'head' });
+  }
+  // tail (swings about its root)
+  tube([[-39, 0, 39, 2.4], [-43, 0, 32, 1.9], [-45, 0, 24, 1.6], [-46, 0, 17, 1.6]], gd, { pivot: 'tail' });
+  add([-46, 0, 13], [3, 3, 4.2], '#2e3035', { pivot: 'tail' });
+  // egret riding on the back
+  add([-2, 0, 55], [7, 4, 4], '#fff');
+  add([3, 0, 62], [2, 2, 5], '#fff');
+  add([6, 0, 67], [3, 2.4, 2.4], '#fff');
+  add([10, 0, 67], [3, 1, 1], '#f2c14e');
+  P.forEach(p => { if (!p.group) p.group = p.pivot || (p.fill === '#fff' || p.fill === '#f2c14e' ? 'egret' : 'body'); });
+  P.forEach(p => { if (p.eye) p.group = 'head'; });
+  return P;
+}
+
+// Rotate a local point: grazing pitch about the neck, tail swing, then the model's yaw.
+function transform(p, part, pose) {
+  let [x, y, z] = p;
+  if (part.pivot === 'head' && pose.pitch) {
+    const [px, pz] = [30, 40], a = pose.pitch;              // pitch nose-down around the neck
+    const dx = x - px, dz = z - pz;
+    x = px + dx * Math.cos(a) + dz * Math.sin(a); z = pz - dx * Math.sin(a) + dz * Math.cos(a);
+  }
+  if (part.pivot === 'tail' && pose.swing) {
+    const [px, py] = [-40, 0], a = pose.swing;
+    const dx = x - px, dy = y - py;
+    x = px + dx * Math.cos(a) - dy * Math.sin(a); y = py + dx * Math.sin(a) + dy * Math.cos(a);
+  }
+  const c = Math.cos(pose.yaw), s = Math.sin(pose.yaw);
+  return [x * c - y * s, x * s + y * c, z + (pose.bob || 0)];
+}
+
+function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75]) {
+  const P2 = (x, y, z) => { const [sx, sy] = proj(x, y, z); return [ox + sx * sc, oy + sy * sc]; };
+  // ground shadow
+  const sh = [];
+  for (let a = 0; a < 360; a += 15) {
+    const t = a * Math.PI / 180, [x, y] = transform([Math.cos(t) * 40, Math.sin(t) * 22, 0], {}, { yaw: pose.yaw });
+    sh.push(P2(x, y, 0));
+  }
+  let out = `<path d="${pathOf(sh)}" fill="rgba(58,34,19,.18)"/>`;
+  // project every part once
+  const shapes = parts.map(part => {
+    const pts = [], hi = [];
+    for (let i = 0; i <= 8; i++) {
+      const v = -Math.PI / 2 + i * Math.PI / 8;
+      for (let j = 0; j < 16; j++) {
+        const u = j * Math.PI / 8;
+        const local = [part.c[0] + part.r[0] * Math.cos(v) * Math.cos(u), part.c[1] + part.r[1] * Math.cos(v) * Math.sin(u), part.c[2] + part.r[2] * Math.sin(v)];
+        const q = P2(...transform(local, part, pose));
+        pts.push(q);
+        const nw = transform([Math.cos(v) * Math.cos(u), Math.cos(v) * Math.sin(u), Math.sin(v)], {}, { yaw: pose.yaw });
+        if (nw[0] * light[0] + nw[1] * light[1] + nw[2] * light[2] > .72) hi.push(q);
+      }
+    }
+    const c = transform(part.c, part, pose);
+    return { part, d: pathOf(hull(pts)), hi: hi.length > 2 ? pathOf(hull(hi)) : '', depth: c[0] + c[1] + c[2] * .02, centre: P2(...c) };
+  });
+  // groups (body, head, tail, egret) drawn back to front; inside a group: outline pass, then fills
+  const groups = {};
+  shapes.forEach(sh => { (groups[sh.part.group] = groups[sh.part.group] || []).push(sh); });
+  const order = Object.values(groups).map(list => ({ list, depth: list.reduce((a, s2) => a + s2.depth, 0) / list.length }))
+    .sort((a, b) => a.depth - b.depth);
+  for (const { list } of order) {
+    list.sort((a, b) => a.depth - b.depth);
+    out += list.filter(x => !x.part.eye).map(x => `<path d="${x.d}" fill="#3a2213" stroke="#3a2213" stroke-width="${Math.max(...x.part.r) < 4 ? 3 : 5}" stroke-linejoin="round"/>`).join('');
+    for (const x of list) {
+      if (x.part.eye) {
+        out += `<path d="${x.d}" fill="#fff" stroke="#3a2213" stroke-width="1"/><circle cx="${fmt(x.centre[0] + .6)}" cy="${fmt(x.centre[1])}" r="1.3" fill="#3a2213"/>`;
+      } else {
+        out += `<path d="${x.d}" fill="${x.part.fill}"/>`;
+        if (x.hi && Math.max(...x.part.r) >= 6) out += `<path d="${x.hi}" fill="#fff" opacity=".13"/>`;
+      }
+    }
+  }
+  return out;
+}
+
+// ---------- dragon jar as a solid of revolution ----------
+const jarR = h => h < 4 ? 22 + h : h < 38 ? 26 + 14 * Math.sin((h - 4) / 34 * Math.PI / 2) : h < 70 ? 40 - 16 * Math.sin((h - 38) / 32 * Math.PI / 2) : h < 74 ? 24 : 26;
+function drawJar(ox, oy) {
+  const ring = (h, r, a0 = 0, a1 = 360, step = 10) => {
+    const out = [];
+    for (let a = a0; a <= a1; a += step) { const t = a * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); out.push([ox + sx, oy + sy]); }
+    return out;
+  };
+  const line = (pts, col, w) => `<path d="M${pts.map(p => fmt(p[0]) + ' ' + fmt(p[1])).join('L')}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  // silhouette = hull of all rings
+  let all = [];
+  for (let h = 0; h <= 76; h += 2) all = all.concat(ring(h, jarR(h), 0, 360, 15));
+  let s = `<path d="${pathOf(ring(0, 34))}" fill="rgba(58,34,19,.18)"/>`;
+  s += `<path d="${pathOf(hull(all))}" fill="#7b3a1a" stroke="#3a2213" stroke-width="3" stroke-linejoin="round"/>`;
+  // shade: the half facing away from the light (screen right), built from right-side points
+  const shade = [];
+  for (let h = 2; h <= 74; h += 2) { const r = jarR(h); for (const a of [-80, -40, -10]) { const t = a * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); shade.push([ox + sx, oy + sy]); } }
+  s += `<path d="${pathOf(hull(shade))}" fill="#5f2b12" opacity=".75"/>`;
+  // light rim on the left
+  const lit = []; for (let h = 8; h <= 60; h += 3) { const r = jarR(h) * .92, t = 150 * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); lit.push([ox + sx, oy + sy]); }
+  s += line(lit, 'rgba(255,255,255,.28)', 4);
+  // gold bands: only the front half of each ring (angles facing the viewer: 0°..180° around +x+y)
+  for (const h of [12, 62]) s += line(ring(h, jarR(h) + .3, -45, 135, 6), '#d9a32a', 2.2);
+  // dragon wrapping the front of the belly
+  const drag = [];
+  for (let a = -35; a <= 125; a += 4) { const t = a * Math.PI / 180, h = 36 + 7 * Math.sin(t * 3), r = jarR(h) + 1, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); drag.push([ox + sx, oy + sy]); }
+  s += line(drag, '#3a2213', 9) + line(drag, '#f2c14e', 6);
+  const [hx, hy] = drag[0];
+  s += `<ellipse cx="${fmt(hx + 3)}" cy="${fmt(hy - 3)}" rx="7" ry="5.5" fill="#f2c14e" stroke="#3a2213" stroke-width="2"/><circle cx="${fmt(hx + 5)}" cy="${fmt(hy - 5)}" r="1.4" fill="#3a2213"/>`;
+  s += `<path d="M${fmt(hx + 2)} ${fmt(hy - 8)}l-2 -7l5 5Z" fill="#e2553f" stroke="#3a2213" stroke-width="1.3"/>`;
+  // rim: lip, dark inner wall, water with a reflection
+  s += `<path d="${pathOf(ring(76, 26))}" fill="#5a2a12" stroke="#3a2213" stroke-width="2.6"/>`;
+  s += `<path d="${pathOf(ring(76, 21))}" fill="#3e1c0b" stroke="#3a2213" stroke-width="1.2"/>`;
+  s += `<path d="${pathOf(ring(70, 19.5).map(p => [p[0], p[1]]))}" fill="#5fb3dd" stroke="#3a2213" stroke-width="1.2"/>`;
+  s += line(ring(70, 12, 200, 250, 5), '#d2f0fb', 1.8);
+  // coconut-shell ladle resting on the rim
+  const [lx, ly] = proj(20, -8, 78), [ex, ey] = proj(34, -30, 96);
+  s += line([[ox + lx, oy + ly], [ox + ex, oy + ey]], '#3a2213', 5) + line([[ox + lx, oy + ly], [ox + ex, oy + ey]], '#a8753f', 2.6);
+  s += `<ellipse cx="${fmt(ox + lx - 3)}" cy="${fmt(oy + ly + 2)}" rx="8" ry="4.5" fill="#7a5230" stroke="#3a2213" stroke-width="1.8"/>`;
+  return s;
+}
+
+// ---------- scene ----------
+const DIRS = ['ตะวันออก · E', 'ตะวันออกเฉียงใต้ · SE', 'ใต้ · S', 'ตะวันตกเฉียงใต้ · SW', 'ตะวันตก · W', 'ตะวันตกเฉียงเหนือ · NW', 'เหนือ · N', 'ตะวันออกเฉียงเหนือ · NE'];
+const state = { dir: 3, spin: true, walk: false, graze: false, all: false, t: 0 };
+const PARTS = buffaloParts();
+
+function isoGrid(cx, cy, n) {
+  let s = '';
+  for (let i = -n; i <= n; i++) for (let j = -n; j <= n; j++) {
+    const c = (a, b) => { const [x, y] = proj(a * 64 / K / 2 * K, b * 64 / K / 2 * K, 0); return [cx + (a - b) * 32, cy + (a + b) * 16]; };
+    const p = [c(i, j), c(i + 1, j), c(i + 1, j + 1), c(i, j + 1)];
+    s += `<path d="${pathOf(p)}" fill="${(i + j) & 1 ? '#b3c563' : '#bccb6c'}" stroke="#a6b85a" stroke-width="1"/>`;
+  }
+  return s;
+}
+
+let staticKey = '';
+function render() {
+  const t = state.t;
+  const pose = { yaw: state.dir * Math.PI / 4, pitch: state.graze ? .45 + .12 * Math.sin(t * 2) : 0, swing: .35 * Math.sin(t * 2.4), bob: state.walk ? Math.abs(Math.sin(t * 6)) * 1.5 : 0 };
+  const key = state.all ? 'all' : 'one';
+  if (key !== staticKey) {
+    staticKey = key;
+    let st = state.all ? isoGrid(480, 150, 5) : isoGrid(300, 120, 5);
+    if (!state.all) {
+      st += `<text x="300" y="540" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">โมเดล 3D ไอโซเมตริก · 3D model, true iso</text>`;
+      st += `<rect x="690" y="16" width="254" height="528" rx="14" fill="rgba(255,244,214,.6)" stroke="#3a2213" stroke-width="2"/>`;
+      st += `<text x="817" y="42" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">แบบปัจจุบัน · Current assets</text>`;
+      st += `<g transform="translate(810 250)"><image href="assets/animals/buffalo_tail.svg" x="46" y="-60" width="24" height="58"/><image href="assets/animals/buffalo.svg" x="-88" y="-100" width="180" height="124"/><image href="assets/animals/buffalo_head.svg" x="-96" y="-100" width="112" height="88"/></g>`;
+      st += `<image href="assets/props/dragon_jar.svg" x="767" y="330" width="100" height="100"/>`;
+      st += `<text x="817" y="470" text-anchor="middle" font-family="Sarabun" font-size="12" fill="#3a2213">hand-drawn 3/4, one facing only</text>`;
+    }
+    document.getElementById('static').innerHTML = st;
+  }
+  let s = '';
+  if (state.all) {
+    DIRS.forEach((d, i) => {
+      const x = 120 + (i % 4) * 240, y = 250 + Math.floor(i / 4) * 230;
+      s += drawModel(PARTS, { yaw: i * Math.PI / 4, pitch: 0, swing: .3 * Math.sin(t * 2.4 + i) }, x, y, 1.25);
+      s += `<text x="${x}" y="${y + 50}" text-anchor="middle" font-family="Kanit" font-size="14" fill="#3a2213">${d}</text>`;
+    });
+  } else {
+    let wx = 0, wy = 0;
+    if (state.walk) { const d = ((t * 22) % 140) - 70; wx = Math.cos(pose.yaw) * d; wy = Math.sin(pose.yaw) * d; }
+    const [sx, sy] = proj(wx, wy, 0);
+    s += drawModel(PARTS, pose, 290 + sx * 1.5, 340 + sy * 1.5);
+    s += drawJar(560, 400);
+  }
+  document.getElementById('live').innerHTML = s;
+  document.getElementById('dir').textContent = DIRS[state.dir];
+}
+
+const btn = id => document.getElementById(id);
+btn('left').onclick = () => { state.dir = (state.dir + 7) % 8; state.spin = false; btn('spin').classList.remove('on'); render(); };
+btn('right').onclick = () => { state.dir = (state.dir + 1) % 8; state.spin = false; btn('spin').classList.remove('on'); render(); };
+for (const k of ['spin', 'walk', 'graze', 'all']) btn(k).onclick = () => { state[k] = !state[k]; btn(k).classList.toggle('on', state[k]); render(); };
+let last = 0, acc = 0;
+function tick(ts) {
+  const dt = Math.min(.05, (ts - last) / 1000 || 0); last = ts; state.t += dt;
+  if (state.spin) { acc += dt; if (acc > 1.2) { acc = 0; state.dir = (state.dir + 1) % 8; } }
+  render();
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+window.__proto = { state, render };
+</script>
+</body>
+</html>
