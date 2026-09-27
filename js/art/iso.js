@@ -65,18 +65,38 @@ function isoSoil(gx, gy, wet, fertilized) {
   return s;
 }
 
-// Post-and-rail fence from grid point a to b (inclusive), posts every `step` tiles.
-function isoFence(a, b, step = .5) {
+// Rustic paddock fence from grid point a to b: square timber posts with pointed caps every `step` tiles, two
+// round bamboo rails with node rings and a highlight, lashed to each post with rope. Matches the painted back
+// fences in bg.farm (the generator draws them the same way).
+function isoFence(a, b, step = .6) {
   const n = Math.max(1, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / step));
-  const at = (t, z) => isoPt(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, z);
-  let rails = '';
-  for (const z of [12, 24]) rails += `M${at(0, z)}L${at(1, z)}`;
-  let s = `<path d="${rails}" fill="none" stroke="${O}" stroke-width="5.4" stroke-linecap="round"/><path d="${rails}" fill="none" stroke="#b88350" stroke-width="3" stroke-linecap="round"/>`;
+  const g = t => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+  const at = (t, z) => isoPt(...g(t), z);
+  const poly = (pts, fill, w = 1.6) => `<polygon points="${isoPoints(pts)}" fill="${fill}" ${SW} stroke-width="${w}"/>`;
+  const H = 30, W = .055;
+  let posts = '';
   for (let i = 0; i <= n; i++) {
-    const [x, y] = at(i / n, 0);
-    s += `<rect x="${r(x - 3)}" y="${r(y - 30)}" width="6" height="32" rx="1.5" fill="#9a6a3c" ${SW} stroke-width="1.8"/>`;
+    const [x, y] = g(i / n), P = (dx, dy, z) => isoPt(x + dx, y + dy, z), apex = P(0, 0, H + 6);
+    posts += poly([P(-W, W, 0), P(W, W, 0), P(W, W, H), P(-W, W, H)], '#8a5a30') +
+      poly([P(W, W, 0), P(W, -W, 0), P(W, -W, H), P(W, W, H)], '#a8703e') +
+      poly([P(-W, W, H), P(W, W, H), apex], '#b87a44', 1.3) + poly([P(W, W, H), P(W, -W, H), apex], '#d09258', 1.3);
+    const [gx0, gy0] = P(W, 0, 4), [gx1, gy1] = P(W, 0, H - 6);
+    posts += `<path d="M${r(gx0)} ${r(gy0)}L${r(gx1)} ${r(gy1)}" stroke="#7a4a26" stroke-width="1"/>`;   // wood grain
   }
-  return s;
+  let rails = '', nodes = '', ties = '';
+  for (const z of [11, 23]) {
+    const [x0, y0] = at(0, z), [x1, y1] = at(1, z);
+    rails += `M${r(x0)} ${r(y0)}L${r(x1)} ${r(y1)}`;
+    const k = Math.max(2, Math.round(n * 2.4));
+    for (let j = 1; j < k; j++) { const [x, y] = at(j / k, z); nodes += `M${r(x)} ${r(y - 2.2)}v4.4`; }
+    for (let i = 0; i <= n; i++) { const [x, y] = at(i / n, z); ties += `M${r(x - 2.6)} ${r(y - 2.4)}l5.2 4.8M${r(x + 2.6)} ${r(y - 2.4)}l-5.2 4.8`; }
+  }
+  const hi = rails.replace(/(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g, (m, x, y) => `${x} ${r(+y - 1.1)}`);
+  return posts + `<path d="${rails}" fill="none" stroke="${O}" stroke-width="6.6" stroke-linecap="round"/>` +
+    `<path d="${rails}" fill="none" stroke="#c8ae62" stroke-width="4.2" stroke-linecap="round"/>` +
+    `<path d="${hi}" fill="none" stroke="#eadba0" stroke-width="1.2" stroke-linecap="round"/>` +
+    `<path d="${nodes}" stroke="#8f7a3a" stroke-width="1.3"/>` +
+    `<path d="${ties}" stroke="${O}" stroke-width="2.6" stroke-linecap="round"/><path d="${ties}" stroke="#e0c98a" stroke-width="1.3" stroke-linecap="round"/>`;
 }
 
 // Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
@@ -89,6 +109,11 @@ const FARM_ZONES = {
   stairs: [4.2, -1.4, 5.0, -0.8],    // the house's stair down to the yard
   shrine: [0.7, -2.1, 1.7, -1.1],    // Phra Phum shrine and its offerings (FARM_SHRINE)
 };
+// Drawn scale of farm objects whose assets are made larger than life. Scenery (house, trees, huts) is at about
+// 20 px per metre. The farmer, dragon jar and buffalo are the farm's characters and get a stylised game size
+// (about 2x life: farmer ~67 px, jar ~55 px, spirit house ~110 px); the cart stays near life size. Crops and the text
+// signs keep their gameplay sizes.
+const FARM_SCALE = { shrine: .7, buffalo: .75, farmer: .75, jar: .6, cart: .6 };
 // The Thai house sprite's anchor (ground at its back corner) and its depth for sorting (grid gx + gy of its middle).
 const FARM_HOUSE = { at: [2.4, -4.8], depth: 1.0 };
 // The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
@@ -98,11 +123,11 @@ const FARM_MOUNDS = [[-4.4, 0.2, 1.5, 2.6]];
 // The farm is a clearing: forest beyond grid lines gx = -6.2 and gy = -6.5.
 const FARM_CLEARING = [-6.2, -6.5];
 
-// Banana clumps on the farm: [gx, gy, variant, scale]. Each spot uses a different variant and stands on
+// Banana clumps on the farm: [gx, gy, variant, scale] (3-4 m tall at the scenery scale). Each spot uses a different variant and stands on
 // open ground or a mound (both checked by tests/assets.test.mjs).
 const BANANA_SPOTS = [
   [-1.55, -0.4, 'fruiting', .8],   // grass bank between the canal and the yard
-  [-1.55, 3.8, 'old', .8],         // canal bank
+  [-1.6, -2.4, 'old', .8],         // canal bank, behind the yard's top corner
   [3.3, -1.0, 'young', .75],       // in front of the house's left wing, beside the stair
   [-3.7, 1.0, 'harvested', .75],   // on the paddy mound
   [6.9, -0.95, 'ripe', .78],       // open grass between the house and the paddock
@@ -111,13 +136,14 @@ const BANANA_SPOTS = [
 // Palms on the farm: [gx, gy, variant, scale]. Same rules as the bananas: a different variant per spot,
 // open ground or a mound, at least 1.5 tiles from every other plant sprite (tests/assets.test.mjs).
 const PALM_SPOTS = [
-  [-5.0, -1.5, 'sugar_tall', .62],          // on the paddy mound
-  [-3.5, -1.0, 'sugar_ladder', .62],        // on the paddy mound, a tapping palm with its bamboo ladder
-  [-5.0, 1.9, 'coconut_twin', .58],         // on the paddy mound
-  [-1.6, -2.4, 'sugar_pair', .62],          // canal bank, behind the yard's top corner
-  [-1.6, 1.7, 'coconut_lean', .62],         // canal bank, leaning out over the water
-  [-1.55, 5.8, 'coconut_dwarf', .72],       // canal bank
-  [8.5, -1.3, 'betel_cluster', .66],        // in front of the buffalo paddock
+  // palms are 5-10 m (taller than the house), so the tall ones stand low on screen where their crowns clear the HUD
+  [-5.0, 1.9, 'coconut_dwarf', 1],          // on the paddy mound
+  [-1.55, 3.8, 'coconut_lean', 1],          // canal bank, leaning out over the water
+  [-1.55, 5.8, 'coconut_twin', 1],          // canal bank
+  [-1.6, 7.9, 'sugar_tall', 1.04],          // canal bank, at the left edge of the safe area
+  [-1.6, 9.9, 'sugar_ladder', 1],           // canal bank, in the left bleed: a tapping palm with its bamboo ladder
+  [7.2, -3.4, 'sugar_pair', 1],             // between the house and the buffalo paddock
+  [8.5, -1.3, 'betel_cluster', .95],        // in front of the buffalo paddock
 ];
 
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
@@ -126,5 +152,5 @@ const FARM_SPOTS = {
   cartSign: [34, 452],     // top-left of the "ขายผลผลิต" sign next to the cart
   jar: [584, 392],        // dragonJar(x, top)
   farmer: [652, 474],     // farmer(x, feetY)
-  buffalo: [694, 316],    // buffalo(x, y): ground point inside the paddock, behind its front fence
+  buffalo: [722, 334],    // buffalo(x, y): ground point inside the paddock, behind its front fence
 };

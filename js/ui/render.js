@@ -32,6 +32,9 @@ function fieldLabel(f, fi) {
     `<text x="11" y="15" text-anchor="middle" font-family="Kanit" font-size="11" font-weight="600" fill="#fff">${fi + 1}</text>${inner}</g>`;
 }
 
+// Scale an SVG fragment by k around the point (x, y).
+const scaled = (x, y, k, svg) => `<g transform="translate(${x} ${y}) scale(${k}) translate(${-x} ${-y})">${svg}</g>`;
+
 function renderFarm() {
   // plots back to front (by gx+gy) so nearer plants overlap farther ones
   const order = [];
@@ -39,12 +42,13 @@ function renderFarm() {
   order.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
   let s = order.map(([, , fi, pi]) => plotSVG(S.fields[fi], fi, S.fields[fi].plots[pi], pi)).join('');
   s += S.fields.map(fieldLabel).join('');
-  const [cx, cy] = FARM_SPOTS.cart, cart = oxCart(cx, cy, S.hand && S.hand.type === 'crop', FARM_SPOTS.cartSign);
-  // the code-drawn cart is a wide side view; shrink it to fit the iso spot (the sign keeps its size)
-  s += Assets.has('prop.ox_cart') ? cart : `<g transform="translate(${cx + 66} ${cy}) scale(.7) translate(${-cx - 66} ${-cy})">${oxCart(cx, cy, S.hand && S.hand.type === 'crop', null)}</g>` +
+  // props and the farmer are drawn at the farm's scale (FARM_SCALE), each around its ground point; the text sign keeps its size
+  const [cx, cy] = FARM_SPOTS.cart, [jx, jt] = FARM_SPOTS.jar, [fx, fy] = FARM_SPOTS.farmer, jb = jt + 88;
+  s += scaled(cx + 66, cy, FARM_SCALE.cart, oxCart(cx, cy, S.hand && S.hand.type === 'crop', null)) +
     `<g data-act="cart" class="hot">${cartSign(...FARM_SPOTS.cartSign)}</g>`;
-  s += dragonJar(FARM_SPOTS.jar[0], FARM_SPOTS.jar[1]);
-  s += farmer(FARM_SPOTS.farmer[0], FARM_SPOTS.farmer[1], S.energy < CONFIG.TIRED_BELOW);
+  s += scaled(jx, jb, FARM_SCALE.jar, dragonJar(jx, jt)) +
+    `<circle data-act="jar" cx="${jx}" cy="${jb - 44 * FARM_SCALE.jar}" r="${Math.max(24, 50 * FARM_SCALE.jar)}" fill="transparent"><title>โอ่งมังกร · Dragon jar</title></circle>`;   // easy tap target
+  s += scaled(fx, fy, FARM_SCALE.farmer, farmer(fx, fy, S.energy < CONFIG.TIRED_BELOW));
   s += signpost(!(S.energy > CONFIG.COST.walk));
   dynEl.innerHTML = s;
 }
@@ -137,7 +141,7 @@ function renderToolbar() {
 function renderFx() {
   if (!S.rain) { fxEl.innerHTML = ''; return; }
   fxEl.innerHTML = `<defs><pattern id="rp" width="40" height="60" patternUnits="userSpaceOnUse"><path d="M10 0l-4 14M30 26l-4 14M22 44l-3 10" stroke="#dff3ff" stroke-width="2" stroke-linecap="round" opacity=".75"/></pattern></defs>` +
-    `<rect width="800" height="600" fill="#3a5a7a" opacity=".12"/><rect class="rainfall" x="-40" y="0" width="880" height="660" fill="url(#rp)"/>`;
+    `<rect x="-300" width="1400" height="600" fill="#3a5a7a" opacity=".12"/><rect class="rainfall" x="-340" y="0" width="1480" height="660" fill="url(#rp)"/>`;
 }
 
 function renderHand() {

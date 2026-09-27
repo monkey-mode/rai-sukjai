@@ -59,11 +59,23 @@ test('banana clumps and palms stand on open farm ground or a paddy mound, inside
     }
     assert.ok(gx > FARM_CLEARING[0] + .6 && gy > FARM_CLEARING[1] + .6, `${v} stands in the forest`);
     const [x, y] = isoPt(gx, gy);
-    assert.ok(y > 46 && y < 532 && x > 0 && x < 800, `${v} base is off the visible ground (${x}, ${y})`);
+    assert.ok(y > 46 && y < 532 && x > -300 && x < 1100, `${v} base is off the visible ground, bleed included (${x}, ${y})`);
   }
   for (let i = 0; i < SPOTS.length; i++) for (let j = i + 1; j < SPOTS.length; j++) {
     const [a, b] = [SPOTS[i], SPOTS[j]];
     assert.ok(Math.hypot(a[0] - b[0], a[1] - b[1]) >= 1.5, `${a[2]} and ${b[2]} are too close`);
+  }
+});
+
+test('palm crowns stay below the HUD', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { isoPt, PALM_SPOTS };', ctx);
+  const { manifest } = checkManifest();
+  for (const [gx, gy, v, sc] of ctx.X.PALM_SPOTS) {
+    const a = manifest.assets.find(e => e.id === `scenery.palm_${v}_iso`);
+    const top = ctx.X.isoPt(gx, gy)[1] - a.anchor[1] * sc;          // palm canvases are cropped to the plant
+    assert.ok(top >= 46, `${v} crown reaches y ${Math.round(top)}, under the HUD`);
   }
 });
 

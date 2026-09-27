@@ -42,7 +42,8 @@ const ASSET_SPECS = (() => {
   add('scenery.spirit_house_iso', 'assets/scenery/spirit_house_iso.svg', 76, 170, 38, 157);
   add('scenery.thai_house_iso', 'assets/scenery/thai_house_iso.svg', 277, 252, 126, 146);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
-  ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
+  add('bg.farm', 'assets/backgrounds/farm.svg', 1400, 600, 300, 0);    // 800x600 safe area with 300 px of bleed each side
+  ['market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
   return list;
 })();
 
