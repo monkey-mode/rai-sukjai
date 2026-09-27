@@ -57,13 +57,15 @@ function renderFarm() {
 const TROUGH = { at: [445, 472], inner: [58, 14] };
 
 // The nest shows up to 10 eggs as a pile; past 10 (and past 20) a darker "shadow" pile peeks out behind it.
-const NEST_PILE = [300, 302];
+// The nest sits inside the pen's fence (the u = 0 fence runs diagonally past its left side).
+const NEST = [450, 332];
+const NEST_PILE = [NEST[0], NEST[1] - 10];
 const NEST_BACK = [[-9, -7], [9, -7]];
 
 function renderPen() {
   let s = '';
   // nest with eggs
-  const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', 300, 312) : `${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}`;
+  const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', ...NEST) : `<g transform="translate(${NEST[0] - 300} ${NEST[1] - 312})">${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}</g>`;
   s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${nestArt}`;
   if (Assets.has('prop.egg_pile_1')) {
     const [nx, ny] = NEST_PILE;
@@ -75,12 +77,12 @@ function renderPen() {
     const shown = Math.min(S.eggs, 12);
     for (let i = 0; i < shown; i++) {
       const col = i % 6, row = Math.floor(i / 6);
-      s += `<g transform="translate(${262 + col * 15 + row * 7} ${306 - row * 9}) scale(.75)">${eggIcon()}</g>`;
+      s += `<g transform="translate(${NEST[0] - 38 + col * 15 + row * 7} ${NEST[1] - 6 - row * 9}) scale(.75)">${eggIcon()}</g>`;
     }
   }
   s += `</g>`;
-  s += `<text x="300" y="352" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
-    `<text x="300" y="364" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
+  s += `<text x="${NEST[0]}" y="${NEST[1] + 40}" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
+    `<text x="${NEST[0]}" y="${NEST[1] + 52}" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
   // trough
   const fill = S.trough / CONFIG.DUCK.troughMax;
   const troughAsset = Assets.has('prop.trough');
@@ -111,7 +113,7 @@ function renderPen() {
   s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`;
   s += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
     `<text x="650" y="524" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Egg basket — drop eggs to sell</text>`;
-  if (S.ducks === 0) s += `<text x="500" y="370" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;
+  if (S.ducks === 0) s += `<text x="600" y="300" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;
   dynEl.innerHTML = s;
 }
 
@@ -120,7 +122,7 @@ function renderAnim() {
   if (ui.animKey === key) return;
   ui.animKey = key;
   if (S.scene !== 'pen') { animEl.innerHTML = ''; return; }
-  const spots = [[470, 300, 11, 0], [580, 340, 14, -3], [420, 400, 10, -6], [640, 410, 13, -2], [520, 380, 15, -8]];
+  const spots = [[600, 300, 11, 0], [300, 365, 14, -3], [665, 362, 10, -6], [560, 408, 13, -2], [305, 425, 15, -8]];   // clear of the nest, trough and basket
   let s = '';
   for (let i = 0; i < S.ducks; i++) {
     const [x, y, dur, delay] = spots[i];
