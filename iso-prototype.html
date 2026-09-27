@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ไร่สุขใจ · Isometric prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<!-- THROWAWAY PROTOTYPE: an isometric take on the farm scene, reusing the current art.
+     It does not change the game (index.html). Delete once the direction is decided. -->
+<style>
+  html,body{margin:0;height:100%;background:#2a1a0f;overflow:hidden;font-family:'Sarabun',sans-serif;user-select:none}
+  #wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #stage{position:relative;width:800px;height:600px;flex:none;overflow:hidden;background:#bccb6c}
+  #scene{position:absolute;inset:0}
+  .tile{cursor:pointer}
+  .tile:hover .top{stroke:#fff3a0;stroke-width:3}
+  #bar{position:absolute;left:0;top:0;right:0;height:46px;display:flex;align-items:center;gap:6px;padding:0 8px;
+    background:linear-gradient(#9a6436,#7a4a26);border-bottom:3px solid #3a2213;color:#fff4d6;box-sizing:border-box}
+  #bar b{font-family:'Kanit';font-size:16px;margin-right:auto}
+  #bar small{display:block;font-size:10px;opacity:.8;font-weight:400}
+  button{font-family:'Kanit';font-size:13px;border:2.5px solid #3a2213;border-radius:9px;background:#ffe9b0;color:#3a2213;
+    box-shadow:0 3px 0 #3a2213;padding:3px 9px;cursor:pointer;line-height:1.1}
+  button.sel{background:#ffd54a}
+  button small{display:block;font-family:'Sarabun';font-size:9px;opacity:.8}
+  .spark{transform-box:fill-box;transform-origin:center;animation:tw 1.4s ease-in-out infinite}
+  @keyframes tw{0%,100%{transform:scale(.6)}50%{transform:scale(1.15)}}
+  .drift{animation:drift 30s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:translateX(-25px)}to{transform:translateX(35px)}}
+  .bhead{transform-origin:-44px -40px;animation:graze 7s ease-in-out infinite}
+  @keyframes graze{0%,55%,100%{transform:rotate(0)}65%,85%{transform:rotate(-12deg)}}
+  .btail{transform-origin:52px -42px;animation:swish 2.6s ease-in-out infinite}
+  @keyframes swish{0%,100%{transform:rotate(0)}50%{transform:rotate(18deg)}}
+  .bug{animation:crawl .5s steps(2) infinite}
+  @keyframes crawl{to{transform:translate(1.5px,-1px)}}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <svg id="scene" viewBox="0 0 800 600" width="800" height="600"></svg>
+  <div id="bar">
+    <b>ไร่สุขใจ · มุมมองไอโซเมตริก <small>Isometric prototype, click a plot to use a tool</small></b>
+    <button data-tool="water" class="sel">รดน้ำ<small>Water</small></button>
+    <button data-tool="grow">โต +1<small>Grow</small></button>
+    <button data-tool="bug">แมลง<small>Bug</small></button>
+    <button data-tool="cut">ถาง<small>Clear</small></button>
+    <button data-tool="seed">ปลูก<small>Plant</small></button>
+    <button onclick="location.href='index.html'">เกมเดิม<small>Current game</small></button>
+  </div>
+</div></div>
+
+<script src="js/logic/config.js"></script>
+<script src="js/logic/calendar.js"></script>
+<script src="js/logic/state.js"></script>
+<script src="js/art/draw.js"></script>
+<script src="js/art/assets.js"></script>
+<script src="js/art/crops.js"></script>
+<script src="js/art/icons.js"></script>
+<script src="js/art/scenery.js"></script>
+<script src="js/art/characters.js"></script>
+<script src="js/art/props.js"></script>
+<script src="js/art/scenes.js"></script>
+<script>
+'use strict';
+// ---------- isometric grid ----------
+const TW = 64, TH = 32, DEPTH = 7;         // 2:1 diamond tiles, soil block height
+const OX = 280, OY = 236;                  // screen position of grid cell (0,0)'s top corner
+const iso = (gx, gy) => [OX + (gx - gy) * TW / 2, OY + (gx + gy) * TH / 2];
+// 4 fields of 4×3 plots, laid out 2×2 with a one-tile path between them.
+const cell = (fi, pi) => [(fi % 2) * 5 + pi % 4, (fi >> 1) * 4 + Math.floor(pi / 4)];
+
+const poly = pts => pts.map(p => p.map(n => Math.round(n * 10) / 10).join(',')).join(' ');
+// A raised block covering grid rect [gx0,gx1]×[gy0,gy1]: top face plus the two visible sides.
+function block(gx0, gy0, gx1, gy1, depth, top, left, right, extra = '') {
+  const a = iso(gx0, gy0), b = iso(gx1, gy0), c = iso(gx1, gy1), d = iso(gx0, gy1);
+  const dn = p => [p[0], p[1] + depth];
+  return `<polygon points="${poly([d, c, dn(c), dn(d)])}" fill="${left}" stroke="${O}" stroke-width="2" stroke-linejoin="round"/>` +
+    `<polygon points="${poly([c, b, dn(b), dn(c)])}" fill="${right}" stroke="${O}" stroke-width="2" stroke-linejoin="round"/>` +
+    `<polygon class="top" points="${poly([a, b, c, d])}" fill="${top}" stroke="${O}" stroke-width="2" stroke-linejoin="round"${extra}/>`;
+}
+
+// ---------- demo farm ----------
+const S = newGame(() => 1);
+[[0, [1, 2, 3, 4, 5, 5, 4, 3, 5, 2, 1, 6]], [3, [4, 5, 5, 4, 3, 2, 5, 4, 6, 5, 4, 3]],
+ [6, [5, 4, 5, 3, 5, 4, 2, 5, 4, 3, 5, 4]], [7, [1, 2, 3, 3, 4, 5, 4, 3, 2, 5, 1, 2]]].forEach(([crop, stages], fi) => {
+  S.fields[fi].crop = crop;
+  S.fields[fi].plots.forEach((p, i) => { p.stage = stages[i]; p.watered = (i + fi) % 3 === 0; p.fertilized = i % 4 === 1; p.bug = i === 6 && fi === 1; });
+});
+let tool = 'water';
+
+function plotTile(fi, pi) {
+  const f = S.fields[fi], p = f.plots[pi], [gx, gy] = cell(fi, pi), [x, y] = iso(gx, gy);
+  const wet = p.watered;
+  let s = `<g class="tile" data-f="${fi}" data-p="${pi}">`;
+  s += block(gx + .06, gy + .06, gx + .94, gy + .94, DEPTH, wet ? '#7a4e2e' : '#b7824f', wet ? '#5a3820' : '#8f6038', wet ? '#6b4426' : '#a5733f');
+  // furrows run along the field rows
+  const f1 = iso(gx + .2, gy + .35), f2 = iso(gx + .8, gy + .35), f3 = iso(gx + .2, gy + .65), f4 = iso(gx + .8, gy + .65);
+  s += `<path d="M${f1}L${f2}M${f3}L${f4}" stroke="${wet ? '#5e3a20' : '#9c6a3c'}" stroke-width="2" stroke-linecap="round" pointer-events="none"/>`;
+  if (p.fertilized) [[.3, .2], [.75, .3], [.25, .8], [.7, .78]].forEach(([u, v]) => { const q = iso(gx + u, gy + v); s += `<circle cx="${q[0]}" cy="${q[1]}" r="1.8" fill="#f4f0e0" stroke="${O}" stroke-width=".6" pointer-events="none"/>`; });
+  if (p.stage > 0) s += `<g pointer-events="none" transform="translate(${x} ${y + TH / 2 + 2})">${plantArt(f.crop, p.stage)}${p.bug ? bugsArt() : ''}</g>`;
+  return s + '</g>';
+}
+
+function render() {
+  let s = '<defs><clipPath id="horizon"><rect width="800" height="250"/></clipPath></defs>';
+  // horizon: the far part of the farm background (sky, paddies, house) stays a flat backdrop
+  s += `<g clip-path="url(#horizon)">${Assets.has('bg.farm') ? Assets.image('bg.farm') : farmBG()}</g>`;
+  s += `<rect y="248" width="800" height="352" fill="#bccb6c"/><path d="M0 250Q200 244 400 249T800 248" fill="none" stroke="${O}" stroke-width="3"/>`;
+  s += cloud(250, 72, 1, '') + cloud(470, 52, .75, 'd2');
+  // iso yard, field bunds, path
+  s += block(-.8, -.8, 9.8, 7.8, 12, '#d6b277', '#b08a50', '#c29a5e');
+  [0, 1, 2, 3].forEach(fi => { const gx = (fi % 2) * 5, gy = (fi >> 1) * 4; s += block(gx - .25, gy - .25, gx + 4.25, gy + 3.25, 6, '#8fb04a', '#6f8f3a', '#7ea042'); });
+  // plots back to front so nearer plants overlap farther ones
+  const order = [];
+  S.fields.forEach((f, fi) => f.plots.forEach((p, pi) => { const [gx, gy] = cell(fi, pi); order.push([gx + gy, gx, fi, pi]); }));
+  order.sort((a, b) => a[0] - b[0] || a[1] - b[1]).forEach(([, , fi, pi]) => { s += plotTile(fi, pi); });
+  // field labels on each field's outer corner so they never cover crops
+  S.fields.forEach((f, fi) => {
+    const label = `แปลง ${fi + 1} · ${f.crop === null ? 'ว่าง' : CONFIG.CROPS[f.crop].th}`, w = 20 + label.length * 7.2;
+    const [gx, gy] = [(fi % 2) * 5, (fi >> 1) * 4];
+    const spot = [iso(gx - .25, gy - .25), iso(gx + 4.25, gy - .25), iso(gx - .25, gy + 3.25), iso(gx + 4.25, gy + 3.25)][fi];
+    const [lx, ly] = [[spot[0] - w / 2, spot[1] - 30], [spot[0] + 10, spot[1] - 8], [spot[0] - 6, spot[1] + 14], [spot[0] - w / 2, spot[1] + 16]][fi];
+    s += `<g transform="translate(${lx} ${ly})"><rect width="${w}" height="16" rx="5" fill="#fff4d6" stroke="${O}" stroke-width="2"/><text x="7" y="12" font-family="Kanit" font-size="11" fill="${O}">${label}</text></g>`;
+  });
+  // current (front-view) props placed on the iso ground, to judge how they mix
+  s += buffalo() + fence(610, 800, 350);
+  s += dragonJar(748, 362) + farmer(690, 462, false);
+  s += oxCart(540, 596, false);
+  s += `<g transform="translate(-4 60)">${signpost(false)}</g>`;
+  document.getElementById('scene').innerHTML = s;
+}
+
+document.getElementById('scene').addEventListener('click', e => {
+  const t = e.target.closest('.tile'); if (!t) return;
+  const f = S.fields[+t.dataset.f], p = f.plots[+t.dataset.p];
+  if (tool === 'water') p.watered = !p.watered;
+  else if (tool === 'grow') p.stage = p.stage >= WITHERED ? 1 : p.stage + 1;
+  else if (tool === 'bug') p.bug = !p.bug;
+  else if (tool === 'cut') { Object.assign(p, emptyPlot()); }
+  else if (tool === 'seed') { if (f.crop === null) f.crop = 0; p.stage = 1; }
+  render();
+});
+document.querySelectorAll('[data-tool]').forEach(b => b.addEventListener('click', () => {
+  tool = b.dataset.tool;
+  document.querySelectorAll('[data-tool]').forEach(x => x.classList.toggle('sel', x === b));
+}));
+function fit() { document.getElementById('stage').style.transform = `scale(${Math.min(innerWidth / 800, innerHeight / 600)})`; }
+addEventListener('resize', fit); fit();
+render();
+Assets.load().then(ids => { if (ids.length) { for (const k in plantCache) delete plantCache[k]; render(); } });
+window.__iso = { S, render };
+</script>
+</body>
+</html>
