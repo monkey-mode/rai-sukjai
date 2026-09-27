@@ -42,10 +42,16 @@ js/main.js            input handling, End Day flow, boot
 - To restore the original flat 2% rain, set `CONFIG.RAIN_CHANCE = 0.02` in `js/logic/config.js`.
 - `endDay` runs in this order: bug deaths, then growth and rot, then new bug rolls, then ducks, then the next day and its rain roll.
 
+## Art assets (multi-agent)
+
+The art is currently drawn in code. Replacement asset files are produced by a separate asset AI, coordinated through one central file, `assets/manifest.json`. It lists 93 assets, each with a prompt, size, anchor, output path and status. The workflow and a kickoff prompt for the asset AI are in [`assets/README.md`](assets/README.md). `node tools/check-assets.mjs --queue` shows progress.
+
 ## Tests
 
 ```sh
 node --test tests/*.test.mjs
 ```
+
+`assets.test.mjs` also validates the asset manifest.
 
 The tests load the `js/logic/` scripts into a Node VM and drive it with seeded or stubbed RNGs.

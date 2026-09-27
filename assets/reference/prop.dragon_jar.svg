@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder reference rendered from the game code. Not the final asset. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-36.5 -1 74.5 98" width="74.5" height="98"><g>
+  <ellipse cx="0" cy="88" rx="32" ry="6" fill="rgba(0,0,0,.2)"/>
+  <path d="M-20 8Q-46 40 -22 88L22 88Q46 40 20 8Z" fill="#7b3a1a" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+  <path d="M-28 48Q-14 30 -2 48T24 44" fill="none" stroke="#3a2213" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-28 48Q-14 30 -2 48T24 44" fill="none" stroke="#f2c14e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="26" cy="42" r="5.5" fill="#f2c14e" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/><circle cx="27" cy="41" r="1.2" fill="#3a2213"/>
+  <path d="M30 38l5 -4M-26 48l-5 5M-12 38l-1 -5M8 50l1 5" fill="none" stroke="#f2c14e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-24 64Q0 70 24 64" fill="none" stroke="#5a2a12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-27 26Q-32 48 -22 72" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse rx="21" ry="6" transform="translate(0 8) rotate(0)" fill="#5a2a12" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5"/><ellipse rx="16" ry="3.5" transform="translate(0 9) rotate(0)" fill="#5fb3dd" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/>
+  <path d="M8 4q10 -4 12 4" fill="#8a6440" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.6"/></g></svg>

@@ -1,0 +1,2513 @@
+{
+  "schema_version": 1,
+  "project": "ไร่สุขใจ (Rai Sukjai): a Thai-countryside farming game",
+  "about": "Central asset list. The mechanics agent (Claude Code) writes each asset's spec and prompt. The asset agent reads it, creates the file at `output` and stamps the status fields back here. Full rules: assets/README.md.",
+  "protocol": {
+    "statuses": {
+      "todo": "not started",
+      "in_progress": "claimed by an asset agent (set `agent` and `updated_at`)",
+      "done": "file created at `output`; `file` set to that path; waiting for review",
+      "needs_changes": "reviewer wrote what to fix in `review`; asset agent redoes it and sets done again",
+      "approved": "accepted; the game may use it",
+      "blocked": "cannot be done as specified; explain in `notes`"
+    },
+    "asset_agent_may_edit": [
+      "status",
+      "file",
+      "agent",
+      "updated_at",
+      "notes"
+    ],
+    "reviewer_may_edit": [
+      "status",
+      "review"
+    ],
+    "everything_else": "owned by the mechanics agent; do not change it. Leave suggestions in `notes`.",
+    "updated_at_format": "ISO 8601 UTC, e.g. 2026-09-27T14:05:00Z",
+    "validate": "node tools/check-assets.mjs"
+  },
+  "style_guide": {
+    "look": "Warm, hand-drawn cartoon in the style of 2000s Flash games: thick dark-brown outlines (#3a2213) about 2–3 px at 1× with round joins and caps, flat colour fills, at most one simple highlight or shade shape per part, slightly chunky and friendly proportions. No gradients (except the sky in backgrounds), no photorealism, no soft airbrush shading, no drop shadows (the game adds shadows).",
+    "setting": "Central Thai countryside (rice paddies, sugar palms, wooden stilt houses, village market). Culturally accurate and respectful details.",
+    "originality": "Original art only. Do NOT copy or trace the original 'The Farmer' / 'Sim Farm' Flash game graphics or any other existing game.",
+    "palette": {
+      "outline": "#3a2213",
+      "soil_dry": "#b7824f",
+      "soil_wet": "#7a4e2e",
+      "leaf_light": "#6cc644",
+      "leaf": "#4aa844",
+      "leaf_dark": "#2f7d32",
+      "kale": "#2f8157",
+      "wood": "#a8693a",
+      "wood_dark": "#7a4a26",
+      "straw": "#e3c070",
+      "paper": "#fff4d6",
+      "chili_red": "#d8261d",
+      "mango_yellow": "#f7c52b",
+      "tuber_purple": "#a23b6c",
+      "sky": "#86cdea",
+      "grass": "#bccb6c",
+      "accent_red": "#c8372d",
+      "gold": "#f2b632"
+    },
+    "text": "No text inside images unless the prompt asks for it. The game renders all labels itself.",
+    "file_rules": [
+      "SVG preferred: viewBox=\"0 0 W H\" matching `canvas`, and width/height attributes equal to the canvas.",
+      "Transparent background for everything except `background` assets.",
+      "Self-contained: no external links, fonts, scripts or embedded raster images. Convert text to paths.",
+      "Prefix any id attributes with the asset id with dots replaced by '-' (e.g. crop-phrik-s3-leaf) so files can be inlined together.",
+      "Keep each file under 40 KB; backgrounds under 200 KB.",
+      "If SVG is impossible, a PNG at 2× the canvas size is accepted: save it next to `output` with a .png extension and put that path in `file`."
+    ],
+    "anchor": "`anchor` is the [x, y] point in canvas pixels that the game places on the target spot. For crops it is the soil point the plant grows from. For characters, animals and props it is where the feet or base touch the ground. For icons it is the centre.",
+    "consistency": "Keep the same outline weight, palette and lighting (light from top-left) across all assets. The five stages of one crop must clearly be the same plant growing."
+  },
+  "categories": {
+    "crop": "Plant at a growth stage, drawn over a soil tile. Canvas 64×64, anchor (32,56). Keep the plant inside x 6–58 and y 4–60 so neighbouring plots overlap only slightly.",
+    "crop_overlay": "Transparent layer placed on top of a crop.",
+    "produce_icon": "Harvested item, 32×32, centred. Reused at 18–40 px.",
+    "seed_packet": "Seed packet, 36×40.",
+    "tool_icon": "Toolbar button icon, 36×36.",
+    "hud_icon": "Small HUD icon, 24×24, must read at 17 px.",
+    "tile": "Farm plot tile, 48×38. 48 of them sit in 4 fields of 4×3.",
+    "tile_overlay": "Transparent layer placed on top of a tile.",
+    "character": "People. Anchor = between the feet (or the waist for Auntie Daeng).",
+    "animal": "Animals. Anchor = ground under the body.",
+    "prop": "Interactive or foreground objects. Anchor = base on the ground.",
+    "scenery": "Decorative, possibly animated background pieces.",
+    "background": "Full 800×600 stage. Respect the KEEP CLEAR zones in the prompt.",
+    "ui": "Interface art."
+  },
+  "assets": [
+    {
+      "id": "crop.phakbung.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ผักบุ้ง · ต้นกล้า",
+      "name_en": "Morning glory (water spinach) — stage 1 (seedling)",
+      "output": "assets/crops/phakbung/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Morning glory (water spinach). Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phakbung.s1.svg",
+      "reference_render": "plantArt(0,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phakbung.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ผักบุ้ง · ต้นเล็ก",
+      "name_en": "Morning glory (water spinach) — stage 2 (small)",
+      "output": "assets/crops/phakbung/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phakbung.s2.svg",
+      "reference_render": "plantArt(0,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phakbung.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ผักบุ้ง · ต้นกลาง",
+      "name_en": "Morning glory (water spinach) — stage 3 (medium)",
+      "output": "assets/crops/phakbung/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phakbung.s3.svg",
+      "reference_render": "plantArt(0,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phakbung.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ผักบุ้ง · ใกล้สุก",
+      "name_en": "Morning glory (water spinach) — stage 4 (nearly ripe)",
+      "output": "assets/crops/phakbung/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: a tall, full bunch of arrow leaves, no flowers yet. Foliage: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phakbung.s4.svg",
+      "reference_render": "plantArt(0,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phakbung.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ผักบุ้ง · สุก",
+      "name_en": "Morning glory (water spinach) — stage 5 (ripe)",
+      "output": "assets/crops/phakbung/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: a very lush, tall bunch of glossy arrow leaves with one small pale-lilac trumpet flower. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phakbung.s5.svg",
+      "reference_render": "plantArt(0,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.khana.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "คะน้า · ต้นกล้า",
+      "name_en": "Chinese kale — stage 1 (seedling)",
+      "output": "assets/crops/khana/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chinese kale (คะน้า) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Chinese kale. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.khana.s1.svg",
+      "reference_render": "plantArt(1,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.khana.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "คะน้า · ต้นเล็ก",
+      "name_en": "Chinese kale — stage 2 (small)",
+      "output": "assets/crops/khana/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chinese kale (คะน้า) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.khana.s2.svg",
+      "reference_render": "plantArt(1,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.khana.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "คะน้า · ต้นกลาง",
+      "name_en": "Chinese kale — stage 3 (medium)",
+      "output": "assets/crops/khana/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chinese kale (คะน้า) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.khana.s3.svg",
+      "reference_render": "plantArt(1,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.khana.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "คะน้า · ใกล้สุก",
+      "name_en": "Chinese kale — stage 4 (nearly ripe)",
+      "output": "assets/crops/khana/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chinese kale (คะน้า) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: a full rosette of big blue-green leaves. Foliage: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.khana.s4.svg",
+      "reference_render": "plantArt(1,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.khana.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "คะน้า · สุก",
+      "name_en": "Chinese kale — stage 5 (ripe)",
+      "output": "assets/crops/khana/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chinese kale (คะน้า) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: a larger, denser rosette with a pale-green heart of fresh inner leaves, crisp and glossy. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.khana.s5.svg",
+      "reference_render": "plantArt(1,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.manthet.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มันเทศ · ต้นกล้า",
+      "name_en": "Sweet potato — stage 1 (seedling)",
+      "output": "assets/crops/manthet/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Sweet potato (มันเทศ) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Sweet potato. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.manthet.s1.svg",
+      "reference_render": "plantArt(2,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.manthet.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มันเทศ · ต้นเล็ก",
+      "name_en": "Sweet potato — stage 2 (small)",
+      "output": "assets/crops/manthet/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Sweet potato (มันเทศ) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a low spreading vine with purple stems and heart-shaped green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.manthet.s2.svg",
+      "reference_render": "plantArt(2,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.manthet.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มันเทศ · ต้นกลาง",
+      "name_en": "Sweet potato — stage 3 (medium)",
+      "output": "assets/crops/manthet/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Sweet potato (มันเทศ) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a low spreading vine with purple stems and heart-shaped green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.manthet.s3.svg",
+      "reference_render": "plantArt(2,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.manthet.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มันเทศ · ใกล้สุก",
+      "name_en": "Sweet potato — stage 4 (nearly ripe)",
+      "output": "assets/crops/manthet/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Sweet potato (มันเทศ) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full vine with the tops of purple-brown tubers just peeking out of the soil. Foliage: a low spreading vine with purple stems and heart-shaped green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.manthet.s4.svg",
+      "reference_render": "plantArt(2,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.manthet.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มันเทศ · สุก",
+      "name_en": "Sweet potato — stage 5 (ripe)",
+      "output": "assets/crops/manthet/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Sweet potato (มันเทศ) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full vine with two plump magenta-purple sweet potatoes clearly exposed at soil level. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a low spreading vine with purple stems and heart-shaped green leaves. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.manthet.s5.svg",
+      "reference_render": "plantArt(2,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phrik.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "พริก · ต้นกล้า",
+      "name_en": "Chili (bird's-eye) — stage 1 (seedling)",
+      "output": "assets/crops/phrik/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chili (bird's-eye) (พริก) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Chili (bird's-eye). Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phrik.s1.svg",
+      "reference_render": "plantArt(3,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phrik.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "พริก · ต้นเล็ก",
+      "name_en": "Chili (bird's-eye) — stage 2 (small)",
+      "output": "assets/crops/phrik/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chili (bird's-eye) (พริก) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a small bushy shrub with a thin green stem and many small glossy oval leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phrik.s2.svg",
+      "reference_render": "plantArt(3,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phrik.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "พริก · ต้นกลาง",
+      "name_en": "Chili (bird's-eye) — stage 3 (medium)",
+      "output": "assets/crops/phrik/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chili (bird's-eye) (พริก) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a small bushy shrub with a thin green stem and many small glossy oval leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phrik.s3.svg",
+      "reference_render": "plantArt(3,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phrik.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "พริก · ใกล้สุก",
+      "name_en": "Chili (bird's-eye) — stage 4 (nearly ripe)",
+      "output": "assets/crops/phrik/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chili (bird's-eye) (พริก) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full bush with 3 small green chilies hanging. Foliage: a small bushy shrub with a thin green stem and many small glossy oval leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phrik.s4.svg",
+      "reference_render": "plantArt(3,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.phrik.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "พริก · สุก",
+      "name_en": "Chili (bird's-eye) — stage 5 (ripe)",
+      "output": "assets/crops/phrik/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Chili (bird's-eye) (พริก) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full bush with 5 bright red bird's-eye chilies hanging, pointing downward. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a small bushy shrub with a thin green stem and many small glossy oval leaves. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.phrik.s5.svg",
+      "reference_render": "plantArt(3,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.thua.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว · ต้นกล้า",
+      "name_en": "Long bean (yardlong bean) — stage 1 (seedling)",
+      "output": "assets/crops/thua/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Long bean (yardlong bean). Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.thua.s1.svg",
+      "reference_render": "plantArt(4,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.thua.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว · ต้นเล็ก",
+      "name_en": "Long bean (yardlong bean) — stage 2 (small)",
+      "output": "assets/crops/thua/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a green vine twining up a tan bamboo stake, with trifoliate leaves along it. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.thua.s2.svg",
+      "reference_render": "plantArt(4,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.thua.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว · ต้นกลาง",
+      "name_en": "Long bean (yardlong bean) — stage 3 (medium)",
+      "output": "assets/crops/thua/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a green vine twining up a tan bamboo stake, with trifoliate leaves along it. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.thua.s3.svg",
+      "reference_render": "plantArt(4,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.thua.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว · ใกล้สุก",
+      "name_en": "Long bean (yardlong bean) — stage 4 (nearly ripe)",
+      "output": "assets/crops/thua/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the vine to the top of the stake with small lilac flowers and two short green pods. Foliage: a green vine twining up a tan bamboo stake, with trifoliate leaves along it. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.thua.s4.svg",
+      "reference_render": "plantArt(4,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.thua.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว · สุก",
+      "name_en": "Long bean (yardlong bean) — stage 5 (ripe)",
+      "output": "assets/crops/thua/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the vine to the top of the stake with 4 very long thin green pods hanging down. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a green vine twining up a tan bamboo stake, with trifoliate leaves along it. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.thua.s5.svg",
+      "reference_render": "plantArt(4,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.strawberry.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย · ต้นกล้า",
+      "name_en": "Highland strawberry — stage 1 (seedling)",
+      "output": "assets/crops/strawberry/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Highland strawberry. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.strawberry.s1.svg",
+      "reference_render": "plantArt(5,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.strawberry.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย · ต้นเล็ก",
+      "name_en": "Highland strawberry — stage 2 (small)",
+      "output": "assets/crops/strawberry/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a low rosette of serrated trifoliate leaves on short stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.strawberry.s2.svg",
+      "reference_render": "plantArt(5,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.strawberry.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย · ต้นกลาง",
+      "name_en": "Highland strawberry — stage 3 (medium)",
+      "output": "assets/crops/strawberry/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a low rosette of serrated trifoliate leaves on short stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.strawberry.s3.svg",
+      "reference_render": "plantArt(5,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.strawberry.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย · ใกล้สุก",
+      "name_en": "Highland strawberry — stage 4 (nearly ripe)",
+      "output": "assets/crops/strawberry/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full rosette with two white 5-petal flowers (yellow centres) and one small green berry. Foliage: a low rosette of serrated trifoliate leaves on short stalks. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.strawberry.s4.svg",
+      "reference_render": "plantArt(5,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.strawberry.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย · สุก",
+      "name_en": "Highland strawberry — stage 5 (ripe)",
+      "output": "assets/crops/strawberry/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full rosette with 4 plump red strawberries with tiny yellow seeds and green caps. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a low rosette of serrated trifoliate leaves on short stalks. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.strawberry.s5.svg",
+      "reference_render": "plantArt(5,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.mango.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้ · ต้นกล้า",
+      "name_en": "Nam Dok Mai mango (young tree) — stage 1 (seedling)",
+      "output": "assets/crops/mango/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Nam Dok Mai mango (young tree). Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.mango.s1.svg",
+      "reference_render": "plantArt(6,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.mango.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้ · ต้นเล็ก",
+      "name_en": "Nam Dok Mai mango (young tree) — stage 2 (small)",
+      "output": "assets/crops/mango/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.mango.s2.svg",
+      "reference_render": "plantArt(6,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.mango.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้ · ต้นกลาง",
+      "name_en": "Nam Dok Mai mango (young tree) — stage 3 (medium)",
+      "output": "assets/crops/mango/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.mango.s3.svg",
+      "reference_render": "plantArt(6,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.mango.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้ · ใกล้สุก",
+      "name_en": "Nam Dok Mai mango (young tree) — stage 4 (nearly ripe)",
+      "output": "assets/crops/mango/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full little tree with 3 small green mangoes hanging from the crown. Foliage: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.mango.s4.svg",
+      "reference_render": "plantArt(6,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.mango.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้ · สุก",
+      "name_en": "Nam Dok Mai mango (young tree) — stage 5 (ripe)",
+      "output": "assets/crops/mango/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full little tree with 5 golden-yellow Nam Dok Mai mangoes (long, slightly curved) with a pink-orange blush. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.mango.s5.svg",
+      "reference_render": "plantArt(6,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.watermelon.s1",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "แตงโม · ต้นกล้า",
+      "name_en": "Watermelon — stage 1 (seedling)",
+      "output": "assets/crops/watermelon/stage1.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Watermelon (แตงโม) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Watermelon. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.watermelon.s1.svg",
+      "reference_render": "plantArt(7,1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.watermelon.s2",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "แตงโม · ต้นเล็ก",
+      "name_en": "Watermelon — stage 2 (small)",
+      "output": "assets/crops/watermelon/stage2.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Watermelon (แตงโม) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: ground-hugging vines with deeply lobed leaves and curly tendrils. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.watermelon.s2.svg",
+      "reference_render": "plantArt(7,2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.watermelon.s3",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "แตงโม · ต้นกลาง",
+      "name_en": "Watermelon — stage 3 (medium)",
+      "output": "assets/crops/watermelon/stage3.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Watermelon (แตงโม) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: ground-hugging vines with deeply lobed leaves and curly tendrils. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.watermelon.s3.svg",
+      "reference_render": "plantArt(7,3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.watermelon.s4",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "แตงโม · ใกล้สุก",
+      "name_en": "Watermelon — stage 4 (nearly ripe)",
+      "output": "assets/crops/watermelon/stage4.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Watermelon (แตงโม) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full vines with one small light-green striped melon. Foliage: ground-hugging vines with deeply lobed leaves and curly tendrils. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.watermelon.s4.svg",
+      "reference_render": "plantArt(7,4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.watermelon.s5",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "แตงโม · สุก",
+      "name_en": "Watermelon — stage 5 (ripe)",
+      "output": "assets/crops/watermelon/stage5.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Watermelon (แตงโม) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full vines with one big round dark-green watermelon with dark wavy stripes, resting on the soil. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: ground-hugging vines with deeply lobed leaves and curly tendrils. The game adds its own sparkle, so do not draw one. Draw it growing out of a small dark-brown soil mound centred on the anchor point.",
+      "reference": "assets/reference/crop.watermelon.s5.svg",
+      "reference_render": "plantArt(7,5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.withered",
+      "category": "crop",
+      "priority": 1,
+      "name_th": "ต้นเหี่ยว",
+      "name_en": "Withered / rotten plant (any crop)",
+      "output": "assets/crops/withered.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "A dead plant that must be cleared: a drooping brown-tan stalk bent over, with 3 curled dry tan leaves, on a small dark soil mound. Generic enough to stand for any crop. Sad but still cute, not gross.",
+      "reference": "assets/reference/crop.withered.svg",
+      "reference_render": "plantArt(0,6)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "crop.bugs",
+      "category": "crop_overlay",
+      "priority": 1,
+      "name_th": "แมลงศัตรูพืช",
+      "name_en": "Bug overlay (pests on a plant)",
+      "output": "assets/crops/bugs.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "prompt": "Transparent overlay placed on top of a stage-4 plant: two small cartoon pests, a round purple beetle on the left around (25,43) and a green shield bug on the right around (40,35), each about 9 px long, with tiny legs and a bold outline. Nothing else in the image. The game wiggles this layer.",
+      "reference": "assets/reference/crop.bugs.svg",
+      "reference_render": "BUGS",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.phakbung",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "ผักบุ้ง",
+      "name_en": "Morning glory (water spinach) — harvested produce icon",
+      "output": "assets/produce/phakbung.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: a bunch of phak bung (morning glory) stems with arrow leaves, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.phakbung.svg",
+      "reference_render": "produceIcon(0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.khana",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "คะน้า",
+      "name_en": "Chinese kale — harvested produce icon",
+      "output": "assets/produce/khana.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: a bunch of three big blue-green kale leaves on thick pale stalks, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.khana.svg",
+      "reference_render": "produceIcon(1)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.manthet",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "มันเทศ",
+      "name_en": "Sweet potato — harvested produce icon",
+      "output": "assets/produce/manthet.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: one plump magenta-purple sweet potato with a thin root tail and a small highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.manthet.svg",
+      "reference_render": "produceIcon(2)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.phrik",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "พริก",
+      "name_en": "Chili (bird's-eye) — harvested produce icon",
+      "output": "assets/produce/phrik.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: one big shiny red bird's-eye chili with a green cap, lying diagonally. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.phrik.svg",
+      "reference_render": "produceIcon(3)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.thua",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "ถั่วฝักยาว",
+      "name_en": "Long bean (yardlong bean) — harvested produce icon",
+      "output": "assets/produce/thua.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: a bundle of four very long thin green beans, curved, tied with a red band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.thua.svg",
+      "reference_render": "produceIcon(4)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.strawberry",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "สตรอว์เบอร์รี่ดอย",
+      "name_en": "Highland strawberry — harvested produce icon",
+      "output": "assets/produce/strawberry.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: one plump red strawberry with tiny yellow seeds and a green leafy cap. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.strawberry.svg",
+      "reference_render": "produceIcon(5)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.mango",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "มะม่วงน้ำดอกไม้",
+      "name_en": "Nam Dok Mai mango (young tree) — harvested produce icon",
+      "output": "assets/produce/mango.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: one golden-yellow Nam Dok Mai mango, long and slightly curved, with a pink-orange blush and a small leaf on the stem. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.mango.svg",
+      "reference_render": "produceIcon(6)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.watermelon",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "แตงโม",
+      "name_en": "Watermelon — harvested produce icon",
+      "output": "assets/produce/watermelon.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "Harvested produce icon: one round dark-green watermelon with dark wavy stripes and a small white highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+      "reference": "assets/reference/produce.watermelon.svg",
+      "reference_render": "produceIcon(7)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "produce.egg",
+      "category": "produce_icon",
+      "priority": 1,
+      "name_th": "ไข่เป็ด",
+      "name_en": "Duck egg icon",
+      "output": "assets/produce/egg.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        32
+      ],
+      "anchor": [
+        16,
+        16
+      ],
+      "prompt": "One duck egg: slightly bluish off-white (#f1ede0), upright oval, with a soft white highlight and two tiny speckles. Centred.",
+      "reference": "assets/reference/produce.egg.svg",
+      "reference_render": "eggIcon()",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.phakbung",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดผักบุ้ง",
+      "name_en": "Morning glory (water spinach) seed packet",
+      "output": "assets/seeds/phakbung.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #8fd14f, with a rounded off-white window in the middle showing a small morning glory (water spinach) (a bunch of phak bung (morning glory) stems with arrow leaves). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.phakbung.svg",
+      "reference_render": "packetSVG(0)",
+      "packet_color": "#8fd14f",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.khana",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดคะน้า",
+      "name_en": "Chinese kale seed packet",
+      "output": "assets/seeds/khana.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #5bbf8a, with a rounded off-white window in the middle showing a small chinese kale (a bunch of three big blue-green kale leaves on thick pale stalks). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.khana.svg",
+      "reference_render": "packetSVG(1)",
+      "packet_color": "#5bbf8a",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.manthet",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดมันเทศ",
+      "name_en": "Sweet potato seed packet",
+      "output": "assets/seeds/manthet.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #c98ad6, with a rounded off-white window in the middle showing a small sweet potato (one plump magenta-purple sweet potato with a thin root tail and a small highlight). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.manthet.svg",
+      "reference_render": "packetSVG(2)",
+      "packet_color": "#c98ad6",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.phrik",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดพริก",
+      "name_en": "Chili (bird's-eye) seed packet",
+      "output": "assets/seeds/phrik.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ff8a6a, with a rounded off-white window in the middle showing a small chili (bird's-eye) (one big shiny red bird's-eye chili with a green cap). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.phrik.svg",
+      "reference_render": "packetSVG(3)",
+      "packet_color": "#ff8a6a",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.thua",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดถั่วฝักยาว",
+      "name_en": "Long bean (yardlong bean) seed packet",
+      "output": "assets/seeds/thua.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #b5d86a, with a rounded off-white window in the middle showing a small long bean (yardlong bean) (a bundle of four very long thin green beans). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.thua.svg",
+      "reference_render": "packetSVG(4)",
+      "packet_color": "#b5d86a",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.strawberry",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดสตรอว์เบอร์รี่ดอย",
+      "name_en": "Highland strawberry seed packet",
+      "output": "assets/seeds/strawberry.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ff9fb0, with a rounded off-white window in the middle showing a small highland strawberry (one plump red strawberry with tiny yellow seeds and a green leafy cap). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.strawberry.svg",
+      "reference_render": "packetSVG(5)",
+      "packet_color": "#ff9fb0",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.mango",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดมะม่วงน้ำดอกไม้",
+      "name_en": "Nam Dok Mai mango (young tree) seed packet",
+      "output": "assets/seeds/mango.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ffd24a, with a rounded off-white window in the middle showing a small nam dok mai mango (young tree) (one golden-yellow Nam Dok Mai mango). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.mango.svg",
+      "reference_render": "packetSVG(6)",
+      "packet_color": "#ffd24a",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "seed.watermelon",
+      "category": "seed_packet",
+      "priority": 1,
+      "name_th": "ซองเมล็ดแตงโม",
+      "name_en": "Watermelon seed packet",
+      "output": "assets/seeds/watermelon.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #7fcf6a, with a rounded off-white window in the middle showing a small watermelon (one round dark-green watermelon with dark wavy stripes and a small white highlight). No text. Used on toolbar buttons and shop cards.",
+      "reference": "assets/reference/seed.watermelon.svg",
+      "reference_render": "packetSVG(7)",
+      "packet_color": "#7fcf6a",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tool.water",
+      "category": "tool_icon",
+      "priority": 1,
+      "name_th": "รดน้ำ",
+      "name_en": "Watering can — tool button icon",
+      "output": "assets/tools/water.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "prompt": "Toolbar button icon: a blue metal watering can (บัวรดน้ำ) with a long spout and a round sprinkler rose, handle on top. Chunky, readable at 30 px, centred with a little padding.",
+      "reference": "assets/reference/tool.water.svg",
+      "reference_render": "ICON.water",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tool.fertilize",
+      "category": "tool_icon",
+      "priority": 1,
+      "name_th": "ใส่ปุ๋ย",
+      "name_en": "Fertilizer sack — tool button icon",
+      "output": "assets/tools/fertilize.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "prompt": "Toolbar button icon: a cream burlap fertilizer sack tied at the top, with a small green leaf symbol printed on it. Chunky, readable at 30 px, centred with a little padding.",
+      "reference": "assets/reference/tool.fertilize.svg",
+      "reference_render": "ICON.fertilize",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tool.spray",
+      "category": "tool_icon",
+      "priority": 1,
+      "name_th": "ฉีดยา",
+      "name_en": "Bug sprayer — tool button icon",
+      "output": "assets/tools/spray.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "prompt": "Toolbar button icon: a red pump sprayer tank with a white label patch, a hose and a spray wand, with two tiny mist droplets. Chunky, readable at 30 px, centred with a little padding.",
+      "reference": "assets/reference/tool.spray.svg",
+      "reference_render": "ICON.spray",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tool.cut",
+      "category": "tool_icon",
+      "priority": 1,
+      "name_th": "ถาง",
+      "name_en": "Machete — tool button icon",
+      "output": "assets/tools/cut.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "prompt": "Toolbar button icon: a Thai machete (มีดพร้า) with a broad steel blade and a wooden handle, diagonal. Chunky, readable at 30 px, centred with a little padding.",
+      "reference": "assets/reference/tool.cut.svg",
+      "reference_render": "ICON.cut",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tool.pick",
+      "category": "tool_icon",
+      "priority": 1,
+      "name_th": "เก็บ",
+      "name_en": "Harvest basket — tool button icon",
+      "output": "assets/tools/pick.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "prompt": "Toolbar button icon: a woven bamboo basket (ตะกร้า) with a handle, with one red chili and one yellow mango peeking out. Chunky, readable at 30 px, centred with a little padding.",
+      "reference": "assets/reference/tool.pick.svg",
+      "reference_render": "ICON.pick",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.sun",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "แดดออก",
+      "name_en": "Sunny weather icon",
+      "output": "assets/hud/sun.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a round yellow sun with 8 short rays. Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.sun.svg",
+      "reference_render": "ICON.sun",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.rain",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "ฝนตก",
+      "name_en": "Rain weather icon",
+      "output": "assets/hud/rain.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a white-grey cloud with three light-blue rain streaks falling. Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.rain.svg",
+      "reference_render": "ICON.rain",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.sound_on",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "เปิดเสียง",
+      "name_en": "Sound on",
+      "output": "assets/hud/sound_on.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a dark speaker with two sound-wave arcs. Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.sound_on.svg",
+      "reference_render": "ICON.sound",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.sound_off",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "ปิดเสียง",
+      "name_en": "Sound off (muted)",
+      "output": "assets/hud/sound_off.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a dark speaker with a red X next to it. Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.sound_off.svg",
+      "reference_render": "ICON.mute",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.menu",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "เมนู",
+      "name_en": "Menu",
+      "output": "assets/hud/menu.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: three thick rounded horizontal bars (hamburger menu). Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.menu.svg",
+      "reference_render": "ICON.menu",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.feed",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "อาหารเป็ด",
+      "name_en": "Duck feed",
+      "output": "assets/hud/feed.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a small tan feed sack with brown grain dots. Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.feed.svg",
+      "reference_render": "ICON.feed",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "hud.duck",
+      "category": "hud_icon",
+      "priority": 3,
+      "name_th": "เป็ด",
+      "name_en": "Duck count",
+      "output": "assets/hud/duck.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        12
+      ],
+      "prompt": "HUD icon: a small side view of a brown laying duck (same design as animal.duck). Must read clearly at 17–22 px on a dark wood bar.",
+      "reference": "assets/reference/hud.duck.svg",
+      "reference_render": "ICON.duck",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tile.soil_dry",
+      "category": "tile",
+      "priority": 1,
+      "name_th": "ดินแห้ง",
+      "name_en": "Soil plot — dry",
+      "output": "assets/tiles/soil_dry.svg",
+      "format": "svg",
+      "canvas": [
+        48,
+        38
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "One farm plot tile seen from slightly above: a rounded rectangle (corner radius about 6) of light tilled soil (#b7824f) with a 2 px dark outline and two faint horizontal furrow lines. Must tile in a 4×3 grid with 3 px gaps. No plants.",
+      "reference": "assets/reference/tile.soil_dry.svg",
+      "reference_render": "plotSVG({crop:null},0,{stage:0,watered:false,fertilized:false,bug:false,harvests:0},0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tile.soil_wet",
+      "category": "tile",
+      "priority": 1,
+      "name_th": "ดินเปียก",
+      "name_en": "Soil plot — watered",
+      "output": "assets/tiles/soil_wet.svg",
+      "format": "svg",
+      "canvas": [
+        48,
+        38
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "Same tile as tile.soil_dry but watered: darker, damp soil (#7a4e2e), darker furrows, maybe one or two tiny water glints. Same shape and outline so the two can be swapped.",
+      "reference": "assets/reference/tile.soil_wet.svg",
+      "reference_render": "plotSVG({crop:null},0,{stage:0,watered:true,fertilized:false,bug:false,harvests:0},0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "tile.fertilized",
+      "category": "tile_overlay",
+      "priority": 1,
+      "name_th": "ใส่ปุ๋ยแล้ว",
+      "name_en": "Fertilized overlay",
+      "output": "assets/tiles/fertilized.svg",
+      "format": "svg",
+      "canvas": [
+        48,
+        38
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "Transparent overlay for a soil tile: 5–7 small cream-white fertilizer granules with thin outlines scattered near the tile edges (keep the centre clear for the plant). Nothing else.",
+      "reference": "assets/reference/tile.fertilized.svg",
+      "reference_render": "plotSVG({crop:null},0,{stage:0,watered:false,fertilized:true,bug:false,harvests:0},0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "character.farmer",
+      "category": "character",
+      "priority": 2,
+      "name_th": "ชาวนา",
+      "name_en": "Farmer (player)",
+      "output": "assets/characters/farmer.svg",
+      "format": "svg",
+      "canvas": [
+        70,
+        110
+      ],
+      "anchor": [
+        35,
+        106
+      ],
+      "prompt": "The player: a friendly Thai farmer standing, facing the viewer. Wide conical woven straw hat (งอบ), indigo mor hom shirt, a red-and-white checked pha khao ma cloth tied at the waist, dark-blue trousers, bare feet, calm smile. About 100 px tall.",
+      "reference": "assets/reference/character.farmer.svg",
+      "reference_render": "farmer(0,0,false)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "character.farmer_tired",
+      "category": "character",
+      "priority": 2,
+      "name_th": "ชาวนา (เหนื่อย)",
+      "name_en": "Farmer — tired",
+      "output": "assets/characters/farmer_tired.svg",
+      "format": "svg",
+      "canvas": [
+        70,
+        110
+      ],
+      "anchor": [
+        35,
+        106
+      ],
+      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: droopy half-closed eyes, wavy mouth, slumped shoulders, a blue sweat drop. No speech bubble (the game draws it).",
+      "reference": "assets/reference/character.farmer_tired.svg",
+      "reference_render": "farmer(0,0,true)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "character.auntie_daeng",
+      "category": "character",
+      "priority": 2,
+      "name_th": "ป้าแดง",
+      "name_en": "Auntie Daeng (market seller)",
+      "output": "assets/characters/auntie_daeng.svg",
+      "format": "svg",
+      "canvas": [
+        150,
+        230
+      ],
+      "anchor": [
+        75,
+        226
+      ],
+      "prompt": "Auntie Daeng, the cheerful middle-aged market seller. Upper body only (she stands behind a counter, so fade nothing, just stop at the waist): black hair in a bun with an orange marigold, red blouse (her name means 'red'), thin gold necklace, rosy cheeks, big smile with happy closed eyes, holding up a yellow folding fan in her right hand.",
+      "reference": "assets/reference/character.auntie_daeng.svg",
+      "reference_render": "auntieDaeng(0,0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "character.uncle_mee",
+      "category": "character",
+      "priority": 2,
+      "name_th": "ลุงมี",
+      "name_en": "Uncle Mee (duck farmer)",
+      "output": "assets/characters/uncle_mee.svg",
+      "format": "svg",
+      "canvas": [
+        110,
+        190
+      ],
+      "anchor": [
+        45,
+        186
+      ],
+      "prompt": "Uncle Mee, a kind elderly duck farmer, full body, standing: straw hat, bald with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, loose black trousers, sandals. He holds a tall bamboo duck-herding pole with a small red cloth flag at the top.",
+      "reference": "assets/reference/character.uncle_mee.svg",
+      "reference_render": "uncleMee(0,0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "animal.buffalo",
+      "category": "animal",
+      "priority": 2,
+      "name_th": "ควาย",
+      "name_en": "Water buffalo",
+      "output": "assets/animals/buffalo.svg",
+      "format": "svg",
+      "canvas": [
+        180,
+        110
+      ],
+      "anchor": [
+        90,
+        106
+      ],
+      "prompt": "A calm grey Thai water buffalo standing in side view facing LEFT, with big swept-back crescent horns, a light-grey muzzle, and a small white egret standing on its back. Put the head (with horns) in <g id=\"head\"> pivoting near the neck, and the tail in <g id=\"tail\"> pivoting at its base, so the game can animate grazing and tail swishing.",
+      "reference": "assets/reference/animal.buffalo.svg",
+      "reference_render": "buffalo()",
+      "animated_parts": [
+        "head",
+        "tail"
+      ],
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "animal.duck",
+      "category": "animal",
+      "priority": 2,
+      "name_th": "เป็ดไข่",
+      "name_en": "Laying duck (Khaki Campbell)",
+      "output": "assets/animals/duck.svg",
+      "format": "svg",
+      "canvas": [
+        44,
+        40
+      ],
+      "anchor": [
+        22,
+        36
+      ],
+      "prompt": "A brown Khaki Campbell laying duck in side view facing RIGHT: khaki-brown body, darker brown wing and head, orange bill and feet, small black eye. Plump and cute. The game flips it horizontally and waddles it.",
+      "reference": "assets/reference/animal.duck.svg",
+      "reference_render": "duckShape()",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.dragon_jar",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "โอ่งมังกร",
+      "name_en": "Dragon water jar",
+      "output": "assets/props/dragon_jar.svg",
+      "format": "svg",
+      "canvas": [
+        100,
+        100
+      ],
+      "anchor": [
+        50,
+        96
+      ],
+      "prompt": "A big Ratchaburi dragon water jar (โอ่งมังกร): glazed dark reddish-brown clay, a yellow dragon curling around its belly, dark rim with blue water visible at the top, and a coconut-shell ladle hanging on the rim. Clickable prop (selects the watering tool).",
+      "reference": "assets/reference/prop.dragon_jar.svg",
+      "reference_render": "dragonJar(0,0)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.ox_cart",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "เกวียน",
+      "name_en": "Ox cart (sell produce here)",
+      "output": "assets/props/ox_cart.svg",
+      "format": "svg",
+      "canvas": [
+        200,
+        110
+      ],
+      "anchor": [
+        100,
+        106
+      ],
+      "prompt": "A traditional wooden Thai ox cart (เกวียน) in side view, shaft pointing LEFT, one big spoked wooden wheel, loaded with two woven baskets holding a watermelon, a mango, chilies and strawberries. No sign and no text (the game adds a label). The player clicks it to sell produce.",
+      "reference": "assets/reference/prop.ox_cart.svg",
+      "reference_render": "oxCart(0,0,false)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.signboard",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "ป้ายบอกทาง",
+      "name_en": "Signpost board (blank arrow)",
+      "output": "assets/props/signboard.svg",
+      "format": "svg",
+      "canvas": [
+        92,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "One blank wooden arrow-shaped direction board pointing RIGHT, warm orange-brown wood with grain lines and a thick outline. NO text (the game writes 'ไปตลาด' / 'คอกเป็ด' on it). Two are stacked on a pole.",
+      "reference": "assets/reference/prop.signboard.svg",
+      "reference_render": "signpost(false)",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.signpole",
+      "category": "prop",
+      "priority": 3,
+      "name_th": "เสาป้าย",
+      "name_en": "Signpost pole",
+      "output": "assets/props/signpole.svg",
+      "format": "svg",
+      "canvas": [
+        12,
+        134
+      ],
+      "anchor": [
+        6,
+        134
+      ],
+      "prompt": "A plain wooden signpost pole, 8 px wide, weathered brown with a thick outline.",
+      "reference": null,
+      "reference_render": null,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.trough",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "รางอาหารเป็ด",
+      "name_en": "Duck feed trough (empty)",
+      "output": "assets/props/trough.svg",
+      "format": "svg",
+      "canvas": [
+        150,
+        50
+      ],
+      "anchor": [
+        75,
+        48
+      ],
+      "prompt": "An EMPTY long wooden feed trough on two short legs, seen from the front-top so the inside is visible and dark. The game draws the feed level inside the rectangle x 8–142, y 6–24, so keep that area plain.",
+      "reference": "assets/reference/prop.trough.svg",
+      "reference_render": "penPart('trough')",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.nest",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "รังไข่",
+      "name_en": "Straw nest (empty)",
+      "output": "assets/props/nest.svg",
+      "format": "svg",
+      "canvas": [
+        130,
+        46
+      ],
+      "anchor": [
+        65,
+        23
+      ],
+      "prompt": "A wide, shallow, EMPTY straw nest (flat ellipse, golden straw with strands sticking out), seen from slightly above. The game places up to 12 eggs on top of it.",
+      "reference": "assets/reference/prop.nest.svg",
+      "reference_render": "penPart('nest')",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.egg_basket",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "ตะกร้าขายไข่",
+      "name_en": "Egg selling basket",
+      "output": "assets/props/egg_basket.svg",
+      "format": "svg",
+      "canvas": [
+        90,
+        80
+      ],
+      "anchor": [
+        45,
+        78
+      ],
+      "prompt": "A woven bamboo basket with an arched handle, two duck eggs visible at the top. The player drops eggs here to sell them.",
+      "reference": "assets/reference/prop.egg_basket.svg",
+      "reference_render": "penPart('basket')",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "prop.market_counter",
+      "category": "prop",
+      "priority": 2,
+      "name_th": "แผงขายผัก",
+      "name_en": "Market counter (foreground)",
+      "output": "assets/props/market_counter.svg",
+      "format": "svg",
+      "canvas": [
+        204,
+        120
+      ],
+      "anchor": [
+        102,
+        120
+      ],
+      "prompt": "The front of Auntie Daeng's wooden market counter, drawn in front of her: wooden planks, and three shallow woven trays on top holding red chilies, yellow mangoes and purple sweet potatoes. Must look right overlapping her waist.",
+      "reference": null,
+      "reference_render": null,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "scenery.cloud",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "เมฆ",
+      "name_en": "Cloud",
+      "output": "assets/scenery/cloud.svg",
+      "format": "svg",
+      "canvas": [
+        90,
+        44
+      ],
+      "anchor": [
+        45,
+        22
+      ],
+      "prompt": "One puffy cartoon cloud, cream-white with a thick outline, flat bottom. The game drifts it slowly across the sky.",
+      "reference": "assets/reference/scenery.cloud.svg",
+      "reference_render": "cloud(0,0,1,'')",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "bg.farm",
+      "category": "background",
+      "priority": 3,
+      "name_th": "ฉากไร่",
+      "name_en": "Farm background",
+      "output": "assets/backgrounds/farm.svg",
+      "format": "svg",
+      "canvas": [
+        800,
+        600
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "Full-stage background of a central Thai village farm on a sunny day. Top: light-blue sky fading to warm cream, a yellow sun top-left, distant green tree line. Middle band (y 176–250): bright green rice paddies with raised earthen dikes and rows of rice tufts, 4–5 sugar palms (ต้นตาล: tall thin trunk, round crown of fan leaves). Right (x 565–800, y 25–252): a wooden stilt house (บ้านใต้ถุนสูง) with a steep red gable roof and crossed kalae boards at the peak, open shutters, a ladder stair, a red hammock and bamboo bench underneath. A small gold-and-red spirit house (ศาลพระภูมิ) on a white pole around x 518 with marigold garlands and red soda-bottle offerings. Coconut trees at x≈24 and x≈460. Foreground: grassy ground, a fence along x 600–800 at y 306–350.\n\nKEEP CLEAR (the game draws interactive things here, so plain ground only): the dirt yard x 8–470, y 248–538 (four crop fields go here); x 460–540, y 300–500 (farmer and dragon jar); x 540–720, y 390–530 (ox cart); x 700–800, y 400–532 (signposts); x 610–790, y 260–345 behind the fence (buffalo). No clouds (separate asset), no characters. The HUD covers y 0–46 and the toolbar covers y 532–600.",
+      "reference": "assets/reference/bg.farm.svg",
+      "reference_render": "farmBG()",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "bg.market",
+      "category": "background",
+      "priority": 3,
+      "name_th": "ฉากตลาด",
+      "name_en": "Market background",
+      "output": "assets/backgrounds/market.svg",
+      "format": "svg",
+      "canvas": [
+        800,
+        600
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "Full-stage background for Auntie Daeng's village market stall (แผงป้าแดง). A warm wooden plank back wall, a darker plank floor from y 470. Left (x 0–205): the stall frame with two posts and a red-and-white striped scalloped awning from y 46 to 110, and a blank cream sign board around (104,122) (the game writes the shop name). A string of hanging goods along the top (bananas, marigold garlands, limes). Leave x 20–190, y 150–480 open for Auntie Daeng and her counter (separate assets). The right side x 210–792, y 52–540 is covered by the shop UI panel, so keep it simple.",
+      "reference": "assets/reference/bg.market.svg",
+      "reference_render": "marketBG()",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "bg.pen",
+      "category": "background",
+      "priority": 3,
+      "name_th": "ฉากคอกเป็ด",
+      "name_en": "Duck pen background",
+      "output": "assets/backgrounds/pen.svg",
+      "format": "svg",
+      "canvas": [
+        800,
+        600
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "prompt": "Full-stage background for Uncle Mee's duck pen. Sky y 46–160 with a distant tree line. Grassy ground below. A pond with lotus pads, a pink lotus and reeds at x 540–780, y 160–250. A small duck shed with a thatched roof at x 222–372, y 128–240. A bamboo fence along y 236–262 from x 205 to 800 and down the left side at x 212. The pen floor x 215–800, y 250–550 is a slightly lighter green.\n\nKEEP CLEAR: x 10–200, y 110–330 (Uncle Mee stands there); x 10–202, y 338–600 (shop UI); nest x 238–362, y 290–335; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 380–700, y 270–420.",
+      "reference": "assets/reference/bg.pen.svg",
+      "reference_render": "penBG()",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "ui.logo",
+      "category": "ui",
+      "priority": 3,
+      "name_th": "โลโก้ไร่สุขใจ",
+      "name_en": "Game logo wordmark",
+      "output": "assets/ui/logo.svg",
+      "format": "svg",
+      "canvas": [
+        480,
+        150
+      ],
+      "anchor": [
+        240,
+        75
+      ],
+      "prompt": "Title logo: the Thai words 'ไร่สุขใจ' as a big, bold, rounded, playful wordmark in tomato red (#e2553f) with a thick dark-brown outline and a chunky drop shadow, a small rice-sprout or sun motif, and 'RAI SUKJAI' in small spaced capitals underneath. Text IS required here; outline the letters as paths so no font is needed.",
+      "reference": null,
+      "reference_render": null,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    }
+  ]
+}
