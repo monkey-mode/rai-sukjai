@@ -1,0 +1,44 @@
+/* Shop panels: Auntie Daeng's market stall and Uncle Mee's duck pen. */
+'use strict';
+
+function renderPanel() {
+  if (S.scene === 'market') {
+    const greet = [['มาแล้วเหรอหลาน วันนี้เอาอะไรดีจ๊ะ', "Welcome, dear! What'll it be?"], ['ผักสด ๆ ทั้งนั้นจ้ะ', 'All fresh today!'], ['ปุ๋ยดีผักก็งามนะ', 'Good fertilizer, good greens']][ui.greet % 3];
+    panel.innerHTML = `<div class="bubble" style="left:14px;top:34px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
+    <div class="shop-board"><h3>เมล็ดพันธุ์ & ของใช้ <span class="en">Seeds & supplies</span><span class="money-now k">฿${fmt(S.money)}</span></h3>
+    <div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div>
+    <div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div></div>
+    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+  } else if (S.scene === 'pen') {
+    const D = CONFIG.DUCK;
+    panel.innerHTML = `<div class="bubble" style="left:150px;top:44px;width:190px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
+    <div class="mee-shop"><h3>คอกเป็ดลุงมี<br><span class="en">Uncle Mee's duck pen</span></h3>
+      <div class="line"><span>เป็ดไข่ <b>${S.ducks}/${D.max}</b></span><button data-act="buy-duck" ${S.ducks >= D.max ? 'disabled' : ''}>ซื้อ ฿${fmt(D.price)}</button></div>
+      <div class="line"><span>อาหาร <b>${S.inventory.feed}</b></span><button data-act="buy-feed">฿${D.feedPrice} / ${D.feedPortions}</button></div>
+      <div class="note">ใส่อาหารในรางได้วันละ ${D.troughMax} ส่วน เป็ดที่ได้กินจะออกไข่ 1 ฟองในเช้าวันถัดไป ถ้ารางว่างตอนจบวัน เป็ดอาจหิวตาย<br><i>Feed up to ${D.troughMax}/day. Each fed duck lays an egg. Empty trough = risk.</i></div>
+      <div class="line" style="margin-bottom:0"><span class="k">฿${fmt(S.money)}</span></div>
+    </div>
+    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+  } else panel.innerHTML = '';
+}
+
+function stars(n) { return '★'.repeat(n) + '<span style="opacity:.3">' + '★'.repeat(5 - n) + '</span>'; }
+
+function priceLevel(c) { return c.seed <= 100 ? 1 : c.seed <= 300 ? 2 : c.seed <= 600 ? 3 : c.seed <= 900 ? 4 : 5; }
+
+const SPEED = [['เร็วมาก', 'very fast'], ['เร็ว', 'fast'], ['ปานกลาง', 'medium'], ['ช้า', 'slow'], ['ช้ามาก', 'very slow'], ['ช้าที่สุด', 'slowest']];
+
+function seedCard(c, i) {
+  const pts = 4 * (c.k + 1), fast = Math.ceil(pts / 2);
+  return `<div class="scard"><div class="top">${packetSVG(i)}<div class="nm">${c.th}<small>${c.en}</small></div></div>
+  <div class="ds">${c.desc}</div>
+  <div class="st">ราคา <span class="stars">${stars(priceLevel(c))}</span><br><span title="Growth: ${SPEED[c.k][1]}">โต${SPEED[c.k][0]} ~${fast}–${pts} วัน</span><br>เก็บได้ ${c.harvests} ครั้ง · ขาย ฿${c.sell}/ชิ้น</div>
+  <div class="buy"><button data-act="buy-seed" data-c="${i}" ${S.money < c.seed ? 'disabled' : ''}>฿${fmt(c.seed)}</button><span class="own">มี ${S.inventory.seeds[i]}</span></div></div>`;
+}
+
+function supplyCard(k) {
+  const it = CONFIG.SUPPLIES[k];
+  return `<div class="scard">${k === 'fertilizer' ? ICON.fertilize : ICON.spray}<div><div class="nm">${it.th}<small>${it.en} — ${it.uses} uses</small></div>
+  <div class="ds" style="min-height:0">${k === 'fertilizer' ? 'ใส่แล้วต้นโตเพิ่มอีกขั้น วันละครั้งต่อแปลง' : 'ฆ่าแมลงที่เกาะต้นระยะใกล้สุก'}</div></div>
+  <div class="buy"><button data-act="buy-supply" data-k="${k}" ${S.money < it.price ? 'disabled' : ''}>฿${it.price}</button><span class="own">มี ${S.inventory[k]}</span></div></div>`;
+}
