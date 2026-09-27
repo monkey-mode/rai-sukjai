@@ -1,49 +1,50 @@
 /* Rendering of the farm, duck pen, HUD, toolbar, rain and carried item. */
 'use strict';
 
-const FX = [24, 248], FY = [262, 404], PW = 48, PH = 38, SX = 51, SY = 41;
-
+// One plot on the isometric grid: soil block, crop, bugs and remaining-harvest pips.
 function plotSVG(f, fi, p, pi) {
-  const x = FX[fi % 2] + (pi % 4) * SX, y = FY[fi >> 1] + Math.floor(pi / 4) * SY;
-  let g = `<g class="plot" data-act="plot" data-f="${fi}" data-p="${pi}">`;
-  const tile = p.watered ? 'tile.soil_wet' : 'tile.soil_dry';
-  if (Assets.has(tile)) {
-    // the transparent rect keeps the hover outline (.plot:hover .soil) working on top of the image
-    g += Assets.image(tile, x, y) + `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="none" stroke="none"/>`;
-  } else {
-    g += `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="${p.watered ? '#7a4e2e' : '#b7824f'}" stroke="${O}" stroke-width="2"/>`;
-    g += `<path d="M${x + 6} ${y + 13}H${x + PW - 6}M${x + 6} ${y + 25}H${x + PW - 6}" stroke="${p.watered ? '#5e3a20' : '#9c6a3c'}" stroke-width="2" stroke-linecap="round"/>`;
-  }
-  if (p.fertilized && Assets.has('tile.fertilized')) g += Assets.image('tile.fertilized', x, y);
-  else if (p.fertilized) g += [[8, 8], [38, 10], [14, 30], [40, 30], [26, 6]].map(([dx, dy]) => `<circle cx="${x + dx}" cy="${y + dy}" r="1.8" fill="#f4f0e0" stroke="${O}" stroke-width=".6"/>`).join('');
+  const [gx, gy] = fieldCell(fi, pi);
+  let g = `<g class="plot" data-act="plot" data-f="${fi}" data-p="${pi}">` + isoSoil(gx, gy, p.watered, p.fertilized);
   if (p.stage > 0 && f.crop !== null) {
-    g += `<g pointer-events="none" transform="translate(${x + PW / 2} ${y + PH - 6})">${plantArt(f.crop, p.stage)}${p.bug ? bugsArt() : ''}</g>`;
+    const [x, y] = isoPt(gx + .5, gy + .5);
+    g += `<g pointer-events="none" transform="translate(${r(x)} ${r(y + 2)})">${plantArt(f.crop, p.stage)}${p.bug ? bugsArt() : ''}</g>`;
     const H = CONFIG.CROPS[f.crop].harvests;
     if (H > 1 && p.stage !== WITHERED) {
-      for (let i = 0; i < H - p.harvests; i++) g += `<circle cx="${x + 5 + i * 4.5}" cy="${y + PH - 4}" r="1.7" fill="#ffe066" stroke="${O}" stroke-width=".7" pointer-events="none"/>`;
+      for (let i = 0; i < H - p.harvests; i++) {
+        const [px, py] = isoPt(gx + .16 + i * .12, gy + .86);
+        g += `<circle cx="${r(px)}" cy="${r(py)}" r="1.7" fill="#ffe066" stroke="${O}" stroke-width=".7" pointer-events="none"/>`;
+      }
     }
   }
   return g + '</g>';
 }
 
+// Compact field badge (number + crop icon) on each field's outer corner, so it never covers crops.
+function fieldLabel(f, fi) {
+  const c = f.crop === null ? null : CONFIG.CROPS[f.crop], w = c ? 44 : 58;
+  const [gx, gy] = fieldOrigin(fi), m = ISO.RIM;
+  const spot = [isoPt(gx - m, gy - m), isoPt(gx + 4 + m, gy - m), isoPt(gx - m, gy + 3 + m), isoPt(gx + 4 + m, gy + 3 + m)][fi];
+  let [lx, ly] = [[spot[0] - w / 2, spot[1] - 28], [spot[0] + 6, spot[1] - 10], [spot[0] - w - 6, spot[1] - 10], [spot[0] - w / 2, spot[1] + 14]][fi];
+  if (lx < 4) [lx, ly] = [4, spot[1] + 14]; // no room beside the corner: drop below it, outside the field
+  const inner = c ? `<g transform="translate(31 11) scale(.62)">${produceIcon(f.crop)}</g>` : `<text x="22" y="15" font-family="Kanit" font-size="11" fill="${O}">ว่าง</text>`;
+  return `<g pointer-events="none" transform="translate(${r(lx)} ${r(ly)})"><title>แปลง ${fi + 1} · ${c ? c.th : 'ว่าง'}</title>` +
+    `<rect width="${w}" height="22" rx="7" fill="#fff4d6" stroke="${O}" stroke-width="2"/>${circ(11, 11, 7.5, '#8fb04a', 1.6)}` +
+    `<text x="11" y="15" text-anchor="middle" font-family="Kanit" font-size="11" font-weight="600" fill="#fff">${fi + 1}</text>${inner}</g>`;
+}
+
 function renderFarm() {
-  let s = '';
-  S.fields.forEach((f, fi) => {
-    const fx = FX[fi % 2], fy = FY[fi >> 1];
-    s += `<rect x="${fx - 7}" y="${fy - 7}" width="${4 * SX - 3 + 14}" height="${3 * SY - 3 + 14}" rx="12" fill="#8fb04a" stroke="${O}" stroke-width="3"/>`;
-  });
-  S.fields.forEach((f, fi) => f.plots.forEach((p, pi) => { s += plotSVG(f, fi, p, pi); }));
-  S.fields.forEach((f, fi) => {
-    const fx = FX[fi % 2], fy = FY[fi >> 1];
-    const c = f.crop === null ? null : CONFIG.CROPS[f.crop];
-    const label = `แปลง ${fi + 1} · ${c ? c.th : 'ว่าง'}`;
-    const w = 20 + label.length * 7.2;
-    s += `<g pointer-events="none" transform="translate(${fx - 4} ${fy - 21})"><rect width="${w}" height="16" rx="5" fill="#fff4d6" stroke="${O}" stroke-width="2" opacity=".95"/>` +
-      `<text x="7" y="12" font-family="Kanit" font-size="11" font-weight="500" fill="${O}">${label}</text></g>`;
-  });
-  s += farmer(500, 396, S.energy < CONFIG.TIRED_BELOW);
-  s += dragonJar(500, 408);
-  s += oxCart(560, 520, S.hand && S.hand.type === 'crop');
+  // plots back to front (by gx+gy) so nearer plants overlap farther ones
+  const order = [];
+  S.fields.forEach((f, fi) => f.plots.forEach((p, pi) => { const [gx, gy] = fieldCell(fi, pi); order.push([gx + gy, gx, fi, pi]); }));
+  order.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  let s = order.map(([, , fi, pi]) => plotSVG(S.fields[fi], fi, S.fields[fi].plots[pi], pi)).join('');
+  s += S.fields.map(fieldLabel).join('');
+  const [cx, cy] = FARM_SPOTS.cart, cart = oxCart(cx, cy, S.hand && S.hand.type === 'crop', FARM_SPOTS.cartSign);
+  // the code-drawn cart is a wide side view; shrink it to fit the iso spot (the sign keeps its size)
+  s += Assets.has('prop.ox_cart') ? cart : `<g transform="translate(${cx + 66} ${cy}) scale(.7) translate(${-cx - 66} ${-cy})">${oxCart(cx, cy, S.hand && S.hand.type === 'crop', null)}</g>` +
+    `<g data-act="cart" class="hot">${cartSign(...FARM_SPOTS.cartSign)}</g>`;
+  s += dragonJar(FARM_SPOTS.jar[0], FARM_SPOTS.jar[1]);
+  s += farmer(FARM_SPOTS.farmer[0], FARM_SPOTS.farmer[1], S.energy < CONFIG.TIRED_BELOW);
   s += signpost(!(S.energy > CONFIG.COST.walk));
   dynEl.innerHTML = s;
 }
