@@ -83,7 +83,7 @@ function isoFence(a, b, step = .5) {
 const FARM_SPOTS = {
   cart: [84, 491],        // oxCart(x, y): x = rear of the code-drawn cart; its asset is anchored at (x + 66, y + 1)
   cartSign: [34, 452],     // top-left of the "ขายผลผลิต" sign next to the cart
-  jar: [598, 392],        // dragonJar(x, top)
+  jar: [584, 392],        // dragonJar(x, top)
   farmer: [652, 474],     // farmer(x, feetY)
-  buffalo: [700, 342],    // buffalo(x, y): ground point inside the paddock, behind its front fence
+  buffalo: [694, 316],    // buffalo(x, y): ground point inside the paddock, behind its front fence
 };
