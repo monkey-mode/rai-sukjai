@@ -1014,8 +1014,8 @@
       "status": "done",
       "file": "assets/crops/watermelon/stage1.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T15:17:25Z",
-      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+      "updated_at": "2026-09-27T15:22:07Z",
+      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
       "review": null
     },
     {
@@ -1040,8 +1040,8 @@
       "status": "done",
       "file": "assets/crops/watermelon/stage2.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T15:17:25Z",
-      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+      "updated_at": "2026-09-27T15:22:07Z",
+      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
       "review": null
     },
     {
@@ -1066,8 +1066,8 @@
       "status": "done",
       "file": "assets/crops/watermelon/stage3.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T15:17:25Z",
-      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+      "updated_at": "2026-09-27T15:22:07Z",
+      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
       "review": null
     },
     {
@@ -1092,8 +1092,8 @@
       "status": "done",
       "file": "assets/crops/watermelon/stage4.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T15:17:25Z",
-      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+      "updated_at": "2026-09-27T15:22:07Z",
+      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
       "review": null
     },
     {
@@ -1118,8 +1118,8 @@
       "status": "done",
       "file": "assets/crops/watermelon/stage5.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T15:17:25Z",
-      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+      "updated_at": "2026-09-27T15:22:07Z",
+      "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
       "review": null
     },
     {
