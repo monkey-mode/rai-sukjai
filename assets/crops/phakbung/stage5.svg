@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- ผักบุ้ง · สุก · Ripe, lush bunch with one flower. Anchor (32,56) = soil point. -->
+  <g stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round">
+    <!-- soil mound (same as stage 1) -->
+    <path d="M20.5 57.5Q22 53.2 27 52.6Q32 51.6 37 52.6Q42 53.2 43.5 57.5Q32 59.6 20.5 57.5Z" fill="#6e4528" stroke-width="1.8"/>
+    <path d="M25 55.2Q28 53.9 31 54.1" fill="none" stroke="#8a5a33" stroke-width="1.2"/>
+    <circle cx="37.5" cy="55.6" r=".8" fill="#4e2f19" stroke="none"/>
+    <circle cx="26" cy="57" r=".7" fill="#4e2f19" stroke="none"/>
+    <!-- hollow stems, then arrow-shaped leaves -->
+    <path d="M31 55.5Q28.8 46.7 19 39.5" fill="none" stroke-width="3.6"/>
+    <path d="M31 55.5Q28.8 46.7 19 39.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M33 55.5Q35.2 46.1 45 38.5" fill="none" stroke-width="3.6"/>
+    <path d="M33 55.5Q35.2 46.1 45 38.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M31.2 55.5Q29.5 41.2 22 29.5" fill="none" stroke-width="3.6"/>
+    <path d="M31.2 55.5Q29.5 41.2 22 29.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M32.7 55.5Q34.2 40.6 41 28.5" fill="none" stroke-width="3.6"/>
+    <path d="M32.7 55.5Q34.2 40.6 41 28.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M31.4 55.5Q30.2 44 25 34.5" fill="none" stroke-width="3.6"/>
+    <path d="M31.4 55.5Q30.2 44 25 34.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M32.5 55.5Q33.5 43.4 38 33.5" fill="none" stroke-width="3.6"/>
+    <path d="M32.5 55.5Q33.5 43.4 38 33.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M31.7 55.5Q31 37.9 28 23.5" fill="none" stroke-width="3.6"/>
+    <path d="M31.7 55.5Q31 37.9 28 23.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M32.2 55.5Q32.8 37.3 35 22.5" fill="none" stroke-width="3.6"/>
+    <path d="M32.2 55.5Q32.8 37.3 35 22.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <path d="M32 55.5Q32 45.6 32 37.5" fill="none" stroke-width="3.6"/>
+    <path d="M32 55.5Q32 45.6 32 37.5" fill="none" stroke="#8fd35a" stroke-width="1.6"/>
+    <g transform="translate(19 39.5) rotate(-45)">
+      <path d="M0 -1.4L-2.8 2.6Q-4.7 -4.9 0 -13Q4.7 -4.9 2.8 2.6Z" fill="#62c93a" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -9.4" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2 -3.9Q-2.2 -7.2 -0.7 -9.4" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(45 38.5) rotate(43)">
+      <path d="M0 -1.4L-2.8 2.6Q-4.7 -4.9 0 -13Q4.7 -4.9 2.8 2.6Z" fill="#7fd84e" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -9.4" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2 -3.9Q-2.2 -7.2 -0.7 -9.4" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(22 29.5) rotate(-30)">
+      <path d="M0 -1.4L-3 2.6Q-5 -5.7 0 -15Q5 -5.7 3 2.6Z" fill="#62c93a" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.8" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2.2 -4.5Q-2.4 -8.2 -0.7 -10.8" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(41 28.5) rotate(22)">
+      <path d="M0 -1.4L-3 2.6Q-5 -5.7 0 -15Q5 -5.7 3 2.6Z" fill="#7fd84e" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.8" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2.2 -4.5Q-2.4 -8.2 -0.7 -10.8" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(25 34.5) rotate(-20)">
+      <path d="M0 -1.4L-2.7 2.6Q-4.5 -4.6 0 -12Q4.5 -4.6 2.7 2.6Z" fill="#62c93a" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -8.6" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-1.9 -3.6Q-2.1 -6.6 -0.6 -8.6" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(38 33.5) rotate(16)">
+      <path d="M0 -1.4L-2.7 2.6Q-4.5 -4.6 0 -12Q4.5 -4.6 2.7 2.6Z" fill="#7fd84e" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -8.6" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-1.9 -3.6Q-2.1 -6.6 -0.6 -8.6" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(28 23.5) rotate(-12)">
+      <path d="M0 -1.4L-3 2.6Q-5.1 -5.7 0 -15Q5.1 -5.7 3 2.6Z" fill="#62c93a" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.8" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2.2 -4.5Q-2.5 -8.2 -0.7 -10.8" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(35 22.5) rotate(6)">
+      <path d="M0 -1.4L-3 2.6Q-5.1 -5.7 0 -15Q5.1 -5.7 3 2.6Z" fill="#7fd84e" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.8" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-2.2 -4.5Q-2.5 -8.2 -0.7 -10.8" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <g transform="translate(32 37.5) rotate(0)">
+      <path d="M0 -1.4L-2.7 2.6Q-4.5 -4.6 0 -12Q4.5 -4.6 2.7 2.6Z" fill="#62c93a" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -8.6" fill="none" stroke="#d6f7a8" stroke-width="1"/>
+      <path d="M-1.9 -3.6Q-2.1 -6.6 -0.6 -8.6" fill="none" stroke="#e6ffc4" stroke-width="1" opacity=".85"/>
+    </g>
+    <!-- pale-lilac morning glory trumpet on its own stem -->
+    <path d="M33 55.5Q40 46 43.5 27" fill="none" stroke-width="3.4"/>
+    <path d="M33 55.5Q40 46 43.5 27" fill="none" stroke="#8fd35a" stroke-width="1.4"/>
+    <g transform="translate(43.5 27) rotate(28)">
+      <path d="M-1.6 0L-4.6 -8.5L4.6 -8.5L1.6 0Z" fill="#f3e6f7" stroke-width="1.4"/>
+      <ellipse cx="0" cy="-9.2" rx="6.4" ry="2.6" fill="#ecdcf4" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-9.2" rx="2" ry=".9" fill="#b67fd0" stroke="none"/>
+      <path d="M-4.2 -8.3L-1 -9.1M4.2 -8.3L1 -9.1M0 -6.8L0 -8.2" fill="none" stroke="#c9a3de" stroke-width=".8"/>
+      <path d="M-1 -1.5L-3 -7.5" fill="none" stroke="#fff" stroke-width=".9" opacity=".8"/>
+    </g>
+  </g>
+</svg>

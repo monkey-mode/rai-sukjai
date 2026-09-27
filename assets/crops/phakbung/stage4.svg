@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- ผักบุ้ง · ใกล้สุก · Nearly ripe, full bunch, no flower. Anchor (32,56) = soil point. -->
+  <g stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round">
+    <!-- soil mound (same as stage 1) -->
+    <path d="M20.5 57.5Q22 53.2 27 52.6Q32 51.6 37 52.6Q42 53.2 43.5 57.5Q32 59.6 20.5 57.5Z" fill="#6e4528" stroke-width="1.8"/>
+    <path d="M25 55.2Q28 53.9 31 54.1" fill="none" stroke="#8a5a33" stroke-width="1.2"/>
+    <circle cx="37.5" cy="55.6" r=".8" fill="#4e2f19" stroke="none"/>
+    <circle cx="26" cy="57" r=".7" fill="#4e2f19" stroke="none"/>
+    <!-- hollow stems, then arrow-shaped leaves -->
+    <path d="M30.9 55.5Q28.5 47.2 18 40.5" fill="none" stroke-width="3.6"/>
+    <path d="M30.9 55.5Q28.5 47.2 18 40.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M33.1 55.5Q35.5 46.7 46 39.5" fill="none" stroke-width="3.6"/>
+    <path d="M33.1 55.5Q35.5 46.7 46 39.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M31.3 55.5Q29.8 42.3 23 31.5" fill="none" stroke-width="3.6"/>
+    <path d="M31.3 55.5Q29.8 42.3 23 31.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M32.8 55.5Q34.5 41.8 42 30.5" fill="none" stroke-width="3.6"/>
+    <path d="M32.8 55.5Q34.5 41.8 42 30.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M31.8 55.5Q31.2 39 29 25.5" fill="none" stroke-width="3.6"/>
+    <path d="M31.8 55.5Q31.2 39 29 25.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M32.3 55.5Q33 38.5 36 24.5" fill="none" stroke-width="3.6"/>
+    <path d="M32.3 55.5Q33 38.5 36 24.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <path d="M32 55.5Q32 45 32 36.5" fill="none" stroke-width="3.6"/>
+    <path d="M32 55.5Q32 45 32 36.5" fill="none" stroke="#7cc245" stroke-width="1.6"/>
+    <g transform="translate(18 40.5) rotate(-48)">
+      <path d="M0 -1.4L-2.7 2.6Q-4.5 -4.9 0 -13Q4.5 -4.9 2.7 2.6Z" fill="#56b234" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -9.4" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(46 39.5) rotate(46)">
+      <path d="M0 -1.4L-2.7 2.6Q-4.5 -4.9 0 -13Q4.5 -4.9 2.7 2.6Z" fill="#6cc644" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -9.4" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(23 31.5) rotate(-28)">
+      <path d="M0 -1.4L-2.8 2.6Q-4.7 -5.3 0 -14Q4.7 -5.3 2.8 2.6Z" fill="#56b234" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.1" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(42 30.5) rotate(26)">
+      <path d="M0 -1.4L-2.8 2.6Q-4.7 -5.3 0 -14Q4.7 -5.3 2.8 2.6Z" fill="#6cc644" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.1" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(29 25.5) rotate(-10)">
+      <path d="M0 -1.4L-2.9 2.6Q-4.8 -5.3 0 -14Q4.8 -5.3 2.9 2.6Z" fill="#56b234" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.1" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(36 24.5) rotate(8)">
+      <path d="M0 -1.4L-2.9 2.6Q-4.8 -5.3 0 -14Q4.8 -5.3 2.9 2.6Z" fill="#6cc644" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -10.1" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+    <g transform="translate(32 36.5) rotate(-2)">
+      <path d="M0 -1.4L-2.5 2.6Q-4.2 -4.2 0 -11Q4.2 -4.2 2.5 2.6Z" fill="#56b234" stroke-width="1.5"/>
+      <path d="M0 -1.4L0 -7.9" fill="none" stroke="#c6ee8e" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
