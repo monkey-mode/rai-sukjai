@@ -18,6 +18,20 @@ const ICON = {
 ICON.fertS = ICON.fertilize.replace('<svg viewBox="0 0 36 36">', '<svg viewBox="0 0 36 36" width="17" height="17">');
 ICON.sprayS = ICON.spray.replace('<svg viewBox="0 0 36 36">', '<svg viewBox="0 0 36 36" width="17" height="17">');
 
+// Icon name -> [asset id, width, height] used when the asset file exists.
+const ICON_ASSET = {
+  water: ['tool.water', 30, 30], fertilize: ['tool.fertilize', 30, 30], spray: ['tool.spray', 30, 30],
+  cut: ['tool.cut', 30, 30], pick: ['tool.pick', 30, 30],
+  fertS: ['tool.fertilize', 17, 17], sprayS: ['tool.spray', 17, 17],
+  sun: ['hud.sun', 30, 30], rain: ['hud.rain', 30, 30], sound: ['hud.sound_on', 22, 22], mute: ['hud.sound_off', 22, 22],
+  menu: ['hud.menu', 20, 20], feed: ['hud.feed', 17, 17], duck: ['hud.duck', 18, 18],
+};
+
+function icon(name) {
+  const a = ICON_ASSET[name];
+  return a && Assets.has(a[0]) ? Assets.img(a[0], a[1], a[2], 'ico') : ICON[name];
+}
+
 function duckShape() {
   return line('M-5 0L-7 3M4 0L6 3', '#e8932a', 2.4) +
     `<path d="M-17 -12Q-19 -25 -2 -25L10 -23Q17 -20 16 -11Q12 -1 -4 -1Q-15 -1 -17 -12Z" fill="#b8874f" ${SW} stroke-width="2"/>` +

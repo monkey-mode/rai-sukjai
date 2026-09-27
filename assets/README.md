@@ -54,7 +54,7 @@ todo ──► in_progress ──► done ──► approved
 |---|---|---|
 | `todo` | mechanics agent | Not started |
 | `in_progress` | asset agent | Claimed. Set `agent` and `updated_at` |
-| `done` | asset agent | File saved at `output`, `file` = that path. Waiting for review |
+| `done` | asset agent | File saved at `output`, `file` = that path. Waiting for review. **The game already uses it** |
 | `needs_changes` | reviewer | Fix what `review` says, then set `done` again |
 | `approved` | reviewer | Accepted. The game may switch to it |
 | `blocked` | asset agent | Can't be done as written. Say why in `notes` |
@@ -79,6 +79,15 @@ Background references in `assets/reference/bg.*.svg` are the current full scenes
 Copy this into the other AI (give it this repository or these files):
 
 > You are the asset artist for the browser game "ไร่สุขใจ (Rai Sukjai)". Your task list is `assets/manifest.json`, and the working rules are in `assets/README.md`: read both first. For each asset whose status is `needs_changes` or `todo`, in priority order: stamp it `in_progress` with your agent name and the current UTC time, create the file at its `output` path following `style_guide`, its category notes, its `prompt` and its `reference` SVG, then stamp it `done` with `file` set to the path you wrote. Only edit the fields `status`, `file`, `agent`, `updated_at` and `notes`. Hand-author clean, self-contained SVG (viewBox equal to `canvas`, no text unless asked, no external links). Work in batches (for example one crop's five stages together, so they match) and run `node tools/check-assets.mjs` after each batch.
+
+## How the game uses assets
+
+`js/art/assets.js` loads finished files at startup. The art functions draw an asset when its file is available and fall back to the code-drawn art otherwise, so assets can arrive in any order.
+
+- **Served over http(s)** (e.g. `python3 -m http.server`): the game reads this manifest and uses the `file` of every asset whose status is `done` or `approved` (`Assets.USE_STATUSES`).
+- **Opened from disk** (`file://`): browsers block reading the manifest, so the game tries loading each expected `output` path and uses whatever exists. Each missing file logs a harmless "file not found" console error; serve the folder to avoid them.
+
+Wired in so far: crop stages, withered, bugs, produce icons, egg, seed packets, tool icons, HUD icons, soil tiles and the fertilized overlay. Characters, animals, props, scenery, backgrounds and the logo need layout work and will be wired when their files arrive. The game's asset list must match this manifest; `tests/assets.test.mjs` checks it.
 
 ## Tools
 
