@@ -114,8 +114,12 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .shop-board{position:absolute;left:210px;top:6px;width:582px;transform:scale(var(--ui,1));transform-origin:100% 0;max-height:calc((100% - 12px) / var(--ui,1));overflow:auto;background:rgba(255,244,214,.93);border:3px solid var(--ink);border-radius:16px;padding:8px 10px;box-shadow:0 5px 0 rgba(0,0,0,.3)}
 .shop-x{position:absolute;right:8px;top:6px;width:32px;height:32px;padding:0;font-size:20px;line-height:1;border-radius:9px;background:#fff}
 .shop-open{position:absolute;left:222px;top:330px;font-size:18px;padding:8px 16px;background:#9be15d}
-.shop-board h3{margin:0;font-family:'Kanit';font-size:19px;display:flex;align-items:baseline;gap:8px}
+.shop-board h3{padding-right:40px;margin:0;font-family:'Kanit';font-size:19px;display:flex;align-items:baseline;gap:8px}
 .money-now{margin-left:auto;font-size:15px;color:#2f7a2f}
+.tabs{display:flex;gap:6px;margin:6px 0 2px}
+.tab{padding:3px 12px;font-size:14px;background:#f3e2b8;box-shadow:0 2px 0 var(--ink)}
+.tab small{font-size:9px}
+.tab.on{background:#ffd54a;outline:3px solid #fff6c8;outline-offset:-5px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:4px}
 .scard{background:#fffaf0;border:2px solid var(--ink);border-radius:11px;padding:4px 6px 5px;height:182px;display:flex;flex-direction:column;position:relative}
 .scard .top{display:flex;gap:5px;align-items:center}

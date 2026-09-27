@@ -16,6 +16,7 @@ function handleAct(act, ds) {
     case 'confirm-new': return showConfirmNew();
     case 'shop-open': ui.shopOpen = true; return renderPanel();
     case 'shop-close': ui.shopOpen = false; return renderPanel();
+    case 'shop-tab': ui.shopTab = ds.tab; return renderPanel();
     case 'new-game': store.del(SAVE_KEY); return startGame(newGame());
   }
   if (!S || S.gameOver || ui.busy) return;
