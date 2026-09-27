@@ -33,6 +33,7 @@ function icon(name) {
 }
 
 function duckShape() {
+  if (Assets.has('animal.duck')) return Assets.image('animal.duck');
   return line('M-5 0L-7 3M4 0L6 3', '#e8932a', 2.4) +
     `<path d="M-17 -12Q-19 -25 -2 -25L10 -23Q17 -20 16 -11Q12 -1 -4 -1Q-15 -1 -17 -12Z" fill="#b8874f" ${SW} stroke-width="2"/>` +
     `<path d="M-17 -15L-22 -19L-15 -19Z" fill="#8c6538" ${SW} stroke-width="1.6"/>` +

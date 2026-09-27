@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+<!-- hud.feed · Duck feed -->
+<g stroke-linejoin="round" stroke-linecap="round"><path d="M6 8Q5 14 6 20Q12 22 18 20Q19 14 18 8Q12 6.5 6 8Z" fill="#e3c070" stroke="#3a2213" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M7 8Q8 4 10 6Q12 3 14 6Q16 4 17 8Q12 7 7 8Z" fill="#e3c070" stroke="#3a2213" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M14.5 7.2Q17 7.5 18 8Q19 14 18 20Q16 20.8 14.5 21Z" fill="#b8943e" opacity=".6"/><ellipse cx="9" cy="12" rx="1" ry="0.8" fill="#8a5a22"/><ellipse cx="12" cy="15" rx="1" ry="0.8" fill="#8a5a22"/><ellipse cx="10" cy="17" rx="1" ry="0.8" fill="#8a5a22"/><ellipse cx="13.5" cy="11" rx="1" ry="0.8" fill="#8a5a22"/><ellipse cx="15" cy="16" rx="1" ry="0.8" fill="#8a5a22"/></g>
+</svg>

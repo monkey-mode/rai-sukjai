@@ -82,7 +82,7 @@ Copy this into the other AI (give it this repository or these files):
 
 ## Isometric farm
 
-The farm scene is isometric (2:1). `style_guide.isometric` in the manifest gives the projection, and `bg.farm` lists the exact yard, bund and keep-clear geometry the game expects (defined in `js/art/iso.js`). Crop, produce and icon assets stay upright sprites. Soil tiles, the ox cart and the farm background are drawn in isometric 3/4 view. The market and duck pen stay in front view.
+The farm scene is isometric (2:1). `style_guide.isometric` in the manifest gives the projection, and `bg.farm` lists the exact yard, bund and keep-clear geometry the game expects (defined in `js/art/iso.js`). Crop, produce and icon assets stay upright sprites. Soil tiles, the ox cart and the farm background are drawn in isometric 3/4 view. The market and duck pen backgrounds are isometric too (each on its own grid, see `style_guide.isometric`); characters and the pen props stay upright sprites.
 
 ## Stage size and bleed
 

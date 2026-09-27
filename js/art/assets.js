@@ -24,10 +24,10 @@ const ASSET_SPECS = (() => {
   add('prop.ox_cart', 'assets/props/ox_cart.svg', 180, 152, 78, 110);
   add('prop.signboard', 'assets/props/signboard.svg', 92, 40, 0, 0);
   add('prop.signpole', 'assets/props/signpole.svg', 12, 134, 6, 134);
-  add('prop.trough', 'assets/props/trough.svg', 150, 50, 75, 48);
-  add('prop.nest', 'assets/props/nest.svg', 130, 46, 65, 23);
-  add('prop.egg_basket', 'assets/props/egg_basket.svg', 90, 80, 45, 78);
-  add('prop.market_counter', 'assets/props/market_counter.svg', 204, 120, 102, 120);
+  add('prop.trough', 'assets/props/trough.svg', 162, 112, 81, 75);
+  add('prop.nest', 'assets/props/nest.svg', 139, 72, 70, 36);
+  add('prop.egg_basket', 'assets/props/egg_basket.svg', 98, 100, 49, 78);
+  add('prop.market_counter', 'assets/props/market_counter.svg', 190, 157, 95, 111);
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
   add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 78, 68, 39, 27);
   add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 42, 15, 8);
@@ -41,9 +41,15 @@ const ASSET_SPECS = (() => {
   add('scenery.palm_sugar_tall_iso', 'assets/scenery/palm_sugar_tall_iso.svg', 84, 199, 42, 191);
   add('scenery.spirit_house_iso', 'assets/scenery/spirit_house_iso.svg', 76, 170, 38, 157);
   add('scenery.thai_house_iso', 'assets/scenery/thai_house_iso.svg', 277, 252, 126, 146);
+  add('character.farmer', 'assets/characters/farmer.svg', 52, 109, 25, 105);
+  add('character.farmer_tired', 'assets/characters/farmer_tired.svg', 60, 109, 25, 105);
+  add('character.auntie_daeng', 'assets/characters/auntie_daeng.svg', 58, 79, 38, 74);
+  add('character.uncle_mee', 'assets/characters/uncle_mee.svg', 47, 104, 24, 100);
+  add('animal.duck', 'assets/animals/duck.svg', 51, 45, 26, 41);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
-  add('bg.farm', 'assets/backgrounds/farm.svg', 1400, 600, 300, 0);    // 800x600 safe area with 300 px of bleed each side
-  ['market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
+  add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
+  // 800x600 safe area with 300 px of bleed each side
+  ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
   return list;
 })();
 

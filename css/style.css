@@ -92,6 +92,7 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .title-card{width:560px;background:linear-gradient(#fff4d6,#ffe6a8)}
 .logo{font-family:'Kanit';font-weight:700;font-size:70px;line-height:1;color:#e2553f;
   text-shadow:3px 3px 0 var(--ink),-2px -2px 0 var(--ink),2px -2px 0 var(--ink),-2px 2px 0 var(--ink),0 7px 0 var(--ink)}
+.logo-img img{display:block;margin:0 auto -4px;max-width:100%;height:auto}
 .logo-en{font-family:'Kanit';font-size:18px;letter-spacing:3px;margin-top:10px}
 .howto{text-align:left;font-size:13px;line-height:1.45;max-height:330px;overflow:auto;padding-right:6px}
 .howto b{font-family:'Kanit';font-weight:600}
@@ -152,7 +153,8 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .atail{animation:swish 2.6s ease-in-out infinite}
 @keyframes swish{0%,100%{transform:rotate(0)}50%{transform:rotate(18deg)}}
 .duck{animation:wander 12s linear infinite}
-@keyframes wander{0%{transform:translateX(-45px) scaleX(1)}46%{transform:translateX(45px) scaleX(1)}50%{transform:translateX(45px) scaleX(-1)}96%{transform:translateX(-45px) scaleX(-1)}100%{transform:translateX(-45px) scaleX(1)}}
+/* ducks waddle along the iso grid diagonal (2:1) */
+@keyframes wander{0%{transform:translate(-44px,-22px) scaleX(1)}46%{transform:translate(44px,22px) scaleX(1)}50%{transform:translate(44px,22px) scaleX(-1)}96%{transform:translate(-44px,-22px) scaleX(-1)}100%{transform:translate(-44px,-22px) scaleX(1)}}
 .waddle{animation:waddle .5s ease-in-out infinite alternate}
 @keyframes waddle{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
 .rainfall{animation:rain .45s linear infinite}

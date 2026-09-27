@@ -11,13 +11,16 @@ function farmBG() {
   const items = [
     [bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`],
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
+    [px0 + (py0 + py1) / 2, isoFence([px0, py0], [px0, py1])],       // left side: palms stand behind it
   ];
   if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean)));
   return farmBackdropIso() + clouds + depthSorted(items);
 }
 
-// An 800-wide background filling a wider stage: mirrored copies continue it seamlessly into both margins.
-function bleed(img) {
+// A background filling the wide stage. One painted with bleed (1400 wide) is used as is; an 800-wide one gets
+// mirrored copies that continue it seamlessly into both margins.
+function bleed(img, id) {
+  if (ASSET_SPECS[id].w > 800) return img;
   return `<g transform="scale(-1 1)">${img}</g><g transform="translate(1600 0) scale(-1 1)">${img}</g>${img}`;
 }
 
@@ -79,12 +82,12 @@ function farmBackdropIso() {
 }
 
 function marketBG() {
-  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market')) + marketSign() : marketBackdrop();
-  return back + auntieDaeng(104, 440) + marketCounter();
+  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') + marketSign() : marketBackdrop();
+  return back + auntieDaeng(104, 400) + marketCounter();
 }
 
 function marketSign() {
-  return `<text x="104" y="126" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text>`;
+  return `<text x="104" y="178" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text>`;
 }
 
 function marketBackdrop() {
@@ -111,7 +114,7 @@ function marketBackdrop() {
 }
 
 function marketCounter() {
-  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 104, 480);
+  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 100, 470);
   let s = '';
   s += `<rect x="4" y="380" width="200" height="100" fill="#a8693a" ${SW} stroke-width="3"/>` + line('M4 404H204M4 440H204', '#7a4a26', 2);
   s += ell(44, 380, 30, 10, '#d6ad62', 0, 2) + ell(116, 382, 32, 10, '#d6ad62', 0, 2) + ell(176, 380, 24, 9, '#d6ad62', 0, 2);
@@ -120,7 +123,7 @@ function marketCounter() {
 }
 
 function penBG() {
-  if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen')) + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
+  if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen'), 'bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
   { const hills = `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }
   s += `<rect x="-300" y="160" width="1400" height="440" fill="#a9c95e"/>` + line('M-300 160H1100', O, 2.5);

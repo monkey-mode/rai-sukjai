@@ -61,7 +61,7 @@
     ],
     "anchor": "`anchor` is the [x, y] point in canvas pixels that the game places on the target spot. For crops it is the soil point the plant grows from. For characters, animals and props it is where the feet or base touch the ground. For icons it is the centre.",
     "consistency": "Keep the same outline weight, palette and lighting (light from top-left) across all assets. The five stages of one crop must clearly be the same plant growing.",
-    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. The market and the duck pen are isometric too, each on its own grid: pen top corner at safe-area (520, 200), market top corner at (560, 70); screen x = ox + (u - v)·32, y = oy + (u + v)·16 - z. Characters and the pen props stay upright sprites.",
     "stage": "The game stage is 600 px high and as wide as the screen allows, from 800 (4:3, iPad) to 1400 (21:9, tall phones); wider screens get side bars. The centred 800x600 area is the SAFE AREA: everything interactive stays inside it and all scene coordinates in prompts are safe-area coordinates (x 0–800). Full-stage backgrounds are painted with BLEED: 300 px of extra scenery on each side (canvas 1400x600, anchor (300, 0)), continuing the scene naturally and never holding anything the player must see or tap. An 800-wide background is still accepted: the game mirrors it into the margins.",
     "scale": "Farm objects: scenery (house, trees, palms, bananas, huts, forest) is about 20 px per metre: the Thai house's stilts are ~2.2 m (44 px), bananas 3–4 m, palms 5–10 m, forest trees 10–25 m. The farmer, dragon jar and buffalo are the farm's characters and get a stylised game size of about 2x life (farmer ~67 px tall, jar ~55 px, buffalo ~75 px long, spirit house ~110 px tall); the ox cart stays near life size. Assets may be drawn larger; the game scales them (FARM_SCALE, and the scale in BANANA_SPOTS / PALM_SPOTS in js/art/iso.js). Crops and signs with text keep their gameplay sizes."
   },
@@ -1167,11 +1167,11 @@
       "prompt": "Transparent overlay placed on top of a stage-4 plant: two small cartoon pests, a round purple beetle on the left around (25,43) and a green shield bug on the right around (40,35), each about 9 px long, with tiny legs and a bold outline. Nothing else in the image. The game wiggles this layer.",
       "reference": "assets/reference/crop.bugs.svg",
       "reference_render": "BUGS_CODE",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/crops/bugs.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Purple beetle and green shield bug with legs and antennae; nothing else in the image.",
       "review": null
     },
     {
@@ -1193,11 +1193,11 @@
       "prompt": "Harvested produce icon: a bunch of phak bung (morning glory) stems with arrow leaves, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.phakbung.svg",
       "reference_render": "produceIcon(0)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/phakbung.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1219,11 +1219,11 @@
       "prompt": "Harvested produce icon: a bunch of three big blue-green kale leaves on thick pale stalks, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.khana.svg",
       "reference_render": "produceIcon(1)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/khana.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1245,11 +1245,11 @@
       "prompt": "Harvested produce icon: one plump magenta-purple sweet potato with a thin root tail and a small highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.manthet.svg",
       "reference_render": "produceIcon(2)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/manthet.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1271,11 +1271,11 @@
       "prompt": "Harvested produce icon: one big shiny red bird's-eye chili with a green cap, lying diagonally. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.phrik.svg",
       "reference_render": "produceIcon(3)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/phrik.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1297,11 +1297,11 @@
       "prompt": "Harvested produce icon: a bundle of four very long thin green beans, curved, tied with a red band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.thua.svg",
       "reference_render": "produceIcon(4)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/thua.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1323,11 +1323,11 @@
       "prompt": "Harvested produce icon: one plump red strawberry with tiny yellow seeds and a green leafy cap. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.strawberry.svg",
       "reference_render": "produceIcon(5)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/strawberry.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1349,11 +1349,11 @@
       "prompt": "Harvested produce icon: one golden-yellow Nam Dok Mai mango, long and slightly curved, with a pink-orange blush and a small leaf on the stem. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.mango.svg",
       "reference_render": "produceIcon(6)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/mango.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1375,11 +1375,11 @@
       "prompt": "Harvested produce icon: one round dark-green watermelon with dark wavy stripes and a small white highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
       "reference": "assets/reference/produce.watermelon.svg",
       "reference_render": "produceIcon(7)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/watermelon.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1401,11 +1401,11 @@
       "prompt": "One duck egg: slightly bluish off-white (#f1ede0), upright oval, with a soft white highlight and two tiny speckles. Centred.",
       "reference": "assets/reference/produce.egg.svg",
       "reference_render": "eggIcon()",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/produce/egg.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
       "review": null
     },
     {
@@ -1428,11 +1428,11 @@
       "reference": "assets/reference/seed.phakbung.svg",
       "reference_render": "packetSVG(0)",
       "packet_color": "#8fd14f",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/phakbung.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1455,11 +1455,11 @@
       "reference": "assets/reference/seed.khana.svg",
       "reference_render": "packetSVG(1)",
       "packet_color": "#5bbf8a",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/khana.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1482,11 +1482,11 @@
       "reference": "assets/reference/seed.manthet.svg",
       "reference_render": "packetSVG(2)",
       "packet_color": "#c98ad6",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/manthet.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1509,11 +1509,11 @@
       "reference": "assets/reference/seed.phrik.svg",
       "reference_render": "packetSVG(3)",
       "packet_color": "#ff8a6a",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/phrik.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1536,11 +1536,11 @@
       "reference": "assets/reference/seed.thua.svg",
       "reference_render": "packetSVG(4)",
       "packet_color": "#b5d86a",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/thua.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1563,11 +1563,11 @@
       "reference": "assets/reference/seed.strawberry.svg",
       "reference_render": "packetSVG(5)",
       "packet_color": "#ff9fb0",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/strawberry.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1590,11 +1590,11 @@
       "reference": "assets/reference/seed.mango.svg",
       "reference_render": "packetSVG(6)",
       "packet_color": "#ffd24a",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/mango.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1617,11 +1617,11 @@
       "reference": "assets/reference/seed.watermelon.svg",
       "reference_render": "packetSVG(7)",
       "packet_color": "#7fcf6a",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/seeds/watermelon.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
       "review": null
     },
     {
@@ -1643,11 +1643,11 @@
       "prompt": "Toolbar button icon: a blue metal watering can (บัวรดน้ำ) with a long spout and a round sprinkler rose, handle on top. Chunky, readable at 30 px, centred with a little padding.",
       "reference": "assets/reference/tool.water.svg",
       "reference_render": "ICON.water",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tools/water.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
       "review": null
     },
     {
@@ -1669,11 +1669,11 @@
       "prompt": "Toolbar button icon: a cream burlap fertilizer sack tied at the top, with a small green leaf symbol printed on it. Chunky, readable at 30 px, centred with a little padding.",
       "reference": "assets/reference/tool.fertilize.svg",
       "reference_render": "ICON.fertilize",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tools/fertilize.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
       "review": null
     },
     {
@@ -1695,11 +1695,11 @@
       "prompt": "Toolbar button icon: a red pump sprayer tank with a white label patch, a hose and a spray wand, with two tiny mist droplets. Chunky, readable at 30 px, centred with a little padding.",
       "reference": "assets/reference/tool.spray.svg",
       "reference_render": "ICON.spray",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tools/spray.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
       "review": null
     },
     {
@@ -1721,11 +1721,11 @@
       "prompt": "Toolbar button icon: a Thai machete (มีดพร้า) with a broad steel blade and a wooden handle, diagonal. Chunky, readable at 30 px, centred with a little padding.",
       "reference": "assets/reference/tool.cut.svg",
       "reference_render": "ICON.cut",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tools/cut.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
       "review": null
     },
     {
@@ -1747,11 +1747,11 @@
       "prompt": "Toolbar button icon: a woven bamboo basket (ตะกร้า) with a handle, with one red chili and one yellow mango peeking out. Chunky, readable at 30 px, centred with a little padding.",
       "reference": "assets/reference/tool.pick.svg",
       "reference_render": "ICON.pick",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tools/pick.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
       "review": null
     },
     {
@@ -1773,11 +1773,11 @@
       "prompt": "HUD icon: a round yellow sun with 8 short rays. Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.sun.svg",
       "reference_render": "ICON.sun",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/sun.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1799,11 +1799,11 @@
       "prompt": "HUD icon: a white-grey cloud with three light-blue rain streaks falling. Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.rain.svg",
       "reference_render": "ICON.rain",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/rain.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1825,11 +1825,11 @@
       "prompt": "HUD icon: a dark speaker with two sound-wave arcs. Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.sound_on.svg",
       "reference_render": "ICON.sound",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/sound_on.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1851,11 +1851,11 @@
       "prompt": "HUD icon: a dark speaker with a red X next to it. Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.sound_off.svg",
       "reference_render": "ICON.mute",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/sound_off.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1877,11 +1877,11 @@
       "prompt": "HUD icon: three thick rounded horizontal bars (hamburger menu). Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.menu.svg",
       "reference_render": "ICON.menu",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/menu.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1903,11 +1903,11 @@
       "prompt": "HUD icon: a small tan feed sack with brown grain dots. Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.feed.svg",
       "reference_render": "ICON.feed",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/feed.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1929,11 +1929,11 @@
       "prompt": "HUD icon: a small side view of a brown laying duck (same design as animal.duck). Must read clearly at 17–22 px on a dark wood bar.",
       "reference": "assets/reference/hud.duck.svg",
       "reference_render": "ICON.duck",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/hud/duck.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
       "review": null
     },
     {
@@ -1955,11 +1955,11 @@
       "prompt": "One farm plot as a raised block of light tilled soil: top face #b7824f with two faint furrows running parallel to the upper-left/lower-right edges, left side #8f6038, right side #a5733f. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges. Thick dark outline. Must tile on the isometric grid with ~4 px gaps.",
       "reference": "assets/reference/tile.soil_dry.svg",
       "reference_render": "isoSoil(0,0,false,false)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tiles/soil_dry.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
       "review": null
     },
     {
@@ -1981,11 +1981,11 @@
       "prompt": "Same block as tile.soil_dry but watered: darker damp soil (top #7a4e2e, sides #5a3820 / #6b4426), darker furrows, one or two tiny water glints. Same shape so the two can be swapped. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges. Thick dark outline. Must tile on the isometric grid with ~4 px gaps.",
       "reference": "assets/reference/tile.soil_wet.svg",
       "reference_render": "isoSoil(0,0,true,false)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tiles/soil_wet.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
       "review": null
     },
     {
@@ -2007,11 +2007,11 @@
       "prompt": "Transparent overlay for the isometric soil tile: 5–7 small cream-white fertilizer granules with thin outlines scattered on the TOP FACE near its edges (keep the centre clear for the plant). Nothing else. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges. Thick dark outline. Must tile on the isometric grid with ~4 px gaps.",
       "reference": "assets/reference/tile.fertilized.svg",
       "reference_render": "isoSoil(0,0,false,true)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/tiles/fertilized.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
       "review": null
     },
     {
@@ -2023,21 +2023,21 @@
       "output": "assets/characters/farmer.svg",
       "format": "svg",
       "canvas": [
-        70,
-        110
+        52,
+        109
       ],
       "anchor": [
-        35,
-        106
+        25,
+        105
       ],
-      "prompt": "The player: a friendly Thai farmer standing, facing the viewer. Wide conical woven straw hat (งอบ), indigo mor hom shirt, a red-and-white checked pha khao ma cloth tied at the waist, dark-blue trousers, bare feet, calm smile. About 100 px tall.",
+      "prompt": "The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer.svg",
       "reference_render": "farmer(0,0,false)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/farmer.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2049,21 +2049,21 @@
       "output": "assets/characters/farmer_tired.svg",
       "format": "svg",
       "canvas": [
-        70,
-        110
+        60,
+        109
       ],
       "anchor": [
-        35,
-        106
+        25,
+        105
       ],
-      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: droopy half-closed eyes, wavy mouth, slumped shoulders, a blue sweat drop. No speech bubble (the game draws it).",
+      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer_tired.svg",
       "reference_render": "farmer(0,0,true)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/farmer_tired.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2075,21 +2075,21 @@
       "output": "assets/characters/auntie_daeng.svg",
       "format": "svg",
       "canvas": [
-        150,
-        230
+        58,
+        79
       ],
       "anchor": [
-        75,
-        226
+        38,
+        74
       ],
-      "prompt": "Auntie Daeng, the cheerful middle-aged market seller. Upper body only (she stands behind a counter, so fade nothing, just stop at the waist): black hair in a bun with an orange marigold, red blouse (her name means 'red'), thin gold necklace, rosy cheeks, big smile with happy closed eyes, holding up a yellow folding fan in her right hand.",
+      "prompt": "Auntie Daeng, the cheerful market seller, UPPER BODY only (she stands behind her counter), 3/4 view toward the viewer: black hair with a bun and an orange marigold, red blouse with gold trim and a gold necklace, one hand resting forward and the other raised to the side holding an open golden paper fan, smiling with rosy cheeks. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the centre of her waist, where the counter hides the rest. The game draws it at CHAR_SCALE in js/art/characters.js.",
       "reference": "assets/reference/character.auntie_daeng.svg",
       "reference_render": "auntieDaeng(0,0)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/auntie_daeng.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2101,21 +2101,21 @@
       "output": "assets/characters/uncle_mee.svg",
       "format": "svg",
       "canvas": [
-        110,
-        190
+        47,
+        104
       ],
       "anchor": [
-        45,
-        186
+        24,
+        100
       ],
-      "prompt": "Uncle Mee, a kind elderly duck farmer, full body, standing: straw hat, bald with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, loose black trousers, sandals. He holds a tall bamboo duck-herding pole with a small red cloth flag at the top.",
+      "prompt": "Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet. The game draws it at CHAR_SCALE in js/art/characters.js.",
       "reference": "assets/reference/character.uncle_mee.svg",
       "reference_render": "uncleMee(0,0)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/uncle_mee.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2219,21 +2219,21 @@
       "output": "assets/animals/duck.svg",
       "format": "svg",
       "canvas": [
-        44,
-        40
+        51,
+        45
       ],
       "anchor": [
-        22,
-        36
+        26,
+        41
       ],
-      "prompt": "A brown Khaki Campbell laying duck in side view facing RIGHT: khaki-brown body, darker brown wing and head, orange bill and feet, small black eye. Plump and cute. The game flips it horizontally and waddles it.",
+      "prompt": "A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground under its feet. The game waddles it along the grid diagonal and flips it horizontally for the way back.",
       "reference": "assets/reference/animal.duck.svg",
       "reference_render": "duckShape()",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/animals/duck.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2349,21 +2349,21 @@
       "output": "assets/props/trough.svg",
       "format": "svg",
       "canvas": [
-        150,
-        50
+        162,
+        112
       ],
       "anchor": [
-        75,
-        48
+        81,
+        75
       ],
-      "prompt": "An EMPTY long wooden feed trough on two short legs, seen from the front-top so the inside is visible and dark. The game draws the feed level inside the rectangle x 8–142, y 6–24, so keep that area plain.",
+      "prompt": "A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": "assets/reference/prop.trough.svg",
       "reference_render": "penPart('trough')",
       "status": "done",
       "file": "assets/props/trough.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Wooden trough on legs; inner area x8-142 y6-24 kept plain dark for the game's feed level.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: plank box on legs with an open dark cavity; the feed level is drawn by the game.",
       "review": null
     },
     {
@@ -2375,21 +2375,21 @@
       "output": "assets/props/nest.svg",
       "format": "svg",
       "canvas": [
-        130,
-        46
+        139,
+        72
       ],
       "anchor": [
-        65,
-        23
+        70,
+        36
       ],
-      "prompt": "A wide, shallow, EMPTY straw nest (flat ellipse, golden straw with strands sticking out), seen from slightly above. The game places up to 12 eggs on top of it.",
+      "prompt": "A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground at its centre.",
       "reference": "assets/reference/prop.nest.svg",
       "reference_render": "penPart('nest')",
       "status": "done",
       "file": "assets/props/nest.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Straw nest with hollow, radiating straws and loose strands.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: straw ring with woven strands, hollow middle and loose straws.",
       "review": null
     },
     {
@@ -2401,21 +2401,21 @@
       "output": "assets/props/egg_basket.svg",
       "format": "svg",
       "canvas": [
-        90,
-        80
+        98,
+        100
       ],
       "anchor": [
-        45,
+        49,
         78
       ],
-      "prompt": "A woven bamboo basket with an arched handle, two duck eggs visible at the top. The player drops eggs here to sell them.",
+      "prompt": "A round woven egg basket with a tall arched handle, a red-and-white check cloth inside and three eggs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": "assets/reference/prop.egg_basket.svg",
       "reference_render": "penPart('basket')",
       "status": "done",
       "file": "assets/props/egg_basket.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Woven basket with handle, two eggs and a red checked cloth over the rim.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: woven cylinder basket with rim, handle, check cloth and three eggs.",
       "review": null
     },
     {
@@ -2427,21 +2427,21 @@
       "output": "assets/props/market_counter.svg",
       "format": "svg",
       "canvas": [
-        204,
-        120
+        190,
+        157
       ],
       "anchor": [
-        102,
-        120
+        95,
+        111
       ],
-      "prompt": "The front of Auntie Daeng's wooden market counter, drawn in front of her: wooden planks, and three shallow woven trays on top holding red chilies, yellow mangoes and purple sweet potatoes. Must look right overlapping her waist.",
+      "prompt": "Auntie Daeng's wooden market counter: a plank box whose long side runs down-right, covered with a red gingham cloth hanging down the front, with three shallow baskets on top (red chilies, golden mangoes, pink sweet potatoes). Auntie Daeng stands behind it, so it hides her legs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": null,
       "reference_render": null,
       "status": "done",
       "file": "assets/props/market_counter.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Counter front with a red checked pha khao ma skirt and three round woven trays of chilies, mangoes and sweet potatoes.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: plank counter, gingham cloth, three produce baskets on top.",
       "review": null
     },
     {
@@ -2997,7 +2997,7 @@
         300,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background (canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side; anchor (300, 0), so safe-area x = canvas x - 300) for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nLAYOUT: the farm is a CLEARING in the forest. Its two back edges follow the grid lines gx = -6.2 and gy = -6.5 (FARM_CLEARING in js/art/iso.js); beyond them a dense, layered tropical forest on a dark floor, drawn back to front: mango-like domes, rain trees with wide umbrella crowns, banyans with aerial roots, golden shower trees (ราชพฤกษ์) with hanging yellow chains, flame trees with red blossoms, bamboo growing in groves (ป่าไผ่) along stretches of both edges — clumps of arching green and golden culms with node rings and light feathery leaf sprays — sugar palms, and a few tall pale-trunked yang (ยางนา) rising above the canopy; the back rows fade into a greener haze. A fringe of bushes, ferns and wild heliconia runs along both edges so no trunk stands bare on the field. The forest fills the top of the stage (the HUD covers y 0–46). Inside the clearing, behind the yard's upper-left edge: rice paddies on the iso grid (gx -6.2 to -2.7, continuing down-left into the bleed with a second field hut) in muted greens (rice planted in rows, a couple of flooded seedling beds, one golden field), slim soft grassy dikes, egrets, a small field hut on stilts and a scarecrow. A raised grassy mound (โคก) in the paddies centred on grid (-4.4, 0.2) with radii 1.5 × 2.6 tiles (FARM_MOUNDS): muddy waterline, earth sides about 7 px high, grass top with tufts, a worn footpath; the game stands palms and a banana clump on it, so leave its top open. An irrigation canal (water gx -2.62 to -2.26) with wavy muddy banks, reeds, lily pads and a plank footbridge at gy≈2.9; between the canal and the yard a lush grass bank about 1.4 tiles wide where the game plants more sprites. Behind the yard's upper-right edge: grass (leave grid (1.2,-1.6) open: the game stands the scenery.spirit_house_iso sprite there); leave the house footprint (gx 2.3–6.4, gy -4.9–-0.8) as plain grass: the game stands the scenery.thai_house_iso sprite there. Beyond the paddock (in the right bleed): a lotus pond (สระบัว) around grid (14.6, -3.2) with reeds and an egret, hay stacks, flowers, and the dirt path continuing to the right edge. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8), drawn exactly like the game's isoFence(): square timber posts with pointed caps every 0.6 tile, two round bamboo rails at z 11 and 23 with node rings and a highlight, rope lashings crossed at each post.\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw the house, the spirit house, banana clumps or palms inside the clearing (the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. Keep the file under 200 KB (skip anything fully under the HUD). The HUD covers y 0–46 and the toolbar y 532–600.",
+      "prompt": "Full-stage ISOMETRIC background (canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side; anchor (300, 0), so safe-area x = canvas x - 300) for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nLAYOUT: the farm is a CLEARING in the forest. Its two back edges follow the grid lines gx = -6.2 and gy = -6.5 (FARM_CLEARING in js/art/iso.js); beyond them a dense, layered tropical forest on a dark floor, drawn back to front: mango-like domes, rain trees with wide umbrella crowns, banyans with aerial roots, golden shower trees (ราชพฤกษ์) with hanging yellow chains, flame trees with red blossoms, bamboo growing in groves (ป่าไผ่) along stretches of both edges — clumps of arching green and golden culms with node rings and light feathery leaf sprays — sugar palms, and a few tall pale-trunked yang (ยางนา) rising above the canopy; the back rows fade into a greener haze. A fringe of bushes, ferns and wild heliconia runs along both edges so no trunk stands bare on the field. The forest fills the top of the stage (the HUD covers y 0–46). Inside the clearing, behind the yard's upper-left edge: rice paddies on the iso grid (gx -6.2 to -2.7, continuing down-left into the bleed with a second field hut) in muted greens (rice planted in rows, a couple of flooded seedling beds, one golden field), slim soft grassy dikes, egrets, a small field hut on stilts and a scarecrow. A raised grassy mound (โคก) in the paddies centred on grid (-4.4, 0.2) with radii 1.5 × 2.6 tiles (FARM_MOUNDS): muddy waterline, earth sides about 7 px high, grass top with tufts, a worn footpath; the game stands palms and a banana clump on it, so leave its top open. An irrigation canal (water gx -2.62 to -2.26) with wavy muddy banks, reeds, lily pads and a plank footbridge at gy≈2.9; between the canal and the yard a lush grass bank about 1.4 tiles wide where the game plants more sprites. Behind the yard's upper-right edge: grass (leave grid (1.2,-1.6) open: the game stands the scenery.spirit_house_iso sprite there); leave the house footprint (gx 2.3–6.4, gy -4.9–-0.8) as plain grass: the game stands the scenery.thai_house_iso sprite there. Beyond the paddock (in the right bleed): a lotus pond (สระบัว) around grid (14.6, -3.2) with reeds and an egret, hay stacks, flowers, and the dirt path continuing to the right edge. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its back fence along gy=-5 (the game draws the gx=8 side and the front fence as depth-sorted sprites), drawn exactly like the game's isoFence(): square timber posts with pointed caps every 0.6 tile, two round bamboo rails at z 11 and 23 with node rings and a highlight, rope lashings crossed at each post.\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw the house, the spirit house, banana clumps or palms inside the clearing (the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. Keep the file under 200 KB (skip anything fully under the HUD). The HUD covers y 0–46 and the toolbar y 532–600.",
       "reference": "assets/reference/bg.farm.svg",
       "reference_render": "farmBG()",
       "status": "done",
@@ -3016,21 +3016,21 @@
       "output": "assets/backgrounds/market.svg",
       "format": "svg",
       "canvas": [
-        800,
+        1400,
         600
       ],
       "anchor": [
-        0,
+        300,
         0
       ],
-      "prompt": "Full-stage background for Auntie Daeng's village market stall (แผงป้าแดง). A warm wooden plank back wall, a darker plank floor from y 470. Left (x 0–205): the stall frame with two posts and a red-and-white striped scalloped awning from y 46 to 110, and a blank cream sign board around (104,122) (the game writes the shop name). A string of hanging goods along the top (bananas, marigold garlands, limes). Leave x 20–190, y 150–480 open for Auntie Daeng and her counter (separate assets). The right side x 210–792, y 52–540 is covered by the shop UI panel, so keep it simple.",
+      "prompt": "Full-stage ISOMETRIC background for Auntie Daeng's stall in a village market square (ตลาดสด), 2:1 like the farm. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Market grid: (u, v) maps to safe-area x = 560 + (u - v)·32, y = 70 + (u + v)·16 - z. The square is packed earth with worn paving lines; two rows of two-storey wooden shophouses (ห้องแถวไม้) as iso blocks with gable roofs line the back edges (u -2.8..-0.4 facing down-right, v -2.8..-0.4 facing down-left), with folding plank doors, shutters, blank sign boards and trees behind; bunting across the square. Auntie Daeng's stall: four posts on u 1.6..4.8, v 15.8..19.0, a back shelf with baskets, a red-and-white striped awning roof with a scalloped hem and hanging goods, and a blank cream sign board centred at (104, 172) about 144×32 (the game writes แผงป้าแดง on it). Bleed: a fruit table under a big blue umbrella and a greens table (left); a garland and vegetable stall under a blue tarp, a red umbrella stall, baskets and a cat (right). KEEP CLEAR: x 20–190, y 250–480 in front of the stall (Auntie Daeng and her counter, separate assets); x 210–792, y 52–540 is covered by the shop UI panel; the speech bubble covers x 14–194, y 80–150. HUD y 0–46, toolbar y 532–600.",
       "reference": "assets/reference/bg.market.svg",
       "reference_render": "marketBG()",
       "status": "done",
       "file": "assets/backgrounds/market.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Plank wall, top beam with hanging bananas, garlic, chili strings, marigold garlands and a basket; striped awning with blank sign; hanging scale and calendar inside the stall; floor goods (rice sacks, coconut crate, mango basket, lime basket) visible below the shop panel; sleeping cat. No Auntie Daeng or counter. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
+      "updated_at": "2026-09-27T16:37:14Z",
+      "notes": "Isometric redesign (1400×600 with bleed): paved square, iso shophouse rows with gable roofs, iso stall frame with striped awning and sign board around Auntie Daeng, umbrella and tarp stalls in the bleed.",
       "review": null
     },
     {
@@ -3042,21 +3042,21 @@
       "output": "assets/backgrounds/pen.svg",
       "format": "svg",
       "canvas": [
-        800,
+        1400,
         600
       ],
       "anchor": [
-        0,
+        300,
         0
       ],
-      "prompt": "Full-stage background for Uncle Mee's duck pen. Sky y 46–160 with a distant tree line. Grassy ground below. A pond with lotus pads, a pink lotus and reeds at x 540–780, y 160–250. A small duck shed with a thatched roof at x 222–372, y 128–240. A bamboo fence along y 236–262 from x 205 to 800 and down the left side at x 212. The pen floor x 215–800, y 250–550 is a slightly lighter green.\n\nKEEP CLEAR: x 10–200, y 110–330 (Uncle Mee stands there); x 10–202, y 338–600 (shop UI); nest x 238–362, y 290–335; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 380–700, y 270–420.",
+      "prompt": "Full-stage ISOMETRIC background for Uncle Mee's duck farm (2:1 like the farm). Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Pen grid: grid point (u, v) maps to safe-area x = 520 + (u - v)·32, y = 200 + (u + v)·16 - z. The pen floor is the diamond u, v in 0..12.5 (packed earth and short grass, mud wallows, grain); the farm's rustic fence (pointed timber posts, two bamboo rails, rope ties) runs along its two BACK edges (v = 0 and u = 0) and a short stretch down the right; the front edges stay open. Outside the fence: a bamboo duck house on stilts at u -4.2..-1.4, v 2.4..5.2 with a thatched gable roof, woven walls, an arched opening and a ramp down into the pen; a lotus pond centred on (7.5, -4.2) with pads, pink lotus, reeds and egrets. Beyond grid lines u = -9 and v = -11 the same forest clearing edge as the farm (forest, bamboo groves, bush fringe). Bleed: straw stacks, a water jar and banana plants. KEEP CLEAR: x 10–200, y 110–330 (Uncle Mee); x 10–202, y 338–600 (shop UI); nest x 238–362, y 290–335; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 380–700, y 270–420. HUD y 0–46, toolbar y 532–600.",
       "reference": "assets/reference/bg.pen.svg",
       "reference_render": "penBG()",
       "status": "done",
       "file": "assets/backgrounds/pen.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Gradient sky, bamboo groves, tree line, pen floor with mud patches, feathers and grain, pond with bank, ripples, lotus pads/flowers, reeds and plank ramp, bamboo-walled thatched duck shed with straw and ramp, bamboo fences. No Uncle Mee, ducks, nest, trough, basket or clouds. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
+      "updated_at": "2026-09-27T16:37:14Z",
+      "notes": "Isometric redesign (1400×600 with bleed): pen floor diamond, rustic back fences, iso bamboo duck house with ramp, iso lotus pond, forest clearing edge, straw stacks, jar and bananas. No Uncle Mee, ducks, nest, trough, basket or clouds.",
       "review": null
     },
     {
@@ -3078,11 +3078,11 @@
       "prompt": "Title logo: the Thai words 'ไร่สุขใจ' as a big, bold, rounded, playful wordmark in tomato red (#e2553f) with a thick dark-brown outline and a chunky drop shadow, a small rice-sprout or sun motif, and 'RAI SUKJAI' in small spaced capitals underneath. Text IS required here; outline the letters as paths so no font is needed.",
       "reference": null,
       "reference_render": null,
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/ui/logo.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T17:13:48Z",
+      "notes": "Thai wordmark shaped with HarfBuzz from Loma Bold and converted to paths (no font needed), chunky shadow, rice sprout and sun, RAI SUKJAI in FreeSans Bold paths.",
       "review": null
     }
   ]

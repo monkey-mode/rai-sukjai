@@ -1,7 +1,16 @@
 /* Characters: the farmer, Auntie Daeng (ป้าแดง) and Uncle Mee (ลุงมี). */
 'use strict';
 
+// Draw a character asset scaled by k around its anchor (x, y).
+function charAsset(id, x, y, k = 1) {
+  return `<g transform="translate(${x} ${y}) scale(${k})">${Assets.image(id)}</g>`;
+}
+// Scale of the market and pen characters' iso assets (drawn smaller than the code art's canvas).
+const CHAR_SCALE = { auntie: 2.5, uncle: 1.75 };
+
 function farmer(x, y, tired) {
+  const id = tired ? 'character.farmer_tired' : 'character.farmer';
+  if (Assets.has(id)) return `<g class="farmer-idle">${charAsset(id, x, y)}</g>` + (tired ? tiredBubble(x, y) : '');
   const face = tired
     ? line(`M${x - 6} ${y - 64}l3 1M${x + 3} ${y - 63}l3 -1M${x - 3} ${y - 57}q3 -2 6 0`, O, 1.6) + `<path d="M${x + 10} ${y - 68}q2 4 0 6q-3 -2 0 -6Z" fill="#8fd3ef" stroke="${O}" stroke-width="1"/>`
     : `<circle cx="${x - 4}" cy="${y - 64}" r="1.5" fill="${O}"/><circle cx="${x + 4}" cy="${y - 64}" r="1.5" fill="${O}"/>` + line(`M${x - 4} ${y - 59}q4 3 8 0`, O, 1.6);
@@ -16,15 +25,20 @@ function farmer(x, y, tired) {
   s += `<path d="M${x - 25} ${y - 67}Q${x} ${y - 94} ${x + 25} ${y - 67}Q${x} ${y - 72} ${x - 25} ${y - 67}Z" fill="#e3c070" ${SW} stroke-width="2.4"/>`;
   s += line(`M${x - 14} ${y - 72}L${x} ${y - 86}L${x + 14} ${y - 72}M${x - 6} ${y - 70}L${x} ${y - 86}L${x + 6} ${y - 70}`, '#b8963f', 1.2);
   s += `</g>`;
-  if (tired) {
-    s += `<g transform="translate(${x - 72} ${y - 140})"><path d="M0 0H120V40H62L52 52L50 40H0Z" fill="#fff" ${SW} stroke-width="2.5"/>` +
-      `<text x="60" y="19" text-anchor="middle" font-family="Kanit" font-size="16" font-weight="600" fill="${O}">เหนื่อยแล้ว…</text>` +
-      `<text x="60" y="33" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}" opacity=".8">I'm tired</text></g>`;
-  }
+  if (tired) s += tiredBubble(x, y);
   return s;
 }
 
+function tiredBubble(x, y) {
+  {
+    return `<g transform="translate(${x - 72} ${y - 140})"><path d="M0 0H120V40H62L52 52L50 40H0Z" fill="#fff" ${SW} stroke-width="2.5"/>` +
+      `<text x="60" y="19" text-anchor="middle" font-family="Kanit" font-size="16" font-weight="600" fill="${O}">เหนื่อยแล้ว…</text>` +
+      `<text x="60" y="33" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}" opacity=".8">I'm tired</text></g>`;
+  }
+}
+
 function auntieDaeng(x, y) {
+  if (Assets.has('character.auntie_daeng')) return charAsset('character.auntie_daeng', x, y, CHAR_SCALE.auntie);
   return `<g>
   ${circ(x + 4, y - 206, 12, '#2a1c15', 2)}
   <path d="M${x - 44} ${y - 30}L${x - 40} ${y - 104}Q${x - 38} ${y - 128} ${x - 18} ${y - 134}L${x + 18} ${y - 134}Q${x + 38} ${y - 128} ${x + 40} ${y - 104}L${x + 44} ${y - 30}Z" fill="#d6372c" ${SW} stroke-width="3"/>
@@ -44,6 +58,7 @@ function auntieDaeng(x, y) {
 }
 
 function uncleMee(x, y) {
+  if (Assets.has('character.uncle_mee')) return charAsset('character.uncle_mee', x, y, CHAR_SCALE.uncle);
   return `<g>
   ${oline(`M${x + 30} ${y}L${x + 38} ${y - 150}`, '#c9a15a', 3)}
   <path d="M${x + 38} ${y - 150}L${x + 62} ${y - 142}L${x + 37} ${y - 132}Z" fill="#d6372c" ${SW} stroke-width="2"/>
