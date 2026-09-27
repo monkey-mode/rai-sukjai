@@ -37,6 +37,7 @@
     <button id="walk">เดิน<small>Walk</small></button>
     <button id="graze">ก้มกินหญ้า<small>Graze</small></button>
     <button id="all">ครบ 8 ทิศ<small>All 8 directions</small></button>
+    <button id="jar">โอ่งมังกร<small>Jar close-up</small></button>
   </div>
   <svg id="scene" viewBox="0 0 960 560"><g id="static"></g><g id="live"></g></svg>
 </div>
@@ -173,49 +174,102 @@ function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75]) {
 
 // ---------- dragon jar as a solid of revolution ----------
 const jarR = h => h < 4 ? 22 + h : h < 38 ? 26 + 14 * Math.sin((h - 4) / 34 * Math.PI / 2) : h < 70 ? 40 - 16 * Math.sin((h - 38) / 32 * Math.PI / 2) : h < 74 ? 24 : 26;
-function drawJar(ox, oy) {
+// The jar can turn (rot, radians) so the dragon travels around it; sc scales the whole drawing.
+function drawJar(ox, oy, rot = 0, sc = 1, time = 0) {
+  const O = '#3a2213';
+  const P3 = (x, y, z) => { const [sx, sy] = proj(x, y, z); return [ox + sx * sc, oy + sy * sc]; };
+  // a point on the jar surface at angle t (jar space), height h, pushed out by `off`
+  const surf = (t, h, off = 0) => { const a = t + rot, r = jarR(h) + off; return P3(Math.cos(a) * r, Math.sin(a) * r, h); };
+  // facing the viewer when the surface normal points toward +x+y (the bottom of the screen)
+  const facing = t => Math.cos(t + rot) + Math.sin(t + rot);
   const ring = (h, r, a0 = 0, a1 = 360, step = 10) => {
     const out = [];
-    for (let a = a0; a <= a1; a += step) { const t = a * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); out.push([ox + sx, oy + sy]); }
+    for (let a = a0; a <= a1; a += step) { const t = a * Math.PI / 180; out.push(P3(Math.cos(t) * r, Math.sin(t) * r, h)); }
     return out;
   };
-  const line = (pts, col, w) => `<path d="M${pts.map(p => fmt(p[0]) + ' ' + fmt(p[1])).join('L')}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
-  // silhouette = hull of all rings
+  const pl = (pts, col, w, extra = '') => `<path d="M${pts.map(p => fmt(p[0]) + ' ' + fmt(p[1])).join('L')}" fill="none" stroke="${col}" stroke-width="${fmt(w)}" stroke-linecap="round" stroke-linejoin="round"${extra}/>`;
   let all = [];
-  for (let h = 0; h <= 76; h += 2) all = all.concat(ring(h, jarR(h), 0, 360, 15));
+  for (let h = 0; h <= 76; h += 2) all = all.concat(ring(h, jarR(h), 0, 360, 12));
   let s = `<path d="${pathOf(ring(0, 34))}" fill="rgba(58,34,19,.18)"/>`;
-  s += `<path d="${pathOf(hull(all))}" fill="#7b3a1a" stroke="#3a2213" stroke-width="3" stroke-linejoin="round"/>`;
-  // shade: the half facing away from the light (screen right), built from right-side points
+  s += `<path d="${pathOf(hull(all))}" fill="#7b3a1a" stroke="${O}" stroke-width="${3 * Math.min(1.4, sc)}" stroke-linejoin="round"/>`;
+  // shading: the right-hand half is in shadow (light comes from the upper-left)
   const shade = [];
-  for (let h = 2; h <= 74; h += 2) { const r = jarR(h); for (const a of [-80, -40, -10]) { const t = a * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); shade.push([ox + sx, oy + sy]); } }
+  for (let h = 2; h <= 74; h += 2) { const r = jarR(h); for (const a of [-80, -45, -15]) { const t = a * Math.PI / 180; shade.push(P3(Math.cos(t) * r, Math.sin(t) * r, h)); } }
   s += `<path d="${pathOf(hull(shade))}" fill="#5f2b12" opacity=".75"/>`;
-  // light rim on the left
-  const lit = []; for (let h = 8; h <= 60; h += 3) { const r = jarR(h) * .92, t = 150 * Math.PI / 180, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); lit.push([ox + sx, oy + sy]); }
-  s += line(lit, 'rgba(255,255,255,.28)', 4);
-  // gold bands: only the front half of each ring (angles facing the viewer: 0°..180° around +x+y)
-  for (const h of [12, 62]) s += line(ring(h, jarR(h) + .3, -45, 135, 6), '#d9a32a', 2.2);
-  // dragon wrapping the front of the belly
-  const drag = [];
-  for (let a = -35; a <= 125; a += 4) { const t = a * Math.PI / 180, h = 36 + 7 * Math.sin(t * 3), r = jarR(h) + 1, [sx, sy] = proj(Math.cos(t) * r, Math.sin(t) * r, h); drag.push([ox + sx, oy + sy]); }
-  s += line(drag, '#3a2213', 9) + line(drag, '#f2c14e', 6);
-  const [hx, hy] = drag[0];
-  s += `<ellipse cx="${fmt(hx + 3)}" cy="${fmt(hy - 3)}" rx="7" ry="5.5" fill="#f2c14e" stroke="#3a2213" stroke-width="2"/><circle cx="${fmt(hx + 5)}" cy="${fmt(hy - 5)}" r="1.4" fill="#3a2213"/>`;
-  s += `<path d="M${fmt(hx + 2)} ${fmt(hy - 8)}l-2 -7l5 5Z" fill="#e2553f" stroke="#3a2213" stroke-width="1.3"/>`;
+  // glaze highlight on the lit side
+  const lit = []; for (let h = 10; h <= 60; h += 3) { const r = jarR(h) * .9, t = 148 * Math.PI / 180; lit.push(P3(Math.cos(t) * r, Math.sin(t) * r, h)); }
+  s += pl(lit, 'rgba(255,255,255,.3)', 4 * sc) + pl(lit.slice(3, 7), 'rgba(255,255,255,.45)', 2 * sc);
+  // gold bands (front half of each ring)
+  for (const h of [12, 62]) s += pl(ring(h, jarR(h) + .3, -45, 135, 6), '#d9a32a', 2.2 * sc) + pl(ring(h + 2.5, jarR(h + 2.5) + .3, -45, 135, 6), '#b8801e', 1 * sc);
+  // cloud scrolls painted on the glaze; they turn with the jar and hide round the back
+  for (const [ta, h] of [[20, 22], [95, 50], [170, 24], [250, 50], [320, 28], [140, 70 - 18], [60, 20]]) {
+    const t = ta * Math.PI / 180;
+    if (facing(t) < .25) continue;
+    const c = surf(t, h, .5), k = sc * Math.min(1, facing(t));
+    s += `<path d="M${fmt(c[0] - 7 * k)} ${fmt(c[1])}q${fmt(2 * k)} ${fmt(-4 * k)} ${fmt(6 * k)} ${fmt(-2 * k)}q${fmt(3 * k)} ${fmt(-4 * k)} ${fmt(7 * k)} 0q${fmt(3 * k)} 0 ${fmt(3 * k)} ${fmt(3 * k)}q${fmt(-2 * k)} ${fmt(2 * k)} ${fmt(-4 * k)} 0" fill="none" stroke="#f6e3b0" stroke-width="${fmt(1.8 * sc)}" stroke-linecap="round"/>`;
+  }
+  // ---- the dragon: a tube following a wave around the belly, drawn only where it faces the viewer ----
+  const N = 90, span = 330 * Math.PI / 180, t0 = -30 * Math.PI / 180;
+  const path = [];
+  for (let i = 0; i <= N; i++) {
+    const u = i / N, t = t0 + u * span, h = 38 + 9 * Math.sin(u * Math.PI * 3.2);
+    path.push({ u, t, h, vis: facing(t), w: (u < .08 ? 7.5 : 7.5 * (1 - (u - .08) * .75)) });
+  }
+  const runs = []; let cur = [];
+  for (const p of path) { if (p.vis > .05) cur.push(p); else if (cur.length) { runs.push(cur); cur = []; } }
+  if (cur.length) runs.push(cur);
+  for (const run of runs) {
+    const pts = run.map(p => surf(p.t, p.h, 1.5));
+    // dorsal fin: small spikes above the body
+    for (let i = 2; i < run.length; i += 3) {
+      const p = run[i], a = surf(p.t, p.h + p.w * .55, 1.5), b = surf(p.t, p.h + p.w * .55 + 5, 2), c = surf(p.t + .05, p.h + p.w * .55, 1.5);
+      s += `<path d="M${fmt(a[0])} ${fmt(a[1])}L${fmt(b[0])} ${fmt(b[1])}L${fmt(c[0])} ${fmt(c[1])}Z" fill="#e2553f" stroke="${O}" stroke-width="${fmt(Math.min(1.2, .6 * sc))}" stroke-linejoin="round"/>`;
+    }
+    const wAvg = run.reduce((a, p) => a + p.w, 0) / run.length;
+    s += pl(pts, O, (wAvg + 3) * sc) + pl(pts, '#f2c14e', wAvg * sc);
+    s += pl(run.map(p => surf(p.t, p.h - p.w * .28, 1.8)), '#fbe39a', wAvg * .35 * sc);           // pale belly stripe
+    for (let i = 1; i < run.length; i += 2) {                                                    // scales
+      const q = surf(run[i].t, run[i].h + run[i].w * .12, 2);
+      s += `<path d="M${fmt(q[0] - 2 * sc)} ${fmt(q[1])}q${fmt(2 * sc)} ${fmt(2 * sc)} ${fmt(4 * sc)} 0" fill="none" stroke="#c98f1e" stroke-width="${fmt(1 * sc)}"/>`;
+    }
+  }
+  // clawed legs at three points along the body
+  for (const u of [.18, .45, .72]) {
+    const p = path[Math.round(u * N)];
+    if (p.vis < .2) continue;
+    const a = surf(p.t, p.h - 4, 1.8), b = surf(p.t - .08, p.h - 13, 1.6);
+    s += pl([a, b], O, 5.5 * sc) + pl([a, b], '#f2c14e', 3.2 * sc);
+    s += `<path d="M${fmt(b[0])} ${fmt(b[1])}l${fmt(-3 * sc)} ${fmt(3 * sc)}M${fmt(b[0])} ${fmt(b[1])}l${fmt(0)} ${fmt(4 * sc)}M${fmt(b[0])} ${fmt(b[1])}l${fmt(3 * sc)} ${fmt(3 * sc)}" stroke="${O}" stroke-width="${fmt(1.3 * sc)}" fill="none" stroke-linecap="round"/>`;
+  }
+  // head at the front end, chasing the flaming pearl
+  const hd = path[0];
+  if (hd.vis > .1) {
+    const c = surf(hd.t - .08, hd.h + 1, 3), k = sc;
+    s += `<path d="M${fmt(c[0] + 4 * k)} ${fmt(c[1] - 7 * k)}l${fmt(-6 * k)} ${fmt(-8 * k)}l${fmt(2 * k)} ${fmt(8 * k)}ZM${fmt(c[0] + 8 * k)} ${fmt(c[1] - 6 * k)}l${fmt(1 * k)} ${fmt(-10 * k)}l${fmt(3 * k)} ${fmt(9 * k)}Z" fill="#e2553f" stroke="${O}" stroke-width="${fmt(1.2 * k)}" stroke-linejoin="round"/>`;
+    s += `<path d="M${fmt(c[0] - 8 * k)} ${fmt(c[1])}Q${fmt(c[0] - 6 * k)} ${fmt(c[1] - 9 * k)} ${fmt(c[0] + 4 * k)} ${fmt(c[1] - 8 * k)}Q${fmt(c[0] + 13 * k)} ${fmt(c[1] - 6 * k)} ${fmt(c[0] + 12 * k)} ${fmt(c[1] + 1 * k)}Q${fmt(c[0] + 6 * k)} ${fmt(c[1] + 3 * k)} ${fmt(c[0] + 11 * k)} ${fmt(c[1] + 6 * k)}Q${fmt(c[0] + 2 * k)} ${fmt(c[1] + 9 * k)} ${fmt(c[0] - 8 * k)} ${fmt(c[1])}Z" fill="#f2c14e" stroke="${O}" stroke-width="${fmt(1.8 * k)}" stroke-linejoin="round"/>`;
+    s += `<circle cx="${fmt(c[0] + 4 * k)}" cy="${fmt(c[1] - 3 * k)}" r="${fmt(2 * k)}" fill="#fff" stroke="${O}" stroke-width="${fmt(.9 * k)}"/><circle cx="${fmt(c[0] + 4.5 * k)}" cy="${fmt(c[1] - 3 * k)}" r="${fmt(.9 * k)}" fill="${O}"/>`;
+    s += `<path d="M${fmt(c[0] + 11 * k)} ${fmt(c[1] + 1 * k)}q${fmt(6 * k)} ${fmt(-2 * k)} ${fmt(9 * k)} ${fmt(3 * k)}M${fmt(c[0] + 10 * k)} ${fmt(c[1] + 4 * k)}q${fmt(5 * k)} ${fmt(3 * k)} ${fmt(6 * k)} ${fmt(8 * k)}" fill="none" stroke="${O}" stroke-width="${fmt(1.1 * k)}" stroke-linecap="round"/>`;
+    const pr = surf(hd.t - .42, hd.h + 6, 3);
+    if (facing(hd.t - .42) > .1) {
+      s += `<path d="M${fmt(pr[0])} ${fmt(pr[1] - 5 * k)}q${fmt(-4 * k)} ${fmt(-5 * k)} 0 ${fmt(-10 * k)}q${fmt(1 * k)} ${fmt(5 * k)} ${fmt(4 * k)} ${fmt(6 * k)}q${fmt(2 * k)} ${fmt(-4 * k)} ${fmt(1 * k)} ${fmt(-7 * k)}q${fmt(5 * k)} ${fmt(5 * k)} ${fmt(1 * k)} ${fmt(11 * k)}Z" fill="#f39c12" stroke="${O}" stroke-width="${fmt(1 * k)}"/>`;
+      s += `<circle cx="${fmt(pr[0])}" cy="${fmt(pr[1])}" r="${fmt(4.2 * k)}" fill="#fff6d8" stroke="${O}" stroke-width="${fmt(1.3 * k)}"/><circle cx="${fmt(pr[0] - 1.3 * k)}" cy="${fmt(pr[1] - 1.3 * k)}" r="${fmt(1.2 * k)}" fill="#fff"/>`;
+    }
+  }
   // rim: lip, dark inner wall, water with a reflection
-  s += `<path d="${pathOf(ring(76, 26))}" fill="#5a2a12" stroke="#3a2213" stroke-width="2.6"/>`;
-  s += `<path d="${pathOf(ring(76, 21))}" fill="#3e1c0b" stroke="#3a2213" stroke-width="1.2"/>`;
-  s += `<path d="${pathOf(ring(70, 19.5).map(p => [p[0], p[1]]))}" fill="#5fb3dd" stroke="#3a2213" stroke-width="1.2"/>`;
-  s += line(ring(70, 12, 200, 250, 5), '#d2f0fb', 1.8);
-  // coconut-shell ladle resting on the rim
-  const [lx, ly] = proj(20, -8, 78), [ex, ey] = proj(34, -30, 96);
-  s += line([[ox + lx, oy + ly], [ox + ex, oy + ey]], '#3a2213', 5) + line([[ox + lx, oy + ly], [ox + ex, oy + ey]], '#a8753f', 2.6);
-  s += `<ellipse cx="${fmt(ox + lx - 3)}" cy="${fmt(oy + ly + 2)}" rx="8" ry="4.5" fill="#7a5230" stroke="#3a2213" stroke-width="1.8"/>`;
+  s += `<path d="${pathOf(ring(76, 26))}" fill="#5a2a12" stroke="${O}" stroke-width="${fmt(2.6 * Math.min(1.4, sc))}"/>`;
+  s += `<path d="${pathOf(ring(76, 21))}" fill="#3e1c0b" stroke="${O}" stroke-width="${fmt(1.2 * sc)}"/>`;
+  s += `<path d="${pathOf(ring(70, 19.5))}" fill="#5fb3dd" stroke="${O}" stroke-width="${fmt(1.2 * sc)}"/>`;
+  s += pl(ring(70, 12, 200, 250, 5), '#d2f0fb', 1.8 * sc);
+  // coconut-shell ladle resting on the rim (turns with the jar)
+  const la = -.35 + rot, l0 = P3(Math.cos(la) * 20, Math.sin(la) * 20, 78), l1 = P3(Math.cos(la - .5) * 44, Math.sin(la - .5) * 44, 96);
+  s += pl([l0, l1], O, 5 * sc) + pl([l0, l1], '#a8753f', 2.6 * sc);
+  s += `<ellipse cx="${fmt(l0[0] - 3 * sc)}" cy="${fmt(l0[1] + 2 * sc)}" rx="${fmt(8 * sc)}" ry="${fmt(4.5 * sc)}" fill="#7a5230" stroke="${O}" stroke-width="${fmt(1.8 * sc)}"/>`;
   return s;
 }
 
 // ---------- scene ----------
 const DIRS = ['ตะวันออก · E', 'ตะวันออกเฉียงใต้ · SE', 'ใต้ · S', 'ตะวันตกเฉียงใต้ · SW', 'ตะวันตก · W', 'ตะวันตกเฉียงเหนือ · NW', 'เหนือ · N', 'ตะวันออกเฉียงเหนือ · NE'];
-const state = { dir: 3, spin: true, walk: false, graze: false, all: false, t: 0 };
+const state = { dir: 3, spin: true, walk: false, graze: false, all: false, jar: false, t: 0 };
 const PARTS = buffaloParts();
 
 function isoGrid(cx, cy, n) {
@@ -232,11 +286,17 @@ let staticKey = '';
 function render() {
   const t = state.t;
   const pose = { yaw: state.dir * Math.PI / 4, pitch: state.graze ? .45 + .12 * Math.sin(t * 2) : 0, swing: .35 * Math.sin(t * 2.4), bob: state.walk ? Math.abs(Math.sin(t * 6)) * 1.5 : 0 };
-  const key = state.all ? 'all' : 'one';
+  const key = state.jar ? 'jar' : state.all ? 'all' : 'one';
   if (key !== staticKey) {
     staticKey = key;
-    let st = state.all ? isoGrid(480, 150, 5) : isoGrid(300, 120, 5);
-    if (!state.all) {
+    let st = state.jar ? isoGrid(480, 170, 5) : state.all ? isoGrid(480, 150, 5) : isoGrid(300, 120, 5);
+    if (state.jar) {
+      st += `<text x="330" y="540" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">โมเดล 3D หมุนได้ · 3D model, turning</text>`;
+      st += `<rect x="690" y="16" width="254" height="528" rx="14" fill="rgba(255,244,214,.6)" stroke="#3a2213" stroke-width="2"/>`;
+      st += `<text x="817" y="42" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">แบบปัจจุบัน · Current asset</text>`;
+      st += `<image href="assets/props/dragon_jar.svg" x="717" y="160" width="200" height="200"/>`;
+    }
+    if (!state.all && !state.jar) {
       st += `<text x="300" y="540" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">โมเดล 3D ไอโซเมตริก · 3D model, true iso</text>`;
       st += `<rect x="690" y="16" width="254" height="528" rx="14" fill="rgba(255,244,214,.6)" stroke="#3a2213" stroke-width="2"/>`;
       st += `<text x="817" y="42" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">แบบปัจจุบัน · Current assets</text>`;
@@ -247,7 +307,9 @@ function render() {
     document.getElementById('static').innerHTML = st;
   }
   let s = '';
-  if (state.all) {
+  if (state.jar) {
+    s += drawJar(330, 450, state.spin ? t * .5 : state.dir * Math.PI / 4, 2.6, t);
+  } else if (state.all) {
     DIRS.forEach((d, i) => {
       const x = 120 + (i % 4) * 240, y = 250 + Math.floor(i / 4) * 230;
       s += drawModel(PARTS, { yaw: i * Math.PI / 4, pitch: 0, swing: .3 * Math.sin(t * 2.4 + i) }, x, y, 1.25);
@@ -258,7 +320,7 @@ function render() {
     if (state.walk) { const d = ((t * 22) % 140) - 70; wx = Math.cos(pose.yaw) * d; wy = Math.sin(pose.yaw) * d; }
     const [sx, sy] = proj(wx, wy, 0);
     s += drawModel(PARTS, pose, 290 + sx * 1.5, 340 + sy * 1.5);
-    s += drawJar(560, 400);
+    s += drawJar(560, 400, state.spin ? t * .5 : 0);
   }
   document.getElementById('live').innerHTML = s;
   document.getElementById('dir').textContent = DIRS[state.dir];
@@ -267,7 +329,7 @@ function render() {
 const btn = id => document.getElementById(id);
 btn('left').onclick = () => { state.dir = (state.dir + 7) % 8; state.spin = false; btn('spin').classList.remove('on'); render(); };
 btn('right').onclick = () => { state.dir = (state.dir + 1) % 8; state.spin = false; btn('spin').classList.remove('on'); render(); };
-for (const k of ['spin', 'walk', 'graze', 'all']) btn(k).onclick = () => { state[k] = !state[k]; btn(k).classList.toggle('on', state[k]); render(); };
+for (const k of ['spin', 'walk', 'graze', 'all', 'jar']) btn(k).onclick = () => { state[k] = !state[k]; btn(k).classList.toggle('on', state[k]); render(); };
 let last = 0, acc = 0;
 function tick(ts) {
   const dt = Math.min(.05, (ts - last) / 1000 || 0); last = ts; state.t += dt;
