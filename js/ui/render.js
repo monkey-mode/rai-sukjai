@@ -53,6 +53,9 @@ function renderFarm() {
   dynEl.innerHTML = s;
 }
 
+// Iso trough: ground point under its centre, and the half-size of its cavity (world px) for the feed surface.
+const TROUGH = { at: [445, 472], inner: [58, 14] };
+
 function renderPen() {
   let s = '';
   // nest with eggs
@@ -70,17 +73,27 @@ function renderPen() {
   const fill = S.trough / CONFIG.DUCK.troughMax;
   const troughAsset = Assets.has('prop.trough');
   s += `<g data-act="trough" class="hot"><title>รางอาหาร · Trough</title>`;
-  s += troughAsset ? Assets.image('prop.trough', 445, 500) : `<rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/>` +
-    `<rect x="378" y="458" width="134" height="18" rx="3" fill="#5a3a22"/>`;
-  if (fill > 0) s += `<rect x="378" y="${458 + 18 * (1 - fill)}" width="134" height="${18 * fill}" rx="3" fill="#e8c77a"/>` +
-    line(Array.from({ length: S.trough * 4 }, (_, i) => `M${384 + i * 6.5} ${470 - (i % 3) * 3}h1`).join(''), '#8a5a22', 2);
+  if (troughAsset) {
+    // the iso trough asset is anchored at the ground under its centre; the feed is an iso surface inside its cavity
+    const [tx, ty] = TROUGH.at, P = (x, y, z) => `${r(tx + (x - y) * .894)},${r(ty + (x + y) * .447 - z)}`;
+    s += Assets.image('prop.trough', tx, ty);
+    if (fill > 0) {
+      const z = 17 + 17 * fill, [a, b] = TROUGH.inner;
+      s += `<polygon points="${P(-a, -b, z)} ${P(a, -b, z)} ${P(a, b, z)} ${P(-a, b, z)}" fill="#e8c77a" stroke="#b8943e" stroke-width="1"/>` +
+        line(Array.from({ length: S.trough * 5 }, (_, i) => { const u = -a + 6 + (i * 23) % (2 * a - 12), v = -b + 4 + (i * 7) % (2 * b - 8); return `M${P(u, v, z).replace(',', ' ')}h1.4`; }).join(''), '#8a5a22', 2);
+    }
+  } else {
+    s += `<rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/><rect x="378" y="458" width="134" height="18" rx="3" fill="#5a3a22"/>`;
+    if (fill > 0) s += `<rect x="378" y="${458 + 18 * (1 - fill)}" width="134" height="${18 * fill}" rx="3" fill="#e8c77a"/>` +
+      line(Array.from({ length: S.trough * 4 }, (_, i) => `M${384 + i * 6.5} ${470 - (i % 3) * 3}h1`).join(''), '#8a5a22', 2);
+  }
   if (!troughAsset) s += `<rect x="378" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/><rect x="504" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/>`;
   s += '</g>';
   s += `<text x="445" y="518" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">รางอาหาร ${S.trough}/${CONFIG.DUCK.troughMax}</text>` +
     `<text x="445" y="530" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Trough — click to add feed (have ${S.inventory.feed})</text>`;
   // basket
   const hasEgg = S.hand && S.hand.type === 'egg';
-  const basketArt = Assets.has('prop.egg_basket') ? Assets.image('prop.egg_basket', 650, 496) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
+  const basketArt = Assets.has('prop.egg_basket') ? Assets.image('prop.egg_basket', 650, 478) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
     `<path d="M612 452H688L680 494H620Z" fill="#d6ad62" ${SW} stroke-width="3"/>` + line('M616 466H684M618 480H682M634 452V494M650 452V494M666 452V494', '#9a7338', 1.4) +
     `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g>`;
   s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`;

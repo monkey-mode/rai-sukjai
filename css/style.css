@@ -152,7 +152,8 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .atail{animation:swish 2.6s ease-in-out infinite}
 @keyframes swish{0%,100%{transform:rotate(0)}50%{transform:rotate(18deg)}}
 .duck{animation:wander 12s linear infinite}
-@keyframes wander{0%{transform:translateX(-45px) scaleX(1)}46%{transform:translateX(45px) scaleX(1)}50%{transform:translateX(45px) scaleX(-1)}96%{transform:translateX(-45px) scaleX(-1)}100%{transform:translateX(-45px) scaleX(1)}}
+/* ducks waddle along the iso grid diagonal (2:1) */
+@keyframes wander{0%{transform:translate(-44px,-22px) scaleX(1)}46%{transform:translate(44px,22px) scaleX(1)}50%{transform:translate(44px,22px) scaleX(-1)}96%{transform:translate(-44px,-22px) scaleX(-1)}100%{transform:translate(-44px,-22px) scaleX(1)}}
 .waddle{animation:waddle .5s ease-in-out infinite alternate}
 @keyframes waddle{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
 .rainfall{animation:rain .45s linear infinite}

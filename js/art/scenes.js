@@ -113,7 +113,7 @@ function marketBackdrop() {
 }
 
 function marketCounter() {
-  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 104, 480);
+  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 100, 470);
   let s = '';
   s += `<rect x="4" y="380" width="200" height="100" fill="#a8693a" ${SW} stroke-width="3"/>` + line('M4 404H204M4 440H204', '#7a4a26', 2);
   s += ell(44, 380, 30, 10, '#d6ad62', 0, 2) + ell(116, 382, 32, 10, '#d6ad62', 0, 2) + ell(176, 380, 24, 9, '#d6ad62', 0, 2);

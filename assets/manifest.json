@@ -2349,21 +2349,21 @@
       "output": "assets/props/trough.svg",
       "format": "svg",
       "canvas": [
-        150,
-        50
+        162,
+        112
       ],
       "anchor": [
-        75,
-        48
+        81,
+        75
       ],
-      "prompt": "An EMPTY long wooden feed trough on two short legs, seen from the front-top so the inside is visible and dark. The game draws the feed level inside the rectangle x 8–142, y 6–24, so keep that area plain.",
+      "prompt": "A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": "assets/reference/prop.trough.svg",
       "reference_render": "penPart('trough')",
       "status": "done",
       "file": "assets/props/trough.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Wooden trough on legs; inner area x8-142 y6-24 kept plain dark for the game's feed level.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: plank box on legs with an open dark cavity; the feed level is drawn by the game.",
       "review": null
     },
     {
@@ -2375,21 +2375,21 @@
       "output": "assets/props/nest.svg",
       "format": "svg",
       "canvas": [
-        130,
-        46
+        139,
+        72
       ],
       "anchor": [
-        65,
-        23
+        70,
+        36
       ],
-      "prompt": "A wide, shallow, EMPTY straw nest (flat ellipse, golden straw with strands sticking out), seen from slightly above. The game places up to 12 eggs on top of it.",
+      "prompt": "A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground at its centre.",
       "reference": "assets/reference/prop.nest.svg",
       "reference_render": "penPart('nest')",
       "status": "done",
       "file": "assets/props/nest.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Straw nest with hollow, radiating straws and loose strands.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: straw ring with woven strands, hollow middle and loose straws.",
       "review": null
     },
     {
@@ -2401,21 +2401,21 @@
       "output": "assets/props/egg_basket.svg",
       "format": "svg",
       "canvas": [
-        90,
-        80
+        98,
+        100
       ],
       "anchor": [
-        45,
+        49,
         78
       ],
-      "prompt": "A woven bamboo basket with an arched handle, two duck eggs visible at the top. The player drops eggs here to sell them.",
+      "prompt": "A round woven egg basket with a tall arched handle, a red-and-white check cloth inside and three eggs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": "assets/reference/prop.egg_basket.svg",
       "reference_render": "penPart('basket')",
       "status": "done",
       "file": "assets/props/egg_basket.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Woven basket with handle, two eggs and a red checked cloth over the rim.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: woven cylinder basket with rim, handle, check cloth and three eggs.",
       "review": null
     },
     {
@@ -2427,21 +2427,21 @@
       "output": "assets/props/market_counter.svg",
       "format": "svg",
       "canvas": [
-        204,
-        120
+        190,
+        157
       ],
       "anchor": [
-        102,
-        120
+        95,
+        111
       ],
-      "prompt": "The front of Auntie Daeng's wooden market counter, drawn in front of her: wooden planks, and three shallow woven trays on top holding red chilies, yellow mangoes and purple sweet potatoes. Must look right overlapping her waist.",
+      "prompt": "Auntie Daeng's wooden market counter: a plank box whose long side runs down-right, covered with a red gingham cloth hanging down the front, with three shallow baskets on top (red chilies, golden mangoes, pink sweet potatoes). Auntie Daeng stands behind it, so it hides her legs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
       "reference": null,
       "reference_render": null,
       "status": "done",
       "file": "assets/props/market_counter.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Counter front with a red checked pha khao ma skirt and three round woven trays of chilies, mangoes and sweet potatoes.",
+      "updated_at": "2026-09-27T16:41:01Z",
+      "notes": "Isometric redesign: plank counter, gingham cloth, three produce baskets on top.",
       "review": null
     },
     {
