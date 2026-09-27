@@ -2276,14 +2276,14 @@
         78,
         110
       ],
-      "prompt": "A traditional wooden Thai ox cart (เกวียน) in ISOMETRIC 3/4 view matching the farm grid: the bed's long axis runs along +gx (down-right), shaft and yoke pointing to the front-right, parking stand under the shaft. Open bed with woven bamboo side panels and wooden rails, loaded with two woven baskets (watermelon, mango, chilies, strawberries). Big spoked wheels seen at an angle (ellipses along the gx axis); the near wheel in front. No sign and no text (the game adds it). Anchor (78,110) = ground under the middle of the axle. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.",
+      "prompt": "A traditional wooden Thai ox cart (เกวียน) in ISOMETRIC 3/4 view matching the farm grid: the bed's long axis runs along +gx (down-right), shaft and yoke pointing to the front-right, parking stand under the shaft. Open bed with woven bamboo side panels and wooden rails, loaded with two woven baskets (watermelon, mango, chilies, strawberries). Big solid spoked wheels seen at an angle (ellipses along the gx axis) with visible thickness: the tyre tread joining both faces, the spoked front face, and a protruding hub; the near wheel in front. No sign and no text (the game adds it). Anchor (78,110) = ground under the middle of the axle. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.",
       "reference": "assets/reference/prop.ox_cart.svg",
       "reference_render": "oxCart(0,0,false)",
       "status": "done",
       "file": "assets/props/ox_cart.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:18:15Z",
-      "notes": "Isometric 3/4 redesign: bed along +gx with woven near panel, rails, posts, beam, two sheared spoked wheels, axle, shaft with yoke and parking stand, baskets of watermelon, mango, chilies and strawberries. Canvas 180x152, anchor (78,110).",
+      "updated_at": "2026-09-27T12:57:07Z",
+      "notes": "Isometric 3/4 redesign: bed along +gx with woven near panel, rails, posts, beam, two solid 3D wheels (tyre tread band between both faces, spoked face as a ring with rim pegs, protruding hub with axle pin), axle, shaft with yoke and parking stand, baskets of watermelon, mango, chilies and strawberries. Canvas 180x152, anchor (78,110).",
       "review": null
     },
     {
@@ -2490,8 +2490,8 @@
       "status": "done",
       "file": "assets/backgrounds/farm.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:27:22Z",
-      "notes": "Isometric background (159 KB). Rice fields: paddy cells on the grid with raised earthen dikes along both axes, rows of rice clumps, water paddies with reflections, young/green/golden paddies, a canal with a plank bridge, a scarecrow, egrets. Trees: sugar palms with fan fronds, fruit and shadows; pinnate coconut palms with ringed curved trunks; two banana clumps with fruit and a banana flower. Phra Phum shrine in 3/4 view: plinth, pillar, garlanded gold tray, red house with gold door, two roof tiers with chofa and a spire, soda bottles, incense and zebra figurines. Plus the stilt house, paddock (back fences, hay) and the yard/bunds matching isoFarmGround().",
+      "updated_at": "2026-09-27T12:57:07Z",
+      "notes": "Isometric background (179 KB). Rice fields: paddy cells on the grid with raised earthen dikes along both axes, rows of rice clumps, water paddies with reflections, young/green/golden paddies, a canal with a plank bridge, a scarecrow, egrets. Trees: sugar palms with fan fronds, fruit and shadows; pinnate coconut palms with ringed curved trunks; two banana clumps (pseudostems with sheath streaks and dry strips, long arching oblong leaves with veins, wind tears and drooping tips, a rolled young leaf, a hanging bunch of green bananas with a purple banana flower, dry leaves and suckers at the base). Phra Phum shrine in 3/4 view: plinth, pillar, garlanded gold tray, red house with gold door, two roof tiers with chofa and a spire, soda bottles, incense and zebra figurines. Plus the stilt house, paddock (back fences, hay) and the yard/bunds matching isoFarmGround().",
       "review": null
     },
     {
