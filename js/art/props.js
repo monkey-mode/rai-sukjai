@@ -18,10 +18,10 @@ function dragonJar(x, top) {
   <path d="M${x + 8} ${top + 4}q10 -4 12 4" fill="#8a6440" ${SW} stroke-width="1.6"/></g>`;
 }
 
-function oxCart(x, y, glow) {
+function oxCart(x, y, glow, signAt = [x + 110, y - 132]) {
   let s = `<g data-act="cart" class="hot ${glow ? 'glow' : ''}"><title>เกวียน · Market cart</title>`;
   s += `<ellipse cx="${x + 85}" cy="${y + 2}" rx="75" ry="6" fill="rgba(0,0,0,.18)"/>`;
-  if (Assets.has('prop.ox_cart')) return s + Assets.image('prop.ox_cart', x + 66, y + 1) + cartSign(x, y) + '</g>';
+  if (Assets.has('prop.ox_cart')) return s + Assets.image('prop.ox_cart', x + 66, y + 1) + (signAt ? cartSign(signAt[0], signAt[1]) : '') + '</g>';
   s += oline(`M${x + 30} ${y - 46}L${x - 12} ${y - 36}Q${x - 20} ${y - 36} ${x - 20} ${y - 46}`, '#9a6a3c', 5);
   s += `<path d="M${x + 22} ${y - 66}L${x + 150} ${y - 66}L${x + 146} ${y - 42}L${x + 26} ${y - 42}Z" fill="#a8693a" ${SW} stroke-width="2.6"/>`;
   s += line(`M${x + 30} ${y - 58}H${x + 144}M${x + 30} ${y - 50}H${x + 144}`, '#7a4a26', 1.4);
@@ -34,13 +34,13 @@ function oxCart(x, y, glow) {
   let sp = '';
   for (let a = 0; a < 180; a += 22.5) { const rad = a * Math.PI / 180; sp += `M${r(wx + Math.cos(rad) * 23)} ${r(wy + Math.sin(rad) * 23)}L${r(wx - Math.cos(rad) * 23)} ${r(wy - Math.sin(rad) * 23)}`; }
   s += line(sp, '#7a4a26', 2.6) + circ(wx, wy, 6, '#5a3a1e', 2);
-  s += cartSign(x, y);
+  if (signAt) s += cartSign(signAt[0], signAt[1]);
   return s + '</g>';
 }
 
-function cartSign(x, y) {
+function cartSign(sx, sy) {
   let s = '';
-  s += `<g transform="translate(${x + 110} ${y - 132})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
+  s += `<g transform="translate(${sx} ${sy})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
     `<text x="8" y="15" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ขายผลผลิต</text>` +
     `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g>`;
   return s;

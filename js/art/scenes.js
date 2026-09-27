@@ -1,33 +1,37 @@
 /* Static backgrounds for the three scenes. */
 'use strict';
 
+// Isometric farm. The painted asset covers sky, horizon, paddies, house, trees, yard, field bunds and the
+// paddock's back fence; the game adds what moves or stands in front: clouds, buffalo, the paddock front fence.
 function farmBG() {
-  // With the asset background, the game still adds what moves or must sit in front: clouds, buffalo, fence.
-  if (Assets.has('bg.farm')) {
-    return Assets.image('bg.farm') + cloud(250, 72, 1, '') + cloud(470, 52, .75, 'd2') + cloud(160, 40, .6, 'd2') +
-      buffalo() + fence(610, 800, 350);
+  const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
+  const front = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2') +
+    `<g transform="translate(${b[0] - 705} ${b[1] - 342})">${buffalo()}</g>` + isoFence([px0, py1], [px1, py1]);
+  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + front;
+  return farmBackdropIso() + front;
+}
+
+// Code-drawn fallback for the isometric farm background.
+function farmBackdropIso() {
+  let s = `<defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cdea"/><stop offset="1" stop-color="#fbe6b2"/></linearGradient></defs>`;
+  s += `<rect width="800" height="160" fill="url(#gSky)"/>` + circ(118, 94, 24, '#ffd54a', 3);
+  s += `<path d="M0 150Q40 132 80 146Q120 128 160 144Q200 130 240 146Q280 132 320 144Q360 128 400 144Q440 130 480 146Q520 132 560 144Q600 128 640 146Q680 132 720 144Q760 130 800 146V160H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
+  s += `<rect y="156" width="800" height="444" fill="#bccb6c"/>` + line('M0 156H800', O, 2.5);
+  // iso paddies behind the yard's upper-left edge
+  let pad = '';
+  for (let gx = -7; gx < -1; gx++) for (let gy = -4; gy < 9; gy += 2) {
+    const [a, b, c, d] = [isoPt(gx, gy), isoPt(gx + 1, gy), isoPt(gx + 1, gy + 2), isoPt(gx, gy + 2)];
+    if (Math.min(a[1], b[1], d[1]) < 156) continue;
+    pad += `<polygon points="${isoPoints([a, b, c, d])}" fill="${(gx + gy) % 3 ? '#a8d04e' : '#bfe0e6'}" stroke="#dcc67c" stroke-width="3"/>`;
   }
-  let s = `<defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cdea"/><stop offset=".8" stop-color="#fbe6b2"/></linearGradient></defs>`;
-  s += `<rect width="800" height="260" fill="url(#gSky)"/>`;
-  s += circ(120, 94, 24, '#ffd54a', 3);
-  s += cloud(260, 88, 1, '') + cloud(440, 70, .75, 'd2') + cloud(40, 128, .6, 'd2');
-  s += `<path d="M0 170Q30 152 60 164Q90 148 125 162Q160 146 200 160Q240 148 280 162Q320 150 360 162Q400 148 440 160Q480 150 520 162Q560 152 600 162L800 162L800 190L0 190Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
-  s += `<rect x="0" y="176" width="800" height="76" fill="#a8d04e"/>`;
-  s += `<rect x="92" y="196" width="140" height="20" fill="#bfe27a"/><rect x="380" y="178" width="130" height="16" fill="#c3dfe8" opacity=".7"/>`;
-  s += line('M0 196L800 192M0 216L800 211M0 238L800 232M90 176L72 252M230 176L212 252M370 176L352 252M520 176L502 252', '#dcc67c', 3);
-  let rice = [];
-  [186, 205, 227, 247].forEach((y, row) => { for (let x = 6 + row * 7; x < 560; x += 21) rice.push([x, y]); });
-  s += line(rice.map(([x, y]) => `M${x} ${y}l-2 -5M${x} ${y}l0 -6M${x} ${y}l2 -5`).join(''), '#6a9a2e', 1.3);
-  s += sugarPalm(60, 190, 1) + sugarPalm(168, 194, .85) + sugarPalm(300, 188, 1.1) + sugarPalm(396, 196, .8) + sugarPalm(545, 186, .9);
-  s += `<path d="M0 250Q150 242 300 248T600 246T800 248L800 600L0 600Z" fill="#bccb6c" ${SW} stroke-width="3"/>`;
-  s += `<rect x="8" y="248" width="462" height="290" rx="18" fill="#d6b277" ${SW} stroke-width="2.5"/>`;
-  s += `<path d="M470 530Q600 500 800 470L800 540Q600 548 470 540Z" fill="#d6b277"/>`;
-  s += tufts([[480, 270], [540, 262], [600, 380], [790, 380], [480, 520], [720, 540], [560, 380], [640, 540], [700, 390]]);
-  s += stiltHouse();
-  s += coconutTree(24, 262, 150, 18) + coconutTree(462, 256, 116, -12);
-  s += spiritHouse(518, 252);
-  s += buffalo();
-  s += fence(610, 800, 350);
+  s += pad;
+  s += sugarPalm(70, 250, 1) + sugarPalm(150, 205, .9) + sugarPalm(40, 330, 1.1);
+  s += stiltHouse() + spiritHouse(330, 196) + coconutTree(250, 196, 120, -10);
+  // paddock ground and its back fences
+  const [px0, py0, px1, py1] = ISO.PADDOCK;
+  s += `<polygon points="${isoPoints([isoPt(px0, py0), isoPt(px1, py0), isoPt(px1, py1), isoPt(px0, py1)])}" fill="#b0c160" stroke="none"/>`;
+  s += isoFence([px0, py0], [px1, py0]) + isoFence([px0, py0], [px0, py1]);
+  s += isoFarmGround();
   return s;
 }
 

@@ -17,11 +17,11 @@ const ASSET_SPECS = (() => {
   add('produce.egg', 'assets/produce/egg.svg', 32, 32, 16, 16);
   ['water', 'fertilize', 'spray', 'cut', 'pick'].forEach(t => add(`tool.${t}`, `assets/tools/${t}.svg`, 36, 36, 18, 18));
   ['sun', 'rain', 'sound_on', 'sound_off', 'menu', 'feed', 'duck'].forEach(t => add(`hud.${t}`, `assets/hud/${t}.svg`, 24, 24, 12, 12));
-  add('tile.soil_dry', 'assets/tiles/soil_dry.svg', 48, 38, 0, 0);
-  add('tile.soil_wet', 'assets/tiles/soil_wet.svg', 48, 38, 0, 0);
-  add('tile.fertilized', 'assets/tiles/fertilized.svg', 48, 38, 0, 0);
+  add('tile.soil_dry', 'assets/tiles/soil_dry.svg', 64, 40, 32, 16);
+  add('tile.soil_wet', 'assets/tiles/soil_wet.svg', 64, 40, 32, 16);
+  add('tile.fertilized', 'assets/tiles/fertilized.svg', 64, 40, 32, 16);
   add('prop.dragon_jar', 'assets/props/dragon_jar.svg', 100, 100, 50, 96);
-  add('prop.ox_cart', 'assets/props/ox_cart.svg', 200, 110, 100, 106);
+  add('prop.ox_cart', 'assets/props/ox_cart.svg', 180, 152, 78, 110);
   add('prop.signboard', 'assets/props/signboard.svg', 92, 40, 0, 0);
   add('prop.signpole', 'assets/props/signpole.svg', 12, 134, 6, 134);
   add('prop.trough', 'assets/props/trough.svg', 150, 50, 75, 48);

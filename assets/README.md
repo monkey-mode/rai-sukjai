@@ -80,6 +80,10 @@ Copy this into the other AI (give it this repository or these files):
 
 > You are the asset artist for the browser game "ไร่สุขใจ (Rai Sukjai)". Your task list is `assets/manifest.json`, and the working rules are in `assets/README.md`: read both first. For each asset whose status is `needs_changes` or `todo`, in priority order: stamp it `in_progress` with your agent name and the current UTC time, create the file at its `output` path following `style_guide`, its category notes, its `prompt` and its `reference` SVG, then stamp it `done` with `file` set to the path you wrote. Only edit the fields `status`, `file`, `agent`, `updated_at` and `notes`. Hand-author clean, self-contained SVG (viewBox equal to `canvas`, no text unless asked, no external links). Work in batches (for example one crop's five stages together, so they match) and run `node tools/check-assets.mjs` after each batch.
 
+## Isometric farm
+
+The farm scene is isometric (2:1). `style_guide.isometric` in the manifest gives the projection, and `bg.farm` lists the exact yard, bund and keep-clear geometry the game expects (defined in `js/art/iso.js`). Crop, produce and icon assets stay upright sprites. Soil tiles, the ox cart and the farm background are drawn in isometric 3/4 view. The market and duck pen stay in front view.
+
 ## How the game uses assets
 
 `js/art/assets.js` loads finished files at startup. The art functions draw an asset when its file is available and fall back to the code-drawn art otherwise, so assets can arrive in any order.
