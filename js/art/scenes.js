@@ -13,8 +13,8 @@ function farmBG() {
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
     [px0 + (py0 + py1) / 2, isoFence([px0, py0], [px0, py1])],       // left side: palms stand behind it
   ];
-  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean)));
-  return farmBackdropIso() + clouds + depthSorted(items);
+  const sprites = items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean));
+  return (Assets.has('bg.farm') ? Assets.image('bg.farm') : farmBackdropIso()) + clouds + depthSorted(sprites);
 }
 
 // A background filling the wide stage. One painted with bleed (1400 wide) is used as is; an 800-wide one gets
@@ -71,8 +71,9 @@ function farmBackdropIso() {
     pad += `<polygon points="${isoPoints([a, b, c, d])}" fill="${(gx + gy) % 3 ? '#a8d04e' : '#bfe0e6'}" stroke="#dcc67c" stroke-width="3"/>`;
   }
   s += pad;
-  s += sugarPalm(70, 250, 1) + sugarPalm(150, 205, .9) + sugarPalm(40, 330, 1.1);
-  s += stiltHouse() + spiritHouse(330, 196) + coconutTree(250, 196, 120, -10);
+  // the forest beyond the clearing's back edges (the house, shrine and plants are sprites drawn by farmBG)
+  const [ex, ey] = FARM_CLEARING;
+  s += `<polygon points="${isoPoints([isoPt(ex, 30), isoPt(ex, ey), isoPt(40, ey), [1400, -600], [-800, -600]])}" fill="#4d7a34" ${SW} stroke-width="2.5"/>`;
   // paddock ground and its back fences
   const [px0, py0, px1, py1] = ISO.PADDOCK;
   s += `<polygon points="${isoPoints([isoPt(px0, py0), isoPt(px1, py0), isoPt(px1, py1), isoPt(px0, py1)])}" fill="#b0c160" stroke="none"/>`;

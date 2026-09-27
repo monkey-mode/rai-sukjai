@@ -63,7 +63,8 @@ const NEST_PILE = [NEST[0], NEST[1] - 10];
 const NEST_BACK = [[-9, -7], [9, -7]];
 
 function renderPen() {
-  let s = '';
+  let s = '', labels = '';
+  const items = [];                                   // [ground y, svg]: props and ducks, drawn back to front
   // nest with eggs
   const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', ...NEST) : `<g transform="translate(${NEST[0] - 300} ${NEST[1] - 312})">${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}</g>`;
   s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${nestArt}`;
@@ -81,7 +82,8 @@ function renderPen() {
     }
   }
   s += `</g>`;
-  s += `<text x="${NEST[0]}" y="${NEST[1] + 40}" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
+  items.push([NEST[1], s]); s = '';
+  labels += `<text x="${NEST[0]}" y="${NEST[1] + 40}" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
     `<text x="${NEST[0]}" y="${NEST[1] + 52}" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
   // trough
   const fill = S.trough / CONFIG.DUCK.troughMax;
@@ -103,33 +105,33 @@ function renderPen() {
   }
   if (!troughAsset) s += `<rect x="378" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/><rect x="504" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/>`;
   s += '</g>';
-  s += `<text x="445" y="518" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">รางอาหาร ${S.trough}/${CONFIG.DUCK.troughMax}</text>` +
+  items.push([TROUGH.at[1], s]); s = '';
+  labels += `<text x="445" y="518" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">รางอาหาร ${S.trough}/${CONFIG.DUCK.troughMax}</text>` +
     `<text x="445" y="530" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Trough — click to add feed (have ${S.inventory.feed})</text>`;
   // basket
   const hasEgg = S.hand && S.hand.type === 'egg';
   const basketArt = Assets.has('prop.egg_basket') ? Assets.image('prop.egg_basket', 650, 478) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
     `<path d="M612 452H688L680 494H620Z" fill="#d6ad62" ${SW} stroke-width="3"/>` + line('M616 466H684M618 480H682M634 452V494M650 452V494M666 452V494', '#9a7338', 1.4) +
     `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g>`;
-  s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`;
-  s += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
+  items.push([478, `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`]);
+  labels += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
     `<text x="650" y="524" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Egg basket — drop eggs to sell</text>`;
+  items.push(...penDucks());
+  s = items.sort((a, b) => a[0] - b[0]).map(i => i[1]).join('') + labels;
   if (S.ducks === 0) s += `<text x="600" y="300" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;
   dynEl.innerHTML = s;
 }
 
-function renderAnim() {
-  const key = S.scene + ':' + (S.scene === 'pen' ? S.ducks : '');
-  if (ui.animKey === key) return;
-  ui.animKey = key;
-  if (S.scene !== 'pen') { animEl.innerHTML = ''; return; }
-  const spots = [[600, 300, 11, 0], [300, 365, 14, -3], [665, 362, 10, -6], [560, 408, 13, -2], [305, 425, 15, -8]];   // clear of the nest, trough and basket
-  let s = '';
-  for (let i = 0; i < S.ducks; i++) {
-    const [x, y, dur, delay] = spots[i];
-    s += `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${delay}s"><g class="waddle" style="animation-delay:${i * .13}s">${duckShape()}</g></g></g>`;
-  }
-  animEl.innerHTML = s;
+// Ducks as [ground y, svg] items so they sort with the nest, trough and basket. A negative animation delay taken
+// from the clock keeps each duck's walk continuous when the pen re-renders.
+const DUCK_SPOTS = [[600, 300, 11], [300, 365, 14], [665, 362, 10], [560, 408, 13], [305, 425, 15]];   // clear of the nest, trough and basket
+function penDucks() {
+  const t = performance.now() / 1000;
+  return DUCK_SPOTS.slice(0, S.ducks).map(([x, y, dur], i) =>
+    [y, `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${-((t + i * 3.1) % dur).toFixed(2)}s"><g class="waddle" style="animation-delay:${i * .13}s">${duckShape()}</g></g></g>`]);
 }
+
+function renderAnim() { animEl.innerHTML = ''; }   // animated layers now live in their scenes' depth sorts
 
 function renderHUD() {
   const d = dateOf(S.day), se = seasonOf(S.day), inv = S.inventory;
@@ -189,4 +191,5 @@ function render() {
   renderAnim();
   if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else dynEl.innerHTML = '';
   renderPanel(); renderHUD(); renderToolbar(); renderFx(); renderHand();
+  if (typeof applyCam === 'function') applyCam();
 }

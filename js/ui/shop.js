@@ -5,13 +5,14 @@ function renderPanel() {
   if (S.scene === 'market') {
     const greet = [['มาแล้วเหรอหลาน วันนี้เอาอะไรดีจ๊ะ', "Welcome, dear! What'll it be?"], ['ผักสด ๆ ทั้งนั้นจ้ะ', 'All fresh today!'], ['ปุ๋ยดีผักก็งามนะ', 'Good fertilizer, good greens']][ui.greet % 3];
     panel.innerHTML = `<div class="bubble" style="left:14px;top:34px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
-    <div class="shop-board"><h3>เมล็ดพันธุ์ & ของใช้ <span class="en">Seeds & supplies</span><span class="money-now k">฿${fmt(S.money)}</span></h3>
+    ${ui.shopOpen ? `<div class="shop-board"><button class="shop-x" data-act="shop-close" title="ปิด · Close">×</button><h3>เมล็ดพันธุ์ & ของใช้ <span class="en">Seeds & supplies</span><span class="money-now k">฿${fmt(S.money)}</span></h3>
     <div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div>
-    <div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div></div>
+    <div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div></div>`
+    : `<button class="shop-open glow" data-act="shop-open">🛒 ซื้อของ<small>Open the shop</small></button>`}
     <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
   } else if (S.scene === 'pen') {
     const D = CONFIG.DUCK;
-    panel.innerHTML = `<div class="bubble" style="left:150px;top:44px;width:190px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
+    panel.innerHTML = `<div class="bubble" style="left:8px;top:6px;width:176px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
     <div class="mee-shop"><h3>คอกเป็ดลุงมี<br><span class="en">Uncle Mee's duck pen</span></h3>
       <div class="line"><span>เป็ดไข่ <b>${S.ducks}/${D.max}</b></span><button data-act="buy-duck" ${S.ducks >= D.max ? 'disabled' : ''}>ซื้อ ฿${fmt(D.price)}</button></div>
       <div class="line"><span>อาหาร <b>${S.inventory.feed}</b></span><button data-act="buy-feed">฿${D.feedPrice} / ${D.feedPortions}</button></div>

@@ -46,7 +46,13 @@ js/main.js            input handling, End Day flow, boot
 
 ## Art assets (multi-agent)
 
-The art is currently drawn in code. Replacement asset files are produced by a separate asset AI, coordinated through one central file, `assets/manifest.json`. It lists 93 assets, each with a prompt, size, anchor, output path and status. The workflow and a kickoff prompt for the asset AI are in [`assets/README.md`](assets/README.md). `node tools/check-assets.mjs --queue` shows progress.
+All art comes from asset files coordinated through one central file, `assets/manifest.json` (124 assets, all done). Each entry has a prompt, size, anchor, output path and status; the game falls back to simple code-drawn art for anything missing. The workflow and a kickoff prompt for the asset AI are in [`assets/README.md`](assets/README.md). `node tools/check-assets.mjs --queue` shows progress.
+
+`node tools/rasterize-backgrounds.mjs` renders the three backgrounds to WebP (1.5x). The game draws the WebP when it exists, since a big vector background is slow to redraw on phones; re-run it after changing a background SVG.
+
+## Screens and controls
+
+The stage is 600 high and 800–1400 wide, so it fills anything from 4:3 to 21:9 (see `style_guide.stage` in the manifest). On small screens the HUD, toolbar and shop panels are drawn larger. On the farm, zoom with the + / − buttons, the mouse wheel or a pinch, and drag to pan; phones start zoomed in on the fields.
 
 ## Tests
 

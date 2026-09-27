@@ -42,9 +42,9 @@
   <svg id="scene" viewBox="0 0 960 560"><g id="static"></g><g id="live"></g></svg>
 </div>
 
-<script src="js/logic/config.js"></script>
-<script src="js/art/draw.js"></script>
-<script src="js/art/assets.js"></script>
+<script src="../js/logic/config.js"></script>
+<script src="../js/art/draw.js"></script>
+<script src="../js/art/assets.js"></script>
 <script>
 'use strict';
 // ---------- projection: same 2:1 iso as js/art/iso.js (1 world unit = 1 px along an axis) ----------
@@ -296,14 +296,14 @@ function render() {
       st += `<text x="330" y="540" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">โมเดล 3D หมุนได้ · 3D model, turning</text>`;
       st += `<rect x="690" y="16" width="254" height="528" rx="14" fill="rgba(255,244,214,.6)" stroke="#3a2213" stroke-width="2"/>`;
       st += `<text x="817" y="42" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">แบบปัจจุบัน · Current asset</text>`;
-      st += `<image href="assets/props/dragon_jar.svg" x="717" y="160" width="200" height="200"/>`;
+      st += `<image href="../assets/props/dragon_jar.svg" x="717" y="160" width="200" height="200"/>`;
     }
     if (!state.all && !state.jar) {
       st += `<text x="300" y="540" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">โมเดล 3D ไอโซเมตริก · 3D model, true iso</text>`;
       st += `<rect x="690" y="16" width="254" height="528" rx="14" fill="rgba(255,244,214,.6)" stroke="#3a2213" stroke-width="2"/>`;
       st += `<text x="817" y="42" text-anchor="middle" font-family="Kanit" font-size="15" fill="#3a2213">แบบปัจจุบัน · Current assets</text>`;
-      st += `<g transform="translate(810 250)"><image href="assets/animals/buffalo_tail.svg" x="46" y="-60" width="24" height="58"/><image href="assets/animals/buffalo.svg" x="-88" y="-100" width="180" height="124"/><image href="assets/animals/buffalo_head.svg" x="-96" y="-100" width="112" height="88"/></g>`;
-      st += `<image href="assets/props/dragon_jar.svg" x="767" y="330" width="100" height="100"/>`;
+      st += `<g transform="translate(810 250)"><image href="../assets/animals/buffalo_tail.svg" x="46" y="-60" width="24" height="58"/><image href="../assets/animals/buffalo.svg" x="-88" y="-100" width="180" height="124"/><image href="../assets/animals/buffalo_head.svg" x="-96" y="-100" width="112" height="88"/></g>`;
+      st += `<image href="../assets/props/dragon_jar.svg" x="767" y="330" width="100" height="100"/>`;
       st += `<text x="817" y="470" text-anchor="middle" font-family="Sarabun" font-size="12" fill="#3a2213">hand-drawn 3/4, one facing only</text>`;
     }
     document.getElementById('static').innerHTML = st;
@@ -364,13 +364,13 @@ window.__exportModels = function () {
   const hp = round(headPivot), tp = round(tailPivot);
   // draw each part so its pivot sits exactly on an integer pixel
   const body = pack(drawModel(PARTS, pose, 0, 0, SC, undefined, { noShadow: true, only: ['body', 'egret'] }), 0, 0,
-    'animal.buffalo · exported from the 3D model in iso-models-prototype.html (facing East). Anchor = ground under the body');
+    'animal.buffalo · exported from the 3D model in tools/iso-models.html (facing East). Anchor = ground under the body');
   const head = pack(drawModel(PARTS, pose, -headPivot[0] + hp[0], -headPivot[1] + hp[1], SC, undefined, { noShadow: true, only: ['head'] }), hp[0], hp[1],
     'animal.buffalo_head · exported from the 3D model. Anchor = neck pivot');
   const tail = pack(drawModel(PARTS, pose, -tailPivot[0] + tp[0], -tailPivot[1] + tp[1], SC, undefined, { noShadow: true, only: ['tail'] }), tp[0], tp[1],
     'animal.buffalo_tail · exported from the 3D model. Anchor = tail root pivot');
   const jar = pack(drawJar(0, 0, Math.PI / 2, .86, 0, { noShadow: true }), 0, 0,   // turned so the dragon's head and pearl face front
-    'prop.dragon_jar · exported from the 3D model in iso-models-prototype.html. Anchor = centre of the base');
+    'prop.dragon_jar · exported from the 3D model in tools/iso-models.html. Anchor = centre of the base');
   host.remove();
   return {
     'animal.buffalo': body, 'animal.buffalo_head': head, 'animal.buffalo_tail': tail, 'prop.dragon_jar': jar,

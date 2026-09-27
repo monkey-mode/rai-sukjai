@@ -82,7 +82,8 @@ const Assets = {
     } catch (e) { /* file:// page, probe instead */ }
     if (entries) {
       for (const a of entries) {
-        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.file;
+        // a pre-rendered raster (tools/rasterize-backgrounds.mjs) is cheaper to draw on phones than a big SVG
+        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
     } else {
       const probe = src => new Promise(done => {
@@ -92,7 +93,9 @@ const Assets = {
         im.src = src;
       });
       await Promise.all(Object.entries(ASSET_SPECS).map(async ([id, sp]) => {
-        if (await probe(sp.output)) this.found[id] = sp.output;
+        const webp = sp.output.startsWith('assets/backgrounds/') && sp.output.replace(/\.svg$/, '.webp');
+        if (webp && await probe(webp)) this.found[id] = webp;
+        else if (await probe(sp.output)) this.found[id] = sp.output;
       }));
     }
     return Object.keys(this.found);

@@ -26,8 +26,8 @@ Two agents work on this game:
   "canvas": [64, 64],                          // viewBox / pixel size
   "anchor": [32, 56],                          // point the game places on the target spot
   "prompt": "…what to draw…",
-  "reference": "assets/reference/crop.phrik.s5.svg",  // current code-drawn placeholder (may be null)
-  "reference_render": "plantArt(3,5)",         // how the reference was drawn (tooling only)
+  "reference": "assets/crops/phrik/stage5.svg",  // the current version of this asset (null for a brand-new one)
+  "reference_render": null,                    // code expression that draws a placeholder (tooling only, for new assets)
 
   // ↓ stamp fields, written by the asset agent
   "status": "todo",
@@ -63,7 +63,7 @@ If the mechanics agent changes an asset's `prompt`, `canvas` or `anchor` after i
 
 ## Rules for the asset agent
 
-1. Read `style_guide`, the asset's `categories` entry, its `prompt` and its `reference` SVG. The reference shows the current placeholder's size, pose and framing. Improve on its look, but keep the subject and proportions.
+1. Read `style_guide`, the asset's `categories` entry, its `prompt` and its `reference` SVG. For an existing asset the reference is its current file: it shows the size, pose, framing and style the game expects. When redrawing, keep the subject, proportions, canvas and anchor unless the prompt says otherwise.
 2. Work in priority order: `node tools/check-assets.mjs --queue` lists what's next (`needs_changes` first).
 3. Before starting an asset, stamp `"status": "in_progress"`, `"agent": "<your name>"` and `"updated_at": "<ISO time>"`.
 4. Save the file exactly at `output`, using a `viewBox` equal to `canvas` and placing the subject so `anchor` lands on the right spot.
@@ -72,7 +72,7 @@ If the mechanics agent changes an asset's `prompt`, `canvas` or `anchor` after i
 7. Run `node tools/check-assets.mjs`. It must print `OK` before you hand back.
 8. Never overwrite a file whose status is `approved` unless its status was moved back.
 
-Background references in `assets/reference/bg.*.svg` are the current full scenes, including characters and props. The final backgrounds must leave those out and respect the **KEEP CLEAR** zones in each prompt.
+Backgrounds must leave out the characters, sprites and props the game draws on top, and respect the **KEEP CLEAR** zones in each prompt.
 
 ## Kickoff prompt for the asset agent
 
@@ -100,4 +100,4 @@ Wired in so far: crop stages, withered, bugs, produce icons, egg, seed packets, 
 ## Tools
 
 - `node tools/check-assets.mjs [--queue]`: validates the manifest and every file marked `done` / `approved`, and prints the status summary. The test suite runs it too.
-- `node tools/export-references.mjs`: regenerates `assets/reference/*.svg` from the game code. Needs Playwright with Chromium. The mechanics agent runs it after changing art code.
+- `node tools/export-references.mjs`: renders placeholder references into `assets/reference/` for entries that have a `reference_render` expression (new assets without a file yet). Needs Playwright with Chromium.

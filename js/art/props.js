@@ -40,16 +40,23 @@ function oxCart(x, y, glow, signAt = [x + 110, y - 132]) {
 
 function cartSign(sx, sy) {
   let s = '';
-  s += `<g transform="translate(${sx} ${sy})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
+  s += `<g transform="translate(${sx} ${sy})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><g transform="${ISO_FACE_GY(8, 15)}"><rect x="-26" y="4" width="68" height="30" rx="6" fill="#b8956a" ${SW} stroke-width="2.4"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
     `<text x="8" y="15" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ขายผลผลิต</text>` +
-    `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g>`;
+    `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g></g>`;
   return s;
 }
 
+// Iso skews: a board turned to face down-left (its face runs along +gx) or down-right (along +gy).
+const ISO_FACE_GX = (x, y) => `translate(${x} ${y}) skewY(26.565) translate(${-x} ${-y})`;
+const ISO_FACE_GY = (x, y) => `translate(${x} ${y}) skewY(-26.565) translate(${-x} ${-y})`;
+
 function signpost(dim) {
-  const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title>${Assets.has('prop.signboard') ? Assets.image('prop.signboard', 705, y - 1) : `<path d="M706 ${y}H780L796 ${y + 18}L780 ${y + 36}H706Z" fill="#c98c4a" ${SW} stroke-width="2.6"/>`}` +
+  // boards are turned onto the iso grid (pointing down-right along the road), with a thickness edge below
+  const face = (y) => Assets.has('prop.signboard') ? Assets.image('prop.signboard', 705, y - 1) : `<path d="M706 ${y}H780L796 ${y + 18}L780 ${y + 36}H706Z" fill="#c98c4a" ${SW} stroke-width="2.6"/>`;
+  const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title><g transform="${ISO_FACE_GX(752, y + 18)}">` +
+    `<g transform="translate(0 4)" style="filter:brightness(.55)">${face(y)}</g>${face(y)}` +
     `<text x="746" y="${y + 17}" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="14" fill="${O}">${th}</text>` +
-    `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en} · −5⚡</text></g>`;
+    `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en} · −5⚡</text></g></g>`;
   const pole = Assets.has('prop.signpole') ? Assets.image('prop.signpole', 752, 532) : `<rect x="748" y="400" width="8" height="132" fill="#8a5a2e" ${SW} stroke-width="2"/>`;
   return pole +
     board('go-market', 408, 'ไปตลาด', 'Market') + board('go-pen', 460, 'คอกเป็ด', 'Duck pen');

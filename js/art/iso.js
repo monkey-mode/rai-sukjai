@@ -142,8 +142,8 @@ const PALM_SPOTS = [
   [-1.55, 5.8, 'coconut_twin', 1],          // canal bank
   [-1.6, 7.9, 'sugar_tall', 1.04],          // canal bank, at the left edge of the safe area
   [-1.6, 9.9, 'sugar_ladder', 1],           // canal bank, in the left bleed: a tapping palm with its bamboo ladder
-  [7.2, -3.4, 'sugar_pair', 1],             // between the house and the buffalo paddock
-  [8.5, -1.3, 'betel_cluster', .95],        // in front of the buffalo paddock
+  [-1.6, 12.0, 'sugar_pair', 1],            // canal bank, far down in the left bleed
+  [12.0, -5.8, 'betel_cluster', .95],       // beyond the paddock's back fence, in the right bleed (keeps the house corner open)
 ];
 
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
