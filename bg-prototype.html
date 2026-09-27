@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Farm Background Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <svg id="bg" viewBox="0 0 800 600"></svg>
+  <svg id="anim" viewBox="0 0 800 600"></svg>
+  <svg id="dyn" viewBox="0 0 800 600"></svg>
+  <div id="panel"></div>
+  <svg id="fx" viewBox="0 0 800 600"></svg>
+  <div id="grain"></div>
+  <div id="hud"></div>
+  <div id="toolbar"></div>
+  <div id="toast"></div>
+  <div id="hand"></div>
+  <div id="night"><div class="moon"></div></div>
+  <div id="modal"></div>
+</div></div>
+
+<!-- Game logic (DOM-free, unit-tested) -->
+<script src="js/logic/config.js"></script>
+<script src="js/logic/calendar.js"></script>
+<script src="js/logic/state.js"></script>
+<script src="js/logic/endDay.js"></script>
+<script src="js/logic/actions.js"></script>
+<!-- Art (SVG strings) -->
+<script src="js/art/draw.js"></script>
+<script src="js/art/assets.js"></script>
+<script src="js/art/iso.js"></script>
+<script src="js/art/crops.js"></script>
+<script src="js/art/icons.js"></script>
+<script src="js/art/scenery.js"></script>
+<script src="js/art/characters.js"></script>
+<script src="js/art/props.js"></script>
+<script src="js/art/scenes.js"></script>
+<!-- UI -->
+<script src="js/ui/context.js"></script>
+<script src="js/ui/storage.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui/render.js"></script>
+<script src="js/ui/shop.js"></script>
+<script src="js/ui/modals.js"></script>
+<script src="js/main.js"></script>
+<!-- Background prototype switcher (not part of the game) -->
+<style>
+#bgpick{position:fixed;left:8px;top:52px;z-index:99;display:flex;flex-direction:column;gap:4px;
+  font:600 12px/1.2 system-ui,sans-serif;background:#fff9e8ee;border:2px solid #3b2a1a;border-radius:10px;padding:5px;box-shadow:0 2px 0 #3b2a1a}
+#bgpick button{font:inherit;border:2px solid #3b2a1a;border-radius:8px;background:#fff;padding:3px 8px;cursor:pointer;text-align:left}
+#bgpick button.on{background:#9be15d}
+#bgpick small{font-weight:400;color:#555}
+</style>
+<div id="bgpick">
+  <button data-bg="current">Current <small>(flat horizon)</small></button>
+  <button data-bg="A">A · Forest clearing <small>★</small></button>
+  <button data-bg="B">B · Horizon + tree rows</button>
+</div>
+<script>
+// Prototype only: shows a demo farm and swaps the farm background between the current asset and two proposals.
+save = () => {};                                   // never touch the player's real save from this page
+const BG_OPTIONS = { current: 'assets/backgrounds/farm.svg', A: 'prototypes/bg_forest_clearing.svg', B: 'prototypes/bg_horizon_windbreaks.svg' };
+function demoState() {
+  const s = newGame(mulberry32(3));
+  s.rain = false;
+  [[0, 5], [1, 3], [2, 4], [3, 2]].forEach(([fi, stage], k) => {
+    const f = s.fields[fi]; f.crop = k;
+    f.plots.forEach((p, i) => { p.stage = Math.max(1, stage - (i % 3 === 2 ? 1 : 0)); p.watered = i % 2 === 0; });
+  });
+  return s;
+}
+function pickBG(key) {
+  Assets.found['bg.farm'] = BG_OPTIONS[key];
+  ui.bgScene = null; S.scene = 'farm'; render();
+  document.querySelectorAll('#bgpick button').forEach(b => b.classList.toggle('on', b.dataset.bg === key));
+  try { localStorage.setItem('bgproto', key); } catch (e) {}
+}
+document.getElementById('bgpick').addEventListener('click', e => { const b = e.target.closest('button'); if (b) pickBG(b.dataset.bg); });
+S = demoState(); closeModal();
+let first = 'A'; try { first = localStorage.getItem('bgproto') || 'A'; } catch (e) {}
+Assets.load().then(() => pickBG(first));
+</script>
+</body>
+</html>
