@@ -111,9 +111,9 @@ const FARM_ZONES = {
 };
 // Drawn scale of farm objects whose assets are made larger than life. Scenery (house, trees, huts) is at about
 // 20 px per metre. The farmer, dragon jar and buffalo are the farm's characters and get a stylised game size
-// (about 2x life: farmer ~67 px, jar ~55 px); the cart and spirit house stay near life size. Crops and the text
+// (about 2x life: farmer ~67 px, jar ~55 px, spirit house ~110 px); the cart stays near life size. Crops and the text
 // signs keep their gameplay sizes.
-const FARM_SCALE = { shrine: .4, buffalo: .75, farmer: .75, jar: .6, cart: .6 };
+const FARM_SCALE = { shrine: .7, buffalo: .75, farmer: .75, jar: .6, cart: .6 };
 // The Thai house sprite's anchor (ground at its back corner) and its depth for sorting (grid gx + gy of its middle).
 const FARM_HOUSE = { at: [2.4, -4.8], depth: 1.0 };
 // The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
