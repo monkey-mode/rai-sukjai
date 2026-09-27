@@ -31,6 +31,16 @@ const ASSET_SPECS = (() => {
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
   add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 78, 68, 39, 27);
   add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 42, 15, 8);
+  ['young', 'fruiting', 'ripe', 'old', 'harvested'].forEach(v => add(`scenery.banana_${v}_iso`, `assets/scenery/banana_${v}_iso.svg`, 190, 190, 95, 150));
+  add('scenery.palm_betel_cluster_iso', 'assets/scenery/palm_betel_cluster_iso.svg', 119, 185, 61, 177);
+  add('scenery.palm_coconut_dwarf_iso', 'assets/scenery/palm_coconut_dwarf_iso.svg', 105, 101, 51, 93);
+  add('scenery.palm_coconut_lean_iso', 'assets/scenery/palm_coconut_lean_iso.svg', 129, 191, 100, 183);
+  add('scenery.palm_coconut_twin_iso', 'assets/scenery/palm_coconut_twin_iso.svg', 176, 181, 92, 174);
+  add('scenery.palm_sugar_ladder_iso', 'assets/scenery/palm_sugar_ladder_iso.svg', 82, 188, 41, 180);
+  add('scenery.palm_sugar_pair_iso', 'assets/scenery/palm_sugar_pair_iso.svg', 110, 198, 57, 189);
+  add('scenery.palm_sugar_tall_iso', 'assets/scenery/palm_sugar_tall_iso.svg', 84, 199, 42, 191);
+  add('scenery.spirit_house_iso', 'assets/scenery/spirit_house_iso.svg', 76, 170, 38, 157);
+  add('scenery.thai_house_iso', 'assets/scenery/thai_house_iso.svg', 277, 252, 126, 146);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
   return list;

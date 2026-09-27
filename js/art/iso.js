@@ -79,6 +79,47 @@ function isoFence(a, b, step = .5) {
   return s;
 }
 
+// Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
+const FARM_ZONES = {
+  yard: [-0.8, -0.8, 9.8, 7.8],      // dirt yard and fields
+  canal: [-2.75, -8, -2.15, 11],     // irrigation canal and its muddy banks
+  paddies: [-9.8, -9, -2.7, 11],     // flooded rice fields: trees only on a FARM_MOUNDS island
+  paddock: [8, -5, 12.6, -2],        // buffalo paddock
+  house: [2.3, -4.9, 6.4, -1.4],     // Thai house footprint under its eaves (FARM_HOUSE)
+  stairs: [4.2, -1.4, 5.0, -0.8],    // the house's stair down to the yard
+  shrine: [0.7, -2.1, 1.7, -1.1],    // Phra Phum shrine and its offerings (FARM_SHRINE)
+};
+// The Thai house sprite's anchor (ground at its back corner) and its depth for sorting (grid gx + gy of its middle).
+const FARM_HOUSE = { at: [2.4, -4.8], depth: 1.0 };
+// The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
+const FARM_SHRINE = [1.2, -1.6];
+// Raised grassy islands (โคก) in the paddies where trees may stand: [gx, gy, rgx, rgy] centre and radii.
+const FARM_MOUNDS = [[-4.4, 0.2, 1.5, 2.6]];
+// The farm is a clearing: forest beyond grid lines gx = -6.2 and gy = -6.5.
+const FARM_CLEARING = [-6.2, -6.5];
+
+// Banana clumps on the farm: [gx, gy, variant, scale]. Each spot uses a different variant and stands on
+// open ground or a mound (both checked by tests/assets.test.mjs).
+const BANANA_SPOTS = [
+  [-1.55, -0.4, 'fruiting', .8],   // grass bank between the canal and the yard
+  [-1.55, 3.8, 'old', .8],         // canal bank
+  [3.3, -1.0, 'young', .75],       // in front of the house's left wing, beside the stair
+  [-3.7, 1.0, 'harvested', .75],   // on the paddy mound
+  [6.9, -0.95, 'ripe', .78],       // open grass between the house and the paddock
+];
+
+// Palms on the farm: [gx, gy, variant, scale]. Same rules as the bananas: a different variant per spot,
+// open ground or a mound, at least 1.5 tiles from every other plant sprite (tests/assets.test.mjs).
+const PALM_SPOTS = [
+  [-5.0, -1.5, 'sugar_tall', .62],          // on the paddy mound
+  [-3.5, -1.0, 'sugar_ladder', .62],        // on the paddy mound, a tapping palm with its bamboo ladder
+  [-5.0, 1.9, 'coconut_twin', .58],         // on the paddy mound
+  [-1.6, -2.4, 'sugar_pair', .62],          // canal bank, behind the yard's top corner
+  [-1.6, 1.7, 'coconut_lean', .62],         // canal bank, leaning out over the water
+  [-1.55, 5.8, 'coconut_dwarf', .72],       // canal bank
+  [8.5, -1.3, 'betel_cluster', .66],        // in front of the buffalo paddock
+];
+
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
 const FARM_SPOTS = {
   cart: [84, 491],        // oxCart(x, y): x = rear of the code-drawn cart; its asset is anchored at (x + 66, y + 1)
