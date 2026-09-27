@@ -83,7 +83,7 @@ function farmBackdropIso() {
 
 function marketBG() {
   const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') + marketSign() : marketBackdrop();
-  return back + auntieDaeng(104, 440) + marketCounter();
+  return back + auntieDaeng(104, 400) + marketCounter();
 }
 
 function marketSign() {

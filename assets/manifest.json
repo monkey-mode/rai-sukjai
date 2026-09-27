@@ -2023,21 +2023,21 @@
       "output": "assets/characters/farmer.svg",
       "format": "svg",
       "canvas": [
-        62,
-        113
+        52,
+        109
       ],
       "anchor": [
-        31,
+        25,
         105
       ],
-      "prompt": "The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet.",
+      "prompt": "The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer.svg",
       "reference_render": "farmer(0,0,false)",
       "status": "done",
       "file": "assets/characters/farmer.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:49:23Z",
-      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2049,21 +2049,21 @@
       "output": "assets/characters/farmer_tired.svg",
       "format": "svg",
       "canvas": [
-        62,
-        108
+        60,
+        109
       ],
       "anchor": [
-        31,
-        100
+        25,
+        105
       ],
-      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet.",
+      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer_tired.svg",
       "reference_render": "farmer(0,0,true)",
       "status": "done",
       "file": "assets/characters/farmer_tired.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:49:23Z",
-      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2075,21 +2075,21 @@
       "output": "assets/characters/auntie_daeng.svg",
       "format": "svg",
       "canvas": [
-        98,
-        143
+        58,
+        79
       ],
       "anchor": [
-        31,
-        126
+        38,
+        74
       ],
-      "prompt": "Auntie Daeng, the cheerful market seller, UPPER BODY only (she stands behind her counter), 3/4 view toward the viewer: black hair with a bun and an orange marigold, red blouse with gold trim and a gold necklace, one hand resting forward and the other raised to the side holding an open golden paper fan, smiling with rosy cheeks. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the centre of her waist, where the counter hides the rest. The game draws it 1.6× (CHAR_SCALE).",
+      "prompt": "Auntie Daeng, the cheerful market seller, UPPER BODY only (she stands behind her counter), 3/4 view toward the viewer: black hair with a bun and an orange marigold, red blouse with gold trim and a gold necklace, one hand resting forward and the other raised to the side holding an open golden paper fan, smiling with rosy cheeks. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the centre of her waist, where the counter hides the rest. The game draws it at CHAR_SCALE in js/art/characters.js.",
       "reference": "assets/reference/character.auntie_daeng.svg",
       "reference_render": "auntieDaeng(0,0)",
       "status": "done",
       "file": "assets/characters/auntie_daeng.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:49:23Z",
-      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2101,21 +2101,21 @@
       "output": "assets/characters/uncle_mee.svg",
       "format": "svg",
       "canvas": [
-        84,
-        116
+        47,
+        104
       ],
       "anchor": [
-        26,
-        108
+        24,
+        100
       ],
-      "prompt": "Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet. The game draws it 1.6× (CHAR_SCALE).",
+      "prompt": "Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet. The game draws it at CHAR_SCALE in js/art/characters.js.",
       "reference": "assets/reference/character.uncle_mee.svg",
       "reference_render": "uncleMee(0,0)",
       "status": "done",
       "file": "assets/characters/uncle_mee.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:49:23Z",
-      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
@@ -2219,21 +2219,21 @@
       "output": "assets/animals/duck.svg",
       "format": "svg",
       "canvas": [
-        45,
-        41
+        51,
+        45
       ],
       "anchor": [
-        20,
-        35
+        26,
+        41
       ],
-      "prompt": "A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground under its feet. The game waddles it along the grid diagonal and flips it horizontally for the way back.",
+      "prompt": "A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground under its feet. The game waddles it along the grid diagonal and flips it horizontally for the way back.",
       "reference": "assets/reference/animal.duck.svg",
       "reference_render": "duckShape()",
       "status": "done",
       "file": "assets/animals/duck.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:49:23Z",
-      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
+      "updated_at": "2026-09-27T17:05:47Z",
+      "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null
     },
     {
