@@ -6,11 +6,18 @@ const FX = [24, 248], FY = [262, 404], PW = 48, PH = 38, SX = 51, SY = 41;
 function plotSVG(f, fi, p, pi) {
   const x = FX[fi % 2] + (pi % 4) * SX, y = FY[fi >> 1] + Math.floor(pi / 4) * SY;
   let g = `<g class="plot" data-act="plot" data-f="${fi}" data-p="${pi}">`;
-  g += `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="${p.watered ? '#7a4e2e' : '#b7824f'}" stroke="${O}" stroke-width="2"/>`;
-  g += `<path d="M${x + 6} ${y + 13}H${x + PW - 6}M${x + 6} ${y + 25}H${x + PW - 6}" stroke="${p.watered ? '#5e3a20' : '#9c6a3c'}" stroke-width="2" stroke-linecap="round"/>`;
-  if (p.fertilized) g += [[8, 8], [38, 10], [14, 30], [40, 30], [26, 6]].map(([dx, dy]) => `<circle cx="${x + dx}" cy="${y + dy}" r="1.8" fill="#f4f0e0" stroke="${O}" stroke-width=".6"/>`).join('');
+  const tile = p.watered ? 'tile.soil_wet' : 'tile.soil_dry';
+  if (Assets.has(tile)) {
+    // the transparent rect keeps the hover outline (.plot:hover .soil) working on top of the image
+    g += Assets.image(tile, x, y) + `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="none" stroke="none"/>`;
+  } else {
+    g += `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="${p.watered ? '#7a4e2e' : '#b7824f'}" stroke="${O}" stroke-width="2"/>`;
+    g += `<path d="M${x + 6} ${y + 13}H${x + PW - 6}M${x + 6} ${y + 25}H${x + PW - 6}" stroke="${p.watered ? '#5e3a20' : '#9c6a3c'}" stroke-width="2" stroke-linecap="round"/>`;
+  }
+  if (p.fertilized && Assets.has('tile.fertilized')) g += Assets.image('tile.fertilized', x, y);
+  else if (p.fertilized) g += [[8, 8], [38, 10], [14, 30], [40, 30], [26, 6]].map(([dx, dy]) => `<circle cx="${x + dx}" cy="${y + dy}" r="1.8" fill="#f4f0e0" stroke="${O}" stroke-width=".6"/>`).join('');
   if (p.stage > 0 && f.crop !== null) {
-    g += `<g pointer-events="none" transform="translate(${x + PW / 2} ${y + PH - 6})">${plantArt(f.crop, p.stage)}${p.bug ? BUGS : ''}</g>`;
+    g += `<g pointer-events="none" transform="translate(${x + PW / 2} ${y + PH - 6})">${plantArt(f.crop, p.stage)}${p.bug ? bugsArt() : ''}</g>`;
     const H = CONFIG.CROPS[f.crop].harvests;
     if (H > 1 && p.stage !== WITHERED) {
       for (let i = 0; i < H - p.harvests; i++) g += `<circle cx="${x + 5 + i * 4.5}" cy="${y + PH - 4}" r="1.7" fill="#ffe066" stroke="${O}" stroke-width=".7" pointer-events="none"/>`;
@@ -89,20 +96,20 @@ function renderAnim() {
 
 function renderHUD() {
   const d = dateOf(S.day), se = seasonOf(S.day), inv = S.inventory;
-  hud.innerHTML = `<div class="hb wx" title="${S.rain ? 'ฝนตก · Rain' : 'แดดออก · Sunny'}">${S.rain ? ICON.rain : ICON.sun}</div>
+  hud.innerHTML = `<div class="hb wx" title="${S.rain ? 'ฝนตก · Rain' : 'แดดออก · Sunny'}">${S.rain ? icon('rain') : icon('sun')}</div>
   <div class="hb date"><b>วันที่ ${S.day}<span> / ${CONFIG.LAST_DAY}</span></b><small>${d.date} ${MONTHS_TH[d.month]} · ${MONTHS_EN[d.month]} ${d.date}</small></div>
   <div class="hb season s-${se}"><b>${SEASONS[se].th}</b><small>${SEASONS[se].en}${S.rain ? ' · ฝนตก' : ''}</small></div>
   <div class="hb money"><b>฿${fmt(S.money)}</b><small>เงิน · Money</small></div>
   <div class="hb energy ${S.energy < CONFIG.TIRED_BELOW ? 'low' : ''}"><div class="ebar"><i style="width:${S.energy / CONFIG.MAX_ENERGY * 100}%"></i></div><small>แรง Energy ${S.energy}${S.energy < CONFIG.TIRED_BELOW ? ' · เหนื่อย!' : ''}</small></div>
   <div class="hb inv">
-    <div class="inv-i" title="ปุ๋ย · Fertilizer"><div class="row">${ICON.fertS}<b>${inv.fertilizer}</b></div><small>ปุ๋ย</small></div>
-    <div class="inv-i" title="ยาฉีดแมลง · Spray"><div class="row">${ICON.sprayS}<b>${inv.spray}</b></div><small>ยา</small></div>
-    <div class="inv-i" title="อาหารเป็ด · Feed"><div class="row">${ICON.feed}<b>${inv.feed}</b></div><small>อาหาร</small></div>
-    <div class="inv-i" title="เป็ด · Ducks"><div class="row">${ICON.duck}<b>${S.ducks}</b></div><small>เป็ด</small></div>
+    <div class="inv-i" title="ปุ๋ย · Fertilizer"><div class="row">${icon('fertS')}<b>${inv.fertilizer}</b></div><small>ปุ๋ย</small></div>
+    <div class="inv-i" title="ยาฉีดแมลง · Spray"><div class="row">${icon('sprayS')}<b>${inv.spray}</b></div><small>ยา</small></div>
+    <div class="inv-i" title="อาหารเป็ด · Feed"><div class="row">${icon('feed')}<b>${inv.feed}</b></div><small>อาหาร</small></div>
+    <div class="inv-i" title="เป็ด · Ducks"><div class="row">${icon('duck')}<b>${S.ducks}</b></div><small>เป็ด</small></div>
   </div>
   <div class="spacer"></div>
-  <button class="hbtn" data-act="mute" title="เสียง · Sound">${Sound.muted ? ICON.mute : ICON.sound}</button>
-  <button class="hbtn" data-act="menu" title="เมนู · Menu">${ICON.menu}</button>`;
+  <button class="hbtn" data-act="mute" title="เสียง · Sound">${Sound.muted ? icon('mute') : icon('sound')}</button>
+  <button class="hbtn" data-act="menu" title="เมนู · Menu">${icon('menu')}</button>`;
 }
 
 const TOOLS = [['water', 'รดน้ำ', 'Water'], ['fertilize', 'ใส่ปุ๋ย', 'Fertilize'], ['spray', 'ฉีดยา', 'Spray'], ['cut', 'ถาง', 'Clear'], ['pick', 'เก็บ', 'Pick']];
@@ -113,7 +120,7 @@ function renderToolbar() {
   const dis = S.energy <= 0 ? 'disabled' : '';
   let s = TOOLS.map(([id, th, en]) => {
     const badge = id === 'fertilize' ? `<i class="badge">${S.inventory.fertilizer}</i>` : id === 'spray' ? `<i class="badge">${S.inventory.spray}</i>` : '';
-    return `<button class="tool ${ui.tool === id ? 'sel' : ''}" data-act="tool" data-tool="${id}" ${dis} title="${en}">${ICON[id]}<span>${th}</span><small>${en}</small>${badge}</button>`;
+    return `<button class="tool ${ui.tool === id ? 'sel' : ''}" data-act="tool" data-tool="${id}" ${dis} title="${en}">${icon(id)}<span>${th}</span><small>${en}</small>${badge}</button>`;
   }).join('');
   s += `<div class="sep"></div>`;
   s += CONFIG.CROPS.map((c, i) => `<button class="seed ${ui.tool === 'seed:' + i ? 'sel' : ''} ${S.inventory.seeds[i] ? '' : 'zero'}" data-act="tool" data-tool="seed:${i}" ${dis} title="${c.th} · ${c.en}">${packetSVG(i, 30, 34)}<b class="cnt">×${S.inventory.seeds[i]}</b></button>`).join('');

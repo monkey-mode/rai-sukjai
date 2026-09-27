@@ -115,6 +115,8 @@ const plantCache = {};
 function plantArt(c, stage) {
   const key = c + ':' + stage;
   if (plantCache[key]) return plantCache[key];
+  const id = stage === WITHERED ? 'crop.withered' : `crop.${CONFIG.CROPS[c].id}.s${stage}`;
+  if (Assets.has(id)) return (plantCache[key] = Assets.image(id) + (stage === CONFIG.RIPE_STAGE ? SPARK : ''));
   let s;
   if (stage === WITHERED) {
     s = MOUND + line('M0 1Q-2 -10 3 -16Q7 -20 10 -13', '#7b5a33', 2.6) + line('M-1 -5Q-6 -9 -9 -4', '#7b5a33', 2) +
@@ -128,11 +130,16 @@ function plantArt(c, stage) {
   return (plantCache[key] = s);
 }
 
-const BUGS = `<g class="bug"><g transform="translate(-7 -13)">${ell(0, 0, 4, 3, '#6b2d8f', 20, 1.2)}${circ(3.5, -1.5, 1.8, '#2a1a2a', 1)}<path d="M-3 2l-2 2M0 3l0 2.5M3 2l2 2" stroke="${O}" stroke-width="1"/></g>` +
+const BUGS_CODE = `<g class="bug"><g transform="translate(-7 -13)">${ell(0, 0, 4, 3, '#6b2d8f', 20, 1.2)}${circ(3.5, -1.5, 1.8, '#2a1a2a', 1)}<path d="M-3 2l-2 2M0 3l0 2.5M3 2l2 2" stroke="${O}" stroke-width="1"/></g>` +
   `<g transform="translate(8 -21)">${ell(0, 0, 3.4, 2.6, '#1e6b3a', -30, 1.2)}${circ(-3, -1.5, 1.6, '#123', 1)}<circle cx="0" cy="0" r=".9" fill="#ffd23f"/></g></g>`;
+
+function bugsArt() {
+  return Assets.has('crop.bugs') ? `<g class="bug">${Assets.image('crop.bugs')}</g>` : BUGS_CODE;
+}
 
 /* Harvested produce icons, centered at 0,0 (about ±13). */
 function produceIcon(c) {
+  if (Assets.has(`produce.${CONFIG.CROPS[c].id}`)) return Assets.image(`produce.${CONFIG.CROPS[c].id}`);
   const band = `<rect x="-5" y="2" width="10" height="4" rx="1.5" fill="#d23c2c" ${SW} stroke-width="1.2"/>`;
   switch (c) {
     case 0: return [-22, -10, 2, 14].map((a, i) => lf(0, 12, a, 24, 4, i % 2 ? '#6cc644' : '#56b234', 1.4)).join('') + band;
@@ -148,11 +155,15 @@ function produceIcon(c) {
   return '';
 }
 
-function eggIcon() { return ell(0, 0, 8, 10.5, '#f1ede0', 0, 1.8) + ell(-3, -4, 1.8, 3, '#fff', 20, 0) + `<circle cx="3" cy="3" r=".8" fill="#c9b99a"/><circle cx="-1" cy="5" r=".6" fill="#c9b99a"/>`; }
+function eggIcon() {
+  if (Assets.has('produce.egg')) return Assets.image('produce.egg');
+  return ell(0, 0, 8, 10.5, '#f1ede0', 0, 1.8) + ell(-3, -4, 1.8, 3, '#fff', 20, 0) + `<circle cx="3" cy="3" r=".8" fill="#c9b99a"/><circle cx="-1" cy="5" r=".6" fill="#c9b99a"/>`;
+}
 
 const PACK_COL = ['#8fd14f', '#5bbf8a', '#c98ad6', '#ff8a6a', '#b5d86a', '#ff9fb0', '#ffd24a', '#7fcf6a'];
 
 function packetSVG(i, w = 36, h = 40) {
+  if (Assets.has(`seed.${CONFIG.CROPS[i].id}`)) return Assets.img(`seed.${CONFIG.CROPS[i].id}`, w, h);
   return `<svg viewBox="0 0 36 40" width="${w}" height="${h}"><path d="M5 6L8 3L11 6L14 3L17 6L20 3L23 6L26 3L29 6L31 4V37H5Z" fill="${PACK_COL[i]}" ${SW} stroke-width="2"/>` +
     `<rect x="8" y="9" width="20" height="21" rx="4" fill="#fff8e6" ${SW} stroke-width="1.5"/><g transform="translate(18 19.5) scale(.68)">${produceIcon(i)}</g>` +
     `<rect x="9" y="32" width="18" height="2.5" rx="1.2" fill="rgba(0,0,0,.25)"/></svg>`;

@@ -104,4 +104,11 @@ fit();
 bgEl.innerHTML = farmBG();
 ui.bgScene = 'farm';
 showTitle();
+
+// Swap in finished asset files; anything missing keeps the code-drawn art.
+Assets.load().then(ids => {
+  if (!ids.length) return;
+  for (const k in plantCache) delete plantCache[k];
+  if (S) render();
+});
 window.__raiSukjai = { get state() { return S; } };

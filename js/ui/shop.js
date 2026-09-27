@@ -38,7 +38,7 @@ function seedCard(c, i) {
 
 function supplyCard(k) {
   const it = CONFIG.SUPPLIES[k];
-  return `<div class="scard">${k === 'fertilizer' ? ICON.fertilize : ICON.spray}<div><div class="nm">${it.th}<small>${it.en} — ${it.uses} uses</small></div>
+  return `<div class="scard">${k === 'fertilizer' ? icon('fertilize') : icon('spray')}<div><div class="nm">${it.th}<small>${it.en} — ${it.uses} uses</small></div>
   <div class="ds" style="min-height:0">${k === 'fertilizer' ? 'ใส่แล้วต้นโตเพิ่มอีกขั้น วันละครั้งต่อแปลง' : 'ฆ่าแมลงที่เกาะต้นระยะใกล้สุก'}</div></div>
   <div class="buy"><button data-act="buy-supply" data-k="${k}" ${S.money < it.price ? 'disabled' : ''}>฿${it.price}</button><span class="own">มี ${S.inventory[k]}</span></div></div>`;
 }

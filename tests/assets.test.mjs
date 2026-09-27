@@ -17,3 +17,18 @@ test('every crop has 5 stages and each reference file exists', () => {
     if (a.reference) assert.ok(fs.existsSync(new URL('../' + a.reference, import.meta.url)), a.reference);
   }
 });
+
+test("the game's asset list (js/art/assets.js) matches the manifest's paths, canvas and anchor", async () => {
+  const vm = await import('node:vm');
+  const read = f => fs.readFileSync(new URL('../' + f, import.meta.url), 'utf8');
+  const ctx = vm.createContext({});
+  vm.runInContext(read('js/logic/config.js') + read('js/art/assets.js') + ';this.SPECS = ASSET_SPECS;', ctx);
+  const { manifest } = checkManifest();
+  const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  for (const [id, sp] of Object.entries(ctx.SPECS)) {
+    const a = byId[id];
+    assert.ok(a, `${id} is not in the manifest`);
+    assert.equal(sp.output, a.output, id);
+    assert.deepEqual([sp.w, sp.h, sp.ax, sp.ay], [...a.canvas, ...a.anchor], id);
+  }
+});
