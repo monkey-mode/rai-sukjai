@@ -16,8 +16,10 @@ function farmBG() {
   return farmBackdropIso() + clouds + depthSorted(items);
 }
 
-// An 800-wide background filling a wider stage: mirrored copies continue it seamlessly into both margins.
-function bleed(img) {
+// A background filling the wide stage. One painted with bleed (1400 wide) is used as is; an 800-wide one gets
+// mirrored copies that continue it seamlessly into both margins.
+function bleed(img, id) {
+  if (ASSET_SPECS[id].w > 800) return img;
   return `<g transform="scale(-1 1)">${img}</g><g transform="translate(1600 0) scale(-1 1)">${img}</g>${img}`;
 }
 
@@ -79,7 +81,7 @@ function farmBackdropIso() {
 }
 
 function marketBG() {
-  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market')) + marketSign() : marketBackdrop();
+  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') + marketSign() : marketBackdrop();
   return back + auntieDaeng(104, 440) + marketCounter();
 }
 
@@ -120,7 +122,7 @@ function marketCounter() {
 }
 
 function penBG() {
-  if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen')) + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
+  if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen'), 'bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
   { const hills = `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }
   s += `<rect x="-300" y="160" width="1400" height="440" fill="#a9c95e"/>` + line('M-300 160H1100', O, 2.5);

@@ -3016,21 +3016,21 @@
       "output": "assets/backgrounds/market.svg",
       "format": "svg",
       "canvas": [
-        800,
+        1400,
         600
       ],
       "anchor": [
-        0,
+        300,
         0
       ],
-      "prompt": "Full-stage background for Auntie Daeng's village market stall (แผงป้าแดง). A warm wooden plank back wall, a darker plank floor from y 470. Left (x 0–205): the stall frame with two posts and a red-and-white striped scalloped awning from y 46 to 110, and a blank cream sign board around (104,122) (the game writes the shop name). A string of hanging goods along the top (bananas, marigold garlands, limes). Leave x 20–190, y 150–480 open for Auntie Daeng and her counter (separate assets). The right side x 210–792, y 52–540 is covered by the shop UI panel, so keep it simple.",
+      "prompt": "Full-stage background for Auntie Daeng's stall in a village fresh market (ตลาดสด), FRONT VIEW. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0): safe-area x = canvas x - 300). Behind: a row of old two-storey wooden shophouses (ห้องแถวไม้) with folding plank doors, shuttered windows, a balcony rail with potted plants and blank sign boards; trees and sky only above the roofs; bunting and red paper lanterns across the street. Floor from y 470: packed earth, a plank mat under the stall. Auntie Daeng's stall at safe-area x 0–205: two posts, a red-and-white scalloped awning from y 46 to 100, a blank cream sign board around (104,122) (the game writes the shop name), a hanging scale and a calendar, and a string of hanging goods along the awning beam (bananas, marigold garlands, chilies, garlic). In the bleed: left, a fruit stall under a big blue umbrella with baskets of pomelos, mangoes and rambutans, hanging bananas, pineapples and a sleeping cat; right, a garland and vegetable stall under a blue tarp with jasmine garlands, baskets of greens, chilies, eggplants and oranges, morning-glory bundles and green coconuts. KEEP CLEAR: x 20–190, y 150–480 (Auntie Daeng and her counter, separate assets); x 210–792, y 52–540 is covered by the shop UI panel. HUD y 0–46, toolbar y 532–600.",
       "reference": "assets/reference/bg.market.svg",
       "reference_render": "marketBG()",
       "status": "done",
       "file": "assets/backgrounds/market.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Plank wall, top beam with hanging bananas, garlic, chili strings, marigold garlands and a basket; striped awning with blank sign; hanging scale and calendar inside the stall; floor goods (rice sacks, coconut crate, mango basket, lime basket) visible below the shop panel; sleeping cat. No Auntie Daeng or counter. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
+      "updated_at": "2026-09-27T16:22:08Z",
+      "notes": "Redesign 2 (1400×600 with bleed): shophouse row, bunting and lanterns, Auntie Daeng's stall, fruit stall and garland/vegetable stall in the bleed. No characters or counter.",
       "review": null
     },
     {
@@ -3042,21 +3042,21 @@
       "output": "assets/backgrounds/pen.svg",
       "format": "svg",
       "canvas": [
-        800,
+        1400,
         600
       ],
       "anchor": [
-        0,
+        300,
         0
       ],
-      "prompt": "Full-stage background for Uncle Mee's duck pen. Sky y 46–160 with a distant tree line. Grassy ground below. A pond with lotus pads, a pink lotus and reeds at x 540–780, y 160–250. A small duck shed with a thatched roof at x 222–372, y 128–240. A bamboo fence along y 236–262 from x 205 to 800 and down the left side at x 212. The pen floor x 215–800, y 250–550 is a slightly lighter green.\n\nKEEP CLEAR: x 10–200, y 110–330 (Uncle Mee stands there); x 10–202, y 338–600 (shop UI); nest x 238–362, y 290–335; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 380–700, y 270–420.",
+      "prompt": "Full-stage background for Uncle Mee's duck farm, FRONT VIEW. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Sky with sun and birds above a tree line in the farm's style: hazy far trees, bamboo groves and a few near trees (mango, rain tree, golden shower, flame tree, sugar palm), ground from y ~176. A lotus pond from safe-area x 520 to the right edge of the bleed, y 160–260, with pink lotus, pads, reeds, ripples, a plank jetty and egrets. A bamboo duck house on low stilts at x 222–380, y 100–256 with a steep thatched roof, open arched front with straw inside and a plank ramp. The farm's rustic fence (pointed timber posts, two bamboo rails, rope ties) along y 236–266 from x 215 to the right edge and down the left side at x 212. Pen floor x 215 and right, y 250–600, a lighter green with mud patches and grain. Left bleed: a strip of paddy, rice-straw stacks, a water jar and banana plants. KEEP CLEAR: x 10–200, y 110–330 (Uncle Mee stands there); x 10–202, y 338–600 (shop UI); nest x 238–362, y 290–335; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 380–700, y 270–420. HUD y 0–46, toolbar y 532–600.",
       "reference": "assets/reference/bg.pen.svg",
       "reference_render": "penBG()",
       "status": "done",
       "file": "assets/backgrounds/pen.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Gradient sky, bamboo groves, tree line, pen floor with mud patches, feathers and grain, pond with bank, ripples, lotus pads/flowers, reeds and plank ramp, bamboo-walled thatched duck shed with straw and ramp, bamboo fences. No Uncle Mee, ducks, nest, trough, basket or clouds. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
+      "updated_at": "2026-09-27T16:22:08Z",
+      "notes": "Redesign 2 (1400×600 with bleed): farm-style tree line with bamboo groves, bamboo duck house, rustic fence, long lotus pond with jetty and egrets, paddy, straw stacks, jar and bananas in the left bleed. No Uncle Mee, ducks, nest, trough, basket or clouds.",
       "review": null
     },
     {
