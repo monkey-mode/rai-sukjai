@@ -2747,12 +2747,12 @@
       "output": "assets/scenery/palm_coconut_lean_iso.svg",
       "format": "svg",
       "canvas": [
-        153,
-        184
+        129,
+        191
       ],
       "anchor": [
-        113,
-        178
+        100,
+        183
       ],
       "variant_group": "palm_iso",
       "prompt": "A tall coconut palm (มะพร้าว) with a ringed trunk curving and leaning to the left, a full crown of drooping pinnate fronds and a cluster of green coconuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (113,178) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2761,8 +2761,8 @@
       "status": "done",
       "file": "assets/scenery/palm_coconut_lean_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (14 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
       "review": null
     },
     {
@@ -2774,12 +2774,12 @@
       "output": "assets/scenery/palm_coconut_twin_iso.svg",
       "format": "svg",
       "canvas": [
-        189,
-        176
+        176,
+        181
       ],
       "anchor": [
-        95,
-        170
+        92,
+        174
       ],
       "variant_group": "palm_iso",
       "prompt": "Two coconut trunks growing from one base and splitting into a V, each with its own crown of fronds and coconuts, one taller than the other. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (95,170) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2788,8 +2788,8 @@
       "status": "done",
       "file": "assets/scenery/palm_coconut_twin_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (22 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
       "review": null
     },
     {
@@ -2801,12 +2801,12 @@
       "output": "assets/scenery/palm_coconut_dwarf_iso.svg",
       "format": "svg",
       "canvas": [
-        132,
-        95
+        105,
+        101
       ],
       "anchor": [
-        66,
-        90
+        51,
+        93
       ],
       "variant_group": "palm_iso",
       "prompt": "A short, thick dwarf aromatic coconut palm (มะพร้าวน้ำหอม) with a dense, low, round crown and many pale-green nuts (one turning orange). ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (66,90) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2815,35 +2815,8 @@
       "status": "done",
       "file": "assets/scenery/palm_coconut_dwarf_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (17 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
-      "review": null
-    },
-    {
-      "id": "scenery.palm_coconut_windswept_iso",
-      "category": "scenery",
-      "priority": 3,
-      "name_th": "มะพร้าวลู่ลม",
-      "name_en": "Coconut palm — windswept",
-      "output": "assets/scenery/palm_coconut_windswept_iso.svg",
-      "format": "svg",
-      "canvas": [
-        200,
-        160
-      ],
-      "anchor": [
-        12,
-        154
-      ],
-      "variant_group": "palm_iso",
-      "prompt": "A coconut palm leaning strongly to the right with its fronds swept to one side by the wind. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (12,154) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
-      "reference": null,
-      "reference_render": null,
-      "status": "done",
-      "file": "assets/scenery/palm_coconut_windswept_iso.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (12 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
       "review": null
     },
     {
@@ -2855,12 +2828,12 @@
       "output": "assets/scenery/palm_sugar_tall_iso.svg",
       "format": "svg",
       "canvas": [
-        90,
-        206
+        84,
+        199
       ],
       "anchor": [
-        45,
-        201
+        42,
+        191
       ],
       "variant_group": "palm_iso",
       "prompt": "A tall, perfectly straight sugar palm (ต้นตาล) with criss-cross leaf-base scars, a round crown of stiff fan leaves, dead fans hanging below and dark fruit clusters. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (45,201) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2869,8 +2842,8 @@
       "status": "done",
       "file": "assets/scenery/palm_sugar_tall_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (17 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
       "review": null
     },
     {
@@ -2882,12 +2855,12 @@
       "output": "assets/scenery/palm_sugar_ladder_iso.svg",
       "format": "svg",
       "canvas": [
-        86,
-        198
+        82,
+        188
       ],
       "anchor": [
-        43,
-        189
+        41,
+        180
       ],
       "variant_group": "palm_iso",
       "prompt": "A sugar palm with a bamboo climbing ladder (พะอง) lashed to the trunk (rung stubs, rope ties) and bamboo sap tubes (กระบอกตาล) hanging under the crown for palm-sugar tapping. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (43,189) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2896,8 +2869,8 @@
       "status": "done",
       "file": "assets/scenery/palm_sugar_ladder_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (19 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
       "review": null
     },
     {
@@ -2909,12 +2882,12 @@
       "output": "assets/scenery/palm_sugar_pair_iso.svg",
       "format": "svg",
       "canvas": [
-        109,
-        203
+        110,
+        198
       ],
       "anchor": [
-        55,
-        197
+        57,
+        189
       ],
       "variant_group": "palm_iso",
       "prompt": "Two sugar palms growing side by side, one noticeably taller, each with its own fan-leaf crown. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (55,197) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2923,8 +2896,8 @@
       "status": "done",
       "file": "assets/scenery/palm_sugar_pair_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (35 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
       "review": null
     },
     {
@@ -2936,12 +2909,12 @@
       "output": "assets/scenery/palm_betel_cluster_iso.svg",
       "format": "svg",
       "canvas": [
-        123,
-        177
+        119,
+        185
       ],
       "anchor": [
-        63,
-        170
+        61,
+        177
       ],
       "variant_group": "palm_iso",
       "prompt": "A cluster of three slender areca/betel-nut palms (ต้นหมาก) of different heights: thin pale ringed trunks, smooth green crownshafts, small feathery crowns and bunches of orange nuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (63,170) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
@@ -2950,8 +2923,8 @@
       "status": "done",
       "file": "assets/scenery/palm_betel_cluster_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:27:11Z",
-      "notes": "Built in 3D with the farm's 2:1 projection and cropped to its own canvas (37 KB). Used on the farm via PALM_SPOTS in js/art/iso.js; each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:17:38Z",
+      "notes": "Redesign 2: 3D-built. Three slender grey-green trunks with close ring bands and flared feet, smooth green crownshafts, small crowns of arching feathery fronds, orange and green nut bunches under the crownshafts.",
       "review": null
     },
     {

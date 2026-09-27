@@ -112,7 +112,6 @@ const PALM_SPOTS = [
   [-1.6, -2.4, 'sugar_pair', .62],          // canal bank, behind the yard's top corner
   [-1.6, 1.7, 'coconut_lean', .62],         // canal bank, leaning out over the water
   [-1.55, 5.8, 'coconut_dwarf', .72],       // canal bank
-  [7.0, -4.4, 'coconut_windswept', .7],     // beside the stilt house, blowing away from the roof
   [8.5, -1.3, 'betel_cluster', .66],        // in front of the buffalo paddock
 ];
 
