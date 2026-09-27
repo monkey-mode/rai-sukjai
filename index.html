@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>ไร่สุขใจ · Rai Sukjai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3a2213;--wood:#a8693a;--wood-d:#7a4a26;--paper:#fff4d6;--red:#c8372d;--gold:#f2b632}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#2a1a0f;overflow:hidden;font-family:'Sarabun',sans-serif;color:var(--ink);
+  -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#stage{position:relative;width:800px;height:600px;flex:none;overflow:hidden;background:#bccb6c;transform-origin:50% 50%}
+#stage>svg{position:absolute;left:0;top:0;width:800px;height:600px}
+#bg,#anim,#fx,#dyn{pointer-events:none}
+#dyn [data-act]{pointer-events:auto;cursor:pointer}
+.k{font-family:'Kanit',sans-serif}
+small.en,.en{font-family:'Sarabun',sans-serif;font-size:10px;font-weight:400;opacity:.8;line-height:1.1}
+button{font-family:'Kanit',sans-serif;cursor:pointer;border:2.5px solid var(--ink);border-radius:10px;background:#ffe9b0;color:var(--ink);
+  box-shadow:0 3px 0 var(--ink);padding:4px 10px;font-size:14px;line-height:1.1;touch-action:manipulation}
+button:hover:not(:disabled){filter:brightness(1.06)}
+button:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font-weight:400;opacity:.8}
+
+/* grain texture for the Flash-era look */
+#grain{position:absolute;inset:0;pointer-events:none;opacity:.13;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .22 0 0 0 0 .1 0 0 0 1.2 -.2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+
+/* HUD */
+#hud{position:absolute;left:0;top:0;width:800px;height:46px;display:flex;align-items:center;gap:5px;padding:0 6px;
+  background:linear-gradient(#9a6436,#7a4a26);border-bottom:3px solid var(--ink);color:var(--paper);z-index:5}
+#hud:empty{display:none}
+.hb{background:rgba(40,20,8,.35);border:1.5px solid rgba(0,0,0,.35);border-radius:9px;padding:2px 7px;height:38px;
+  display:flex;flex-direction:column;justify-content:center;white-space:nowrap}
+.hb b{font-family:'Kanit';font-weight:600;font-size:15px;line-height:1.1}
+.hb b span{font-size:11px;opacity:.7;font-weight:400}
+.hb small{font-size:10px;opacity:.85;line-height:1.1}
+.hb.wx{padding:0 3px;width:40px;align-items:center}
+.hb.season.s-hot b{color:#ffcf70}.hb.season.s-rainy b{color:#9fe0ff}.hb.season.s-cool b{color:#c9f0c0}
+.hb.money b{color:#ffe066;font-size:17px}
+.hb.energy{width:112px}
+.ebar{height:11px;border:2px solid var(--ink);border-radius:6px;background:#3a2213;overflow:hidden;margin-bottom:2px}
+.ebar i{display:block;height:100%;background:linear-gradient(#9be15d,#4fae2a);transition:width .3s}
+.hb.energy.low .ebar i{background:linear-gradient(#ff8a6a,#d8321d)}
+.hb.energy.low small{color:#ffb4a0;font-weight:700}
+.hb.inv{flex-direction:row;gap:6px;align-items:center}
+.inv-i{display:flex;flex-direction:column;align-items:center;min-width:30px}
+.inv-i .row{display:flex;align-items:center;gap:2px}
+.inv-i b{font-size:13px}
+.inv-i small{font-size:9px}
+.hbtn{width:36px;height:36px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:9px;box-shadow:0 2px 0 var(--ink)}
+.spacer{flex:1}
+
+/* toolbar */
+#toolbar{position:absolute;left:0;bottom:0;width:800px;height:68px;display:flex;align-items:center;gap:4px;padding:0 6px;
+  background:linear-gradient(#8a5a33,#6e4526);border-top:3px solid var(--ink);z-index:5}
+.tool{width:56px;height:58px;padding:2px 0 0;display:flex;flex-direction:column;align-items:center;position:relative;border-radius:10px;font-size:12px}
+.tool svg{width:30px;height:30px}
+.tool span{font-size:12px;line-height:1}
+.tool small{font-size:8.5px}
+.tool.sel,.seed.sel{background:#ffd54a;outline:3px solid #fff6c8;outline-offset:-6px}
+.badge{position:absolute;top:-6px;right:-5px;background:#c8372d;color:#fff;border:2px solid var(--ink);border-radius:9px;
+  font-size:10px;min-width:18px;padding:0 3px;line-height:14px;font-family:'Kanit'}
+.sep{width:3px;height:48px;background:rgba(0,0,0,.3);border-radius:2px;margin:0 2px}
+.seed{width:40px;height:58px;padding:2px 0;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:9px;background:#f7e2b0}
+.seed svg{width:30px;height:34px}
+.seed .cnt{font-family:'Kanit';font-size:11px;line-height:1}
+.seed.zero .cnt{color:#a55}
+#endday{margin-left:auto;height:56px;width:112px;background:#e2553f;color:#fff;font-size:18px;border-radius:12px}
+#endday small{color:#ffe;opacity:.9}
+
+/* toast */
+#toast{position:absolute;left:50%;top:480px;transform:translate(-50%,10px);background:var(--paper);border:2.5px solid var(--ink);
+  border-radius:12px;padding:5px 14px;text-align:center;box-shadow:0 4px 0 rgba(0,0,0,.35);opacity:0;pointer-events:none;
+  transition:opacity .2s,transform .2s;z-index:8;max-width:520px;font-family:'Kanit';font-size:15px}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#toast.bad{background:#ffe0d6}
+#toast small{display:block;font-family:'Sarabun';font-size:11px;opacity:.75}
+
+/* held produce follows the pointer */
+#hand{position:absolute;left:0;top:0;pointer-events:none;z-index:9;display:none;filter:drop-shadow(0 3px 0 rgba(0,0,0,.3))}
+#hand b{position:absolute;left:24px;top:22px;background:#fff4d6;border:2px solid var(--ink);border-radius:8px;font:600 12px 'Kanit';padding:0 4px}
+
+#night{position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,#2b3a78,#0b1030 70%);opacity:0;pointer-events:none;transition:opacity .55s;z-index:10}
+#night.on{opacity:.92;pointer-events:auto}
+#night .moon{position:absolute;left:560px;top:90px;width:56px;height:56px;border-radius:50%;background:#fff3c4;box-shadow:12px -8px 0 0 #1a2350 inset,0 0 30px #fff3c455}
+
+/* modal */
+#modal{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(30,15,5,.55);z-index:20}
+#modal.on{display:flex}
+.card{background:var(--paper);border:3px solid var(--ink);border-radius:18px;box-shadow:0 6px 0 var(--ink);padding:18px 24px;width:470px;text-align:center;position:relative}
+.card h2{font-family:'Kanit';margin:0 0 2px;font-size:28px}
+.card h2+.en{display:block;margin-bottom:10px;font-size:12px}
+.card .btns{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.card .btns button{font-size:17px;padding:6px 16px}
+.card ul{text-align:left;margin:6px 0;padding-left:20px;font-size:14px;line-height:1.45}
+.card ul small{opacity:.7}
+.title-card{width:560px;background:linear-gradient(#fff4d6,#ffe6a8)}
+.logo{font-family:'Kanit';font-weight:700;font-size:70px;line-height:1;color:#e2553f;
+  text-shadow:3px 3px 0 var(--ink),-2px -2px 0 var(--ink),2px -2px 0 var(--ink),-2px 2px 0 var(--ink),0 7px 0 var(--ink)}
+.logo-en{font-family:'Kanit';font-size:18px;letter-spacing:3px;margin-top:10px}
+.howto{text-align:left;font-size:13px;line-height:1.45;max-height:330px;overflow:auto;padding-right:6px}
+.howto b{font-family:'Kanit';font-weight:600}
+.big-money{font-family:'Kanit';font-size:46px;font-weight:700;color:#2f8a2f;text-shadow:2px 2px 0 #fff}
+.report-list{list-style:none;padding:0!important}
+.report-list li{padding:3px 0;border-bottom:1px dashed #c9a67a}
+
+/* scene panels (market, duck pen) */
+#panel{position:absolute;left:0;top:46px;width:800px;height:554px;pointer-events:none;z-index:3}
+#panel>*{pointer-events:auto}
+.back{position:absolute;left:14px;bottom:14px;font-size:16px;background:#fff4d6}
+.bubble{position:absolute;background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:6px 10px;font-family:'Kanit';font-size:14px;line-height:1.2;box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.bubble small{display:block;font-family:'Sarabun';font-size:10.5px;opacity:.75}
+.bubble:after{content:'';position:absolute;left:40px;bottom:-12px;border:6px solid transparent;border-top:8px solid var(--ink)}
+.shop-board{position:absolute;left:210px;top:6px;width:582px;background:rgba(255,244,214,.93);border:3px solid var(--ink);border-radius:16px;padding:8px 10px;box-shadow:0 5px 0 rgba(0,0,0,.3)}
+.shop-board h3{margin:0;font-family:'Kanit';font-size:19px;display:flex;align-items:baseline;gap:8px}
+.money-now{margin-left:auto;font-size:15px;color:#2f7a2f}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:4px}
+.scard{background:#fffaf0;border:2px solid var(--ink);border-radius:11px;padding:4px 6px 5px;height:182px;display:flex;flex-direction:column;position:relative}
+.scard .top{display:flex;gap:5px;align-items:center}
+.scard .top svg{width:32px;height:36px;flex:none}
+.scard .nm{font-family:'Kanit';font-weight:600;font-size:14px;line-height:1.05}
+.scard .nm small{display:block;font-family:'Sarabun';font-weight:400;font-size:9.5px;opacity:.75}
+.scard .ds{font-size:10px;line-height:1.22;margin:2px 0 3px;min-height:25px}
+.scard .st{font-size:9.6px;line-height:1.3;color:#5a3a22}
+.scard .st .stars{color:#d68a00;letter-spacing:-1px}
+.scard .buy{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.scard .buy button{padding:2px 8px;font-size:13px;background:#9be15d}
+.own{font-size:10.5px;font-family:'Kanit'}
+.supplies{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:5px}
+.supplies .scard{height:auto;flex-direction:row;align-items:center;gap:8px}
+.supplies .scard svg{width:38px;height:38px;flex:none}
+.supplies .scard .buy{margin:0 0 0 auto;flex-direction:column;gap:2px}
+.mee-shop{position:absolute;left:10px;top:292px;width:192px;background:rgba(255,244,214,.95);border:3px solid var(--ink);border-radius:14px;padding:8px;box-shadow:0 4px 0 rgba(0,0,0,.3)}
+.mee-shop h3{margin:0 0 4px;font-family:'Kanit';font-size:16px;line-height:1.1}
+.mee-shop .line{display:flex;justify-content:space-between;align-items:center;margin:5px 0;font-size:13px}
+.mee-shop button{font-size:12.5px;padding:3px 7px;background:#9be15d}
+.mee-shop .note{font-size:10px;opacity:.75;line-height:1.3}
+
+/* svg interactions & animations */
+.plot .soil{transition:stroke .1s}
+.plot:hover .soil{stroke:#fff3a0;stroke-width:3.5}
+.sign:hover path,.jar:hover path:first-of-type,.hot:hover .hl{filter:brightness(1.12)}
+.sign.dim{opacity:.5}
+.glow{animation:glow 1s ease-in-out infinite alternate}
+@keyframes glow{from{filter:drop-shadow(0 0 0 #fff5a0)}to{filter:drop-shadow(0 0 6px #fff5a0)}}
+.spark{transform-box:fill-box;transform-origin:center;animation:twinkle 1.4s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.6}50%{transform:scale(1.15) rotate(20deg);opacity:1}}
+.bug{animation:crawl .5s steps(2) infinite}
+@keyframes crawl{0%{transform:translate(0,0)}100%{transform:translate(1.5px,-1px)}}
+.drift{animation:drift 30s ease-in-out infinite alternate}
+.drift.d2{animation-duration:42s}
+@keyframes drift{from{transform:translateX(-25px)}to{transform:translateX(35px)}}
+.bhead{transform-origin:-44px -40px;animation:graze 7s ease-in-out infinite}
+@keyframes graze{0%,55%,100%{transform:rotate(0)}65%,85%{transform:rotate(-12deg)}}
+.btail{transform-origin:52px -42px;animation:swish 2.6s ease-in-out infinite}
+@keyframes swish{0%,100%{transform:rotate(0)}50%{transform:rotate(18deg)}}
+.duck{animation:wander 12s linear infinite}
+@keyframes wander{0%{transform:translateX(-45px) scaleX(1)}46%{transform:translateX(45px) scaleX(1)}50%{transform:translateX(45px) scaleX(-1)}96%{transform:translateX(-45px) scaleX(-1)}100%{transform:translateX(-45px) scaleX(1)}}
+.waddle{animation:waddle .5s ease-in-out infinite alternate}
+@keyframes waddle{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.rainfall{animation:rain .45s linear infinite}
+@keyframes rain{from{transform:translate(0,-60px)}to{transform:translate(-15px,0)}}
+.farmer-idle{animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage">
+  <svg id="bg" viewBox="0 0 800 600"></svg>
+  <svg id="anim" viewBox="0 0 800 600"></svg>
+  <svg id="dyn" viewBox="0 0 800 600"></svg>
+  <div id="panel"></div>
+  <svg id="fx" viewBox="0 0 800 600"></svg>
+  <div id="grain"></div>
+  <div id="hud"></div>
+  <div id="toolbar"></div>
+  <div id="toast"></div>
+  <div id="hand"></div>
+  <div id="night"><div class="moon"></div></div>
+  <div id="modal"></div>
+</div></div>
+
+<!-- ===================================================================
+     GAME LOGIC — pure, DOM-free. Loaded by tests/endDay.test.mjs too.
+     =================================================================== -->
+<script id="game-logic">
+'use strict';
+
+/* All crop, shop and rule numbers live here. */
+const CONFIG = {
+  START_MONEY: 400,
+  START_ENERGY: 100,
+  MAX_ENERGY: 100,
+  LAST_DAY: 365,
+  FIELDS: 4,
+  PLOTS_PER_FIELD: 12,
+  RIPE_STAGE: 5,
+  COST: { water: 1, fertilize: 1, spray: 1, cut: 1, pick: 0, plant: 0, walk: 5 },
+  TIRED_BELOW: 6,          // show "เหนื่อยแล้ว…" when energy < this
+  BUG_STAGE: 4,            // only this stage can catch bugs
+  BUG_CHANCE: 0.10,        // per plot per End Day
+  BUG_DEATH_CHANCE: 1 / 3, // per bugged plant per End Day
+  // Rain chance by Thai season. Replace with a single number (0.02) to restore the original flat 2%.
+  RAIN_CHANCE: { hot: 0.03, rainy: 0.25, cool: 0.05 },
+  CROPS: [
+    { id: 'phakbung',   th: 'ผักบุ้ง',            en: 'Morning glory',       seed: 100,  sell: 50,  k: 0, harvests: 1,
+      desc: 'ผักบุ้งไทยยอดอ่อน โตไว ปลูกง่าย เหมาะกับมือใหม่' },
+    { id: 'khana',      th: 'คะน้า',              en: 'Chinese kale',        seed: 200,  sell: 60,  k: 0, harvests: 1,
+      desc: 'ใบเขียวเข้ม ก้านกรอบ ผัดน้ำมันหอยอร่อยนัก' },
+    { id: 'manthet',    th: 'มันเทศ',             en: 'Sweet potato',        seed: 300,  sell: 75,  k: 1, harvests: 1,
+      desc: 'หัวมันเนื้อม่วง เผาหรือต้มก็หวานมัน' },
+    { id: 'phrik',      th: 'พริก',               en: 'Chili',               seed: 500,  sell: 150, k: 2, harvests: 4,
+      desc: 'พริกขี้หนูเม็ดเล็กเผ็ดจัด เก็บขายได้หลายรอบ' },
+    { id: 'thua',       th: 'ถั่วฝักยาว',          en: 'Long bean',           seed: 600,  sell: 160, k: 3, harvests: 5,
+      desc: 'ไต่ค้างไม้ไผ่ ฝักยาวกรอบ เก็บได้ถึงห้ารอบ' },
+    { id: 'strawberry', th: 'สตรอว์เบอร์รี่ดอย',   en: 'Highland strawberry', seed: 800,  sell: 200, k: 3, harvests: 4,
+      desc: 'พันธุ์จากดอยทางเหนือ ลูกแดงหวานฉ่ำ' },
+    { id: 'mango',      th: 'มะม่วงน้ำดอกไม้',     en: 'Nam Dok Mai mango',   seed: 1200, sell: 350, k: 5, harvests: 6,
+      desc: 'ราชาผลไม้ไทย โตช้าแต่ออกลูกได้หลายรอบ' },
+    { id: 'watermelon', th: 'แตงโม',              en: 'Watermelon',          seed: 900,  sell: 500, k: 4, harvests: 1,
+      desc: 'ลูกโตเนื้อแดง ราคางามแต่เก็บได้ครั้งเดียว' },
+  ],
+  SUPPLIES: {
+    fertilizer: { price: 200, uses: 50, th: 'ปุ๋ยคอก', en: 'Fertilizer' },
+    spray:      { price: 200, uses: 20, th: 'ยาฉีดแมลง', en: 'Bug spray' },
+  },
+  DUCK: { price: 1000, max: 5, feedPrice: 200, feedPortions: 20, troughMax: 5, eggPrice: 50, starveDeathChance: 0.10 },
+};
+
+const WITHERED = 6; // plot.stage value for a rotten / dead plant that must be cut
+const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const MONTHS_TH = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+const MONTHS_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const SEASONS = {
+  hot:   { th: 'ฤดูร้อน', en: 'Hot season' },
+  rainy: { th: 'ฤดูฝน',  en: 'Rainy season' },
+  cool:  { th: 'ฤดูหนาว', en: 'Cool season' },
+};
+
+/* Day 1 = 1 January. */
+function dateOf(day) {
+  let d = ((day - 1) % 365 + 365) % 365, m = 0;
+  while (d >= MONTH_DAYS[m]) { d -= MONTH_DAYS[m]; m++; }
+  return { month: m, date: d + 1 };
+}
+function seasonOf(day) {
+  const m = dateOf(day).month;
+  if (m >= 2 && m <= 4) return 'hot';    // Mar–May
+  if (m >= 5 && m <= 9) return 'rainy';  // Jun–Oct
+  return 'cool';                         // Nov–Feb
+}
+function rainChance(day) {
+  const c = CONFIG.RAIN_CHANCE;
+  return typeof c === 'number' ? c : c[seasonOf(day)];
+}
+
+/* Small seeded RNG for tests / replays. */
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function emptyPlot() {
+  return { stage: 0, progress: 0, watered: false, fertilized: false, bug: false, harvests: 0 };
+}
+function emptyField() {
+  const plots = [];
+  for (let i = 0; i < CONFIG.PLOTS_PER_FIELD; i++) plots.push(emptyPlot());
+  return { crop: null, plots };
+}
+function isGrowing(p) { return p.stage >= 1 && p.stage <= CONFIG.RIPE_STAGE; }
+function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+function applyRain(s) {
+  s.rain = true;
+  s.fields.forEach(f => f.plots.forEach(p => { if (isGrowing(p)) p.watered = true; }));
+}
+
+function newGame(rng) {
+  rng = rng || Math.random;
+  const fields = [];
+  for (let i = 0; i < CONFIG.FIELDS; i++) fields.push(emptyField());
+  const s = {
+    version: 1,
+    day: 1,
+    money: CONFIG.START_MONEY,
+    energy: CONFIG.START_ENERGY,
+    scene: 'farm',
+    rain: false,
+    fields,
+    inventory: { seeds: CONFIG.CROPS.map(() => 0), fertilizer: 0, spray: 0, feed: 0 },
+    ducks: 0,
+    trough: 0,
+    eggs: 0,
+    hand: null,                 // produce carried on the cursor: {type:'crop',crop,n} | {type:'egg',n}
+    gameOver: false,
+    lastReport: null,
+    stats: { cropsSold: 0, eggsSold: 0, earned: 0, spent: 0 },
+  };
+  if (rng() < rainChance(s.day)) applyRain(s);
+  return s;
+}
+
+/* Rebuild a state from saved JSON, filling any missing keys (incl. per-plot harvest counters). */
+function sanitizeState(raw) {
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.fields)) return null;
+  const s = newGame(() => 1);
+  const num = (v, d) => (typeof v === 'number' && isFinite(v) ? v : d);
+  s.day = Math.min(CONFIG.LAST_DAY, Math.max(1, num(raw.day, 1)));
+  s.money = num(raw.money, s.money);
+  s.energy = Math.max(0, Math.min(CONFIG.MAX_ENERGY, num(raw.energy, s.energy)));
+  s.scene = ['farm', 'market', 'pen'].includes(raw.scene) ? raw.scene : 'farm';
+  s.rain = !!raw.rain;
+  s.fields = s.fields.map((df, i) => {
+    const rf = raw.fields[i] || {};
+    const crop = Number.isInteger(rf.crop) && CONFIG.CROPS[rf.crop] ? rf.crop : null;
+    const plots = df.plots.map((dp, j) => {
+      const rp = (rf.plots && rf.plots[j]) || {};
+      return {
+        stage: crop === null ? 0 : Math.max(0, Math.min(WITHERED, num(rp.stage, 0))),
+        progress: num(rp.progress, 0),
+        watered: !!rp.watered,
+        fertilized: !!rp.fertilized,
+        bug: !!rp.bug,
+        harvests: num(rp.harvests, 0),
+      };
+    });
+    return { crop: plots.every(p => p.stage === 0) ? null : crop, plots };
+  });
+  const inv = raw.inventory || {};
+  s.inventory = {
+    seeds: CONFIG.CROPS.map((_, i) => num(inv.seeds && inv.seeds[i], 0)),
+    fertilizer: num(inv.fertilizer, 0),
+    spray: num(inv.spray, 0),
+    feed: num(inv.feed, 0),
+  };
+  s.ducks = Math.min(CONFIG.DUCK.max, num(raw.ducks, 0));
+  s.trough = Math.min(CONFIG.DUCK.troughMax, num(raw.trough, 0));
+  s.eggs = num(raw.eggs, 0);
+  const h = raw.hand;
+  if (h && h.type === 'egg' && h.n > 0) s.hand = { type: 'egg', n: h.n };
+  else if (h && h.type === 'crop' && CONFIG.CROPS[h.crop] && h.n > 0) s.hand = { type: 'crop', crop: h.crop, n: h.n };
+  s.gameOver = !!raw.gameOver;
+  s.lastReport = raw.lastReport || null;
+  const st = raw.stats || {};
+  s.stats = { cropsSold: num(st.cropsSold, 0), eggsSold: num(st.eggsSold, 0), earned: num(st.earned, 0), spent: num(st.spent, 0) };
+  return s;
+}
+
+/* ---------- END DAY (pure) ---------- */
+function endDay(state, rng) {
+  const s = clone(state);
+  const report = { day: s.day, grew: 0, ripened: 0, rotted: 0, bugDeaths: 0, newBugs: 0, eggsLaid: 0, duckDied: false, rain: false };
+
+  // 1) Bug deaths first, then growth, on every plot.
+  s.fields.forEach(f => {
+    if (f.crop === null) return;
+    const need = CONFIG.CROPS[f.crop].k + 1;
+    f.plots.forEach(p => {
+      if (isGrowing(p)) {
+        if (p.bug && rng() < CONFIG.BUG_DEATH_CHANCE) {
+          p.stage = WITHERED; p.progress = 0; p.bug = false;
+          report.bugDeaths++;
+        } else {
+          const before = p.stage;
+          p.progress += (p.watered ? 1 : 0) + (p.fertilized ? 1 : 0);
+          while (p.progress >= need && p.stage <= CONFIG.RIPE_STAGE) {
+            p.progress -= need;
+            p.stage++;
+          }
+          if (p.stage > CONFIG.RIPE_STAGE) {          // passed ripe: rots
+            p.stage = WITHERED; p.progress = 0; p.bug = false;
+            report.rotted++;
+          } else if (p.stage > before) {
+            report.grew++;
+            if (p.stage === CONFIG.RIPE_STAGE) report.ripened++;
+          }
+        }
+      }
+      p.watered = false;
+      p.fertilized = false;
+    });
+  });
+
+  // 2) New bugs are rolled only after all deaths are resolved, so a fresh bug always gets a day to be sprayed.
+  s.fields.forEach(f => f.plots.forEach(p => {
+    if (p.stage === CONFIG.BUG_STAGE && !p.bug && rng() < CONFIG.BUG_CHANCE) {
+      p.bug = true;
+      report.newBugs++;
+    }
+  }));
+
+  // 3) Ducks: each fed duck lays one egg; empty trough may starve one duck; leftover feed is lost.
+  const fed = Math.min(s.ducks, s.trough);
+  if (s.ducks > 0 && s.trough === 0 && rng() < CONFIG.DUCK.starveDeathChance) {
+    s.ducks--;
+    report.duckDied = true;
+  }
+  s.eggs += fed;
+  report.eggsLaid = fed;
+  s.trough = 0;
+
+  // 4) Next morning.
+  if (s.day >= CONFIG.LAST_DAY) s.gameOver = true;
+  else s.day++;
+  s.energy = CONFIG.MAX_ENERGY;
+  s.scene = 'farm';
+  s.rain = false;
+  if (!s.gameOver && rng() < rainChance(s.day)) applyRain(s);
+  report.rain = s.rain;
+  s.lastReport = report;
+  return s;
+}
+
+/* ---------- Player actions (mutate state, return a result message) ---------- */
+function res(ok, th, en) { return { ok, th: th || '', en: en || '' }; }
+const OK = () => res(true);
+
+function energyBlock(s, cost) {
+  if (s.energy <= 0) return res(false, 'หมดแรงแล้ว… กด "จบวัน" เพื่อพักผ่อน', 'Out of energy — end the day to rest');
+  if (s.energy < cost) return res(false, 'เหนื่อยแล้ว…', "I'm tired");
+  return null;
+}
+function normalizeField(f) {
+  if (f.plots.every(p => p.stage === 0)) f.crop = null;
+}
+
+function applyTool(s, tool, fi, pi) {
+  const f = s.fields[fi], p = f && f.plots[pi];
+  if (!p) return res(false);
+  if (tool && tool.startsWith('seed:')) return plantField(s, fi, +tool.slice(5));
+  const C = CONFIG.COST;
+  let block;
+  switch (tool) {
+    case 'water':
+      if (!isGrowing(p)) return res(false, p.stage === WITHERED ? 'ต้นนี้เหี่ยวแล้ว ต้องถางทิ้ง' : 'ยังไม่มีต้นไม้ให้รดน้ำ', p.stage === WITHERED ? 'Withered — clear it' : 'Nothing planted here');
+      if (s.rain) return res(false, 'วันนี้ฝนตก รดน้ำให้แล้ว', 'The rain already watered it');
+      if (p.watered) return res(false, 'รดน้ำแปลงนี้แล้ววันนี้', 'Already watered today');
+      if ((block = energyBlock(s, C.water))) return block;
+      s.energy -= C.water; p.watered = true;
+      return OK();
+    case 'fertilize':
+      if (!isGrowing(p)) return res(false, 'ยังไม่มีต้นไม้ให้ใส่ปุ๋ย', 'Nothing to fertilize');
+      if (p.fertilized) return res(false, 'ใส่ปุ๋ยแปลงนี้แล้ววันนี้', 'Already fertilized today');
+      if (s.inventory.fertilizer < 1) return res(false, 'ปุ๋ยหมด ไปซื้อที่แผงป้าแดง', 'Out of fertilizer');
+      if ((block = energyBlock(s, C.fertilize))) return block;
+      s.energy -= C.fertilize; s.inventory.fertilizer--; p.fertilized = true;
+      return OK();
+    case 'spray':
+      if (!p.bug) return res(false, 'ต้นนี้ไม่มีแมลง', 'No bugs here');
+      if (s.inventory.spray < 1) return res(false, 'ยาฉีดแมลงหมด ไปซื้อที่แผงป้าแดง', 'Out of bug spray');
+      if ((block = energyBlock(s, C.spray))) return block;
+      s.energy -= C.spray; s.inventory.spray--; p.bug = false;
+      return OK();
+    case 'cut':
+      if (p.stage === 0) return res(false, 'แปลงนี้ว่างอยู่แล้ว', 'Already empty');
+      if ((block = energyBlock(s, C.cut))) return block;
+      s.energy -= C.cut;
+      f.plots[pi] = emptyPlot();
+      normalizeField(f);
+      return OK();
+    case 'pick':
+      return pickPlot(s, fi, pi);
+    default:
+      return res(false, 'เลือกเครื่องมือก่อน', 'Choose a tool first');
+  }
+}
+
+function pickPlot(s, fi, pi) {
+  const f = s.fields[fi], p = f.plots[pi];
+  if (p.stage === WITHERED) return res(false, 'ต้นเหี่ยวแล้ว ต้องถางทิ้ง', 'Withered — clear it');
+  if (p.stage !== CONFIG.RIPE_STAGE) return res(false, 'ยังไม่สุก รออีกหน่อย', 'Not ripe yet');
+  const block = energyBlock(s, CONFIG.COST.pick);
+  if (block) return block;
+  if (s.hand && !(s.hand.type === 'crop' && s.hand.crop === f.crop))
+    return res(false, 'มือไม่ว่าง เอาของในมือไปขายที่เกวียนก่อน', 'Hands full — sell at the cart first');
+  const crop = CONFIG.CROPS[f.crop];
+  s.hand = s.hand ? { type: 'crop', crop: f.crop, n: s.hand.n + 1 } : { type: 'crop', crop: f.crop, n: 1 };
+  s.energy -= CONFIG.COST.pick;
+  p.harvests++;
+  if (crop.harvests <= 1) {
+    f.plots[pi] = emptyPlot();
+  } else if (p.harvests >= crop.harvests) {
+    p.stage = WITHERED; p.progress = 0; p.bug = false;
+  } else {
+    p.stage = CONFIG.RIPE_STAGE - 1; p.progress = 0;
+  }
+  normalizeField(f);
+  return OK();
+}
+
+function plantField(s, fi, c) {
+  const f = s.fields[fi], crop = CONFIG.CROPS[c];
+  if (!crop) return res(false);
+  if (f.crop !== null) return res(false, 'แปลงนี้ยังมีพืชอยู่ ต้องถางให้หมดก่อน', 'Field in use — clear every plot first');
+  if (s.inventory.seeds[c] < 1) return res(false, 'ไม่มีเมล็ด' + crop.th + ' ไปซื้อที่แผงป้าแดง', 'No ' + crop.en + ' seeds');
+  const block = energyBlock(s, CONFIG.COST.plant);
+  if (block) return block;
+  s.inventory.seeds[c]--;
+  s.energy -= CONFIG.COST.plant;
+  f.crop = c;
+  f.plots = f.plots.map(() => Object.assign(emptyPlot(), { stage: 1, watered: s.rain })); // harvest counters reset
+  return res(true, 'ปลูก' + crop.th + 'เต็มแปลงแล้ว', 'Planted ' + crop.en);
+}
+
+function sellHand(s, where) {
+  const h = s.hand;
+  if (!h) return res(false, where === 'basket' ? 'คลิกไข่ในรังก่อน แล้วค่อยใส่ตะกร้า' : 'ใช้ "เก็บ" กับต้นที่สุก แล้วเอามาใส่เกวียน',
+    where === 'basket' ? 'Pick eggs first' : 'Pick ripe produce first');
+  if (where === 'cart' && h.type !== 'crop') return res(false, 'เกวียนรับเฉพาะผลผลิต', 'The cart takes produce only');
+  if (where === 'basket' && h.type !== 'egg') return res(false, 'ตะกร้านี้รับเฉพาะไข่เป็ด', 'Eggs only');
+  const price = h.type === 'egg' ? CONFIG.DUCK.eggPrice : CONFIG.CROPS[h.crop].sell;
+  const total = price * h.n;
+  s.money += total;
+  s.stats.earned += total;
+  if (h.type === 'egg') s.stats.eggsSold += h.n; else s.stats.cropsSold += h.n;
+  const name = h.type === 'egg' ? 'ไข่เป็ด' : CONFIG.CROPS[h.crop].th;
+  s.hand = null;
+  return res(true, 'ขาย' + name + ' ' + h_n(h) + ' ได้ ฿' + total.toLocaleString('en-US'), 'Sold for ฿' + total);
+}
+function h_n(h) { return h.n + (h.type === 'egg' ? ' ฟอง' : ' ชิ้น'); }
+
+function walk(s, to) {
+  const cost = CONFIG.COST.walk;
+  if (to === 'farm') {
+    if (s.scene === 'farm') return res(false);
+    if (s.hand) return res(false, 'ขายไข่ในมือก่อนนะ', 'Sell what you carry first');
+    s.energy = Math.max(0, s.energy - cost);
+    s.scene = 'farm';
+    return OK();
+  }
+  if (s.scene !== 'farm') return res(false);
+  if (s.hand) return res(false, 'เอาของในมือไปขายที่เกวียนก่อน', 'Sell what you carry first');
+  if (!(s.energy > cost)) return res(false, 'เหนื่อยเกินไป เดินไม่ไหวแล้ว', 'Too tired to walk (need more than ' + cost + ' energy)');
+  s.energy -= cost;
+  s.scene = to;
+  return OK();
+}
+
+function spend(s, amount) {
+  if (s.money < amount) return false;
+  s.money -= amount; s.stats.spent += amount;
+  return true;
+}
+function buySeed(s, c) {
+  const crop = CONFIG.CROPS[c];
+  if (!crop || !spend(s, crop.seed)) return res(false, 'เงินไม่พอจ้ะ', 'Not enough money');
+  s.inventory.seeds[c]++;
+  return res(true, 'ซื้อเมล็ด' + crop.th + ' 1 ซอง', 'Bought ' + crop.en + ' seeds');
+}
+function buySupply(s, key) {
+  const it = CONFIG.SUPPLIES[key];
+  if (!it || !spend(s, it.price)) return res(false, 'เงินไม่พอจ้ะ', 'Not enough money');
+  s.inventory[key] += it.uses;
+  return res(true, 'ซื้อ' + it.th + ' +' + it.uses + ' ครั้ง', 'Bought ' + it.en);
+}
+function buyDuck(s) {
+  if (s.ducks >= CONFIG.DUCK.max) return res(false, 'คอกเต็มแล้ว เลี้ยงได้ ' + CONFIG.DUCK.max + ' ตัว', 'Pen is full');
+  if (!spend(s, CONFIG.DUCK.price)) return res(false, 'เงินไม่พอนะหลาน', 'Not enough money');
+  s.ducks++;
+  return res(true, 'ได้เป็ดไข่มา 1 ตัว', 'Bought a laying duck');
+}
+function buyFeed(s) {
+  if (!spend(s, CONFIG.DUCK.feedPrice)) return res(false, 'เงินไม่พอนะหลาน', 'Not enough money');
+  s.inventory.feed += CONFIG.DUCK.feedPortions;
+  return res(true, 'ซื้ออาหารเป็ด +' + CONFIG.DUCK.feedPortions + ' ส่วน', 'Bought duck feed');
+}
+function feedTrough(s) {
+  if (s.trough >= CONFIG.DUCK.troughMax) return res(false, 'รางเต็มแล้ว (วันละ ' + CONFIG.DUCK.troughMax + ' ส่วน)', 'Trough is full for today');
+  if (s.inventory.feed < 1) return res(false, 'อาหารเป็ดหมด ซื้อจากลุงมีได้', 'Out of duck feed');
+  s.inventory.feed--; s.trough++;
+  return OK();
+}
+function pickEgg(s) {
+  if (s.eggs < 1) return res(false, 'ไม่มีไข่ในรัง', 'No eggs');
+  if (s.hand && s.hand.type !== 'egg') return res(false, 'มือไม่ว่าง', 'Hands full');
+  s.eggs--;
+  s.hand = { type: 'egg', n: (s.hand ? s.hand.n : 0) + 1 };
+  return OK();
+}
+</script>
+
+<!-- ===================================================================
+     PRESENTATION — art, UI, audio, save/load
+     =================================================================== -->
+<script>
+'use strict';
+(function () {
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), bgEl = $('#bg'), animEl = $('#anim'), dynEl = $('#dyn'), fxEl = $('#fx'), panel = $('#panel'),
+  hud = $('#hud'), toolbar = $('#toolbar'), toastEl = $('#toast'), handEl = $('#hand'), nightEl = $('#night'), modal = $('#modal');
+const SAVE_KEY = 'raiSukjai.save.v1', MUTE_KEY = 'raiSukjai.muted';
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} },
+};
+let S = null;
+const ui = { tool: 'water', bgScene: null, animKey: null, px: 400, py: 300, scale: 1, busy: false, greet: 0 };
+
+/* ======================= ART ======================= */
+const O = '#3a2213';
+const SW = `stroke="${O}" stroke-linejoin="round" stroke-linecap="round"`;
+const r = n => Math.round(n * 10) / 10;
+const fmt = n => n.toLocaleString('en-US');
+
+function lf(x, y, rot, len, w, fill, sw = 1.6) {
+  return `<path d="M0 0Q${r(w)} ${r(-len * .5)} 0 ${r(-len)}Q${r(-w)} ${r(-len * .5)} 0 0Z" transform="translate(${r(x)} ${r(y)}) rotate(${r(rot)})" fill="${fill}" ${SW} stroke-width="${sw}"/>`;
+}
+function circ(x, y, rad, fill, sw = 1.6) {
+  return `<circle cx="${r(x)}" cy="${r(y)}" r="${r(rad)}" fill="${fill}" ${SW} stroke-width="${sw}"/>`;
+}
+function ell(x, y, rx, ry, fill, rot = 0, sw = 1.6) {
+  return `<ellipse rx="${r(rx)}" ry="${r(ry)}" transform="translate(${r(x)} ${r(y)}) rotate(${rot})" fill="${fill}" ${SW} stroke-width="${sw}"/>`;
+}
+function line(d, col, w) { return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`; }
+function oline(d, col, w) { return line(d, O, w + 2.4) + line(d, col, w); } // outlined stroke
+function heart(x, y, rot, z, fill) {
+  return `<path d="M0 0C${r(z)} ${r(-z * .25)} ${r(z * .9)} ${r(-z)} 0 ${r(-z * .72)}C${r(-z * .9)} ${r(-z)} ${r(-z)} ${r(-z * .25)} 0 0Z" transform="translate(${r(x)} ${r(y)}) rotate(${rot})" fill="${fill}" ${SW} stroke-width="1.5"/>`;
+}
+function trifol(x, y, rot, z, fill) {
+  return `<g transform="translate(${r(x)} ${r(y)}) rotate(${rot})">${line(`M0 0L0 ${r(-z)}`, '#4b8a2c', 1.6)}` +
+    ell(0, -z * 1.45, z * .36, z * .5, fill, 0, 1.3) + ell(-z * .42, -z * 1.12, z * .33, z * .45, fill, -50, 1.3) +
+    ell(z * .42, -z * 1.12, z * .33, z * .45, fill, 50, 1.3) + `</g>`;
+}
+
+/* Foliage of each crop at scale sc (stages 2–5). Origin = soil point, y grows up (negative). */
+function foliage(c, sc) {
+  let s = '';
+  switch (c) {
+    case 0: // ผักบุ้ง: slender arrow leaves on upright hollow stems
+      [-40, -24, -8, 8, 24, 40].forEach((a, i) => { s += lf(0, 0, a, (21 + (i % 3) * 4) * sc, 4 * sc + 1.2, i % 2 ? '#6cc644' : '#56b234'); });
+      break;
+    case 1: // คะน้า: broad blue-green leaves with pale veins
+      [-52, -26, 0, 26, 52].forEach((a, i) => {
+        const L = (19 + (i === 2 ? 5 : 0)) * sc;
+        s += lf(0, 0, a, L, 12 * sc + 1, i % 2 ? '#2f8157' : '#3b9866') + `<path d="M0 0L0 ${r(-L * .8)}" transform="rotate(${a})" stroke="#a7dcb8" stroke-width="1.2"/>`;
+      });
+      break;
+    case 2: // มันเทศ: spreading vine with heart leaves
+      s += line(`M0 0L${r(-15 * sc)} ${r(-3 * sc)}M0 0L${r(15 * sc)} ${r(-3 * sc)}M0 0L0 ${r(-11 * sc)}`, '#7a3a6a', 2);
+      s += heart(-15 * sc, -2 * sc, -65, 9 * sc, '#6aa23c') + heart(15 * sc, -2 * sc, 65, 9 * sc, '#6aa23c') +
+        heart(-6 * sc, -7 * sc, -25, 10 * sc, '#5a9232') + heart(7 * sc, -7 * sc, 28, 10 * sc, '#5a9232') + heart(0, -10 * sc, 0, 11 * sc, '#72ad42');
+      break;
+    case 3: // พริก: small bushy shrub
+      s += oline(`M0 0L0 ${r(-22 * sc)}M0 ${r(-9 * sc)}L${r(-9 * sc)} ${r(-18 * sc)}M0 ${r(-11 * sc)}L${r(9 * sc)} ${r(-20 * sc)}`, '#5a8a32', 1.8);
+      [[-12, -12, -60], [12, -13, 60], [-9, -20, -30], [9, -22, 30], [-4, -25, -10], [4, -27, 15], [0, -30, 0], [-6, -15, -40], [6, -16, 40]]
+        .forEach(([x, y, a], i) => { s += ell(x * sc, y * sc, 3.6 * sc + .5, 6 * sc + .5, i % 2 ? '#3f9a3a' : '#4aa844', a, 1.3); });
+      break;
+    case 4: // ถั่วฝักยาว: climbing a bamboo stake
+      s += `<rect x="-2" y="${r(-44 * sc)}" width="4" height="${r(44 * sc + 2)}" rx="1" fill="#d6b16a" ${SW} stroke-width="1.5"/>`;
+      s += line(`M0 0Q${r(-7 * sc)} ${r(-8 * sc)} 0 ${r(-14 * sc)}Q${r(7 * sc)} ${r(-21 * sc)} 0 ${r(-28 * sc)}Q${r(-7 * sc)} ${r(-35 * sc)} 0 ${r(-42 * sc)}`, '#4d9a2c', 2.2);
+      s += trifol(-4 * sc, -8 * sc, -60, 7 * sc, '#4fa33a') + trifol(4 * sc, -20 * sc, 60, 7 * sc, '#5cb244') +
+        trifol(-4 * sc, -31 * sc, -55, 6.5 * sc, '#4fa33a') + trifol(3 * sc, -40 * sc, 45, 5.5 * sc, '#5cb244');
+      break;
+    case 5: // สตรอว์เบอร์รี่: low trifoliate rosette
+      s += trifol(0, 0, -50, 8 * sc, '#3c9c43') + trifol(0, 0, 50, 8 * sc, '#3c9c43') + trifol(0, 0, 0, 9.5 * sc, '#48ab4e');
+      break;
+    case 6: // มะม่วง: little tree
+      s += `<path d="M${r(-3 * sc)} 0L${r(-2 * sc)} ${r(-21 * sc)}L${r(2 * sc)} ${r(-21 * sc)}L${r(3 * sc)} 0Z" fill="#7a4b2a" ${SW} stroke-width="1.6"/>`;
+      s += ell(0, -28 * sc, 18 * sc, 12 * sc, '#2f7d32') + ell(-10 * sc, -24 * sc, 9 * sc, 7 * sc, '#3a8c3c') +
+        ell(10 * sc, -25 * sc, 9 * sc, 7 * sc, '#3a8c3c') + ell(0, -35 * sc, 10 * sc, 7 * sc, '#43994a');
+      s += line(`M${r(-8 * sc)} ${r(-30 * sc)}l${r(4 * sc)} ${r(-2 * sc)}M${r(6 * sc)} ${r(-32 * sc)}l${r(4 * sc)} ${r(2 * sc)}M${r(-2 * sc)} ${r(-24 * sc)}l${r(4 * sc)} ${r(-1 * sc)}`, '#1f5a22', 1.2);
+      break;
+    case 7: { // แตงโม: ground vines, lobed leaves
+      s += line(`M${r(-21 * sc)} -2Q${r(-10 * sc)} ${r(-9 * sc)} 0 -2Q${r(10 * sc)} ${r(4 * sc)} ${r(21 * sc)} ${r(-3 * sc)}`, '#4d8f2c', 2);
+      const lobe = (x, y, z) => circ(x - z * .42, y, z * .46, '#4c9a38', 1.3) + circ(x + z * .42, y, z * .46, '#4c9a38', 1.3) + circ(x, y - z * .42, z * .52, '#58a842', 1.3);
+      s += lobe(-14 * sc, -5 * sc, 9 * sc) + lobe(13 * sc, -4 * sc, 9 * sc) + lobe(0, -8 * sc, 10 * sc);
+      s += line(`M${r(19 * sc)} ${r(-4 * sc)}q3 -3 1 -5q-2 -1 -1 2`, '#4d8f2c', 1.1);
+      break;
+    }
+  }
+  return s;
+}
+
+/* Fruit / flowers for stage 4 (ripe=false) and stage 5 (ripe=true). */
+function fruit(c, ripe) {
+  let s = '';
+  switch (c) {
+    case 0:
+      if (ripe) s += lf(0, 0, -14, 30, 5, '#6cc644') + lf(0, 0, 16, 29, 5, '#56b234') + circ(10, -27, 4, '#f3e6f7', 1.3) + circ(10, -27, 1.4, '#b67fd0', 0);
+      break;
+    case 1:
+      if (ripe) s += lf(0, 0, -12, 26, 9, '#3b9866') + lf(0, 0, 12, 26, 9, '#2f8157') + ell(0, -6, 5, 7, '#9ad99a', 0, 1.3);
+      break;
+    case 2:
+      s += ripe ? ell(-8, 0, 8, 5, '#a23b6c', -15) + ell(7, 1, 7, 4.5, '#963363', 20) + ell(-10, -1.5, 2.5, 1.2, '#e79bc0', -15, 0)
+        : ell(-6, 1, 5, 3, '#8a4a60', -10) + ell(6, 1, 4, 2.6, '#8a4a60', 10);
+      break;
+    case 3: {
+      const pos = ripe ? [[-11, -16], [8, -19], [-3, -22], [12, -11], [-13, -8]] : [[-10, -16], [9, -18], [2, -24]];
+      pos.forEach(([x, y], i) => {
+        s += `<path d="M0 0Q3 5 0 11Q-1.5 6 -2.5 1Z" transform="translate(${x} ${y}) rotate(${i % 2 ? -15 : 15})" fill="${ripe ? '#d8261d' : '#7cc44a'}" ${SW} stroke-width="1.2"/>`;
+      });
+      break;
+    }
+    case 4:
+      if (ripe) {
+        [[-6, -30], [5, -22], [-3, -13], [7, -36]].forEach(([x, y]) => { s += oline(`M${x} ${y}q-3 10 1 ${20}q1 3 -1 5`, '#79c943', 2.6); });
+      } else {
+        [[-6, -14], [6, -26], [-5, -36]].forEach(([x, y]) => { s += circ(x, y, 2.8, '#b18ad6', 1.2); });
+        s += oline('M5 -20q-1 5 1 8M-4 -30q-1 5 1 8', '#8ad35a', 2);
+      }
+      break;
+    case 5:
+      if (ripe) {
+        [[-10, -3], [9, -2], [1, -7], [-3, 1]].forEach(([x, y]) => {
+          s += `<g transform="translate(${x} ${y})"><path d="M0 -4Q5 -4 4.5 1Q3 6 0 7Q-3 6 -4.5 1Q-5 -4 0 -4Z" fill="#e2323a" ${SW} stroke-width="1.2"/>` +
+            `<path d="M-3 -4L0 -6L3 -4" fill="#3c9c43" ${SW} stroke-width="1"/><circle cx="-1.5" cy="0" r=".6" fill="#ffe27a"/><circle cx="1.5" cy="2" r=".6" fill="#ffe27a"/><circle cx="0" cy="-1.5" r=".6" fill="#ffe27a"/></g>`;
+        });
+      } else {
+        s += circ(-9, -8, 3.2, '#fff', 1.2) + circ(-9, -8, 1.1, '#f5c518', 0) + circ(9, -9, 3.2, '#fff', 1.2) + circ(9, -9, 1.1, '#f5c518', 0) + ell(1, -4, 2.5, 3, '#a8d86a', 0, 1.1);
+      }
+      break;
+    case 6: {
+      const pos = ripe ? [[-11, -17], [9, -16], [0, -21], [14, -25], [-14, -26]] : [[-10, -17], [9, -17], [1, -22]];
+      pos.forEach(([x, y], i) => {
+        s += ell(x, y, 3.6, 5.2, ripe ? '#f7c52b' : '#9bcf4f', i % 2 ? -20 : 20, 1.3);
+        if (ripe) s += ell(x - 1, y + 1.5, 1.6, 2, '#f08a3a', 0, 0);
+      });
+      break;
+    }
+    case 7:
+      s += ripe
+        ? ell(2, -7, 15, 10, '#3f8f33', 0, 2) + line('M-6 -16Q-10 -7 -6 2M1 -17Q-1 -7 1 3M9 -16Q12 -7 9 1', '#1f5a1d', 2.2) + line('M-7 -13Q-9 -10 -8 -7', 'rgba(255,255,255,.5)', 2)
+        : ell(4, -3, 6, 4.5, '#5fae3e', 0, 1.3) + line('M2 -7Q1 -3 2 1M6 -7Q7 -3 6 1', '#2f6e28', 1.2);
+      break;
+  }
+  return s;
+}
+
+const SPARK = `<g transform="translate(15 -30)"><path class="spark" d="M0 -5L1.3 -1.3L5 0L1.3 1.3L0 5L-1.3 1.3L-5 0L-1.3 -1.3Z" fill="#fff6a0" stroke="${O}" stroke-width="1"/></g>`;
+const MOUND = `<ellipse cx="0" cy="1" rx="8" ry="2.6" fill="#6e4528"/>`;
+const plantCache = {};
+function plantArt(c, stage) {
+  const key = c + ':' + stage;
+  if (plantCache[key]) return plantCache[key];
+  let s;
+  if (stage === WITHERED) {
+    s = MOUND + line('M0 1Q-2 -10 3 -16Q7 -20 10 -13', '#7b5a33', 2.6) + line('M-1 -5Q-6 -9 -9 -4', '#7b5a33', 2) +
+      lf(4, -16, 125, 10, 4, '#a07b45', 1.4) + lf(-1, -8, -125, 9, 4, '#8f6a3a', 1.4) + lf(9, -13, 160, 7, 3, '#b08a52', 1.3);
+  } else if (stage === 1) {
+    s = MOUND + line('M0 0L0 -6', '#5aa02c', 2) + lf(0, -5, -55, 7, 4, '#8fd14f', 1.3) + lf(0, -5, 55, 7, 4, '#8fd14f', 1.3);
+  } else if (stage === 2) s = MOUND + foliage(c, .5);
+  else if (stage === 3) s = MOUND + foliage(c, .75);
+  else if (stage === 4) s = MOUND + foliage(c, 1) + fruit(c, false);
+  else s = MOUND + foliage(c, 1) + fruit(c, true) + SPARK;
+  return (plantCache[key] = s);
+}
+const BUGS = `<g class="bug"><g transform="translate(-7 -13)">${ell(0, 0, 4, 3, '#6b2d8f', 20, 1.2)}${circ(3.5, -1.5, 1.8, '#2a1a2a', 1)}<path d="M-3 2l-2 2M0 3l0 2.5M3 2l2 2" stroke="${O}" stroke-width="1"/></g>` +
+  `<g transform="translate(8 -21)">${ell(0, 0, 3.4, 2.6, '#1e6b3a', -30, 1.2)}${circ(-3, -1.5, 1.6, '#123', 1)}<circle cx="0" cy="0" r=".9" fill="#ffd23f"/></g></g>`;
+
+/* Harvested produce icons, centered at 0,0 (about ±13). */
+function produceIcon(c) {
+  const band = `<rect x="-5" y="2" width="10" height="4" rx="1.5" fill="#d23c2c" ${SW} stroke-width="1.2"/>`;
+  switch (c) {
+    case 0: return [-22, -10, 2, 14].map((a, i) => lf(0, 12, a, 24, 4, i % 2 ? '#6cc644' : '#56b234', 1.4)).join('') + band;
+    case 1: return lf(0, 12, -28, 20, 9, '#2f8157', 1.4) + lf(0, 12, 28, 20, 9, '#2f8157', 1.4) + lf(0, 12, 0, 24, 10, '#3b9866', 1.4) + line('M0 12L0 -8', '#a7dcb8', 1.2) + band;
+    case 2: return ell(0, 0, 13, 7.5, '#a23b6c', -20) + line('M11 -5q4 -3 5 -7M-12 5q-3 2 -6 2', O, 1.4) + ell(-4, -3, 4, 1.6, '#e79bc0', -20, 0) + line('M2 2l1 1M6 -2l1 1', '#6a1f45', 1.2);
+    case 3: return `<path d="M-9 -9Q-2 -12 3 -4Q8 5 12 12Q2 8 -4 1Q-9 -4 -9 -9Z" fill="#d8261d" ${SW} stroke-width="1.6"/><path d="M-10 -8Q-12 -13 -7 -13Q-6 -10 -5 -9Z" fill="#3f8a2a" ${SW} stroke-width="1.3"/>` + line('M-9 -13q-2 -3 1 -5', O, 1.4) + line('M-5 -7Q0 -7 3 -2', 'rgba(255,255,255,.5)', 1.5);
+    case 4: return [-6, -2, 2, 6].map(d => oline(`M${d} -13Q${d + 4} 0 ${d - 1} 13`, '#79c943', 2.6)).join('') + `<rect x="-8" y="-3" width="15" height="4" rx="1.5" fill="#d23c2c" ${SW} stroke-width="1.2"/>`;
+    case 5: return `<path d="M0 -8Q10 -8 9 1Q6 11 0 13Q-6 11 -9 1Q-10 -8 0 -8Z" fill="#e2323a" ${SW} stroke-width="1.6"/><path d="M-7 -8L-3 -11L0 -8L3 -11L7 -8L3 -6L0 -7L-3 -6Z" fill="#3c9c43" ${SW} stroke-width="1.2"/>` +
+      [[-4, -2], [3, -3], [0, 3], [-4, 5], [4, 4], [0, -4]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r=".9" fill="#ffe27a"/>`).join('');
+    case 6: return ell(0, 2, 9, 12.5, '#f7c52b', 25) + ell(-3, 5, 4, 5, '#f59a3a', 25, 0) + line('M4 -9l2 -4', O, 1.6) + lf(5, -12, 55, 11, 4, '#3a8c3c', 1.3);
+    case 7: return ell(0, 0, 13.5, 10.5, '#3f8f33', 0, 1.8) + line('M-7 -9Q-11 0 -7 9M0 -10.5Q-2 0 0 10.5M7 -9Q10 0 7 9', '#1f5a1d', 2.2) + line('M-8 -5Q-9 -3 -8 0', 'rgba(255,255,255,.5)', 2);
+  }
+  return '';
+}
+function eggIcon() { return ell(0, 0, 8, 10.5, '#f1ede0', 0, 1.8) + ell(-3, -4, 1.8, 3, '#fff', 20, 0) + `<circle cx="3" cy="3" r=".8" fill="#c9b99a"/><circle cx="-1" cy="5" r=".6" fill="#c9b99a"/>`; }
+
+const PACK_COL = ['#8fd14f', '#5bbf8a', '#c98ad6', '#ff8a6a', '#b5d86a', '#ff9fb0', '#ffd24a', '#7fcf6a'];
+function packetSVG(i, w = 36, h = 40) {
+  return `<svg viewBox="0 0 36 40" width="${w}" height="${h}"><path d="M5 6L8 3L11 6L14 3L17 6L20 3L23 6L26 3L29 6L31 4V37H5Z" fill="${PACK_COL[i]}" ${SW} stroke-width="2"/>` +
+    `<rect x="8" y="9" width="20" height="21" rx="4" fill="#fff8e6" ${SW} stroke-width="1.5"/><g transform="translate(18 19.5) scale(.68)">${produceIcon(i)}</g>` +
+    `<rect x="9" y="32" width="18" height="2.5" rx="1.2" fill="rgba(0,0,0,.25)"/></svg>`;
+}
+
+const ICON = {
+  water: `<svg viewBox="0 0 36 36"><path d="M24 17L33 9L35 12L26 22Z" fill="#3aa0c8" ${SW} stroke-width="2"/>${circ(33.5, 9.5, 3, '#2c86ad', 2)}<path d="M11 14Q16 3 21 14" fill="none" stroke="${O}" stroke-width="2.6"/><path d="M7 14H25V28A3 3 0 0 1 22 31H10A3 3 0 0 1 7 28Z" fill="#3aa0c8" ${SW} stroke-width="2.2"/><path d="M10 18V27" stroke="#a5e0f5" stroke-width="2" stroke-linecap="round"/></svg>`,
+  fertilize: `<svg viewBox="0 0 36 36"><path d="M9 10Q18 6 27 10L29 31Q18 34 7 31Z" fill="#e8d7a8" ${SW} stroke-width="2.2"/><path d="M10 10Q18 3 26 10" fill="#d9c28a" ${SW} stroke-width="2"/>${lf(18, 26, 0, 12, 5, '#4fa33a', 1.4)}<path d="M13 16H23" stroke="#b08a52" stroke-width="2"/></svg>`,
+  spray: `<svg viewBox="0 0 36 36"><rect x="7" y="11" width="15" height="20" rx="4" fill="#e2573b" ${SW} stroke-width="2.2"/><path d="M22 14L30 8M30 8l4 -1" fill="none" stroke="${O}" stroke-width="2.4" stroke-linecap="round"/><path d="M11 11V6H18" fill="none" stroke="${O}" stroke-width="2.4" stroke-linecap="round"/><rect x="10" y="17" width="9" height="6" rx="1.5" fill="#fff4d6" ${SW} stroke-width="1.4"/><circle cx="33" cy="5" r="1.2" fill="#8fd3ef"/><circle cx="34" cy="10" r="1" fill="#8fd3ef"/></svg>`,
+  cut: `<svg viewBox="0 0 36 36"><path d="M7 26L25 7Q31 4 30 11L12 30Z" fill="#cfd6dc" ${SW} stroke-width="2.2"/><path d="M11 25L26 10" stroke="#fff" stroke-width="1.5"/><rect x="2" y="26" width="12" height="6" rx="2" transform="rotate(-45 8 29)" fill="#7a4b2a" ${SW} stroke-width="2"/></svg>`,
+  pick: `<svg viewBox="0 0 36 36"><path d="M9 16Q18 2 27 16" fill="none" stroke="${O}" stroke-width="2.6"/><path d="M5 16H31L27 31H9Z" fill="#d6ad62" ${SW} stroke-width="2.2"/><path d="M8 21H28M9 26H27M13 16V31M18 16V31M23 16V31" stroke="#9a7338" stroke-width="1.3"/>${circ(14, 14, 3.2, '#d8261d', 1.4)}${circ(20, 13, 3.2, '#f7c52b', 1.4)}</svg>`,
+  sun: `<svg viewBox="0 0 34 34" width="30" height="30"><g stroke="${O}" stroke-width="2" stroke-linecap="round">${[0, 45, 90, 135, 180, 225, 270, 315].map(a => `<path d="M17 3V7" transform="rotate(${a} 17 17)"/>`).join('')}</g>${circ(17, 17, 7.5, '#ffd54a', 2)}</svg>`,
+  rain: `<svg viewBox="0 0 34 34" width="30" height="30"><path d="M8 20Q3 20 4 15Q5 11 9 12Q10 6 16 6Q22 6 23 11Q29 10 30 15Q30 20 25 20Z" fill="#e8eef5" ${SW} stroke-width="2"/><path d="M11 24l-2 4M17 24l-2 4M23 24l-2 4" stroke="#6ec3ec" stroke-width="2.4" stroke-linecap="round"/></svg>`,
+  sound: `<svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 9H8L13 5V19L8 15H4Z" fill="${O}"/><path d="M16 9Q18 12 16 15M18.5 6.5Q22 12 18.5 17.5" fill="none" stroke="${O}" stroke-width="2" stroke-linecap="round"/></svg>`,
+  mute: `<svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 9H8L13 5V19L8 15H4Z" fill="${O}"/><path d="M16 9L22 15M22 9L16 15" stroke="#c8372d" stroke-width="2.4" stroke-linecap="round"/></svg>`,
+  menu: `<svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6H20M4 12H20M4 18H20" stroke="${O}" stroke-width="2.6" stroke-linecap="round"/></svg>`,
+  feed: `<svg viewBox="0 0 24 24" width="17" height="17"><path d="M6 7Q12 4 18 7L19 20Q12 22 5 20Z" fill="#e8c77a" ${SW} stroke-width="1.8"/><circle cx="10" cy="14" r="1.2" fill="#8a5a22"/><circle cx="14" cy="12" r="1.2" fill="#8a5a22"/><circle cx="13" cy="16" r="1.2" fill="#8a5a22"/></svg>`,
+  duck: `<svg viewBox="-20 -34 42 38" width="19" height="17">${duckShape()}</svg>`,
+};
+ICON.fertS = ICON.fertilize.replace('<svg viewBox="0 0 36 36">', '<svg viewBox="0 0 36 36" width="17" height="17">');
+ICON.sprayS = ICON.spray.replace('<svg viewBox="0 0 36 36">', '<svg viewBox="0 0 36 36" width="17" height="17">');
+
+function duckShape() {
+  return line('M-5 0L-7 3M4 0L6 3', '#e8932a', 2.4) +
+    `<path d="M-17 -12Q-19 -25 -2 -25L10 -23Q17 -20 16 -11Q12 -1 -4 -1Q-15 -1 -17 -12Z" fill="#b8874f" ${SW} stroke-width="2"/>` +
+    `<path d="M-17 -15L-22 -19L-15 -19Z" fill="#8c6538" ${SW} stroke-width="1.6"/>` +
+    `<path d="M-10 -16Q-2 -21 7 -15Q0 -8 -9 -11Z" fill="#8c6538" ${SW} stroke-width="1.6"/>` +
+    `<path d="M8 -22Q6 -31 13 -32Q20 -32 19 -25Q18 -21 13 -20Z" fill="#5c4a2f" ${SW} stroke-width="2"/>` +
+    `<path d="M18 -28L26 -26.5L18 -24Z" fill="#e8a23a" ${SW} stroke-width="1.5"/><circle cx="14.5" cy="-27.5" r="1.3" fill="${O}"/>`;
+}
+
+/* ---------- scenery pieces ---------- */
+function cloud(x, y, sc, cls) {
+  return `<g class="drift ${cls}"><g transform="translate(${x} ${y}) scale(${sc})"><path d="M-30 8Q-35 -6 -18 -6Q-14 -20 2 -16Q10 -27 22 -14Q37 -14 34 0Q41 9 29 10Z" fill="#fffaf0" ${SW} stroke-width="2.5"/></g></g>`;
+}
+function sugarPalm(x, y, sc) {
+  const top = y - 86 * sc;
+  let s = `<rect x="${r(x - 2.5 * sc)}" y="${r(top)}" width="${r(5 * sc)}" height="${r(86 * sc)}" fill="#6b4a2c" ${SW} stroke-width="2"/>`;
+  [30, 150, 90].forEach(a => { const rad = a * Math.PI / 180, R = 13 * sc; s += `<path d="M${x} ${r(top)}L${r(x + Math.cos(rad - .2) * R)} ${r(top + Math.sin(rad - .2) * R + 6 * sc)}L${r(x + Math.cos(rad + .2) * R)} ${r(top + Math.sin(rad + .2) * R + 6 * sc)}Z" fill="#8a6a3a" ${SW} stroke-width="1.4"/>`; });
+  for (let a = -180; a < 180; a += 30) {
+    const rad = a * Math.PI / 180, R = (a > 0 ? 14 : 18) * sc;
+    s += `<path d="M${x} ${r(top)}L${r(x + Math.cos(rad - .22) * R)} ${r(top + Math.sin(rad - .22) * R)}L${r(x + Math.cos(rad + .22) * R)} ${r(top + Math.sin(rad + .22) * R)}Z" fill="${(a / 30) % 2 ? '#4d8a2e' : '#5c9c36'}" ${SW} stroke-width="1.5"/>`;
+  }
+  return s + circ(x, top, 3 * sc, '#3e6e24', 1.4);
+}
+function coconutTree(x, y, h, lean) {
+  const tx = x + lean, ty = y - h, cx = x + lean * .2, cy = y - h * .5;
+  let s = `<path d="M${x - 6} ${y}Q${cx - 4} ${cy} ${tx - 3} ${ty}L${tx + 3} ${ty}Q${cx + 4} ${cy} ${x + 6} ${y}Z" fill="#8a6440" ${SW} stroke-width="2.5"/>`;
+  for (let i = 1; i < 8; i++) {
+    const t = i / 8, px = (1 - t) * (1 - t) * x + 2 * (1 - t) * t * cx + t * t * tx, py = (1 - t) * (1 - t) * y + 2 * (1 - t) * t * cy + t * t * ty;
+    s += line(`M${r(px - 4)} ${r(py)}L${r(px + 4)} ${r(py - 1)}`, '#5e4128', 1.4);
+  }
+  [[-42, 12], [-32, -14], [-8, -24], [16, -22], [36, -10], [44, 14], [-20, 22], [24, 24]].forEach(([dx, dy], i) => {
+    s += `<path d="M${tx} ${ty}Q${tx + dx * .5} ${ty + dy * .5 - 14} ${tx + dx} ${ty + dy}Q${tx + dx * .5} ${ty + dy * .5 - 3} ${tx} ${ty}Z" fill="${i % 2 ? '#4f9a34' : '#5fae3e'}" ${SW} stroke-width="2"/>`;
+  });
+  return s + circ(tx - 4, ty + 5, 4.5, '#6b8e2a') + circ(tx + 5, ty + 6, 4.5, '#5d7f24') + circ(tx, ty + 9, 4.5, '#6b8e2a');
+}
+function spiritHouse(x, y) {
+  return `<g><rect x="${x - 4}" y="${y - 58}" width="8" height="58" fill="#efe4cc" ${SW} stroke-width="2"/>
+  <rect x="${x - 21}" y="${y - 65}" width="42" height="7" rx="2" fill="#e8c14a" ${SW} stroke-width="2"/>
+  <rect x="${x - 13}" y="${y - 87}" width="26" height="22" fill="#c8372d" ${SW} stroke-width="2"/>
+  <rect x="${x - 5}" y="${y - 82}" width="10" height="17" fill="#f2c14e" ${SW} stroke-width="1.5"/>
+  <path d="M${x - 19} ${y - 85}L${x} ${y - 105}L${x + 19} ${y - 85}Z" fill="#f2b632" ${SW} stroke-width="2"/>
+  <path d="M${x - 12} ${y - 101}L${x} ${y - 117}L${x + 12} ${y - 101}Z" fill="#d9542e" ${SW} stroke-width="2"/>
+  ${line(`M${x} ${y - 117}L${x} ${y - 125}M${x - 19} ${y - 85}q-5 -1 -4 -6M${x + 19} ${y - 85}q5 -1 4 -6`, O, 2)}
+  ${[-14, -7, 0, 7, 14].map(d => `<circle cx="${x + d}" cy="${y - 60}" r="2.3" fill="#f39c12" stroke="${O}" stroke-width=".8"/>`).join('')}
+  <rect x="${x + 12}" y="${y - 12}" width="4.5" height="12" rx="1.5" fill="#e0342b" ${SW} stroke-width="1.2"/>
+  <rect x="${x + 19}" y="${y - 12}" width="4.5" height="12" rx="1.5" fill="#e0342b" ${SW} stroke-width="1.2"/>
+  ${line(`M${x + 14} ${y - 12}l2 -5M${x + 21} ${y - 12}l2 -5`, '#fff', 1)}
+  ${ell(x - 15, y - 3, 6, 3.5, '#c9a15a', 0, 1.4)}${circ(x - 17, y - 7, 2.2, '#f39c12', 1)}${circ(x - 13, y - 7, 2.2, '#fff', 1)}</g>`;
+}
+function stiltHouse() {
+  let s = '<g>';
+  [586, 626, 666, 706, 746, 776].forEach(x => { s += `<rect x="${x - 4}" y="160" width="8" height="92" fill="#6e4526" ${SW} stroke-width="2"/>`; });
+  s += oline('M706 196Q726 232 746 196', '#c0392b', 3);
+  s += `<rect x="622" y="226" width="68" height="7" fill="#d9b36a" ${SW} stroke-width="2"/>` + line('M628 233v15M684 233v15', O, 3);
+  s += ell(760, 240, 12, 10, '#6d3417', 0, 2) + ell(760, 231, 8, 3, '#4a2410', 0, 1.5);
+  s += `<rect x="574" y="156" width="214" height="9" fill="#7a4a26" ${SW} stroke-width="2.5"/>`;
+  s += `<rect x="588" y="96" width="188" height="61" fill="#b8763f" ${SW} stroke-width="3"/>`;
+  let planks = '';
+  for (let x = 598; x < 776; x += 10) planks += `M${x} 99V155`;
+  s += line(planks, '#8e5a2d', 1.4);
+  s += `<rect x="606" y="112" width="24" height="28" fill="#3d2414" ${SW} stroke-width="2.5"/><rect x="596" y="112" width="10" height="28" fill="#9a5e30" ${SW} stroke-width="2"/><rect x="630" y="112" width="10" height="28" fill="#9a5e30" ${SW} stroke-width="2"/>`;
+  s += `<rect x="728" y="112" width="24" height="28" fill="#3d2414" ${SW} stroke-width="2.5"/><rect x="718" y="112" width="10" height="28" fill="#9a5e30" ${SW} stroke-width="2"/><rect x="752" y="112" width="10" height="28" fill="#9a5e30" ${SW} stroke-width="2"/>`;
+  s += `<rect x="669" y="106" width="28" height="51" fill="#5a331b" ${SW} stroke-width="2.5"/>` + circ(691, 132, 1.8, '#f2c14e', 1);
+  s += `<path d="M566 104L682 26L798 104Z" fill="#a44a2b" ${SW} stroke-width="3"/>`;
+  s += `<path d="M602 99L682 45L762 99Z" fill="#d49a5a" ${SW} stroke-width="2.5"/>`;
+  s += line('M682 99L640 71M682 99L661 58M682 99L682 47M682 99L703 58M682 99L724 71', '#a8703a', 1.6);
+  s += line('M580 102L682 34L784 102', '#7d3520', 2);
+  s += oline('M668 14L696 44M696 14L668 44', '#a44a2b', 4.5);
+  s += line('M592 158L562 251M606 158L576 251', O, 3.5);
+  let rungs = '';
+  for (let i = 1; i <= 6; i++) { const y = 158 + i * 13, dx = (y - 158) * 30 / 93; rungs += `M${r(592 - dx)} ${y}L${r(606 - dx)} ${y}`; }
+  s += line(rungs, '#7a4a26', 3);
+  return s + '</g>';
+}
+function buffalo() {
+  return `<g transform="translate(705 342)">
+  <g class="btail">${line('M52 -42Q62 -30 58 -12', O, 3)}${ell(58, -10, 3, 5, '#3a3d42', 0, 1.5)}</g>
+  ${[-36, -22, 26, 40].map(x => `<rect x="${x - 4}" y="-22" width="9" height="22" rx="2" fill="#555a63" ${SW} stroke-width="2"/>`).join('')}
+  <path d="M-44 -46Q-40 -63 0 -61Q42 -63 55 -47Q61 -28 48 -18L-40 -18Q-52 -28 -44 -46Z" fill="#5d626b" ${SW} stroke-width="3"/>
+  ${line('M-30 -30Q0 -24 34 -30', '#6c717b', 3)}
+  <g transform="translate(14 -64)">${ell(0, 0, 8, 5, '#fff', -10, 1.6)}${line('M5 -2Q9 -9 7 -13', O, 3.4)}${line('M5 -2Q9 -9 7 -13', '#fff', 1.6)}<path d="M7 -13L13 -12L7 -11Z" fill="#f2c14e" ${SW} stroke-width="1"/>${line('M-2 4l-1 3M2 4l1 3', '#333', 1)}</g>
+  <g class="bhead">
+    <path d="M-50 -52Q-44 -72 -22 -72Q-40 -64 -44 -50Z" fill="#d9ccb4" ${SW} stroke-width="2"/>
+    <path d="M-44 -50Q-66 -52 -71 -35Q-73 -22 -63 -18Q-54 -16 -50 -26Q-43 -34 -44 -50Z" fill="#5d626b" ${SW} stroke-width="2.6"/>
+    ${ell(-65, -23, 7.5, 5.5, '#8a8f98', 0, 2)}<circle cx="-68" cy="-23" r="1.3" fill="${O}"/><circle cx="-63" cy="-22" r="1.3" fill="${O}"/>
+    ${circ(-60, -39, 2.4, '#fff', 1.2)}<circle cx="-60.5" cy="-39" r="1.2" fill="${O}"/>
+    ${ell(-44, -45, 7, 3, '#4a4e56', -20, 1.6)}
+    <path d="M-56 -50Q-70 -72 -90 -64Q-72 -62 -62 -48Z" fill="#e2d6c0" ${SW} stroke-width="2"/>
+  </g></g>`;
+}
+function fence(x1, x2, y) {
+  let s = '';
+  for (let x = x1; x <= x2; x += 32) s += `<rect x="${x - 3}" y="${y - 44}" width="7" height="48" fill="#9a6a3c" ${SW} stroke-width="2"/>`;
+  return oline(`M${x1 - 10} ${y - 34}L${x2 + 10} ${y - 36}M${x1 - 10} ${y - 16}L${x2 + 10} ${y - 18}`, '#b88350', 4) + s;
+}
+function tufts(list) {
+  return line(list.map(([x, y]) => `M${x} ${y}l-3 -7M${x} ${y}l0 -9M${x} ${y}l3 -7`).join(''), '#6f9a34', 1.8);
+}
+
+function farmBG() {
+  let s = `<defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cdea"/><stop offset=".8" stop-color="#fbe6b2"/></linearGradient></defs>`;
+  s += `<rect width="800" height="260" fill="url(#gSky)"/>`;
+  s += circ(120, 94, 24, '#ffd54a', 3);
+  s += cloud(260, 88, 1, '') + cloud(440, 70, .75, 'd2') + cloud(40, 128, .6, 'd2');
+  s += `<path d="M0 170Q30 152 60 164Q90 148 125 162Q160 146 200 160Q240 148 280 162Q320 150 360 162Q400 148 440 160Q480 150 520 162Q560 152 600 162L800 162L800 190L0 190Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
+  s += `<rect x="0" y="176" width="800" height="76" fill="#a8d04e"/>`;
+  s += `<rect x="92" y="196" width="140" height="20" fill="#bfe27a"/><rect x="380" y="178" width="130" height="16" fill="#c3dfe8" opacity=".7"/>`;
+  s += line('M0 196L800 192M0 216L800 211M0 238L800 232M90 176L72 252M230 176L212 252M370 176L352 252M520 176L502 252', '#dcc67c', 3);
+  let rice = [];
+  [186, 205, 227, 247].forEach((y, row) => { for (let x = 6 + row * 7; x < 560; x += 21) rice.push([x, y]); });
+  s += line(rice.map(([x, y]) => `M${x} ${y}l-2 -5M${x} ${y}l0 -6M${x} ${y}l2 -5`).join(''), '#6a9a2e', 1.3);
+  s += sugarPalm(60, 190, 1) + sugarPalm(168, 194, .85) + sugarPalm(300, 188, 1.1) + sugarPalm(396, 196, .8) + sugarPalm(545, 186, .9);
+  s += `<path d="M0 250Q150 242 300 248T600 246T800 248L800 600L0 600Z" fill="#bccb6c" ${SW} stroke-width="3"/>`;
+  s += `<rect x="8" y="248" width="462" height="290" rx="18" fill="#d6b277" ${SW} stroke-width="2.5"/>`;
+  s += `<path d="M470 530Q600 500 800 470L800 540Q600 548 470 540Z" fill="#d6b277"/>`;
+  s += tufts([[480, 270], [540, 262], [600, 380], [790, 380], [480, 520], [720, 540], [560, 380], [640, 540], [700, 390]]);
+  s += stiltHouse();
+  s += coconutTree(24, 262, 150, 18) + coconutTree(462, 256, 116, -12);
+  s += spiritHouse(518, 252);
+  s += buffalo();
+  s += fence(610, 800, 350);
+  return s;
+}
+
+function farmer(x, y, tired) {
+  const face = tired
+    ? line(`M${x - 6} ${y - 64}l3 1M${x + 3} ${y - 63}l3 -1M${x - 3} ${y - 57}q3 -2 6 0`, O, 1.6) + `<path d="M${x + 10} ${y - 68}q2 4 0 6q-3 -2 0 -6Z" fill="#8fd3ef" stroke="${O}" stroke-width="1"/>`
+    : `<circle cx="${x - 4}" cy="${y - 64}" r="1.5" fill="${O}"/><circle cx="${x + 4}" cy="${y - 64}" r="1.5" fill="${O}"/>` + line(`M${x - 4} ${y - 59}q4 3 8 0`, O, 1.6);
+  let s = `<g class="farmer-idle">`;
+  s += `<rect x="${x - 12}" y="${y - 28}" width="10" height="27" fill="#2c3e6b" ${SW} stroke-width="2"/><rect x="${x + 2}" y="${y - 28}" width="10" height="27" fill="#2c3e6b" ${SW} stroke-width="2"/>`;
+  s += ell(x - 8, y, 6, 2.8, '#c98f5c', 0, 1.6) + ell(x + 8, y, 6, 2.8, '#c98f5c', 0, 1.6);
+  s += oline(`M${x - 14} ${y - 50}Q${x - 22} ${y - 38} ${x - 19} ${y - 28}`, '#35507a', 5) + circ(x - 19, y - 27, 3.2, '#d9a066', 1.5);
+  s += oline(`M${x + 14} ${y - 50}Q${x + 22} ${y - 40} ${x + 20} ${y - 30}`, '#35507a', 5) + circ(x + 20, y - 29, 3.2, '#d9a066', 1.5);
+  s += `<path d="M${x - 14} ${y - 52}Q${x} ${y - 58} ${x + 14} ${y - 52}L${x + 13} ${y - 26}L${x - 13} ${y - 26}Z" fill="#35507a" ${SW} stroke-width="2.4"/>`;
+  s += `<rect x="${x - 14}" y="${y - 32}" width="28" height="6" fill="#d8453a" ${SW} stroke-width="1.8"/>` + line(`M${x - 8} ${y - 32}v6M${x - 2} ${y - 32}v6M${x + 4} ${y - 32}v6M${x + 10} ${y - 32}v6M${x - 14} ${y - 29}h28`, '#fff', .9);
+  s += circ(x, y - 62, 10, '#d9a066', 2) + face;
+  s += `<path d="M${x - 25} ${y - 67}Q${x} ${y - 94} ${x + 25} ${y - 67}Q${x} ${y - 72} ${x - 25} ${y - 67}Z" fill="#e3c070" ${SW} stroke-width="2.4"/>`;
+  s += line(`M${x - 14} ${y - 72}L${x} ${y - 86}L${x + 14} ${y - 72}M${x - 6} ${y - 70}L${x} ${y - 86}L${x + 6} ${y - 70}`, '#b8963f', 1.2);
+  s += `</g>`;
+  if (tired) {
+    s += `<g transform="translate(${x - 72} ${y - 140})"><path d="M0 0H120V40H62L52 52L50 40H0Z" fill="#fff" ${SW} stroke-width="2.5"/>` +
+      `<text x="60" y="19" text-anchor="middle" font-family="Kanit" font-size="16" font-weight="600" fill="${O}">เหนื่อยแล้ว…</text>` +
+      `<text x="60" y="33" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}" opacity=".8">I'm tired</text></g>`;
+  }
+  return s;
+}
+function dragonJar(x, top) {
+  const b = top + 88;
+  return `<g data-act="jar" class="jar"><title>โอ่งมังกร · Dragon jar</title>
+  <ellipse cx="${x}" cy="${b}" rx="32" ry="6" fill="rgba(0,0,0,.2)"/>
+  <path d="M${x - 20} ${top + 8}Q${x - 46} ${top + 40} ${x - 22} ${b}L${x + 22} ${b}Q${x + 46} ${top + 40} ${x + 20} ${top + 8}Z" fill="#7b3a1a" ${SW} stroke-width="3"/>
+  ${oline(`M${x - 28} ${top + 48}Q${x - 14} ${top + 30} ${x - 2} ${top + 48}T${x + 24} ${top + 44}`, '#f2c14e', 4)}
+  ${circ(x + 26, top + 42, 5.5, '#f2c14e', 2)}<circle cx="${x + 27}" cy="${top + 41}" r="1.2" fill="${O}"/>
+  ${line(`M${x + 30} ${top + 38}l5 -4M${x - 26} ${top + 48}l-5 5M${x - 12} ${top + 38}l-1 -5M${x + 8} ${top + 50}l1 5`, '#f2c14e', 2.2)}
+  ${line(`M${x - 24} ${top + 64}Q${x} ${top + 70} ${x + 24} ${top + 64}`, '#5a2a12', 2)}
+  ${line(`M${x - 27} ${top + 26}Q${x - 32} ${top + 48} ${x - 22} ${top + 72}`, 'rgba(255,255,255,.3)', 4)}
+  ${ell(x, top + 8, 21, 6, '#5a2a12', 0, 2.5)}${ell(x, top + 9, 16, 3.5, '#5fb3dd', 0, 1.2)}
+  <path d="M${x + 8} ${top + 4}q10 -4 12 4" fill="#8a6440" ${SW} stroke-width="1.6"/></g>`;
+}
+function oxCart(x, y, glow) {
+  let s = `<g data-act="cart" class="hot ${glow ? 'glow' : ''}"><title>เกวียน · Market cart</title>`;
+  s += `<ellipse cx="${x + 85}" cy="${y + 2}" rx="75" ry="6" fill="rgba(0,0,0,.18)"/>`;
+  s += oline(`M${x + 30} ${y - 46}L${x - 12} ${y - 36}Q${x - 20} ${y - 36} ${x - 20} ${y - 46}`, '#9a6a3c', 5);
+  s += `<path d="M${x + 22} ${y - 66}L${x + 150} ${y - 66}L${x + 146} ${y - 42}L${x + 26} ${y - 42}Z" fill="#a8693a" ${SW} stroke-width="2.6"/>`;
+  s += line(`M${x + 30} ${y - 58}H${x + 144}M${x + 30} ${y - 50}H${x + 144}`, '#7a4a26', 1.4);
+  s += ell(x + 58, y - 70, 18, 9, '#d6ad62', 0, 2) + ell(x + 108, y - 70, 20, 10, '#d6ad62', 0, 2);
+  s += `<g transform="translate(${x + 50} ${y - 78}) scale(.7)">${produceIcon(7)}</g><g transform="translate(${x + 66} ${y - 76}) scale(.6)">${produceIcon(6)}</g>`;
+  s += `<g transform="translate(${x + 100} ${y - 80}) scale(.6)">${produceIcon(3)}</g><g transform="translate(${x + 116} ${y - 78}) scale(.6)">${produceIcon(5)}</g>`;
+  s += `<path d="M${x + 24} ${y - 66}V${y - 86}M${x + 148} ${y - 66}V${y - 86}" stroke="${O}" stroke-width="3.5"/><path d="M${x + 20} ${y - 88}H${x + 152}" stroke="${O}" stroke-width="6" stroke-linecap="round"/><path d="M${x + 20} ${y - 88}H${x + 152}" stroke="#b88350" stroke-width="3" stroke-linecap="round"/>`;
+  const wx = x + 88, wy = y - 28;
+  s += circ(wx, wy, 29, '#8a5a2e', 3) + circ(wx, wy, 23, '#d6b277', 2);
+  let sp = '';
+  for (let a = 0; a < 180; a += 22.5) { const rad = a * Math.PI / 180; sp += `M${r(wx + Math.cos(rad) * 23)} ${r(wy + Math.sin(rad) * 23)}L${r(wx - Math.cos(rad) * 23)} ${r(wy - Math.sin(rad) * 23)}`; }
+  s += line(sp, '#7a4a26', 2.6) + circ(wx, wy, 6, '#5a3a1e', 2);
+  s += `<g transform="translate(${x + 110} ${y - 132})"><path d="M8 26V52" stroke="${O}" stroke-width="3"/><rect x="-26" y="0" width="68" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.4"/>` +
+    `<text x="8" y="15" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ขายผลผลิต</text>` +
+    `<text x="8" y="26" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Sell produce</text></g>`;
+  return s + '</g>';
+}
+function signpost(dim) {
+  const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title><path d="M706 ${y}H780L796 ${y + 18}L780 ${y + 36}H706Z" fill="#c98c4a" ${SW} stroke-width="2.6"/>` +
+    `<text x="746" y="${y + 17}" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="14" fill="${O}">${th}</text>` +
+    `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en} · −5⚡</text></g>`;
+  return `<rect x="748" y="400" width="8" height="132" fill="#8a5a2e" ${SW} stroke-width="2"/>` +
+    board('go-market', 408, 'ไปตลาด', 'Market') + board('go-pen', 460, 'คอกเป็ด', 'Duck pen');
+}
+
+/* ---------- market & pen scenery ---------- */
+function auntieDaeng(x, y) {
+  return `<g>
+  ${circ(x + 4, y - 206, 12, '#2a1c15', 2)}
+  <path d="M${x - 44} ${y - 30}L${x - 40} ${y - 104}Q${x - 38} ${y - 128} ${x - 18} ${y - 134}L${x + 18} ${y - 134}Q${x + 38} ${y - 128} ${x + 40} ${y - 104}L${x + 44} ${y - 30}Z" fill="#d6372c" ${SW} stroke-width="3"/>
+  ${line(`M${x - 20} ${y - 128}Q${x} ${y - 110} ${x + 20} ${y - 128}`, '#f2c14e', 2.4)}${circ(x, y - 114, 3.5, '#f2c14e', 1.4)}
+  ${line(`M${x - 30} ${y - 90}Q${x - 36} ${y - 70} ${x - 30} ${y - 54}`, '#a8261f', 2)}
+  <rect x="${x - 8}" y="${y - 142}" width="16" height="12" fill="#e0a66e" ${SW} stroke-width="2"/>
+  ${circ(x, y - 166, 27, '#e0a66e', 3)}
+  <path d="M${x - 28} ${y - 164}Q${x - 30} ${y - 198} ${x} ${y - 196}Q${x + 30} ${y - 198} ${x + 28} ${y - 164}Q${x + 20} ${y - 184} ${x} ${y - 182}Q${x - 18} ${y - 184} ${x - 28} ${y - 164}Z" fill="#2a1c15" ${SW} stroke-width="2.4"/>
+  ${circ(x + 22, y - 190, 5.5, '#f39c12', 1.6)}${circ(x + 22, y - 190, 2, '#d6372c', 0)}
+  ${line(`M${x - 13} ${y - 168}q4 -4 8 0M${x + 5} ${y - 168}q4 -4 8 0M${x - 8} ${y - 154}q8 7 16 0`, O, 2.2)}
+  ${ell(x - 15, y - 158, 5, 3, '#f08a7a', 0, 0)}${ell(x + 15, y - 158, 5, 3, '#f08a7a', 0, 0)}
+  ${circ(x - 27, y - 160, 2.6, '#f2c14e', 1.2)}${circ(x + 27, y - 160, 2.6, '#f2c14e', 1.2)}
+  ${oline(`M${x + 38} ${y - 104}Q${x + 60} ${y - 120} ${x + 58} ${y - 146}`, '#d6372c', 8)}${circ(x + 58, y - 148, 5, '#e0a66e', 2)}
+  <path d="M${x + 58} ${y - 150}L${x + 40} ${y - 180}Q${x + 60} ${y - 192} ${x + 80} ${y - 176}Z" fill="#f2c14e" ${SW} stroke-width="2"/>
+  ${line(`M${x + 58} ${y - 150}L${x + 50} ${y - 184}M${x + 58} ${y - 150}L${x + 62} ${y - 186}M${x + 58} ${y - 150}L${x + 72} ${y - 180}`, '#c9901e', 1.3)}
+  </g>`;
+}
+function uncleMee(x, y) {
+  return `<g>
+  ${oline(`M${x + 30} ${y}L${x + 38} ${y - 150}`, '#c9a15a', 3)}
+  <path d="M${x + 38} ${y - 150}L${x + 62} ${y - 142}L${x + 37} ${y - 132}Z" fill="#d6372c" ${SW} stroke-width="2"/>
+  <rect x="${x - 16}" y="${y - 52}" width="14" height="50" fill="#2d2d2d" ${SW} stroke-width="2"/><rect x="${x + 2}" y="${y - 52}" width="14" height="50" fill="#2d2d2d" ${SW} stroke-width="2"/>
+  ${ell(x - 10, y, 9, 3.5, '#8a5a2e', 0, 1.8)}${ell(x + 10, y, 9, 3.5, '#8a5a2e', 0, 1.8)}
+  <path d="M${x - 22} ${y - 106}Q${x} ${y - 114} ${x + 22} ${y - 106}L${x + 20} ${y - 50}L${x - 20} ${y - 50}Z" fill="#f4f1e8" ${SW} stroke-width="2.6"/>
+  <path d="M${x - 20} ${y - 108}L${x + 22} ${y - 60}L${x + 16} ${y - 54}L${x - 24} ${y - 98}Z" fill="#3a6fb0" ${SW} stroke-width="2"/>
+  ${line(`M${x - 14} ${y - 100}l6 -5M${x - 4} ${y - 88}l6 -5M${x + 6} ${y - 76}l6 -5`, '#d8453a', 2)}
+  ${oline(`M${x - 22} ${y - 104}Q${x - 32} ${y - 80} ${x - 26} ${y - 62}`, '#c98f5c', 6)}
+  ${oline(`M${x + 22} ${y - 104}Q${x + 32} ${y - 94} ${x + 32} ${y - 76}`, '#c98f5c', 6)}
+  ${circ(x, y - 130, 21, '#c98f5c', 3)}
+  <path d="M${x - 21} ${y - 134}Q${x - 24} ${y - 148} ${x - 12} ${y - 146}M${x + 21} ${y - 134}Q${x + 24} ${y - 148} ${x + 12} ${y - 146}" fill="#dcd8d0" ${SW} stroke-width="2"/>
+  <path d="M${x - 30} ${y - 142}Q${x} ${y - 176} ${x + 30} ${y - 142}Q${x} ${y - 148} ${x - 30} ${y - 142}Z" fill="#e3c070" ${SW} stroke-width="2.4"/>
+  ${line(`M${x - 8} ${y - 132}h3M${x + 5} ${y - 132}h3`, O, 2.4)}
+  <path d="M${x - 10} ${y - 122}Q${x} ${y - 128} ${x + 10} ${y - 122}Q${x} ${y - 118} ${x - 10} ${y - 122}Z" fill="#eeeae2" ${SW} stroke-width="1.6"/>
+  ${line(`M${x - 4} ${y - 116}q4 3 8 0`, O, 1.6)}</g>`;
+}
+function marketBG() {
+  let s = `<rect width="800" height="600" fill="#c78b52"/>`;
+  let pl = '';
+  for (let y = 70; y < 470; y += 22) pl += `M0 ${y}H800`;
+  s += line(pl, '#a8703f', 2);
+  s += `<rect y="470" width="800" height="130" fill="#8a5a33"/>` + line('M0 470H800M0 520H800M100 470L80 600M300 470L290 600M500 470L510 600M700 470L720 600', '#6e4526', 2.5);
+  // hanging goods along the back
+  s += line('M200 60Q500 80 800 60', O, 1.6);
+  [240, 330, 420, 510, 600, 690, 770].forEach((x, i) => {
+    s += line(`M${x} 66v12`, O, 1.4) + (i % 2 ? circ(x, 86, 8, '#f39c12', 2) + circ(x - 6, 96, 6, '#f7c52b', 1.6) : `<path d="M${x - 8} 78Q${x} 104 ${x + 8} 78Z" fill="#f2d26b" ${SW} stroke-width="1.8"/>`);
+  });
+  // stall frame, awning & counter on the left
+  s += `<rect x="12" y="46" width="10" height="440" fill="#6e4526" ${SW} stroke-width="2"/><rect x="186" y="46" width="10" height="440" fill="#6e4526" ${SW} stroke-width="2"/>`;
+  for (let i = 0; i < 5; i++) {
+    const x = 4 + i * 40, col = i % 2 ? '#fff4e0' : '#d6372c';
+    s += `<rect x="${x}" y="46" width="40" height="50" fill="${col}"/><path d="M${x} 96A20 16 0 0 0 ${x + 40} 96Z" fill="${col}" ${SW} stroke-width="2.4"/>`;
+  }
+  s += `<path d="M4 46H204V96" fill="none" stroke="${O}" stroke-width="3"/>`;
+  s += `<g transform="translate(104 122)"><rect x="-70" y="-14" width="140" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.6"/>` +
+    `<text x="0" y="4" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text></g>`;
+  s += auntieDaeng(104, 440);
+  s += `<rect x="4" y="380" width="200" height="100" fill="#a8693a" ${SW} stroke-width="3"/>` + line('M4 404H204M4 440H204', '#7a4a26', 2);
+  s += ell(44, 380, 30, 10, '#d6ad62', 0, 2) + ell(116, 382, 32, 10, '#d6ad62', 0, 2) + ell(176, 380, 24, 9, '#d6ad62', 0, 2);
+  [[34, 372, 3], [48, 370, 3], [58, 374, 3], [104, 372, 6], [120, 370, 6], [132, 374, 6], [168, 372, 2], [182, 373, 2]].forEach(([x, y, c]) => { s += `<g transform="translate(${x} ${y}) scale(.6)">${produceIcon(c)}</g>`; });
+  return s;
+}
+function penBG() {
+  let s = `<rect width="800" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
+  s += `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
+  s += `<rect y="160" width="800" height="440" fill="#a9c95e"/>` + line('M0 160H800', O, 2.5);
+  s += `<rect x="215" y="250" width="585" height="300" fill="#b7cf6b"/>`;
+  // pond
+  s += ell(660, 205, 122, 44, '#5fb3dd', 0, 3) + ell(640, 198, 80, 22, '#8fd0ee', 0, 0);
+  s += ell(600, 214, 14, 6, '#4f9a34', 0, 1.6) + ell(700, 196, 12, 5, '#4f9a34', 0, 1.6) + circ(700, 190, 5, '#f4a6c0', 1.6) + ell(740, 220, 11, 5, '#4f9a34', 0, 1.6);
+  s += line('M548 212l-4 -24M556 214l2 -26M770 200l4 -24M778 204l-2 -22', '#4d7a2a', 2.4) + ell(544, 186, 2, 6, '#7a4a26', 0, 1) + ell(774, 176, 2, 6, '#7a4a26', 0, 1);
+  // shed
+  s += `<rect x="236" y="170" width="8" height="70" fill="#7a4a26" ${SW} stroke-width="2"/><rect x="350" y="170" width="8" height="70" fill="#7a4a26" ${SW} stroke-width="2"/>`;
+  s += `<rect x="240" y="196" width="114" height="44" fill="#5a3a22" ${SW} stroke-width="2"/>`;
+  s += `<path d="M222 182L297 128L372 182Z" fill="#d9b25a" ${SW} stroke-width="3"/>` + line('M240 176L297 136M260 180L297 140M280 182L297 146M314 182L297 146M334 180L297 140M354 176L297 136', '#b08a3a', 1.6);
+  // fences
+  let fp = '';
+  for (let x = 215; x <= 800; x += 26) fp += `<rect x="${x - 3}" y="236" width="6" height="26" fill="#c9a15a" ${SW} stroke-width="1.6"/>`;
+  s += fp + oline('M205 246H800', '#d6b16a', 3);
+  let lp = '';
+  for (let y = 260; y <= 540; y += 26) lp += `<rect x="212" y="${y - 3}" width="6" height="22" fill="#c9a15a" ${SW} stroke-width="1.6"/>`;
+  s += lp;
+  s += tufts([[260, 520], [540, 540], [760, 300], [380, 280], [720, 520], [100, 180], [150, 240], [60, 260]]);
+  s += uncleMee(96, 318);
+  return s;
+}
+
+/* ======================= RENDER ======================= */
+const FX = [24, 248], FY = [262, 404], PW = 48, PH = 38, SX = 51, SY = 41;
+function plotSVG(f, fi, p, pi) {
+  const x = FX[fi % 2] + (pi % 4) * SX, y = FY[fi >> 1] + Math.floor(pi / 4) * SY;
+  let g = `<g class="plot" data-act="plot" data-f="${fi}" data-p="${pi}">`;
+  g += `<rect class="soil" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="6" fill="${p.watered ? '#7a4e2e' : '#b7824f'}" stroke="${O}" stroke-width="2"/>`;
+  g += `<path d="M${x + 6} ${y + 13}H${x + PW - 6}M${x + 6} ${y + 25}H${x + PW - 6}" stroke="${p.watered ? '#5e3a20' : '#9c6a3c'}" stroke-width="2" stroke-linecap="round"/>`;
+  if (p.fertilized) g += [[8, 8], [38, 10], [14, 30], [40, 30], [26, 6]].map(([dx, dy]) => `<circle cx="${x + dx}" cy="${y + dy}" r="1.8" fill="#f4f0e0" stroke="${O}" stroke-width=".6"/>`).join('');
+  if (p.stage > 0 && f.crop !== null) {
+    g += `<g pointer-events="none" transform="translate(${x + PW / 2} ${y + PH - 6})">${plantArt(f.crop, p.stage)}${p.bug ? BUGS : ''}</g>`;
+    const H = CONFIG.CROPS[f.crop].harvests;
+    if (H > 1 && p.stage !== WITHERED) {
+      for (let i = 0; i < H - p.harvests; i++) g += `<circle cx="${x + 5 + i * 4.5}" cy="${y + PH - 4}" r="1.7" fill="#ffe066" stroke="${O}" stroke-width=".7" pointer-events="none"/>`;
+    }
+  }
+  return g + '</g>';
+}
+function renderFarm() {
+  let s = '';
+  S.fields.forEach((f, fi) => {
+    const fx = FX[fi % 2], fy = FY[fi >> 1];
+    s += `<rect x="${fx - 7}" y="${fy - 7}" width="${4 * SX - 3 + 14}" height="${3 * SY - 3 + 14}" rx="12" fill="#8fb04a" stroke="${O}" stroke-width="3"/>`;
+  });
+  S.fields.forEach((f, fi) => f.plots.forEach((p, pi) => { s += plotSVG(f, fi, p, pi); }));
+  S.fields.forEach((f, fi) => {
+    const fx = FX[fi % 2], fy = FY[fi >> 1];
+    const c = f.crop === null ? null : CONFIG.CROPS[f.crop];
+    const label = `แปลง ${fi + 1} · ${c ? c.th : 'ว่าง'}`;
+    const w = 20 + label.length * 7.2;
+    s += `<g pointer-events="none" transform="translate(${fx - 4} ${fy - 21})"><rect width="${w}" height="16" rx="5" fill="#fff4d6" stroke="${O}" stroke-width="2" opacity=".95"/>` +
+      `<text x="7" y="12" font-family="Kanit" font-size="11" font-weight="500" fill="${O}">${label}</text></g>`;
+  });
+  s += farmer(500, 396, S.energy < CONFIG.TIRED_BELOW);
+  s += dragonJar(500, 408);
+  s += oxCart(560, 520, S.hand && S.hand.type === 'crop');
+  s += signpost(!(S.energy > CONFIG.COST.walk));
+  dynEl.innerHTML = s;
+}
+function renderPen() {
+  let s = '';
+  // nest with eggs
+  s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}`;
+  const shown = Math.min(S.eggs, 12);
+  for (let i = 0; i < shown; i++) {
+    const col = i % 6, row = Math.floor(i / 6);
+    s += `<g transform="translate(${262 + col * 15 + row * 7} ${306 - row * 9}) scale(.75)">${eggIcon()}</g>`;
+  }
+  s += `</g>`;
+  s += `<text x="300" y="352" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ไข่ในรัง ${S.eggs} ฟอง</text>` +
+    `<text x="300" y="364" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Eggs in nest — click to pick</text>`;
+  // trough
+  const fill = S.trough / CONFIG.DUCK.troughMax;
+  s += `<g data-act="trough" class="hot"><title>รางอาหาร · Trough</title><rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/>` +
+    `<rect x="378" y="458" width="134" height="18" rx="3" fill="#5a3a22"/>`;
+  if (fill > 0) s += `<rect x="378" y="${458 + 18 * (1 - fill)}" width="134" height="${18 * fill}" rx="3" fill="#e8c77a"/>` +
+    line(Array.from({ length: S.trough * 4 }, (_, i) => `M${384 + i * 6.5} ${470 - (i % 3) * 3}h1`).join(''), '#8a5a22', 2);
+  s += `<rect x="378" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/><rect x="504" y="484" width="8" height="16" fill="#7a4a26" ${SW} stroke-width="1.6"/></g>`;
+  s += `<text x="445" y="518" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">รางอาหาร ${S.trough}/${CONFIG.DUCK.troughMax}</text>` +
+    `<text x="445" y="530" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Trough — click to add feed (have ${S.inventory.feed})</text>`;
+  // basket
+  const hasEgg = S.hand && S.hand.type === 'egg';
+  s += `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title><path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
+    `<path d="M612 452H688L680 494H620Z" fill="#d6ad62" ${SW} stroke-width="3"/>` + line('M616 466H684M618 480H682M634 452V494M650 452V494M666 452V494', '#9a7338', 1.4) +
+    `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g></g>`;
+  s += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
+    `<text x="650" y="524" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Egg basket — drop eggs to sell</text>`;
+  if (S.ducks === 0) s += `<text x="500" y="370" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;
+  dynEl.innerHTML = s;
+}
+function renderAnim() {
+  const key = S.scene + ':' + (S.scene === 'pen' ? S.ducks : '');
+  if (ui.animKey === key) return;
+  ui.animKey = key;
+  if (S.scene !== 'pen') { animEl.innerHTML = ''; return; }
+  const spots = [[470, 300, 11, 0], [580, 340, 14, -3], [420, 400, 10, -6], [640, 410, 13, -2], [520, 380, 15, -8]];
+  let s = '';
+  for (let i = 0; i < S.ducks; i++) {
+    const [x, y, dur, delay] = spots[i];
+    s += `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${delay}s"><g class="waddle" style="animation-delay:${i * .13}s">${duckShape()}</g></g></g>`;
+  }
+  animEl.innerHTML = s;
+}
+function renderPanel() {
+  if (S.scene === 'market') {
+    const greet = [['มาแล้วเหรอหลาน วันนี้เอาอะไรดีจ๊ะ', "Welcome, dear! What'll it be?"], ['ผักสด ๆ ทั้งนั้นจ้ะ', 'All fresh today!'], ['ปุ๋ยดีผักก็งามนะ', 'Good fertilizer, good greens']][ui.greet % 3];
+    panel.innerHTML = `<div class="bubble" style="left:14px;top:34px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
+    <div class="shop-board"><h3>เมล็ดพันธุ์ & ของใช้ <span class="en">Seeds & supplies</span><span class="money-now k">฿${fmt(S.money)}</span></h3>
+    <div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div>
+    <div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div></div>
+    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+  } else if (S.scene === 'pen') {
+    const D = CONFIG.DUCK;
+    panel.innerHTML = `<div class="bubble" style="left:150px;top:44px;width:190px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
+    <div class="mee-shop"><h3>คอกเป็ดลุงมี<br><span class="en">Uncle Mee's duck pen</span></h3>
+      <div class="line"><span>เป็ดไข่ <b>${S.ducks}/${D.max}</b></span><button data-act="buy-duck" ${S.ducks >= D.max ? 'disabled' : ''}>ซื้อ ฿${fmt(D.price)}</button></div>
+      <div class="line"><span>อาหาร <b>${S.inventory.feed}</b></span><button data-act="buy-feed">฿${D.feedPrice} / ${D.feedPortions}</button></div>
+      <div class="note">ใส่อาหารในรางได้วันละ ${D.troughMax} ส่วน เป็ดที่ได้กินจะออกไข่ 1 ฟองในเช้าวันถัดไป ถ้ารางว่างตอนจบวัน เป็ดอาจหิวตาย<br><i>Feed up to ${D.troughMax}/day. Each fed duck lays an egg. Empty trough = risk.</i></div>
+      <div class="line" style="margin-bottom:0"><span class="k">฿${fmt(S.money)}</span></div>
+    </div>
+    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+  } else panel.innerHTML = '';
+}
+function stars(n) { return '★'.repeat(n) + '<span style="opacity:.3">' + '★'.repeat(5 - n) + '</span>'; }
+function priceLevel(c) { return c.seed <= 100 ? 1 : c.seed <= 300 ? 2 : c.seed <= 600 ? 3 : c.seed <= 900 ? 4 : 5; }
+const SPEED = [['เร็วมาก', 'very fast'], ['เร็ว', 'fast'], ['ปานกลาง', 'medium'], ['ช้า', 'slow'], ['ช้ามาก', 'very slow'], ['ช้าที่สุด', 'slowest']];
+function seedCard(c, i) {
+  const pts = 4 * (c.k + 1), fast = Math.ceil(pts / 2);
+  return `<div class="scard"><div class="top">${packetSVG(i)}<div class="nm">${c.th}<small>${c.en}</small></div></div>
+  <div class="ds">${c.desc}</div>
+  <div class="st">ราคา <span class="stars">${stars(priceLevel(c))}</span><br><span title="Growth: ${SPEED[c.k][1]}">โต${SPEED[c.k][0]} ~${fast}–${pts} วัน</span><br>เก็บได้ ${c.harvests} ครั้ง · ขาย ฿${c.sell}/ชิ้น</div>
+  <div class="buy"><button data-act="buy-seed" data-c="${i}" ${S.money < c.seed ? 'disabled' : ''}>฿${fmt(c.seed)}</button><span class="own">มี ${S.inventory.seeds[i]}</span></div></div>`;
+}
+function supplyCard(k) {
+  const it = CONFIG.SUPPLIES[k];
+  return `<div class="scard">${k === 'fertilizer' ? ICON.fertilize : ICON.spray}<div><div class="nm">${it.th}<small>${it.en} — ${it.uses} uses</small></div>
+  <div class="ds" style="min-height:0">${k === 'fertilizer' ? 'ใส่แล้วต้นโตเพิ่มอีกขั้น วันละครั้งต่อแปลง' : 'ฆ่าแมลงที่เกาะต้นระยะใกล้สุก'}</div></div>
+  <div class="buy"><button data-act="buy-supply" data-k="${k}" ${S.money < it.price ? 'disabled' : ''}>฿${it.price}</button><span class="own">มี ${S.inventory[k]}</span></div></div>`;
+}
+function renderHUD() {
+  const d = dateOf(S.day), se = seasonOf(S.day), inv = S.inventory;
+  hud.innerHTML = `<div class="hb wx" title="${S.rain ? 'ฝนตก · Rain' : 'แดดออก · Sunny'}">${S.rain ? ICON.rain : ICON.sun}</div>
+  <div class="hb date"><b>วันที่ ${S.day}<span> / ${CONFIG.LAST_DAY}</span></b><small>${d.date} ${MONTHS_TH[d.month]} · ${MONTHS_EN[d.month]} ${d.date}</small></div>
+  <div class="hb season s-${se}"><b>${SEASONS[se].th}</b><small>${SEASONS[se].en}${S.rain ? ' · ฝนตก' : ''}</small></div>
+  <div class="hb money"><b>฿${fmt(S.money)}</b><small>เงิน · Money</small></div>
+  <div class="hb energy ${S.energy < CONFIG.TIRED_BELOW ? 'low' : ''}"><div class="ebar"><i style="width:${S.energy / CONFIG.MAX_ENERGY * 100}%"></i></div><small>แรง Energy ${S.energy}${S.energy < CONFIG.TIRED_BELOW ? ' · เหนื่อย!' : ''}</small></div>
+  <div class="hb inv">
+    <div class="inv-i" title="ปุ๋ย · Fertilizer"><div class="row">${ICON.fertS}<b>${inv.fertilizer}</b></div><small>ปุ๋ย</small></div>
+    <div class="inv-i" title="ยาฉีดแมลง · Spray"><div class="row">${ICON.sprayS}<b>${inv.spray}</b></div><small>ยา</small></div>
+    <div class="inv-i" title="อาหารเป็ด · Feed"><div class="row">${ICON.feed}<b>${inv.feed}</b></div><small>อาหาร</small></div>
+    <div class="inv-i" title="เป็ด · Ducks"><div class="row">${ICON.duck}<b>${S.ducks}</b></div><small>เป็ด</small></div>
+  </div>
+  <div class="spacer"></div>
+  <button class="hbtn" data-act="mute" title="เสียง · Sound">${Sound.muted ? ICON.mute : ICON.sound}</button>
+  <button class="hbtn" data-act="menu" title="เมนู · Menu">${ICON.menu}</button>`;
+}
+const TOOLS = [['water', 'รดน้ำ', 'Water'], ['fertilize', 'ใส่ปุ๋ย', 'Fertilize'], ['spray', 'ฉีดยา', 'Spray'], ['cut', 'ถาง', 'Clear'], ['pick', 'เก็บ', 'Pick']];
+function renderToolbar() {
+  if (S.scene !== 'farm') { toolbar.style.display = 'none'; return; }
+  toolbar.style.display = '';
+  const dis = S.energy <= 0 ? 'disabled' : '';
+  let s = TOOLS.map(([id, th, en]) => {
+    const badge = id === 'fertilize' ? `<i class="badge">${S.inventory.fertilizer}</i>` : id === 'spray' ? `<i class="badge">${S.inventory.spray}</i>` : '';
+    return `<button class="tool ${ui.tool === id ? 'sel' : ''}" data-act="tool" data-tool="${id}" ${dis} title="${en}">${ICON[id]}<span>${th}</span><small>${en}</small>${badge}</button>`;
+  }).join('');
+  s += `<div class="sep"></div>`;
+  s += CONFIG.CROPS.map((c, i) => `<button class="seed ${ui.tool === 'seed:' + i ? 'sel' : ''} ${S.inventory.seeds[i] ? '' : 'zero'}" data-act="tool" data-tool="seed:${i}" ${dis} title="${c.th} · ${c.en}">${packetSVG(i, 30, 34)}<b class="cnt">×${S.inventory.seeds[i]}</b></button>`).join('');
+  s += `<button id="endday" data-act="endday">จบวัน<small>End Day</small></button>`;
+  toolbar.innerHTML = s;
+}
+function renderFx() {
+  if (!S.rain) { fxEl.innerHTML = ''; return; }
+  fxEl.innerHTML = `<defs><pattern id="rp" width="40" height="60" patternUnits="userSpaceOnUse"><path d="M10 0l-4 14M30 26l-4 14M22 44l-3 10" stroke="#dff3ff" stroke-width="2" stroke-linecap="round" opacity=".75"/></pattern></defs>` +
+    `<rect width="800" height="600" fill="#3a5a7a" opacity=".12"/><rect class="rainfall" x="-40" y="0" width="880" height="660" fill="url(#rp)"/>`;
+}
+function renderHand() {
+  if (!S || !S.hand) { handEl.style.display = 'none'; return; }
+  handEl.style.display = 'block';
+  handEl.innerHTML = `<svg viewBox="-16 -16 32 32" width="36" height="36">${S.hand.type === 'egg' ? eggIcon() : produceIcon(S.hand.crop)}</svg><b>×${S.hand.n}</b>`;
+  posHand();
+}
+function posHand() { handEl.style.transform = `translate(${ui.px + 8}px, ${ui.py + 6}px)`; }
+
+function render() {
+  if (!S) return;
+  if (ui.bgScene !== S.scene) {
+    bgEl.innerHTML = S.scene === 'market' ? marketBG() : S.scene === 'pen' ? penBG() : farmBG();
+    ui.bgScene = S.scene;
+  }
+  renderAnim();
+  if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else dynEl.innerHTML = '';
+  renderPanel(); renderHUD(); renderToolbar(); renderFx(); renderHand();
+}
+
+/* ======================= UI helpers ======================= */
+let toastTimer = 0;
+function toast(r) {
+  if (!r || !r.th) return;
+  toastEl.innerHTML = `${r.th}${r.en ? `<small>${r.en}</small>` : ''}`;
+  toastEl.className = 'on' + (r.ok ? '' : ' bad');
+  toastEl.style.top = S && S.scene !== 'farm' ? '556px' : '478px';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toastEl.className = ''; }, 2000);
+}
+function showModal(html, cls = '') {
+  modal.innerHTML = `<div class="card ${cls}">${html}</div>`;
+  modal.classList.add('on');
+}
+function closeModal() { modal.classList.remove('on'); modal.innerHTML = ''; }
+function hasSave() { return !!store.get(SAVE_KEY); }
+function save() { if (S) store.set(SAVE_KEY, JSON.stringify(S)); }
+function load() {
+  try { return sanitizeState(JSON.parse(store.get(SAVE_KEY))); } catch (e) { return null; }
+}
+
+function showTitle() {
+  showModal(`<div class="logo">ไร่สุขใจ</div><div class="logo-en">RAI SUKJAI</div>
+  <p style="margin:10px 0 4px">ปลูกผัก เลี้ยงเป็ด ขายของที่ตลาด ให้รวยที่สุดภายใน 365 วัน<br><small class="en">Grow crops, raise ducks and get rich in one Thai country year.</small></p>
+  <div class="btns">${hasSave() ? `<button data-act="continue">เล่นต่อ<small>Continue</small></button>` : ''}
+  <button data-act="${hasSave() ? 'confirm-new' : 'new-game'}" style="background:#9be15d">เริ่มเกมใหม่<small>New game</small></button>
+  <button data-act="how">วิธีเล่น<small>How to play</small></button></div>`, 'title-card');
+}
+function showHow() {
+  const D = CONFIG.DUCK;
+  showModal(`<h2>วิธีเล่น</h2><span class="en">How to play</span><div class="howto">
+  <p><b>เริ่มต้น</b> วันที่ 1 มกราคม มีเงิน ฿${CONFIG.START_MONEY} แรง ${CONFIG.START_ENERGY} เกมจบหลังวันที่ ${CONFIG.LAST_DAY}</p>
+  <p><b>ปลูก</b> ซื้อเมล็ดที่แผงป้าแดง เลือกซองเมล็ดจากแถบเครื่องมือ แล้วคลิกแปลงว่าง — หนึ่งซองปลูกเต็ม 12 หลุม</p>
+  <p><b>ดูแล</b> รดน้ำ (1 แรง) และใส่ปุ๋ย (1 แรง + ปุ๋ย 1) ได้วันละครั้งต่อหลุม ตอนจบวันต้นไม้ได้ 1 แต้มจากน้ำ และ 1 แต้มจากปุ๋ย พอครบแต้มก็โตขึ้นหนึ่งขั้น ถึงขั้นที่ 5 ก็สุก</p>
+  <p><b>ระวัง</b> ต้นที่สุกแล้วยังได้แต้มต่อจะเน่า ต้นขั้นที่ 4 อาจมีแมลงลง ต้องฉีดยา (1 แรง + ยา 1) ไม่งั้นอาจตาย ฝนตกช่วยรดน้ำให้ทุกหลุม</p>
+  <p><b>เก็บและขาย</b> ใช้ "เก็บ" กับต้นที่สุก ของจะติดมือไว้ แล้วคลิกเกวียนเพื่อขาย พืชบางชนิดเก็บได้หลายรอบ (จุดสีเหลืองคือรอบที่เหลือ)</p>
+  <p><b>ถาง</b> (1 แรง) ล้างหลุมที่เหี่ยวหรือไม่ต้องการ ต้องถางให้หมดทั้งแปลงก่อนปลูกพืชใหม่</p>
+  <p><b>เป็ด</b> ซื้อเป็ดจากลุงมี ฿${fmt(D.price)} (สูงสุด ${D.max} ตัว) ใส่อาหารในรางวันละไม่เกิน ${D.troughMax} ส่วน เป็ดที่กินอิ่มออกไข่ฟองละ ฿${D.eggPrice} ถ้ารางว่างตอนจบวันเป็ดอาจตาย</p>
+  <p><b>เดินทาง</b> ไปตลาดหรือคอกเป็ด 5 แรง เดินกลับอีก 5 แรง ต้องมีแรงมากกว่า 5 ถึงจะไปได้</p>
+  <p><small class="en">Water & fertilize each plot once a day to earn growth points. Spray bugs on stage-4 plants. Pick ripe crops, then click the ox cart to sell. Clear withered plots. Feed ducks for eggs. Press End Day to sleep.</small></p>
+  </div><div class="btns"><button data-act="${S ? 'close' : 'title'}">เข้าใจแล้ว<small>Got it</small></button></div>`);
+}
+function showMenu() {
+  showModal(`<h2>พักก่อน</h2><span class="en">Paused</span>
+  <p style="margin:4px 0">เกมบันทึกอัตโนมัติทุกครั้งที่ทำอะไร<br><small class="en">The game saves automatically.</small></p>
+  <div class="btns"><button data-act="close" style="background:#9be15d">เล่นต่อ<small>Resume</small></button>
+  <button data-act="how">วิธีเล่น<small>How to play</small></button>
+  <button data-act="confirm-new">เริ่มใหม่<small>New game</small></button></div>`);
+}
+function showConfirmNew() {
+  showModal(`<h2>เริ่มเกมใหม่?</h2><span class="en">Start over?</span><p>ไร่เดิมจะหายไปทั้งหมด<br><small class="en">Your current farm will be lost.</small></p>
+  <div class="btns"><button data-act="new-game" style="background:#e2553f;color:#fff">เริ่มใหม่<small>Yes, new game</small></button>
+  <button data-act="${S ? 'close' : 'title'}">ยกเลิก<small>Cancel</small></button></div>`);
+}
+function showReport() {
+  const r = S.lastReport; if (!r) return;
+  const d = dateOf(S.day), se = seasonOf(S.day), items = [];
+  if (r.rain) items.push(['🌧 ฝนตก! รดน้ำให้ทุกหลุมแล้ว', 'Rain watered every plot']);
+  if (r.ripened) items.push([`สุกพร้อมเก็บ ${r.ripened} ต้น`, `${r.ripened} plants ripened`]);
+  else if (r.grew) items.push([`ต้นไม้โตขึ้น ${r.grew} ต้น`, `${r.grew} plants grew`]);
+  if (r.rotted) items.push([`ผลผลิตสุกเกินจนเน่า ${r.rotted} ต้น — ต้องถาง`, `${r.rotted} overripe plants rotted`]);
+  if (r.bugDeaths) items.push([`แมลงกินจนตาย ${r.bugDeaths} ต้น`, `${r.bugDeaths} plants killed by bugs`]);
+  if (r.newBugs) items.push([`มีแมลงลง ${r.newBugs} ต้น — รีบฉีดยา!`, `Bugs on ${r.newBugs} plants — spray them!`]);
+  if (r.eggsLaid) items.push([`เป็ดออกไข่ ${r.eggsLaid} ฟอง`, `Ducks laid ${r.eggsLaid} eggs`]);
+  if (r.duckDied) items.push(['เป็ดหิวตาย 1 ตัว เพราะรางอาหารว่าง', 'A hungry duck died (empty trough)']);
+  if (!items.length) items.push(['คืนนี้เงียบสงบ', 'A quiet night']);
+  showModal(`<h2>อรุณสวัสดิ์!</h2><span class="en">Good morning — day ${S.day}</span>
+  <p style="margin:0 0 6px" class="k">วันที่ ${S.day} · ${d.date} ${MONTHS_TH[d.month]} · ${SEASONS[se].th}</p>
+  <ul class="report-list">${items.map(([t, e]) => `<li>${t} <small>${e}</small></li>`).join('')}</ul>
+  <div class="btns"><button data-act="close" style="background:#9be15d">ไปทำไร่กัน<small>Let's farm</small></button></div>`);
+}
+function showGameOver() {
+  const st = S.stats, profit = S.money - CONFIG.START_MONEY;
+  showModal(`<h2>ครบหนึ่งปีแล้ว!</h2><span class="en">A year on the farm is over</span>
+  <div class="k">เงินทั้งหมด · Final money</div><div class="big-money">฿${fmt(S.money)}</div>
+  <p style="margin:2px 0 8px">${profit >= 0 ? 'กำไร' : 'ขาดทุน'} ฿${fmt(Math.abs(profit))} <small class="en">${profit >= 0 ? 'profit' : 'loss'} vs. ฿${CONFIG.START_MONEY} start</small></p>
+  <ul class="report-list">
+    <li>ขายผลผลิต ${fmt(st.cropsSold)} ชิ้น <small>crops sold</small></li>
+    <li>ขายไข่เป็ด ${fmt(st.eggsSold)} ฟอง <small>eggs sold</small></li>
+    <li>รายได้รวม ฿${fmt(st.earned)} · ใช้จ่าย ฿${fmt(st.spent)} <small>earned · spent</small></li>
+    <li>เป็ดในคอก ${S.ducks} ตัว <small>ducks left</small></li>
+  </ul>
+  <p style="margin:6px 0 0">${S.money >= 100000 ? 'เศรษฐีบ้านไร่! 🌾' : S.money >= 20000 ? 'ชาวไร่มือทอง' : S.money >= 2000 ? 'พออยู่พอกิน สุขใจ' : 'ปีหน้าเอาใหม่นะ'}</p>
+  <div class="btns"><button data-act="new-game" style="background:#9be15d">เล่นอีกปี<small>Play again</small></button></div>`);
+}
+
+/* ======================= AUDIO (WebAudio luk thung / pong lang loop) ======================= */
+const Sound = {
+  ctx: null, master: null, music: null, noise: null, timer: 0, playing: false, step: 0, next: 0,
+  muted: store.get(MUTE_KEY) === '1',
+  init() {
+    if (this.ctx) return true;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    this.ctx = new AC();
+    this.master = this.ctx.createGain();
+    this.master.gain.value = this.muted ? 0 : .55;
+    this.master.connect(this.ctx.destination);
+    this.music = this.ctx.createGain(); this.music.gain.value = .5; this.music.connect(this.master);
+    const len = this.ctx.sampleRate;
+    this.noise = this.ctx.createBuffer(1, len, len);
+    const d = this.noise.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    return true;
+  },
+  hz: m => 440 * Math.pow(2, (m - 69) / 12),
+  env(t, peak, dur, dest, attack = .005) {
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + attack);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    g.connect(dest);
+    return g;
+  },
+  tone(freq, t, dur, type, peak, dest) {
+    const o = this.ctx.createOscillator();
+    o.type = type; o.frequency.setValueAtTime(freq, t);
+    o.connect(this.env(t, peak, dur, dest));
+    o.start(t); o.stop(t + dur + .05);
+    return o;
+  },
+  hit(t, dur, peak, hp, dest) {
+    const n = this.ctx.createBufferSource(); n.buffer = this.noise;
+    const f = this.ctx.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = hp;
+    n.connect(f); f.connect(this.env(t, peak, dur, dest, .002));
+    n.start(t, Math.random() * .5); n.stop(t + dur + .02);
+  },
+  // pong lang (wooden xylophone) melody in a minor-pentatonic "lai"
+  MEL: [69, 72, 74, 0, 72, 69, 67, 69, 74, 0, 77, 74, 72, 69, 67, 0, 65, 67, 69, 72, 69, 67, 65, 62, 64, 65, 67, 0, 62, 0, 0, 0,
+    74, 77, 79, 0, 77, 74, 72, 74, 69, 72, 74, 77, 74, 72, 69, 0, 67, 69, 72, 69, 67, 65, 62, 65, 67, 69, 67, 65, 62, 0, 0, 0],
+  playStep(i, t) {
+    const m = this.MEL[i];
+    if (m) { this.tone(this.hz(m), t, .45, 'triangle', .22, this.music); this.tone(this.hz(m) * 4.01, t, .12, 'sine', .04, this.music); }
+    if (i % 4 === 0) this.tone(this.hz(i % 8 === 0 ? 38 : 45), t, .35, 'triangle', .3, this.music);   // phin bass
+    if (i % 4 === 2) this.hit(t, .06, .08, 7000, this.music);   // ching
+    if (i % 8 === 4) this.hit(t, .18, .06, 4000, this.music);   // chap
+  },
+  startDrone() { // khaen-like reed drone on D + A
+    const f = this.ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 850;
+    const g = this.ctx.createGain(); g.gain.value = .045;
+    const lfo = this.ctx.createOscillator(), lg = this.ctx.createGain();
+    lfo.frequency.value = 4.2; lg.gain.value = .012; lfo.connect(lg); lg.connect(g.gain); lfo.start();
+    [50, 57, 62.05].forEach(m => { const o = this.ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = this.hz(m); o.connect(f); o.start(); });
+    f.connect(g); g.connect(this.music);
+  },
+  startMusic() {
+    if (this.playing || this.muted || !this.init()) return;
+    this.ctx.resume();
+    this.playing = true;
+    this.startDrone();
+    this.next = this.ctx.currentTime + .1;
+    this.timer = setInterval(() => {
+      while (this.next < this.ctx.currentTime + .3) {
+        this.playStep(this.step, this.next);
+        this.step = (this.step + 1) % this.MEL.length;
+        this.next += .23;
+      }
+    }, 60);
+  },
+  toggle() {
+    this.muted = !this.muted;
+    store.set(MUTE_KEY, this.muted ? '1' : '0');
+    if (this.ctx) this.master.gain.setTargetAtTime(this.muted ? 0 : .55, this.ctx.currentTime, .05);
+    if (!this.muted) this.startMusic();
+  },
+  sfx(kind) {
+    if (this.muted || !this.init()) return;
+    const t = this.ctx.currentTime, m = this.master;
+    switch (kind) {
+      case 'water': this.hit(t, .25, .15, 900, m); break;
+      case 'cut': this.hit(t, .09, .2, 2500, m); break;
+      case 'pop': this.tone(660, t, .1, 'sine', .25, m); this.tone(990, t + .05, .12, 'sine', .2, m); break;
+      case 'coin': this.tone(1320, t, .12, 'square', .08, m); this.tone(1760, t + .08, .25, 'square', .08, m); break;
+      case 'plant': this.tone(392, t, .12, 'triangle', .25, m); this.tone(523, t + .07, .15, 'triangle', .22, m); break;
+      case 'err': this.tone(160, t, .15, 'square', .06, m); break;
+      case 'night': [74, 69, 65, 62].forEach((n, i) => this.tone(this.hz(n), t + i * .14, .6, 'triangle', .18, m)); break;
+    }
+  },
+};
+
+/* ======================= INPUT ======================= */
+function startGame(s) {
+  S = s; ui.tool = 'water'; ui.bgScene = null; ui.animKey = null;
+  save(); closeModal(); render();
+}
+function handleAct(act, ds) {
+  switch (act) {
+    case 'mute': Sound.toggle(); if (S) renderHUD(); return;
+    case 'menu': return showMenu();
+    case 'close': closeModal(); if (S && S.gameOver) showGameOver(); return;
+    case 'title': return showTitle();
+    case 'how': return showHow();
+    case 'continue': { const s = load(); if (s) { startGame(s); if (s.gameOver) showGameOver(); } return; }
+    case 'confirm-new': return showConfirmNew();
+    case 'new-game': store.del(SAVE_KEY); return startGame(newGame());
+  }
+  if (!S || S.gameOver || ui.busy) return;
+  let r = null, fx = null;
+  switch (act) {
+    case 'tool': {
+      ui.tool = ds.tool;
+      if (ds.tool.startsWith('seed:')) {
+        const i = +ds.tool.slice(5), c = CONFIG.CROPS[i];
+        toast(S.inventory.seeds[i] ? { ok: true, th: `เลือกเมล็ด${c.th} — คลิกแปลงว่างเพื่อปลูก`, en: `Click an empty field to plant ${c.en}` }
+          : { ok: false, th: `ไม่มีเมล็ด${c.th} ไปซื้อที่ตลาดก่อน`, en: 'No seeds — buy some at the market' });
+      } else {
+        const t = TOOLS.find(x => x[0] === ds.tool), cost = CONFIG.COST[ds.tool];
+        toast({ ok: true, th: `${t[1]}${cost ? ` · ใช้แรง ${cost}` : ' · ไม่ใช้แรง'}`, en: `${t[2]}${cost ? ` — ${cost} energy` : ' — free'}` });
+      }
+      renderToolbar();
+      return;
+    }
+    case 'plot': {
+      r = applyTool(S, ui.tool, +ds.f, +ds.p);
+      fx = { water: 'water', cut: 'cut', pick: 'pop', fertilize: 'cut', spray: 'water' }[ui.tool] || 'plant';
+      break;
+    }
+    case 'jar': ui.tool = 'water'; r = { ok: true, th: 'ตักน้ำจากโอ่งมังกร — พร้อมรดน้ำ', en: 'Water tool selected' }; fx = 'water'; break;
+    case 'cart': r = sellHand(S, 'cart'); fx = 'coin'; break;
+    case 'basket': r = sellHand(S, 'basket'); fx = 'coin'; break;
+    case 'go-market': r = walk(S, 'market'); ui.greet++; break;
+    case 'go-pen': r = walk(S, 'pen'); break;
+    case 'go-home': r = walk(S, 'farm'); break;
+    case 'buy-seed': r = buySeed(S, +ds.c); fx = 'coin'; break;
+    case 'buy-supply': r = buySupply(S, ds.k); fx = 'coin'; break;
+    case 'buy-duck': r = buyDuck(S); fx = 'coin'; break;
+    case 'buy-feed': r = buyFeed(S); fx = 'coin'; break;
+    case 'trough': r = feedTrough(S); fx = 'plant'; break;
+    case 'egg': r = pickEgg(S); fx = 'pop'; break;
+    case 'endday': return doEndDay();
+    default: return;
+  }
+  if (!r) return;
+  Sound.sfx(r.ok ? fx : 'err');
+  save(); render();
+  if (r.th) toast(r);
+  else if (r.ok && S.energy < CONFIG.TIRED_BELOW && S.energy > 0 && act === 'plot') toast({ ok: false, th: 'เหนื่อยแล้ว…', en: "I'm tired" });
+}
+function doEndDay() {
+  if (S.hand) return toast({ ok: false, th: 'เอาของในมือไปขายที่เกวียนก่อนนอน', en: 'Sell what you carry before bed' });
+  ui.busy = true;
+  Sound.sfx('night');
+  nightEl.classList.add('on');
+  setTimeout(() => {
+    S = endDay(S, Math.random);
+    save(); render();
+    setTimeout(() => {
+      nightEl.classList.remove('on');
+      ui.busy = false;
+      if (S.gameOver) showGameOver(); else showReport();
+    }, 450);
+  }, 700);
+}
+
+stage.addEventListener('click', e => {
+  Sound.startMusic();
+  const t = e.target.closest('[data-act]');
+  if (!t || !stage.contains(t)) return;
+  handleAct(t.dataset.act, t.dataset);
+});
+function trackPointer(e) {
+  const rc = stage.getBoundingClientRect();
+  ui.px = (e.clientX - rc.left) / ui.scale; ui.py = (e.clientY - rc.top) / ui.scale;
+  if (S && S.hand) posHand();
+}
+stage.addEventListener('pointermove', trackPointer);
+stage.addEventListener('pointerdown', trackPointer);
+document.addEventListener('keydown', e => {
+  if (!S || modal.classList.contains('on') || S.scene !== 'farm') return;
+  const i = '12345'.indexOf(e.key);
+  if (i >= 0 && S.energy > 0) { ui.tool = TOOLS[i][0]; renderToolbar(); }
+});
+
+function fit() {
+  ui.scale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
+  stage.style.transform = `scale(${ui.scale})`;
+}
+window.addEventListener('resize', fit);
+fit();
+
+// Title screen over the farm backdrop.
+bgEl.innerHTML = farmBG();
+ui.bgScene = 'farm';
+showTitle();
+window.__raiSukjai = { get state() { return S; } };
+})();
+</script>
+</body>
+</html>
