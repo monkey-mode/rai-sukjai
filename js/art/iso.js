@@ -79,13 +79,24 @@ function isoFence(a, b, step = .5) {
   return s;
 }
 
-// Banana clumps on the farm: [gx, gy, variant, scale]. Every spot uses a different variant (checked by tests).
+// Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
+const FARM_ZONES = {
+  yard: [-0.8, -0.8, 9.8, 7.8],      // dirt yard and fields
+  canal: [-1.4, -8, -1.05, 11],      // irrigation canal (paddies lie beyond it, grass strip between it and the yard)
+  paddock: [8, -5, 12.6, -2],        // buffalo paddock
+  house: [2.3, -4.7, 6.3, -1.1],     // stilt house footprint plus its stairs
+  shrine: [0.3, -2.6, 1.3, -1.6],    // Phra Phum shrine and its offerings
+};
+const FARM_HORIZON_Y = 175;          // sprite bases must be below the horizon line
+
+// Banana clumps on the farm: [gx, gy, variant, scale]. Each spot uses a different variant and stands on
+// open ground outside FARM_ZONES (both checked by tests/assets.test.mjs).
 const BANANA_SPOTS = [
-  [-1.3, 1.2, 'old', .8],          // canal bank, upper
-  [-1.1, -1.0, 'fruiting', .85],   // left of the Phra Phum shrine
-  [4.9, -1.7, 'young', .8],        // between the stilt house and the yard
-  [7.0, -2.9, 'ripe', .8],         // by the buffalo paddock corner
-  [-1.4, 5.4, 'harvested', .85],   // canal bank, lower
+  [-2.8, 0.0, 'fruiting', .8],     // on a paddy dike junction
+  [-0.93, 1.2, 'old', .8],         // grass strip between the canal and the yard, upper
+  [4.4, -0.95, 'young', .75],      // in front of the stilt house, right of the stairs
+  [-0.93, 5.6, 'harvested', .8],   // grass strip between the canal and the yard, lower
+  [7.2, -1.4, 'ripe', .78],        // open grass by the paddock corner, in front of its fence
 ];
 
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
