@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- ผักบุ้ง · ต้นกล้า — Morning glory seedling. Anchor (32,56) = soil point. -->
+  <g stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round">
+    <!-- soil mound -->
+    <path d="M20.5 57.5Q22 53.2 27 52.6Q32 51.6 37 52.6Q42 53.2 43.5 57.5Q32 59.6 20.5 57.5Z" fill="#6e4528" stroke-width="1.8"/>
+    <path d="M25 55.2Q28 53.9 31 54.1" fill="none" stroke="#8a5a33" stroke-width="1.2"/>
+    <circle cx="37.5" cy="55.6" r=".8" fill="#4e2f19" stroke="none"/>
+    <circle cx="26" cy="57" r=".7" fill="#4e2f19" stroke="none"/>
+    <!-- hollow stem (outlined) -->
+    <path d="M32 55.5Q31.2 51 32 46.2" fill="none" stroke-width="4.4"/>
+    <path d="M32 55.5Q31.2 51 32 46.2" fill="none" stroke="#7cc245" stroke-width="2"/>
+    <!-- two rounded seed leaves -->
+    <path d="M32 46.6C29.4 43 25 42.2 22.4 44.2C22.2 47.2 26.8 49.2 32 46.6Z" fill="#8fd14f" stroke-width="1.7"/>
+    <path d="M32 46.6C34.6 43 39 42.2 41.6 44.2C41.8 47.2 37.2 49.2 32 46.6Z" fill="#8fd14f" stroke-width="1.7"/>
+    <path d="M24.4 45.2Q27.4 44.6 29.8 46" fill="none" stroke="#c6ee8e" stroke-width="1.1"/>
+    <path d="M39.6 45.2Q36.6 44.6 34.2 46" fill="none" stroke="#c6ee8e" stroke-width="1.1"/>
+    <!-- first arrow-shaped true leaf peeking out: the phak bung hint -->
+    <path d="M32 46.2L30.2 43.2L31 43.4L32 40.2L33 43.4L33.8 43.2Z" fill="#56b234" stroke-width="1.3"/>
+  </g>
+</svg>
