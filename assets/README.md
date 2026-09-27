@@ -87,7 +87,7 @@ Copy this into the other AI (give it this repository or these files):
 - **Served over http(s)** (e.g. `python3 -m http.server`): the game reads this manifest and uses the `file` of every asset whose status is `done` or `approved` (`Assets.USE_STATUSES`).
 - **Opened from disk** (`file://`): browsers block reading the manifest, so the game tries loading each expected `output` path and uses whatever exists. Each missing file logs a harmless "file not found" console error; serve the folder to avoid them.
 
-Wired in so far: crop stages, withered, bugs, produce icons, egg, seed packets, tool icons, HUD icons, soil tiles and the fertilized overlay. Characters, animals, props, scenery, backgrounds and the logo need layout work and will be wired when their files arrive. The game's asset list must match this manifest; `tests/assets.test.mjs` checks it.
+Wired in so far: crop stages, withered, bugs, produce icons, egg, seed packets, tool icons, HUD icons, soil tiles, the fertilized overlay, all props, the cloud and the three backgrounds. With an asset background the game still draws the moving or foreground pieces on top (clouds, buffalo, the farm fence, characters, the market counter and the interactive props). Characters, animals and the logo will be wired when their files arrive. The game's asset list must match this manifest; `tests/assets.test.mjs` checks it.
 
 ## Tools
 

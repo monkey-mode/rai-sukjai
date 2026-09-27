@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 134" width="12" height="134">
+<!-- prop.signpole · wooden signpost pole. Anchor (6,134) = ground -->
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M3 6L6 2L9 6V133H3Z" fill="#8a5a2e" stroke="#3a2213" stroke-width="2"/><path d="M5 12V60M7 70V120" fill="none" stroke="#6e4526" stroke-width="1"/><path d="M3 50H9M3 102H9" fill="none" stroke="#6e4526" stroke-width="1.2"/>
+</g>
+</svg>

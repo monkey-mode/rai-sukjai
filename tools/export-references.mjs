@@ -27,6 +27,7 @@ await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
 await page.goto(pathToFileURL(path.join(ROOT, 'index.html')).href);
 
 const out = await page.evaluate(jobs => {
+  Assets.found = {}; // references are the code-drawn placeholders
   // Pen props are only drawn inside renderPen(); render a pen scene and cut the pieces out.
   window.penPart = name => {
     S = newGame(() => 1); S.scene = 'pen'; S.trough = 0; S.eggs = 0;
