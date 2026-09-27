@@ -47,6 +47,7 @@ const ASSET_SPECS = (() => {
   add('character.uncle_mee', 'assets/characters/uncle_mee.svg', 47, 104, 24, 100);
   add('animal.duck', 'assets/animals/duck.svg', 51, 45, 26, 41);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
+  add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
   // 800x600 safe area with 300 px of bleed each side
   ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
   return list;

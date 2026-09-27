@@ -20,7 +20,8 @@ function showModal(html, cls = '') {
 function closeModal() { modal.classList.remove('on'); modal.innerHTML = ''; }
 
 function showTitle() {
-  showModal(`<div class="logo">ไร่สุขใจ</div><div class="logo-en">RAI SUKJAI</div>
+  const logo = Assets.has('ui.logo') ? `<div class="logo-img">${Assets.img('ui.logo', 420, 131)}</div>` : `<div class="logo">ไร่สุขใจ</div><div class="logo-en">RAI SUKJAI</div>`;
+  showModal(`${logo}
   <p style="margin:10px 0 4px">ปลูกผัก เลี้ยงเป็ด ขายของที่ตลาด ให้รวยที่สุดภายใน 365 วัน<br><small class="en">Grow crops, raise ducks and get rich in one Thai country year.</small></p>
   <div class="btns">${hasSave() ? `<button data-act="continue">เล่นต่อ<small>Continue</small></button>` : ''}
   <button data-act="${hasSave() ? 'confirm-new' : 'new-game'}" style="background:#9be15d">เริ่มเกมใหม่<small>New game</small></button>

@@ -117,6 +117,6 @@ Assets.load().then(ids => {
   for (const k in plantCache) delete plantCache[k];
   ui.bgScene = null; ui.animKey = null;
   if (S) render();
-  else { bgEl.innerHTML = farmBG(); ui.bgScene = 'farm'; }
+  else { bgEl.innerHTML = farmBG(); ui.bgScene = 'farm'; if (Assets.has('ui.logo') && document.querySelector('.title-card')) showTitle(); }
 });
 window.__raiSukjai = { get state() { return S; } };
