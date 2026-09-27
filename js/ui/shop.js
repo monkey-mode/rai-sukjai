@@ -27,7 +27,7 @@ function renderPanel() {
 const SHOP_TABS = [
   { id: 'seeds', th: 'เมล็ดพันธุ์', en: 'Seeds', body: () => `<div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div>` },
   { id: 'supplies', th: 'ของใช้', en: 'Supplies', body: () => `<div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div>` },
-  { id: 'livestock', th: 'สัตว์เลี้ยง', en: 'Livestock', body: () => `<div class="supplies">${duckCard()}${feedCard()}</div>` },
+  { id: 'livestock', th: 'สัตว์เลี้ยง', en: 'Livestock', body: () => `<div class="supplies">${duckCard()}${feedCard()}${soonCard('ควาย', 'Water buffalo', 'ไถนา ขนของ ช่วยงานในไร่')}</div>` },
 ];
 const shopTab = () => SHOP_TABS.find(t => t.id === ui.shopTab) || SHOP_TABS[0];
 
@@ -37,6 +37,12 @@ function duckCard() {
   return `<div class="scard">${icon('duck')}<div><div class="nm">เป็ดไข่<small>Laying duck — lives in the duck pen</small></div>
   <div class="ds" style="min-height:0">กินอาหารแล้วออกไข่วันละฟอง ขายได้ฟองละ ฿${D.eggPrice}</div></div>
   <div class="buy"><button data-act="buy-duck" ${full || S.money < D.price ? 'disabled' : ''}>฿${fmt(D.price)}</button><span class="own">${full ? 'คอกเต็ม' : 'มี'} ${S.ducks}/${D.max}</span></div></div>`;
+}
+// A livestock item that a future feature will make buyable.
+function soonCard(th, en, ds) {
+  return `<div class="scard soon">${Assets.has('animal.buffalo') ? Assets.img('animal.buffalo', 44, 44) : ''}<div><div class="nm">${th}<small>${en}</small></div>
+  <div class="ds" style="min-height:0">${ds}</div></div>
+  <div class="buy"><button disabled>เร็ว ๆ นี้</button><span class="own">Coming soon</span></div></div>`;
 }
 function feedCard() {
   const D = CONFIG.DUCK;

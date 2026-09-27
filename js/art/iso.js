@@ -68,15 +68,15 @@ function isoSoil(gx, gy, wet, fertilized) {
 // Rustic paddock fence from grid point a to b: square timber posts with pointed caps every `step` tiles, two
 // round bamboo rails with node rings and a highlight, lashed to each post with rope. Matches the painted back
 // fences in bg.farm (the generator draws them the same way).
-function isoFence(a, b, step = .6) {
+function isoFence(a, b, step = .6, pt = isoPt) {
   const n = Math.max(1, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / step));
   const g = t => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
-  const at = (t, z) => isoPt(...g(t), z);
+  const at = (t, z) => pt(...g(t), z);
   const poly = (pts, fill, w = 1.6) => `<polygon points="${isoPoints(pts)}" fill="${fill}" ${SW} stroke-width="${w}"/>`;
   const H = 30, W = .055;
   let posts = '';
   for (let i = 0; i <= n; i++) {
-    const [x, y] = g(i / n), P = (dx, dy, z) => isoPt(x + dx, y + dy, z), apex = P(0, 0, H + 6);
+    const [x, y] = g(i / n), P = (dx, dy, z) => pt(x + dx, y + dy, z), apex = P(0, 0, H + 6);
     posts += poly([P(-W, W, 0), P(W, W, 0), P(W, W, H), P(-W, W, H)], '#8a5a30') +
       poly([P(W, W, 0), P(W, -W, 0), P(W, -W, H), P(W, W, H)], '#a8703e') +
       poly([P(-W, W, H), P(W, W, H), apex], '#b87a44', 1.3) + poly([P(W, W, H), P(W, -W, H), apex], '#d09258', 1.3);
@@ -98,6 +98,10 @@ function isoFence(a, b, step = .6) {
     `<path d="${nodes}" stroke="#8f7a3a" stroke-width="1.3"/>` +
     `<path d="${ties}" stroke="${O}" stroke-width="2.6" stroke-linecap="round"/><path d="${ties}" stroke="#e0c98a" stroke-width="1.3" stroke-linecap="round"/>`;
 }
+
+// The market square's own iso grid (bg.market is painted on it) and its livestock corral [u0, v0, u1, v1].
+const mkPt = (u, v, z = 0) => [560 + (u - v) * 32, 70 + (u + v) * 16 - z];
+const MARKET_CORRAL = [9, 7.5, 13.5, 11.5];     // the open middle of the square, right of the shop button
 
 // Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
 const FARM_ZONES = {
