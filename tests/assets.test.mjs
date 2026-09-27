@@ -32,3 +32,14 @@ test("the game's asset list (js/art/assets.js) matches the manifest's paths, can
     assert.deepEqual([sp.w, sp.h, sp.ax, sp.ay], [...a.canvas, ...a.anchor], id);
   }
 });
+
+test('banana clumps on the farm each use a different variant', () => {
+  const src = fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8');
+  const block = src.match(/const BANANA_SPOTS = \[([\s\S]*?)\];/)[1];
+  const variants = [...block.matchAll(/'([a-z]+)'/g)].map(m => m[1]);
+  assert.ok(variants.length >= 2);
+  assert.equal(new Set(variants).size, variants.length, 'duplicate banana variant: ' + variants.join(', '));
+  const { manifest } = checkManifest();
+  const ids = new Set(manifest.assets.map(a => a.id));
+  for (const v of variants) assert.ok(ids.has(`scenery.banana_${v}_iso`), v);
+});

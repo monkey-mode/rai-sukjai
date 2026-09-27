@@ -79,6 +79,15 @@ function isoFence(a, b, step = .5) {
   return s;
 }
 
+// Banana clumps on the farm: [gx, gy, variant, scale]. Every spot uses a different variant (checked by tests).
+const BANANA_SPOTS = [
+  [-1.3, 1.2, 'old', .8],          // canal bank, upper
+  [-1.1, -1.0, 'fruiting', .85],   // left of the Phra Phum shrine
+  [4.9, -1.7, 'young', .8],        // between the stilt house and the yard
+  [7.0, -2.9, 'ripe', .8],         // by the buffalo paddock corner
+  [-1.4, 5.4, 'harvested', .85],   // canal bank, lower
+];
+
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
 const FARM_SPOTS = {
   cart: [84, 491],        // oxCart(x, y): x = rear of the code-drawn cart; its asset is anchored at (x + 66, y + 1)

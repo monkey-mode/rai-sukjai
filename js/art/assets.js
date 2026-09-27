@@ -31,6 +31,7 @@ const ASSET_SPECS = (() => {
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
   add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 78, 68, 39, 27);
   add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 42, 15, 8);
+  ['young', 'fruiting', 'ripe', 'old', 'harvested'].forEach(v => add(`scenery.banana_${v}_iso`, `assets/scenery/banana_${v}_iso.svg`, 190, 190, 95, 150));
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
   return list;

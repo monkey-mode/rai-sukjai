@@ -7,8 +7,18 @@ function farmBG() {
   const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
   const front = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2') +
     buffalo(b[0], b[1]) + isoFence([px0, py1], [px1, py1]);
-  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + front;
+  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + bananaClumps() + front;
   return farmBackdropIso() + front;
+}
+
+// Banana clump sprites, back to front, each with a ground shadow.
+function bananaClumps() {
+  return BANANA_SPOTS.slice().sort((a, b) => (a[0] + a[1]) - (b[0] + b[1])).map(([gx, gy, v, sc]) => {
+    const id = `scenery.banana_${v}_iso`;
+    if (!Assets.has(id)) return '';
+    const [x, y] = isoPt(gx, gy);
+    return `<g transform="translate(${r(x)} ${r(y)}) scale(${sc})"><ellipse cx="4" cy="1" rx="26" ry="9" fill="rgba(58,34,19,.18)"/>${Assets.image(id)}</g>`;
+  }).join('');
 }
 
 // Code-drawn fallback for the isometric farm background.
