@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
-<!-- THROWAWAY PROTOTYPE: the buffalo and dragon jar built as 3D models (ellipsoids / a solid of revolution)
-     and projected with the farm's exact isometric math, next to the current hand-drawn assets.
-     Does not change the game. Delete once the direction is decided. -->
+<!-- 3D MODEL SOURCE: the buffalo and dragon jar built as 3D models (ellipsoids / a solid of revolution) and
+     projected with the farm's exact isometric math. tools/export-models.mjs exports them as the game's
+     assets (animal.buffalo*, prop.dragon_jar) via window.__exportModels(); edit the models here, then re-export. -->
 <style>
   html,body{margin:0;min-height:100%;background:#2a1a0f;font-family:'Sarabun',sans-serif;color:#3a2213}
   #wrap{max-width:980px;margin:0 auto;padding:12px}
@@ -70,7 +70,7 @@ function buffaloParts() {
   const P = [];
   const add = (c, r, fill, extra = {}) => P.push(Object.assign({ c, r, fill }, extra));
   // a smooth tube: many overlapping spheres interpolated along control points [x, y, z, radius]
-  const tube = (ctrl, fill, extra, per = 5) => {
+  const tube = (ctrl, fill, extra, per = 4) => {
     for (let i = 0; i < ctrl.length - 1; i++) for (let k = 0; k < per; k++) {
       const t = k / per, a = ctrl[i], b = ctrl[i + 1], q = a.map((v, n) => v + (b[n] - v) * t);
       add([q[0], q[1], q[2]], [q[3], q[3], q[3]], fill, extra);
@@ -126,7 +126,7 @@ function transform(p, part, pose) {
   return [x * c - y * s, x * s + y * c, z + (pose.bob || 0)];
 }
 
-function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75]) {
+function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75], opts = {}) {
   const P2 = (x, y, z) => { const [sx, sy] = proj(x, y, z); return [ox + sx * sc, oy + sy * sc]; };
   // ground shadow
   const sh = [];
@@ -134,14 +134,16 @@ function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75]) {
     const t = a * Math.PI / 180, [x, y] = transform([Math.cos(t) * 40, Math.sin(t) * 22, 0], {}, { yaw: pose.yaw });
     sh.push(P2(x, y, 0));
   }
-  let out = `<path d="${pathOf(sh)}" fill="rgba(58,34,19,.18)"/>`;
+  let out = opts.noShadow ? '' : `<path d="${pathOf(sh)}" fill="rgba(58,34,19,.18)"/>`;
+  if (opts.only) parts = parts.filter(p => opts.only.includes(p.group));
   // project every part once
   const shapes = parts.map(part => {
     const pts = [], hi = [];
-    for (let i = 0; i <= 8; i++) {
-      const v = -Math.PI / 2 + i * Math.PI / 8;
-      for (let j = 0; j < 16; j++) {
-        const u = j * Math.PI / 8;
+    const small = Math.max(...part.r) < 4, NV = small ? 4 : 8, NU = small ? 8 : 16;   // fewer samples for tiny parts
+    for (let i = 0; i <= NV; i++) {
+      const v = -Math.PI / 2 + i * Math.PI / NV;
+      for (let j = 0; j < NU; j++) {
+        const u = j * 2 * Math.PI / NU;
         const local = [part.c[0] + part.r[0] * Math.cos(v) * Math.cos(u), part.c[1] + part.r[1] * Math.cos(v) * Math.sin(u), part.c[2] + part.r[2] * Math.sin(v)];
         const q = P2(...transform(local, part, pose));
         pts.push(q);
@@ -175,7 +177,7 @@ function drawModel(parts, pose, ox, oy, sc = 1.5, light = [-.6, .3, .75]) {
 // ---------- dragon jar as a solid of revolution ----------
 const jarR = h => h < 4 ? 22 + h : h < 38 ? 26 + 14 * Math.sin((h - 4) / 34 * Math.PI / 2) : h < 70 ? 40 - 16 * Math.sin((h - 38) / 32 * Math.PI / 2) : h < 74 ? 24 : 26;
 // The jar can turn (rot, radians) so the dragon travels around it; sc scales the whole drawing.
-function drawJar(ox, oy, rot = 0, sc = 1, time = 0) {
+function drawJar(ox, oy, rot = 0, sc = 1, time = 0, opts = {}) {
   const O = '#3a2213';
   const P3 = (x, y, z) => { const [sx, sy] = proj(x, y, z); return [ox + sx * sc, oy + sy * sc]; };
   // a point on the jar surface at angle t (jar space), height h, pushed out by `off`
@@ -190,7 +192,7 @@ function drawJar(ox, oy, rot = 0, sc = 1, time = 0) {
   const pl = (pts, col, w, extra = '') => `<path d="M${pts.map(p => fmt(p[0]) + ' ' + fmt(p[1])).join('L')}" fill="none" stroke="${col}" stroke-width="${fmt(w)}" stroke-linecap="round" stroke-linejoin="round"${extra}/>`;
   let all = [];
   for (let h = 0; h <= 76; h += 2) all = all.concat(ring(h, jarR(h), 0, 360, 12));
-  let s = `<path d="${pathOf(ring(0, 34))}" fill="rgba(58,34,19,.18)"/>`;
+  let s = opts.noShadow ? '' : `<path d="${pathOf(ring(0, 34))}" fill="rgba(58,34,19,.18)"/>`;
   s += `<path d="${pathOf(hull(all))}" fill="#7b3a1a" stroke="${O}" stroke-width="${3 * Math.min(1.4, sc)}" stroke-linejoin="round"/>`;
   // shading: the right-hand half is in shadow (light comes from the upper-left)
   const shade = [];
@@ -339,6 +341,42 @@ function tick(ts) {
 }
 requestAnimationFrame(tick);
 window.__proto = { state, render };
+
+// ---------- asset export (used by tools/export-models.mjs) ----------
+// Renders each model piece at the origin, measures it, and returns a self-contained SVG plus its anchor.
+// The farm buffalo faces East (down-right); the jar is turned 90° so the dragon's head and pearl face front.
+window.__exportModels = function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const host = document.createElementNS(NS, 'svg');
+  host.style.cssText = 'position:absolute;left:-9999px;top:0;width:10px;height:10px';
+  document.body.appendChild(host);
+  const pack = (markup, ax, ay, title) => {
+    host.innerHTML = `<g>${markup}</g>`;
+    const b = host.firstChild.getBBox(), pad = 4;
+    const x0 = Math.floor(b.x - pad), y0 = Math.floor(b.y - pad), w = Math.ceil(b.x + b.width + pad) - x0, h = Math.ceil(b.y + b.height + pad) - y0;
+    const svg = `<svg xmlns="${NS}" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">\n<!-- ${title} -->\n<g transform="translate(${-x0} ${-y0})">${markup}</g>\n</svg>\n`;
+    return { svg, canvas: [w, h], anchor: [ax - x0, ay - y0] };
+  };
+  const SC = 1.1, pose = { yaw: 0, pitch: 0, swing: 0 };   // facing East (down-right)
+  const at = (local, part) => { const [x, y, z] = transform(local, part, pose), [sx, sy] = proj(x, y, z); return [sx * SC, sy * SC]; };
+  const headPivot = at([30, 0, 40], { pivot: 'head' }), tailPivot = at([-40, 0, 38], { pivot: 'tail' });
+  const round = p => p.map(v => Math.round(v));
+  const hp = round(headPivot), tp = round(tailPivot);
+  // draw each part so its pivot sits exactly on an integer pixel
+  const body = pack(drawModel(PARTS, pose, 0, 0, SC, undefined, { noShadow: true, only: ['body', 'egret'] }), 0, 0,
+    'animal.buffalo · exported from the 3D model in iso-models-prototype.html (facing East). Anchor = ground under the body');
+  const head = pack(drawModel(PARTS, pose, -headPivot[0] + hp[0], -headPivot[1] + hp[1], SC, undefined, { noShadow: true, only: ['head'] }), hp[0], hp[1],
+    'animal.buffalo_head · exported from the 3D model. Anchor = neck pivot');
+  const tail = pack(drawModel(PARTS, pose, -tailPivot[0] + tp[0], -tailPivot[1] + tp[1], SC, undefined, { noShadow: true, only: ['tail'] }), tp[0], tp[1],
+    'animal.buffalo_tail · exported from the 3D model. Anchor = tail root pivot');
+  const jar = pack(drawJar(0, 0, Math.PI / 2, .86, 0, { noShadow: true }), 0, 0,   // turned so the dragon's head and pearl face front
+    'prop.dragon_jar · exported from the 3D model in iso-models-prototype.html. Anchor = centre of the base');
+  host.remove();
+  return {
+    'animal.buffalo': body, 'animal.buffalo_head': head, 'animal.buffalo_tail': tail, 'prop.dragon_jar': jar,
+    parts: { head: hp, tail: tp },
+  };
+};
 </script>
 </body>
 </html>

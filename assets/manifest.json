@@ -2125,33 +2125,33 @@
       "output": "assets/animals/buffalo.svg",
       "format": "svg",
       "canvas": [
-        180,
-        124
-      ],
-      "anchor": [
-        88,
+        98,
         100
       ],
-      "prompt": "The BODY of a calm grey Thai water buffalo in isometric 3/4 view, facing DOWN-LEFT (toward +gy): barrel body with its long axis running up-right to down-left, four sturdy legs with dark hooves (far legs darker), lighter belly shading, and a small white egret standing on its back. NO head and NO tail: those are separate assets (animal.buffalo_head, animal.buffalo_tail) so the game can animate them. Leave the neck end open around (58,50) and the rump around (142,46). Anchor (88,100) = ground under the body. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "anchor": [
+        52,
+        78
+      ],
+      "prompt": "The BODY of a calm grey Thai water buffalo in isometric 3/4 view, facing DOWN-LEFT (toward +gy): barrel body with its long axis running up-right to down-left, four sturdy legs with dark hooves (far legs darker), lighter belly shading, and a small white egret standing on its back. NO head and NO tail: those are separate assets (animal.buffalo_head, animal.buffalo_tail) so the game can animate them. Anchor (52,78) = ground under the body. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection). Regenerate rather than hand-edit, or hand-polish and keep the canvas/anchor.",
       "reference": "assets/reference/animal.buffalo.svg",
       "reference_render": "buffalo()",
       "status": "done",
       "file": "assets/animals/buffalo.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:27:22Z",
-      "notes": "3/4 view facing down-left: body, four legs (far legs darker), belly shade, egret on the back. Head and tail are separate parts.",
+      "agent": "claude-code (3D model export)",
+      "updated_at": "2026-09-27T12:47:25Z",
+      "notes": "3D model body (ellipsoids, merged outline), facing down-left, with the egret. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "review": null,
       "parts": {
         "animal.buffalo_head": {
           "pivot_from_anchor": [
-            -30,
-            -50
+            30,
+            -29
           ]
         },
         "animal.buffalo_tail": {
           "pivot_from_anchor": [
-            54,
-            -54
+            -39,
+            -61
           ]
         }
       }
@@ -2165,21 +2165,21 @@
       "output": "assets/animals/buffalo_head.svg",
       "format": "svg",
       "canvas": [
-        112,
-        88
+        78,
+        68
       ],
       "anchor": [
-        66,
-        50
+        39,
+        27
       ],
-      "prompt": "Head of the same buffalo, 3/4 view facing down-left: broad grey skull, big thick crescent horns (cream) swept out and back, ears, both eyes visible, a wide pale-grey muzzle with nostrils. Anchor (66,50) is the NECK PIVOT: the game places it at the body's neck and rotates the head around it to graze, so keep the neck end at the anchor and nothing of the body in this file.",
+      "prompt": "Head of the same buffalo, 3/4 view facing down-left: broad grey skull, big thick crescent horns (cream) swept out and back, ears, both eyes visible, a wide pale-grey muzzle with nostrils. Anchor (39,27) is the NECK PIVOT: the game places it at the body's neck and rotates the head around it to graze, so keep the neck end at the anchor and nothing of the body in this file. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "reference": null,
       "reference_render": null,
       "status": "done",
       "file": "assets/animals/buffalo_head.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:27:22Z",
-      "notes": "Broad skull, thick swept-back horns, ears, both eyes, wide pale muzzle. Pivot at the neck (66,50).",
+      "agent": "claude-code (3D model export)",
+      "updated_at": "2026-09-27T12:47:25Z",
+      "notes": "3D model head: skull, muzzle, ears, eyes and smooth tube horns. Anchor = neck pivot. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "review": null
     },
     {
@@ -2192,20 +2192,20 @@
       "format": "svg",
       "canvas": [
         24,
-        58
+        42
       ],
       "anchor": [
-        8,
-        6
+        15,
+        8
       ],
-      "prompt": "Tail of the same buffalo: a thin grey tail hanging from the rump with a dark tuft at the end. Anchor (8,6) is the ATTACHMENT PIVOT: the game swings the tail around it.",
+      "prompt": "Tail of the same buffalo: a thin grey tail hanging from the rump with a dark tuft at the end. Anchor (15,8) is the ATTACHMENT PIVOT: the game swings the tail around it. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "reference": null,
       "reference_render": null,
       "status": "done",
       "file": "assets/animals/buffalo_tail.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:27:22Z",
-      "notes": "Hanging tail with dark tuft. Pivot at the rump (8,6).",
+      "agent": "claude-code (3D model export)",
+      "updated_at": "2026-09-27T12:47:25Z",
+      "notes": "3D model tail tube with a dark tuft. Anchor = tail root pivot. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "review": null
     },
     {
@@ -2243,21 +2243,21 @@
       "output": "assets/props/dragon_jar.svg",
       "format": "svg",
       "canvas": [
-        100,
+        97,
         100
       ],
       "anchor": [
-        50,
-        96
+        49,
+        84
       ],
-      "prompt": "A big Ratchaburi dragon water jar (โอ่งมังกร) seen from the farm's raised isometric viewpoint, so the rim is a wide ellipse (about twice as wide as tall) with the water surface and sky reflection visible inside. Glazed dark reddish-brown clay with light from the upper-left, gold bands that curve with the body, cream cloud swirls, a yellow dragon wrapping around the belly with its head at the right, and a coconut-shell ladle resting on the rim. Clickable prop (selects the watering tool). No ground shadow (the game adds it).",
+      "prompt": "A big Ratchaburi dragon water jar (โอ่งมังกร) seen from the farm's raised isometric viewpoint, so the rim is a wide ellipse (about twice as wide as tall) with the water surface and sky reflection visible inside. Glazed dark reddish-brown clay with light from the upper-left, gold bands that curve with the body, cream cloud swirls, a yellow dragon wrapping around the belly with its head at the right, and a coconut-shell ladle resting on the rim. Clickable prop (selects the watering tool). No ground shadow (the game adds it). Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection). Anchor (49,84) = centre of the base.",
       "reference": "assets/reference/prop.dragon_jar.svg",
       "reference_render": "dragonJar(0,0)",
       "status": "done",
       "file": "assets/props/dragon_jar.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:27:22Z",
-      "notes": "Isometric redraw: wide rim ellipse with dark inner wall and water with reflection, curved gold bands following the body, shading light/dark sides, dragon wrapping the belly, coconut ladle on the rim.",
+      "agent": "claude-code (3D model export)",
+      "updated_at": "2026-09-27T12:47:25Z",
+      "notes": "3D model jar (solid of revolution) with the wrapped dragon chasing a flaming pearl, cloud scrolls, glaze highlight, rim with water and a ladle. Exported from the 3D model in iso-models-prototype.html by tools/export-models.mjs (true 2:1 iso projection).",
       "review": null
     },
     {
