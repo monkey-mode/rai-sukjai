@@ -2023,21 +2023,21 @@
       "output": "assets/characters/farmer.svg",
       "format": "svg",
       "canvas": [
-        70,
-        110
+        62,
+        108
       ],
       "anchor": [
-        35,
-        106
+        31,
+        100
       ],
-      "prompt": "The player: a friendly Thai farmer standing, facing the viewer. Wide conical woven straw hat (งอบ), indigo mor hom shirt, a red-and-white checked pha khao ma cloth tied at the waist, dark-blue trousers, bare feet, calm smile. About 100 px tall.",
+      "prompt": "The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer.svg",
       "reference_render": "farmer(0,0,false)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/farmer.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T16:46:06Z",
+      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
       "review": null
     },
     {
@@ -2049,21 +2049,21 @@
       "output": "assets/characters/farmer_tired.svg",
       "format": "svg",
       "canvas": [
-        70,
-        110
+        62,
+        103
       ],
       "anchor": [
-        35,
-        106
+        31,
+        95
       ],
-      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: droopy half-closed eyes, wavy mouth, slumped shoulders, a blue sweat drop. No speech bubble (the game draws it).",
+      "prompt": "Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet.",
       "reference": "assets/reference/character.farmer_tired.svg",
       "reference_render": "farmer(0,0,true)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/farmer_tired.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T16:46:06Z",
+      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
       "review": null
     },
     {
@@ -2075,21 +2075,21 @@
       "output": "assets/characters/auntie_daeng.svg",
       "format": "svg",
       "canvas": [
-        150,
-        230
+        98,
+        143
       ],
       "anchor": [
-        75,
-        226
+        31,
+        126
       ],
-      "prompt": "Auntie Daeng, the cheerful middle-aged market seller. Upper body only (she stands behind a counter, so fade nothing, just stop at the waist): black hair in a bun with an orange marigold, red blouse (her name means 'red'), thin gold necklace, rosy cheeks, big smile with happy closed eyes, holding up a yellow folding fan in her right hand.",
+      "prompt": "Auntie Daeng, the cheerful market seller, UPPER BODY only (she stands behind her counter), 3/4 view toward the viewer: black hair with a bun and an orange marigold, red blouse with gold trim and a gold necklace, one hand resting forward and the other raised to the side holding an open golden paper fan, smiling with rosy cheeks. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the centre of her waist, where the counter hides the rest. The game draws it 1.6× (CHAR_SCALE).",
       "reference": "assets/reference/character.auntie_daeng.svg",
       "reference_render": "auntieDaeng(0,0)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/auntie_daeng.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T16:46:06Z",
+      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
       "review": null
     },
     {
@@ -2101,21 +2101,21 @@
       "output": "assets/characters/uncle_mee.svg",
       "format": "svg",
       "canvas": [
-        110,
-        190
+        75,
+        113
       ],
       "anchor": [
-        45,
-        186
+        26,
+        105
       ],
-      "prompt": "Uncle Mee, a kind elderly duck farmer, full body, standing: straw hat, bald with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, loose black trousers, sandals. He holds a tall bamboo duck-herding pole with a small red cloth flag at the top.",
+      "prompt": "Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground between the feet. The game draws it 1.6× (CHAR_SCALE).",
       "reference": "assets/reference/character.uncle_mee.svg",
       "reference_render": "uncleMee(0,0)",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/characters/uncle_mee.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T16:46:06Z",
+      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
       "review": null
     },
     {
@@ -2219,21 +2219,21 @@
       "output": "assets/animals/duck.svg",
       "format": "svg",
       "canvas": [
-        44,
-        40
+        45,
+        41
       ],
       "anchor": [
-        22,
-        36
+        20,
+        35
       ],
-      "prompt": "A brown Khaki Campbell laying duck in side view facing RIGHT: khaki-brown body, darker brown wing and head, orange bill and feet, small black eye. Plump and cute. The game flips it horizontally and waddles it.",
+      "prompt": "A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. ISOMETRIC 3/4 view built in 3D with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)): chibi proportions with a big round head, capsule limbs and a rounded torso, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Anchor = the ground under its feet. The game waddles it along the grid diagonal and flips it horizontally for the way back.",
       "reference": "assets/reference/animal.duck.svg",
       "reference_render": "duckShape()",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/animals/duck.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T16:46:06Z",
+      "notes": "3D-built with ellipsoids, capsules and cones projected isometrically (redesign to match the iso scenes).",
       "review": null
     },
     {
