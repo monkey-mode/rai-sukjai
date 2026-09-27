@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder reference rendered from the game code. Not the final asset. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-33 -162 98 168.5" width="98" height="168.5"><g>
+  <path d="M30 0L38 -150" fill="none" stroke="#3a2213" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 0L38 -150" fill="none" stroke="#c9a15a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 -150L62 -142L37 -132Z" fill="#d6372c" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/>
+  <rect x="-16" y="-52" width="14" height="50" fill="#2d2d2d" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/><rect x="2" y="-52" width="14" height="50" fill="#2d2d2d" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/>
+  <ellipse rx="9" ry="3.5" transform="translate(-10 0) rotate(0)" fill="#8a5a2e" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.8"/><ellipse rx="9" ry="3.5" transform="translate(10 0) rotate(0)" fill="#8a5a2e" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.8"/>
+  <path d="M-22 -106Q0 -114 22 -106L20 -50L-20 -50Z" fill="#f4f1e8" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.6"/>
+  <path d="M-20 -108L22 -60L16 -54L-24 -98Z" fill="#3a6fb0" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/>
+  <path d="M-14 -100l6 -5M-4 -88l6 -5M6 -76l6 -5" fill="none" stroke="#d8453a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-22 -104Q-32 -80 -26 -62" fill="none" stroke="#3a2213" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-22 -104Q-32 -80 -26 -62" fill="none" stroke="#c98f5c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 -104Q32 -94 32 -76" fill="none" stroke="#3a2213" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 -104Q32 -94 32 -76" fill="none" stroke="#c98f5c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="0" cy="-130" r="21" fill="#c98f5c" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="3"/>
+  <path d="M-21 -134Q-24 -148 -12 -146M21 -134Q24 -148 12 -146" fill="#dcd8d0" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"/>
+  <path d="M-30 -142Q0 -176 30 -142Q0 -148 -30 -142Z" fill="#e3c070" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.4"/>
+  <path d="M-8 -132h3M5 -132h3" fill="none" stroke="#3a2213" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-10 -122Q0 -128 10 -122Q0 -118 -10 -122Z" fill="#eeeae2" stroke="#3a2213" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.6"/>
+  <path d="M-4 -116q4 3 8 0" fill="none" stroke="#3a2213" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
