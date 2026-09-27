@@ -2,9 +2,9 @@
 
 A small browser farming game set in the central Thai countryside. It remakes the classic 2007 Flash game *The Farmer*: the rules are the same, and the setting, art and names are new.
 
-**Play:** open `index.html` in a browser, straight from disk or from any static server. There is no build step: the scripts are plain `<script>` tags, not ES modules, so `file://` works. All art is SVG drawn in code, and the only external asset is Google Fonts (Kanit and Sarabun).
+**Play:** open `index.html` in a browser, straight from disk or from any static server. There is no build step: the scripts are plain `<script>` tags, not ES modules, so `file://` works. The art is SVG asset files (with code-drawn fallbacks), and the only external asset is Google Fonts (Kanit and Sarabun).
 
-- The farm is drawn in isometric view (market and duck pen are front view). 4 fields × 12 plots. Tools: water, fertilize, spray, clear and pick. Pick a ripe plot to carry the produce, then click the ox cart (เกวียน) to sell it.
+- All three scenes (farm, market, duck pen) are isometric. 4 fields × 12 plots. Tools: water, fertilize, spray, clear and pick. Pick a ripe plot to carry the produce, then click the ox cart (เกวียน) to sell it.
 - Buy seeds, fertilizer and bug spray at Auntie Daeng's stall (ป้าแดง). Buy ducks and feed at Uncle Mee's pen (ลุงมี).
 - Rain chance follows the Thai seasons. Day 1 is 1 January, and the game ends after day 365.
 - Autosaves to `localStorage` (one slot). The WebAudio luk thung / pong lang loop has a mute toggle.
