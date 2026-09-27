@@ -12,7 +12,7 @@ function farmBG() {
     [bGrid[0] + bGrid[1], buffalo(b[0], b[1])],
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
   ];
-  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites()));
+  if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite()]));
   return farmBackdropIso() + clouds + depthSorted(items);
 }
 
@@ -21,6 +21,13 @@ function depthSorted(items) {
 }
 
 // Banana clump and palm sprites as [depth, svg] items, each with a ground shadow.
+// The spirit house as a [depth, svg] item at FARM_SHRINE: the iso asset, or the code-drawn shrine.
+function spiritHouseSprite() {
+  const [gx, gy] = FARM_SHRINE, [x, y] = isoPt(gx, gy);
+  const art = Assets.has('scenery.spirit_house_iso') ? Assets.image('scenery.spirit_house_iso', x, y) : spiritHouse(x, y);
+  return [gx + gy, `<ellipse cx="${r(x + 3)}" cy="${r(y + 1)}" rx="24" ry="9" fill="rgba(58,34,19,.18)"/>${art}`];
+}
+
 // Grass tufts in front of a plant sprite's base, so it grows out of the ground rather than standing on it.
 const PLANT_TUFTS = '<path d="' + [[-15, 4], [-6, 6], [9, 5], [17, 2]].map(([x, y]) => `M${x} ${y}l-3 -7M${x} ${y}l0 -9M${x} ${y}l3 -7`).join('') + '" fill="none" stroke="#6f8f3a" stroke-width="2.2" stroke-linecap="round"/>';
 

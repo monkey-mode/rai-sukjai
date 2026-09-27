@@ -86,8 +86,10 @@ const FARM_ZONES = {
   paddies: [-9.8, -9, -2.7, 11],     // flooded rice fields: trees only on a FARM_MOUNDS island
   paddock: [8, -5, 12.6, -2],        // buffalo paddock
   house: [2.3, -4.7, 6.3, -1.1],     // stilt house footprint plus its stairs
-  shrine: [0.3, -2.6, 1.3, -1.6],    // Phra Phum shrine and its offerings
+  shrine: [0.7, -2.1, 1.7, -1.1],    // Phra Phum shrine and its offerings (FARM_SHRINE)
 };
+// The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
+const FARM_SHRINE = [1.2, -1.6];
 // Raised grassy islands (โคก) in the paddies where trees may stand: [gx, gy, rgx, rgy] centre and radii.
 const FARM_MOUNDS = [[-4.4, 0.2, 1.5, 2.6]];
 // The farm is a clearing: forest beyond grid lines gx = -6.2 and gy = -6.5.
