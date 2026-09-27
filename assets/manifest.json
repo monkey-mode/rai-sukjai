@@ -2671,21 +2671,21 @@
       "output": "assets/props/egg_basket.svg",
       "format": "svg",
       "canvas": [
-        98,
-        100
+        112,
+        114
       ],
       "anchor": [
-        49,
-        78
+        56,
+        92
       ],
-      "prompt": "A round woven egg basket with a tall arched handle, a red-and-white check cloth inside and three eggs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
+      "prompt": "A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; a soft shadow under it. Anchor = the ground under its centre.",
       "reference": "assets/reference/prop.egg_basket.svg",
       "reference_render": "penPart('basket')",
       "status": "done",
       "file": "assets/props/egg_basket.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:41:01Z",
-      "notes": "Isometric redesign: woven cylinder basket with rim, handle, check cloth and three eggs.",
+      "updated_at": "2026-09-27T17:49:03Z",
+      "notes": "Redesign 2: flared bowl with shaded checkerboard weave, wrapped rim, lashed bamboo handle, straw lining and six eggs.",
       "review": null
     },
     {
