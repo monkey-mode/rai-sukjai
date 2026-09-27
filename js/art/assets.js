@@ -28,6 +28,9 @@ const ASSET_SPECS = (() => {
   add('prop.nest', 'assets/props/nest.svg', 130, 46, 65, 23);
   add('prop.egg_basket', 'assets/props/egg_basket.svg', 90, 80, 45, 78);
   add('prop.market_counter', 'assets/props/market_counter.svg', 204, 120, 102, 120);
+  add('animal.buffalo', 'assets/animals/buffalo.svg', 180, 124, 88, 100);
+  add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 112, 88, 66, 50);
+  add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 58, 8, 6);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 800, 600, 0, 0));
   return list;

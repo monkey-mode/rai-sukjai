@@ -2121,29 +2121,91 @@
       "category": "animal",
       "priority": 2,
       "name_th": "ควาย",
-      "name_en": "Water buffalo",
+      "name_en": "Water buffalo — body (3/4 view)",
       "output": "assets/animals/buffalo.svg",
       "format": "svg",
       "canvas": [
         180,
-        110
+        124
       ],
       "anchor": [
-        90,
-        106
+        88,
+        100
       ],
-      "prompt": "A calm grey Thai water buffalo standing in side view facing LEFT, with big swept-back crescent horns, a light-grey muzzle, and a small white egret standing on its back. Put the head (with horns) in <g id=\"head\"> pivoting near the neck, and the tail in <g id=\"tail\"> pivoting at its base, so the game can animate grazing and tail swishing.",
+      "prompt": "The BODY of a calm grey Thai water buffalo in isometric 3/4 view, facing DOWN-LEFT (toward +gy): barrel body with its long axis running up-right to down-left, four sturdy legs with dark hooves (far legs darker), lighter belly shading, and a small white egret standing on its back. NO head and NO tail: those are separate assets (animal.buffalo_head, animal.buffalo_tail) so the game can animate them. Leave the neck end open around (58,50) and the rump around (142,46). Anchor (88,100) = ground under the body. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
       "reference": "assets/reference/animal.buffalo.svg",
       "reference_render": "buffalo()",
-      "animated_parts": [
-        "head",
-        "tail"
+      "status": "done",
+      "file": "assets/animals/buffalo.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T12:27:22Z",
+      "notes": "3/4 view facing down-left: body, four legs (far legs darker), belly shade, egret on the back. Head and tail are separate parts.",
+      "review": null,
+      "parts": {
+        "animal.buffalo_head": {
+          "pivot_from_anchor": [
+            -30,
+            -50
+          ]
+        },
+        "animal.buffalo_tail": {
+          "pivot_from_anchor": [
+            54,
+            -54
+          ]
+        }
+      }
+    },
+    {
+      "id": "animal.buffalo_head",
+      "category": "animal",
+      "priority": 2,
+      "name_th": "หัวควาย",
+      "name_en": "Water buffalo — head (animated)",
+      "output": "assets/animals/buffalo_head.svg",
+      "format": "svg",
+      "canvas": [
+        112,
+        88
       ],
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "anchor": [
+        66,
+        50
+      ],
+      "prompt": "Head of the same buffalo, 3/4 view facing down-left: broad grey skull, big thick crescent horns (cream) swept out and back, ears, both eyes visible, a wide pale-grey muzzle with nostrils. Anchor (66,50) is the NECK PIVOT: the game places it at the body's neck and rotates the head around it to graze, so keep the neck end at the anchor and nothing of the body in this file.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/animals/buffalo_head.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T12:27:22Z",
+      "notes": "Broad skull, thick swept-back horns, ears, both eyes, wide pale muzzle. Pivot at the neck (66,50).",
+      "review": null
+    },
+    {
+      "id": "animal.buffalo_tail",
+      "category": "animal",
+      "priority": 2,
+      "name_th": "หางควาย",
+      "name_en": "Water buffalo — tail (animated)",
+      "output": "assets/animals/buffalo_tail.svg",
+      "format": "svg",
+      "canvas": [
+        24,
+        58
+      ],
+      "anchor": [
+        8,
+        6
+      ],
+      "prompt": "Tail of the same buffalo: a thin grey tail hanging from the rump with a dark tuft at the end. Anchor (8,6) is the ATTACHMENT PIVOT: the game swings the tail around it.",
+      "reference": null,
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/animals/buffalo_tail.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T12:27:22Z",
+      "notes": "Hanging tail with dark tuft. Pivot at the rump (8,6).",
       "review": null
     },
     {
@@ -2188,14 +2250,14 @@
         50,
         96
       ],
-      "prompt": "A big Ratchaburi dragon water jar (โอ่งมังกร): glazed dark reddish-brown clay, a yellow dragon curling around its belly, dark rim with blue water visible at the top, and a coconut-shell ladle hanging on the rim. Clickable prop (selects the watering tool).",
+      "prompt": "A big Ratchaburi dragon water jar (โอ่งมังกร) seen from the farm's raised isometric viewpoint, so the rim is a wide ellipse (about twice as wide as tall) with the water surface and sky reflection visible inside. Glazed dark reddish-brown clay with light from the upper-left, gold bands that curve with the body, cream cloud swirls, a yellow dragon wrapping around the belly with its head at the right, and a coconut-shell ladle resting on the rim. Clickable prop (selects the watering tool). No ground shadow (the game adds it).",
       "reference": "assets/reference/prop.dragon_jar.svg",
       "reference_render": "dragonJar(0,0)",
       "status": "done",
       "file": "assets/props/dragon_jar.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Redesign: glazed jar with shading, gold bands, cream cloud swirls, a scaled yellow dragon with horns/whiskers, water with shine and a coconut-shell ladle. Game adds the ground shadow.",
+      "updated_at": "2026-09-27T12:27:22Z",
+      "notes": "Isometric redraw: wide rim ellipse with dark inner wall and water with reflection, curved gold bands following the body, shading light/dark sides, dragon wrapping the belly, coconut ladle on the rim.",
       "review": null
     },
     {
@@ -2422,14 +2484,14 @@
         0,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nTop (y 0–160): sky gradient, yellow sun top-left, birds, far pale hills, a small distant temple and chedi around x 200, and a tree line on the horizon at y 160. Behind the yard's upper-left edge: rice paddies laid out on the iso grid (cells 1.6×2 tiles, raised dikes along both grid axes, some water-filled cells, rice tufts, egrets), sugar palms and a small field hut. Behind the yard's upper-right edge: grass, a coconut tree, the spirit house (ศาลพระภูมิ) around grid (0.7,-2.1), and the wooden stilt house (บ้านใต้ถุนสูง) in 3/4 view on grid gx 2.3–6.3, gy -4.7–-2.3: posts, floor at z≈64, plank walls to z≈116 with opened shutters, door on the gable end, steep red gable roof with ridge along gx at z≈160 and crossed kalae boards, a hammock, bench and water jar underneath, and a ladder stair down toward the yard. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw clouds, the buffalo, the paddock's front fence, the plots or any props. The HUD covers y 0–46 and the toolbar y 532–600.",
+      "prompt": "Full-stage ISOMETRIC background for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nTop (y 0–160): sky gradient, yellow sun top-left, birds, far pale hills, a small distant temple and chedi around x 200, and a tree line on the horizon at y 160. Behind the yard's upper-left edge: rice paddies laid out on the iso grid (cells 1.6×2 tiles, raised dikes along both grid axes, some water-filled cells, rice tufts, egrets), sugar palms, a small field hut and a scarecrow; an irrigation canal with a plank bridge runs along the yard side of the paddies. Behind the yard's upper-right edge: grass, a coconut tree, the spirit house (ศาลพระภูมิ) around grid (0.7,-2.1), and the wooden stilt house (บ้านใต้ถุนสูง) in 3/4 view on grid gx 2.3–6.3, gy -4.7–-2.3: posts, floor at z≈64, plank walls to z≈116 with opened shutters, door on the gable end, steep red gable roof with ridge along gx at z≈160 and crossed kalae boards, a hammock, bench and water jar underneath, and a ladder stair down toward the yard. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw clouds, the buffalo, the paddock's front fence, the plots or any props. The HUD covers y 0–46 and the toolbar y 532–600.",
       "reference": "assets/reference/bg.farm.svg",
       "reference_render": "farmBG()",
       "status": "done",
       "file": "assets/backgrounds/farm.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T12:18:15Z",
-      "notes": "Isometric redesign (82 KB), painted to the game's grid (OX 290, OY 226): sky, hills, temple, horizon tree line, iso rice paddies with water cells, dikes, egrets, field hut and sugar palms; 3/4-view stilt house (posts, bench, jar, hammock, plank walls, shutters, gable door, red roof with kalae, bird cage, ladder); spirit house; coconut trees; paddock with mud, hay and back fences; yard and field bunds matching isoFarmGround(); dirt path to the signs. Keep-clear zones left as grass.",
+      "updated_at": "2026-09-27T12:27:22Z",
+      "notes": "Isometric background (159 KB). Rice fields: paddy cells on the grid with raised earthen dikes along both axes, rows of rice clumps, water paddies with reflections, young/green/golden paddies, a canal with a plank bridge, a scarecrow, egrets. Trees: sugar palms with fan fronds, fruit and shadows; pinnate coconut palms with ringed curved trunks; two banana clumps with fruit and a banana flower. Phra Phum shrine in 3/4 view: plinth, pillar, garlanded gold tray, red house with gold door, two roof tiers with chofa and a spire, soda bottles, incense and zebra figurines. Plus the stilt house, paddock (back fences, hay) and the yard/bunds matching isoFarmGround().",
       "review": null
     },
     {

@@ -6,7 +6,7 @@
 function farmBG() {
   const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
   const front = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2') +
-    `<g transform="translate(${b[0] - 705} ${b[1] - 342})">${buffalo()}</g>` + isoFence([px0, py1], [px1, py1]);
+    buffalo(b[0], b[1]) + isoFence([px0, py1], [px1, py1]);
   if (Assets.has('bg.farm')) return Assets.image('bg.farm') + front;
   return farmBackdropIso() + front;
 }

@@ -85,5 +85,5 @@ const FARM_SPOTS = {
   cartSign: [34, 452],     // top-left of the "ขายผลผลิต" sign next to the cart
   jar: [598, 392],        // dragonJar(x, top)
   farmer: [652, 474],     // farmer(x, feetY)
-  buffalo: [716, 352],    // buffalo group translate
+  buffalo: [700, 342],    // buffalo(x, y): ground point inside the paddock, behind its front fence
 };

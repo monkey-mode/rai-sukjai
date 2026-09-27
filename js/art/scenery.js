@@ -71,8 +71,17 @@ function stiltHouse() {
   return s + '</g>';
 }
 
-function buffalo() {
-  return `<g transform="translate(705 342)">
+// Pivots of the buffalo asset's head and tail, relative to the body's ground anchor (see animal.buffalo_* in the manifest).
+const BUFFALO_PARTS = { head: [-30, -50], tail: [54, -54] };
+
+// Water buffalo standing at ground point (x, y). The 3/4-view asset is three parts so the head can graze
+// and the tail can swish; the code-drawn fallback is a side view.
+function buffalo(x = 705, y = 342) {
+  if (Assets.has('animal.buffalo')) {
+    const part = (id, [dx, dy], cls) => Assets.has(id) ? `<g transform="translate(${dx} ${dy})"><g class="${cls}">${Assets.image(id)}</g></g>` : '';
+    return `<g transform="translate(${x} ${y})">${part('animal.buffalo_tail', BUFFALO_PARTS.tail, 'atail')}${Assets.image('animal.buffalo')}${part('animal.buffalo_head', BUFFALO_PARTS.head, 'ahead')}</g>`;
+  }
+  return `<g transform="translate(${x} ${y})">
   <g class="btail">${line('M52 -42Q62 -30 58 -12', O, 3)}${ell(58, -10, 3, 5, '#3a3d42', 0, 1.5)}</g>
   ${[-36, -22, 26, 40].map(x => `<rect x="${x - 4}" y="-22" width="9" height="22" rx="2" fill="#555a63" ${SW} stroke-width="2"/>`).join('')}
   <path d="M-44 -46Q-40 -63 0 -61Q42 -63 55 -47Q61 -28 48 -18L-40 -18Q-52 -28 -44 -46Z" fill="#5d626b" ${SW} stroke-width="3"/>
