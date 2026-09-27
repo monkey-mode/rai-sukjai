@@ -137,7 +137,7 @@ function renderToolbar() {
 function renderFx() {
   if (!S.rain) { fxEl.innerHTML = ''; return; }
   fxEl.innerHTML = `<defs><pattern id="rp" width="40" height="60" patternUnits="userSpaceOnUse"><path d="M10 0l-4 14M30 26l-4 14M22 44l-3 10" stroke="#dff3ff" stroke-width="2" stroke-linecap="round" opacity=".75"/></pattern></defs>` +
-    `<rect width="800" height="600" fill="#3a5a7a" opacity=".12"/><rect class="rainfall" x="-40" y="0" width="880" height="660" fill="url(#rp)"/>`;
+    `<rect x="-300" width="1400" height="600" fill="#3a5a7a" opacity=".12"/><rect class="rainfall" x="-340" y="0" width="1480" height="660" fill="url(#rp)"/>`;
 }
 
 function renderHand() {

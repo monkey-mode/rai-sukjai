@@ -94,7 +94,13 @@ document.addEventListener('keydown', e => {
 });
 
 function fit() {
-  ui.scale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
+  const w = Math.round(Math.min(STAGE.MAX_W, Math.max(STAGE.SAFE_W, STAGE.H * window.innerWidth / window.innerHeight)));
+  const pad = (w - STAGE.SAFE_W) / 2;
+  ui.scale = Math.min(window.innerWidth / w, window.innerHeight / STAGE.H);
+  stage.style.width = w + 'px';
+  stage.style.setProperty('--pad', pad + 'px');
+  // widen every SVG layer around the safe area, so scene coordinates stay the same at any width
+  for (const el of stage.querySelectorAll(':scope > svg')) el.setAttribute('viewBox', `${-pad} 0 ${w} ${STAGE.H}`);
   stage.style.transform = `scale(${ui.scale})`;
 }
 window.addEventListener('resize', fit);

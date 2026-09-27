@@ -84,6 +84,10 @@ Copy this into the other AI (give it this repository or these files):
 
 The farm scene is isometric (2:1). `style_guide.isometric` in the manifest gives the projection, and `bg.farm` lists the exact yard, bund and keep-clear geometry the game expects (defined in `js/art/iso.js`). Crop, produce and icon assets stay upright sprites. Soil tiles, the ox cart and the farm background are drawn in isometric 3/4 view. The market and duck pen stay in front view.
 
+## Stage size and bleed
+
+The stage is 600 px high and between 800 (4:3) and 1400 (21:9) px wide, depending on the screen. The centred 800×600 area is the safe area: everything the player taps stays there, and all coordinates in prompts are safe-area coordinates. Full-stage backgrounds are painted 1400×600 with anchor (300, 0), so they have 300 px of bleed on each side. An 800-wide background still works: the game mirrors it into the margins. See `style_guide.stage` in the manifest.
+
 ## How the game uses assets
 
 `js/art/assets.js` loads finished files at startup. The art functions draw an asset when its file is available and fall back to the code-drawn art otherwise, so assets can arrive in any order.

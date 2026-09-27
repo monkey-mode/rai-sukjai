@@ -61,7 +61,8 @@
     ],
     "anchor": "`anchor` is the [x, y] point in canvas pixels that the game places on the target spot. For crops it is the soil point the plant grows from. For characters, animals and props it is where the feet or base touch the ground. For icons it is the centre.",
     "consistency": "Keep the same outline weight, palette and lighting (light from top-left) across all assets. The five stages of one crop must clearly be the same plant growing.",
-    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view."
+    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+    "stage": "The game stage is 600 px high and as wide as the screen allows, from 800 (4:3, iPad) to 1400 (21:9, tall phones); wider screens get side bars. The centred 800x600 area is the SAFE AREA: everything interactive stays inside it and all scene coordinates in prompts are safe-area coordinates (x 0–800). Full-stage backgrounds are painted with BLEED: 300 px of extra scenery on each side (canvas 1400x600, anchor (300, 0)), continuing the scene naturally and never holding anything the player must see or tap. An 800-wide background is still accepted: the game mirrors it into the margins."
   },
   "categories": {
     "crop": "Plant at a growth stage, drawn over a soil tile. Canvas 64×64, anchor (32,56). Keep the plant inside x 6–58 and y 4–60 so neighbouring plots overlap only slightly.",
@@ -76,7 +77,7 @@
     "animal": "Animals. Anchor = ground under the body.",
     "prop": "Interactive or foreground objects. Anchor = base on the ground.",
     "scenery": "Decorative background pieces, some animated. Variants of the same thing share a `variant_group` (e.g. banana_clump) and the same canvas and anchor so they are interchangeable.",
-    "background": "Full 800×600 stage. Respect the KEEP CLEAR zones in the prompt.",
+    "background": "Full stage: an 800×600 safe area, plus 300 px of bleed on each side when the canvas is 1400×600 (see style_guide.stage). Respect the KEEP CLEAR zones in the prompt.",
     "ui": "Interface art."
   },
   "assets": [
@@ -2988,21 +2989,21 @@
       "output": "assets/backgrounds/farm.svg",
       "format": "svg",
       "canvas": [
-        800,
+        1400,
         600
       ],
       "anchor": [
-        0,
+        300,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nLAYOUT: the farm is a CLEARING in the forest. Its two back edges follow the grid lines gx = -6.2 and gy = -6.5 (FARM_CLEARING in js/art/iso.js); beyond them a dense forest of cartoon broadleaf trees, bamboo clumps and tall sugar palms (a few rows deep, drawn back to front) on a dark forest floor, with a fringe of low bushes and ferns along both edges so no trunk stands bare on the field. Sky shows only above the treetops: gradient, sun top-right, birds, faint hills and two small chedis peeking over the trees. Inside the clearing, behind the yard's upper-left edge: rice paddies on the iso grid (gx -6.5 to -2.7) in muted greens (rice planted in rows, a couple of flooded seedling beds, one golden field), slim soft grassy dikes, egrets, a small field hut on stilts and a scarecrow. A raised grassy mound (โคก) in the paddies centred on grid (-4.4, 0.2) with radii 1.5 × 2.6 tiles (FARM_MOUNDS): muddy waterline, earth sides about 7 px high, grass top with tufts, a worn footpath; the game stands palms and a banana clump on it, so leave its top open. An irrigation canal (water gx -2.62 to -2.26) with wavy muddy banks, reeds, lily pads and a plank footbridge at gy≈2.9; between the canal and the yard a lush grass bank about 1.4 tiles wide where the game plants more sprites. Behind the yard's upper-right edge: grass (leave grid (1.2,-1.6) open: the game stands the scenery.spirit_house_iso sprite there); leave the house footprint (gx 2.3–6.4, gy -4.9–-0.8) as plain grass: the game stands the scenery.thai_house_iso sprite there. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw the house, the spirit house, banana clumps or palms inside the clearing (the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. Keep the file under 200 KB (skip anything fully under the HUD). The HUD covers y 0–46 and the toolbar y 532–600.",
+      "prompt": "Full-stage ISOMETRIC background (canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side; anchor (300, 0), so safe-area x = canvas x - 300) for the central Thai village farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical.\n\nLAYOUT: the farm is a CLEARING in the forest. Its two back edges follow the grid lines gx = -6.2 and gy = -6.5 (FARM_CLEARING in js/art/iso.js); beyond them a dense, layered tropical forest on a dark floor, drawn back to front: mango-like domes, rain trees with wide umbrella crowns, banyans with aerial roots, golden shower trees (ราชพฤกษ์) with hanging yellow chains, flame trees with red blossoms, bamboo clumps, sugar palms, and a few tall pale-trunked yang (ยางนา) rising above the canopy; the back rows fade into a greener haze. A fringe of bushes, ferns and wild heliconia runs along both edges so no trunk stands bare on the field. The forest fills the top of the stage (the HUD covers y 0–46). Inside the clearing, behind the yard's upper-left edge: rice paddies on the iso grid (gx -6.2 to -2.7, continuing down-left into the bleed with a second field hut) in muted greens (rice planted in rows, a couple of flooded seedling beds, one golden field), slim soft grassy dikes, egrets, a small field hut on stilts and a scarecrow. A raised grassy mound (โคก) in the paddies centred on grid (-4.4, 0.2) with radii 1.5 × 2.6 tiles (FARM_MOUNDS): muddy waterline, earth sides about 7 px high, grass top with tufts, a worn footpath; the game stands palms and a banana clump on it, so leave its top open. An irrigation canal (water gx -2.62 to -2.26) with wavy muddy banks, reeds, lily pads and a plank footbridge at gy≈2.9; between the canal and the yard a lush grass bank about 1.4 tiles wide where the game plants more sprites. Behind the yard's upper-right edge: grass (leave grid (1.2,-1.6) open: the game stands the scenery.spirit_house_iso sprite there); leave the house footprint (gx 2.3–6.4, gy -4.9–-0.8) as plain grass: the game stands the scenery.thai_house_iso sprite there. Beyond the paddock (in the right bleed): a lotus pond (สระบัว) around grid (14.6, -3.2) with reeds and an egret, hay stacks, flowers, and the dirt path continuing to the right edge. Buffalo paddock on grid gx 8–12.6, gy -5–-2: muddy grass, a hay pile and ONLY its two back fences (along gy=-5 and gx=8).\n\nMUST MATCH THE GAME EXACTLY: the raised dirt yard block over grid gx -0.8–9.8, gy -0.8–7.8 (top #d6b277, sides #b08a50/#c29a5e, 12 px deep) and the four grass field bunds over gx -0.25–4.25 / 4.75–9.25 by gy -0.25–3.25 / 3.75–7.25 (top #8fb04a, sides #6f8f3a/#7ea042, 6 px deep). The game draws the 48 soil plots and crops on top.\n\nKEEP CLEAR (plain ground only): front-left of the yard x 0–260, y 380–532 (ox cart and its sign); x 540–700, y 380–532 (dragon jar and farmer); x 700–800, y 395–532 (signposts); inside the paddock (buffalo). Do not draw the house, the spirit house, banana clumps or palms inside the clearing (the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites), clouds, the buffalo, the paddock's front fence, the plots or any props. Keep the file under 200 KB (skip anything fully under the HUD). The HUD covers y 0–46 and the toolbar y 532–600.",
       "reference": "assets/reference/bg.farm.svg",
       "reference_render": "farmBG()",
       "status": "done",
       "file": "assets/backgrounds/farm.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T14:37:54Z",
-      "notes": "Isometric forest clearing (193 KB). The back edges follow the grid (gx -6.2, gy -6.5) and are lined with broadleaf trees, bamboo and tall sugar palms behind a merged fringe of bushes and ferns; the flat horizon is gone, only sky and two chedis over the treetops. Paddies inside the clearing with a raised grass mound (โคก) for the game's paddy trees; canal moved out to gx -2.62..-2.26 so the grass bank beside the yard is wide enough for plant sprites. Field hut, scarecrow, egrets, stilt house, paddock back fences, yard and bunds matching isoFarmGround(). No bananas or palms in the clearing: the game places the scenery.banana_*_iso and scenery.palm_*_iso sprites. The house and the spirit house are the scenery.thai_house_iso and scenery.spirit_house_iso sprites.",
+      "updated_at": "2026-09-27T14:56:51Z",
+      "notes": "Wide edition (1400×600, 133 KB): forest built from reusable tree symbols (<use>) — 11 species/palettes plus hazy far variants and an edge fringe of bushes, ferns and heliconia; rice drawn with fill patterns; paddies, canal and bank continue into the left bleed; lotus pond, hay and the path in the right bleed. The house, spirit house, bananas and palms are sprites the game places.",
       "review": null
     },
     {
@@ -3028,7 +3029,7 @@
       "file": "assets/backgrounds/market.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Plank wall, top beam with hanging bananas, garlic, chili strings, marigold garlands and a basket; striped awning with blank sign; hanging scale and calendar inside the stall; floor goods (rice sacks, coconut crate, mango basket, lime basket) visible below the shop panel; sleeping cat. No Auntie Daeng or counter.",
+      "notes": "Plank wall, top beam with hanging bananas, garlic, chili strings, marigold garlands and a basket; striped awning with blank sign; hanging scale and calendar inside the stall; floor goods (rice sacks, coconut crate, mango basket, lime basket) visible below the shop panel; sleeping cat. No Auntie Daeng or counter. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
       "review": null
     },
     {
@@ -3054,7 +3055,7 @@
       "file": "assets/backgrounds/pen.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T11:44:16Z",
-      "notes": "Gradient sky, bamboo groves, tree line, pen floor with mud patches, feathers and grain, pond with bank, ripples, lotus pads/flowers, reeds and plank ramp, bamboo-walled thatched duck shed with straw and ramp, bamboo fences. No Uncle Mee, ducks, nest, trough, basket or clouds.",
+      "notes": "Gradient sky, bamboo groves, tree line, pen floor with mud patches, feathers and grain, pond with bank, ripples, lotus pads/flowers, reeds and plank ramp, bamboo-walled thatched duck shed with straw and ramp, bamboo fences. No Uncle Mee, ducks, nest, trough, basket or clouds. The game mirrors this 800-wide file into the side margins on wide screens; a 1400×600 version with bleed (anchor (300, 0)) would replace that.",
       "review": null
     },
     {

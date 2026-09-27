@@ -9,11 +9,16 @@ function farmBG() {
   // the buffalo and the paddock's front fence join the plant sprites in one back-to-front pass
   const bGrid = [((b[0] - ISO.OX) / 32 + (b[1] - ISO.OY) / 16) / 2, ((b[1] - ISO.OY) / 16 - (b[0] - ISO.OX) / 32) / 2];
   const items = [
-    [bGrid[0] + bGrid[1], buffalo(b[0], b[1])],
+    [bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`],
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
   ];
   if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean)));
   return farmBackdropIso() + clouds + depthSorted(items);
+}
+
+// An 800-wide background filling a wider stage: mirrored copies continue it seamlessly into both margins.
+function bleed(img) {
+  return `<g transform="scale(-1 1)">${img}</g><g transform="translate(1600 0) scale(-1 1)">${img}</g>${img}`;
 }
 
 function depthSorted(items) {
@@ -31,8 +36,8 @@ function houseSprite() {
 // The spirit house as a [depth, svg] item at FARM_SHRINE: the iso asset, or the code-drawn shrine.
 function spiritHouseSprite() {
   const [gx, gy] = FARM_SHRINE, [x, y] = isoPt(gx, gy);
-  const art = Assets.has('scenery.spirit_house_iso') ? Assets.image('scenery.spirit_house_iso', x, y) : spiritHouse(x, y);
-  return [gx + gy, `<ellipse cx="${r(x + 3)}" cy="${r(y + 1)}" rx="24" ry="9" fill="rgba(58,34,19,.18)"/>${art}`];
+  const art = Assets.has('scenery.spirit_house_iso') ? Assets.image('scenery.spirit_house_iso') : spiritHouse(0, 0);
+  return [gx + gy, `<g transform="translate(${r(x)} ${r(y)}) scale(${FARM_SCALE.shrine})"><ellipse cx="3" cy="1" rx="24" ry="9" fill="rgba(58,34,19,.18)"/>${art}</g>`];
 }
 
 // Grass tufts in front of a plant sprite's base, so it grows out of the ground rather than standing on it.
@@ -52,9 +57,9 @@ function plantSprites() {
 // Code-drawn fallback for the isometric farm background.
 function farmBackdropIso() {
   let s = `<defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cdea"/><stop offset="1" stop-color="#fbe6b2"/></linearGradient></defs>`;
-  s += `<rect width="800" height="160" fill="url(#gSky)"/>` + circ(118, 94, 24, '#ffd54a', 3);
-  s += `<path d="M0 150Q40 132 80 146Q120 128 160 144Q200 130 240 146Q280 132 320 144Q360 128 400 144Q440 130 480 146Q520 132 560 144Q600 128 640 146Q680 132 720 144Q760 130 800 146V160H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
-  s += `<rect y="156" width="800" height="444" fill="#bccb6c"/>` + line('M0 156H800', O, 2.5);
+  s += `<rect x="-300" width="1400" height="160" fill="url(#gSky)"/>` + circ(118, 94, 24, '#ffd54a', 3);
+  { const hills = `<path d="M0 150Q40 132 80 146Q120 128 160 144Q200 130 240 146Q280 132 320 144Q360 128 400 144Q440 130 480 146Q520 132 560 144Q600 128 640 146Q680 132 720 144Q760 130 800 146V160H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }
+  s += `<rect x="-300" width="1400" y="156" height="444" fill="#bccb6c"/>` + line('M-300 156H1100', O, 2.5);
   // iso paddies behind the yard's upper-left edge
   let pad = '';
   for (let gx = -7; gx < -1; gx++) for (let gy = -4; gy < 9; gy += 2) {
@@ -74,7 +79,7 @@ function farmBackdropIso() {
 }
 
 function marketBG() {
-  const back = Assets.has('bg.market') ? Assets.image('bg.market') + marketSign() : marketBackdrop();
+  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market')) + marketSign() : marketBackdrop();
   return back + auntieDaeng(104, 440) + marketCounter();
 }
 
@@ -83,11 +88,11 @@ function marketSign() {
 }
 
 function marketBackdrop() {
-  let s = `<rect width="800" height="600" fill="#c78b52"/>`;
+  let s = `<rect x="-300" width="1400" height="600" fill="#c78b52"/>`;
   let pl = '';
-  for (let y = 70; y < 470; y += 22) pl += `M0 ${y}H800`;
+  for (let y = 70; y < 470; y += 22) pl += `M-300 ${y}H1100`;
   s += line(pl, '#a8703f', 2);
-  s += `<rect y="470" width="800" height="130" fill="#8a5a33"/>` + line('M0 470H800M0 520H800M100 470L80 600M300 470L290 600M500 470L510 600M700 470L720 600', '#6e4526', 2.5);
+  s += `<rect x="-300" y="470" width="1400" height="130" fill="#8a5a33"/>` + line('M-300 470H1100M-300 520H1100M100 470L80 600M300 470L290 600M500 470L510 600M700 470L720 600', '#6e4526', 2.5);
   // hanging goods along the back
   s += line('M200 60Q500 80 800 60', O, 1.6);
   [240, 330, 420, 510, 600, 690, 770].forEach((x, i) => {
@@ -115,10 +120,10 @@ function marketCounter() {
 }
 
 function penBG() {
-  if (Assets.has('bg.pen')) return Assets.image('bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
-  let s = `<rect width="800" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
-  s += `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`;
-  s += `<rect y="160" width="800" height="440" fill="#a9c95e"/>` + line('M0 160H800', O, 2.5);
+  if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen')) + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
+  let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
+  { const hills = `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }
+  s += `<rect x="-300" y="160" width="1400" height="440" fill="#a9c95e"/>` + line('M-300 160H1100', O, 2.5);
   s += `<rect x="215" y="250" width="585" height="300" fill="#b7cf6b"/>`;
   // pond
   s += ell(660, 205, 122, 44, '#5fb3dd', 0, 3) + ell(640, 198, 80, 22, '#8fd0ee', 0, 0);

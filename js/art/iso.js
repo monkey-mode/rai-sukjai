@@ -89,6 +89,8 @@ const FARM_ZONES = {
   stairs: [4.2, -1.4, 5.0, -0.8],    // the house's stair down to the yard
   shrine: [0.7, -2.1, 1.7, -1.1],    // Phra Phum shrine and its offerings (FARM_SHRINE)
 };
+// Drawn scale of the shrine and buffalo on the farm (their assets are made at full size).
+const FARM_SCALE = { shrine: .5, buffalo: .5 };
 // The Thai house sprite's anchor (ground at its back corner) and its depth for sorting (grid gx + gy of its middle).
 const FARM_HOUSE = { at: [2.4, -4.8], depth: 1.0 };
 // The Phra Phum spirit house stands here (grid point), inside FARM_ZONES.shrine.
