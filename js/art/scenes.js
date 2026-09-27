@@ -11,6 +11,7 @@ function farmBG() {
   const items = [
     [bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`],
     [px0 + py1, isoFence([px0, py1], [px1, py1])],
+    [px0 + (py0 + py1) / 2, isoFence([px0, py0], [px0, py1])],       // left side: palms stand behind it
   ];
   if (Assets.has('bg.farm')) return Assets.image('bg.farm') + clouds + depthSorted(items.concat(plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean)));
   return farmBackdropIso() + clouds + depthSorted(items);
