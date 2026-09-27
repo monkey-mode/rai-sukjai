@@ -2626,8 +2626,8 @@
       "status": "done",
       "file": "assets/scenery/banana_young_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:04:26Z",
-      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:12:17Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null
     },
     {
@@ -2653,8 +2653,8 @@
       "status": "done",
       "file": "assets/scenery/banana_fruiting_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:08:46Z",
-      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:12:17Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null
     },
     {
@@ -2680,8 +2680,8 @@
       "status": "done",
       "file": "assets/scenery/banana_ripe_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:08:46Z",
-      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:12:17Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null
     },
     {
@@ -2707,8 +2707,8 @@
       "status": "done",
       "file": "assets/scenery/banana_old_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:04:26Z",
-      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:12:17Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null
     },
     {
@@ -2734,8 +2734,8 @@
       "status": "done",
       "file": "assets/scenery/banana_harvested_iso.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T13:04:26Z",
-      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant.",
+      "updated_at": "2026-09-27T14:12:17Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null
     },
     {
