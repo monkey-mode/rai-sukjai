@@ -44,20 +44,25 @@ test('banana clumps on the farm each use a different variant', () => {
   for (const v of variants) assert.ok(ids.has(`scenery.banana_${v}_iso`), v);
 });
 
-test('banana clumps and palms stand on open farm ground, below the horizon and apart from each other', async () => {
+test('banana clumps and palms stand on open farm ground or a paddy mound, inside the clearing and apart', async () => {
   const vm = await import('node:vm');
   const ctx = vm.createContext({});
-  vm.runInContext(fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { ISO, isoPt, FARM_ZONES, FARM_HORIZON_Y, BANANA_SPOTS, PALM_SPOTS };', ctx);
-  const { isoPt, FARM_ZONES, FARM_HORIZON_Y } = ctx.X;
-  const BANANA_SPOTS = ctx.X.BANANA_SPOTS.concat(ctx.X.PALM_SPOTS);   // every plant sprite
+  vm.runInContext(fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { ISO, isoPt, FARM_ZONES, FARM_MOUNDS, FARM_CLEARING, BANANA_SPOTS, PALM_SPOTS };', ctx);
+  const { isoPt, FARM_ZONES, FARM_MOUNDS, FARM_CLEARING } = ctx.X;
+  const SPOTS = ctx.X.BANANA_SPOTS.concat(ctx.X.PALM_SPOTS);   // every plant sprite
   const inside = ([x0, y0, x1, y1], gx, gy) => gx > x0 && gx < x1 && gy > y0 && gy < y1;
-  for (const [gx, gy, v] of BANANA_SPOTS) {
-    for (const [zone, rect] of Object.entries(FARM_ZONES)) assert.ok(!inside(rect, gx, gy), `${v} stands in the ${zone}`);
+  const onMound = (gx, gy) => FARM_MOUNDS.some(([cx, cy, rx, ry]) => Math.hypot((gx - cx) / rx, (gy - cy) / ry) <= .8);
+  for (const [gx, gy, v] of SPOTS) {
+    for (const [zone, rect] of Object.entries(FARM_ZONES)) {
+      if (zone === 'paddies' && onMound(gx, gy)) continue;           // trees in the rice grow on a raised mound
+      assert.ok(!inside(rect, gx, gy), `${v} stands in the ${zone}`);
+    }
+    assert.ok(gx > FARM_CLEARING[0] + .6 && gy > FARM_CLEARING[1] + .6, `${v} stands in the forest`);
     const [x, y] = isoPt(gx, gy);
-    assert.ok(y > FARM_HORIZON_Y && y < 532 && x > 0 && x < 800, `${v} base is off the visible ground (${x}, ${y})`);
+    assert.ok(y > 46 && y < 532 && x > 0 && x < 800, `${v} base is off the visible ground (${x}, ${y})`);
   }
-  for (let i = 0; i < BANANA_SPOTS.length; i++) for (let j = i + 1; j < BANANA_SPOTS.length; j++) {
-    const [a, b] = [BANANA_SPOTS[i], BANANA_SPOTS[j]];
+  for (let i = 0; i < SPOTS.length; i++) for (let j = i + 1; j < SPOTS.length; j++) {
+    const [a, b] = [SPOTS[i], SPOTS[j]];
     assert.ok(Math.hypot(a[0] - b[0], a[1] - b[1]) >= 1.5, `${a[2]} and ${b[2]} are too close`);
   }
 });

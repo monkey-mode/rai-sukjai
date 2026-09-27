@@ -21,11 +21,14 @@ function depthSorted(items) {
 }
 
 // Banana clump and palm sprites as [depth, svg] items, each with a ground shadow.
+// Grass tufts in front of a plant sprite's base, so it grows out of the ground rather than standing on it.
+const PLANT_TUFTS = '<path d="' + [[-15, 4], [-6, 6], [9, 5], [17, 2]].map(([x, y]) => `M${x} ${y}l-3 -7M${x} ${y}l0 -9M${x} ${y}l3 -7`).join('') + '" fill="none" stroke="#6f8f3a" stroke-width="2.2" stroke-linecap="round"/>';
+
 function plantSprites() {
   const put = (id, gx, gy, sc, rx) => {
     if (!Assets.has(id)) return null;
     const [x, y] = isoPt(gx, gy);
-    return [gx + gy, `<g transform="translate(${r(x)} ${r(y)}) scale(${sc})"><ellipse cx="4" cy="1" rx="${rx}" ry="${r(rx * .35)}" fill="rgba(58,34,19,.18)"/>${Assets.image(id)}</g>`];
+    return [gx + gy, `<g transform="translate(${r(x)} ${r(y)}) scale(${sc})"><ellipse cx="4" cy="1" rx="${rx}" ry="${r(rx * .35)}" fill="rgba(58,34,19,.18)"/>${Assets.image(id)}${PLANT_TUFTS}</g>`];
   };
   return BANANA_SPOTS.map(([gx, gy, v, sc]) => put(`scenery.banana_${v}_iso`, gx, gy, sc, 26))
     .concat(PALM_SPOTS.map(([gx, gy, v, sc]) => put(`scenery.palm_${v}_iso`, gx, gy, sc, 18)))

@@ -82,34 +82,38 @@ function isoFence(a, b, step = .5) {
 // Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
 const FARM_ZONES = {
   yard: [-0.8, -0.8, 9.8, 7.8],      // dirt yard and fields
-  canal: [-1.4, -8, -1.05, 11],      // irrigation canal (paddies lie beyond it, grass strip between it and the yard)
+  canal: [-2.75, -8, -2.15, 11],     // irrigation canal and its muddy banks
+  paddies: [-9.8, -9, -2.7, 11],     // flooded rice fields: trees only on a FARM_MOUNDS island
   paddock: [8, -5, 12.6, -2],        // buffalo paddock
   house: [2.3, -4.7, 6.3, -1.1],     // stilt house footprint plus its stairs
   shrine: [0.3, -2.6, 1.3, -1.6],    // Phra Phum shrine and its offerings
 };
-const FARM_HORIZON_Y = 175;          // sprite bases must be below the horizon line
+// Raised grassy islands (โคก) in the paddies where trees may stand: [gx, gy, rgx, rgy] centre and radii.
+const FARM_MOUNDS = [[-4.4, 0.2, 1.5, 2.6]];
+// The farm is a clearing: forest beyond grid lines gx = -6.2 and gy = -6.5.
+const FARM_CLEARING = [-6.2, -6.5];
 
 // Banana clumps on the farm: [gx, gy, variant, scale]. Each spot uses a different variant and stands on
-// open ground outside FARM_ZONES (both checked by tests/assets.test.mjs).
+// open ground or a mound (both checked by tests/assets.test.mjs).
 const BANANA_SPOTS = [
-  [-2.8, 0.0, 'fruiting', .8],     // on a paddy dike junction
-  [-0.93, 1.6, 'old', .8],         // grass strip between the canal and the yard, upper
+  [-1.55, -0.4, 'fruiting', .8],   // grass bank between the canal and the yard
+  [-1.55, 3.8, 'old', .8],         // canal bank
   [4.4, -0.95, 'young', .75],      // in front of the stilt house, right of the stairs
-  [-0.93, 5.6, 'harvested', .8],   // grass strip between the canal and the yard, lower
+  [-3.7, 1.0, 'harvested', .75],   // on the paddy mound
   [6.6, -1.3, 'ripe', .78],        // open grass between the house and the paddock
 ];
 
 // Palms on the farm: [gx, gy, variant, scale]. Same rules as the bananas: a different variant per spot,
-// open ground only, at least 1.5 tiles from every other plant sprite (tests/assets.test.mjs).
+// open ground or a mound, at least 1.5 tiles from every other plant sprite (tests/assets.test.mjs).
 const PALM_SPOTS = [
-  [-0.8, -2.0, 'sugar_tall', .62],          // behind the yard's top corner, clear of the shrine
-  [-0.93, -0.2, 'coconut_lean', .62],       // canal strip, leaning out over the paddies
-  [-3.2, 2.0, 'coconut_twin', .58],        // paddy dike
-  [-5.2, 2.4, 'sugar_ladder', .62],         // paddy dike, a tapping palm with its bamboo ladder
-  [-3.2, 4.4, 'sugar_pair', .62],           // paddy dike
-  [-0.93, 3.4, 'coconut_dwarf', .72],       // canal strip
-  [7.0, -4.4, 'coconut_windswept', .7],    // beside the stilt house, blowing away from the roof
-  [8.5, -1.3, 'betel_cluster', .66],       // in front of the buffalo paddock
+  [-5.0, -1.5, 'sugar_tall', .62],          // on the paddy mound
+  [-3.5, -1.0, 'sugar_ladder', .62],        // on the paddy mound, a tapping palm with its bamboo ladder
+  [-5.0, 1.9, 'coconut_twin', .58],         // on the paddy mound
+  [-1.6, -2.4, 'sugar_pair', .62],          // canal bank, behind the yard's top corner
+  [-1.6, 1.7, 'coconut_lean', .62],         // canal bank, leaning out over the water
+  [-1.55, 5.8, 'coconut_dwarf', .72],       // canal bank
+  [7.0, -4.4, 'coconut_windswept', .7],     // beside the stilt house, blowing away from the roof
+  [8.5, -1.3, 'betel_cluster', .66],        // in front of the buffalo paddock
 ];
 
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).
