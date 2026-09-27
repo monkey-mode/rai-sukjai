@@ -47,7 +47,7 @@ function renderFarm() {
   s += scaled(cx + 66, cy, FARM_SCALE.cart, oxCart(cx, cy, S.hand && S.hand.type === 'crop', null)) +
     `<g data-act="cart" class="hot">${cartSign(...FARM_SPOTS.cartSign)}</g>`;
   s += scaled(jx, jb, FARM_SCALE.jar, dragonJar(jx, jt)) +
-    `<circle data-act="jar" cx="${jx}" cy="${jb - 14}" r="24" fill="transparent"><title>โอ่งมังกร · Dragon jar</title></circle>`;   // easy tap target
+    `<circle data-act="jar" cx="${jx}" cy="${jb - 44 * FARM_SCALE.jar}" r="${Math.max(24, 50 * FARM_SCALE.jar)}" fill="transparent"><title>โอ่งมังกร · Dragon jar</title></circle>`;   // easy tap target
   s += scaled(fx, fy, FARM_SCALE.farmer, farmer(fx, fy, S.energy < CONFIG.TIRED_BELOW));
   s += signpost(!(S.energy > CONFIG.COST.walk));
   dynEl.innerHTML = s;
