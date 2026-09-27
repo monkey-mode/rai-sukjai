@@ -2492,7 +2492,7 @@
       "file": "assets/scenery/banana_young.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T13:00:19Z",
-      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background.",
+      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background. Front-view version for the market and duck pen; the farm uses the _iso variant.",
       "review": null
     },
     {
@@ -2519,7 +2519,7 @@
       "file": "assets/scenery/banana_fruiting.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T13:00:19Z",
-      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background.",
+      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background. Front-view version for the market and duck pen; the farm uses the _iso variant.",
       "review": null
     },
     {
@@ -2546,7 +2546,7 @@
       "file": "assets/scenery/banana_ripe.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T13:00:19Z",
-      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background.",
+      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background. Front-view version for the market and duck pen; the farm uses the _iso variant.",
       "review": null
     },
     {
@@ -2573,7 +2573,7 @@
       "file": "assets/scenery/banana_old.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T13:00:19Z",
-      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background.",
+      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background. Front-view version for the market and duck pen; the farm uses the _iso variant.",
       "review": null
     },
     {
@@ -2600,7 +2600,142 @@
       "file": "assets/scenery/banana_harvested.svg",
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T13:00:19Z",
-      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background.",
+      "notes": "Variant of the banana clump painted into bg.farm; same leaf, stem and bunch construction so the variants match each other and the background. Front-view version for the market and duck pen; the farm uses the _iso variant.",
+      "review": null
+    },
+    {
+      "id": "scenery.banana_young_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "กล้วยต้นอ่อน (ไอโซ)",
+      "name_en": "Banana clump — young (isometric)",
+      "output": "assets/scenery/banana_young_iso.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        150
+      ],
+      "variant_group": "banana_clump_iso",
+      "prompt": "A young banana plant (กล้วย): one slim pale pseudostem with a few fresh, untorn light-green paddle leaves arching out, a rolled young leaf spike at the top and two small suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": "assets/scenery/banana_young.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/banana_young_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:04:26Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content.",
+      "review": null
+    },
+    {
+      "id": "scenery.banana_fruiting_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "กล้วยออกเครือ (ไอโซ)",
+      "name_en": "Banana clump — fruiting (isometric)",
+      "output": "assets/scenery/banana_fruiting_iso.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        150
+      ],
+      "variant_group": "banana_clump_iso",
+      "prompt": "A mature banana clump: three pseudostems of different heights with sheath streaks and dry strips, long arching oblong leaves with midribs, veins, wind tears and drooping tips, a rolled young leaf, a dry leaf hanging down, suckers, and a hanging bunch of GREEN bananas ending in a purple banana flower (หัวปลี). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": "assets/scenery/banana_fruiting.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/banana_fruiting_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:04:26Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content.",
+      "review": null
+    },
+    {
+      "id": "scenery.banana_ripe_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "กล้วยสุก (ไอโซ)",
+      "name_en": "Banana clump — ripe bunch (isometric)",
+      "output": "assets/scenery/banana_ripe_iso.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        150
+      ],
+      "variant_group": "banana_clump_iso",
+      "prompt": "The same mature clump with a heavier bunch of RIPE YELLOW bananas (dark tips, a few brown sugar spots); the banana flower is spent (withered stalk end). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": "assets/scenery/banana_ripe.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/banana_ripe_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:04:26Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content.",
+      "review": null
+    },
+    {
+      "id": "scenery.banana_old_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "กอกล้วยแก่ (ไอโซ)",
+      "name_en": "Banana clump — old / tattered (isometric)",
+      "output": "assets/scenery/banana_old_iso.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        150
+      ],
+      "variant_group": "banana_clump_iso",
+      "prompt": "An old banana clump: taller stems, sun-browned and heavily wind-torn leaves, one snapped leaf hanging down, many dry brown leaves hanging from every stem, suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": "assets/scenery/banana_old.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/banana_old_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:04:26Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content.",
+      "review": null
+    },
+    {
+      "id": "scenery.banana_harvested_iso",
+      "category": "scenery",
+      "priority": 3,
+      "name_th": "กล้วยหลังตัดเครือ (ไอโซ)",
+      "name_en": "Banana clump — after harvest (isometric)",
+      "output": "assets/scenery/banana_harvested_iso.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        150
+      ],
+      "variant_group": "banana_clump_iso",
+      "prompt": "A banana clump after harvest: the fruiting stem is cut down to a short stump (pale concentric sheaths on the cut face), a cut stem lies on the ground, a dry leaf, and two new suckers (daughter plants) with small leaves grow around it. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Market and duck pen stay in front view.",
+      "reference": "assets/scenery/banana_harvested.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/scenery/banana_harvested_iso.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-27T13:04:26Z",
+      "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content.",
       "review": null
     },
     {
