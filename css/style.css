@@ -118,7 +118,7 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .money-now{margin-left:auto;font-size:15px;color:#2f7a2f}
 .shop-board.mee{left:auto;right:8px;width:430px}
 .shop-board.mee .supplies{grid-template-columns:1fr}
-.shop-open.mee{left:560px;top:70px;background:#8fd3ef}
+.shop-open.mee{left:14px;top:392px;background:#8fd3ef}
 .shop-board.daeng{left:auto;right:8px;width:520px}
 .place{cursor:pointer}
 g.place:hover{filter:brightness(1.1) drop-shadow(0 0 6px #fff5a0)}

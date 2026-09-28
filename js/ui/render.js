@@ -57,8 +57,8 @@ function renderFarm() {
 const TROUGH = { at: [445, 472], inner: [58, 14] };
 
 // The nest shows up to 10 eggs as a pile; past 10 (and past 20) a darker "shadow" pile peeks out behind it.
-// The nest sits on the straw patch in the front-view pen, right of Uncle Mee.
-const NEST = [300, 312];
+// The nest sits inside the pen's fence (the u = 0 fence runs diagonally past its left side).
+const NEST = [450, 332];
 const NEST_PILE = [NEST[0], NEST[1] - 10];
 const NEST_BACK = [[-9, -7], [9, -7]];
 
@@ -139,7 +139,7 @@ function renderPen() {
 
 // Ducks as [ground y, svg] items so they sort with the nest, trough and basket. A negative animation delay taken
 // from the clock keeps each duck's walk continuous when the pen re-renders.
-const DUCK_SPOTS = [[600, 300, 11], [420, 395, 14], [665, 362, 10], [560, 408, 13], [262, 425, 15]];   // clear of the nest, trough and basket
+const DUCK_SPOTS = [[600, 300, 11], [300, 365, 14], [665, 362, 10], [560, 408, 13], [305, 425, 15]];   // clear of the nest, trough and basket
 function penDucks() {
   const t = performance.now() / 1000;
   return DUCK_SPOTS.slice(0, S.ducks).map(([x, y, dur], i) =>

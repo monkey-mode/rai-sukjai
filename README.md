@@ -4,7 +4,7 @@ A small browser farming game set in the central Thai countryside. It remakes the
 
 **Play:** open `index.html` in a browser, straight from disk or from any static server. There is no build step: the scripts are plain `<script>` tags, not ES modules, so `file://` works. The art is SVG asset files (with code-drawn fallbacks), and the only external asset is Google Fonts (Kanit and Sarabun).
 
-- The farm and the village map are isometric; the places you go inside (the market stall and the duck pen) are front view. The farm's signpost opens the village map (free); tapping a place on it walks there (5 energy). The temple and the neighbours' houses are marked "soon". 4 fields × 12 plots. Tools: water, fertilize, spray, clear and pick. Pick a ripe plot to carry the produce, then click the ox cart (เกวียน) to sell it.
+- The farm, the village map and the duck pen are isometric; the market stall is a front-view interior. The farm's signpost opens the village map (free); tapping a place on it walks there (5 energy). The temple and the neighbours' houses are marked "soon". 4 fields × 12 plots. Tools: water, fertilize, spray, clear and pick. Pick a ripe plot to carry the produce, then click the ox cart (เกวียน) to sell it.
 - The market has two sellers: Auntie Daeng (ป้าแดง) sells seeds, fertilizer and bug spray; Uncle Mee (ลุงมี) sells ducks and feed at his duck pen. New sellers are added in `SELLERS` (js/ui/shop.js).
 - Rain chance follows the Thai seasons. Day 1 is 1 January, and the game ends after day 365.
 - Autosaves to `localStorage` (one slot). The WebAudio luk thung / pong lang loop has a mute toggle.
