@@ -56,8 +56,8 @@ function signpost(dim) {
   const board = (act, y, th, en) => `<g data-act="${act}" class="sign ${dim ? 'dim' : ''}"><title>${en}</title><g transform="${ISO_FACE_GX(752, y + 18)}">` +
     `<g transform="translate(0 4)" style="filter:brightness(.55)">${face(y)}</g>${face(y)}` +
     `<text x="746" y="${y + 17}" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="14" fill="${O}">${th}</text>` +
-    `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en} · −5⚡</text></g></g>`;
+    `<text x="746" y="${y + 29}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">${en}</text></g></g>`;
   const pole = Assets.has('prop.signpole') ? Assets.image('prop.signpole', 752, 532) : `<rect x="748" y="400" width="8" height="132" fill="#8a5a2e" ${SW} stroke-width="2"/>`;
   return pole +
-    board('go-market', 408, 'ไปตลาด', 'Market') + board('go-pen', 460, 'คอกเป็ด', 'Duck pen');
+    board('go-map', 430, 'ไปหมู่บ้าน', 'Village map');
 }

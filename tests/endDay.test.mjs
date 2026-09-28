@@ -190,6 +190,17 @@ test('harvest counters survive save/load', () => {
   assert.equal(G.sanitizeState(plain(s)).fields[1].plots[0].harvests, 0);
 });
 
+test('village map: stepping out is free, walking from the map to a place costs energy', () => {
+  const s = G.newGame(() => .99); s.energy = 20;
+  assert.equal(G.walk(s, 'map').ok, true); assert.equal(s.scene, 'map'); assert.equal(s.energy, 20);
+  assert.equal(G.walk(s, 'market').ok, true); assert.equal(s.energy, 15);
+  assert.equal(G.walk(s, 'pen').ok, false, 'no walking between places without the map');
+  assert.equal(G.walk(s, 'map').ok, true); assert.equal(G.walk(s, 'pen').ok, true); assert.equal(s.energy, 10);
+  assert.equal(G.walk(s, 'map').ok, true); assert.equal(G.walk(s, 'farm').ok, true); assert.equal(s.energy, 5);
+  assert.equal(G.walk(s, 'nowhere').ok, false);
+  s.hand = { type: 'crop', crop: 0, n: 1 }; assert.equal(G.walk(s, 'map').ok, false, 'sell what you carry first');
+});
+
 test('energy: actions cost 1, walking needs > 5, nothing works at 0', () => {
   const s = planted(0);
   s.energy = 6;

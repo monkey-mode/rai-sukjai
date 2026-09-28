@@ -1,24 +1,20 @@
 /* Shop panels: Auntie Daeng's market stall and Uncle Mee's duck pen. */
 'use strict';
 
+const BACK_TO_MAP = `<button class="back" data-act="go-map">← หมู่บ้าน<small>Back to the village map</small></button>`;
+
 function renderPanel() {
   if (S.scene === 'market') {
     const greet = [['มาแล้วเหรอหลาน วันนี้เอาอะไรดีจ๊ะ', "Welcome, dear! What'll it be?"], ['ผักสด ๆ ทั้งนั้นจ้ะ', 'All fresh today!'], ['ปุ๋ยดีผักก็งามนะ', 'Good fertilizer, good greens']][ui.greet % 3];
-    panel.innerHTML = `<div class="bubble" style="left:14px;top:34px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
+    panel.innerHTML = `<div class="bubble" style="left:236px;top:196px;width:180px">${greet[0]}<small>${greet[1]}</small></div>
     ${ui.shopOpen ? shopBoard(SELLERS[ui.shopOpen])
-    : `<button class="shop-open glow" data-act="shop-open" data-seller="daeng">🛒 ซื้อของป้าแดง<small>Seeds & supplies</small></button>` +
-      `<button class="shop-open mee glow" data-act="shop-open" data-seller="mee">🦆 ซื้อสัตว์ลุงมี<small>Livestock</small></button>`}
-    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+    : `<button class="shop-open glow" data-act="shop-open" data-seller="daeng">🛒 ซื้อของป้าแดง<small>Seeds & supplies</small></button>`}
+    ${BACK_TO_MAP}`;
   } else if (S.scene === 'pen') {
-    const D = CONFIG.DUCK;
     panel.innerHTML = `<div class="bubble" style="left:8px;top:6px;width:176px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
-    <div class="mee-shop"><h3>คอกเป็ดลุงมี<br><span class="en">Uncle Mee's duck pen</span></h3>
-      <div class="line"><span>เป็ดไข่ <b>${S.ducks}/${D.max}</b></span><button data-act="buy-duck" ${S.ducks >= D.max ? 'disabled' : ''}>ซื้อ ฿${fmt(D.price)}</button></div>
-      <div class="line"><span>อาหาร <b>${S.inventory.feed}</b></span><button data-act="buy-feed">฿${D.feedPrice} / ${D.feedPortions}</button></div>
-      <div class="note">ใส่อาหารในรางได้วันละ ${D.troughMax} ส่วน เป็ดที่ได้กินจะออกไข่ 1 ฟองในเช้าวันถัดไป ถ้ารางว่างตอนจบวัน เป็ดอาจหิวตาย<br><i>Feed up to ${D.troughMax}/day. Each fed duck lays an egg. Empty trough = risk.</i></div>
-      <div class="line" style="margin-bottom:0"><span class="k">฿${fmt(S.money)}</span></div>
-    </div>
-    <button class="back" data-act="go-home">← กลับไร่<small>Walk home (−5 energy)</small></button>`;
+    ${ui.shopOpen ? shopBoard(SELLERS[ui.shopOpen])
+    : `<button class="shop-open mee glow" data-act="shop-open" data-seller="mee">🦆 ซื้อสัตว์ลุงมี<small>Ducks & feed</small></button>`}
+    ${BACK_TO_MAP}`;
   } else panel.innerHTML = '';
 }
 
@@ -26,8 +22,9 @@ function renderPanel() {
 const SELLERS = {
   daeng: { th: 'ร้านป้าแดง', en: "Auntie Daeng's stall — seeds & supplies",
     body: () => `<div class="grid">${CONFIG.CROPS.map(seedCard).join('')}</div><div class="supplies">${supplyCard('fertilizer')}${supplyCard('spray')}</div>` },
-  mee: { th: 'ตลาดสัตว์ลุงมี', en: "Uncle Mee's livestock",
-    body: () => `<div class="supplies">${duckCard()}${feedCard()}${soonCard('ควาย', 'Water buffalo', 'ไถนา ขนของ ช่วยงานในไร่')}</div>` },
+  mee: { th: 'คอกเป็ดลุงมี', en: "Uncle Mee's livestock",
+    body: () => `<div class="supplies">${duckCard()}${feedCard()}${soonCard('ควาย', 'Water buffalo', 'ไถนา ขนของ ช่วยงานในไร่')}</div>` +
+      `<div class="note">ใส่อาหารในรางได้วันละ ${CONFIG.DUCK.troughMax} ส่วน เป็ดที่ได้กินจะออกไข่ 1 ฟองในเช้าวันถัดไป ถ้ารางว่างตอนจบวัน เป็ดอาจหิวตาย <i>Feed up to ${CONFIG.DUCK.troughMax}/day; each fed duck lays an egg; an empty trough is a risk.</i></div>` },
 };
 function shopBoard(sl) {
   return `<div class="shop-board ${ui.shopOpen}"><button class="shop-x" data-act="shop-close" title="ปิด · Close">×</button><h3>${sl.th} <span class="en">${sl.en}</span><span class="money-now k">฿${fmt(S.money)}</span></h3>${sl.body()}</div>`;

@@ -1,4 +1,4 @@
-/* Static backgrounds for the three scenes. */
+/* Static backgrounds: the farm, the village map and the market and pen interiors. */
 'use strict';
 
 // Isometric farm. The painted asset covers sky, horizon, paddies, house, trees, yard, field bunds and the
@@ -82,13 +82,39 @@ function farmBackdropIso() {
   return s;
 }
 
-function marketBG() {
-  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') + marketSign() : marketBackdrop();
-  return back + auntieDaeng(104, 400) + marketCounter();
+// Village map: the hub between places. The painted asset (its own iso grid, vPt) has the lanes, the farm fields,
+// the market roofs, the pen, temple and houses; sprites add the landmarks shared with the farm and a few locals.
+const vPt = (u, v, z = 0) => [400 + (u - v) * 32, 70 + (u + v) * 16 - z];
+// Tappable places: a name plate at `at` and an invisible hit diamond [u0, v0, u1, v1] over the area.
+const VILLAGE_PLACES = [
+  { id: 'farm', th: 'ไร่ของเรา', en: 'Our farm', at: vPt(17.2, 5.2, 50), hit: [11, 0, 18, 7] },
+  { id: 'market', th: 'ตลาด', en: 'Market', at: vPt(11.2, 11.2, 8), hit: [6.8, 6.8, 11.4, 11.4] },
+  { id: 'pen', th: 'คอกเป็ดลุงมี', en: "Uncle Mee's ducks", at: vPt(14.2, 17.4, 4), hit: [11, 11.8, 15.2, 16.7] },
+  { id: 'temple', th: 'วัด', en: 'Temple', at: vPt(6.2, 5.6, 40), hit: [1.5, 1.5, 7, 5.5], soon: true },
+  { id: 'houses', th: 'บ้านเพื่อนบ้าน', en: 'Neighbours', at: vPt(4.6, 17.8, 4), hit: [1, 11.8, 6.4, 17.4], soon: true },
+];
+
+function villageBG() {
+  const img = (id, [x, y], k) => Assets.has(id) ? [y, `<g transform="translate(${r(x)} ${r(y)}) scale(${k})">${Assets.image(id)}</g>`] : null;
+  const back = Assets.has('bg.village') ? bleed(Assets.image('bg.village'), 'bg.village') : `<rect x="-300" width="1400" height="600" fill="#a9c95e"/>`;
+  const b = vPt(17.2, 7.4);
+  const sprites = [
+    img('scenery.thai_house_iso', vPt(13, -.9), .55),
+    img('scenery.palm_coconut_lean_iso', vPt(17.6, .4), .6), img('scenery.palm_sugar_tall_iso', vPt(10.9, 6.9), .6),
+    img('scenery.palm_coconut_dwarf_iso', vPt(18.2, 6.6), .7),
+    img('scenery.banana_ripe_iso', vPt(10.8, 4), .5), img('scenery.banana_fruiting_iso', vPt(6.6, 12.2), .45),
+    [b[1], scaled(b[0], b[1], .35, buffalo(...b))],
+    img('scenery.spirit_house_iso', vPt(7.2, 1.2), .35),
+    img('character.uncle_mee', vPt(10.6, 15.4), .9), img('character.farmer', vPt(9.2, 11.2), .5),
+  ].filter(Boolean);
+  return back + cloud(180, 50, .7, '') + cloud(620, 36, .55, 'd2') + depthSorted(sprites);
 }
 
-function marketSign() {
-  return `<text x="104" y="178" text-anchor="middle" font-family="Kanit" font-size="17" font-weight="700" fill="#c8372d">แผงป้าแดง</text>`;
+// Market interior (front view): Auntie Daeng behind her counter under the stall's sign.
+function marketBG() {
+  const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') : marketBackdrop();
+  return back + `<g transform="translate(104 150)"><rect x="-80" y="-18" width="160" height="36" rx="8" fill="#fff4d6" ${SW} stroke-width="2.6"/>` +
+    `<text y="7" text-anchor="middle" font-family="Kanit" font-size="20" font-weight="700" fill="#c8372d">แผงป้าแดง</text></g>` + auntieDaeng(190, 410) + marketCounter();
 }
 
 function marketBackdrop() {
@@ -114,12 +140,17 @@ function marketBackdrop() {
   return s;
 }
 
+// Front-view counter: a gingham cloth over the boards and baskets of produce.
 function marketCounter() {
-  if (Assets.has('prop.market_counter')) return Assets.image('prop.market_counter', 100, 470);
-  let s = '';
-  s += `<rect x="4" y="380" width="200" height="100" fill="#a8693a" ${SW} stroke-width="3"/>` + line('M4 404H204M4 440H204', '#7a4a26', 2);
-  s += ell(44, 380, 30, 10, '#d6ad62', 0, 2) + ell(116, 382, 32, 10, '#d6ad62', 0, 2) + ell(176, 380, 24, 9, '#d6ad62', 0, 2);
-  [[34, 372, 3], [48, 370, 3], [58, 374, 3], [104, 372, 6], [120, 370, 6], [132, 374, 6], [168, 372, 2], [182, 373, 2]].forEach(([x, y, c]) => { s += `<g transform="translate(${x} ${y}) scale(.6)">${produceIcon(c)}</g>`; });
+  let s = `<rect x="20" y="400" width="340" height="140" fill="#9a6232" ${SW} stroke-width="3"/>` + line('M20 440H360M20 490H360M100 400V540M190 400V540M280 400V540', '#6e4526', 2);
+  s += `<path d="M10 392H370L362 430H18Z" fill="#e2453a" ${SW} stroke-width="3"/>`;
+  let chk = '';
+  for (let x = 22; x < 362; x += 14) chk += `M${x} 394v34`;
+  s += line(chk + 'M14 410H366', '#fff', 1.6);
+  [[80, 3], [180, 6], [280, 2]].forEach(([x, c]) => {
+    s += ell(x, 390, 38, 12, '#c9a15a', 0, 2.4);
+    [-16, 0, 16].forEach(dx => { s += `<g transform="translate(${x + dx} ${378 - Math.abs(dx) * .2}) scale(.8)">${produceIcon(c)}</g>`; });
+  });
   return s;
 }
 

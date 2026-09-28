@@ -28,7 +28,6 @@ const ASSET_SPECS = (() => {
   add('prop.nest', 'assets/props/nest.svg', 139, 72, 70, 36);
   for (let n = 1; n <= 10; n++) add(`prop.egg_pile_${n}`, `assets/props/egg_pile_${n}.svg`, 50, 50, 24, 35);
   add('prop.egg_basket', 'assets/props/egg_basket.svg', 112, 114, 56, 92);
-  add('prop.market_counter', 'assets/props/market_counter.svg', 190, 157, 95, 111);
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
   add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 78, 68, 39, 27);
   add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 42, 15, 8);
@@ -50,7 +49,7 @@ const ASSET_SPECS = (() => {
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
   // 800x600 safe area with 300 px of bleed each side
-  ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
+  ['farm', 'village', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
   return list;
 })();
 

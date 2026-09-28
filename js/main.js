@@ -16,7 +16,6 @@ function handleAct(act, ds) {
     case 'confirm-new': return showConfirmNew();
     case 'shop-open': ui.shopOpen = ds.seller || 'daeng'; return renderPanel();
     case 'shop-close': ui.shopOpen = false; return renderPanel();
-    case 'shop-livestock': ui.shopOpen = 'mee'; return renderPanel();
     case 'new-game': store.del(SAVE_KEY); return startGame(newGame());
   }
   if (!S || S.gameOver || ui.busy) return;
@@ -43,9 +42,10 @@ function handleAct(act, ds) {
     case 'jar': ui.tool = 'water'; r = { ok: true, th: 'ตักน้ำจากโอ่งมังกร — พร้อมรดน้ำ', en: 'Water tool selected' }; fx = 'water'; break;
     case 'cart': r = sellHand(S, 'cart'); fx = 'coin'; break;
     case 'basket': r = sellHand(S, 'basket'); fx = 'coin'; break;
-    case 'go-market': r = walk(S, 'market'); ui.greet++; ui.shopOpen = false; break;
-    case 'go-pen': r = walk(S, 'pen'); break;
-    case 'go-home': r = walk(S, 'farm'); break;
+    case 'go-map': r = walk(S, 'map'); ui.shopOpen = false; break;
+    case 'go-place':
+      if (ds.soon) { r = res(false, `${ds.th} — เร็ว ๆ นี้`, 'Coming soon'); break; }
+      r = walk(S, ds.place); if (ds.place === 'market') ui.greet++; ui.shopOpen = false; break;
     case 'buy-seed': r = buySeed(S, +ds.c); fx = 'coin'; break;
     case 'buy-supply': r = buySupply(S, ds.k); fx = 'coin'; break;
     case 'buy-duck': r = buyDuck(S); fx = 'coin'; break;

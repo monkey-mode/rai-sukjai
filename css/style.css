@@ -113,12 +113,15 @@ button small{display:block;font-family:'Sarabun',sans-serif;font-size:9.5px;font
 .bubble:after{content:'';position:absolute;left:40px;bottom:-12px;border:6px solid transparent;border-top:8px solid var(--ink)}
 .shop-board{position:absolute;left:210px;top:6px;width:582px;transform:scale(var(--ui,1));transform-origin:100% 0;max-height:calc((100% - 12px) / var(--ui,1));overflow:auto;background:rgba(255,244,214,.93);border:3px solid var(--ink);border-radius:16px;padding:8px 10px;box-shadow:0 5px 0 rgba(0,0,0,.3)}
 .shop-x{position:absolute;right:8px;top:6px;width:32px;height:32px;padding:0;font-size:20px;line-height:1;border-radius:9px;background:#fff}
-.shop-open{position:absolute;left:222px;top:330px;font-size:18px;padding:8px 16px;background:#9be15d}
+.shop-open{position:absolute;left:460px;top:280px;font-size:18px;padding:8px 16px;background:#9be15d}
 .shop-board h3{padding-right:40px;margin:0;font-family:'Kanit';font-size:19px;display:flex;align-items:baseline;gap:8px}
 .money-now{margin-left:auto;font-size:15px;color:#2f7a2f}
 .shop-board.mee{left:auto;right:8px;width:430px}
 .shop-board.mee .supplies{grid-template-columns:1fr}
-.shop-open.mee{left:560px;top:450px;background:#8fd3ef}
+.shop-open.mee{left:560px;top:70px;background:#8fd3ef}
+.shop-board.daeng{left:auto;right:8px;width:520px}
+.place{cursor:pointer}
+g.place:hover{filter:brightness(1.1) drop-shadow(0 0 6px #fff5a0)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:4px}
 .scard{background:#fffaf0;border:2px solid var(--ink);border-radius:11px;padding:4px 6px 5px;height:182px;display:flex;flex-direction:column;position:relative}
 .scard .top{display:flex;gap:5px;align-items:center}

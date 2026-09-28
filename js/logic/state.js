@@ -65,7 +65,7 @@ function sanitizeState(raw) {
   s.day = Math.min(CONFIG.LAST_DAY, Math.max(1, num(raw.day, 1)));
   s.money = num(raw.money, s.money);
   s.energy = Math.max(0, Math.min(CONFIG.MAX_ENERGY, num(raw.energy, s.energy)));
-  s.scene = ['farm', 'market', 'pen'].includes(raw.scene) ? raw.scene : 'farm';
+  s.scene = SCENES.includes(raw.scene) ? raw.scene : 'farm';
   s.rain = !!raw.rain;
   s.fields = s.fields.map((df, i) => {
     const rf = raw.fields[i] || {};

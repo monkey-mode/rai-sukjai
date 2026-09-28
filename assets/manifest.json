@@ -61,7 +61,7 @@
     ],
     "anchor": "`anchor` is the [x, y] point in canvas pixels that the game places on the target spot. For crops it is the soil point the plant grows from. For characters, animals and props it is where the feet or base touch the ground. For icons it is the centre.",
     "consistency": "Keep the same outline weight, palette and lighting (light from top-left) across all assets. The five stages of one crop must clearly be the same plant growing.",
-    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. The market and the duck pen are isometric too, each on its own grid: pen top corner at safe-area (520, 200), market top corner at (560, 70); screen x = ox + (u - v)·32, y = oy + (u + v)·16 - z. Characters and the pen props stay upright sprites.",
+    "isometric": "The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. The village map is isometric too, on its own grid: x = 400 + (u - v)·32, y = 70 + (u + v)·16 - z. The places you go inside (the market stall and the duck pen) are FRONT VIEW, like a stage set. Characters and the pen props stay upright sprites.",
     "stage": "The game stage is 600 px high and as wide as the screen allows, from 800 (4:3, iPad) to 1400 (21:9, tall phones); wider screens get side bars. The centred 800x600 area is the SAFE AREA: everything interactive stays inside it and all scene coordinates in prompts are safe-area coordinates (x 0–800). Full-stage backgrounds are painted with BLEED: 300 px of extra scenery on each side (canvas 1400x600, anchor (300, 0)), continuing the scene naturally and never holding anything the player must see or tap. An 800-wide background is still accepted: the game mirrors it into the margins.",
     "scale": "Farm objects: scenery (house, trees, palms, bananas, huts, forest) is about 20 px per metre: the Thai house's stilts are ~2.2 m (44 px), bananas 3–4 m, palms 5–10 m, forest trees 10–25 m. The farmer, dragon jar and buffalo are the farm's characters and get a stylised game size of about 2x life (farmer ~67 px tall, jar ~55 px, buffalo ~75 px long, spirit house ~110 px tall); the ox cart stays near life size. Assets may be drawn larger; the game scales them (FARM_SCALE, and the scale in BANANA_SPOTS / PALM_SPOTS in js/art/iso.js). Crops and signs with text keep their gameplay sizes."
   },
@@ -2689,32 +2689,6 @@
       "review": null
     },
     {
-      "id": "prop.market_counter",
-      "category": "prop",
-      "priority": 2,
-      "name_th": "แผงขายผัก",
-      "name_en": "Market counter (foreground)",
-      "output": "assets/props/market_counter.svg",
-      "format": "svg",
-      "canvas": [
-        190,
-        157
-      ],
-      "anchor": [
-        95,
-        111
-      ],
-      "prompt": "Auntie Daeng's wooden market counter: a plank box whose long side runs down-right, covered with a red gingham cloth hanging down the front, with three shallow baskets on top (red chilies, golden mangoes, pink sweet potatoes). Auntie Daeng stands behind it, so it hides her legs. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre.",
-      "reference": null,
-      "reference_render": null,
-      "status": "done",
-      "file": "assets/props/market_counter.svg",
-      "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:41:01Z",
-      "notes": "Isometric redesign: plank counter, gingham cloth, three produce baskets on top.",
-      "review": null
-    },
-    {
       "id": "scenery.spirit_house_iso",
       "category": "scenery",
       "priority": 2,
@@ -3279,11 +3253,38 @@
       "raster": "assets/backgrounds/farm.webp"
     },
     {
+      "id": "bg.village",
+      "category": "background",
+      "priority": 3,
+      "name_th": "แผนที่หมู่บ้าน",
+      "name_en": "Village map background",
+      "output": "assets/backgrounds/village.svg",
+      "format": "svg",
+      "canvas": [
+        1400,
+        600
+      ],
+      "anchor": [
+        300,
+        0
+      ],
+      "prompt": "Full-stage ISOMETRIC village map (2:1 dimetric), the hub the player walks through between places. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Village grid: (u, v) at height z maps to safe-area x = 400 + (u - v)·32, y = 70 + (u + v)·16 - z (vPt in js/art/scenes.js). A forest clearing with two crossing dirt lanes and a market plaza where they meet. Places, each over its hit area [u0, v0, u1, v1]: OUR FARM (top right, u 11–18, v 0–7): iso crop fields in rows with bunds; the game stands the Thai house, palms, a banana clump and the buffalo there as sprites. MARKET (centre, u 6.8–11.4, v 6.8–11.4): stalls with striped awnings and umbrellas around the plaza. UNCLE MEE'S DUCK PEN (bottom, u 11–15.2, v 11.8–16.7): a fenced pen with a small duck house, and a pond to its bottom right. TEMPLE (top left, u 1.5–7, v 1.5–5.5): a walled compound with a gold-roofed sala and stairs. NEIGHBOURS (left, u 1–6.4, v 11.8–17.4): a few wooden houses with gable roofs. Scattered trees between them, away from buildings and lanes; dense forest around the clearing and into the bleed. The game draws the name plates over each place, clouds, and the sprites (Thai house, palms, bananas, buffalo, spirit house near (7.2, 1.2), Uncle Mee, the farmer). No text. HUD y 0–46.",
+      "reference": "assets/backgrounds/village.svg",
+      "reference_render": null,
+      "status": "done",
+      "file": "assets/backgrounds/village.svg",
+      "agent": "claude-code (pipeline test)",
+      "updated_at": "2026-09-28T10:00:00Z",
+      "notes": "Isometric village map: crossing lanes, market plaza, farm fields, duck pen and pond, temple compound, neighbours' houses, forest around.",
+      "review": null,
+      "raster": "assets/backgrounds/village.webp"
+    },
+    {
       "id": "bg.market",
       "category": "background",
       "priority": 3,
       "name_th": "ฉากตลาด",
-      "name_en": "Market background",
+      "name_en": "Market interior background",
       "output": "assets/backgrounds/market.svg",
       "format": "svg",
       "canvas": [
@@ -3294,14 +3295,14 @@
         300,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background for Auntie Daeng's stall in a village market square (ตลาดสด), 2:1 like the farm. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Market grid: (u, v) maps to safe-area x = 560 + (u - v)·32, y = 70 + (u + v)·16 - z. The square is packed earth with worn paving lines; two rows of two-storey wooden shophouses (ห้องแถวไม้) as iso blocks with gable roofs line the back edges (u -2.8..-0.4 facing down-right, v -2.8..-0.4 facing down-left), with folding plank doors, shutters, blank sign boards and trees behind; bunting across the square. Auntie Daeng's stall: four posts on u 1.6..4.8, v 15.8..19.0, a back shelf with baskets, a red-and-white striped awning roof with a scalloped hem and hanging goods, and a blank cream sign board centred at (104, 172) about 144×32 (the game writes แผงป้าแดง on it). Bleed: a fruit table under a big blue umbrella and a greens table (left); a garland and vegetable stall under a blue tarp, a red umbrella stall, baskets and a cat (right). KEEP CLEAR: the middle of the square around market grid u 8–15, v 6–14 (safe-area x 580–800, y 330–540), where the game draws the livestock corral with Uncle Mee; x 20–190, y 250–480 in front of the stall (Auntie Daeng and her counter, separate assets); x 210–792, y 52–540 is covered by the shop UI panel; the speech bubble covers x 14–194, y 80–150. HUD y 0–46, toolbar y 532–600.",
+      "prompt": "Full-stage FRONT-VIEW background (not isometric) for the inside of Auntie Daeng's stall in the village market (ตลาดสด), seen straight on like a stage set. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). A warm wooden back wall of horizontal planks with shelves of baskets of produce, hanging goods (bananas, garlic, dried chilies) and a string of lanterns; the stall's striped awning edge along the top; a plank floor from about y 470. The bleed continues the market sideways: neighbouring stalls, baskets and crates. KEEP CLEAR (plain wall and floor): x 20–370, y 130–540 (the game draws the sign board at (104, 150), Auntie Daeng at (190, 410) and her front counter x 10–370, y 392–540); x 400–800, y 52–540 is covered by the shop panel and its open button; the speech bubble covers x 14–194, y 34–100; the back button sits bottom-left. HUD y 0–46.",
       "reference": "assets/backgrounds/market.svg",
       "reference_render": null,
       "status": "done",
       "file": "assets/backgrounds/market.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T16:37:14Z",
-      "notes": "Isometric redesign (1400×600 with bleed): paved square, iso shophouse rows with gable roofs, iso stall frame with striped awning and sign board around Auntie Daeng, umbrella and tarp stalls in the bleed.",
+      "updated_at": "2026-09-28T10:00:00Z",
+      "notes": "Front-view interior (village-map redesign): plank back wall with produce shelves, hanging goods and lanterns, awning edge, plank floor. The sign, Auntie Daeng and her counter are drawn by the game.",
       "review": null,
       "raster": "assets/backgrounds/market.webp"
     },
@@ -3321,14 +3322,14 @@
         300,
         0
       ],
-      "prompt": "Full-stage ISOMETRIC background for Uncle Mee's duck farm (2:1 like the farm). Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Pen grid: grid point (u, v) maps to safe-area x = 520 + (u - v)·32, y = 200 + (u + v)·16 - z. The pen floor is the diamond u, v in 0..12.5 (packed earth and short grass, mud wallows, grain); the farm's rustic fence (pointed timber posts, two bamboo rails, rope ties) runs along its two BACK edges (v = 0 and u = 0) and a short stretch down the right; the front edges stay open. The bamboo duck house is BUILT INTO the u = 0 fence at u -2.8..0, v 2.2..5.0: the fence runs into its two corners on that line. It stands on stilts with a slatted deck, woven bamboo walls with corner posts and a tie beam, a small window with a propped shutter on the down-left wall, a thatched gable roof (ridge along v) with layered eaves and a tied ridge bundle, and an arched door on the pen side with straw spilling out and a cleated plank ramp down into the pen. Outside the fence: a lotus pond centred on (7.5, -4.2) with pads, pink lotus, reeds and egrets. Beyond grid lines u = -9 and v = -11 the same forest clearing edge as the farm (forest, bamboo groves, bush fringe). Bleed: straw stacks, a water jar and banana plants. KEEP CLEAR: x 10–200, y 110–330 (Uncle Mee); x 10–202, y 338–600 (shop UI); nest x 380–520, y 296–390 (inside the fence); trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 250–710, y 270–440 clear of the nest, trough and basket. HUD y 0–46, toolbar y 532–600.",
+      "prompt": "Full-stage FRONT-VIEW background (not isometric) for Uncle Mee's duck pen, seen straight on like a stage set. Canvas 1400×600 = the 800×600 safe area plus 300 px of bleed each side (anchor (300, 0)). Sky and a tree line with bamboo groves at the top, grass ground from about y 160, a lotus pond with reeds, the bamboo duck house with a thatched roof and ramp, and the farm's rustic fence (pointed timber posts, two bamboo rails, rope ties) around the pen. Bleed: a paddy strip, straw stacks, a water jar and banana plants (left), the pond continuing (right). KEEP CLEAR (plain ground): x 10–200, y 110–600 (Uncle Mee and the back button); nest around (300, 312), x 230–370, y 280–360, on a straw patch; trough x 370–520, y 452–500; basket x 610–690, y 420–494; ducks walk around x 240–720, y 280–440 clear of those. HUD y 0–46.",
       "reference": "assets/backgrounds/pen.svg",
       "reference_render": null,
       "status": "done",
       "file": "assets/backgrounds/pen.svg",
       "agent": "claude-code (pipeline test)",
-      "updated_at": "2026-09-27T17:52:24Z",
-      "notes": "Isometric redesign (1400×600 with bleed): pen floor diamond, rustic back fences, iso bamboo duck house with ramp, iso lotus pond, forest clearing edge, straw stacks, jar and bananas. No Uncle Mee, ducks, nest, trough, basket or clouds.",
+      "updated_at": "2026-09-28T10:00:00Z",
+      "notes": "Front-view pen (village-map redesign). No Uncle Mee, ducks, nest, trough, basket or clouds.",
       "review": null,
       "raster": "assets/backgrounds/pen.webp"
     },

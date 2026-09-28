@@ -1,4 +1,4 @@
-/* Rendering of the farm, duck pen, HUD, toolbar, rain and carried item. */
+/* Rendering of the farm, village map, duck pen, HUD, toolbar, rain and carried item. */
 'use strict';
 
 // One plot on the isometric grid: soil block, crop, bugs and remaining-harvest pips.
@@ -49,7 +49,7 @@ function renderFarm() {
   s += scaled(jx, jb, FARM_SCALE.jar, dragonJar(jx, jt)) +
     `<circle data-act="jar" cx="${jx}" cy="${jb - 44 * FARM_SCALE.jar}" r="${Math.max(24, 50 * FARM_SCALE.jar)}" fill="transparent"><title>โอ่งมังกร · Dragon jar</title></circle>`;   // easy tap target
   s += scaled(fx, fy, FARM_SCALE.farmer, farmer(fx, fy, S.energy < CONFIG.TIRED_BELOW));
-  s += signpost(!(S.energy > CONFIG.COST.walk));
+  s += signpost(false);
   dynEl.innerHTML = s;
 }
 
@@ -57,39 +57,24 @@ function renderFarm() {
 const TROUGH = { at: [445, 472], inner: [58, 14] };
 
 // The nest shows up to 10 eggs as a pile; past 10 (and past 20) a darker "shadow" pile peeks out behind it.
-// The nest sits inside the pen's fence (the u = 0 fence runs diagonally past its left side).
-const NEST = [450, 332];
+// The nest sits on the straw patch in the front-view pen, right of Uncle Mee.
+const NEST = [300, 312];
 const NEST_PILE = [NEST[0], NEST[1] - 10];
 const NEST_BACK = [[-9, -7], [9, -7]];
 
-// Market square: a livestock corral with Uncle Mee (he sells ducks and feed here too). Tapping any of it opens
-// the shop on its Livestock tab.
-function renderMarket() {
-  const [u0, v0, u1, v1] = MARKET_CORRAL, P = mkPt, poly = pts => pts.map(p => p.map(r).join(',')).join(' ');
-  const t = performance.now() / 1000;
-  const items = [];
-  // back fences, ground, hay
-  let back = `<polygon points="${poly([P(u0, v0), P(u1, v0), P(u1, v1), P(u0, v1)])}" fill="#b9b27a" opacity=".85"/>`;
-  back += isoFence([u0, v0], [u1, v0], .6, P) + isoFence([u0, v0], [u0, v1], .6, P);
-  const [hx, hy] = P(u0 + .8, v0 + .9);
-  back += `<path d="M${r(hx - 22)} ${r(hy)}Q${r(hx - 20)} ${r(hy - 26)} ${r(hx)} ${r(hy - 30)}Q${r(hx + 20)} ${r(hy - 26)} ${r(hx + 22)} ${r(hy)}Z" fill="#e3c070" ${SW} stroke-width="2"/>` + line(`M${r(hx - 12)} ${r(hy - 12)}q12 -5 24 0`, '#c9a15a', 1.2);
-  items.push([0, back]);
-  // the buffalo (a future livestock item) and ducks inside
-  const [bx, by] = P(u0 + 3, v0 + 1.6);
-  items.push([by, `<g transform="translate(${r(bx)} ${r(by)}) scale(.7) translate(${-r(bx)} ${-r(by)})">${buffalo(bx, by)}</g>`]);
-  [[u0 + 1.3, v0 + 3.2], [u0 + 3, v0 + 3.6], [u0 + 4.1, v0 + 2.6]].forEach(([u, v], i) => {
-    const [x, y] = P(u, v), dur = 9 + i * 2;
-    items.push([y, `<g transform="translate(${r(x)} ${r(y)}) scale(.8)"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${-((t + i * 2.3) % dur).toFixed(2)}s"><g class="waddle">${duckShape()}</g></g></g>`]);
-  });
-  // front fences with a gate gap, Uncle Mee and the sign
-  items.push([P(u1, v1)[1], isoFence([u1, v0], [u1, v1], .6, P) + isoFence([u0, v1], [u0 + 1.8, v1], .6, P) + isoFence([u0 + 3.2, v1], [u1, v1], .6, P)]);
-  const [mx, my] = P(u0 + 2.5, v1 + 2.4);                                    // at the gate, outside
-  items.push([my, `<g transform="translate(${r(mx)} ${r(my)}) scale(.8) translate(${-r(mx)} ${-r(my)})">${uncleMee(mx, my)}</g>`]);
-  const [sx, sy] = P(u0 + 1.4, v0 - .8);                                    // behind the corral's back fence
-  items.push([sy, `<path d="M${r(sx)} ${r(sy)}V${r(sy - 48)}" stroke="${O}" stroke-width="5"/><path d="M${r(sx)} ${r(sy)}V${r(sy - 48)}" stroke="#8a5a2e" stroke-width="3"/>` +
-    `<g transform="${ISO_FACE_GY(sx, sy - 58)}"><rect x="${r(sx - 44)}" y="${r(sy - 72)}" width="88" height="30" rx="6" fill="#b8956a" ${SW} stroke-width="2.2" transform="translate(0 4)"/><rect x="${r(sx - 44)}" y="${r(sy - 72)}" width="88" height="30" rx="6" fill="#fff4d6" ${SW} stroke-width="2.2"/>` +
-    `<text x="${r(sx)}" y="${r(sy - 56)}" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="13" fill="${O}">ตลาดสัตว์</text><text x="${r(sx)}" y="${r(sy - 46)}" text-anchor="middle" font-family="Sarabun" font-size="9" fill="${O}">Livestock</text></g>`]);
-  dynEl.innerHTML = `<g data-act="shop-livestock" class="hot"><title>ตลาดสัตว์ · Livestock</title>${items.sort((a, b) => a[0] - b[0]).map(i => i[1]).join('')}</g>`;
+// Village map: a name plate over each place, and an invisible diamond over its area; either walks there.
+function renderMap() {
+  let hits = '', plates = '';
+  for (const p of VILLAGE_PLACES) {
+    const [u0, v0, u1, v1] = p.hit, act = `data-act="go-place" data-place="${p.id}" data-th="${p.th}"${p.soon ? ' data-soon="1"' : ''}`;
+    hits += `<polygon class="place" ${act} points="${[vPt(u0, v0), vPt(u1, v0), vPt(u1, v1), vPt(u0, v1)].map(q => q.map(r).join(',')).join(' ')}" fill="transparent"><title>${p.th} · ${p.en}</title></polygon>`;
+    const w = Math.max(96, p.th.length * 13 + 26), [x, y] = p.at.map(r);
+    plates += `<g class="place hot" ${act} transform="translate(${x} ${y})"><path d="M0 0v18" stroke="${O}" stroke-width="3"/>` +
+      `<rect x="${-w / 2}" y="-34" width="${w}" height="34" rx="8" fill="${p.soon ? '#e8dcc0' : '#fff4d6'}" ${SW} stroke-width="2.6"/>` +
+      `<text x="0" y="-17" text-anchor="middle" font-family="Kanit" font-weight="600" font-size="15" fill="${O}">${p.th}</text>` +
+      `<text x="0" y="-6" text-anchor="middle" font-family="Sarabun" font-size="9.5" fill="${O}" opacity=".8">${p.en}${p.soon ? ' · soon' : p.id === S.scene ? '' : ` · −${CONFIG.COST.walk}⚡`}</text></g>`;
+  }
+  dynEl.innerHTML = hits + plates;                   // plates on top of the hit areas
 }
 
 function renderPen() {
@@ -154,7 +139,7 @@ function renderPen() {
 
 // Ducks as [ground y, svg] items so they sort with the nest, trough and basket. A negative animation delay taken
 // from the clock keeps each duck's walk continuous when the pen re-renders.
-const DUCK_SPOTS = [[600, 300, 11], [300, 365, 14], [665, 362, 10], [560, 408, 13], [305, 425, 15]];   // clear of the nest, trough and basket
+const DUCK_SPOTS = [[600, 300, 11], [420, 395, 14], [665, 362, 10], [560, 408, 13], [262, 425, 15]];   // clear of the nest, trough and basket
 function penDucks() {
   const t = performance.now() / 1000;
   return DUCK_SPOTS.slice(0, S.ducks).map(([x, y, dur], i) =>
@@ -215,11 +200,11 @@ function posHand() { handEl.style.transform = `translate(${ui.px + 8}px, ${ui.py
 function render() {
   if (!S) return;
   if (ui.bgScene !== S.scene) {
-    bgEl.innerHTML = S.scene === 'market' ? marketBG() : S.scene === 'pen' ? penBG() : farmBG();
+    bgEl.innerHTML = { map: villageBG, market: marketBG, pen: penBG }[S.scene]?.() ?? farmBG();
     ui.bgScene = S.scene;
   }
   renderAnim();
-  if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else renderMarket();
+  if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else if (S.scene === 'map') renderMap(); else dynEl.innerHTML = '';
   renderPanel(); renderHUD(); renderToolbar(); renderFx(); renderHand();
   if (typeof applyCam === 'function') applyCam();
 }

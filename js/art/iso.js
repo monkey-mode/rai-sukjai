@@ -99,10 +99,6 @@ function isoFence(a, b, step = .6, pt = isoPt) {
     `<path d="${ties}" stroke="${O}" stroke-width="2.6" stroke-linecap="round"/><path d="${ties}" stroke="#e0c98a" stroke-width="1.3" stroke-linecap="round"/>`;
 }
 
-// The market square's own iso grid (bg.market is painted on it) and its livestock corral [u0, v0, u1, v1].
-const mkPt = (u, v, z = 0) => [560 + (u - v) * 32, 70 + (u + v) * 16 - z];
-const MARKET_CORRAL = [9, 7.5, 13.5, 11.5];     // the open middle of the square, right of the shop button
-
 // Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
 const FARM_ZONES = {
   yard: [-0.8, -0.8, 9.8, 7.8],      // dirt yard and fields
