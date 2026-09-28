@@ -68,15 +68,15 @@ function isoSoil(gx, gy, wet, fertilized) {
 // Rustic paddock fence from grid point a to b: square timber posts with pointed caps every `step` tiles, two
 // round bamboo rails with node rings and a highlight, lashed to each post with rope. Matches the painted back
 // fences in bg.farm (the generator draws them the same way).
-function isoFence(a, b, step = .6) {
+function isoFence(a, b, step = .6, pt = isoPt) {
   const n = Math.max(1, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / step));
   const g = t => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
-  const at = (t, z) => isoPt(...g(t), z);
+  const at = (t, z) => pt(...g(t), z);
   const poly = (pts, fill, w = 1.6) => `<polygon points="${isoPoints(pts)}" fill="${fill}" ${SW} stroke-width="${w}"/>`;
   const H = 30, W = .055;
   let posts = '';
   for (let i = 0; i <= n; i++) {
-    const [x, y] = g(i / n), P = (dx, dy, z) => isoPt(x + dx, y + dy, z), apex = P(0, 0, H + 6);
+    const [x, y] = g(i / n), P = (dx, dy, z) => pt(x + dx, y + dy, z), apex = P(0, 0, H + 6);
     posts += poly([P(-W, W, 0), P(W, W, 0), P(W, W, H), P(-W, W, H)], '#8a5a30') +
       poly([P(W, W, 0), P(W, -W, 0), P(W, -W, H), P(W, W, H)], '#a8703e') +
       poly([P(-W, W, H), P(W, W, H), apex], '#b87a44', 1.3) + poly([P(W, W, H), P(W, -W, H), apex], '#d09258', 1.3);
@@ -142,8 +142,8 @@ const PALM_SPOTS = [
   [-1.55, 5.8, 'coconut_twin', 1],          // canal bank
   [-1.6, 7.9, 'sugar_tall', 1.04],          // canal bank, at the left edge of the safe area
   [-1.6, 9.9, 'sugar_ladder', 1],           // canal bank, in the left bleed: a tapping palm with its bamboo ladder
-  [7.2, -3.4, 'sugar_pair', 1],             // between the house and the buffalo paddock
-  [8.5, -1.3, 'betel_cluster', .95],        // in front of the buffalo paddock
+  [-1.6, 12.0, 'sugar_pair', 1],            // canal bank, far down in the left bleed
+  [12.0, -5.8, 'betel_cluster', .95],       // beyond the paddock's back fence, in the right bleed (keeps the house corner open)
 ];
 
 // Where the farm props stand, on open ground around the yard ([x, y] screen points).

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Exports the 3D buffalo and dragon jar from iso-models-prototype.html as SVG assets, and prints the
+// Exports the 3D buffalo and dragon jar from tools/iso-models.html as SVG assets, and prints the
 // canvas/anchor/pivot numbers that assets/manifest.json and js/art (ASSET_SPECS, BUFFALO_PARTS) must use.
 //   node tools/export-models.mjs            (needs Playwright with Chromium)
 import fs from 'node:fs';
@@ -17,7 +17,7 @@ const { chromium } = await loadPlaywright();
 const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
-await page.goto(pathToFileURL(path.join(ROOT, 'iso-models-prototype.html')).href);
+await page.goto(pathToFileURL(path.join(ROOT, 'tools/iso-models.html')).href);
 const out = await page.evaluate(() => window.__exportModels());
 await browser.close();
 

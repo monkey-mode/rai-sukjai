@@ -112,17 +112,20 @@ function sellHand(s, where) {
 
 function h_n(h) { return h.n + (h.type === 'egg' ? ' ฟอง' : ' ชิ้น'); }
 
+// Moving around the village. The village map is the hub: stepping out to it is free, walking from it to a
+// place costs energy (going home to the farm always works, even when tired).
 function walk(s, to) {
   const cost = CONFIG.COST.walk;
+  if (s.scene === to || !SCENES.includes(to)) return res(false);
+  if (s.hand) return s.scene === 'pen' ? res(false, 'ขายไข่ในมือก่อนนะ', 'Sell what you carry first')
+    : res(false, 'เอาของในมือไปขายที่เกวียนก่อน', 'Sell what you carry first');
+  if (to === 'map') { s.scene = 'map'; return OK(); }
   if (to === 'farm') {
-    if (s.scene === 'farm') return res(false);
-    if (s.hand) return res(false, 'ขายไข่ในมือก่อนนะ', 'Sell what you carry first');
     s.energy = Math.max(0, s.energy - cost);
     s.scene = 'farm';
     return OK();
   }
-  if (s.scene !== 'farm') return res(false);
-  if (s.hand) return res(false, 'เอาของในมือไปขายที่เกวียนก่อน', 'Sell what you carry first');
+  if (s.scene !== 'farm' && s.scene !== 'map') return res(false);
   if (!(s.energy > cost)) return res(false, 'เหนื่อยเกินไป เดินไม่ไหวแล้ว', 'Too tired to walk (need more than ' + cost + ' energy)');
   s.energy -= cost;
   s.scene = to;

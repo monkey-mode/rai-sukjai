@@ -26,8 +26,8 @@ const ASSET_SPECS = (() => {
   add('prop.signpole', 'assets/props/signpole.svg', 12, 134, 6, 134);
   add('prop.trough', 'assets/props/trough.svg', 162, 112, 81, 75);
   add('prop.nest', 'assets/props/nest.svg', 139, 72, 70, 36);
-  add('prop.egg_basket', 'assets/props/egg_basket.svg', 98, 100, 49, 78);
-  add('prop.market_counter', 'assets/props/market_counter.svg', 190, 157, 95, 111);
+  for (let n = 1; n <= 10; n++) add(`prop.egg_pile_${n}`, `assets/props/egg_pile_${n}.svg`, 50, 50, 24, 35);
+  add('prop.egg_basket', 'assets/props/egg_basket.svg', 112, 114, 56, 92);
   add('animal.buffalo', 'assets/animals/buffalo.svg', 98, 100, 52, 78);
   add('animal.buffalo_head', 'assets/animals/buffalo_head.svg', 78, 68, 39, 27);
   add('animal.buffalo_tail', 'assets/animals/buffalo_tail.svg', 24, 42, 15, 8);
@@ -49,7 +49,7 @@ const ASSET_SPECS = (() => {
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
   // 800x600 safe area with 300 px of bleed each side
-  ['farm', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
+  ['farm', 'village', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
   return list;
 })();
 
@@ -81,7 +81,8 @@ const Assets = {
     } catch (e) { /* file:// page, probe instead */ }
     if (entries) {
       for (const a of entries) {
-        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.file;
+        // a pre-rendered raster (tools/rasterize-backgrounds.mjs) is cheaper to draw on phones than a big SVG
+        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
     } else {
       const probe = src => new Promise(done => {
@@ -91,7 +92,9 @@ const Assets = {
         im.src = src;
       });
       await Promise.all(Object.entries(ASSET_SPECS).map(async ([id, sp]) => {
-        if (await probe(sp.output)) this.found[id] = sp.output;
+        const webp = sp.output.startsWith('assets/backgrounds/') && sp.output.replace(/\.svg$/, '.webp');
+        if (webp && await probe(webp)) this.found[id] = webp;
+        else if (await probe(sp.output)) this.found[id] = sp.output;
       }));
     }
     return Object.keys(this.found);

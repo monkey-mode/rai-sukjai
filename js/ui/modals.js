@@ -7,17 +7,21 @@ function toast(r) {
   if (!r || !r.th) return;
   toastEl.innerHTML = `${r.th}${r.en ? `<small>${r.en}</small>` : ''}`;
   toastEl.className = 'on' + (r.ok ? '' : ' bad');
-  toastEl.style.top = S && S.scene !== 'farm' ? '556px' : '478px';
+  toastEl.style.top = S && S.scene !== 'farm' ? '556px' : 'calc(478px - (var(--ui, 1) - 1) * 100px)';   // above the (scaled) toolbar
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { toastEl.className = ''; }, 2000);
 }
 
+// English count with the right plural: plural(1, 'egg') -> '1 egg', plural(2, 'egg') -> '2 eggs'.
+const plural = (k, word) => `${k} ${word}${k === 1 ? '' : 's'}`;
+
 function showModal(html, cls = '') {
   modal.innerHTML = `<div class="card ${cls}">${html}</div>`;
   modal.classList.add('on');
+  if (typeof applyCam === 'function') applyCam();
 }
 
-function closeModal() { modal.classList.remove('on'); modal.innerHTML = ''; }
+function closeModal() { modal.classList.remove('on'); modal.innerHTML = ''; if (typeof applyCam === 'function') applyCam(); }
 
 function showTitle() {
   const logo = Assets.has('ui.logo') ? `<div class="logo-img">${Assets.img('ui.logo', 420, 131)}</div>` : `<div class="logo">ไร่สุขใจ</div><div class="logo-en">RAI SUKJAI</div>`;
@@ -37,8 +41,8 @@ function showHow() {
   <p><b>ระวัง</b> ต้นที่สุกแล้วยังได้แต้มต่อจะเน่า ต้นขั้นที่ 4 อาจมีแมลงลง ต้องฉีดยา (1 แรง + ยา 1) ไม่งั้นอาจตาย ฝนตกช่วยรดน้ำให้ทุกหลุม</p>
   <p><b>เก็บและขาย</b> ใช้ "เก็บ" กับต้นที่สุก ของจะติดมือไว้ แล้วคลิกเกวียนเพื่อขาย พืชบางชนิดเก็บได้หลายรอบ (จุดสีเหลืองคือรอบที่เหลือ)</p>
   <p><b>ถาง</b> (1 แรง) ล้างหลุมที่เหี่ยวหรือไม่ต้องการ ต้องถางให้หมดทั้งแปลงก่อนปลูกพืชใหม่</p>
-  <p><b>เป็ด</b> ซื้อเป็ดจากลุงมี ฿${fmt(D.price)} (สูงสุด ${D.max} ตัว) ใส่อาหารในรางวันละไม่เกิน ${D.troughMax} ส่วน เป็ดที่กินอิ่มออกไข่ฟองละ ฿${D.eggPrice} ถ้ารางว่างตอนจบวันเป็ดอาจตาย</p>
-  <p><b>เดินทาง</b> ไปตลาดหรือคอกเป็ด 5 แรง เดินกลับอีก 5 แรง ต้องมีแรงมากกว่า 5 ถึงจะไปได้</p>
+  <p><b>เป็ด</b> ซื้อเป็ดจากลุงมีที่คอกเป็ด ฿${fmt(D.price)} (สูงสุด ${D.max} ตัว) ใส่อาหารในรางวันละไม่เกิน ${D.troughMax} ส่วน เป็ดที่กินอิ่มออกไข่ฟองละ ฿${D.eggPrice} ถ้ารางว่างตอนจบวันเป็ดอาจตาย</p>
+  <p><b>เดินทาง</b> ป้ายไปหมู่บ้านพาไปแผนที่หมู่บ้าน (ไม่ใช้แรง) กดที่ตลาด คอกเป็ด หรือไร่ของเราเพื่อเดินไป ครั้งละ ${CONFIG.COST.walk} แรง ต้องมีแรงมากกว่า ${CONFIG.COST.walk} ถึงจะไปตลาดหรือคอกเป็ดได้</p>
   <p><small class="en">Water & fertilize each plot once a day to earn growth points. Spray bugs on stage-4 plants. Pick ripe crops, then click the ox cart to sell. Clear withered plots. Feed ducks for eggs. Press End Day to sleep.</small></p>
   </div><div class="btns"><button data-act="${S ? 'close' : 'title'}">เข้าใจแล้ว<small>Got it</small></button></div>`);
 }
@@ -61,12 +65,12 @@ function showReport() {
   const r = S.lastReport; if (!r) return;
   const d = dateOf(S.day), se = seasonOf(S.day), items = [];
   if (r.rain) items.push(['🌧 ฝนตก! รดน้ำให้ทุกหลุมแล้ว', 'Rain watered every plot']);
-  if (r.ripened) items.push([`สุกพร้อมเก็บ ${r.ripened} ต้น`, `${r.ripened} plants ripened`]);
-  else if (r.grew) items.push([`ต้นไม้โตขึ้น ${r.grew} ต้น`, `${r.grew} plants grew`]);
-  if (r.rotted) items.push([`ผลผลิตสุกเกินจนเน่า ${r.rotted} ต้น — ต้องถาง`, `${r.rotted} overripe plants rotted`]);
-  if (r.bugDeaths) items.push([`แมลงกินจนตาย ${r.bugDeaths} ต้น`, `${r.bugDeaths} plants killed by bugs`]);
-  if (r.newBugs) items.push([`มีแมลงลง ${r.newBugs} ต้น — รีบฉีดยา!`, `Bugs on ${r.newBugs} plants — spray them!`]);
-  if (r.eggsLaid) items.push([`เป็ดออกไข่ ${r.eggsLaid} ฟอง`, `Ducks laid ${r.eggsLaid} eggs`]);
+  if (r.ripened) items.push([`สุกพร้อมเก็บ ${r.ripened} ต้น`, `${plural(r.ripened, 'plant')} ripened`]);
+  else if (r.grew) items.push([`ต้นไม้โตขึ้น ${r.grew} ต้น`, `${plural(r.grew, 'plant')} grew`]);
+  if (r.rotted) items.push([`ผลผลิตสุกเกินจนเน่า ${r.rotted} ต้น — ต้องถาง`, `${plural(r.rotted, 'overripe plant')} rotted`]);
+  if (r.bugDeaths) items.push([`แมลงกินจนตาย ${r.bugDeaths} ต้น`, `${plural(r.bugDeaths, 'plant')} killed by bugs`]);
+  if (r.newBugs) items.push([`มีแมลงลง ${r.newBugs} ต้น — รีบฉีดยา!`, `Bugs on ${plural(r.newBugs, 'plant')} — spray them!`]);
+  if (r.eggsLaid) items.push([`เป็ดออกไข่ ${r.eggsLaid} ฟอง`, `Ducks laid ${plural(r.eggsLaid, 'egg')}`]);
   if (r.duckDied) items.push(['เป็ดหิวตาย 1 ตัว เพราะรางอาหารว่าง', 'A hungry duck died (empty trough)']);
   if (!items.length) items.push(['คืนนี้เงียบสงบ', 'A quiet night']);
   showModal(`<h2>อรุณสวัสดิ์!</h2><span class="en">Good morning — day ${S.day}</span>

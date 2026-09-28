@@ -42,4 +42,6 @@ const CONFIG = {
   DUCK: { price: 1000, max: 5, feedPrice: 200, feedPortions: 20, troughMax: 5, eggPrice: 50, starveDeathChance: 0.10 },
 };
 
+// Scenes: the farm, the village map (the hub between places) and the places you can walk to from it.
+const SCENES = ['farm', 'map', 'market', 'pen'];
 const WITHERED = 6; // plot.stage value for a rotten / dead plant that must be cut

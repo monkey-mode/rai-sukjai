@@ -14,6 +14,8 @@ function handleAct(act, ds) {
     case 'how': return showHow();
     case 'continue': { const s = load(); if (s) { startGame(s); if (s.gameOver) showGameOver(); } return; }
     case 'confirm-new': return showConfirmNew();
+    case 'shop-open': ui.shopOpen = ds.seller || 'daeng'; return renderPanel();
+    case 'shop-close': ui.shopOpen = false; return renderPanel();
     case 'new-game': store.del(SAVE_KEY); return startGame(newGame());
   }
   if (!S || S.gameOver || ui.busy) return;
@@ -40,9 +42,10 @@ function handleAct(act, ds) {
     case 'jar': ui.tool = 'water'; r = { ok: true, th: 'ตักน้ำจากโอ่งมังกร — พร้อมรดน้ำ', en: 'Water tool selected' }; fx = 'water'; break;
     case 'cart': r = sellHand(S, 'cart'); fx = 'coin'; break;
     case 'basket': r = sellHand(S, 'basket'); fx = 'coin'; break;
-    case 'go-market': r = walk(S, 'market'); ui.greet++; break;
-    case 'go-pen': r = walk(S, 'pen'); break;
-    case 'go-home': r = walk(S, 'farm'); break;
+    case 'go-map': r = walk(S, 'map'); ui.shopOpen = false; break;
+    case 'go-place':
+      if (ds.soon) { r = res(false, `${ds.th} — เร็ว ๆ นี้`, 'Coming soon'); break; }
+      r = walk(S, ds.place); if (ds.place === 'market') ui.greet++; ui.shopOpen = false; break;
     case 'buy-seed': r = buySeed(S, +ds.c); fx = 'coin'; break;
     case 'buy-supply': r = buySupply(S, ds.k); fx = 'coin'; break;
     case 'buy-duck': r = buyDuck(S); fx = 'coin'; break;
@@ -75,6 +78,7 @@ function doEndDay() {
 }
 
 stage.addEventListener('click', e => {
+  if (drag && drag.moved) return;                              // the end of a pan or pinch, not a tap
   Sound.startMusic();
   const t = e.target.closest('[data-act]');
   if (!t || !stage.contains(t)) return;
@@ -82,7 +86,7 @@ stage.addEventListener('click', e => {
 });
 function trackPointer(e) {
   const rc = stage.getBoundingClientRect();
-  ui.px = (e.clientX - rc.left) / ui.scale; ui.py = (e.clientY - rc.top) / ui.scale;
+  ui.px = (e.clientX - rc.left) / ui.scale; ui.py = (e.clientY - rc.top) / ui.scale;   // #hand is an HTML layer: stage px
   if (S && S.hand) posHand();
 }
 stage.addEventListener('pointermove', trackPointer);
@@ -99,10 +103,57 @@ function fit() {
   ui.scale = Math.min(window.innerWidth / w, window.innerHeight / STAGE.H);
   stage.style.width = w + 'px';
   stage.style.setProperty('--pad', pad + 'px');
-  // widen every SVG layer around the safe area, so scene coordinates stay the same at any width
-  for (const el of stage.querySelectorAll(':scope > svg')) el.setAttribute('viewBox', `${-pad} 0 ${w} ${STAGE.H}`);
+  // on small screens the HUD and toolbar are drawn larger so text stays readable and buttons stay >= ~44 px
+  stage.style.setProperty('--ui', Math.min(1.45, Math.max(1, .82 / ui.scale)).toFixed(3));
+  cam.w = w; cam.pad = pad;
+  if (ui.scale < .8 && !cam.touched) { cam.z = 1.45; cam.cx = 330; cam.cy = 330; }   // phones start zoomed on the fields
+  applyCam();
   stage.style.transform = `scale(${ui.scale})`;
 }
+
+// ---- farm camera: widen every SVG layer around the safe area, zoomed and panned on the farm
+function applyCam() {
+  const z = S && S.scene !== 'farm' ? 1 : cam.z, w = cam.w / z, h = STAGE.H / z;
+  if (z === 1) { cam.cx = cam.w / 2 - cam.pad; cam.cy = STAGE.H / 2; }
+  cam.cx = Math.min(Math.max(cam.cx, -cam.pad + w / 2), cam.w - cam.pad - w / 2);
+  cam.cy = Math.min(Math.max(cam.cy, h / 2), STAGE.H - h / 2);
+  const vb = `${(cam.cx - w / 2).toFixed(1)} ${(cam.cy - h / 2).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`;
+  for (const el of stage.querySelectorAll(':scope > svg')) el.setAttribute('viewBox', vb);
+  zoomEl.innerHTML = S && S.scene === 'farm' && !modal.classList.contains('on')
+    ? `<button data-cam="in" title="ซูมเข้า · Zoom in">+</button><button data-cam="out" title="ซูมออก · Zoom out" ${cam.z <= 1 ? 'disabled' : ''}>−</button>` : '';
+}
+function zoomBy(f, sx = cam.cx, sy = cam.cy) {
+  const z = Math.min(2.4, Math.max(1, cam.z * f));
+  cam.cx = sx + (cam.cx - sx) * cam.z / z; cam.cy = sy + (cam.cy - sy) * cam.z / z;   // keep the point under the cursor fixed
+  cam.z = z; cam.touched = true; applyCam();
+}
+// screen point -> scene point under the current camera
+function scenePt(e) {
+  const rc = stage.getBoundingClientRect(), k = cam.z * ui.scale;
+  const w = cam.w / cam.z, h = STAGE.H / cam.z;
+  return [cam.cx - w / 2 + (e.clientX - rc.left) / k, cam.cy - h / 2 + (e.clientY - rc.top) / k];
+}
+zoomEl.addEventListener('click', e => { const b = e.target.closest('[data-cam]'); if (b) zoomBy(b.dataset.cam === 'in' ? 1.35 : 1 / 1.35); e.stopPropagation(); });
+stage.addEventListener('wheel', e => { if (!S || S.scene !== 'farm' || modal.classList.contains('on')) return; e.preventDefault(); zoomBy(e.deltaY < 0 ? 1.12 : 1 / 1.12, ...scenePt(e)); }, { passive: false });
+const pointers = new Map();
+let drag = null;
+stage.addEventListener('pointerdown', e => {
+  pointers.set(e.pointerId, [e.clientX, e.clientY]);
+  if (S && S.scene === 'farm' && !e.target.closest('#hud,#toolbar,#zoom,#modal')) drag = { x: e.clientX, y: e.clientY, cx: cam.cx, cy: cam.cy, moved: false, pinch: pointers.size === 2 ? null : undefined };
+});
+stage.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId) || !drag) return;
+  pointers.set(e.pointerId, [e.clientX, e.clientY]);
+  if (pointers.size === 2) {                                   // pinch to zoom
+    const [a, b] = [...pointers.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+    if (drag.pinch) zoomBy(d / drag.pinch); drag.pinch = d; drag.moved = true; return;
+  }
+  const k = cam.z * ui.scale, dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  if (!drag.moved && Math.hypot(dx, dy) < 8) return;           // a tap, not a drag
+  if (cam.z > 1) { drag.moved = true; cam.cx = drag.cx - dx / k; cam.cy = drag.cy - dy / k; cam.touched = true; applyCam(); }
+});
+const endPtr = e => { pointers.delete(e.pointerId); if (!pointers.size) setTimeout(() => { drag = null; }, 0); };
+stage.addEventListener('pointerup', endPtr); stage.addEventListener('pointercancel', endPtr);
 window.addEventListener('resize', fit);
 fit();
 
