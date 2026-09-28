@@ -89,3 +89,20 @@ test('palms on the farm each use a different variant', () => {
   const ids = new Set(manifest.assets.map(a => a.id));
   for (const v of variants) assert.ok(ids.has(`scenery.palm_${v}_iso`), v);
 });
+
+test('painted-art tasks: output paths follow the game, sizes are canvas × scale, layout images exist', async () => {
+  const vm = await import('node:vm');
+  const { paintedPath, imageInfo } = await import('../tools/check-assets.mjs');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') + ';this.paintedPath = paintedPath; this.SPECS = ASSET_SPECS;', ctx);
+  const { manifest } = checkManifest();
+  for (const a of manifest.assets) {
+    if (!a.paint) { assert.ok(!ctx.SPECS[a.id], `${a.id} is used by the game but has no paint task`); continue; }
+    assert.equal(a.paint.output, ctx.paintedPath(a.output), a.id);
+    assert.equal(a.paint.output, paintedPath(a.output), a.id);
+    assert.deepEqual(a.paint.size, a.canvas.map(v => v * a.paint.scale), a.id);
+    const buf = fs.readFileSync(new URL('../' + a.paint.layout, import.meta.url));
+    if (a.paint.layout.endsWith('.png')) assert.deepEqual([imageInfo(buf).w, imageInfo(buf).h], a.paint.size, a.paint.layout);
+  }
+});

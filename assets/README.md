@@ -101,3 +101,45 @@ Wired in so far: crop stages, withered, bugs, produce icons, egg, seed packets, 
 
 - `node tools/check-assets.mjs [--queue]`: validates the manifest and every file marked `done` / `approved`, and prints the status summary. The test suite runs it too.
 - `node tools/export-references.mjs`: renders placeholder references into `assets/reference/` for entries that have a `reference_render` expression (new assets without a file yet). Needs Playwright with Chromium.
+
+## Painted art pass
+
+The current art is flat SVG drawn from code. The next step is a **painted** look: soft brush texture, warm sunlight, chibi characters. `assets/painted/_style/target.jpg` shows the target. An image model paints it, not the mechanics agent.
+
+Each asset the game uses has a `paint` block in the manifest. That block is the task:
+
+```jsonc
+"paint": {
+  "status": "todo",                    // same statuses as above
+  "batch": 0,                          // 0 = style anchors, paint and review these first
+  "output": "assets/painted/characters/farmer.png",
+  "scale": 6,                          // pixels per canvas unit
+  "size": [312, 654],                  // exact pixel size of the file (canvas × scale)
+  "anchor_px": [150, 630],             // the anchor in file pixels
+  "layout": "assets/painted/_layout/character.farmer.png",  // the current art at that exact size
+  "prompt": "…what to paint…",         // add paint_style.prompt_suffix; use paint_style.negative_prompt
+  "file": null, "agent": null, "updated_at": null, "notes": "", "review": null
+}
+```
+
+- `paint_style` in the manifest has the look, the light, the camera, the character style, the file rules and the workflow.
+- The **layout image** is the composition guide. Feed it to img2img or ControlNet, and match its footprint, base point and pose, so the painted file drops into the game with no code changes.
+- The game prefers `paint.file` once `paint.status` is `done` or `approved`. Until then it keeps the SVG, so painted assets can arrive one at a time.
+- Sprites are PNGs with transparency. Backgrounds are WebP at 2×. `node tools/check-assets.mjs` checks each finished file's pixel size and alpha channel.
+- `node tools/check-assets.mjs --paint` lists the next painted tasks. Re-run `node tools/export-layouts.mjs` if the SVG art changes.
+- The asset agent edits only `paint.status`, `paint.file`, `paint.agent`, `paint.updated_at` and `paint.notes`.
+
+### Kickoff prompt for the painting AI
+
+> You are the painter for the browser game "ไร่สุขใจ (Rai Sukjai)", a cozy farming game set in the Thai countryside.
+> 1. Read `assets/README.md` (the "Painted art pass" section) and `paint_style` in `assets/manifest.json`.
+> 2. Use `assets/painted/_style/target.jpg` as the style reference for everything.
+> 3. Run `node tools/check-assets.mjs --paint` to get the queue. Start with **batch 0 only** (the style anchors), then stop and ask for review.
+> 4. For each asset:
+>    - Stamp `paint.status: "in_progress"` with your name and the UTC time.
+>    - Paint `paint.prompt` + `paint_style.prompt_suffix`, avoiding `paint_style.negative_prompt`. Use `paint.layout` as the composition input (img2img or ControlNet), so the subject sits exactly where the layout shows it.
+>    - Save the file at exactly `paint.size` pixels to `paint.output`: a PNG with a clean transparent background for sprites, WebP for backgrounds.
+>    - Stamp `paint.status: "done"` and `paint.file`.
+> 5. Paint variants of the same thing (a crop's 5 stages, the 10 egg piles, a character's poses) in one session with the same settings.
+> 6. Edit only the `paint` stamp fields.
+> 7. Run `node tools/check-assets.mjs` after each batch; it must print OK.

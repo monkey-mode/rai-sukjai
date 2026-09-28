@@ -53,6 +53,9 @@ const ASSET_SPECS = (() => {
   return list;
 })();
 
+// Where the painted-art pass saves an asset (manifest `paint.output`): PNG sprites, WebP backgrounds.
+const paintedPath = output => output.replace(/^assets\//, 'assets/painted/').replace(/\.svg$/, output.startsWith('assets/backgrounds/') ? '.webp' : '.png');
+
 const Assets = {
   // Manifest statuses whose files the game uses. Everything else keeps the code-drawn art.
   USE_STATUSES: ['done', 'approved'],
@@ -81,8 +84,11 @@ const Assets = {
     } catch (e) { /* file:// page, probe instead */ }
     if (entries) {
       for (const a of entries) {
-        // a pre-rendered raster (tools/rasterize-backgrounds.mjs) is cheaper to draw on phones than a big SVG
-        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
+        if (!ASSET_SPECS[a.id]) continue;
+        // a finished painted version wins; otherwise the SVG, or its pre-rendered raster (tools/rasterize-backgrounds.mjs),
+        // which is cheaper to draw on phones than a big SVG
+        if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
+        else if (a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
     } else {
       const probe = src => new Promise(done => {
@@ -93,7 +99,8 @@ const Assets = {
       });
       await Promise.all(Object.entries(ASSET_SPECS).map(async ([id, sp]) => {
         const webp = sp.output.startsWith('assets/backgrounds/') && sp.output.replace(/\.svg$/, '.webp');
-        if (webp && await probe(webp)) this.found[id] = webp;
+        if (await probe(paintedPath(sp.output))) this.found[id] = paintedPath(sp.output);
+        else if (webp && await probe(webp)) this.found[id] = webp;
         else if (await probe(sp.output)) this.found[id] = sp.output;
       }));
     }

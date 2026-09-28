@@ -24,7 +24,8 @@
     ],
     "everything_else": "owned by the mechanics agent; do not change it. Leave suggestions in `notes`.",
     "updated_at_format": "ISO 8601 UTC, e.g. 2026-09-27T14:05:00Z",
-    "validate": "node tools/check-assets.mjs"
+    "validate": "node tools/check-assets.mjs",
+    "paint": "Each asset's `paint` block has its own status flow (same statuses as above). The asset agent may edit paint.status, paint.file, paint.agent, paint.updated_at and paint.notes; the reviewer paint.status and paint.review; everything else in the block belongs to the mechanics agent. The game draws paint.file when paint.status is done or approved, otherwise the old `file`."
   },
   "style_guide": {
     "look": "Warm, hand-drawn cartoon in the style of 2000s Flash games: thick dark-brown outlines (#3a2213) about 2–3 px at 1× with round joins and caps, flat colour fills, at most one simple highlight or shade shape per part, slightly chunky and friendly proportions. No gradients (except the sky in backgrounds), no photorealism, no soft airbrush shading, no drop shadows (the game adds shadows).",
@@ -106,7 +107,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phakbung/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phakbung.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Morning glory (water spinach). Design: Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phakbung.s2",
@@ -132,7 +154,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phakbung/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phakbung.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phakbung.s3",
@@ -158,7 +201,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phakbung/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phakbung.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phakbung.s4",
@@ -184,7 +248,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phakbung/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phakbung.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: a tall, full bunch of arrow leaves, no flowers yet. Foliage: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phakbung.s5",
@@ -210,7 +295,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Arrow-shaped (sagittate) leaves on hollow pale stems fanning from the mound; ripe: a lush bunch tied with straw and two pale lilac trumpet flowers.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phakbung/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phakbung.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Morning glory (water spinach) (ผักบุ้ง) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: a very lush, tall bunch of glossy arrow leaves with one small pale-lilac trumpet flower. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: slender arrow-shaped bright-green leaves on long upright hollow stems, like Thai phak bung. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.khana.s1",
@@ -236,7 +342,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/khana/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.khana.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chinese kale (คะน้า) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Chinese kale. Design: Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.khana.s2",
@@ -262,7 +389,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/khana/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.khana.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chinese kale (คะน้า) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.khana.s3",
@@ -288,7 +436,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/khana/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.khana.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chinese kale (คะน้า) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.khana.s4",
@@ -314,7 +483,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/khana/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.khana.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chinese kale (คะน้า) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: a full rosette of big blue-green leaves. Foliage: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.khana.s5",
@@ -340,7 +530,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Rosette of broad, wavy blue-green leaves with pale veins on thick pale stalks; ripe: full rosette with dew drops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/khana/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.khana.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chinese kale (คะน้า) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: a larger, denser rosette with a pale-green heart of fresh inner leaves, crisp and glossy. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: broad, thick, blue-green oval leaves with pale veins, growing as a rosette on thick pale stalks. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.manthet.s1",
@@ -366,7 +577,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/manthet/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.manthet.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Sweet potato (มันเทศ) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Sweet potato. Design: Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.manthet.s2",
@@ -392,7 +624,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/manthet/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.manthet.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Sweet potato (มันเทศ) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a low spreading vine with purple stems and heart-shaped green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.manthet.s3",
@@ -418,7 +671,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/manthet/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.manthet.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Sweet potato (มันเทศ) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a low spreading vine with purple stems and heart-shaped green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.manthet.s4",
@@ -444,7 +718,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/manthet/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.manthet.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Sweet potato (มันเทศ) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full vine with the tops of purple-brown tubers just peeking out of the soil. Foliage: a low spreading vine with purple stems and heart-shaped green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.manthet.s5",
@@ -470,7 +765,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Heart-shaped leaves with purple veins on purple vines creeping low over the soil; stage 4: tuber tops peeking out; ripe: three plump red-purple tubers lying on the soil in front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/manthet/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.manthet.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Sweet potato (มันเทศ) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full vine with two plump magenta-purple sweet potatoes clearly exposed at soil level. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a low spreading vine with purple stems and heart-shaped green leaves. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phrik.s1",
@@ -496,7 +812,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phrik/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phrik.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chili (bird's-eye) (พริก) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Chili (bird's-eye). Design: Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phrik.s2",
@@ -522,7 +859,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phrik/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phrik.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chili (bird's-eye) (พริก) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a small bushy shrub with a thin green stem and many small glossy oval leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phrik.s3",
@@ -548,7 +906,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phrik/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phrik.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chili (bird's-eye) (พริก) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a small bushy shrub with a thin green stem and many small glossy oval leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phrik.s4",
@@ -574,7 +953,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/phrik/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phrik.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chili (bird's-eye) (พริก) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full bush with 3 small green chilies hanging. Foliage: a small bushy shrub with a thin green stem and many small glossy oval leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.phrik.s5",
@@ -600,7 +1000,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Small branching bush with oval leaves; stage 4: white flowers and green bird's-eye chilies pointing UP; ripe: red and orange chilies pointing up.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/crops/phrik/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.phrik.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Chili (bird's-eye) (พริก) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full bush with 5 bright red bird's-eye chilies hanging, pointing downward. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a small bushy shrub with a thin green stem and many small glossy oval leaves. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.thua.s1",
@@ -626,7 +1047,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/thua/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.thua.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Long bean (yardlong bean). Design: Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.thua.s2",
@@ -652,7 +1094,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/thua/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.thua.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a green vine twining up a tan bamboo stake, with trifoliate leaves along it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.thua.s3",
@@ -678,7 +1141,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/thua/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.thua.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a green vine twining up a tan bamboo stake, with trifoliate leaves along it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.thua.s4",
@@ -704,7 +1188,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/thua/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.thua.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the vine to the top of the stake with small lilac flowers and two short green pods. Foliage: a green vine twining up a tan bamboo stake, with trifoliate leaves along it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.thua.s5",
@@ -730,7 +1235,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Twining vine with three-leaflet leaves climbing a bamboo stake; stage 4: lilac flowers and young pods; ripe: long green pods hanging in bunches.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/thua/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.thua.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Long bean (yardlong bean) (ถั่วฝักยาว) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the vine to the top of the stake with 4 very long thin green pods hanging down. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a green vine twining up a tan bamboo stake, with trifoliate leaves along it. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.strawberry.s1",
@@ -756,7 +1282,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/strawberry/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.strawberry.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Highland strawberry. Design: Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.strawberry.s2",
@@ -782,7 +1329,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/strawberry/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.strawberry.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a low rosette of serrated trifoliate leaves on short stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.strawberry.s3",
@@ -808,7 +1376,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/strawberry/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.strawberry.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a low rosette of serrated trifoliate leaves on short stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.strawberry.s4",
@@ -834,7 +1423,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/strawberry/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.strawberry.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full rosette with two white 5-petal flowers (yellow centres) and one small green berry. Foliage: a low rosette of serrated trifoliate leaves on short stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.strawberry.s5",
@@ -860,7 +1470,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Low rosette of toothed three-leaflet leaves on a ring of straw mulch; stage 4: white five-petal flowers and pale green berries; ripe: red heart-shaped berries with yellow seeds and green caps resting on the straw.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/strawberry/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.strawberry.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Highland strawberry (สตรอว์เบอร์รี่ดอย) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full rosette with 4 plump red strawberries with tiny yellow seeds and green caps. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a low rosette of serrated trifoliate leaves on short stalks. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.mango.s1",
@@ -886,7 +1517,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/mango/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.mango.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Nam Dok Mai mango (young tree). Design: Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.mango.s2",
@@ -912,7 +1564,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/mango/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.mango.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.mango.s3",
@@ -938,7 +1611,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/mango/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.mango.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.mango.s4",
@@ -964,7 +1658,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/mango/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.mango.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full little tree with 3 small green mangoes hanging from the crown. Foliage: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.mango.s5",
@@ -990,7 +1705,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Sapling with a short trunk and rosettes of long lanceolate leaves, the young flush bronze-red; stage 4: cream flower sprays and small green mangoes; ripe: golden Nam Dok Mai mangoes with an orange blush hanging on long stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/mango/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.mango.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Nam Dok Mai mango (young tree) (มะม่วงน้ำดอกไม้) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full little tree with 5 golden-yellow Nam Dok Mai mangoes (long, slightly curved) with a pink-orange blush. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: a small young mango tree: short brown trunk and a rounded crown of long dark-green leaves. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.watermelon.s1",
@@ -1016,7 +1752,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:22:07Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/watermelon/stage1.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.watermelon.s1.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Watermelon (แตงโม) crop, growth stage 1 of 5. Seedling, about 10 px tall: a short stem with two small rounded light-green seed leaves poking out of the mound. Tint and leaf shape may hint at Watermelon. Design: Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small striped melon; ripe: a big dark-striped melon with a pale ground spot, in front of the leaves.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.watermelon.s2",
@@ -1042,7 +1799,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:22:07Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/watermelon/stage2.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.watermelon.s2.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Watermelon (แตงโม) crop, growth stage 2 of 5. Young plant at about 45% of full size, just a few leaves: ground-hugging vines with deeply lobed leaves and curly tendrils.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.watermelon.s3",
@@ -1068,7 +1846,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:22:07Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/watermelon/stage3.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.watermelon.s3.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Watermelon (แตงโม) crop, growth stage 3 of 5. Plant at about 75% of full size with its adult leaf shape, no flowers or fruit: ground-hugging vines with deeply lobed leaves and curly tendrils.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.watermelon.s4",
@@ -1094,7 +1893,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:22:07Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/watermelon/stage4.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.watermelon.s4.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Watermelon (แตงโม) crop, growth stage 4 of 5. Full-size plant, NOT ripe yet: the full vines with one small light-green striped melon. Foliage: ground-hugging vines with deeply lobed leaves and curly tendrils.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.watermelon.s5",
@@ -1120,7 +1940,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:22:07Z",
       "notes": "Redesign 2 (same canvas and anchor): thick outlines, leaves lit on the upper-left half with a midrib, ground-hugging parts squashed for the iso view, soil mound. Creeping vines with deeply lobed leaves lying flat (squashed for the iso view), curly tendrils and yellow flowers; stage 4: a small melon; ripe: a big oblong melon. The melons are 3D: an ellipsoid lying on the soil, shaded from light (upper-left) to shadow (underneath), with jagged dark stripes curving along it from end to end, a highlight, a pale ground spot, a stem stub and a contact shadow. Leaves stand up slightly on their stalks.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/watermelon/stage5.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.watermelon.s5.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. Watermelon (แตงโม) crop, growth stage 5 of 5. Full-size plant, RIPE and ready to harvest: the full vines with one big round dark-green watermelon with dark wavy stripes, resting on the soil. Make it read as ripe at a glance next to stage 4 (brighter, fuller). Foliage: ground-hugging vines with deeply lobed leaves and curly tendrils. The game adds its own sparkle, so do not draw one.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.withered",
@@ -1146,7 +1987,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T15:17:25Z",
       "notes": "Redesign 2: bent brown stalk with drooping curled dry leaves and two fallen leaves on the mound.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/withered.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.withered.png",
+        "prompt": "A single crop plant for an isometric farm game, growing out of a small tilled-soil mound; the mound sits at the bottom centre of the image. A dead plant that must be cleared: a drooping brown-tan stalk bent over, with 3 curled dry tan leaves, on a small dark soil mound. Generic enough to stand for any crop. Sad but still cute, not gross.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "crop.bugs",
@@ -1172,7 +2034,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Purple beetle and green shield bug with legs and antennae; nothing else in the image.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/crops/bugs.png",
+        "scale": 4,
+        "size": [
+          256,
+          256
+        ],
+        "anchor_px": [
+          128,
+          224
+        ],
+        "layout": "assets/painted/_layout/crop.bugs.png",
+        "prompt": "A transparent overlay layer for a crop sprite (only the described elements, nothing else). Nothing else in the image. The game wiggles this layer.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.phakbung",
@@ -1198,7 +2081,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/phakbung.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.phakbung.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: a bunch of phak bung (morning glory) stems with arrow leaves, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.khana",
@@ -1224,7 +2128,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/khana.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.khana.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: a bunch of three big blue-green kale leaves on thick pale stalks, tied with a red rubber band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.manthet",
@@ -1250,7 +2175,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/manthet.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.manthet.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: one plump magenta-purple sweet potato with a thin root tail and a small highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.phrik",
@@ -1276,7 +2222,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/phrik.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.phrik.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: one big shiny red bird's-eye chili with a green cap, lying diagonally. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.thua",
@@ -1302,7 +2269,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/thua.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.thua.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: a bundle of four very long thin green beans, curved, tied with a red band. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.strawberry",
@@ -1328,7 +2316,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/strawberry.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.strawberry.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: one plump red strawberry with tiny yellow seeds and a green leafy cap. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.mango",
@@ -1354,7 +2363,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/mango.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.mango.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: one golden-yellow Nam Dok Mai mango, long and slightly curved, with a pink-orange blush and a small leaf on the stem. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.watermelon",
@@ -1380,7 +2410,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/watermelon.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.watermelon.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. Harvested produce icon: one round dark-green watermelon with dark wavy stripes and a small white highlight. Centred, filling most of the canvas. Shown on the player's cursor, on the ox cart and in the shop.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "produce.egg",
@@ -1406,7 +2457,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Hand-drawn icon in the house style: outline, flat colour, one shade, one highlight.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/produce/egg.png",
+        "scale": 4,
+        "size": [
+          128,
+          128
+        ],
+        "anchor_px": [
+          64,
+          64
+        ],
+        "layout": "assets/painted/_layout/produce.egg.png",
+        "prompt": "A game item icon, the object alone, centred with a little padding. One duck egg: slightly bluish off-white (#f1ede0), upright oval, with a soft white highlight and two tiny speckles. Centred.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.phakbung",
@@ -1433,7 +2505,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/phakbung.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.phakbung.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #8fd14f, with a rounded off-white window in the middle showing a small morning glory (water spinach) (a bunch of phak bung (morning glory) stems with arrow leaves). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.khana",
@@ -1460,7 +2553,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/khana.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.khana.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #5bbf8a, with a rounded off-white window in the middle showing a small chinese kale (a bunch of three big blue-green kale leaves on thick pale stalks). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.manthet",
@@ -1487,7 +2601,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/manthet.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.manthet.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #c98ad6, with a rounded off-white window in the middle showing a small sweet potato (one plump magenta-purple sweet potato with a thin root tail and a small highlight). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.phrik",
@@ -1514,7 +2649,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/phrik.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.phrik.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ff8a6a, with a rounded off-white window in the middle showing a small chili (bird's-eye) (one big shiny red bird's-eye chili with a green cap). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.thua",
@@ -1541,7 +2697,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/thua.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.thua.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #b5d86a, with a rounded off-white window in the middle showing a small long bean (yardlong bean) (a bundle of four very long thin green beans). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.strawberry",
@@ -1568,7 +2745,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/strawberry.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.strawberry.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ff9fb0, with a rounded off-white window in the middle showing a small highland strawberry (one plump red strawberry with tiny yellow seeds and a green leafy cap). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.mango",
@@ -1595,7 +2793,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/mango.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.mango.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #ffd24a, with a rounded off-white window in the middle showing a small nam dok mai mango (young tree) (one golden-yellow Nam Dok Mai mango). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "seed.watermelon",
@@ -1622,7 +2841,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Paper packet with a zig-zag top, fold shade and a window showing the produce icon.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/seeds/watermelon.png",
+        "scale": 4,
+        "size": [
+          144,
+          160
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/seed.watermelon.png",
+        "prompt": "A game item icon of a seed packet, upright, filling the frame. A paper seed packet, upright, with a zig-zag torn top edge. Packet colour #7fcf6a, with a rounded off-white window in the middle showing a small watermelon (one round dark-green watermelon with dark wavy stripes and a small white highlight). No text. Used on toolbar buttons and shop cards.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tool.water",
@@ -1648,7 +2888,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/tools/water.png",
+        "scale": 4,
+        "size": [
+          144,
+          144
+        ],
+        "anchor_px": [
+          72,
+          72
+        ],
+        "layout": "assets/painted/_layout/tool.water.png",
+        "prompt": "A chunky game tool icon, the object alone, centred with a little padding, readable when small. Toolbar button icon: a blue metal watering can (บัวรดน้ำ) with a long spout and a round sprinkler rose, handle on top. Chunky, readable at 30 px, centred with a little padding.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tool.fertilize",
@@ -1674,7 +2935,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/tools/fertilize.png",
+        "scale": 4,
+        "size": [
+          144,
+          144
+        ],
+        "anchor_px": [
+          72,
+          72
+        ],
+        "layout": "assets/painted/_layout/tool.fertilize.png",
+        "prompt": "A chunky game tool icon, the object alone, centred with a little padding, readable when small. Toolbar button icon: a cream burlap fertilizer sack tied at the top, with a small green leaf symbol printed on it. Chunky, readable at 30 px, centred with a little padding.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tool.spray",
@@ -1700,7 +2982,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/tools/spray.png",
+        "scale": 4,
+        "size": [
+          144,
+          144
+        ],
+        "anchor_px": [
+          72,
+          72
+        ],
+        "layout": "assets/painted/_layout/tool.spray.png",
+        "prompt": "A chunky game tool icon, the object alone, centred with a little padding, readable when small. Toolbar button icon: a red pump sprayer tank with a white label patch, a hose and a spray wand, with two tiny mist droplets. Chunky, readable at 30 px, centred with a little padding.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tool.cut",
@@ -1726,7 +3029,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/tools/cut.png",
+        "scale": 4,
+        "size": [
+          144,
+          144
+        ],
+        "anchor_px": [
+          72,
+          72
+        ],
+        "layout": "assets/painted/_layout/tool.cut.png",
+        "prompt": "A chunky game tool icon, the object alone, centred with a little padding, readable when small. Toolbar button icon: a Thai machete (มีดพร้า) with a broad steel blade and a wooden handle, diagonal. Chunky, readable at 30 px, centred with a little padding.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tool.pick",
@@ -1752,7 +3076,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Chunky toolbar icon; reads at 30 px on the wooden toolbar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/tools/pick.png",
+        "scale": 4,
+        "size": [
+          144,
+          144
+        ],
+        "anchor_px": [
+          72,
+          72
+        ],
+        "layout": "assets/painted/_layout/tool.pick.png",
+        "prompt": "A chunky game tool icon, the object alone, centred with a little padding, readable when small. Toolbar button icon: a woven bamboo basket (ตะกร้า) with a handle, with one red chili and one yellow mango peeking out. Chunky, readable at 30 px, centred with a little padding.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.sun",
@@ -1778,7 +3123,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/sun.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.sun.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a round yellow sun with 8 short rays. Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.rain",
@@ -1804,7 +3170,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/rain.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.rain.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a white-grey cloud with three light-blue rain streaks falling. Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.sound_on",
@@ -1830,7 +3217,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/sound_on.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.sound_on.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a dark speaker with two sound-wave arcs. Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.sound_off",
@@ -1856,7 +3264,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/sound_off.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.sound_off.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a dark speaker with a red X next to it. Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.menu",
@@ -1882,7 +3311,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/menu.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.menu.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: three thick rounded horizontal bars (hamburger menu). Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.feed",
@@ -1908,7 +3358,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/feed.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.feed.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a small tan feed sack with brown grain dots. Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "hud.duck",
@@ -1934,7 +3405,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Bright shapes with a dark outline so they read at 17–22 px on the dark wood bar.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/hud/duck.png",
+        "scale": 4,
+        "size": [
+          96,
+          96
+        ],
+        "anchor_px": [
+          48,
+          48
+        ],
+        "layout": "assets/painted/_layout/hud.duck.png",
+        "prompt": "A tiny HUD icon, very simple bold shapes that read at 20 px, centred. HUD icon: a small side view of a brown laying duck (same design as animal.duck). Must read clearly at 17–22 px on a dark wood bar.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tile.soil_dry",
@@ -1960,7 +3452,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/tiles/soil_dry.png",
+        "scale": 4,
+        "size": [
+          256,
+          160
+        ],
+        "anchor_px": [
+          128,
+          64
+        ],
+        "layout": "assets/painted/_layout/tile.soil_dry.png",
+        "prompt": "One isometric soil plot tile for a farm grid, seen from the standard 2:1 isometric camera. One farm plot as a raised block of light tilled soil: top face #b7824f with two faint furrows running parallel to the upper-left/lower-right edges, left side #8f6038, right side #a5733f. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tile.soil_wet",
@@ -1986,7 +3499,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/tiles/soil_wet.png",
+        "scale": 4,
+        "size": [
+          256,
+          160
+        ],
+        "anchor_px": [
+          128,
+          64
+        ],
+        "layout": "assets/painted/_layout/tile.soil_wet.png",
+        "prompt": "One isometric soil plot tile for a farm grid, seen from the standard 2:1 isometric camera. Same block as tile.soil_dry but watered: darker damp soil (top #7a4e2e, sides #5a3820 / #6b4426), darker furrows, one or two tiny water glints. Same shape so the two can be swapped. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "tile.fertilized",
@@ -2012,7 +3546,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Isometric soil block on the exact diamond from the prompt; tilled ridges with lit tops.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 2,
+        "output": "assets/painted/tiles/fertilized.png",
+        "scale": 4,
+        "size": [
+          256,
+          160
+        ],
+        "anchor_px": [
+          128,
+          64
+        ],
+        "layout": "assets/painted/_layout/tile.fertilized.png",
+        "prompt": "A transparent overlay for an isometric soil tile (only the described elements). Transparent overlay for the isometric soil tile: 5–7 small cream-white fertilizer granules with thin outlines scattered on the TOP FACE near its edges (keep the centre clear for the plant). Nothing else. Isometric: the top face is a 2:1 diamond with corners at (32,2), (60,16), (32,30), (4,16); the visible left and right sides drop 7 px below the two lower edges.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "character.farmer",
@@ -2038,7 +3593,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:05:47Z",
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/characters/farmer.png",
+        "scale": 6,
+        "size": [
+          312,
+          654
+        ],
+        "anchor_px": [
+          150,
+          630
+        ],
+        "layout": "assets/painted/_layout/character.farmer.png",
+        "prompt": "A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "character.farmer_tired",
@@ -2064,7 +3640,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:05:47Z",
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/characters/farmer_tired.png",
+        "scale": 6,
+        "size": [
+          360,
+          654
+        ],
+        "anchor_px": [
+          150,
+          630
+        ],
+        "layout": "assets/painted/_layout/character.farmer_tired.png",
+        "prompt": "A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "character.auntie_daeng",
@@ -2090,7 +3687,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:05:47Z",
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/characters/auntie_daeng.png",
+        "scale": 6,
+        "size": [
+          348,
+          474
+        ],
+        "anchor_px": [
+          228,
+          444
+        ],
+        "layout": "assets/painted/_layout/character.auntie_daeng.png",
+        "prompt": "A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Auntie Daeng, the cheerful market seller, UPPER BODY only (she stands behind her counter), 3/4 view toward the viewer: black hair with a bun and an orange marigold, red blouse with gold trim and a gold necklace, one hand resting forward and the other raised to the side holding an open golden paper fan, smiling with rosy cheeks. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "character.uncle_mee",
@@ -2116,7 +3734,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:05:47Z",
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/characters/uncle_mee.png",
+        "scale": 6,
+        "size": [
+          282,
+          624
+        ],
+        "anchor_px": [
+          144,
+          600
+        ],
+        "layout": "assets/painted/_layout/character.uncle_mee.png",
+        "prompt": "A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "animal.buffalo",
@@ -2156,6 +3795,27 @@
             -61
           ]
         }
+      },
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/animals/buffalo.png",
+        "scale": 3,
+        "size": [
+          294,
+          300
+        ],
+        "anchor_px": [
+          156,
+          234
+        ],
+        "layout": "assets/painted/_layout/animal.buffalo.png",
+        "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). The BODY of a calm grey Thai water buffalo in isometric 3/4 view, facing DOWN-LEFT: barrel body with its long axis running up-right to down-left, four sturdy legs with dark hooves (far legs darker), lighter belly shading, and a small white egret standing on its back. NO head and NO tail: those are separate assets (animal.buffalo_head, animal.buffalo_tail) so the game can animate them. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
       }
     },
     {
@@ -2182,7 +3842,28 @@
       "agent": "claude-code (3D model export)",
       "updated_at": "2026-09-27T12:47:25Z",
       "notes": "3D model head: skull, muzzle, ears, eyes and smooth tube horns. Anchor = neck pivot. Exported from the 3D model in tools/iso-models.html by tools/export-models.mjs (true 2:1 iso projection).",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/animals/buffalo_head.png",
+        "scale": 3,
+        "size": [
+          234,
+          204
+        ],
+        "anchor_px": [
+          117,
+          81
+        ],
+        "layout": "assets/painted/_layout/animal.buffalo_head.png",
+        "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). Head of the same buffalo, 3/4 view facing down-left: broad grey skull, big thick crescent horns (cream) swept out and back, ears, both eyes visible, a wide pale-grey muzzle with nostrils. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "animal.buffalo_tail",
@@ -2208,7 +3889,28 @@
       "agent": "claude-code (3D model export)",
       "updated_at": "2026-09-27T12:47:25Z",
       "notes": "3D model tail tube with a dark tuft. Anchor = tail root pivot. Exported from the 3D model in tools/iso-models.html by tools/export-models.mjs (true 2:1 iso projection).",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 1,
+        "output": "assets/painted/animals/buffalo_tail.png",
+        "scale": 4,
+        "size": [
+          96,
+          168
+        ],
+        "anchor_px": [
+          60,
+          32
+        ],
+        "layout": "assets/painted/_layout/animal.buffalo_tail.png",
+        "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). Tail of the same buffalo: a thin grey tail hanging from the rump with a dark tuft at the end. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "animal.duck",
@@ -2234,7 +3936,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:05:47Z",
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/animals/duck.png",
+        "scale": 4,
+        "size": [
+          204,
+          180
+        ],
+        "anchor_px": [
+          104,
+          164
+        ],
+        "layout": "assets/painted/_layout/animal.duck.png",
+        "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. The game waddles it along the grid diagonal and flips it horizontally for the way back. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.dragon_jar",
@@ -2260,7 +3983,28 @@
       "agent": "claude-code (3D model export)",
       "updated_at": "2026-09-27T12:47:25Z",
       "notes": "3D model jar (solid of revolution) with the wrapped dragon chasing a flaming pearl, cloud scrolls, glaze highlight, rim with water and a ladle. Exported from the 3D model in tools/iso-models.html by tools/export-models.mjs (true 2:1 iso projection).",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/dragon_jar.png",
+        "scale": 3,
+        "size": [
+          291,
+          300
+        ],
+        "anchor_px": [
+          147,
+          252
+        ],
+        "layout": "assets/painted/_layout/prop.dragon_jar.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A big Ratchaburi dragon water jar (โอ่งมังกร) seen from the farm's raised isometric viewpoint, so the rim is a wide ellipse (about twice as wide as tall) with the water surface and sky reflection visible inside. Glazed dark reddish-brown clay with, gold bands that curve with the body, cream cloud swirls, a yellow dragon wrapping around the belly with its head at the right, and a coconut-shell ladle resting on the rim. Clickable prop (selects the watering tool). No ground shadow (the game adds it). No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.ox_cart",
@@ -2286,7 +4030,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T12:57:07Z",
       "notes": "Isometric 3/4 redesign: bed along +gx with woven near panel, rails, posts, beam, two solid 3D wheels (tyre tread band between both faces, spoked face as a ring with rim pegs, protruding hub with axle pin), axle, shaft with yoke and parking stand, baskets of watermelon, mango, chilies and strawberries. Canvas 180x152, anchor (78,110).",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/ox_cart.png",
+        "scale": 3,
+        "size": [
+          540,
+          456
+        ],
+        "anchor_px": [
+          234,
+          330
+        ],
+        "layout": "assets/painted/_layout/prop.ox_cart.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A traditional wooden Thai ox cart (เกวียน) in ISOMETRIC 3/4 view matching the farm grid: the bed's long axis runs toward the lower right (down-right), shaft and yoke pointing to the front-right, parking stand under the shaft. Open bed with woven bamboo side panels and wooden rails, loaded with two woven baskets (watermelon, mango, chilies, strawberries). Big solid spoked wheels seen at an angle (ellipses along the gx axis) with visible thickness: the tyre tread joining both faces, the spoked front face, and a protruding hub; the near wheel in front. No sign and no text (the game adds it). No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.signboard",
@@ -2312,7 +4077,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T11:44:16Z",
       "notes": "Two-plank arrow board with grain, knot and nails; label area left plain for the game's text.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/signboard.png",
+        "scale": 3,
+        "size": [
+          276,
+          120
+        ],
+        "anchor_px": [
+          0,
+          0
+        ],
+        "layout": "assets/painted/_layout/prop.signboard.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). NO text (the game writes 'ไปตลาด' / 'คอกเป็ด' on it). Two are stacked on a pole. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.signpole",
@@ -2338,7 +4124,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T11:44:16Z",
       "notes": "Plain pole with pointed top and grain.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/signpole.png",
+        "scale": 3,
+        "size": [
+          36,
+          402
+        ],
+        "anchor_px": [
+          18,
+          402
+        ],
+        "layout": "assets/painted/_layout/prop.signpole.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above).  No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.trough",
@@ -2364,7 +4171,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T16:41:01Z",
       "notes": "Isometric redesign: plank box on legs with an open dark cavity; the feed level is drawn by the game.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/props/trough.png",
+        "scale": 3,
+        "size": [
+          486,
+          336
+        ],
+        "anchor_px": [
+          243,
+          225
+        ],
+        "layout": "assets/painted/_layout/prop.trough.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.nest",
@@ -2390,7 +4218,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T16:41:01Z",
       "notes": "Isometric redesign: straw ring with woven strands, hollow middle and loose straws.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/nest.png",
+        "scale": 3,
+        "size": [
+          417,
+          216
+        ],
+        "anchor_px": [
+          210,
+          108
+        ],
+        "layout": "assets/painted/_layout/prop.nest.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_1",
@@ -2417,7 +4266,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_1.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_1.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 1 duck egg (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_2",
@@ -2444,7 +4314,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_2.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_2.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 2 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_3",
@@ -2471,7 +4362,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_3.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_3.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 3 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_4",
@@ -2498,7 +4410,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_4.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_4.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 4 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_5",
@@ -2525,7 +4458,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_5.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_5.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 5 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_6",
@@ -2552,7 +4506,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_6.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_6.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 6 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_7",
@@ -2579,7 +4554,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_7.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_7.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 7 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_8",
@@ -2606,7 +4602,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_8.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_8.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 8 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_9",
@@ -2633,7 +4650,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_9.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_9.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 9 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_pile_10",
@@ -2660,7 +4698,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:34:17Z",
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/props/egg_pile_10.png",
+        "scale": 4,
+        "size": [
+          200,
+          200
+        ],
+        "anchor_px": [
+          96,
+          140
+        ],
+        "layout": "assets/painted/_layout/prop.egg_pile_10.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 10 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "prop.egg_basket",
@@ -2686,7 +4745,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:49:03Z",
       "notes": "Redesign 2: flared bowl with shaded checkerboard weave, wrapped rim, lashed bamboo handle, straw lining and six eggs.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/props/egg_basket.png",
+        "scale": 3,
+        "size": [
+          336,
+          342
+        ],
+        "anchor_px": [
+          168,
+          276
+        ],
+        "layout": "assets/painted/_layout/prop.egg_basket.png",
+        "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.spirit_house_iso",
@@ -2712,7 +4792,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:25:21Z",
       "notes": "3D-built from iso boxes, crossing gable roofs (visible union), a stacked-ring spire and small offering glyphs. Replaces the shrine that was painted into bg.farm.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/spirit_house_iso.png",
+        "scale": 3,
+        "size": [
+          228,
+          510
+        ],
+        "anchor_px": [
+          114,
+          471
+        ],
+        "layout": "assets/painted/_layout/scenery.spirit_house_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. The farm's Phra Phum spirit house (ศาลพระภูมิ) in ISOMETRIC 3/4 view, built on the farm grid: a stepped white plinth with gold bands; a square white pillar with a gold kranok panel on each face and rainbow cloth (ผ้าแพร) wrapped round its top, tied in a bow with hanging tails; a gold capital under a broad white platform with a gold edge and small white lanterns with gold caps on its corners; on the platform a pavilion (sala) on a low base: red walls with golden pointed doors on both front faces, white columns with gold capitals, small double stairs down both front faces; a two-tier crossing roof of red tiles with gold eave lines, pale-gold gables with a red medallion, gold toothed barge boards (bai raka), small chofa hooks at the gable peaks and hang hong at the eaves; a tall gold ringed spire (yod) on top. Offerings: red and orange soda bottles with straws, dancer figurines, an incense bowl with smoking sticks and a blue-and-white vase of marigolds on the platform; a marigold chain draped along both front edges and a jasmine garland (พวงมาลัย) with a red tassel; more vases and soda bottles at the foot. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.thai_house_iso",
@@ -2738,7 +4839,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:38:08Z",
       "notes": "3D-built from iso boxes and planes: crossing gable roofs drawn as their visible union (back slope, cross slope, front slope with a valley), panelled walls with an eave shadow, veranda, stairs and under-house props. Replaces the stilt house that was painted into bg.farm.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/thai_house_iso.png",
+        "scale": 3,
+        "size": [
+          831,
+          756
+        ],
+        "anchor_px": [
+          378,
+          438
+        ],
+        "layout": "assets/painted/_layout/scenery.thai_house_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. The farmer's traditional Thai teak house (เรือนไทย) raised on tall stilts, ISOMETRIC 3/4 view built on the farm grid. L-shaped: one wing runs toward the lower left (its gable faces down-left) and one toward the lower right (its gable faces down-right); an open veranda (ชาน) fills the inner front corner, a step lower than the rooms, with a turned-baluster railing, two potted plants, and a wooden stair with handrails down to the yard. Dark teak panelled walls (ฝาปะกน) with open-shuttered windows and a dark doorway onto the veranda; steep crossing roofs of brown teak shingles with ridge caps and a valley; gable panels (หน้าจั่ว) with sunburst boards; thick barge boards ending in curled ngao at the eaves and a pointed horn at every peak, including the two back gables showing above the ridges. Under the house between the posts: a red hammock, a big glazed water jar and a bamboo bench (แคร่). A soft contact shadow directly under it, nothing else around it.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.cloud",
@@ -2764,7 +4886,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T11:44:16Z",
       "notes": "Puffy cream cloud with a soft blue-grey underside and white highlights.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/cloud.png",
+        "scale": 3,
+        "size": [
+          270,
+          132
+        ],
+        "anchor_px": [
+          135,
+          66
+        ],
+        "layout": "assets/painted/_layout/scenery.cloud.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. The game drifts it slowly across the sky. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.banana_young",
@@ -2926,7 +5069,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:12:17Z",
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/banana_young_iso.png",
+        "scale": 3,
+        "size": [
+          570,
+          570
+        ],
+        "anchor_px": [
+          285,
+          450
+        ],
+        "layout": "assets/painted/_layout/scenery.banana_young_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A young banana plant (กล้วย): one slim pale pseudostem with a few fresh, untorn light-green paddle leaves arching out, a rolled young leaf spike at the top and two small suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.banana_fruiting_iso",
@@ -2953,7 +5117,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:12:17Z",
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/banana_fruiting_iso.png",
+        "scale": 3,
+        "size": [
+          570,
+          570
+        ],
+        "anchor_px": [
+          285,
+          450
+        ],
+        "layout": "assets/painted/_layout/scenery.banana_fruiting_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A mature banana clump: three pseudostems of different heights with sheath streaks and dry strips, long arching oblong leaves with midribs, veins, wind tears and drooping tips, a rolled young leaf, a dry leaf hanging down, suckers, and a hanging bunch of GREEN bananas — curved, plump fingers fanned in hands (หวี) stacked down the stalk, not straight strips — ending in a purple banana flower (หัวปลี). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.banana_ripe_iso",
@@ -2980,7 +5165,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:12:17Z",
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/banana_ripe_iso.png",
+        "scale": 3,
+        "size": [
+          570,
+          570
+        ],
+        "anchor_px": [
+          285,
+          450
+        ],
+        "layout": "assets/painted/_layout/scenery.banana_ripe_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. The same mature clump with a heavier bunch of RIPE YELLOW bananas (curved plump fingers in stacked hands) (dark tips, a few brown sugar spots); the banana flower is spent (withered stalk end). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.banana_old_iso",
@@ -3007,7 +5213,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:12:17Z",
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/banana_old_iso.png",
+        "scale": 3,
+        "size": [
+          570,
+          570
+        ],
+        "anchor_px": [
+          285,
+          450
+        ],
+        "layout": "assets/painted/_layout/scenery.banana_old_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. An old banana clump: taller stems, sun-browned and heavily wind-torn leaves, one snapped leaf hanging down, many dry brown leaves hanging from every stem, suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.banana_harvested_iso",
@@ -3034,7 +5261,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:12:17Z",
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/banana_harvested_iso.png",
+        "scale": 3,
+        "size": [
+          570,
+          570
+        ],
+        "anchor_px": [
+          285,
+          450
+        ],
+        "layout": "assets/painted/_layout/scenery.banana_harvested_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A banana clump after harvest: the fruiting stem is cut down to a short stump (pale concentric sheaths on the cut face), a cut stem lies on the ground, a dry leaf, and two new suckers (daughter plants) with small leaves grow around it. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_coconut_lean_iso",
@@ -3061,7 +5309,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_coconut_lean_iso.png",
+        "scale": 3,
+        "size": [
+          387,
+          573
+        ],
+        "anchor_px": [
+          300,
+          549
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_coconut_lean_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A tall coconut palm (มะพร้าว) with a ringed trunk curving and leaning to the left, a full crown of drooping pinnate fronds and a cluster of green coconuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_coconut_twin_iso",
@@ -3088,7 +5357,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_coconut_twin_iso.png",
+        "scale": 3,
+        "size": [
+          528,
+          543
+        ],
+        "anchor_px": [
+          276,
+          522
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_coconut_twin_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. Two coconut trunks growing from one base and splitting into a V, each with its own crown of fronds and coconuts, one taller than the other. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_coconut_dwarf_iso",
@@ -3115,7 +5405,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Pinnate fronds whose leaflets hang in a V from the rachis (serrated feather silhouette, lit and shaded halves), in three tiers (rising, arching, drooping) plus dry fronds hanging against the trunk; ringed trunk with a lit side and a flared foot that closes on the 2:1 ground ellipse; green coconut cluster under the crown.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_coconut_dwarf_iso.png",
+        "scale": 3,
+        "size": [
+          315,
+          303
+        ],
+        "anchor_px": [
+          153,
+          279
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_coconut_dwarf_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A short, thick dwarf aromatic coconut palm (มะพร้าวน้ำหอม) with a dense, low, round crown and many pale-green nuts (one turning orange). ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_sugar_tall_iso",
@@ -3142,7 +5453,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_sugar_tall_iso.png",
+        "scale": 3,
+        "size": [
+          252,
+          597
+        ],
+        "anchor_px": [
+          126,
+          573
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_sugar_tall_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A tall, perfectly straight sugar palm (ต้นตาล) with criss-cross leaf-base scars, a round crown of stiff fan leaves, dead fans hanging below and dark fruit clusters. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_sugar_ladder_iso",
@@ -3169,7 +5501,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_sugar_ladder_iso.png",
+        "scale": 3,
+        "size": [
+          246,
+          564
+        ],
+        "anchor_px": [
+          123,
+          540
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_sugar_ladder_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A sugar palm with a bamboo climbing ladder (พะอง) lashed to the trunk (rung stubs, rope ties) and bamboo sap tubes (กระบอกตาล) hanging under the crown for palm-sugar tapping. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_sugar_pair_iso",
@@ -3196,7 +5549,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Dense spiky ball of pleated fan leaves (deeply split segments, shaded folds) on stalks in four rings, dead fans hanging below, dark leaf-base boots crossing on the upper trunk, dark straight trunk with ring scars and a flared foot; dark purple fruit clusters.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_sugar_pair_iso.png",
+        "scale": 3,
+        "size": [
+          330,
+          594
+        ],
+        "anchor_px": [
+          171,
+          567
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_sugar_pair_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. Two sugar palms growing side by side, one noticeably taller, each with its own fan-leaf crown. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "scenery.palm_betel_cluster_iso",
@@ -3223,7 +5597,28 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T14:17:38Z",
       "notes": "Redesign 2: 3D-built. Three slender grey-green trunks with close ring bands and flared feet, smooth green crownshafts, small crowns of arching feathery fronds, orange and green nut bunches under the crownshafts.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 3,
+        "output": "assets/painted/scenery/palm_betel_cluster_iso.png",
+        "scale": 3,
+        "size": [
+          357,
+          555
+        ],
+        "anchor_px": [
+          183,
+          531
+        ],
+        "layout": "assets/painted/_layout/scenery.palm_betel_cluster_iso.png",
+        "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A cluster of three slender areca/betel-nut palms (ต้นหมาก) of different heights: thin pale ringed trunks, smooth green crownshafts, small feathery crowns and bunches of orange nuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. No shadow on the ground (the game adds one).",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "bg.farm",
@@ -3250,7 +5645,28 @@
       "updated_at": "2026-09-27T15:32:20Z",
       "notes": "Forest at a moderate scale (trees ~1.4x the old symbols, closer spacing) with bamboo groves (ป่าไผ่) along parts of both edges: clumps of 7 arching culms with node rings, a lit side, dry sheaths at the foot and light leaf sprays, in green and golden variants. The house, spirit house, bananas and palms are sprites the game places.",
       "review": null,
-      "raster": "assets/backgrounds/farm.webp"
+      "raster": "assets/backgrounds/farm.webp",
+      "paint": {
+        "status": "todo",
+        "batch": 4,
+        "output": "assets/painted/backgrounds/farm.webp",
+        "scale": 2,
+        "size": [
+          2800,
+          1200
+        ],
+        "anchor_px": [
+          600,
+          0
+        ],
+        "layout": "assets/painted/_layout/bg.farm.jpg",
+        "prompt": "Wide establishing background for an isometric (2:1) cozy farming game, 21:9. A sunny clearing in a lush tropical forest in the Central Thai countryside. Follow the layout image exactly: the raised dirt yard with four grass-edged field beds in the middle (the game draws the soil plots on top, so keep the beds' tops plain), rice paddies with slim dikes, an irrigation canal with a plank footbridge and a grassy mound on the upper left, a buffalo paddock with its back fence on the right, a lotus pond and hay stacks in the right margin, a dirt path to the lower right. Dense layered forest along the two back edges: rain trees, mango domes, golden-shower trees, flame trees, bamboo groves and tall yang trees, fading into a soft green haze. Leave the house site, the shrine site and the tree spots in the clearing as plain grass (the game places those sprites). No buildings, characters, animals, crops or clouds.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "bg.village",
@@ -3277,7 +5693,28 @@
       "updated_at": "2026-09-28T10:00:00Z",
       "notes": "Isometric village map: crossing lanes, market plaza, farm fields, duck pen and pond, temple compound, neighbours' houses, forest around.",
       "review": null,
-      "raster": "assets/backgrounds/village.webp"
+      "raster": "assets/backgrounds/village.webp",
+      "paint": {
+        "status": "todo",
+        "batch": 4,
+        "output": "assets/painted/backgrounds/village.webp",
+        "scale": 2,
+        "size": [
+          2800,
+          1200
+        ],
+        "anchor_px": [
+          600,
+          0
+        ],
+        "layout": "assets/painted/_layout/bg.village.jpg",
+        "prompt": "Wide isometric (2:1) village map for a cozy farming game, 21:9, seen from high above like a diorama. Follow the layout image exactly: two crossing dirt lanes with a small market plaza (stalls with striped awnings and umbrellas) where they meet; our farm's crop fields at the top right; Uncle Mee's fenced duck pen with a small duck house and a pond at the bottom; a Thai temple compound with a white wall and a red-and-gold roofed hall at the top left; a few wooden stilt houses of the neighbours on the left; scattered trees and a forest all round. Leave the spots where the game places the teak house, palms, bananas, buffalo, spirit house and people as plain grass. No text, no characters.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "bg.market",
@@ -3304,7 +5741,28 @@
       "updated_at": "2026-09-28T10:00:00Z",
       "notes": "Front-view interior (village-map redesign): plank back wall with produce shelves, hanging goods and lanterns, awning edge, plank floor. The sign, Auntie Daeng and her counter are drawn by the game.",
       "review": null,
-      "raster": "assets/backgrounds/market.webp"
+      "raster": "assets/backgrounds/market.webp",
+      "paint": {
+        "status": "todo",
+        "batch": 4,
+        "output": "assets/painted/backgrounds/market.webp",
+        "scale": 2,
+        "size": [
+          2800,
+          1200
+        ],
+        "anchor_px": [
+          600,
+          0
+        ],
+        "layout": "assets/painted/_layout/bg.market.jpg",
+        "prompt": "Front view (straight on, like a stage set) inside a Thai village market stall, 21:9. A warm wooden plank back wall with shelves of woven baskets full of fresh produce, hanging bunches of bananas, garlic and dried chilies, a string of red lanterns, the stall's striped awning edge along the top and a worn plank floor. Neighbouring stalls continue into the side margins. Follow the layout image: keep the left-middle area (where the game draws Auntie Daeng, her counter and sign) and the right half (covered by the shop panel) calm and uncluttered. No people, no text.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "bg.pen",
@@ -3331,7 +5789,28 @@
       "updated_at": "2026-09-27T17:52:24Z",
       "notes": "Isometric redesign (1400×600 with bleed): pen floor diamond, rustic back fences, iso bamboo duck house with ramp, iso lotus pond, forest clearing edge, straw stacks, jar and bananas. No Uncle Mee, ducks, nest, trough, basket or clouds.",
       "review": null,
-      "raster": "assets/backgrounds/pen.webp"
+      "raster": "assets/backgrounds/pen.webp",
+      "paint": {
+        "status": "todo",
+        "batch": 0,
+        "output": "assets/painted/backgrounds/pen.webp",
+        "scale": 2,
+        "size": [
+          2800,
+          1200
+        ],
+        "anchor_px": [
+          600,
+          0
+        ],
+        "layout": "assets/painted/_layout/bg.pen.jpg",
+        "prompt": "Wide isometric (2:1) background for Uncle Mee's duck pen in a cozy farming game, 21:9. Follow the layout image exactly: a packed-earth pen floor with scattered straw and grain, the rustic rail fence along its back edges, a bamboo duck house on stilts with a thatched roof and a plank ramp built into the left fence, a lotus pond with lily pads, reeds and an egret beyond the fence on the right, the forest clearing edge with bamboo groves behind, straw stacks, a water jar and banana plants in the side margins. Keep the pen floor clear where the game places the nest, the feed trough, the egg basket, the ducks and Uncle Mee. No animals, no people, no props on the floor.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     },
     {
       "id": "ui.logo",
@@ -3357,7 +5836,67 @@
       "agent": "claude-code (pipeline test)",
       "updated_at": "2026-09-27T17:13:48Z",
       "notes": "Thai wordmark shaped with HarfBuzz from Loma Bold and converted to paths (no font needed), chunky shadow, rice sprout and sun, RAI SUKJAI in FreeSans Bold paths.",
-      "review": null
+      "review": null,
+      "paint": {
+        "status": "todo",
+        "batch": 5,
+        "output": "assets/painted/ui/logo.png",
+        "scale": 3,
+        "size": [
+          1440,
+          450
+        ],
+        "anchor_px": [
+          720,
+          225
+        ],
+        "layout": "assets/painted/_layout/ui.logo.png",
+        "prompt": "A game title logo. Title logo: the Thai words 'ไร่สุขใจ' as a big, bold, rounded, playful wordmark in tomato red (#e2553f) with a thick dark-brown outline and a chunky drop shadow, a small rice-sprout or sun motif, and 'RAI SUKJAI' in small spaced capitals underneath.",
+        "file": null,
+        "agent": null,
+        "updated_at": null,
+        "notes": "",
+        "review": null
+      }
     }
-  ]
+  ],
+  "paint_style": {
+    "about": "PAINTED ART PASS. The game's current art is flat SVG. This pass repaints every asset below in a soft painted style with an image model (or a painter). Each asset has a `paint` block: that is the task. The old SVG stays in the game as a fallback until the painted file is `done`, so assets can arrive in any order.",
+    "target": "assets/painted/_style/target.jpg is the look to match (colour, light, softness, line weight, cuteness). Use it as the style reference image (Midjourney --sref, an IP-Adapter / style-reference input, or attach it and say 'match this art style').",
+    "look": "Cozy painted mobile farming-game art. Soft digital painting with gentle brush texture, rounded chunky forms, saturated but natural greens, warm cream highlights. Thin warm dark-brown line art (#4a2e1a) that gets lighter and thinner in lit areas; never thick black outlines. Every surface has a light side, a mid tone and a soft shadow side; small specular highlights on glossy things (eggs, glazed jar, water, eyes).",
+    "light": "One sun for the whole game: warm golden late-morning light from the upper-left (#fff1c9), soft cool olive-violet shadows (never grey or black), gentle ambient occlusion where parts meet, a hint of warm bounce light from the ground. Same direction and warmth on every asset so sprites sit together in one scene.",
+    "view": "Isometric game camera: 2:1 dimetric, looking down about 30°. Ground-plane edges run along the diagonals (down-right and down-left at 26.6°); vertical edges stay vertical. Characters, crops, trees and icons are upright sprites seen from that camera (3/4 view from slightly above). The asset's layout image shows the exact angle.",
+    "characters": "Chibi proportions: head about 40% of the body height, big glossy eyes with two highlights, soft blush, small rounded hands and feet, friendly expressions. Thai countryside people, dressed as each prompt says; culturally accurate and respectful (งอบ straw hats, ผ้าขาวม้า checked cloth, ม่อฮ่อม indigo shirts). Keep each character identical across its variants (same face, outfit, colours).",
+    "setting": "Central Thai countryside: rice paddies, sugar and coconut palms, banana clumps, teak stilt houses, spirit houses, village markets. Original art only: do not copy existing games.",
+    "palette_hint": {
+      "grass": "#7fbf4d",
+      "grass_shadow": "#4f8f30",
+      "dirt": "#d8b67a",
+      "wood": "#b07a45",
+      "wood_shadow": "#7a4b27",
+      "straw": "#e9c878",
+      "water": "#4fb8df",
+      "line_art": "#4a2e1a",
+      "cream_ui": "#fdf6e3",
+      "accent_red": "#d9473a",
+      "gold": "#f2b632"
+    },
+    "prompt_suffix": "cozy mobile farming game art, soft digital painting, gentle brush texture, warm golden sunlight from the upper left, soft cool shadows, thin warm brown line art, rounded cute shapes, high detail, clean silhouette",
+    "negative_prompt": "photorealistic, 3d render, plastic, pixel art, flat vector, thick black outlines, harsh contrast, text, letters, watermark, signature, logo, frame, border, UI, cropped, cut off, blurry, noisy, extra limbs, deformed hands, multiple objects, cast shadow on the ground, background scenery (for sprites)",
+    "files": {
+      "sprites": "PNG, RGBA with a clean transparent background (no halo, no leftover white fringe, no drop shadow unless the prompt asks). Exact pixel size = paint.size (the asset's canvas × paint.scale).",
+      "backgrounds": "WebP (quality about 0.85), opaque, exact pixel size = paint.size (1400×600 canvas × 2). The centred 1600×1200 px area is the safe area; the 600 px strips on each side are bleed that continues the scene.",
+      "size_budget": "Aim for sprites under 300 KB and backgrounds under 1.5 MB (tools/check-assets.mjs warns above that)."
+    },
+    "placement": "paint.layout is a render of the current art at exactly paint.size. The painted subject must occupy the same place: same footprint, same base point, same height and pose. The anchor is at pixel (anchor × paint.scale); for most sprites that is the ground point under the object. Keep the whole subject inside the canvas and do not crop or pad the canvas. For overlays (bugs, fertilizer, egg piles) keep the exact positions shown.",
+    "workflow": [
+      "1. Read paint_style, then work through the queue with `node tools/check-assets.mjs --paint` (lowest paint.batch first, then priority).",
+      "2. Batch 0 is the STYLE ANCHOR set (farmer, duck, egg basket, trough, soil tile, ripe chili, duck pen background). Paint it first and stop for review: everything else follows whatever gets approved there.",
+      "3. For each asset: stamp paint.status 'in_progress' with paint.agent and paint.updated_at. Generate from paint.prompt + prompt_suffix, with negative_prompt, using target.jpg as the style reference and paint.layout as the composition input (img2img at denoise 0.55–0.75, or ControlNet lineart / depth / tile). Generate large, then downscale to paint.size and align the subject to the layout image.",
+      "4. Keep variants consistent: paint a crop's five stages, the ten egg piles, the five banana clumps, the palms and each character's variants in one session with the same seed and settings.",
+      "5. Remove the background cleanly for sprites, save to paint.output, stamp paint.status 'done', paint.file = paint.output and paint.updated_at. Put anything the reviewer should know in paint.notes.",
+      "6. Run `node tools/check-assets.mjs`: it must print OK (it checks the file exists, its pixel size and, for sprites, the alpha channel)."
+    ],
+    "text": "No text inside any image except the logo (ไร่สุขใจ / RAI SUKJAI). The game renders all labels and signs itself."
+  }
 }

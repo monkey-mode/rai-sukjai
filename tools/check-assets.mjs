@@ -2,6 +2,7 @@
 // Validates assets/manifest.json and the files it points to.
 //   node tools/check-assets.mjs            -> check everything, print a status summary
 //   node tools/check-assets.mjs --queue    -> also list the next assets to make (todo / needs_changes, by priority)
+//   node tools/check-assets.mjs --paint    -> also list the next painted-art tasks (paint.batch, then priority)
 // Exit code 1 if there are errors.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,6 +12,49 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STATUSES = ['todo', 'in_progress', 'done', 'needs_changes', 'approved', 'blocked'];
 const REQUIRED = ['id', 'category', 'priority', 'name_th', 'name_en', 'output', 'format', 'canvas', 'anchor', 'prompt',
   'status', 'file', 'agent', 'updated_at', 'notes', 'review'];
+
+const PAINT_REQUIRED = ['status', 'batch', 'output', 'scale', 'size', 'anchor_px', 'layout', 'prompt', 'file', 'agent', 'updated_at', 'notes', 'review'];
+// Same rule as paintedPath() in js/art/assets.js.
+export const paintedPath = output => output.replace(/^assets\//, 'assets/painted/').replace(/\.svg$/, output.startsWith('assets/backgrounds/') ? '.webp' : '.png');
+
+// Pixel size (and, for PNG, whether it has an alpha channel) read from the file header.
+export function imageInfo(buf) {
+  if (buf.length > 26 && buf.readUInt32BE(0) === 0x89504e47) {
+    const type = buf[25];
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20), alpha: type === 4 || type === 6 || buf.includes('tRNS') };
+  }
+  if (buf.length > 30 && buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+    const kind = buf.toString('ascii', 12, 16);
+    if (kind === 'VP8X') return { w: 1 + buf.readUIntLE(24, 3), h: 1 + buf.readUIntLE(27, 3), alpha: !!(buf[20] & 16) };
+    if (kind === 'VP8L') { const b = buf.readUInt32LE(21); return { w: 1 + (b & 0x3fff), h: 1 + ((b >> 14) & 0x3fff), alpha: !!((b >> 28) & 1) }; }
+    if (kind === 'VP8 ') return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff, alpha: false };
+  }
+  if (buf.length > 4 && buf[0] === 0xff && buf[1] === 0xd8) return { w: null, h: null, alpha: false };
+  return null;
+}
+
+function checkPaint(root, a, errors, warnings) {
+  const p = a.paint, where = `[${a.id}] paint`;
+  for (const k of PAINT_REQUIRED) if (!(k in p)) errors.push(`${where} missing field "${k}"`);
+  if (!STATUSES.includes(p.status)) errors.push(`${where} unknown status "${p.status}"`);
+  if (p.output !== paintedPath(a.output)) errors.push(`${where}.output must be ${paintedPath(a.output)}`);
+  const [w, h] = a.canvas || [];
+  if (!p.size || p.size[0] !== w * p.scale || p.size[1] !== h * p.scale) errors.push(`${where}.size must be canvas × scale`);
+  if (p.layout && !fs.existsSync(path.join(root, p.layout))) warnings.push(`${where} layout image missing: ${p.layout} (run node tools/export-layouts.mjs)`);
+  if (p.status === 'in_progress' && !p.agent) errors.push(`${where} in_progress needs "agent"`);
+  if (p.status === 'needs_changes' && !p.review) errors.push(`${where} needs_changes needs a "review" note`);
+  if (p.status === 'blocked' && !p.notes) errors.push(`${where} blocked needs an explanation in "notes"`);
+  if (p.status !== 'done' && p.status !== 'approved') return;
+  if (!p.file) { errors.push(`${where} status ${p.status} but "file" is empty`); return; }
+  const abs = path.join(root, p.file);
+  if (!fs.existsSync(abs)) { errors.push(`${where} file not found: ${p.file}`); return; }
+  const buf = fs.readFileSync(abs), info = imageInfo(buf), bg = a.category === 'background';
+  if (!info || info.w === null) { errors.push(`${where} ${p.file} must be a PNG${bg ? ' or WebP' : ''}`); return; }
+  if (info.w !== p.size[0] || info.h !== p.size[1]) errors.push(`${where} ${p.file} is ${info.w}×${info.h}, expected ${p.size[0]}×${p.size[1]}`);
+  if (!bg && !info.alpha) errors.push(`${where} ${p.file} needs a transparent background (alpha channel)`);
+  const limit = bg ? 1.5e6 : 300e3;
+  if (buf.length > limit) warnings.push(`${where} ${p.file} is ${Math.round(buf.length / 1024)} KB (budget ${limit / 1000} KB)`);
+}
 
 export function checkManifest(root = ROOT) {
   const errors = [], warnings = [];
@@ -40,6 +84,8 @@ export function checkManifest(root = ROOT) {
     if (a.status === 'in_progress' && !a.agent) errors.push(`${where} in_progress needs "agent"`);
     if (a.status === 'needs_changes' && !a.review) errors.push(`${where} needs_changes needs a "review" note`);
     if (a.status === 'blocked' && !a.notes) errors.push(`${where} blocked needs an explanation in "notes"`);
+
+    if (a.paint) checkPaint(root, a, errors, warnings);
 
     if (a.status === 'done' || a.status === 'approved') {
       if (!a.file) { errors.push(`${where} status ${a.status} but "file" is empty`); continue; }
@@ -76,6 +122,18 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       console.log('\nNext up:');
       for (const a of q.slice(0, 20)) console.log(`  P${a.priority}  ${a.status.padEnd(13)} ${a.id.padEnd(26)} -> ${a.output}`);
       if (q.length > 20) console.log(`  … and ${q.length - 20} more`);
+    }
+  }
+  if (manifest && Array.isArray(manifest.assets)) {
+    const painted = manifest.assets.filter(a => a.paint), count = {};
+    for (const a of painted) count[a.paint.status] = (count[a.paint.status] || 0) + 1;
+    console.log(`${painted.length} paint tasks: ` + STATUSES.filter(s => count[s]).map(s => `${s} ${count[s]}`).join(' · '));
+    if (process.argv.includes('--paint')) {
+      const q = painted.filter(a => a.paint.status === 'needs_changes' || a.paint.status === 'todo')
+        .sort((a, b) => (a.paint.status === 'needs_changes' ? -1 : 0) - (b.paint.status === 'needs_changes' ? -1 : 0) || a.paint.batch - b.paint.batch || a.priority - b.priority);
+      console.log('\nNext paint tasks:');
+      for (const a of q.slice(0, 25)) console.log(`  batch ${a.paint.batch}  ${a.paint.status.padEnd(13)} ${a.id.padEnd(30)} ${a.paint.size.join('×').padEnd(10)} -> ${a.paint.output}`);
+      if (q.length > 25) console.log(`  … and ${q.length - 25} more`);
     }
   }
   for (const w of warnings) console.log('warning: ' + w);
