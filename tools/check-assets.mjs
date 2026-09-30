@@ -91,8 +91,23 @@ export function checkManifest(root = ROOT) {
       if (!a.file) { errors.push(`${where} status ${a.status} but "file" is empty`); continue; }
       const abs = path.join(root, a.file);
       if (!fs.existsSync(abs)) { errors.push(`${where} file not found: ${a.file}`); continue; }
-      const size = fs.statSync(abs).size, limit = a.category === 'background' ? 200e3 : 40e3;
+      const raster = /\.(png|webp)$/.test(a.file);
+      const size = fs.statSync(abs).size, limit = raster ? (a.category === 'ground' ? 1.5e6 : 300e3) : a.category === 'background' ? 200e3 : 40e3;
       if (size > limit) warnings.push(`${where} ${a.file} is ${Math.round(size / 1024)} KB (limit ${limit / 1000} KB)`);
+      if (raster && a.scale) {
+        // painted-first assets (scene kits): exact pixel size, transparency for pieces, and their normal map
+        const info = imageInfo(fs.readFileSync(abs)), want = [w * a.scale, h * a.scale];
+        if (!info || info.w === null) errors.push(`${where} ${a.file} is not a readable PNG / WebP`);
+        else {
+          if (info.w !== want[0] || info.h !== want[1]) errors.push(`${where} ${a.file} is ${info.w}×${info.h}, expected ${want.join('×')}`);
+          if (a.category !== 'ground' && !info.alpha) errors.push(`${where} ${a.file} needs a transparent background (alpha channel)`);
+        }
+        if (a.normal) {
+          const nabs = path.join(root, a.normal);
+          if (!fs.existsSync(nabs)) errors.push(`${where} normal map not found: ${a.normal}`);
+          else { const n = imageInfo(fs.readFileSync(nabs)); if (!n || n.w !== want[0] || n.h !== want[1]) errors.push(`${where} normal map ${a.normal} must be ${want.join('×')}`); }
+        }
+      }
       if (a.file.endsWith('.svg')) {
         const svg = fs.readFileSync(abs, 'utf8');
         if (!/<svg[\s>]/.test(svg)) errors.push(`${where} ${a.file} has no <svg> root`);
@@ -102,8 +117,8 @@ export function checkManifest(root = ROOT) {
         const vb = svg.match(/viewBox\s*=\s*["']\s*([-\d.]+)[\s,]+([-\d.]+)[\s,]+([-\d.]+)[\s,]+([-\d.]+)/);
         if (!vb) warnings.push(`${where} ${a.file} has no viewBox`);
         else if (+vb[3] !== w || +vb[4] !== h) warnings.push(`${where} viewBox ${vb[3]}×${vb[4]} differs from canvas ${w}×${h}`);
-      } else if (!a.file.endsWith('.png')) {
-        errors.push(`${where} file must be .svg (or .png fallback)`);
+      } else if (!raster) {
+        errors.push(`${where} file must be .svg, .png or .webp`);
       }
     }
   }

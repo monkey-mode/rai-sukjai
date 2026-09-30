@@ -47,6 +47,10 @@ const ASSET_SPECS = (() => {
   add('character.uncle_mee', 'assets/characters/uncle_mee.svg', 47, 104, 24, 100);
   add('animal.duck', 'assets/animals/duck.svg', 51, 45, 26, 41);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
+  // Scene kit (duck pen pilot): painted pieces the game assembles scenes from, plus the scene's painted ground.
+  add('ground.pen', 'assets/backgrounds/ground_pen.webp', 1400, 600, 300, 0);
+  [['fence_span_se', 48, 66, 8, 46], ['fence_span_sw', 48, 66, 40, 46], ['fence_post', 16, 48, 8, 44], ['duck_house', 240, 200, 120, 140], ['tree_round_a', 170, 190, 85, 178], ['tree_round_b', 140, 160, 70, 150], ['bamboo_clump', 120, 200, 60, 190], ['bush_a', 90, 56, 45, 48], ['bush_b', 64, 42, 32, 36], ['rock_a', 54, 34, 27, 28], ['rock_b', 40, 26, 20, 21], ['haystack', 76, 66, 38, 58], ['water_jar', 48, 54, 24, 48], ['reeds', 54, 56, 27, 50], ['egret', 32, 44, 16, 41]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.png`, w, h, ax, ay));
   add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
   // 800x600 safe area with 300 px of bleed each side
   ['farm', 'village', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
@@ -99,7 +103,7 @@ const Assets = {
       });
       await Promise.all(Object.entries(ASSET_SPECS).map(async ([id, sp]) => {
         const webp = sp.output.startsWith('assets/backgrounds/') && sp.output.replace(/\.svg$/, '.webp');
-        if (await probe(paintedPath(sp.output))) this.found[id] = paintedPath(sp.output);
+        if (sp.output.endsWith('.svg') && await probe(paintedPath(sp.output))) this.found[id] = paintedPath(sp.output);
         else if (webp && await probe(webp)) this.found[id] = webp;
         else if (await probe(sp.output)) this.found[id] = sp.output;
       }));

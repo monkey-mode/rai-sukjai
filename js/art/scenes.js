@@ -154,7 +154,40 @@ function marketCounter() {
   return s;
 }
 
+// ---- Duck pen from its scene kit (js/art/iso.js: PEN_LAYOUT, PEN_FENCES). The game switches to it once the painted
+// ground and every piece are done; until then it keeps the single painted bg.pen. `?kit=1` in the URL forces the kit
+// and draws a labelled box for each missing piece, to check the layout before the art arrives.
+const PEN_KIT_DEBUG = typeof location !== 'undefined' && /[?&]kit=1\b/.test(location.search);
+const PEN_KIT_IDS = ['ground.pen', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
+  ...new Set(PEN_LAYOUT.back.concat(PEN_LAYOUT.pen).map(p => p[0]))];
+function penKitActive() { return PEN_KIT_DEBUG || PEN_KIT_IDS.every(id => Assets.has(id)); }
+
+// A kit piece at pen grid (u, v) as a [depth, svg] item, with the soft ground shadow the game adds (not for fences).
+function kitSprite(id, u, v, k = 1, flip = false, depth) {
+  const [x, y] = penPt(u, v), sp = ASSET_SPECS[id];
+  const shadow = id.startsWith('kit.fence') ? '' : `<ellipse cx="0" cy="1" rx="${r(sp.w * .3)}" ry="${r(sp.w * .09)}" fill="rgba(58,34,19,.18)"/>`;
+  const has = Assets.has(id), art = has ? Assets.image(id) : kitPlaceholder(id);
+  return [depth ?? y, `<g transform="translate(${r(x)} ${r(y)}) scale(${flip && has ? -k : k} ${k})">${shadow}${art}</g>`];
+}
+
+function kitPlaceholder(id) {
+  const sp = ASSET_SPECS[id];
+  if (id === 'kit.fence_post') return line('M0 0V-34', '#8a5a2e', 5);
+  if (id.startsWith('kit.fence_span')) { const dx = id.endsWith('se') ? 32 : -32; return line(`M0 0V-34M0 -11L${dx} 5M0 -23L${dx} -7`, '#8a5a2e', 4); }
+  return `<rect x="${-sp.ax}" y="${-sp.ay}" width="${sp.w}" height="${sp.h}" rx="6" fill="rgba(255,255,255,.3)" stroke="#6b3fa0" stroke-width="1.5" stroke-dasharray="5 3"/>` +
+    `<circle r="3" fill="#6b3fa0"/><text y="${-sp.ay + 13}" text-anchor="middle" font-family="Sarabun" font-size="10" fill="#4a2a70">${id.replace(/^(kit|scenery)\./, '')}</text>`;
+}
+
+function penKitGround() {
+  if (Assets.has('ground.pen')) return bleed(Assets.image('ground.pen'), 'ground.pen');
+  const floor = [penPt(0, 0), penPt(12.5, 0), penPt(12.5, 12.5), penPt(0, 12.5)].map(q => q.join(',')).join(' ');
+  return `<rect x="-300" width="1400" height="600" fill="#a9c95e"/><polygon points="${penPt(-9, 40).join(',')} ${penPt(-9, -11).join(',')} ${penPt(40, -11).join(',')} 2200,-900 -1500,-900" fill="#3f6a2c"/>` +
+    `<polygon points="${floor}" fill="#cdbf7e" stroke="#8a7a4a" stroke-width="2"/>` + ell(...penPt(7.5, -4.2), 150, 60, '#6fb3c4', 0, 2);
+}
+
 function penBG() {
+  if (penKitActive()) return penKitGround() + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') +
+    depthSorted(PEN_LAYOUT.back.map(p => kitSprite(...p))) + uncleMee(96, 318);
   if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen'), 'bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
   { const hills = `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }

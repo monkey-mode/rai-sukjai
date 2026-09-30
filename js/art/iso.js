@@ -154,3 +154,42 @@ const FARM_SPOTS = {
   farmer: [652, 474],     // farmer(x, feetY)
   buffalo: [722, 334],    // buffalo(x, y): ground point inside the paddock, behind its front fence
 };
+
+// ---- Duck pen scene kit (pilot): the pen is assembled from a painted ground plus small reusable pieces.
+// The pen's own grid: the floor is u, v in 0..12.5 with its top corner at (520, 200).
+const penPt = (u, v, z = 0) => [520 + (u - v) * 32, 200 + (u + v) * 16 - z];
+
+// Fence runs [from, to], each along +u (down-right) or +v (down-left). The duck house is built into the u = 0 line.
+const PEN_FENCES = [[[0, 0], [12.5, 0]], [[0, 0], [0, 2.2]], [[0, 5], [0, 12.5]], [[12.5, 0], [12.5, 3.5]]];
+
+// Pieces: [asset id, u, v, scale, flip]. `back` pieces stand outside the pen and are drawn with the background,
+// behind Uncle Mee; `pen` pieces depth-sort with the nest, trough, basket and ducks.
+const PEN_LAYOUT = {
+  back: [
+    ['kit.tree_round_a', -8.5, 2.5, 1, false], ['kit.tree_round_a', 3, -9.8, 1, true],
+    ['kit.tree_round_b', 6, -9.8, 1, false], ['kit.bamboo_clump', 13.5, -3.5, 1, false],
+    ['kit.bush_a', -1.2, -1.2, 1, false], ['kit.bush_a', 13.8, -1.4, 1, true],
+    ['kit.bush_b', 2, -1.5, 1, false], ['kit.bush_b', 9, -1.5, 1, true],
+    ['kit.rock_a', 5.3, -2.2, 1, false], ['kit.rock_b', 10.2, -2.4, 1, false],
+    ['kit.reeds', 3.2, -3.4, 1, false], ['kit.reeds', 4.2, -5.9, 1, true], ['kit.reeds', 11.6, -2.6, 1, false], ['kit.reeds', 9.5, -6.8, 1, true],
+    ['kit.egret', 11.8, -5.5, 1, false], ['kit.egret', 3.5, -6.4, 1, true],
+    ['kit.haystack', -6.5, 14.5, 1.1, false], ['kit.haystack', -4.8, 16.2, .9, true], ['kit.haystack', 17, 1.5, 1, false], ['kit.haystack', 19, 3, .9, true],
+    ['kit.water_jar', -8, 16, 1, false],
+    ['scenery.banana_young_iso', -8, 11, .8, false], ['scenery.banana_fruiting_iso', 14, -1, .8, true],
+    ['scenery.banana_ripe_iso', 16, 3, .8, false], ['scenery.banana_old_iso', -7, 16, .8, false],
+    ['scenery.banana_harvested_iso', -2, 19, .8, true],
+  ],
+  pen: [['kit.duck_house', -1.4, 3.6, 1, false]],
+};
+
+// Fence runs as kit sprites [id, u, v, scale]: one span per step (stretched a little so the run ends on its
+// end point), with a post closing each run.
+function penFenceSprites() {
+  const out = [];
+  for (const [[u0, v0], [u1, v1]] of PEN_FENCES) {
+    const len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(len)), id = u1 > u0 ? 'kit.fence_span_se' : 'kit.fence_span_sw';
+    for (let i = 0; i < n; i++) out.push([id, u0 + (u1 - u0) * i / n, v0 + (v1 - v0) * i / n, len / n]);
+    out.push(['kit.fence_post', u1, v1, 1]);
+  }
+  return out;
+}

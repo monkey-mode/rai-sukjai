@@ -132,9 +132,20 @@ function renderPen() {
   labels += `<text x="650" y="512" text-anchor="middle" font-family="Kanit" font-size="13" font-weight="600" fill="${O}">ตะกร้าขายไข่ ฿${CONFIG.DUCK.eggPrice}</text>` +
     `<text x="650" y="524" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Egg basket — drop eggs to sell</text>`;
   items.push(...penDucks());
+  if (penKitActive()) items.push(...penKitItems());
   s = items.sort((a, b) => a[0] - b[0]).map(i => i[1]).join('') + labels;
   if (S.ducks === 0) s += `<text x="600" y="300" text-anchor="middle" font-family="Kanit" font-size="16" fill="${O}" opacity=".7">ยังไม่มีเป็ด — ซื้อจากลุงมีได้เลย</text>`;
   dynEl.innerHTML = s;
+}
+
+// The kit's fences and duck house, depth-sorted with the props and ducks so they can pass behind them. A fence span
+// sorts by its middle.
+function penKitItems() {
+  const fences = penFenceSprites().map(([id, u, v, k]) => {
+    const du = id === 'kit.fence_span_se' ? .5 * k : 0, dv = id === 'kit.fence_span_sw' ? .5 * k : 0;
+    return kitSprite(id, u, v, k, false, penPt(u + du, v + dv)[1]);
+  });
+  return PEN_LAYOUT.pen.map(p => kitSprite(...p)).concat(fences);
 }
 
 // Ducks as [ground y, svg] items so they sort with the nest, trough and basket. A negative animation delay taken

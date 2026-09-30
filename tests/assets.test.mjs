@@ -98,11 +98,37 @@ test('painted-art tasks: output paths follow the game, sizes are canvas × scale
     fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') + ';this.paintedPath = paintedPath; this.SPECS = ASSET_SPECS;', ctx);
   const { manifest } = checkManifest();
   for (const a of manifest.assets) {
+    if (a.scale) continue;                     // painted-first assets (scene kits) are their own paint task
     if (!a.paint) { assert.ok(!ctx.SPECS[a.id], `${a.id} is used by the game but has no paint task`); continue; }
     assert.equal(a.paint.output, ctx.paintedPath(a.output), a.id);
     assert.equal(a.paint.output, paintedPath(a.output), a.id);
     assert.deepEqual(a.paint.size, a.canvas.map(v => v * a.paint.scale), a.id);
     const buf = fs.readFileSync(new URL('../' + a.paint.layout, import.meta.url));
     if (a.paint.layout.endsWith('.png')) assert.deepEqual([imageInfo(buf).w, imageInfo(buf).h], a.paint.size, a.paint.layout);
+  }
+});
+
+test('duck pen kit: every piece is a known asset, stands on the stage and keeps the pen props clear', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { penPt, PEN_LAYOUT, penFenceSprites, SPECS: ASSET_SPECS };', ctx);
+  const { penPt, PEN_LAYOUT, penFenceSprites, SPECS } = ctx.X;
+  const { manifest } = checkManifest();
+  const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  const keepClear = { nest: [380, 296, 520, 390], trough: [370, 452, 520, 500], basket: [610, 420, 690, 494], uncleMee: [10, 110, 200, 330] };
+  const placed = PEN_LAYOUT.back.concat(PEN_LAYOUT.pen).map(([id, u, v]) => [id, u, v]).concat(penFenceSprites().map(([id, u, v]) => [id, u, v]));
+  assert.ok(byId['ground.pen'] && SPECS['ground.pen'], 'ground.pen');
+  for (const [id, u, v] of placed) {
+    assert.ok(byId[id], `${id} is not in the manifest`);
+    assert.ok(SPECS[id], `${id} is not in ASSET_SPECS`);
+    const [x, y] = penPt(u, v);
+    assert.ok(x > -300 && x < 1100 && y > 46 && y < 600, `${id} at (${u}, ${v}) is off the stage (${x}, ${y})`);
+    for (const [name, [x0, y0, x1, y1]] of Object.entries(keepClear))
+      assert.ok(!(x > x0 && x < x1 && y > y0 && y < y1), `${id} at (${u}, ${v}) stands on the ${name}`);
+  }
+  for (const a of manifest.assets.filter(a => a.category === 'kit')) {
+    assert.ok(a.footprint && a.height_px && a.normal && a.layout && a.scale, a.id);
+    assert.ok(fs.existsSync(new URL('../' + a.layout, import.meta.url)), `${a.layout} (run node tools/export-kit-guides.mjs)`);
   }
 });

@@ -143,3 +143,47 @@ Each asset the game uses has a `paint` block in the manifest. That block is the 
 > 5. Paint variants of the same thing (a crop's 5 stages, the 10 egg piles, a character's poses) in one session with the same settings.
 > 6. Edit only the `paint` stamp fields.
 > 7. Run `node tools/check-assets.mjs` after each batch; it must print OK.
+
+## Scene kits (duck pen pilot)
+
+Scenes are moving from one big painted background to a **kit**:
+- a painted **ground** layer: everything flat, plus the far backdrop;
+- separate **pieces** the game places on the scene's grid and depth-sorts: fences, the duck house, trees, bushes, rocks, haystacks and so on.
+
+This lets pieces be reused across scenes, lets ducks and characters walk behind things, and gives each piece its own normal map for moving light.
+
+- The kit tasks are ordinary manifest entries in the categories `ground` and `kit`. They are painted directly, so there's no SVG: `format` png (the ground is WebP), `status: "todo"`. Each entry has:
+  - `scale`: file pixels per canvas unit;
+  - `footprint`: its size on the ground in tiles, `[down-right, down-left]`;
+  - `height_px`: roughly how tall it stands;
+  - `layout`: its guide image;
+  - `normal`: where its normal map goes.
+- **Guides:**
+  - `assets/painted/_layout/kit.<name>.png` shows each piece's canvas, anchor cross, ground footprint and height.
+  - `assets/painted/_layout/pen_kit_composition.jpg` shows where every piece stands in the pen.
+  - Re-run `node tools/export-kit-guides.mjs` after changing the layout (`PEN_LAYOUT` and `PEN_FENCES` in `js/art/iso.js`).
+- **Delivery:**
+  - Save the colour file at `output`, at exactly canvas × `scale` pixels, transparent for pieces.
+  - Save the normal map at `normal`, at the same size. `paint_style.normal_maps` has the convention and tools.
+  - Stamp `status: "done"` and `file`. `node tools/check-assets.mjs` checks the size, the alpha channel and the normal map.
+- **When the game switches:** it assembles the pen from the kit only once `ground.pen` and every piece are done. Until then it keeps the single painted `bg.pen`. Open `index.html?kit=1` to see the assembled pen with a labelled box for each missing piece.
+
+### Kickoff prompt for the duck pen kit
+
+> You are the painter for "ไร่สุขใจ (Rai Sukjai)". Work on branch `claude/affectionate-bohr-it5tgr`.
+>
+> **Read first:**
+> - the "Painted art pass" and "Scene kits" sections of `assets/README.md`;
+> - `paint_style` in `assets/manifest.json`, especially `normal_maps` and `kits`.
+>
+> **Task:** paint the duck pen kit, the 16 entries with category `ground` or `kit` (`node tools/check-assets.mjs --queue` lists them).
+> 1. Start with `ground.pen`. It is the flat layer only: grass, the pen floor, the pond water and the far forest wall. It has no fences, house, trees or props, because those are separate pieces.
+> 2. Then paint the pieces in this order: fences (`kit.fence_span_se`, `kit.fence_span_sw`, `kit.fence_post`), `kit.duck_house`, then the trees, bamboo, bushes, rocks, haystack, water jar, reeds and egret.
+>
+> **For each piece:**
+> - Match the look of the painted pen you did before (`assets/painted/backgrounds/pen.webp` and `assets/painted/_style/target.jpg`), but with SOFT built-in light and no shadow on the ground. The game adds shadows and moving light.
+> - Paint ONE isolated object that fits its guide image (`layout`): the base on the anchor cross, the footprint on the green diamond, and about `height_px` tall. Save it at exactly canvas × `scale` pixels to `output`, with a clean transparent background.
+> - Make its normal map (OpenGL convention: flat facing the viewer = 128,128,255, green = up) at the same size, and save it to `normal`.
+> - Stamp `status` `"done"`, `file`, `agent` and `updated_at`. Only edit those fields and `notes`.
+>
+> **Finish:** after each few pieces run `node tools/check-assets.mjs`; it must print OK. When all 16 are done, open `index.html?kit=1` (served, e.g. `python3 -m http.server`) to check the assembled pen, then commit and push. Report anything that didn't fit its guide.

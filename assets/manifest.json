@@ -80,7 +80,9 @@
     "prop": "Interactive or foreground objects. Anchor = base on the ground.",
     "scenery": "Decorative background pieces, some animated. Variants of the same thing share a `variant_group` (e.g. banana_clump) and the same canvas and anchor so they are interchangeable.",
     "background": "Full stage: an 800×600 safe area, plus 300 px of bleed on each side when the canvas is 1400×600 (see style_guide.stage). Respect the KEEP CLEAR zones in the prompt.",
-    "ui": "Interface art."
+    "ui": "Interface art.",
+    "kit": "Scene kit piece: one object the game places on a scene's grid to assemble the scene (reused across scenes). Painted PNG at `scale`, transparent, anchor = the ground point under the object, `footprint` = its size on the ground in tiles [down-right, down-left]. Delivered with a normal map at `normal`.",
+    "ground": "Painted ground layer of an assembled scene: everything flat (grass, floors, paths, water) plus the far backdrop, and nothing else that stands up."
   },
   "assets": [
     {
@@ -5813,6 +5815,544 @@
       }
     },
     {
+      "id": "ground.pen",
+      "category": "ground",
+      "priority": 1,
+      "name_th": "พื้นคอกเป็ด",
+      "name_en": "Duck pen ground (kit)",
+      "output": "assets/backgrounds/ground_pen.webp",
+      "format": "webp",
+      "canvas": [
+        1400,
+        600
+      ],
+      "anchor": [
+        300,
+        0
+      ],
+      "scale": 2,
+      "prompt": "Wide ISOMETRIC (2:1) ground layer for Uncle Mee's duck pen, 21:9, 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). Paint ONLY what lies flat plus the far backdrop: sunny grass with clover and flowers, the packed-earth pen floor on the diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (scattered straw and grain, a couple of muddy patches), the lotus pond water with its muddy rim and lily pads centred around safe-area (894,253), worn dirt paths, and beyond the clearing's back edges (where the old composition shows it) a dense tropical forest wall fading into soft haze. Follow the old composition in assets/painted/_layout/bg.pen.jpg and assets/painted/_layout/pen_kit_composition.jpg. NO fences, duck house, trees in the clearing, bushes, rocks, reeds, haystacks, jars, bananas, birds, animals or people: those are separate kit pieces the game places on top. Same warm upper-left sunlight, soft painted style as target.jpg.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/bg.pen.jpg",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.fence_span_se",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รั้ว (ช่วงลงขวา)",
+      "name_en": "Fence span (รั้วไม้) running DOWN-RIGHT",
+      "output": "assets/kit/fence_span_se.png",
+      "format": "png",
+      "canvas": [
+        48,
+        66
+      ],
+      "anchor": [
+        8,
+        46
+      ],
+      "scale": 3,
+      "footprint": [
+        1,
+        0
+      ],
+      "height_px": 36,
+      "prompt": "One span of the duck pen's rustic fence: a square timber post with a pointed cap standing on the anchor, and two round bamboo rails (with node rings and a light top highlight) running from it down-right for exactly one tile, 32 px right and 16 px down, at heights 11 and 23 px, lashed to the post with crossed rope ties. The far end has NO post (the next span's post closes it). Weathered warm wood and golden bamboo, matching the fence in the target style. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.fence_span_se.png",
+      "normal": "assets/kit/fence_span_se_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.fence_span_sw",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รั้ว (ช่วงลงซ้าย)",
+      "name_en": "Fence span (รั้วไม้) running DOWN-LEFT",
+      "output": "assets/kit/fence_span_sw.png",
+      "format": "png",
+      "canvas": [
+        48,
+        66
+      ],
+      "anchor": [
+        40,
+        46
+      ],
+      "scale": 3,
+      "footprint": [
+        0,
+        1
+      ],
+      "height_px": 36,
+      "prompt": "The mirror of kit.fence_span_se: the post stands on the anchor and the two bamboo rails run down-LEFT for one tile, 32 px left and 16 px down, at heights 11 and 23 px. Paint it separately (not a flipped copy) so the light still comes from the upper-left: the lit side of the post faces left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.fence_span_sw.png",
+      "normal": "assets/kit/fence_span_sw_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.fence_post",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "เสารั้ว",
+      "name_en": "Fence end post",
+      "output": "assets/kit/fence_post.png",
+      "format": "png",
+      "canvas": [
+        16,
+        48
+      ],
+      "anchor": [
+        8,
+        44
+      ],
+      "scale": 3,
+      "footprint": [
+        0,
+        0
+      ],
+      "height_px": 36,
+      "prompt": "A single square timber fence post with a pointed cap, about 36 px tall, standing on the anchor, with a rope tie. It closes the end of a fence run. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.fence_post.png",
+      "normal": "assets/kit/fence_post_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.duck_house",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "เล้าเป็ด",
+      "name_en": "Bamboo duck house (เล้าเป็ด)",
+      "output": "assets/kit/duck_house.png",
+      "format": "png",
+      "canvas": [
+        240,
+        200
+      ],
+      "anchor": [
+        120,
+        140
+      ],
+      "scale": 3,
+      "footprint": [
+        2.8,
+        2.8
+      ],
+      "height_px": 105,
+      "prompt": "Uncle Mee's small bamboo duck house on stilts, about 2.8 × 2.8 tiles, built into the pen's left fence: stilts, a slatted floor deck, woven bamboo walls with corner posts and a tie beam, a small window with a propped shutter on the down-left wall, a thatched gable roof (ridge running up-right to down-left) with layered eaves and a tied ridge bundle, an arched door on the down-right wall (the pen side) with straw spilling out, and a cleated plank ramp from the door down to the ground toward the lower right. The anchor is the ground under the house's centre; the ramp ends about 3 tiles down-right of it. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.duck_house.png",
+      "normal": "assets/kit/duck_house_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.tree_round_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นไม้ใหญ่",
+      "name_en": "Round shade tree (large)",
+      "output": "assets/kit/tree_round_a.png",
+      "format": "png",
+      "canvas": [
+        170,
+        190
+      ],
+      "anchor": [
+        85,
+        178
+      ],
+      "scale": 3,
+      "footprint": [
+        1.5,
+        1.5
+      ],
+      "height_px": 170,
+      "prompt": "A big round-crowned tropical shade tree (like a mango or rain tree): a sturdy trunk with a few visible roots, a wide layered canopy of lush leaves in clusters with lit tops and cool shaded undersides, a few flowers or fruit. About 170 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.tree_round_a.png",
+      "normal": "assets/kit/tree_round_a_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.tree_round_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นไม้เล็ก",
+      "name_en": "Round shade tree (small)",
+      "output": "assets/kit/tree_round_b.png",
+      "format": "png",
+      "canvas": [
+        140,
+        160
+      ],
+      "anchor": [
+        70,
+        150
+      ],
+      "scale": 3,
+      "footprint": [
+        1.2,
+        1.2
+      ],
+      "height_px": 140,
+      "prompt": "A smaller round tree of the same kind as kit.tree_round_a but with a different silhouette (lopsided crown, a split trunk), about 140 px tall, so the two can alternate. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.tree_round_b.png",
+      "normal": "assets/kit/tree_round_b_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.bamboo_clump",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอไผ่",
+      "name_en": "Bamboo clump (กอไผ่)",
+      "output": "assets/kit/bamboo_clump.png",
+      "format": "png",
+      "canvas": [
+        120,
+        200
+      ],
+      "anchor": [
+        60,
+        190
+      ],
+      "scale": 3,
+      "footprint": [
+        1.4,
+        1.4
+      ],
+      "height_px": 185,
+      "prompt": "A clump of 7–9 arching bamboo culms, green with a few golden ones, node rings, dry sheaths at the foot and light feathery leaf sprays leaning outward, about 185 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.bamboo_clump.png",
+      "normal": "assets/kit/bamboo_clump_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.bush_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "พุ่มดอกไม้",
+      "name_en": "Flowering bush",
+      "output": "assets/kit/bush_a.png",
+      "format": "png",
+      "canvas": [
+        90,
+        56
+      ],
+      "anchor": [
+        45,
+        48
+      ],
+      "scale": 3,
+      "footprint": [
+        1.2,
+        0.8
+      ],
+      "height_px": 40,
+      "prompt": "A low rounded bush of glossy leaves with small white and yellow flowers, about 90 px wide and 40 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.bush_a.png",
+      "normal": "assets/kit/bush_a_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.bush_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "พุ่มไม้เล็ก",
+      "name_en": "Small leafy bush",
+      "output": "assets/kit/bush_b.png",
+      "format": "png",
+      "canvas": [
+        64,
+        42
+      ],
+      "anchor": [
+        32,
+        36
+      ],
+      "scale": 3,
+      "footprint": [
+        0.9,
+        0.6
+      ],
+      "height_px": 30,
+      "prompt": "A small fern-and-leaf bush, about 60 px wide and 30 px tall, a different shape from kit.bush_a. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.bush_b.png",
+      "normal": "assets/kit/bush_b_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.rock_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ก้อนหิน",
+      "name_en": "Mossy rock",
+      "output": "assets/kit/rock_a.png",
+      "format": "png",
+      "canvas": [
+        54,
+        34
+      ],
+      "anchor": [
+        27,
+        28
+      ],
+      "scale": 3,
+      "footprint": [
+        0.8,
+        0.6
+      ],
+      "height_px": 22,
+      "prompt": "A rounded grey field stone with moss on its top and a few grass blades at its foot, about 50 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rock_a.png",
+      "normal": "assets/kit/rock_a_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.rock_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "หินก้อนเล็ก",
+      "name_en": "Small rocks",
+      "output": "assets/kit/rock_b.png",
+      "format": "png",
+      "canvas": [
+        40,
+        26
+      ],
+      "anchor": [
+        20,
+        21
+      ],
+      "scale": 3,
+      "footprint": [
+        0.6,
+        0.4
+      ],
+      "height_px": 16,
+      "prompt": "Two or three small pebbles and a stone together, about 36 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rock_b.png",
+      "normal": "assets/kit/rock_b_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.haystack",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กองฟาง",
+      "name_en": "Rice-straw stack (กองฟาง)",
+      "output": "assets/kit/haystack.png",
+      "format": "png",
+      "canvas": [
+        76,
+        66
+      ],
+      "anchor": [
+        38,
+        58
+      ],
+      "scale": 3,
+      "footprint": [
+        1,
+        1
+      ],
+      "height_px": 52,
+      "prompt": "A rounded stack of golden rice straw with loose strands and a darker straw cap, about 70 px wide and 52 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.haystack.png",
+      "normal": "assets/kit/haystack_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.water_jar",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "โอ่งน้ำ",
+      "name_en": "Clay water jar (โอ่งน้ำ)",
+      "output": "assets/kit/water_jar.png",
+      "format": "png",
+      "canvas": [
+        48,
+        54
+      ],
+      "anchor": [
+        24,
+        48
+      ],
+      "scale": 3,
+      "footprint": [
+        0.6,
+        0.6
+      ],
+      "height_px": 44,
+      "prompt": "A round glazed brown clay water jar with a wide rim and a wooden lid half on, about 44 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.water_jar.png",
+      "normal": "assets/kit/water_jar_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.reeds",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กกริมสระ",
+      "name_en": "Pond reeds and lotus",
+      "output": "assets/kit/reeds.png",
+      "format": "png",
+      "canvas": [
+        54,
+        56
+      ],
+      "anchor": [
+        27,
+        50
+      ],
+      "scale": 3,
+      "footprint": [
+        0.8,
+        0.5
+      ],
+      "height_px": 46,
+      "prompt": "A clump of pond-edge reeds with two brown cattail heads, a couple of broad leaves and one pink lotus bud on a stalk, about 46 px tall; the base sits at the water line. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.reeds.png",
+      "normal": "assets/kit/reeds_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.egret",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "นกยาง",
+      "name_en": "White egret (นกยาง)",
+      "output": "assets/kit/egret.png",
+      "format": "png",
+      "canvas": [
+        32,
+        44
+      ],
+      "anchor": [
+        16,
+        41
+      ],
+      "scale": 3,
+      "footprint": [
+        0.3,
+        0.3
+      ],
+      "height_px": 40,
+      "prompt": "A slender white egret standing on one leg, neck curved, yellow bill, about 40 px tall, facing down-left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.egret.png",
+      "normal": "assets/kit/egret_n.png",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
       "id": "ui.logo",
       "category": "ui",
       "priority": 3,
@@ -5897,6 +6437,13 @@
       "5. Remove the background cleanly for sprites, save to paint.output, stamp paint.status 'done', paint.file = paint.output and paint.updated_at. Put anything the reviewer should know in paint.notes.",
       "6. Run `node tools/check-assets.mjs`: it must print OK (it checks the file exists, its pixel size and, for sprites, the alpha channel)."
     ],
-    "text": "No text inside any image except the logo (ไร่สุขใจ / RAI SUKJAI). The game renders all labels and signs itself."
+    "text": "No text inside any image except the logo (ไร่สุขใจ / RAI SUKJAI). The game renders all labels and signs itself.",
+    "normal_maps": {
+      "what": "For every asset with a `normal` field, also deliver a tangent-space normal map: same pixel size and silhouette (same alpha) as the colour PNG, saved at `normal`. The game will use it to light the piece from a moving sun and lanterns.",
+      "convention": "OpenGL style: red = surface facing right (+X), green = facing UP the image (+Y), blue = facing the viewer. A flat surface facing the viewer is (128, 128, 255). Keep it smooth and rounded like the painted forms: rounded canopy blobs, cylindrical bamboo and posts, planar roof and wall planes following the isometric faces.",
+      "how": "Generate from the finished colour sprite with a normal-map tool (Laigter, SpriteIlluminator, Sprite DLight) or a depth model (Depth Anything / Marigold) converted to normals, then clean up by hand so the big planes read correctly.",
+      "light_in_colour": "Because the game adds the strong light, paint kit pieces with SOFT built-in light: the same upper-left sun but gentle shading, no dark cast shadows and no shadow on the ground, only a faint darkening where the object touches the ground."
+    },
+    "kits": "Scenes are being rebuilt from kits (duck pen first): a painted ground layer plus separate pieces the game places and depth-sorts. See assets/painted/_layout/pen_kit_composition.jpg for where every piece of the pen goes, and each piece's `layout` guide for its canvas, anchor, footprint and height."
   }
 }
