@@ -5831,7 +5831,7 @@
         0
       ],
       "scale": 2,
-      "prompt": "Wide ISOMETRIC (2:1) ground layer for Uncle Mee's duck pen, 21:9, 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). Paint ONLY what lies flat plus the far backdrop: sunny grass with clover and flowers, the packed-earth pen floor on the diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (scattered straw and grain, a couple of muddy patches), the lotus pond water with its muddy rim and lily pads centred around safe-area (894,253), worn dirt paths, and beyond the clearing's back edges (where the old composition shows it) a dense tropical forest wall fading into soft haze. Follow the old composition in assets/painted/_layout/bg.pen.jpg and assets/painted/_layout/pen_kit_composition.jpg. NO fences, duck house, trees in the clearing, bushes, rocks, reeds, haystacks, jars, bananas, birds, animals or people: those are separate kit pieces the game places on top. Same warm upper-left sunlight, soft painted style as target.jpg.",
+      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for Uncle Mee's duck pen, 21:9, exactly 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). It is the flat floor of the scene, like a game map's terrain layer: the game places every standing object on top of it. Paint: sunny grass with clover and tiny flowers lying flat; the packed-earth pen floor as a diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (= image pixels (1640,400), (2440,800), (1640,1200), (840,800)), with scattered straw and grain and a few darker damp patches, no tile or grid pattern; the lotus pond water with a thin muddy rim and flat lily pads, centred at safe-area (894,253) (= image pixel (2388,506)), about 300×120 safe-area px; a couple of faint worn dirt paths. Along the TOP EDGE ONLY (the top 160 px of the image) a distant, hazy, low-contrast tree line, painted flat. LIGHT: even, soft, shadowless daylight. NO cast shadows anywhere, NO dappled tree shadows, NO shade patches, NO sun flare, NO light rays, NO vignette; the game adds all shadows and light. NOTHING that stands up except that far tree line: no bushes, shrubs, hedges, trees, flowers taller than the grass, rocks, fences, duck house, reeds, haystacks, jars, bananas, birds, animals or people. Same warm colours and soft painted brushwork as assets/painted/_style/target.jpg; composition as in assets/painted/_layout/bg.pen.jpg minus every standing object.",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.pen.jpg",
@@ -5840,7 +5840,8 @@
       "agent": null,
       "updated_at": null,
       "notes": "",
-      "review": null
+      "review": null,
+      "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark"
     },
     {
       "id": "kit.fence_span_se",
