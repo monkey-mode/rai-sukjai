@@ -3736,7 +3736,7 @@
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 1,
         "output": "assets/painted/characters/uncle_mee.png",
         "scale": 6,
@@ -3750,10 +3750,10 @@
         ],
         "layout": "assets/painted/_layout/character.uncle_mee.png",
         "prompt": "A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/characters/uncle_mee.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (12, 19, 270, 607) versus layout (13, 12, 263, 607); review silhouette/base placement before approval. Chibi elderly farmer; white singlet, blue/red checked cloth, black trousers, grey side hair, white moustache, straw hat and red-flag bamboo staff retained.",
         "review": null
       }
     },
@@ -3938,7 +3938,7 @@
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 0,
         "output": "assets/painted/animals/duck.png",
         "scale": 4,
@@ -3952,10 +3952,10 @@
         ],
         "layout": "assets/painted/_layout/animal.duck.png",
         "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. The game waddles it along the grid diagonal and flips it horizontally for the way back. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/animals/duck.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (22, 20, 191, 160) versus layout (10, 7, 195, 169); review silhouette/base placement before approval.",
         "review": null
       }
     },
@@ -4173,7 +4173,7 @@
       "notes": "Isometric redesign: plank box on legs with an open dark cavity; the feed level is drawn by the game.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 0,
         "output": "assets/painted/props/trough.png",
         "scale": 3,
@@ -4187,10 +4187,10 @@
         ],
         "layout": "assets/painted/_layout/prop.trough.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/trough.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (13, 3, 477, 332) versus layout (9, 6, 477, 330); review silhouette/base placement before approval. Wooden cavity left empty for runtime feed overlay.",
         "review": null
       }
     },
@@ -4220,7 +4220,7 @@
       "notes": "Isometric redesign: straw ring with woven strands, hollow middle and loose straws.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/nest.png",
         "scale": 3,
@@ -4234,10 +4234,10 @@
         ],
         "layout": "assets/painted/_layout/prop.nest.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/nest.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (11, 8, 407, 207) versus layout (8, 8, 408, 208); review silhouette/base placement before approval. Hollow left empty for runtime egg overlay.",
         "review": null
       }
     },
@@ -4268,7 +4268,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_1.png",
         "scale": 4,
@@ -4282,10 +4282,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_1.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 1 duck egg (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_1.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (76, 98, 124, 156) versus layout (64, 83, 128, 168); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4316,7 +4316,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_2.png",
         "scale": 4,
@@ -4330,10 +4330,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_2.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 2 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_2.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (67, 75, 129, 155) versus layout (57, 70, 135, 172); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4364,7 +4364,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_3.png",
         "scale": 4,
@@ -4378,10 +4378,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_3.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 3 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_3.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (48, 78, 151, 164) versus layout (38, 68, 154, 176); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4412,7 +4412,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_4.png",
         "scale": 4,
@@ -4426,10 +4426,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_4.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 4 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_4.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (33, 71, 164, 180) versus layout (31, 66, 161, 180); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4460,7 +4460,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_5.png",
         "scale": 4,
@@ -4474,10 +4474,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_5.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 5 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_5.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (37, 62, 163, 186) versus layout (31, 55, 161, 184); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4508,7 +4508,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_6.png",
         "scale": 4,
@@ -4522,10 +4522,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_6.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 6 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_6.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (15, 65, 182, 190) versus layout (12, 53, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4556,7 +4556,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_7.png",
         "scale": 4,
@@ -4570,10 +4570,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_7.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 7 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_7.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (17, 39, 182, 182) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4604,7 +4604,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_8.png",
         "scale": 4,
@@ -4618,10 +4618,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_8.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 8 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_8.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (26, 41, 177, 173) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4652,7 +4652,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_9.png",
         "scale": 4,
@@ -4666,10 +4666,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_9.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 9 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_9.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (15, 39, 185, 182) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4700,7 +4700,7 @@
       "notes": "3D-built: egg ellipsoids at pyramid positions, re-centred on the bottom layer, sorted bottom-up and back-to-front.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/props/egg_pile_10.png",
         "scale": 4,
@@ -4714,10 +4714,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_pile_10.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A pile of exactly 10 duck eggs (off-white #f1ede0 with a soft shade, a white highlight and a tiny speckle), stacked as a small pyramid: up to 6 on the bottom layer (rows of 3, 2, 1), then 3, then 1 on top, filling front to back and bottom to top. All ten variants share the same canvas and anchor (the ground at the pile's centre) so the game can swap them by count: the pile sits in the nest's hollow; above 10 eggs the game adds darkened copies of the 10-egg pile peeking out behind it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_pile_10.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (14, 23, 185, 178) versus layout (12, 11, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
       }
     },
@@ -4747,7 +4747,7 @@
       "notes": "Redesign 2: flared bowl with shaded checkerboard weave, wrapped rim, lashed bamboo handle, straw lining and six eggs.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 0,
         "output": "assets/painted/props/egg_basket.png",
         "scale": 3,
@@ -4761,10 +4761,10 @@
         ],
         "layout": "assets/painted/_layout/prop.egg_basket.png",
         "prompt": "A game prop, isolated, seen from the isometric camera (3/4 view from about 30° above). A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. A soft contact shadow directly under it, nothing else around it.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/props/egg_basket.png",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (8, 4, 330, 326) versus layout (4, 0, 332, 333); review silhouette/base placement before approval. Six eggs, red handle ties and bamboo weave retained.",
         "review": null
       }
     },
@@ -5791,7 +5791,7 @@
       "review": null,
       "raster": "assets/backgrounds/pen.webp",
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 0,
         "output": "assets/painted/backgrounds/pen.webp",
         "scale": 2,
@@ -5805,10 +5805,10 @@
         ],
         "layout": "assets/painted/_layout/bg.pen.jpg",
         "prompt": "Wide isometric (2:1) background for Uncle Mee's duck pen in a cozy farming game, 21:9. Follow the layout image exactly: a packed-earth pen floor with scattered straw and grain, the rustic rail fence along its back edges, a bamboo duck house on stilts with a thatched roof and a plank ramp built into the left fence, a lotus pond with lily pads, reeds and an egret beyond the fence on the right, the forest clearing edge with bamboo groves behind, straw stacks, a water jar and banana plants in the side margins. Keep the pen floor clear where the game places the nest, the feed trough, the egg basket, the ducks and Uncle Mee. No animals, no people, no props on the floor.",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/backgrounds/pen.webp",
+        "agent": "Codex",
+        "updated_at": "2026-09-30T18:23:58Z",
+        "notes": "Layout-conditioned repaint; full canvas resampled to 2800×1200, WebP quality 85. Main house, fence and pond follow layout; painted organic edges vary slightly. Pond egrets retained as specified; playable floor clear.",
         "review": null
       }
     },
