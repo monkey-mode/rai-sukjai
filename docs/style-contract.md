@@ -27,7 +27,10 @@ The anchors are finished kit pieces the owner has approved **at game size**. The
 | `kit.tree_round_a` | foliage: layered leaf clusters, trunk, roots |
 | `kit.fence_span_se` | small hand-made props: timber, bamboo, rope |
 
-**State: candidates** (`paint_style.style_anchors.status`). They are being refined until the owner approves them. **No other kit piece is produced until then.**
+**State: approved and locked.**
+- **Approved artwork:** the files introduced in commit `7a553f8`, the "sculpted foliage and rustic construction" style test.
+- **Rejected:** the later simplified redraws. Those are not the style.
+- **Lock files:** the anchors are locked by `node tools/lock-style-anchors.mjs`. Their renders in `assets/painted/_style/anchors/` are the style reference for every later piece.
 
 On approval, `node tools/lock-style-anchors.mjs`:
 - renders each anchor to `assets/painted/_style/anchors/<id>.png` (game size) and `<id>@4x.png` (the image to attach as a style reference);
@@ -44,9 +47,9 @@ On approval, `node tools/lock-style-anchors.mjs`:
 | **Camera** | The game's isometric view, 2:1. Ground edges run along the 26.6° diagonals and verticals stay vertical, seen from about 30° above. Build each piece on the iso grid of its layout guide. |
 | **Lighting** | One sun, upper-left, for every piece. Surfaces facing up or left take the material's light tone, front faces the base tone, faces down or right the shadow tone. Hard edges between tones (cel shading). One small hard highlight only on glossy things. **No shadow on the ground**: the game draws it, and moving light comes from the normal map. |
 | **Palette** | Fills only from `paint_style.palette`. Each material has exactly three tones `[light, base, shadow]`; use the tones **of that material** (roof → straw, walls → bamboo, frame → wood_dark), not just the nearest hex. No other colours, gradients, filters, patterns, masks, blur, glow or noise. |
-| **Line weights** | **Outer outline:** `#3a2213`, 2.5 canvas px, closed around the whole silhouette and between major parts (roof/wall, trunk/crown), round joins. **Inner lines:** `#6b4428`, 1.2 canvas px, for planks, weave, thatch rows, leaf veins and rope. The same widths on every piece, so line weight matches in the game. |
-| **Shape complexity** | Natural, readable silhouettes: no blobs, no geometric primitives, no noise. Detail is **grouped**: leaves in defined clusters, each built as dark base silhouette + mid layer + light top; thatch in layered rows with irregular tips; planks and weave as clean shapes or inner lines. No trace leftovers: no islands under about 4 px² and no jagged contours. |
-| **Material detail** | **Wood:** 2–3 thin grain lines and cut ends. **Bamboo:** node collars and a light–base–shadow roll. **Thatch/straw:** rows and loose tips. **Woven walls:** a regular weave in inner lines. **Leaves:** cluster shapes with a lit top. **Stone:** 2–3 facets plus moss on top. **Water edges:** a reed base at the water line. |
+| **Line weights** | **Outer silhouette:** `#3a2213`, about **2.5 canvas px visible**, closed around the whole piece, round joins. Two ways to draw it, both used by the anchors:<br>• a 5 px stroke drawn *beneath* the fills, which leaves 2.5 px showing outside (traced pieces: house, tree);<br>• a 2.5 px stroke drawn over the fills (hand-drawn pieces: fence).<br>**Inner contours:** `#6b4428`, 1.2 canvas px, chosen on purpose for planks, weave, thatch rows, branch splits and rope. The visible weight must match the anchors on the kit board. |
+| **Shape complexity** | Match the **rich, sculpted** look of the approved anchors, *not* a clean flat cartoon. The owner rejected simplified redraws.<br>• **Natural silhouettes:** irregular, organic edges. No blobs and no geometric primitives.<br>• **Dense material detail traced from a sculpted reference and kept**: overlapping leaf sprays with visible gaps between branches; irregular overlapping thatch; woven panels; timber texture.<br>• **Remove only noise that describes nothing:** stray specks and sub-pixel slivers.<br>• **Measured on the anchors** (`node tools/validate-kit.mjs`): interior detail density about 0.13 on the house and the tree (the small fence reads higher). New pieces must land between ×0.45 and ×2.2 of the anchors. |
+| **Material detail** | As on the anchors:<br>• **Wood:** restrained grain, cut ends, cleats.<br>• **Bamboo:** node collars, curved rails, light–base–shadow roll.<br>• **Thatch/straw:** irregular overlapping rows and loose strands.<br>• **Woven walls:** visible weave texture in the bamboo tones.<br>• **Leaves:** overlapping sprays in leaf and leaf_dark tones, lit tops, branch gaps.<br>• **Trunks:** twisted, with flared roots.<br>• **Stone:** facets plus moss.<br>• **Water edges:** a reed base at the water line. |
 | **Scale (relative to the characters)** | Canvas units are game pixels. The farmer is about 67 px tall in the game (the character size chart is still to be unified: Uncle Mee is currently drawn about 2.7× larger). Reference heights: fence post 36, haystack 52, duck house 105, banana 120–150, round tree 140–170, bamboo 185, Thai house about 250. Each entry's `height_px` is binding (±20%, checked). |
 | **Canvas** | The entry's `canvas` (SVG `viewBox`). The whole piece fits inside with a few px to spare; nothing is clipped. |
 | **Anchor** | The ground point under the piece sits exactly on the guide's anchor cross. The validator checks that the piece actually stands there. |
@@ -82,8 +85,8 @@ The asset agent fills it **before the next batch**, and uses the same values for
 ### 3.3 Finishing without losing the approved look
 
 1. Commit the approved pre-trace image to `assets/painted/_source/<id>.png` (canvas × 2).
-2. Trace, then snap each fill to its material's three tones, then remove islands and smooth jagged contours.
-3. Redraw the outline and the inner lines as strokes at the locked widths.
+2. Trace, then snap each material plane to that material's three tones. Remove only noise that describes nothing; keep the traced material texture.
+3. Redraw the outer silhouette at the locked visible weight (a 5 px stroke under the fills, or 2.5 px over them), and choose the 1.2 px inner contours deliberately.
 4. Export the SVG (`viewBox` = canvas), then render the normal map.
 5. Validate:
    - `node tools/check-assets.mjs`: format, palette, no forbidden SVG features, normal map size;
@@ -99,9 +102,9 @@ Tracing, palette reduction and export must keep the approved silhouette and deta
 
 ## 4. Order of work
 
-1. Refine the three anchor candidates until the owner approves them at game size.
-2. Lock them with `node tools/lock-style-anchors.mjs`.
-3. Fill and fix the generation profile.
+1. ~~Approve the three anchors at game size.~~ Done: the owner approved the `7a553f8` artwork.
+2. ~~Lock them with `node tools/lock-style-anchors.mjs`.~~ Done.
+3. Keep the generation profile complete. Any field still marked *NOT RECORDED* gets its real value with the next batch; never guess one.
 4. Make `ground.pen` (flat layer only).
 5. Make the remaining 12 pieces in sets that share materials:
    - fences (`kit.fence_span_sw`, `kit.fence_post`);

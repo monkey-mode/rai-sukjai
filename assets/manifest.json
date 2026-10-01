@@ -5844,12 +5844,17 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:24:21Z",
       "notes": "Repainted to the revised ground brief from 8b51a5e: even shadowless light, flat grass/dirt/water only, distant hazy tree line confined to top band, no foreground foliage or kit pieces. WebP quality 85. Pixel-exact organic terrain edges/pond placement remain approximate; review against the guide.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark",
       "style": "flat-v3",
       "tags": [
         "walkable",
         "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
       ]
     },
     {
@@ -5879,12 +5884,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_span_se.png",
       "normal": "assets/kit/fence_span_se_n.png",
-      "status": "needs_changes",
+      "status": "approved",
       "file": "assets/kit/fence_span_se.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Hand-authored SVG with curved bamboo rails, raised node collars, visible cut ends, rope ties and restrained timber grain. Palette-only three-tone wood/bamboo fills and upper-left cel light; 2.5 px silhouette and 1.2 px inner lines. Post ground point (8,46), height36; rails still span exactly (32,16). No ground shadow. 2x normal map via same kit Laigter preset, cleaned planar post/cylindrical rails and exact render alpha. Three-piece style test only.",
-      "review": "STYLE ANCHOR CANDIDATE, refine. Clean and hand-made. Fix: the post's grain marks read as stuck-on blobs; use 2–3 thin inner grain lines instead. Give the rails a clear three-tone roll (light top edge, base, shadow underside) and keep the node collars and rope ties. Keep geometry and line widths.",
+      "review": "Approved by the owner as a locked style anchor (2026-10-01): the artwork from commit 7a553f8, as it looked before the refinement task. The later simplified redraws were rejected. Do not modify this file; later pieces must match its silhouette quality, material detail, palette use, line weight and upper-left light.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -5925,7 +5930,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (16, 35, 126, 153); guide ground anchor: (120, 138); target standing height: 108 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -5971,7 +5976,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (11, 19, 37, 126); guide ground anchor: (24, 132); target standing height: 108 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -6012,12 +6017,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.duck_house.png",
       "normal": "assets/kit/duck_house_n.png",
-      "status": "needs_changes",
+      "status": "approved",
       "file": "assets/kit/duck_house.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Generated a more sculpted construction reference, traced and cleaned into SVG; each major material plane snapped to exactly its three locked wood/bamboo/straw/wood_dark tones plus ink. No embedded pixels, gradients or effects. 2.5 px redrawn silhouette, curated 1.2 px inner contours, upper-left light; woven panels, propped shutter, irregular overlapping thatch and raised ramp cleats. Compact projection: roof top about y35, ground centre approximately (120,140); house body occupies less of the 2.8-tile footprint than the geometric first test, so review footprint coverage. 2x normal map from same kit Laigter preset, hand-cleaned roof/wall/ramp planes, exact render alpha. Three-piece style test only.",
-      "review": "STYLE ANCHOR CANDIDATE, refine. Compared with the Night Camp board: the trace left blotchy islands, a wobbly outline and muddy olive tones, so the woven walls read as stains and the thatch as camouflage; the body is also narrower than its footprint. Redraw the main shapes by hand (or rebuild from a cleaner source): roof in straw tones only, layered thatch rows with irregular tips, a clear ridge bundle; walls in bamboo tones with a woven pattern drawn as clean inner lines; frame, posts and stilts in wood_dark; ramp planks in wood. Fill the footprint diamond (2.8 × 2.8 tiles), keep the 105 px height and the anchor.",
+      "review": "Approved by the owner as a locked style anchor (2026-10-01): the artwork from commit 7a553f8, as it looked before the refinement task. The later simplified redraws were rejected. Do not modify this file; later pieces must match its silhouette quality, material detail, palette use, line weight and upper-left light.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6053,12 +6058,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.tree_round_a.png",
       "normal": "assets/kit/tree_round_a_n.png",
-      "status": "needs_changes",
+      "status": "approved",
       "file": "assets/kit/tree_round_a.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Sculpted botanical reference traced to SVG: overlapping leaf sprays, visible branching gaps, twisted trunk and flared roots replace cloud blobs. Leaf and deep-leaf materials use their three palette tones each; wood uses its three tones, with locked ink colours. Small noise regions removed, subpixel contours simplified, outer silhouette redrawn at 2.5 px and curated internal branch contours at 1.2 px. No embedded pixels, gradients, filters or ground shadow. Crown top about y8 and roots at (85,178), guide standing height170. 2x normal map via kit Laigter preset with cleaned rounded canopy/trunk volume and exact render alpha. Three-piece style test only.",
-      "review": "STYLE ANCHOR CANDIDATE, refine. Closest to the reference. Fix: leaf clusters are jagged trace leftovers; make each cluster a clean defined shape built as dark base silhouette, mid layer, light top. Use far more of the light leaf tone on top/left-facing clusters and less leaf_dark area, so the crown reads lit, not heavy. Bring back 3–5 small fruit or flower accents (palette yellow/white). Keep the twisted trunk, roots, silhouette, height and anchor.",
+      "review": "Approved by the owner as a locked style anchor (2026-10-01): the artwork from commit 7a553f8, as it looked before the refinement task. The later simplified redraws were rejected. Do not modify this file; later pieces must match its silhouette quality, material detail, palette use, line weight and upper-left light.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6098,7 +6103,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Visible alpha bounds at file scale (threshold 24): (37, 41, 382, 449); guide ground anchor: (210, 450); target standing height: 420 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6144,7 +6149,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:06:53Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smooth rounded relief, normalized vectors, exact colour alpha. Organic outline, height and base placement vary from the geometric guide; check assembled scale before approval. Visible alpha bounds at file scale (threshold 24): (7, 39, 348, 556); guide ground anchor: (180, 570); target standing height: 555 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6190,7 +6195,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Visible alpha bounds at file scale (threshold 24): (33, 42, 244, 146); guide ground anchor: (135, 144); target standing height: 120 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6236,7 +6241,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:07:50Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Geometric guide fit is approximate; painted object may be narrower/shorter than the guide. Visible alpha bounds at file scale (threshold 24): (21, 29, 173, 110); guide ground anchor: (96, 108); target standing height: 90 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6282,7 +6287,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Enlargement request did not fully reach the guide footprint: this stone cluster remains smaller than specified; review before approval. Visible alpha bounds at file scale (threshold 24): (36, 27, 127, 84); guide ground anchor: (81, 84); target standing height: 66 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6328,7 +6333,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Enlargement request did not fully reach the guide footprint: this stone cluster remains smaller than specified; review before approval. Visible alpha bounds at file scale (threshold 24): (34, 22, 87, 61); guide ground anchor: (60, 63); target standing height: 48 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "decor",
@@ -6373,7 +6378,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:07:50Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Geometric guide fit is approximate; painted object may be narrower/shorter than the guide. Visible alpha bounds at file scale (threshold 24): (41, 34, 187, 163); guide ground anchor: (114, 174); target standing height: 156 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6419,7 +6424,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (25, 32, 128, 147); guide ground anchor: (72, 144); target standing height: 132 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6464,7 +6469,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (42, 15, 127, 153); guide ground anchor: (81, 150); target standing height: 138 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6510,7 +6515,7 @@
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (21, 14, 79, 122); guide ground anchor: (48, 123); target standing height: 120 file px.",
-      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
         "decor"
@@ -6749,19 +6754,43 @@
       "Normal map: render the final SVG at 2× and save to `normal` with the recorded Laigter settings."
     ],
     "style_anchors": {
-      "status": "candidate",
-      "locked": false,
+      "status": "locked",
+      "locked": true,
       "ids": [
         "kit.duck_house",
         "kit.tree_round_a",
         "kit.fence_span_se"
       ],
-      "rule": "Style anchors are the owner-approved finished kit pieces that define v3 for every later batch. Until the owner approves them at game size, they are candidates and no other kit piece may be produced. After approval, `node tools/lock-style-anchors.mjs` renders them to assets/painted/_style/anchors/ and records their sha256; tests fail if a locked anchor changes.",
-      "reference_board": "The owner's Night Camp asset board (supplied out of band) sets the target craftsmanship: natural silhouettes, layered botanical foliage, sculpted forms, convincing construction, readable material detail. It is a quality target only; never trace or copy it."
+      "rule": "Style anchors are the owner-approved finished kit pieces that define v3 for every later batch: the artwork from commit 7a553f8. `node tools/lock-style-anchors.mjs` renders them to assets/painted/_style/anchors/ and records their sha256; tests fail if a locked anchor changes. Their @4x renders are the STYLE reference in every prompt; layout guides are the GEOMETRY reference only.",
+      "reference_board": "The owner's Night Camp asset board (supplied out of band) sets the target craftsmanship: natural silhouettes, layered botanical foliage, sculpted forms, convincing construction, readable material detail. It is a quality target only; never trace or copy it.",
+      "approved_artwork": "commit 7a553f8 (pre-refinement), confirmed byte-identical at 1a2fcf1",
+      "approved_by": "owner",
+      "approved_at": "2026-10-01T19:01:06Z",
+      "files": {
+        "kit.duck_house": {
+          "svg": "assets/kit/duck_house.svg",
+          "sha256": "ef7e8c64334d5e6b82a6bd4cfdbe05aca830b46f7738ef28ed90a788c17bb07d",
+          "render": "assets/painted/_style/anchors/kit.duck_house.png",
+          "render_4x": "assets/painted/_style/anchors/kit.duck_house@4x.png"
+        },
+        "kit.tree_round_a": {
+          "svg": "assets/kit/tree_round_a.svg",
+          "sha256": "003990ad438c0705d235ec00d0dee78669b131e7e3984a3e691bb0742b670e05",
+          "render": "assets/painted/_style/anchors/kit.tree_round_a.png",
+          "render_4x": "assets/painted/_style/anchors/kit.tree_round_a@4x.png"
+        },
+        "kit.fence_span_se": {
+          "svg": "assets/kit/fence_span_se.svg",
+          "sha256": "4e8a0b7d0df275c04cee6bfbdd78371f19a2728d56d8454d45ec546b56b33873",
+          "render": "assets/painted/_style/anchors/kit.fence_span_se.png",
+          "render_4x": "assets/painted/_style/anchors/kit.fence_span_se@4x.png"
+        }
+      },
+      "locked_at": "2026-10-01T19:01:07Z"
     },
     "prompt_template": {
       "rule": "Every generation prompt has these four labelled parts, in this order. Never mix their roles.",
-      "1_style_references": "STYLE (controls look only): the locked anchor renders assets/painted/_style/anchors/<id>@4x.png and the contract in docs/style-contract.md. Match their outline, palette use, cel shading, shape complexity and material detail.",
+      "1_style_references": "STYLE (controls look only): the locked anchor renders assets/painted/_style/anchors/kit.duck_house@4x.png, kit.tree_round_a@4x.png and kit.fence_span_se@4x.png, plus docs/style-contract.md. Match their silhouette quality, material detail, palette use, line weight and upper-left light.",
       "2_geometry_reference": "GEOMETRY (controls placement only): the entry's `layout` guide: canvas, anchor cross, footprint diamond, height line. It has no style; do not copy its colours or flat shapes.",
       "3_subject": "SUBJECT: the entry's `prompt` (what the object is).",
       "4_settings": "SETTINGS: paint_style.prompt_suffix and negative_prompt, plus the fixed values in assets/painted/_style/generation_profile.json."

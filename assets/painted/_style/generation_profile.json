@@ -1,30 +1,36 @@
 {
-  "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Fill every field before the next batch; any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
-  "profile_version": 0,
-  "status": "to fill in by the asset agent",
+  "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
+  "profile_version": 1,
+  "status": "partially recorded: reconstructed from the asset agent's notes for the approved anchors (commit 7a553f8). Fields the agent did not record are marked NOT RECORDED and must be filled with the real values before or during the next batch; never guess them.",
+  "recorded_by": "main agent, from the manifest notes of kit.duck_house, kit.tree_round_a and kit.fence_span_se (agent: Codex, 2026-10-01T17:55:40Z)",
+  "approved_anchor_process": {
+    "kit.duck_house": "generated a sculpted construction reference image, traced it to SVG, cleaned it, snapped each major material plane to its three locked palette tones (straw, bamboo, wood, wood_dark) plus the line colours, redrew the 2.5 px silhouette, curated 1.2 px inner contours",
+    "kit.tree_round_a": "generated a sculpted botanical reference image, traced it to SVG, removed small noise regions, simplified sub-pixel contours, snapped leaf, leaf_dark and wood to their three tones each, redrew the 2.5 px silhouette, curated 1.2 px branch contours",
+    "kit.fence_span_se": "hand-authored SVG (no generation): curved bamboo rails, raised node collars, cut ends, rope ties, restrained timber grain; 2.5 px silhouette, 1.2 px inner lines"
+  },
   "generation": {
-    "model": null,
-    "model_version": null,
-    "interface": null,
-    "image_size": null,
-    "sampler_and_steps": null,
-    "guidance_or_cfg": null,
-    "seed_policy": null
+    "model": "NOT RECORDED",
+    "model_version": "NOT RECORDED",
+    "interface": "NOT RECORDED",
+    "image_size": "NOT RECORDED",
+    "sampler_and_steps": "NOT RECORDED",
+    "guidance_or_cfg": "NOT RECORDED",
+    "seed_policy": "NOT RECORDED"
   },
   "references": {
-    "style_reference_input": "how the locked anchor renders (assets/painted/_style/anchors/*@4x.png) are supplied, e.g. style-reference image / IP-Adapter / --sref",
-    "style_reference_weight": null,
-    "geometry_reference_input": "how the piece's layout guide is supplied, e.g. ControlNet canny/depth/lineart or img2img init",
-    "geometry_reference_weight_or_denoise": null,
+    "style_reference_input": "From now on: the locked anchor renders assets/painted/_style/anchors/<id>@4x.png. How they are supplied (style-reference image, IP-Adapter, --sref, attachment): NOT RECORDED.",
+    "style_reference_weight": "NOT RECORDED",
+    "geometry_reference_input": "the entry's layout guide (assets/painted/_layout/<id>.png). How it was supplied for the anchors: NOT RECORDED.",
+    "geometry_reference_weight_or_denoise": "NOT RECORDED",
     "never_mix": "Style references are the approved anchors only. The layout guide is geometry only (canvas, anchor, footprint, height); never let it set colour or style."
   },
   "finishing": {
-    "trace_tool_and_settings": null,
-    "palette_snap_method": "every fill snapped to the nearest paint_style.palette tone of the right material (not just the nearest hex overall)",
-    "cleanup": "merge islands smaller than ~4 px², smooth jagged contours, keep leaf clusters and planks as whole shapes",
-    "outline_redraw": "outer outline #3a2213 at 2.5 canvas px and inner lines #6b4428 at 1.2 px, redrawn as strokes, not traced",
+    "trace_tool_and_settings": "NOT RECORDED (tracing was used for the house and the tree)",
+    "palette_snap_method": "each major material plane snapped to exactly its own material's three palette tones plus the two line colours (as done for the anchors)",
+    "cleanup": "remove small noise regions and simplify sub-pixel contours, but keep the traced material texture (thatch strands, weave, leaf sprays): the simplified clean redraws were rejected by the owner",
+    "outline_redraw": "outer silhouette #3a2213, visible about 2.5 px: either a 5 px stroke drawn beneath the fills (traced pieces) or a 2.5 px stroke over them (hand-drawn pieces); inner contours #6b4428 at 1.2 px, curated",
     "export": "SVG with viewBox = canvas, no raster, no gradients/filters/masks/patterns",
-    "normal_map": "Laigter: settings to record here; render the final SVG at 2× and save to the entry's `normal`"
+    "normal_map": "the kit Laigter preset used since the painted kit, rendered from the final SVG at 2x, planes hand-cleaned (roof, walls, ramp, post) or volumes rounded (canopy, trunk, rails), exact render alpha. Preset values: NOT RECORDED"
   },
-  "source_files": "Commit the approved pre-trace image as assets/painted/_source/<id>.png (same size as the canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail."
+  "source_files": "For every new piece, commit the approved pre-trace image as assets/painted/_source/<id>.png (canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail. The anchors have no source files; their approved SVGs are the reference."
 }

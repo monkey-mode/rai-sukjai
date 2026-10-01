@@ -73,7 +73,7 @@ The first painted kit looked AI-generated: soft airbrushed shading, noisy textur
    - hard edges between tones;
    - one small hard highlight on glossy things;
    - no shadow on the ground (the game draws it).
-4. **Simple, grouped detail:** leaves in 5–9 clumps, 4–6 planks, a few straw strokes. Chunky silhouettes that read at a glance.
+4. **Rich, sculpted detail** like the approved anchors: natural silhouettes, overlapping leaf sprays with branch gaps, irregular thatch, woven panels and timber texture. The first, simpler flat test was rejected as too plain and childlike, and so were the later simplified redraws.
 5. **Camera:** the 2:1 isometric game view. Each piece is built on the iso grid shown in its guide image, with verticals kept vertical.
 6. **Scale relative to the farmer:** canvas units are game pixels, and `height_px` and `footprint` are the contract. Reference heights:
 
@@ -93,8 +93,13 @@ The first painted kit looked AI-generated: soft airbrushed shading, noisy textur
    - the anchor on the ground point.
 
 **How to make a v3 piece:**
-- **Preferred:** hand-author the SVG on the guide's grid.
-- **Or:** generate a flat-style reference with an image model, *trace it to vector*, snap every fill to the palette, and redraw the outline at the locked widths. Never ship raw generated pixels.
+- **As the anchors were made:**
+  - generate a sculpted reference (style: the locked anchor renders; geometry: the layout guide);
+  - *trace it to vector* and snap each material plane to its own three palette tones;
+  - remove only meaningless noise;
+  - redraw the silhouette at the locked visible weight.
+- **Small, simple pieces** (fence parts) may be hand-authored.
+- **Never ship raw generated pixels.** The binding process is in [docs/style-contract.md](style-contract.md) section 3.
 
 ### 2.4 Everything lines up: the kit board
 
