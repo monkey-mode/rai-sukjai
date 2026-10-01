@@ -7,7 +7,7 @@
       "todo": "not started",
       "in_progress": "claimed by an asset agent (set `agent` and `updated_at`)",
       "done": "file created at `output`; `file` set to that path; waiting for review",
-      "needs_changes": "reviewer wrote what to fix in `review`; asset agent redoes it and sets done again",
+      "needs_changes": "reviewer wrote what to fix in `review`; asset agent redoes it and sets done again. The game keeps using the existing `file` until then.",
       "approved": "accepted; the game may use it",
       "blocked": "cannot be done as specified; explain in `notes`"
     },
@@ -5820,8 +5820,8 @@
       "priority": 1,
       "name_th": "พื้นคอกเป็ด",
       "name_en": "Duck pen ground (kit)",
-      "output": "assets/backgrounds/ground_pen.webp",
-      "format": "webp",
+      "output": "assets/backgrounds/ground_pen.svg",
+      "format": "svg",
       "canvas": [
         1400,
         600
@@ -5830,18 +5830,23 @@
         300,
         0
       ],
-      "scale": 2,
-      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for Uncle Mee's duck pen, 21:9, exactly 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). It is the flat floor of the scene, like a game map's terrain layer: the game places every standing object on top of it. Paint: sunny grass with clover and tiny flowers lying flat; the packed-earth pen floor as a diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (= image pixels (1640,400), (2440,800), (1640,1200), (840,800)), with scattered straw and grain and a few darker damp patches, no tile or grid pattern; the lotus pond water with a thin muddy rim and flat lily pads, centred at safe-area (894,253) (= image pixel (2388,506)), about 300×120 safe-area px; a couple of faint worn dirt paths. Along the TOP EDGE ONLY (the top 160 px of the image) a distant, hazy, low-contrast tree line, painted flat. LIGHT: even, soft, shadowless daylight. NO cast shadows anywhere, NO dappled tree shadows, NO shade patches, NO sun flare, NO light rays, NO vignette; the game adds all shadows and light. NOTHING that stands up except that far tree line: no bushes, shrubs, hedges, trees, flowers taller than the grass, rocks, fences, duck house, reeds, haystacks, jars, bananas, birds, animals or people. Same warm colours and soft painted brushwork as assets/painted/_style/target.jpg; composition as in assets/painted/_layout/bg.pen.jpg minus every standing object.",
+      "scale": 1,
+      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for Uncle Mee's duck pen, 21:9, exactly 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). It is the flat floor of the scene, like a game map's terrain layer: the game places every standing object on top of it. Paint: sunny grass with clover and tiny flowers lying flat; the packed-earth pen floor as a diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (= image pixels (1640,400), (2440,800), (1640,1200), (840,800)), with scattered straw and grain and a few darker damp patches, no tile or grid pattern; the lotus pond water with a thin muddy rim and flat lily pads, centred at safe-area (894,253) (= image pixel (2388,506)), about 300×120 safe-area px; a couple of faint worn dirt paths. Along the TOP EDGE ONLY (the top 160 px of the image) a distant, hazy, low-contrast tree line, painted flat. LIGHT: even, soft, shadowless daylight. NO cast shadows anywhere, NO dappled tree shadows, NO shade patches, NO sun flare, NO light rays, NO vignette; the game adds all shadows and light. NOTHING that stands up except that far tree line: no bushes, shrubs, hedges, trees, flowers taller than the grass, rocks, fences, duck house, reeds, haystacks, jars, bananas, birds, animals or people. composition as in assets/painted/_layout/bg.pen.jpg minus every standing object. ART STYLE v3: flat palette-only colours (grass, dirt, mud, water tones), simple shapes, outlines only on the pen floor edge, the pond rim and paths; a few flat clover/grass marks, no texture noise.",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.pen.jpg",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/backgrounds/ground_pen.webp",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:24:21Z",
       "notes": "Repainted to the revised ground brief from 8b51a5e: even shadowless light, flat grass/dirt/water only, distant hazy tree line confined to top band, no foreground foliage or kit pieces. WebP quality 85. Pixel-exact organic terrain edges/pond placement remain approximate; review against the guide.",
-      "review": null,
-      "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark"
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark",
+      "style": "flat-v3",
+      "tags": [
+        "walkable",
+        "water"
+      ]
     },
     {
       "id": "kit.fence_span_se",
@@ -5849,8 +5854,8 @@
       "priority": 1,
       "name_th": "รั้ว (ช่วงลงขวา)",
       "name_en": "Fence span (รั้วไม้) running DOWN-RIGHT",
-      "output": "assets/kit/fence_span_se.png",
-      "format": "png",
+      "output": "assets/kit/fence_span_se.svg",
+      "format": "svg",
       "canvas": [
         48,
         66
@@ -5859,23 +5864,30 @@
         8,
         46
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1,
         0
       ],
       "height_px": 36,
-      "prompt": "One span of the duck pen's rustic fence: a square timber post with a pointed cap standing on the anchor, and two round bamboo rails (with node rings and a light top highlight) running from it down-right for exactly one tile, 32 px right and 16 px down, at heights 11 and 23 px, lashed to the post with crossed rope ties. The far end has NO post (the next span's post closes it). Weathered warm wood and golden bamboo, matching the fence in the target style. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "One span of the duck pen's rustic fence: a square timber post with a pointed cap standing on the anchor, and two round bamboo rails (with node rings and a light top highlight) running from it down-right for exactly one tile, 32 px right and 16 px down, at heights 11 and 23 px, lashed to the post with crossed rope ties. The far end has NO post (the next span's post closes it). Weathered warm wood and golden bamboo, matching the fence in the target style. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_span_se.png",
       "normal": "assets/kit/fence_span_se_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/fence_span_se.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (16, 34, 131, 167); guide ground anchor: (24, 138); target standing height: 108 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "occlude",
+        "edge",
+        "block"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.fence_span_sw",
@@ -5883,8 +5895,8 @@
       "priority": 1,
       "name_th": "รั้ว (ช่วงลงซ้าย)",
       "name_en": "Fence span (รั้วไม้) running DOWN-LEFT",
-      "output": "assets/kit/fence_span_sw.png",
-      "format": "png",
+      "output": "assets/kit/fence_span_sw.svg",
+      "format": "svg",
       "canvas": [
         48,
         66
@@ -5893,23 +5905,30 @@
         40,
         46
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0,
         1
       ],
       "height_px": 36,
-      "prompt": "The mirror of kit.fence_span_se: the post stands on the anchor and the two bamboo rails run down-LEFT for one tile, 32 px left and 16 px down, at heights 11 and 23 px. Paint it separately (not a flipped copy) so the light still comes from the upper-left: the lit side of the post faces left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "The mirror of kit.fence_span_se: the post stands on the anchor and the two bamboo rails run down-LEFT for one tile, 32 px left and 16 px down, at heights 11 and 23 px. Paint it separately (not a flipped copy) so the light still comes from the upper-left: the lit side of the post faces left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_span_sw.png",
       "normal": "assets/kit/fence_span_sw_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/fence_span_sw.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (16, 35, 126, 153); guide ground anchor: (120, 138); target standing height: 108 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "occlude",
+        "edge",
+        "block"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.fence_post",
@@ -5917,8 +5936,8 @@
       "priority": 1,
       "name_th": "เสารั้ว",
       "name_en": "Fence end post",
-      "output": "assets/kit/fence_post.png",
-      "format": "png",
+      "output": "assets/kit/fence_post.svg",
+      "format": "svg",
       "canvas": [
         16,
         48
@@ -5927,23 +5946,30 @@
         8,
         44
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0,
         0
       ],
       "height_px": 36,
-      "prompt": "A single square timber fence post with a pointed cap, about 36 px tall, standing on the anchor, with a rope tie. It closes the end of a fence run. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A single square timber fence post with a pointed cap, about 36 px tall, standing on the anchor, with a rope tie. It closes the end of a fence run. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_post.png",
       "normal": "assets/kit/fence_post_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/fence_post.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (11, 19, 37, 126); guide ground anchor: (24, 132); target standing height: 108 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "occlude",
+        "edge",
+        "block"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.duck_house",
@@ -5951,8 +5977,8 @@
       "priority": 1,
       "name_th": "เล้าเป็ด",
       "name_en": "Bamboo duck house (เล้าเป็ด)",
-      "output": "assets/kit/duck_house.png",
-      "format": "png",
+      "output": "assets/kit/duck_house.svg",
+      "format": "svg",
       "canvas": [
         240,
         200
@@ -5961,23 +5987,30 @@
         120,
         140
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         2.8,
         2.8
       ],
       "height_px": 105,
-      "prompt": "Uncle Mee's small bamboo duck house on stilts, about 2.8 × 2.8 tiles, built into the pen's left fence: stilts, a slatted floor deck, woven bamboo walls with corner posts and a tie beam, a small window with a propped shutter on the down-left wall, a thatched gable roof (ridge running up-right to down-left) with layered eaves and a tied ridge bundle, an arched door on the down-right wall (the pen side) with straw spilling out, and a cleated plank ramp from the door down to the ground toward the lower right. The anchor is the ground under the house's centre; the ramp ends about 3 tiles down-right of it. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "Uncle Mee's small bamboo duck house on stilts, about 2.8 × 2.8 tiles, built into the pen's left fence: stilts, a slatted floor deck, woven bamboo walls with corner posts and a tie beam, a small window with a propped shutter on the down-left wall, a thatched gable roof (ridge running up-right to down-left) with layered eaves and a tied ridge bundle, an arched door on the down-right wall (the pen side) with straw spilling out, and a cleated plank ramp from the door down to the ground toward the lower right. The anchor is the ground under the house's centre; the ramp ends about 3 tiles down-right of it. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.duck_house.png",
       "normal": "assets/kit/duck_house_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/duck_house.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:04:51Z",
       "notes": "Guide-conditioned isolated painting, independently painted upper-left light, no ground shadow. Laigter 1.10.7 normal map with smooth relief; hand-cleaned post faces/cylindrical rails or roof/wall/ramp planes. OpenGL green-up normals, normalized vectors, exact colour alpha copied to map. Approximate guide fit; painted contours and house roof height vary slightly. Visible alpha bounds at file scale (threshold 24): (118, 49, 620, 545); guide ground anchor: (360, 420); target standing height: 315 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude",
+        "light"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.tree_round_a",
@@ -5985,8 +6018,8 @@
       "priority": 1,
       "name_th": "ต้นไม้ใหญ่",
       "name_en": "Round shade tree (large)",
-      "output": "assets/kit/tree_round_a.png",
-      "format": "png",
+      "output": "assets/kit/tree_round_a.svg",
+      "format": "svg",
       "canvas": [
         170,
         190
@@ -5995,23 +6028,29 @@
         85,
         178
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1.5,
         1.5
       ],
       "height_px": 170,
-      "prompt": "A big round-crowned tropical shade tree (like a mango or rain tree): a sturdy trunk with a few visible roots, a wide layered canopy of lush leaves in clusters with lit tops and cool shaded undersides, a few flowers or fruit. About 170 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A big round-crowned tropical shade tree (like a mango or rain tree): a sturdy trunk with a few visible roots, a wide layered canopy of lush leaves in clusters with lit tops and cool shaded undersides, a few flowers or fruit. About 170 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.tree_round_a.png",
       "normal": "assets/kit/tree_round_a_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/tree_round_a.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:06:53Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smooth rounded relief, normalized vectors, exact colour alpha. Organic outline, height and base placement vary from the geometric guide; check assembled scale before approval. Visible alpha bounds at file scale (threshold 24): (5, 28, 506, 542); guide ground anchor: (255, 534); target standing height: 510 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.tree_round_b",
@@ -6019,8 +6058,8 @@
       "priority": 1,
       "name_th": "ต้นไม้เล็ก",
       "name_en": "Round shade tree (small)",
-      "output": "assets/kit/tree_round_b.png",
-      "format": "png",
+      "output": "assets/kit/tree_round_b.svg",
+      "format": "svg",
       "canvas": [
         140,
         160
@@ -6029,23 +6068,30 @@
         70,
         150
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1.2,
         1.2
       ],
       "height_px": 140,
-      "prompt": "A smaller round tree of the same kind as kit.tree_round_a but with a different silhouette (lopsided crown, a split trunk), about 140 px tall, so the two can alternate. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A smaller round tree of the same kind as kit.tree_round_a but with a different silhouette (lopsided crown, a split trunk), about 140 px tall, so the two can alternate. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.tree_round_b.png",
       "normal": "assets/kit/tree_round_b_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/tree_round_b.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Visible alpha bounds at file scale (threshold 24): (37, 41, 382, 449); guide ground anchor: (210, 450); target standing height: 420 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.bamboo_clump",
@@ -6053,8 +6099,8 @@
       "priority": 1,
       "name_th": "กอไผ่",
       "name_en": "Bamboo clump (กอไผ่)",
-      "output": "assets/kit/bamboo_clump.png",
-      "format": "png",
+      "output": "assets/kit/bamboo_clump.svg",
+      "format": "svg",
       "canvas": [
         120,
         200
@@ -6063,23 +6109,30 @@
         60,
         190
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1.4,
         1.4
       ],
       "height_px": 185,
-      "prompt": "A clump of 7–9 arching bamboo culms, green with a few golden ones, node rings, dry sheaths at the foot and light feathery leaf sprays leaning outward, about 185 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A clump of 7–9 arching bamboo culms, green with a few golden ones, node rings, dry sheaths at the foot and light feathery leaf sprays leaning outward, about 185 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bamboo_clump.png",
       "normal": "assets/kit/bamboo_clump_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/bamboo_clump.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:06:53Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smooth rounded relief, normalized vectors, exact colour alpha. Organic outline, height and base placement vary from the geometric guide; check assembled scale before approval. Visible alpha bounds at file scale (threshold 24): (7, 39, 348, 556); guide ground anchor: (180, 570); target standing height: 555 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude",
+        "edge"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.bush_a",
@@ -6087,8 +6140,8 @@
       "priority": 1,
       "name_th": "พุ่มดอกไม้",
       "name_en": "Flowering bush",
-      "output": "assets/kit/bush_a.png",
-      "format": "png",
+      "output": "assets/kit/bush_a.svg",
+      "format": "svg",
       "canvas": [
         90,
         56
@@ -6097,23 +6150,30 @@
         45,
         48
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1.2,
         0.8
       ],
       "height_px": 40,
-      "prompt": "A low rounded bush of glossy leaves with small white and yellow flowers, about 90 px wide and 40 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A low rounded bush of glossy leaves with small white and yellow flowers, about 90 px wide and 40 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bush_a.png",
       "normal": "assets/kit/bush_a_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/bush_a.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Visible alpha bounds at file scale (threshold 24): (33, 42, 244, 146); guide ground anchor: (135, 144); target standing height: 120 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "edge",
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.bush_b",
@@ -6121,8 +6181,8 @@
       "priority": 1,
       "name_th": "พุ่มไม้เล็ก",
       "name_en": "Small leafy bush",
-      "output": "assets/kit/bush_b.png",
-      "format": "png",
+      "output": "assets/kit/bush_b.svg",
+      "format": "svg",
       "canvas": [
         64,
         42
@@ -6131,23 +6191,30 @@
         32,
         36
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.9,
         0.6
       ],
       "height_px": 30,
-      "prompt": "A small fern-and-leaf bush, about 60 px wide and 30 px tall, a different shape from kit.bush_a. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A small fern-and-leaf bush, about 60 px wide and 30 px tall, a different shape from kit.bush_a. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bush_b.png",
       "normal": "assets/kit/bush_b_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/bush_b.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:07:50Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Geometric guide fit is approximate; painted object may be narrower/shorter than the guide. Visible alpha bounds at file scale (threshold 24): (21, 29, 173, 110); guide ground anchor: (96, 108); target standing height: 90 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "edge",
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.rock_a",
@@ -6155,8 +6222,8 @@
       "priority": 1,
       "name_th": "ก้อนหิน",
       "name_en": "Mossy rock",
-      "output": "assets/kit/rock_a.png",
-      "format": "png",
+      "output": "assets/kit/rock_a.svg",
+      "format": "svg",
       "canvas": [
         54,
         34
@@ -6165,23 +6232,30 @@
         27,
         28
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.8,
         0.6
       ],
       "height_px": 22,
-      "prompt": "A rounded grey field stone with moss on its top and a few grass blades at its foot, about 50 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A rounded grey field stone with moss on its top and a few grass blades at its foot, about 50 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.rock_a.png",
       "normal": "assets/kit/rock_a_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/rock_a.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Enlargement request did not fully reach the guide footprint: this stone cluster remains smaller than specified; review before approval. Visible alpha bounds at file scale (threshold 24): (36, 27, 127, 84); guide ground anchor: (81, 84); target standing height: 66 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.rock_b",
@@ -6189,8 +6263,8 @@
       "priority": 1,
       "name_th": "หินก้อนเล็ก",
       "name_en": "Small rocks",
-      "output": "assets/kit/rock_b.png",
-      "format": "png",
+      "output": "assets/kit/rock_b.svg",
+      "format": "svg",
       "canvas": [
         40,
         26
@@ -6199,23 +6273,29 @@
         20,
         21
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.6,
         0.4
       ],
       "height_px": 16,
-      "prompt": "Two or three small pebbles and a stone together, about 36 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "Two or three small pebbles and a stone together, about 36 px wide. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.rock_b.png",
       "normal": "assets/kit/rock_b_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/rock_b.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:17:35Z",
       "notes": "Guide-fit revision generated from the finished painting and original guide. Gentle upper-left lighting, isolated transparency, no ground shadow. Laigter 1.10.7 OpenGL normals regenerated from final colour; smoothed relief, normalized vectors, exact matching alpha. Guide fit remains approximate. Enlargement request did not fully reach the guide footprint: this stone cluster remains smaller than specified; review before approval. Visible alpha bounds at file scale (threshold 24): (34, 22, 87, 61); guide ground anchor: (60, 63); target standing height: 48 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.haystack",
@@ -6223,8 +6303,8 @@
       "priority": 1,
       "name_th": "กองฟาง",
       "name_en": "Rice-straw stack (กองฟาง)",
-      "output": "assets/kit/haystack.png",
-      "format": "png",
+      "output": "assets/kit/haystack.svg",
+      "format": "svg",
       "canvas": [
         76,
         66
@@ -6233,23 +6313,30 @@
         38,
         58
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         1,
         1
       ],
       "height_px": 52,
-      "prompt": "A rounded stack of golden rice straw with loose strands and a darker straw cap, about 70 px wide and 52 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A rounded stack of golden rice straw with loose strands and a darker straw cap, about 70 px wide and 52 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.haystack.png",
       "normal": "assets/kit/haystack_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/haystack.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:07:50Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Geometric guide fit is approximate; painted object may be narrower/shorter than the guide. Visible alpha bounds at file scale (threshold 24): (41, 34, 187, 163); guide ground anchor: (114, 174); target standing height: 156 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.water_jar",
@@ -6257,8 +6344,8 @@
       "priority": 1,
       "name_th": "โอ่งน้ำ",
       "name_en": "Clay water jar (โอ่งน้ำ)",
-      "output": "assets/kit/water_jar.png",
-      "format": "png",
+      "output": "assets/kit/water_jar.svg",
+      "format": "svg",
       "canvas": [
         48,
         54
@@ -6267,23 +6354,29 @@
         24,
         48
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.6,
         0.6
       ],
       "height_px": 44,
-      "prompt": "A round glazed brown clay water jar with a wide rim and a wooden lid half on, about 44 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A round glazed brown clay water jar with a wide rim and a wooden lid half on, about 44 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.water_jar.png",
       "normal": "assets/kit/water_jar_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/water_jar.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (25, 32, 128, 147); guide ground anchor: (72, 144); target standing height: 132 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "decor"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.reeds",
@@ -6291,8 +6384,8 @@
       "priority": 1,
       "name_th": "กกริมสระ",
       "name_en": "Pond reeds and lotus",
-      "output": "assets/kit/reeds.png",
-      "format": "png",
+      "output": "assets/kit/reeds.svg",
+      "format": "svg",
       "canvas": [
         54,
         56
@@ -6301,23 +6394,30 @@
         27,
         50
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.8,
         0.5
       ],
       "height_px": 46,
-      "prompt": "A clump of pond-edge reeds with two brown cattail heads, a couple of broad leaves and one pink lotus bud on a stalk, about 46 px tall; the base sits at the water line. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A clump of pond-edge reeds with two brown cattail heads, a couple of broad leaves and one pink lotus bud on a stalk, about 46 px tall; the base sits at the water line. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.reeds.png",
       "normal": "assets/kit/reeds_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/reeds.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (42, 15, 127, 153); guide ground anchor: (81, 150); target standing height: 138 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "edge",
+        "decor",
+        "flip"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "kit.egret",
@@ -6325,8 +6425,8 @@
       "priority": 1,
       "name_th": "นกยาง",
       "name_en": "White egret (นกยาง)",
-      "output": "assets/kit/egret.png",
-      "format": "png",
+      "output": "assets/kit/egret.svg",
+      "format": "svg",
       "canvas": [
         32,
         44
@@ -6335,23 +6435,28 @@
         16,
         41
       ],
-      "scale": 3,
+      "scale": 1,
       "footprint": [
         0.3,
         0.3
       ],
       "height_px": 40,
-      "prompt": "A slender white egret standing on one leg, neck curved, yellow bill, about 40 px tall, facing down-left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Painted as ONE isolated object on a transparent background, lit by the soft upper-left sun, with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
+      "prompt": "A slender white egret standing on one leg, neck curved, yellow bill, about 40 px tall, facing down-left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).",
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.egret.png",
       "normal": "assets/kit/egret_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/egret.png",
       "agent": "Codex",
       "updated_at": "2026-09-30T19:08:24Z",
       "notes": "Guide-conditioned isolated painted piece with upper-left light and no ground shadow. Laigter 1.10.7 OpenGL normal map; smoothed rounded relief, normalized vectors, exact colour alpha. Guide placement/height is approximate; no guide lines retained. Visible alpha bounds at file scale (threshold 24): (21, 14, 79, 122); guide ground anchor: (48, 123); target standing height: 120 file px.",
-      "review": null
+      "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
+      "style": "flat-v3",
+      "tags": [
+        "decor"
+      ],
+      "normal_scale": 2
     },
     {
       "id": "ui.logo",
@@ -6402,10 +6507,10 @@
     }
   ],
   "paint_style": {
-    "about": "PAINTED ART PASS. The game's current art is flat SVG. This pass repaints every asset below in a soft painted style with an image model (or a painter). Each asset has a `paint` block: that is the task. The old SVG stays in the game as a fallback until the painted file is `done`, so assets can arrive in any order.",
+    "about": "ART STYLE v3 (flat, hand-made look). Scenes are assembled from kit pieces that all share ONE outline, ONE palette, ONE cel-shading rule, ONE isometric camera and ONE size chart, so every piece lines up with every other. The earlier soft painterly pass read as AI-generated; v3 replaces it for kit pieces (see docs/map-design-guide.md, section 2.3).",
     "target": "assets/painted/_style/target.jpg is the look to match (colour, light, softness, line weight, cuteness). Use it as the style reference image (Midjourney --sref, an IP-Adapter / style-reference input, or attach it and say 'match this art style').",
-    "look": "Cozy painted mobile farming-game art. Soft digital painting with gentle brush texture, rounded chunky forms, saturated but natural greens, warm cream highlights. Thin warm dark-brown line art (#4a2e1a) that gets lighter and thinner in lit areas; never thick black outlines. Every surface has a light side, a mid tone and a soft shadow side; small specular highlights on glossy things (eggs, glazed jar, water, eyes).",
-    "light": "One sun for the whole game: warm golden late-morning light from the upper-left (#fff1c9), soft cool olive-violet shadows (never grey or black), gentle ambient occlusion where parts meet, a hint of warm bounce light from the ground. Same direction and warmth on every asset so sprites sit together in one scene.",
+    "look": "Clean 2D game-asset art: bold closed outline around every piece, flat colour fills, simple 3-tone cel shading (light side / base / shadow side) with hard edges between tones, a few inner lines for folds, planks, leaf clumps and roof rows. Shapes are simple, chunky and readable; details are grouped (leaves in 5–9 clumps, not hundreds of leaves; 4–6 planks, not 20). No gradients, no airbrush, no brush or noise texture, no glow, no blur.",
+    "light": "One sun from the upper-left for every piece: the light tone on surfaces facing up/left, the shadow tone on surfaces facing down/right, one small hard highlight on glossy things (eggs, glaze, water). No cast shadow on the ground (the game draws it). Moving light comes later from the normal map.",
     "view": "Isometric game camera: 2:1 dimetric, looking down about 30°. Ground-plane edges run along the diagonals (down-right and down-left at 26.6°); vertical edges stay vertical. Characters, crops, trees and icons are upright sprites seen from that camera (3/4 view from slightly above). The asset's layout image shows the exact angle.",
     "characters": "Chibi proportions: head about 40% of the body height, big glossy eyes with two highlights, soft blush, small rounded hands and feet, friendly expressions. Thai countryside people, dressed as each prompt says; culturally accurate and respectful (งอบ straw hats, ผ้าขาวม้า checked cloth, ม่อฮ่อม indigo shirts). Keep each character identical across its variants (same face, outfit, colours).",
     "setting": "Central Thai countryside: rice paddies, sugar and coconut palms, banana clumps, teak stilt houses, spirit houses, village markets. Original art only: do not copy existing games.",
@@ -6422,8 +6527,8 @@
       "accent_red": "#d9473a",
       "gold": "#f2b632"
     },
-    "prompt_suffix": "cozy mobile farming game art, soft digital painting, gentle brush texture, warm golden sunlight from the upper left, soft cool shadows, thin warm brown line art, rounded cute shapes, high detail, clean silhouette",
-    "negative_prompt": "photorealistic, 3d render, plastic, pixel art, flat vector, thick black outlines, harsh contrast, text, letters, watermark, signature, logo, frame, border, UI, cropped, cut off, blurry, noisy, extra limbs, deformed hands, multiple objects, cast shadow on the ground, background scenery (for sprites)",
+    "prompt_suffix": "flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background",
+    "negative_prompt": "painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background",
     "files": {
       "sprites": "PNG, RGBA with a clean transparent background (no halo, no leftover white fringe, no drop shadow unless the prompt asks). Exact pixel size = paint.size (the asset's canvas × paint.scale).",
       "backgrounds": "WebP (quality about 0.85), opaque, exact pixel size = paint.size (1400×600 canvas × 2). The centred 1600×1200 px area is the safe area; the 600 px strips on each side are bleed that continues the scene.",
@@ -6445,6 +6550,136 @@
       "how": "Generate from the finished colour sprite with a normal-map tool (Laigter, SpriteIlluminator, Sprite DLight) or a depth model (Depth Anything / Marigold) converted to normals, then clean up by hand so the big planes read correctly.",
       "light_in_colour": "Because the game adds the strong light, paint kit pieces with SOFT built-in light: the same upper-left sun but gentle shading, no dark cast shadows and no shadow on the ground, only a faint darkening where the object touches the ground."
     },
-    "kits": "Scenes are being rebuilt from kits (duck pen first): a painted ground layer plus separate pieces the game places and depth-sorts. See assets/painted/_layout/pen_kit_composition.jpg for where every piece of the pen goes, and each piece's `layout` guide for its canvas, anchor, footprint and height."
+    "kits": "Scenes are being rebuilt from kits (duck pen first): a painted ground layer plus separate pieces the game places and depth-sorts. See assets/painted/_layout/pen_kit_composition.jpg for where every piece of the pen goes, and each piece's `layout` guide for its canvas, anchor, footprint and height.",
+    "stroke": {
+      "outline": "#3a2213, about 2.5 px wide at the asset's canvas size (canvas units, not file pixels), round joins and caps, around the whole silhouette and between big parts (roof vs wall, trunk vs crown).",
+      "inner": "#6b4428 at about 1.2 px for interior detail lines (planks, leaf veins, straw strands, rope).",
+      "rule": "Same widths on every piece, so a fence post and the duck house have the same line weight in the game."
+    },
+    "palette": {
+      "line": {
+        "outline": "#3a2213",
+        "inner": "#6b4428"
+      },
+      "grass": [
+        "#a8d468",
+        "#82b84a",
+        "#5f9038"
+      ],
+      "leaf": [
+        "#8fd05c",
+        "#5fae3c",
+        "#3e7f2c"
+      ],
+      "leaf_dark": [
+        "#5a9a3e",
+        "#3f7a2e",
+        "#2c5a24"
+      ],
+      "dirt": [
+        "#ecd09a",
+        "#d4ab6c",
+        "#a97f4a"
+      ],
+      "mud": [
+        "#b89a6a",
+        "#8f7348",
+        "#6a5233"
+      ],
+      "wood": [
+        "#dba56a",
+        "#b07a45",
+        "#7a4b27"
+      ],
+      "wood_dark": [
+        "#a8703e",
+        "#7d4f2a",
+        "#55331b"
+      ],
+      "bamboo": [
+        "#ead47e",
+        "#c9ad52",
+        "#97803a"
+      ],
+      "straw": [
+        "#f4dc8e",
+        "#e0bd5e",
+        "#b8913a"
+      ],
+      "stone": [
+        "#d2cdbd",
+        "#a39d8c",
+        "#77715f"
+      ],
+      "moss": [
+        "#a6c45a",
+        "#7fa040",
+        "#5a7a2c"
+      ],
+      "clay": [
+        "#d8875a",
+        "#ad5e35",
+        "#7a3c21"
+      ],
+      "water": [
+        "#9edcf2",
+        "#5fbbe2",
+        "#3a8fbf"
+      ],
+      "white": [
+        "#ffffff",
+        "#ece7dc",
+        "#c8c0ad"
+      ],
+      "red": [
+        "#ee6152",
+        "#c8372d",
+        "#8f2a22"
+      ],
+      "pink": [
+        "#f9c2d6",
+        "#ec8cae",
+        "#c45f84"
+      ],
+      "yellow": [
+        "#ffe680",
+        "#f7c52b",
+        "#d09a12"
+      ],
+      "orange": [
+        "#ffb05a",
+        "#f08a2c",
+        "#c0661a"
+      ],
+      "blue": [
+        "#9fc4f0",
+        "#5f8fd6",
+        "#3d63a6"
+      ],
+      "skin": [
+        "#ffd9b8",
+        "#f2b98a",
+        "#d08f62"
+      ],
+      "dark": [
+        "#5a4a3a",
+        "#3f3226",
+        "#2a2018"
+      ]
+    },
+    "palette_rule": "Kit SVG fills use ONLY these hex values (each material: [light, base, shadow]); outlines use line.outline / line.inner. tools/check-assets.mjs rejects other colours, gradients, filters, patterns and embedded images in kit SVGs.",
+    "consistency": [
+      "Camera: the game's 2:1 isometric view; ground edges on the 26.6° diagonals, verticals vertical. Build each piece on the iso grid shown in its guide.",
+      "Scale: canvas units are game pixels. Match `height_px` and `footprint`; the farmer is about 67 px tall (see docs/map-design-guide.md, section 2.3).",
+      "Anchor: the ground point under the piece sits exactly on the guide's anchor cross.",
+      "Same outline widths, same palette tones, same light direction on every piece.",
+      "Check assets/painted/_layout/kit_board.png (node tools/kit-board.mjs): every piece at game size on one grid next to the farmer. Anything that looks heavier, brighter, bigger or differently lit than its neighbours is wrong."
+    ],
+    "workflow_v3": [
+      "Preferred: hand-author the SVG directly on the guide's grid (like the original game art), using only palette colours.",
+      "Or: generate a reference in the flat style with an image model, then TRACE it into clean vector shapes (Illustrator Image Trace / Inkscape / vtracer), snap every fill to the nearest palette colour, redraw the outline at the locked widths, and delete noise shapes. Never ship the raw generated pixels.",
+      "Normal map: render the finished SVG at 2× and make the normal map from it (Laigter as before), saved at canvas × 2 to `normal`.",
+      "Paint all pieces of a set in one session and check the kit board before stamping done."
+    ]
   }
 }

@@ -132,3 +132,11 @@ test('duck pen kit: every piece is a known asset, stands on the stage and keeps 
     assert.ok(fs.existsSync(new URL('../' + a.layout, import.meta.url)), `${a.layout} (run node tools/export-kit-guides.mjs)`);
   }
 });
+
+test('art style v3: the checker palette matches paint_style.palette in the manifest', async () => {
+  const { FLAT_PALETTE } = await import('../tools/check-assets.mjs');
+  const { manifest } = checkManifest();
+  const pal = manifest.paint_style.palette, fromManifest = new Set(Object.entries(pal).flatMap(([k, v]) => k === 'line' ? Object.values(v) : v));
+  assert.deepEqual([...fromManifest].sort(), [...FLAT_PALETTE].sort());
+  for (const a of manifest.assets.filter(a => a.style === 'flat-v3')) assert.ok(a.output.endsWith('.svg') && a.tags && a.tags.length, a.id);
+});

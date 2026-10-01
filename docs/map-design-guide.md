@@ -59,14 +59,21 @@ Every kit entry should carry `tags`, so the builder and the game know how to tre
 | `decor` | Pure decoration, never blocks | flowers, small rocks, egret |
 | `flip` | May be mirrored (only if the shader also mirrors its normal map, see rule R11) | bushes, rocks, haystack |
 
-### 2.3 The style lock: these rules make pieces fit together
+### 2.3 The style lock: art style v3 "flat"
 
-Night Camp's kit has four locked rules: **outline weight, light and shadow, camera angle, and size relative to the character**. With all four locked, pieces "snap together without falling apart". Ours, with the values in `paint_style`:
+The first painted kit looked AI-generated: soft airbrushed shading, noisy texture, hundreds of tiny leaves, and every piece lit and detailed a little differently. Night Camp's kit looks hand-made because four things are locked across all 14 pieces: **outline weight, light and shadow, camera angle, and size relative to the character**. Ours is locked the same way, and the checker enforces it (`style: "flat-v3"` on kit entries; the values live in `paint_style` in the manifest):
 
-1. **Outline:** thin warm dark-brown line art (`#4a2e1a`), lighter and thinner where the light hits, never thick black.
-2. **Light:** one soft sun from the upper-left, gentle shading, **no shadow on the ground** (the game draws shadows), a faint darkening only where the piece touches the ground.
-3. **Camera:** our 2:1 isometric game camera. Ground lines run diagonally and vertical edges stay vertical. Every piece is seen from the same height.
-4. **Scale relative to the farmer:** the farmer is about 67 px tall in the game (about 2× life size). Use these sizes:
+1. **Outline:** one bold, closed outline around every piece and between its big parts, in `#3a2213` at about **2.5 px at game size**. Inner detail lines (planks, straw, veins, rope) are `#6b4428` at about **1.2 px**. These widths are the same on every piece, so a fence post and the duck house share a line weight.
+2. **Flat colour from a locked palette:** every fill comes from `paint_style.palette`. Each material (grass, leaf, wood, straw, stone, water and so on) has exactly three tones: **light, base and shadow**. No other colours, and no gradients, filters, patterns, embedded images, glow or blur. `tools/check-assets.mjs` rejects any of these in a kit SVG.
+3. **Cel shading:**
+   - one sun from the upper-left;
+   - surfaces facing up or left get the light tone, surfaces facing down or right the shadow tone;
+   - hard edges between tones;
+   - one small hard highlight on glossy things;
+   - no shadow on the ground (the game draws it).
+4. **Simple, grouped detail:** leaves in 5–9 clumps, 4–6 planks, a few straw strokes. Chunky silhouettes that read at a glance.
+5. **Camera:** the 2:1 isometric game view. Each piece is built on the iso grid shown in its guide image, with verticals kept vertical.
+6. **Scale relative to the farmer:** canvas units are game pixels, and `height_px` and `footprint` are the contract. Reference heights:
 
    | Piece | Height in game |
    |---|---|
@@ -78,16 +85,25 @@ Night Camp's kit has four locked rules: **outline weight, light and shadow, came
    | bamboo | 185 px |
    | Thai house | about 250 px |
 
-   Each kit entry's `height_px` and `footprint` are the contract.
-5. **Palette and texture:** the soft painted brushwork and warm palette of `assets/painted/_style/target.jpg`.
-6. **Delivery:**
-   - colour PNG with clean transparency, at canvas × `scale`;
-   - an OpenGL normal map at the same size (section 6.2);
-   - anchor on the ground point under the piece.
+7. **Delivery:**
+   - a clean **SVG** at `output` (vector stays crisp at any zoom, stays small, and its colours can be checked);
+   - a normal map PNG at canvas × 2 (`normal`);
+   - the anchor on the ground point.
 
-**What happens without the lock:** one piece is lit from the left, another from the right; one has thick outlines, another thin; one is seen from above, another from the side. Each looks fine alone, but put them together and the scene falls apart. So:
-- **Paint variants of one thing in one session** with the same settings (a crop's 5 stages, the 10 egg piles, the 5 banana clumps).
-- **Always attach the approved kit pieces as references** when painting new ones.
+**How to make a v3 piece:**
+- **Preferred:** hand-author the SVG on the guide's grid.
+- **Or:** generate a flat-style reference with an image model, *trace it to vector*, snap every fill to the palette, and redraw the outline at the locked widths. Never ship raw generated pixels.
+
+### 2.4 Everything lines up: the kit board
+
+`node tools/kit-board.mjs` writes `assets/painted/_layout/kit_board.png`. It shows every kit piece at its real in-game size, standing on one isometric grid, with the characters and props it shares scenes with (farmer, Uncle Mee, duck, egg basket, banana). Check it before stamping any piece done. Anything heavier, brighter, bigger, or lit differently from its neighbours is wrong.
+
+The first board already shows the problems v3 fixes:
+- the farmer is 67 px while Uncle Mee is drawn at about 182 px;
+- the egg basket is nearly as large as the duck house;
+- the farmer is still old flat SVG beside painted pieces.
+
+The size chart for characters and props is the next decision (section 8).
 
 ---
 
@@ -277,4 +293,6 @@ Night Camp's full effect stack costs about 4.5 ms per frame on their test machin
 | Market interior | Front view, so it gets its own small kit later. |
 | Village map | Single painted image is fine (overview only, rule in section 1). |
 | Light | Normal maps exist; the WebGL lighting renderer is not built yet. |
+| Style | Switching to art style v3 (flat). The duck pen kit is re-issued as `needs_changes`; the painted PNGs stay in the game until the SVGs arrive. |
+| Sizes | Characters and props don't share one scale yet (Uncle Mee is 2.7× the farmer). A single size chart is to be decided. |
 | Builder | Not built; the pen recipe is placed by hand. |

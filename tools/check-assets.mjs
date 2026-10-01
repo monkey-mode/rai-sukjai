@@ -33,6 +33,18 @@ export function imageInfo(buf) {
   return null;
 }
 
+// Art style v3 (flat): the palette in manifest paint_style.palette, kept in sync by tests/assets.test.mjs.
+export const FLAT_PALETTE = new Set(["#2a2018", "#2c5a24", "#3a2213", "#3a8fbf", "#3d63a6", "#3e7f2c", "#3f3226", "#3f7a2e", "#55331b", "#5a4a3a", "#5a7a2c", "#5a9a3e", "#5f8fd6", "#5f9038", "#5fae3c", "#5fbbe2", "#6a5233", "#6b4428", "#77715f", "#7a3c21", "#7a4b27", "#7d4f2a", "#7fa040", "#82b84a", "#8f2a22", "#8f7348", "#8fd05c", "#97803a", "#9edcf2", "#9fc4f0", "#a39d8c", "#a6c45a", "#a8703e", "#a8d468", "#a97f4a", "#ad5e35", "#b07a45", "#b8913a", "#b89a6a", "#c0661a", "#c45f84", "#c8372d", "#c8c0ad", "#c9ad52", "#d08f62", "#d09a12", "#d2cdbd", "#d4ab6c", "#d8875a", "#dba56a", "#e0bd5e", "#ead47e", "#ec8cae", "#ecd09a", "#ece7dc", "#ee6152", "#f08a2c", "#f2b98a", "#f4dc8e", "#f7c52b", "#f9c2d6", "#ffb05a", "#ffd9b8", "#ffe680", "#ffffff"]);
+// Flat-style kit SVGs: palette-only colours, and none of the effects that give the "AI-generated" look.
+export function flatLint(svg, where, errors, warnings) {
+  for (const tag of ['linearGradient', 'radialGradient', 'filter', 'pattern', 'image', 'mask'])
+    if (new RegExp(`<${tag}[\\s>/]`, "i").test(svg)) errors.push(`${where} style flat-v3 forbids <${tag}>`);
+  const used = new Set([...svg.matchAll(/(?:fill|stroke|stop-color)\s*[:=]\s*["']?\s*(#[0-9a-f]{3,8})/gi)].map(m => m[1].toLowerCase()));
+  const off = [...used].filter(c => !FLAT_PALETTE.has(c));
+  if (off.length) errors.push(`${where} colours outside the flat-v3 palette: ${off.slice(0, 8).join(', ')}${off.length > 8 ? ' …' : ''}`);
+  if (/opacity\s*[:=]\s*["']?0?\.\d/.test(svg)) warnings.push(`${where} uses partial opacity; flat-v3 prefers solid palette tones`);
+}
+
 function checkPaint(root, a, errors, warnings) {
   const p = a.paint, where = `[${a.id}] paint`;
   for (const k of PAINT_REQUIRED) if (!(k in p)) errors.push(`${where} missing field "${k}"`);
@@ -102,12 +114,13 @@ export function checkManifest(root = ROOT) {
           if (info.w !== want[0] || info.h !== want[1]) errors.push(`${where} ${a.file} is ${info.w}×${info.h}, expected ${want.join('×')}`);
           if (a.category !== 'ground' && !info.alpha) errors.push(`${where} ${a.file} needs a transparent background (alpha channel)`);
         }
-        if (a.normal) {
-          const nabs = path.join(root, a.normal);
-          if (!fs.existsSync(nabs)) errors.push(`${where} normal map not found: ${a.normal}`);
-          else { const n = imageInfo(fs.readFileSync(nabs)); if (!n || n.w !== want[0] || n.h !== want[1]) errors.push(`${where} normal map ${a.normal} must be ${want.join('×')}`); }
-        }
       }
+      if (a.normal) {
+        const k = a.normal_scale || a.scale || 1, want = [w * k, h * k], nabs = path.join(root, a.normal);
+        if (!fs.existsSync(nabs)) errors.push(`${where} normal map not found: ${a.normal}`);
+        else { const n = imageInfo(fs.readFileSync(nabs)); if (!n || n.w !== want[0] || n.h !== want[1]) errors.push(`${where} normal map ${a.normal} must be ${want.join('×')}`); }
+      }
+      if (a.style === 'flat-v3' && a.file.endsWith('.svg')) flatLint(fs.readFileSync(abs, 'utf8'), where, errors, warnings);
       if (a.file.endsWith('.svg')) {
         const svg = fs.readFileSync(abs, 'utf8');
         if (!/<svg[\s>]/.test(svg)) errors.push(`${where} ${a.file} has no <svg> root`);
