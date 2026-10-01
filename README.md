@@ -52,7 +52,7 @@ All art comes from asset files coordinated through one central file, `assets/man
 
 `node tools/export-layouts.mjs` renders the current art of every asset into `assets/painted/_layout/`, at the pixel size of its painted version. The painting AI uses these as composition guides (see "Painted art pass" in assets/README.md). The game uses a painted file as soon as its `paint.status` is `done`.
 
-`node tools/export-kit-guides.mjs` draws the guide images for scene-kit pieces (the duck pen pilot), plus `pen_kit_composition.jpg`, which shows where each piece stands. `index.html?kit=1` shows the assembled pen with placeholders for pieces that aren't painted yet.
+Scenes are built from kits of painted pieces: see [docs/map-design-guide.md](docs/map-design-guide.md) (kit, recipe and rules). `node tools/export-kit-guides.mjs` draws the guide images for scene-kit pieces (the duck pen pilot), plus `pen_kit_composition.jpg`, which shows where each piece stands. `index.html?kit=1` shows the assembled pen with placeholders for pieces that aren't painted yet.
 
 ## Screens and controls
 

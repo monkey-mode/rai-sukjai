@@ -146,6 +146,8 @@ Each asset the game uses has a `paint` block in the manifest. That block is the 
 
 ## Scene kits (duck pen pilot)
 
+The rules behind kits (the style lock, tags, recipes, placement rules, file weight and lighting) are in [`docs/map-design-guide.md`](../docs/map-design-guide.md). Read it before painting or placing any scene piece.
+
 Scenes are moving from one big painted background to a **kit**:
 - a painted **ground** layer: everything flat, plus the far backdrop;
 - separate **pieces** the game places on the scene's grid and depth-sorts: fences, the duck house, trees, bushes, rocks, haystacks and so on.
