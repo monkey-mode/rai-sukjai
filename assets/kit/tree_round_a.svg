@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="190" viewBox="0 0 170 190">
+  <g stroke="#3a2213" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Root centre (85,178), crown top 8: standing height 170. -->
+    <path d="M76 91 L93 91 L95 145 Q97 162 111 171 L98 173 L103 178 L87 175 L85 178 L77 176 L63 176 L70 169 L59 170 Q75 157 75 141 Z" fill="#b07a45"/>
+    <path d="M76 96 L82 96 L82 148 Q81 164 74 171 L68 173 L78 172 L85 174 L85 178 L77 176 L63 176 L70 169 L59 170 Q75 157 75 141 Z" fill="#dba56a" stroke="none"/>
+    <path d="M88 96 L93 96 L95 145 Q97 162 111 171 L98 173 L103 178 L87 175 L85 178 L85 162 Z" fill="#7a4b27" stroke="none"/>
+    <path d="M77 126 L53 105 L56 95 L83 112 L101 90 L111 97 L90 127 Z" fill="#b07a45"/>
+    <path d="M77 126 L53 105 L56 95 L83 112 L83 119 Z" fill="#dba56a" stroke="none"/>
+    <path d="M82 137 Q78 156 79 166 M92 157 L96 168" fill="none" stroke="#6b4428" stroke-width="1.2"/>
+    <!-- Seven large leaf clumps, each with the same three hard-edged tones. -->
+    <g>
+      <path d="M52 31 Q51 15 68 14 Q79 3 93 10 Q112 5 118 24 Q133 27 126 45 Q115 60 95 57 Q76 66 62 52 Q45 47 52 31 Z" fill="#5fae3c"/>
+      <path d="M62 47 Q84 55 101 42 Q114 42 127 34 Q132 48 113 55 Q101 64 86 59 Q67 65 62 47 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M57 30 Q55 20 69 20 Q80 10 92 16 Q106 12 113 25 Q91 21 81 31 Q66 25 57 30 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M18 43 Q20 26 39 29 Q53 19 65 33 Q81 35 77 51 Q87 66 65 74 Q46 85 34 73 Q12 72 16 58 Q9 48 18 43 Z" fill="#5fae3c"/>
+      <path d="M19 61 Q37 72 53 62 Q65 68 79 54 Q86 70 64 76 Q47 84 34 73 Q17 74 19 61 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M24 43 Q26 33 39 36 Q53 26 62 38 Q46 37 39 46 Q27 41 24 43 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M103 39 Q108 22 124 29 Q141 24 147 40 Q164 45 155 59 Q164 75 143 83 Q124 89 113 76 Q94 73 99 57 Q92 46 103 39 Z" fill="#5fae3c"/>
+      <path d="M103 63 Q119 74 133 65 Q143 69 157 58 Q163 76 143 83 Q124 89 113 76 Q103 73 103 63 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M108 41 Q112 31 124 36 Q138 30 143 42 Q128 39 120 46 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M11 76 Q7 58 26 55 Q40 44 52 56 Q70 51 76 68 Q85 80 68 92 Q62 109 42 105 Q23 116 15 98 Q3 96 11 76 Z" fill="#5fae3c"/>
+      <path d="M12 86 Q31 100 49 87 Q60 94 77 79 Q77 97 65 99 Q59 111 42 105 Q23 116 15 98 Q7 96 12 86 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M16 71 Q18 60 28 62 Q42 51 50 63 Q34 61 30 72 Q20 66 16 71 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M57 64 Q60 46 77 48 Q90 38 103 51 Q121 49 124 66 Q139 79 120 91 Q112 109 95 103 Q75 113 65 97 Q47 92 54 78 Z" fill="#5fae3c"/>
+      <path d="M59 86 Q76 97 93 85 Q105 94 125 77 Q134 91 119 96 Q111 108 95 103 Q75 113 65 97 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M63 64 Q66 54 78 56 Q90 46 101 57 Q80 55 78 67 Q68 61 63 64 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M111 78 Q117 60 133 65 Q148 55 158 71 Q171 80 158 94 Q164 110 146 112 Q132 128 119 114 Q99 116 101 98 Q94 86 111 78 Z" fill="#5fae3c"/>
+      <path d="M104 99 Q119 112 134 99 Q147 105 161 91 Q168 108 146 112 Q132 128 119 114 Q105 117 104 99 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M114 81 Q120 69 133 73 Q148 63 153 77 Q132 72 127 83 Z" fill="#8fd05c" stroke="none"/>
+      <path d="M51 103 Q50 87 70 85 Q84 77 96 91 Q115 88 120 105 Q132 119 114 128 Q99 141 84 131 Q64 138 57 122 Q42 119 51 103 Z" fill="#5fae3c"/>
+      <path d="M52 115 Q70 128 86 117 Q101 126 123 110 Q130 122 114 128 Q99 141 84 131 Q64 138 57 122 Z" fill="#3e7f2c" stroke="none"/>
+      <path d="M57 103 Q61 91 73 93 Q85 86 94 98 Q77 95 73 105 Z" fill="#8fd05c" stroke="none"/>
+    </g>
+    <g fill="none" stroke="#6b4428" stroke-width="1.2">
+      <path d="M33 79 Q42 73 49 77 M83 71 Q92 65 101 70 M131 90 Q140 85 147 89 M72 114 Q80 108 89 113"/>
+    </g>
+    <path d="M130 99 Q130 94 134 94 Q139 95 138 100 Q136 106 133 103 Z" fill="#f7c52b" stroke="#6b4428" stroke-width="1.2"/>
+    <path d="M131 97 Q133 94 135 96 L133 100 Z" fill="#ffe680" stroke="none"/>
+    <path d="M136 98 L138 98 Q139 103 135 104 L133 102 Z" fill="#d09a12" stroke="none"/>
+  </g>
+</svg>

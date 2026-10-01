@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200" viewBox="0 0 240 200">
+  <g stroke="#3a2213" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Ground centre (120,140); deck follows the guide's 2:1 diamond. -->
+    <g fill="#b07a45">
+      <path d="M38 117 L46 121 V138 L42 140 L38 138 Z"/>
+      <path d="M116 155 L124 155 V177 L120 179 L116 177 Z"/>
+      <path d="M194 117 L202 117 V138 L198 140 L194 138 Z"/>
+    </g>
+    <g fill="#dba56a" stroke="none">
+      <path d="M38 120 L42 122 V140 L38 138 Z"/>
+      <path d="M116 157 L120 157 V179 L116 177 Z"/>
+      <path d="M194 120 L198 120 V140 L194 138 Z"/>
+    </g>
+    <path d="M42 123 L120 84 L198 123 L120 162 Z" fill="#dba56a"/>
+    <path d="M42 123 L120 162 L120 166 L42 127 Z" fill="#b07a45"/>
+    <path d="M120 162 L198 123 L198 127 L120 166 Z" fill="#7a4b27"/>
+    <path d="M50 84 L120 119 V156 L50 121 Z" fill="#ead47e"/>
+    <path d="M120 119 L190 84 V121 L120 156 Z" fill="#97803a"/>
+    <path d="M50 84 L120 119 V125 L50 90 Z" fill="#c9ad52" stroke="none"/>
+    <path d="M120 119 L190 84 V90 L120 125 Z" fill="#c9ad52" stroke="none"/>
+    <g stroke="#6b4428" stroke-width="1.2" fill="none">
+      <path d="M64 102 V128 M78 109 V135 M92 116 V142 M106 123 V149"/>
+      <path d="M134 128 V148 M148 121 V141 M162 114 V134 M176 107 V127"/>
+      <path d="M51 116 L118 149 M124 149 L187 118"/>
+    </g>
+    <path d="M68 106 L92 118 V135 L68 123 Z" fill="#55331b"/>
+    <path d="M68 106 L92 118 L99 111 L75 99 Z" fill="#dba56a"/>
+    <path d="M68 106 L92 118 V121 L68 109 Z" fill="#b07a45" stroke="none"/>
+    <path d="M75 102 L95 112" fill="none" stroke="#6b4428" stroke-width="1.2"/>
+    <path d="M143 145 V124 Q143 113 156 109 Q167 106 167 117 V133 Z" fill="#55331b"/>
+    <path d="M147 143 V124 Q147 117 155 113 L155 139 Z" fill="#7d4f2a" stroke="none"/>
+    <path d="M150 134 L163 128 L170 132 L163 138 L155 140 Z" fill="#e0bd5e" stroke="none"/>
+    <path d="M152 134 L157 135 M159 131 L163 134" fill="none" stroke="#6b4428" stroke-width="1.2"/>
+    <path d="M47 84 L53 87 V122 L47 119 Z" fill="#b07a45"/>
+    <path d="M117 116 L123 116 V156 L117 156 Z" fill="#dba56a"/>
+    <path d="M187 85 L193 82 V120 L187 123 Z" fill="#7a4b27"/>
+    <!-- Ridge and eaves follow the same 2:1 grid, exposing the walls below. -->
+    <path d="M42 80 L81 74 L120 119 Z" fill="#b8913a"/>
+    <path d="M42 80 L120 41 L159 35 L81 74 Z" fill="#f4dc8e"/>
+    <path d="M81 74 L159 35 L198 80 L120 119 Z" fill="#e0bd5e"/>
+    <path d="M42 80 L120 119 L120 123 L42 84 Z" fill="#b8913a"/>
+    <path d="M120 119 L198 80 L198 84 L120 123 Z" fill="#b8913a"/>
+    <path d="M109 107 L187 68 L198 80 L120 119 Z" fill="#b8913a" stroke="none"/>
+    <path d="M81 74 L159 35 L165 42 L87 81 Z" fill="#f4dc8e" stroke="none"/>
+    <g fill="none" stroke="#6b4428" stroke-width="1.2">
+      <path d="M91 86 L169 47 M101 97 L179 58 M111 108 L189 69"/>
+      <path d="M55 79 L122 46 M68 79 L135 45"/>
+      <path d="M101 65 L106 71 M127 52 L132 58 M153 39 L158 45 M120 87 L125 93 M146 74 L151 80 M172 61 L177 67"/>
+    </g>
+    <path d="M78 72 L158 32 L163 36 L83 76 Z" fill="#e0bd5e"/>
+    <path d="M95 64 L99 69 M121 51 L125 56 M147 38 L151 43" fill="none" stroke="#6b4428" stroke-width="1.2"/>
+    <!-- Ramp endpoints descend down-right; five broad cleats. -->
+    <path d="M150 140 L169 130 L233 162 L214 172 Z" fill="#b07a45"/>
+    <path d="M150 140 L169 130 L174 134 L155 144 Z" fill="#dba56a" stroke="none"/>
+    <path d="M214 172 L233 162 V166 L214 176 Z" fill="#7a4b27"/>
+    <g fill="none" stroke="#6b4428" stroke-width="1.2">
+      <path d="M160 145 L179 135 M172 151 L191 141 M184 157 L203 147 M196 163 L215 153 M208 169 L227 159"/>
+    </g>
+  </g>
+</svg>
