@@ -5878,8 +5878,8 @@
       "status": "done",
       "file": "assets/kit/fence_span_se.svg",
       "agent": "Codex",
-      "updated_at": "2026-10-01T17:31:51Z",
-      "notes": "Hand-authored v3 SVG: post ground point (8,46), pointed cap at y10 (36 px tall), rail endpoints separated by one tile (32,16). Locked 2.5 px outline/1.2 px inner lines, wood/bamboo three-tone palette fills, upper-left cel light, no ground shadow. 2x render -> same kit Laigter preset, cleaned post faces/cylindrical rail normals, OpenGL green-up with exact rendered alpha. Style test only; original colour PNG retained.",
+      "updated_at": "2026-10-01T17:55:40Z",
+      "notes": "Revised after plain/toy-like style feedback. Hand-authored SVG with curved bamboo rails, raised node collars, visible cut ends, rope ties and restrained timber grain. Palette-only three-tone wood/bamboo fills and upper-left cel light; 2.5 px silhouette and 1.2 px inner lines. Post ground point (8,46), height36; rails still span exactly (32,16). No ground shadow. 2x normal map via same kit Laigter preset, cleaned planar post/cylindrical rails and exact render alpha. Three-piece style test only.",
       "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
@@ -6001,8 +6001,8 @@
       "status": "done",
       "file": "assets/kit/duck_house.svg",
       "agent": "Codex",
-      "updated_at": "2026-10-01T17:31:51Z",
-      "notes": "Hand-authored v3 SVG: locked 2.5 px outline/1.2 px inner lines, palette-only wood/bamboo/straw three-tone fills, hard upper-left cel light, no ground shadow. Ground centre (120,140), guide-aligned dimetric deck/stilts; roof top about 35, exposed arched door/propped shutter and five-cleat ramp. 2x render -> kit Laigter preset; roof/wall/ramp normal planes cleaned by hand, OpenGL green-up, exact rendered alpha. Style test only; original colour PNG retained.",
+      "updated_at": "2026-10-01T17:55:40Z",
+      "notes": "Revised after plain/toy-like style feedback. Generated a more sculpted construction reference, traced and cleaned into SVG; each major material plane snapped to exactly its three locked wood/bamboo/straw/wood_dark tones plus ink. No embedded pixels, gradients or effects. 2.5 px redrawn silhouette, curated 1.2 px inner contours, upper-left light; woven panels, propped shutter, irregular overlapping thatch and raised ramp cleats. Compact projection: roof top about y35, ground centre approximately (120,140); house body occupies less of the 2.8-tile footprint than the geometric first test, so review footprint coverage. 2x normal map from same kit Laigter preset, hand-cleaned roof/wall/ramp planes, exact render alpha. Three-piece style test only.",
       "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
@@ -6042,8 +6042,8 @@
       "status": "done",
       "file": "assets/kit/tree_round_a.svg",
       "agent": "Codex",
-      "updated_at": "2026-10-01T17:31:51Z",
-      "notes": "Hand-authored v3 SVG: seven rounded canopy clumps, exactly three leaf/wood tones, locked 2.5 px outline/1.2 px inner lines, hard upper-left cel light, no ground shadow. Root ground point (85,178), canopy top about 8 (170 px tall); root spread within guide footprint. 2x render -> same kit Laigter preset, canopy lobes/trunk normals cleaned for smooth volume rather than ink relief, OpenGL green-up and exact rendered alpha. Style test only; original colour PNG retained.",
+      "updated_at": "2026-10-01T17:55:40Z",
+      "notes": "Revised after plain/toy-like style feedback. Sculpted botanical reference traced to SVG: overlapping leaf sprays, visible branching gaps, twisted trunk and flared roots replace cloud blobs. Leaf and deep-leaf materials use their three palette tones each; wood uses its three tones, with locked ink colours. Small noise regions removed, subpixel contours simplified, outer silhouette redrawn at 2.5 px and curated internal branch contours at 1.2 px. No embedded pixels, gradients, filters or ground shadow. Crown top about y8 and roots at (85,178), guide standing height170. 2x normal map via kit Laigter preset with cleaned rounded canopy/trunk volume and exact render alpha. Three-piece style test only.",
       "review": "RESTYLE to art style v3 (paint_style.about/look/stroke/palette): the painterly PNG reads as AI-generated. Redo this piece as a clean SVG with the locked outline, palette-only flat fills and 3-tone cel shading, same canvas, anchor, footprint and height. Keep the current PNG until the SVG is done.",
       "style": "flat-v3",
       "tags": [
