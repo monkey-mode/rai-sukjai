@@ -3940,7 +3940,7 @@
       "notes": "Hand-drawn redesign: organic bezier shapes in 3/4 view (replaces the geometric 3D-built version); stroke widths scaled for the size the game draws it.",
       "review": null,
       "paint": {
-        "status": "needs_changes",
+        "status": "done",
         "batch": 0,
         "output": "assets/painted/animals/duck.png",
         "scale": 4,
@@ -3956,8 +3956,8 @@
         "prompt": "A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. The game waddles it along the grid diagonal and flips it horizontally for the way back. No shadow on the ground (the game adds one).",
         "file": "assets/painted/animals/duck.png",
         "agent": "Codex",
-        "updated_at": "2026-09-30T18:23:58Z",
-        "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (22, 20, 191, 160) versus layout (10, 7, 195, 169); review silhouette/base placement before approval.",
+        "updated_at": "2026-10-01T16:48:40Z",
+        "notes": "Repainted light warm tan and cream with bright orange bill/feet and visible eye glint; same full canvas, soft upper-left lighting, no cast shadow. Painted alpha bounds (13, 14, 199, 168); feet/base and body width remain approximate relative to guide.",
         "review": "Reads too dark and small on the bright painted pen ground. Repaint lighter and warmer: a light khaki/tan Khaki Campbell body with cream highlights on the back and breast, a slightly darker wing, a clear bright orange bill and feet, a visible eye highlight. Fill more of the canvas (the body about 85% of the width, same base point), soft upper-left light, no ground shadow."
       }
     },
@@ -5073,7 +5073,7 @@
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/scenery/banana_young_iso.png",
         "scale": 3,
@@ -5087,10 +5087,10 @@
         ],
         "layout": "assets/painted/_layout/scenery.banana_young_iso.png",
         "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A young banana plant (กล้วย): one slim pale pseudostem with a few fresh, untorn light-green paddle leaves arching out, a rolled young leaf spike at the top and two small suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/scenery/banana_young_iso.png",
+        "agent": "Codex",
+        "updated_at": "2026-10-01T16:48:35Z",
+        "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (98, 177, 493, 477) versus guide (145, 229, 439, 462); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
       }
     },
@@ -5121,7 +5121,7 @@
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/scenery/banana_fruiting_iso.png",
         "scale": 3,
@@ -5135,10 +5135,10 @@
         ],
         "layout": "assets/painted/_layout/scenery.banana_fruiting_iso.png",
         "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A mature banana clump: three pseudostems of different heights with sheath streaks and dry strips, long arching oblong leaves with midribs, veins, wind tears and drooping tips, a rolled young leaf, a dry leaf hanging down, suckers, and a hanging bunch of GREEN bananas — curved, plump fingers fanned in hands (หวี) stacked down the stalk, not straight strips — ending in a purple banana flower (หัวปลี). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/scenery/banana_fruiting_iso.png",
+        "agent": "Codex",
+        "updated_at": "2026-10-01T16:48:35Z",
+        "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (52, 100, 555, 468) versus guide (71, 151, 518, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
       }
     },
@@ -5169,7 +5169,7 @@
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Bunch: plump curved banana fingers (tapered, blunt dark tips, stem ends, highlight) fanned in hands that stack down the stalk; in the iso version each hand is a ring of fingers around the stalk, drawn back to front. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/scenery/banana_ripe_iso.png",
         "scale": 3,
@@ -5183,10 +5183,10 @@
         ],
         "layout": "assets/painted/_layout/scenery.banana_ripe_iso.png",
         "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. The same mature clump with a heavier bunch of RIPE YELLOW bananas (curved plump fingers in stacked hands) (dark tips, a few brown sugar spots); the banana flower is spent (withered stalk end). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/scenery/banana_ripe_iso.png",
+        "agent": "Codex",
+        "updated_at": "2026-10-01T16:48:35Z",
+        "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (46, 96, 553, 476) versus guide (71, 151, 518, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
       }
     },
@@ -5217,7 +5217,7 @@
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/scenery/banana_old_iso.png",
         "scale": 3,
@@ -5231,10 +5231,10 @@
         ],
         "layout": "assets/painted/_layout/scenery.banana_old_iso.png",
         "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. An old banana clump: taller stems, sun-browned and heavily wind-torn leaves, one snapped leaf hanging down, many dry brown leaves hanging from every stem, suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/scenery/banana_old_iso.png",
+        "agent": "Codex",
+        "updated_at": "2026-10-01T16:48:35Z",
+        "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (52, 151, 541, 483) versus guide (71, 159, 517, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
       }
     },
@@ -5265,7 +5265,7 @@
       "notes": "Built from 3D stems, leaves and bunch projected with the farm's 2:1 iso math, back-to-front by depth; the bunch is drawn in front. Matches the front-view variant (reference) in content. Used on the farm (BANANA_SPOTS in js/art/iso.js); each spot uses a different variant. Stem bases end in the iso ground ellipse (2:1) with a slight root flare; hanging dry leaves stay above the ground.",
       "review": null,
       "paint": {
-        "status": "todo",
+        "status": "done",
         "batch": 3,
         "output": "assets/painted/scenery/banana_harvested_iso.png",
         "scale": 3,
@@ -5279,10 +5279,10 @@
         ],
         "layout": "assets/painted/_layout/scenery.banana_harvested_iso.png",
         "prompt": "A scenery sprite for an isometric farm game, isolated, seen from the isometric camera. A banana clump after harvest: the fruiting stem is cut down to a short stump (pale concentric sheaths on the cut face), a cut stem lies on the ground, a dry leaf, and two new suckers (daughter plants) with small leaves grow around it. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left. No shadow on the ground (the game adds one).",
-        "file": null,
-        "agent": null,
-        "updated_at": null,
-        "notes": "",
+        "file": "assets/painted/scenery/banana_harvested_iso.png",
+        "agent": "Codex",
+        "updated_at": "2026-10-01T16:48:35Z",
+        "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (74, 254, 535, 501) versus guide (115, 289, 467, 484); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
       }
     },
