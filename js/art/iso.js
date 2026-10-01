@@ -170,7 +170,7 @@ const PEN_LAYOUT = {
     ['kit.tree_round_b', 6, -9.8, 1, false], ['kit.bamboo_clump', 13.5, -3.5, 1, false],
     ['kit.bush_a', -1.2, -1.2, 1, false], ['kit.bush_a', 13.8, -1.4, 1, true],
     ['kit.bush_b', 2, -1.5, 1, false], ['kit.bush_b', 9, -1.5, 1, true],
-    ['kit.rock_a', 5.3, -2.2, 1, false], ['kit.rock_b', 10.2, -2.4, 1, false],
+    ['kit.rock_a', 2.6, -1.3, 1, false], ['kit.rock_b', 13.6, -0.6, 1, false],
     ['kit.reeds', 3.2, -3.4, 1, false], ['kit.reeds', 4.2, -5.9, 1, true], ['kit.reeds', 11.6, -2.6, 1, false], ['kit.reeds', 9.5, -6.8, 1, true],
     ['kit.egret', 11.8, -5.5, 1, false], ['kit.egret', 3.5, -6.4, 1, true],
     ['kit.haystack', -6.5, 14.5, 1.1, false], ['kit.haystack', -4.8, 16.2, .9, true], ['kit.haystack', 17, 1.5, 1, false], ['kit.haystack', 19, 3, .9, true],
