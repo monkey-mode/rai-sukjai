@@ -36,6 +36,30 @@
       "footprint": 0,
       "standing": true
     },
+    "kit.fence_span_sw": {
+      "height": 37.5,
+      "area": 3503,
+      "outlineShare": 1,
+      "detail": 0.2620610904938624,
+      "colours": 33,
+      "clipped": 0,
+      "footprint": 0,
+      "standing": true,
+      "sourceIoU": 1,
+      "sourceDetail": 0.9967426710097719
+    },
+    "kit.fence_post": {
+      "height": 37.5,
+      "area": 1548,
+      "outlineShare": 1,
+      "detail": 0.2467700258397933,
+      "colours": 19,
+      "clipped": 0,
+      "footprint": 0,
+      "standing": true,
+      "sourceIoU": 1,
+      "sourceDetail": 1
+    },
     "kit.duck_house": {
       "height": 106,
       "area": 53010,
