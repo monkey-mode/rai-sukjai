@@ -140,3 +140,21 @@ test('art style v3: the checker palette matches paint_style.palette in the manif
   assert.deepEqual([...fromManifest].sort(), [...FLAT_PALETTE].sort());
   for (const a of manifest.assets.filter(a => a.style === 'flat-v3')) assert.ok(a.output.endsWith('.svg') && a.tags && a.tags.length, a.id);
 });
+
+test('style anchors: candidates until approved; once locked, their files never change', async () => {
+  const crypto = await import('node:crypto');
+  const { manifest } = checkManifest();
+  const sa = manifest.paint_style.style_anchors, byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  assert.ok(sa && sa.ids.length, 'paint_style.style_anchors');
+  for (const id of sa.ids) assert.ok(byId[id] && byId[id].category === 'kit', id);
+  const tpl = manifest.paint_style.prompt_template;
+  assert.ok(tpl['1_style_references'] && tpl['2_geometry_reference'], 'prompt template keeps style and geometry references apart');
+  if (!sa.locked) return;
+  for (const id of sa.ids) {
+    const f = sa.files[id], a = byId[id];
+    assert.equal(a.status, 'approved', `${id}: a locked anchor must stay approved`);
+    assert.equal(a.file, f.svg, `${id}: a locked anchor's file must not be replaced`);
+    const sha = crypto.createHash('sha256').update(fs.readFileSync(new URL('../' + f.svg, import.meta.url))).digest('hex');
+    assert.equal(sha, f.sha256, `${id}: locked anchor changed (re-lock needs the owner's approval)`);
+  }
+});

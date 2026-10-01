@@ -61,6 +61,8 @@ Every kit entry should carry `tags`, so the builder and the game know how to tre
 
 ### 2.3 The style lock: art style v3 "flat"
 
+The binding version is **[docs/style-contract.md](style-contract.md)**: style anchors, camera, lighting, palette, line weights, shape complexity, material detail, scale, canvas, anchor, footprint, the generation profile and the validation steps. This section explains why.
+
 The first painted kit looked AI-generated: soft airbrushed shading, noisy texture, hundreds of tiny leaves, and every piece lit and detailed a little differently. Night Camp's kit looks hand-made because four things are locked across all 14 pieces: **outline weight, light and shadow, camera angle, and size relative to the character**. Ours is locked the same way, and the checker enforces it (`style: "flat-v3"` on kit entries; the values live in `paint_style` in the manifest):
 
 1. **Outline:** one bold, closed outline around every piece and between its big parts, in `#3a2213` at about **2.5 px at game size**. Inner detail lines (planks, straw, veins, rope) are `#6b4428` at about **1.2 px**. These widths are the same on every piece, so a fence post and the duck house share a line weight.

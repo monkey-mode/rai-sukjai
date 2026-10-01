@@ -1,0 +1,30 @@
+{
+  "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Fill every field before the next batch; any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
+  "profile_version": 0,
+  "status": "to fill in by the asset agent",
+  "generation": {
+    "model": null,
+    "model_version": null,
+    "interface": null,
+    "image_size": null,
+    "sampler_and_steps": null,
+    "guidance_or_cfg": null,
+    "seed_policy": null
+  },
+  "references": {
+    "style_reference_input": "how the locked anchor renders (assets/painted/_style/anchors/*@4x.png) are supplied, e.g. style-reference image / IP-Adapter / --sref",
+    "style_reference_weight": null,
+    "geometry_reference_input": "how the piece's layout guide is supplied, e.g. ControlNet canny/depth/lineart or img2img init",
+    "geometry_reference_weight_or_denoise": null,
+    "never_mix": "Style references are the approved anchors only. The layout guide is geometry only (canvas, anchor, footprint, height); never let it set colour or style."
+  },
+  "finishing": {
+    "trace_tool_and_settings": null,
+    "palette_snap_method": "every fill snapped to the nearest paint_style.palette tone of the right material (not just the nearest hex overall)",
+    "cleanup": "merge islands smaller than ~4 px², smooth jagged contours, keep leaf clusters and planks as whole shapes",
+    "outline_redraw": "outer outline #3a2213 at 2.5 canvas px and inner lines #6b4428 at 1.2 px, redrawn as strokes, not traced",
+    "export": "SVG with viewBox = canvas, no raster, no gradients/filters/masks/patterns",
+    "normal_map": "Laigter: settings to record here; render the final SVG at 2× and save to the entry's `normal`"
+  },
+  "source_files": "Commit the approved pre-trace image as assets/painted/_source/<id>.png (same size as the canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail."
+}

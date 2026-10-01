@@ -29,10 +29,14 @@ const page = await browser.newPage({ viewport: { width: 1400, height: 600 }, dev
 await page.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
 await page.goto(`http://localhost:${server.address().port}/index.html`);
 await page.waitForTimeout(1500);
+const anchors = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/manifest.json'), 'utf8')).paint_style.style_anchors;
+await page.evaluate(a => { window.__anchors = a; }, anchors);
 const html = await page.evaluate(() => {
   // [id, in-game scale] — the reference row first, then the kit
   const refs = [['character.farmer', FARM_SCALE.farmer], ['character.uncle_mee', CHAR_SCALE.uncle], ['animal.duck', 1], ['prop.egg_basket', 1], ['scenery.banana_ripe_iso', .8]];
-  const kit = Object.keys(ASSET_SPECS).filter(id => id.startsWith('kit.')).map(id => [id, 1]);
+  const sa = window.__anchors || { ids: [] };
+  const kit = Object.keys(ASSET_SPECS).filter(id => id.startsWith('kit.')).map(id => [id, 1])
+    .sort((p, q) => sa.ids.includes(q[0]) - sa.ids.includes(p[0]));              // style anchors first
   // lay pieces out left to right, wrapping into rows; each row's baseline sits under its tallest piece
   const W = 1400, rows = [];
   for (const [label, list] of [['scale', refs], ['kit', kit]]) {
@@ -52,7 +56,7 @@ const html = await page.evaluate(() => {
     for (const [id, k, x] of r) {
       const sp = ASSET_SPECS[id], ax = x + sp.ax * k, has = Assets.has(id);
       body += `<g transform="translate(${ax} ${y}) scale(${k})">${has ? Assets.image(id) : `<rect x="${-sp.ax}" y="${-sp.ay}" width="${sp.w}" height="${sp.h}" fill="none" stroke="#c0392b" stroke-dasharray="4 3"/>`}</g>` +
-        `<text x="${x + sp.w * k / 2}" y="${y + Math.max(down, 0) + 14}" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3a2213">${id.replace(/^(kit|character|animal|prop|scenery)\./, '')}</text>`;
+        `<text x="${x + sp.w * k / 2}" y="${y + Math.max(down, 0) + 14}" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#3a2213">${id.replace(/^(kit|character|animal|prop|scenery)\./, '')}${sa.ids.includes(id) ? (sa.locked ? ' ★ anchor' : ' ☆ anchor (candidate)') : ''}</text>`;
     }
     y += Math.max(down, 0) + 30;
   }

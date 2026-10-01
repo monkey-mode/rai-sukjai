@@ -1,0 +1,48 @@
+{
+  "limits": {
+    "height": [
+      0.8,
+      1.25
+    ],
+    "outline": 0.6,
+    "footprintBlock": 0.45,
+    "sourceIoU": 0.85,
+    "sourceDetail": 0.6,
+    "anchorDetail": [
+      0.45,
+      2.2
+    ]
+  },
+  "results": {
+    "kit.fence_span_se": {
+      "height": 37.5,
+      "area": 3441,
+      "outlineShare": 0.9896103896103896,
+      "detail": 0.3004940424295263,
+      "colours": 34,
+      "clipped": 0,
+      "footprint": 0,
+      "standing": true
+    },
+    "kit.duck_house": {
+      "height": 106,
+      "area": 53010,
+      "outlineShare": 1,
+      "detail": 0.13354084135068855,
+      "colours": 17,
+      "clipped": 0,
+      "footprint": 0.6629634252902259,
+      "standing": true
+    },
+    "kit.tree_round_a": {
+      "height": 170.5,
+      "area": 60695,
+      "outlineShare": 0.9980092899800929,
+      "detail": 0.13038965318395254,
+      "colours": 19,
+      "clipped": 0,
+      "footprint": 0.3358433734939759,
+      "standing": true
+    }
+  }
+}

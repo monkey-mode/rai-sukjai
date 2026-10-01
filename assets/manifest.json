@@ -25,7 +25,11 @@
     "everything_else": "owned by the mechanics agent; do not change it. Leave suggestions in `notes`.",
     "updated_at_format": "ISO 8601 UTC, e.g. 2026-09-27T14:05:00Z",
     "validate": "node tools/check-assets.mjs",
-    "paint": "Each asset's `paint` block has its own status flow (same statuses as above). The asset agent may edit paint.status, paint.file, paint.agent, paint.updated_at and paint.notes; the reviewer paint.status and paint.review; everything else in the block belongs to the mechanics agent. The game draws paint.file when paint.status is done or approved, otherwise the old `file`."
+    "paint": "Each asset's `paint` block has its own status flow (same statuses as above). The asset agent may edit paint.status, paint.file, paint.agent, paint.updated_at and paint.notes; the reviewer paint.status and paint.review; everything else in the block belongs to the mechanics agent. The game draws paint.file when paint.status is done or approved, otherwise the old `file`.",
+    "asset_agent_may_also_write": [
+      "assets/painted/_style/generation_profile.json",
+      "assets/painted/_source/<id>.png (approved pre-trace images)"
+    ]
   },
   "style_guide": {
     "look": "Warm, hand-drawn cartoon in the style of 2000s Flash games: thick dark-brown outlines (#3a2213) about 2–3 px at 1× with round joins and caps, flat colour fills, at most one simple highlight or shade shape per part, slightly chunky and friendly proportions. No gradients (except the sky in backgrounds), no photorealism, no soft airbrush shading, no drop shadows (the game adds shadows).",
@@ -5875,12 +5879,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_span_se.png",
       "normal": "assets/kit/fence_span_se_n.png",
-      "status": "approved",
+      "status": "needs_changes",
       "file": "assets/kit/fence_span_se.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Hand-authored SVG with curved bamboo rails, raised node collars, visible cut ends, rope ties and restrained timber grain. Palette-only three-tone wood/bamboo fills and upper-left cel light; 2.5 px silhouette and 1.2 px inner lines. Post ground point (8,46), height36; rails still span exactly (32,16). No ground shadow. 2x normal map via same kit Laigter preset, cleaned planar post/cylindrical rails and exact render alpha. Three-piece style test only.",
-      "review": "Approved by the owner as the art style v3 reference set (with kit.duck_house, kit.tree_round_a and kit.fence_span_se). Match their outline, palette use, cel shading and level of detail.",
+      "review": "STYLE ANCHOR CANDIDATE, refine. Clean and hand-made. Fix: the post's grain marks read as stuck-on blobs; use 2–3 thin inner grain lines instead. Give the rails a clear three-tone roll (light top edge, base, shadow underside) and keep the node collars and rope ties. Keep geometry and line widths.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -5928,7 +5932,12 @@
         "edge",
         "block"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.fence_post",
@@ -5969,7 +5978,12 @@
         "edge",
         "block"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.duck_house",
@@ -5998,12 +6012,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.duck_house.png",
       "normal": "assets/kit/duck_house_n.png",
-      "status": "approved",
+      "status": "needs_changes",
       "file": "assets/kit/duck_house.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Generated a more sculpted construction reference, traced and cleaned into SVG; each major material plane snapped to exactly its three locked wood/bamboo/straw/wood_dark tones plus ink. No embedded pixels, gradients or effects. 2.5 px redrawn silhouette, curated 1.2 px inner contours, upper-left light; woven panels, propped shutter, irregular overlapping thatch and raised ramp cleats. Compact projection: roof top about y35, ground centre approximately (120,140); house body occupies less of the 2.8-tile footprint than the geometric first test, so review footprint coverage. 2x normal map from same kit Laigter preset, hand-cleaned roof/wall/ramp planes, exact render alpha. Three-piece style test only.",
-      "review": "Approved by the owner as the art style v3 reference set (with kit.duck_house, kit.tree_round_a and kit.fence_span_se). Match their outline, palette use, cel shading and level of detail.",
+      "review": "STYLE ANCHOR CANDIDATE, refine. Compared with the Night Camp board: the trace left blotchy islands, a wobbly outline and muddy olive tones, so the woven walls read as stains and the thatch as camouflage; the body is also narrower than its footprint. Redraw the main shapes by hand (or rebuild from a cleaner source): roof in straw tones only, layered thatch rows with irregular tips, a clear ridge bundle; walls in bamboo tones with a woven pattern drawn as clean inner lines; frame, posts and stilts in wood_dark; ramp planks in wood. Fill the footprint diamond (2.8 × 2.8 tiles), keep the 105 px height and the anchor.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6039,12 +6053,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.tree_round_a.png",
       "normal": "assets/kit/tree_round_a_n.png",
-      "status": "approved",
+      "status": "needs_changes",
       "file": "assets/kit/tree_round_a.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T17:55:40Z",
       "notes": "Revised after plain/toy-like style feedback. Sculpted botanical reference traced to SVG: overlapping leaf sprays, visible branching gaps, twisted trunk and flared roots replace cloud blobs. Leaf and deep-leaf materials use their three palette tones each; wood uses its three tones, with locked ink colours. Small noise regions removed, subpixel contours simplified, outer silhouette redrawn at 2.5 px and curated internal branch contours at 1.2 px. No embedded pixels, gradients, filters or ground shadow. Crown top about y8 and roots at (85,178), guide standing height170. 2x normal map via kit Laigter preset with cleaned rounded canopy/trunk volume and exact render alpha. Three-piece style test only.",
-      "review": "Approved by the owner as the art style v3 reference set (with kit.duck_house, kit.tree_round_a and kit.fence_span_se). Match their outline, palette use, cel shading and level of detail.",
+      "review": "STYLE ANCHOR CANDIDATE, refine. Closest to the reference. Fix: leaf clusters are jagged trace leftovers; make each cluster a clean defined shape built as dark base silhouette, mid layer, light top. Use far more of the light leaf tone on top/left-facing clusters and less leaf_dark area, so the crown reads lit, not heavy. Bring back 3–5 small fruit or flower accents (palette yellow/white). Keep the twisted trunk, roots, silhouette, height and anchor.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6091,7 +6105,12 @@
         "occlude",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.bamboo_clump",
@@ -6132,7 +6151,12 @@
         "occlude",
         "edge"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.bush_a",
@@ -6173,7 +6197,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.bush_b",
@@ -6214,7 +6243,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.rock_a",
@@ -6255,7 +6289,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.rock_b",
@@ -6295,7 +6334,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.haystack",
@@ -6336,7 +6380,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.water_jar",
@@ -6376,7 +6425,12 @@
         "block",
         "decor"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.reeds",
@@ -6417,7 +6471,12 @@
         "decor",
         "flip"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "kit.egret",
@@ -6456,7 +6515,12 @@
       "tags": [
         "decor"
       ],
-      "normal_scale": 2
+      "normal_scale": 2,
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ]
     },
     {
       "id": "ui.logo",
@@ -6676,10 +6740,31 @@
       "Check assets/painted/_layout/kit_board.png (node tools/kit-board.mjs): every piece at game size on one grid next to the farmer. Anything that looks heavier, brighter, bigger or differently lit than its neighbours is wrong."
     ],
     "workflow_v3": [
-      "Preferred: hand-author the SVG directly on the guide's grid (like the original game art), using only palette colours.",
-      "Or: generate a reference in the flat style with an image model, then TRACE it into clean vector shapes (Illustrator Image Trace / Inkscape / vtracer), snap every fill to the nearest palette colour, redraw the outline at the locked widths, and delete noise shapes. Never ship the raw generated pixels.",
-      "Normal map: render the finished SVG at 2× and make the normal map from it (Laigter as before), saved at canvas × 2 to `normal`.",
-      "Paint all pieces of a set in one session and check the kit board before stamping done."
-    ]
+      "Read docs/style-contract.md and assets/painted/_style/generation_profile.json (fill the profile before the first batch; keep it fixed across batches).",
+      "Build every prompt from paint_style.prompt_template: style references = locked anchors; geometry reference = the layout guide.",
+      "Generate, then finish: trace, snap fills to the right material's palette tones, clean islands and jagged contours, redraw the outline as strokes at the locked widths.",
+      "Commit the approved pre-trace image as assets/painted/_source/<id>.png (canvas × 2).",
+      "Validate: node tools/check-assets.mjs (palette, format, normal map) and node tools/validate-kit.mjs (anchor, height, outline, footprint, silhouette and detail kept versus the source, detail versus the anchors).",
+      "Compare the batch at actual game size on the kit board: node tools/kit-board.mjs. Fix anything that stands out before stamping done.",
+      "Normal map: render the final SVG at 2× and save to `normal` with the recorded Laigter settings."
+    ],
+    "style_anchors": {
+      "status": "candidate",
+      "locked": false,
+      "ids": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "rule": "Style anchors are the owner-approved finished kit pieces that define v3 for every later batch. Until the owner approves them at game size, they are candidates and no other kit piece may be produced. After approval, `node tools/lock-style-anchors.mjs` renders them to assets/painted/_style/anchors/ and records their sha256; tests fail if a locked anchor changes.",
+      "reference_board": "The owner's Night Camp asset board (supplied out of band) sets the target craftsmanship: natural silhouettes, layered botanical foliage, sculpted forms, convincing construction, readable material detail. It is a quality target only; never trace or copy it."
+    },
+    "prompt_template": {
+      "rule": "Every generation prompt has these four labelled parts, in this order. Never mix their roles.",
+      "1_style_references": "STYLE (controls look only): the locked anchor renders assets/painted/_style/anchors/<id>@4x.png and the contract in docs/style-contract.md. Match their outline, palette use, cel shading, shape complexity and material detail.",
+      "2_geometry_reference": "GEOMETRY (controls placement only): the entry's `layout` guide: canvas, anchor cross, footprint diamond, height line. It has no style; do not copy its colours or flat shapes.",
+      "3_subject": "SUBJECT: the entry's `prompt` (what the object is).",
+      "4_settings": "SETTINGS: paint_style.prompt_suffix and negative_prompt, plus the fixed values in assets/painted/_style/generation_profile.json."
+    }
   }
 }

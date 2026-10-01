@@ -146,7 +146,7 @@ Each asset the game uses has a `paint` block in the manifest. That block is the 
 
 ## Scene kits (duck pen pilot)
 
-The rules behind kits (the style lock, tags, recipes, placement rules, file weight and lighting) are in [`docs/map-design-guide.md`](../docs/map-design-guide.md). Read it before painting or placing any scene piece.
+The rules behind kits (the style lock, tags, recipes, placement rules, file weight and lighting) are in [`docs/map-design-guide.md`](../docs/map-design-guide.md). Read it before painting or placing any scene piece. The binding art rules (style anchors, generation profile, validation) are in [`docs/style-contract.md`](../docs/style-contract.md).
 
 Scenes are moving from one big painted background to a **kit**:
 - a painted **ground** layer: everything flat, plus the far backdrop;
