@@ -1,36 +1,45 @@
 {
   "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
-  "profile_version": 1,
-  "status": "partially recorded: reconstructed from the asset agent's notes for the approved anchors (commit 7a553f8). Fields the agent did not record are marked NOT RECORDED and must be filled with the real values before or during the next batch; never guess them.",
-  "recorded_by": "main agent, from the manifest notes of kit.duck_house, kit.tree_round_a and kit.fence_span_se (agent: Codex, 2026-10-01T17:55:40Z)",
+  "profile_version": 2,
+  "status": "in use",
+  "recorded_by": "Codex",
   "approved_anchor_process": {
     "kit.duck_house": "generated a sculpted construction reference image, traced it to SVG, cleaned it, snapped each major material plane to its three locked palette tones (straw, bamboo, wood, wood_dark) plus the line colours, redrew the 2.5 px silhouette, curated 1.2 px inner contours",
     "kit.tree_round_a": "generated a sculpted botanical reference image, traced it to SVG, removed small noise regions, simplified sub-pixel contours, snapped leaf, leaf_dark and wood to their three tones each, redrew the 2.5 px silhouette, curated 1.2 px branch contours",
     "kit.fence_span_se": "hand-authored SVG (no generation): curved bamboo rails, raised node collars, cut ends, rope ties, restrained timber grain; 2.5 px silhouette, 1.2 px inner lines"
   },
   "generation": {
-    "model": "NOT RECORDED",
-    "model_version": "NOT RECORDED",
-    "interface": "NOT RECORDED",
-    "image_size": "NOT RECORDED",
-    "sampler_and_steps": "NOT RECORDED",
-    "guidance_or_cfg": "NOT RECORDED",
-    "seed_policy": "NOT RECORDED"
+    "model": "OpenAI image_gen service",
+    "model_version": "Provider-managed; exact model identifier and version are not exposed by image_gen.imagegen. Cannot pin or verify version consistency.",
+    "interface": "image_gen.imagegen, local referenced_image_paths, four labelled prompt sections; transparent_background true for sprites, false for ground; fences hand-authored as explicitly requested.",
+    "image_size": "Request canvas × 2; provider selects native dimensions. Export pre-trace image to canvas × 2 using full-canvas Lanczos resizing; geometry corrections are documented per piece.",
+    "sampler_and_steps": "Not exposed or configurable; provider defaults.",
+    "guidance_or_cfg": "Not exposed or configurable; provider defaults.",
+    "seed_policy": "Seed not exposed or configurable; no fixed-seed claim."
   },
   "references": {
-    "style_reference_input": "From now on: the locked anchor renders assets/painted/_style/anchors/<id>@4x.png. How they are supplied (style-reference image, IP-Adapter, --sref, attachment): NOT RECORDED.",
-    "style_reference_weight": "NOT RECORDED",
-    "geometry_reference_input": "the entry's layout guide (assets/painted/_layout/<id>.png). How it was supplied for the anchors: NOT RECORDED.",
-    "geometry_reference_weight_or_denoise": "NOT RECORDED",
+    "style_reference_input": "Attach the three locked anchors at 4x as local reference images to every generated piece: kit.duck_house@4x.png, kit.tree_round_a@4x.png, kit.fence_span_se@4x.png. Label STYLE only.",
+    "style_reference_weight": "No numeric weight exposed; provider default with explicit STYLE-only prompt instructions.",
+    "geometry_reference_input": "Attach the entry layout as a separate local reference labelled GEOMETRY only; ground additionally uses pen_kit_composition.jpg, with all standing objects explicitly excluded.",
+    "geometry_reference_weight_or_denoise": "No weight or denoise exposed; provider default. Final geometry measured at canvas scale and corrected if required.",
     "never_mix": "Style references are the approved anchors only. The layout guide is geometry only (canvas, anchor, footprint, height); never let it set colour or style."
   },
   "finishing": {
-    "trace_tool_and_settings": "NOT RECORDED (tracing was used for the house and the tree)",
-    "palette_snap_method": "each major material plane snapped to exactly its own material's three palette tones plus the two line colours (as done for the anchors)",
-    "cleanup": "remove small noise regions and simplify sub-pixel contours, but keep the traced material texture (thatch strands, weave, leaf sprays): the simplified clean redraws were rejected by the owner",
-    "outline_redraw": "outer silhouette #3a2213, visible about 2.5 px: either a 5 px stroke drawn beneath the fills (traced pieces) or a 2.5 px stroke over them (hand-drawn pieces); inner contours #6b4428 at 1.2 px, curated",
+    "trace_tool_and_settings": "vtracer 0.6.15: colormode=color, hierarchical=stacked, mode=spline, filter_speckle=4 (2x pixels), color_precision=8, layer_difference=8, corner_threshold=75, length_threshold=4, splice_threshold=45, path_precision=2. Hand-authored fences; ground geometry hand-corrected after reference generation.",
+    "palette_snap_method": "Classify each material region before nearest squared-RGB-distance snap to its own light/base/shadow triplet plus line colours. Alpha threshold 110/255. Median filter 3x3 at 2x; snap tracer colours again to same allowed material palette.",
+    "cleanup": "Remove only isolated connected components smaller than 4 source pixels and meaningless subpixel slivers; retain leaf sprays, nodes, grain and straw rows; no broad silhouette simplification.",
+    "outline_redraw": "Closed alpha-silhouette path, fresh #3a2213 stroke 10 source pixels (5 canvas pixels), beneath traced fills, round joins/caps. Hand-drawn pieces use 2.5 canvas px over fills. Deliberate inner contours #6b4428 at 1.2 canvas px. Ground outlines only floor edge, pond rim and paths.",
     "export": "SVG with viewBox = canvas, no raster, no gradients/filters/masks/patterns",
-    "normal_map": "the kit Laigter preset used since the painted kit, rendered from the final SVG at 2x, planes hand-cleaned (roof, walls, ramp, post) or volumes rounded (canopy, trunk, rails), exact render alpha. Preset values: NOT RECORDED"
+    "normal_map": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map."
   },
-  "source_files": "For every new piece, commit the approved pre-trace image as assets/painted/_source/<id>.png (canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail. The anchors have no source files; their approved SVGs are the reference."
+  "source_files": "For every new piece, commit the approved pre-trace image as assets/painted/_source/<id>.png (canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail. The anchors have no source files; their approved SVGs are the reference.",
+  "source_runs": [
+    {
+      "id": "ground.pen",
+      "prompt": "STYLE (look only): Match the three attached locked anchor renders, rich irregular sculpted material forms, warm-brown lines and three hard cel tones. They set craftsmanship and palette only, not objects to include. Terrain marks must be readable at game size and grouped, never airbrushed. Palette grass #a8d468,#82b84a,#5f9038, dirt #ecd09a,#d4ab6c,#a97f4a, mud #b89a6a,#8f7348,#6a5233, water #9edcf2,#5fbbe2,#3a8fbf. No gradients or soft pixel texture.\nGEOMETRY (placement only): The two attached scene/layout images are placement-only. REMOVE EVERY standing object and cast shadow from them. Canvas 1400x600, export 2800x1200. Diamond packed dirt pen at canvas (820,200),(1220,400),(820,600),(420,400); pond ellipse centered (1194,253), about300x120. Far forest wall limited to top80 canvas pixels. Full canvas opaque landscape, no crop or pad. Ignore guide colours.\nSUBJECT: Wide ISOMETRIC (2:1) GROUND LAYER ONLY for Uncle Mee's duck pen, 21:9, exactly 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). It is the flat floor of the scene, like a game map's terrain layer: the game places every standing object on top of it. Paint: sunny grass with clover and tiny flowers lying flat; the packed-earth pen floor as a diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (= image pixels (1640,400), (2440,800), (1640,1200), (840,800)), with scattered straw and grain and a few darker damp patches, no tile or grid pattern; the lotus pond water with a thin muddy rim and flat lily pads, centred at safe-area (894,253) (= image pixel (2388,506)), about 300×120 safe-area px; a couple of faint worn dirt paths. Along the TOP EDGE ONLY (the top 160 px of the image) a distant, hazy, low-contrast tree line, painted flat. LIGHT: even, soft, shadowless daylight. NO cast shadows anywhere, NO dappled tree shadows, NO shade patches, NO sun flare, NO light rays, NO vignette; the game adds all shadows and light. NOTHING that stands up except that far tree line: no bushes, shrubs, hedges, trees, flowers taller than the grass, rocks, fences, duck house, reeds, haystacks, jars, bananas, birds, animals or people. composition as in assets/painted/_layout/bg.pen.jpg minus every standing object. ART STYLE v3: flat palette-only colours (grass, dirt, mud, water tones), simple shapes, outlines only on the pen floor edge, the pond rim and paths; a few flat clover/grass marks, no texture noise. Follow these exact canvas geometry coordinates and ground-only instruction rather than including any guide scenery. No fence, house, bushes, standing trees, reeds, rocks, birds, animals or people. Tiny flat clover and flowers, scattered short straw/grain on earth, faint worn paths, shallow water with flat lily pads, distant low tree line at top edge only.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background; cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark. Ground exception: opaque full-canvas terrain, no transparent background. Same image_gen provider defaults, no exposed seed/CFG/sampler, locked 4x attached anchors, separate geometry references, upper-left light, no cast shadow. Palette-only three tones per terrain material; keep crafted surface detail, not standing objects.",
+      "generated_source": "/workspace/generated_images/exec-3f35fc6f-296e-4c01-935c-65a5226970aa.png",
+      "committed_source": "assets/painted/_source/ground.pen.png",
+      "finishing_notes": "Full-canvas source resized to 2x. Terrain-detail motifs traced from this reference and reused as whole SVG groups; exact floor diamond and pond geometry rebuilt, grouped flat straw/damp marks. Only noise removed; repeated geometry deduplicated to keep SVG below 40 KB. Ground is the terrain exception; no outline around grass motifs."
+    }
+  ]
 }

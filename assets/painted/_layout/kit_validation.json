@@ -14,6 +14,18 @@
     ]
   },
   "results": {
+    "ground.pen": {
+      "height": 0,
+      "area": 3360000,
+      "outlineShare": 0.0015007503751875938,
+      "detail": 0.024455654761904762,
+      "colours": 8,
+      "clipped": 5198,
+      "footprint": 0,
+      "standing": true,
+      "sourceIoU": 1,
+      "sourceDetail": 0.69350224075215
+    },
     "kit.fence_span_se": {
       "height": 37.5,
       "area": 3441,
