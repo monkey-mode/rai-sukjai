@@ -57,6 +57,23 @@ const ASSET_SPECS = (() => {
   return list;
 })();
 
+// Size chart for the isometric scenes (docs/style-contract.md): the in-game size of each character, animal and prop,
+// so they share one scale with the kit pieces (drawn at game size). An asset's canvas is scaled by gameScale(id);
+// `h` is the height above the ground point, `w` the width (for flat props like the nest).
+const SIZE_CHART = {
+  'character.farmer': { h: 96 }, 'character.uncle_mee': { h: 96 },    // adults: a little under the duck house (105)
+  'animal.duck': { h: 38 },
+  'prop.nest': { w: 100 }, 'prop.egg_pile': { same: 'prop.nest' },      // eggs sit in the nest, so they share its scale
+  'prop.egg_basket': { h: 56 }, 'prop.trough': { w: 110 },
+};
+function gameScale(id) {
+  const key = /^prop\.egg_pile_\d+$/.test(id) ? 'prop.egg_pile' : id, c = SIZE_CHART[key];
+  if (!c) return 1;
+  if (c.same) return gameScale(c.same);
+  const sp = ASSET_SPECS[id];
+  return c.h ? c.h / sp.ay : c.w / sp.w;
+}
+
 // Where the painted-art pass saves an asset (manifest `paint.output`): PNG sprites, WebP backgrounds.
 const paintedPath = output => output.replace(/^assets\//, 'assets/painted/').replace(/\.svg$/, output.startsWith('assets/backgrounds/') ? '.webp' : '.png');
 
@@ -92,7 +109,9 @@ const Assets = {
         if (!ASSET_SPECS[a.id]) continue;
         // a finished painted version wins; otherwise the SVG, or its pre-rendered raster (tools/rasterize-backgrounds.mjs),
         // which is cheaper to draw on phones than a big SVG
-        if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
+        // a finished style-v3 file wins over an earlier painted version
+        if (a.style === 'flat-v3' && a.file && ['done', 'approved'].includes(a.status)) this.found[a.id] = a.file;
+        else if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
         else if (a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
     } else {

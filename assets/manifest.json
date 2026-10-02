@@ -3761,6 +3761,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (12, 19, 270, 607) versus layout (13, 12, 263, 607); review silhouette/base placement before approval. Chibi elderly farmer; white singlet, blue/red checked cloth, black trousers, grey side hair, white moustache, straw hat and red-flag bamboo staff retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/characters/uncle_mee.svg",
+        "normal": "assets/characters/uncle_mee_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3963,6 +3974,17 @@
         "updated_at": "2026-10-01T16:48:40Z",
         "notes": "Repainted light warm tan and cream with bright orange bill/feet and visible eye glint; same full canvas, soft upper-left lighting, no cast shadow. Painted alpha bounds (13, 14, 199, 168); feet/base and body width remain approximate relative to guide.",
         "review": "Reads too dark and small on the bright painted pen ground. Repaint lighter and warmer: a light khaki/tan Khaki Campbell body with cream highlights on the back and breast, a slightly darker wing, a clear bright orange bill and feet, a visible eye highlight. Fill more of the canvas (the body about 85% of the width, same base point), soft upper-left light, no ground shadow."
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/animals/duck.svg",
+        "normal": "assets/animals/duck_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4198,6 +4220,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (13, 3, 477, 332) versus layout (9, 6, 477, 330); review silhouette/base placement before approval. Wooden cavity left empty for runtime feed overlay.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/trough.svg",
+        "normal": "assets/props/trough_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4245,6 +4278,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (11, 8, 407, 207) versus layout (8, 8, 408, 208); review silhouette/base placement before approval. Hollow left empty for runtime egg overlay.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/nest.svg",
+        "normal": "assets/props/nest_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4293,6 +4337,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (76, 98, 124, 156) versus layout (64, 83, 128, 168); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_1.svg",
+        "normal": "assets/props/egg_pile_1_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4341,6 +4396,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (67, 75, 129, 155) versus layout (57, 70, 135, 172); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_2.svg",
+        "normal": "assets/props/egg_pile_2_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4389,6 +4455,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (48, 78, 151, 164) versus layout (38, 68, 154, 176); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_3.svg",
+        "normal": "assets/props/egg_pile_3_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4437,6 +4514,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (33, 71, 164, 180) versus layout (31, 66, 161, 180); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_4.svg",
+        "normal": "assets/props/egg_pile_4_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4485,6 +4573,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (37, 62, 163, 186) versus layout (31, 55, 161, 184); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_5.svg",
+        "normal": "assets/props/egg_pile_5_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4533,6 +4632,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (15, 65, 182, 190) versus layout (12, 53, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_6.svg",
+        "normal": "assets/props/egg_pile_6_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4581,6 +4691,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (17, 39, 182, 182) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_7.svg",
+        "normal": "assets/props/egg_pile_7_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4629,6 +4750,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (26, 41, 177, 173) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_8.svg",
+        "normal": "assets/props/egg_pile_8_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4677,6 +4809,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (15, 39, 185, 182) versus layout (12, 32, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_9.svg",
+        "normal": "assets/props/egg_pile_9_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4725,6 +4868,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (14, 23, 185, 178) versus layout (12, 11, 182, 188); review silhouette/base placement before approval. All ten variants generated in one session with identical model settings, style reference and lighting instructions. Lower eggs are occluded by upper layers as in layout; shared canvas and manifest anchor retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_pile_10.svg",
+        "normal": "assets/props/egg_pile_10_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4772,6 +4926,17 @@
         "updated_at": "2026-09-30T18:23:58Z",
         "notes": "Layout-conditioned image-model repaint with the shared target style and upper-left sunlight. Full canvas resampled to manifest size without cropping. Pixel-exact geometry is not guaranteed: visible alpha bounds (threshold 24) are (8, 4, 330, 326) versus layout (4, 0, 332, 333); review silhouette/base placement before approval. Six eggs, red handle ties and bamboo weave retained.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/egg_basket.svg",
+        "normal": "assets/props/egg_basket_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5096,6 +5261,17 @@
         "updated_at": "2026-10-01T16:48:35Z",
         "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (98, 177, 493, 477) versus guide (145, 229, 439, 462); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/banana_young_iso.svg",
+        "normal": "assets/scenery/banana_young_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5144,6 +5320,17 @@
         "updated_at": "2026-10-01T16:48:35Z",
         "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (52, 100, 555, 468) versus guide (71, 151, 518, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/banana_fruiting_iso.svg",
+        "normal": "assets/scenery/banana_fruiting_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5192,6 +5379,17 @@
         "updated_at": "2026-10-01T16:48:35Z",
         "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (46, 96, 553, 476) versus guide (71, 151, 518, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/banana_ripe_iso.svg",
+        "normal": "assets/scenery/banana_ripe_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5240,6 +5438,17 @@
         "updated_at": "2026-10-01T16:48:35Z",
         "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (52, 151, 541, 483) versus guide (71, 159, 517, 475); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/banana_old_iso.svg",
+        "normal": "assets/scenery/banana_old_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5288,6 +5497,17 @@
         "updated_at": "2026-10-01T16:48:35Z",
         "notes": "Shared five-stage painting session, kit style and gentle upper-left light, no ground shadow. OpenGL normal map beside colour as _n.png; same kit Laigter preset (EnhanceHeight60/EnhanceSoft5/BumpHeight75/BumpDistance12/BumpSoft4/BumpCut1, no inversion), smoothed normalized relief with exact colour alpha. Layout fit needs review: painted alpha bounds (74, 254, 535, 501) versus guide (115, 289, 467, 484); leaf spread/height and base are approximate, not pixel-exact.",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/banana_harvested_iso.svg",
+        "normal": "assets/scenery/banana_harvested_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5839,12 +6059,12 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.pen.jpg",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/backgrounds/ground_pen.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T19:13:24Z",
       "notes": "Batch profile v2. Ground-only terrain; exact diamond corners and pond placement, palette-only material tones, no standing objects or cast shadows. No normal map required.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Too speckled: thousands of tiny flower/clover dots read as a noisy wallpaper at game size, while the pen floor is plain flat tan. Reverse it: (1) cut the grass specks by about 60–70% and build the grass from broad patches of its three tones with only a few small flower clusters; (2) give the pen floor readable detail like the anchors: scattered straw strands, grain, a few damp darker patches and worn duck tracks, in dirt/mud/straw tones; (3) make the pond rim slightly irregular and muddier, with a few flat lily pads. Keep the geometry, the flat-layer rule and no shadows.",
       "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark",
       "style": "flat-v3",
       "tags": [
@@ -5925,12 +6145,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_span_sw.png",
       "normal": "assets/kit/fence_span_sw_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/fence_span_sw.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T19:21:03Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -5971,12 +6191,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.fence_post.png",
       "normal": "assets/kit/fence_post_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/fence_post.svg",
       "agent": "Codex",
       "updated_at": "2026-10-01T19:21:03Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "occlude",
@@ -6098,12 +6318,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.tree_round_b.png",
       "normal": "assets/kit/tree_round_b_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/tree_round_b.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T02:46:28Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6144,12 +6364,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bamboo_clump.png",
       "normal": "assets/kit/bamboo_clump_n.png",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/kit/bamboo_clump.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T02:46:28Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "The leaf sprays are spiky star/maple shapes, so the clump reads as a palm or maple. Bamboo leaves are narrow, lance-shaped and drooping, hanging in fan-like sprays from thin side branches at the nodes. Keep the culms, node collars, sheaths, height and anchor; redo only the foliage.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6190,12 +6410,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bush_a.png",
       "normal": "assets/kit/bush_a_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/bush_a.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T02:46:28Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6236,12 +6456,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bush_b.png",
       "normal": "assets/kit/bush_b_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/bush_b.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T02:46:28Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6282,12 +6502,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.rock_a.png",
       "normal": "assets/kit/rock_a_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/rock_a.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T03:19:49Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6328,12 +6548,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.rock_b.png",
       "normal": "assets/kit/rock_b_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/rock_b.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T03:19:49Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "decor",
@@ -6373,12 +6593,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.haystack.png",
       "normal": "assets/kit/haystack_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/haystack.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T03:19:49Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6419,12 +6639,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.water_jar.png",
       "normal": "assets/kit/water_jar_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/water_jar.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T03:19:49Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "block",
@@ -6464,12 +6684,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.reeds.png",
       "normal": "assets/kit/reeds_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/reeds.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T02:46:28Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "edge",
@@ -6510,12 +6730,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.egret.png",
       "normal": "assets/kit/egret_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/egret.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T03:19:49Z",
       "notes": "Batch profile v2. Locked 4x anchor references; material-specific palette tones, upper-left light, no cast shadow. Exact canvas/anchor fit. Source at canvas × 2; normal from final 2x SVG with recorded Laigter OpenGL preset and exact alpha.",
-      "review": "Redo in art style v3 to match the LOCKED style anchors (kit.duck_house, kit.tree_round_a, kit.fence_span_se; renders in assets/painted/_style/anchors/): the same rich, sculpted look (natural silhouettes, dense traced material detail, not simplified flat shapes), palette-only fills in each material's own three tones, the same visible ~2.5 px #3a2213 silhouette and 1.2 px #6b4428 inner contours, upper-left cel light, no ground shadow. Geometry from this entry's layout guide only. Follow docs/style-contract.md and record the real settings in assets/painted/_style/generation_profile.json. Keep the current PNG until the SVG is done.",
+      "review": "Approved by the owner (2026-10-02): matches the locked style anchors on the kit board and in the duck pen.",
       "style": "flat-v3",
       "tags": [
         "decor"
@@ -6794,6 +7014,16 @@
       "2_geometry_reference": "GEOMETRY (controls placement only): the entry's `layout` guide: canvas, anchor cross, footprint diamond, height line. It has no style; do not copy its colours or flat shapes.",
       "3_subject": "SUBJECT: the entry's `prompt` (what the object is).",
       "4_settings": "SETTINGS: paint_style.prompt_suffix and negative_prompt, plus the fixed values in assets/painted/_style/generation_profile.json."
+    },
+    "size_chart": {
+      "about": "In-game size of characters, animals and props in the iso scenes, so they share one scale with the kit (kit pieces are drawn at game size). The game scales each asset's canvas to this size (SIZE_CHART / gameScale in js/art/assets.js). New art for these ids should be drawn at this size (canvas units = game px).",
+      "character.farmer": "96 px tall",
+      "character.uncle_mee": "96 px tall",
+      "animal.duck": "38 px tall",
+      "prop.nest": "100 px wide (egg piles share its scale)",
+      "prop.egg_basket": "56 px tall",
+      "prop.trough": "110 px wide",
+      "reference": "duck house 105 px, round tree 140–170 px, fence post 36 px"
     }
   }
 }

@@ -33,7 +33,8 @@ const anchors = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/manifest.json
 await page.evaluate(a => { window.__anchors = a; }, anchors);
 const html = await page.evaluate(() => {
   // [id, in-game scale] — the reference row first, then the kit
-  const refs = [['character.farmer', FARM_SCALE.farmer], ['character.uncle_mee', CHAR_SCALE.uncle], ['animal.duck', 1], ['prop.egg_basket', 1], ['scenery.banana_ripe_iso', .8]];
+  const refs = ['character.farmer', 'character.uncle_mee', 'animal.duck', 'prop.nest', 'prop.egg_pile_6', 'prop.trough', 'prop.egg_basket'].map(id => [id, gameScale(id)])
+    .concat([['scenery.banana_ripe_iso', .8]]);   // the size chart (js/art/assets.js); bananas at their scene scale
   const sa = window.__anchors || { ids: [] };
   const kit = Object.keys(ASSET_SPECS).filter(id => id.startsWith('kit.')).map(id => [id, 1])
     .sort((p, q) => sa.ids.includes(q[0]) - sa.ids.includes(p[0]));              // style anchors first

@@ -6,7 +6,7 @@ function charAsset(id, x, y, k = 1) {
   return `<g transform="translate(${x} ${y}) scale(${k})">${Assets.image(id)}</g>`;
 }
 // Scale of the market and pen characters' iso assets (drawn smaller than the code art's canvas).
-const CHAR_SCALE = { auntie: 2.5, uncle: 1.75 };
+const CHAR_SCALE = { auntie: 2.5, uncle: gameScale('character.uncle_mee') };   // Auntie Daeng: the market's front-view interior, outside the iso size chart
 
 function farmer(x, y, tired) {
   const id = tired ? 'character.farmer_tired' : 'character.farmer';

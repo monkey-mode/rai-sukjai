@@ -81,14 +81,15 @@ function renderPen() {
   let s = '', labels = '';
   const items = [];                                   // [ground y, svg]: props and ducks, drawn back to front
   // nest with eggs
-  const nestArt = Assets.has('prop.nest') ? Assets.image('prop.nest', ...NEST) : `<g transform="translate(${NEST[0] - 300} ${NEST[1] - 312})">${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}</g>`;
+  const nk = gameScale('prop.nest');                  // the size chart scales the nest and its egg piles together
+  const nestArt = Assets.has('prop.nest') ? scaled(...NEST, nk, Assets.image('prop.nest', ...NEST)) : `<g transform="translate(${NEST[0] - 300} ${NEST[1] - 312})">${ell(300, 312, 62, 20, '#d9b25a', 0, 2.6)}${line('M246 306l14 6M262 318l16 -4M290 322l14 -6M318 320l12 4M338 312l12 -6M252 316l-6 4M350 316l6 4', '#a8842f', 1.6)}</g>`;
   s += `<g data-act="egg" class="hot"><title>รังไข่ · Nest</title>${nestArt}`;
   if (Assets.has('prop.egg_pile_1')) {
     const [nx, ny] = NEST_PILE;
     NEST_BACK.slice(0, Math.min(2, Math.floor((S.eggs - 1) / 10))).forEach(([dx, dy]) => {
-      s += `<g style="filter:brightness(.62) saturate(.8)">${Assets.image('prop.egg_pile_10', nx + dx, ny + dy)}</g>`;
+      s += `<g style="filter:brightness(.62) saturate(.8)">${scaled(...NEST, nk, Assets.image('prop.egg_pile_10', nx + dx, ny + dy))}</g>`;
     });
-    if (S.eggs > 0) s += Assets.image(`prop.egg_pile_${Math.min(10, S.eggs)}`, nx, ny);
+    if (S.eggs > 0) s += scaled(...NEST, nk, Assets.image(`prop.egg_pile_${Math.min(10, S.eggs)}`, nx, ny));
   } else {
     const shown = Math.min(S.eggs, 12);
     for (let i = 0; i < shown; i++) {
@@ -107,12 +108,13 @@ function renderPen() {
   if (troughAsset) {
     // the iso trough asset is anchored at the ground under its centre; the feed is an iso surface inside its cavity
     const [tx, ty] = TROUGH.at, P = (x, y, z) => `${r(tx + (x - y) * .894)},${r(ty + (x + y) * .447 - z)}`;
-    s += Assets.image('prop.trough', tx, ty);
+    let t = Assets.image('prop.trough', tx, ty);
     if (fill > 0) {
       const z = 17 + 17 * fill, [a, b] = TROUGH.inner;
-      s += `<polygon points="${P(-a, -b, z)} ${P(a, -b, z)} ${P(a, b, z)} ${P(-a, b, z)}" fill="#e8c77a" stroke="#b8943e" stroke-width="1"/>` +
+      t += `<polygon points="${P(-a, -b, z)} ${P(a, -b, z)} ${P(a, b, z)} ${P(-a, b, z)}" fill="#e8c77a" stroke="#b8943e" stroke-width="1"/>` +
         line(Array.from({ length: S.trough * 5 }, (_, i) => { const u = -a + 6 + (i * 23) % (2 * a - 12), v = -b + 4 + (i * 7) % (2 * b - 8); return `M${P(u, v, z).replace(',', ' ')}h1.4`; }).join(''), '#8a5a22', 2);
     }
+    s += scaled(tx, ty, gameScale('prop.trough'), t);   // the size chart scales the trough and its feed together
   } else {
     s += `<rect x="370" y="452" width="150" height="40" rx="6" fill="#9a6a3c" ${SW} stroke-width="3"/><rect x="378" y="458" width="134" height="18" rx="3" fill="#5a3a22"/>`;
     if (fill > 0) s += `<rect x="378" y="${458 + 18 * (1 - fill)}" width="134" height="${18 * fill}" rx="3" fill="#e8c77a"/>` +
@@ -125,7 +127,7 @@ function renderPen() {
     `<text x="445" y="530" text-anchor="middle" font-family="Sarabun" font-size="10" fill="${O}">Trough — click to add feed (have ${S.inventory.feed})</text>`;
   // basket
   const hasEgg = S.hand && S.hand.type === 'egg';
-  const basketArt = Assets.has('prop.egg_basket') ? Assets.image('prop.egg_basket', 650, 478) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
+  const basketArt = Assets.has('prop.egg_basket') ? scaled(650, 478, gameScale('prop.egg_basket'), Assets.image('prop.egg_basket', 650, 478)) : `<path d="M620 452Q650 420 680 452" fill="none" stroke="${O}" stroke-width="3"/>` +
     `<path d="M612 452H688L680 494H620Z" fill="#d6ad62" ${SW} stroke-width="3"/>` + line('M616 466H684M618 480H682M634 452V494M650 452V494M666 452V494', '#9a7338', 1.4) +
     `<g transform="translate(640 448) scale(.6)">${eggIcon()}</g><g transform="translate(656 446) scale(.6)">${eggIcon()}</g>`;
   items.push([478, `<g data-act="basket" class="hot ${hasEgg ? 'glow' : ''}"><title>ตะกร้าขายไข่ · Egg basket</title>${basketArt}</g>`]);
@@ -154,7 +156,7 @@ const DUCK_SPOTS = [[600, 300, 11], [300, 365, 14], [665, 362, 10], [560, 408, 1
 function penDucks() {
   const t = performance.now() / 1000;
   return DUCK_SPOTS.slice(0, S.ducks).map(([x, y, dur], i) =>
-    [y, `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${-((t + i * 3.1) % dur).toFixed(2)}s"><g class="waddle" style="animation-delay:${i * .13}s">${duckShape()}</g></g></g>`]);
+    [y, `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="3" rx="16" ry="3.5" fill="rgba(0,0,0,.15)"/><g class="duck" style="animation-duration:${dur}s;animation-delay:${-((t + i * 3.1) % dur).toFixed(2)}s"><g class="waddle" style="animation-delay:${i * .13}s"><g transform="scale(${gameScale('animal.duck').toFixed(3)})">${duckShape()}</g></g></g></g>`]);
 }
 
 function renderAnim() { animEl.innerHTML = ''; }   // animated layers now live in their scenes' depth sorts
