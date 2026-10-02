@@ -3479,6 +3479,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/tiles/soil_dry.svg",
+        "normal": "assets/tiles/soil_dry_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, dry: keep the exact 2:1 diamond top face (corners (32,2), (60,16), (32,30), (4,16)) and the 7 px sides; tilled furrows in dirt tones; tiles must sit on the grid with ~4 px gaps. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3526,6 +3537,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/tiles/soil_wet.svg",
+        "normal": "assets/tiles/soil_wet_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, watered: same geometry as tile.soil_dry, darker mud tones with a wet sheen highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3573,6 +3595,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/tiles/fertilized.svg",
+        "normal": "assets/tiles/fertilized_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Fertilizer overlay: 5–7 small cream granules on the TOP FACE near its edges, nothing else. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3620,6 +3653,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/characters/farmer.svg",
+        "normal": "assets/characters/farmer_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The player farmer, chibi: ngob straw hat tilted back, indigo mor hom shirt, red-and-white checked pha khao ma sash, dark-blue trousers, bare feet, happy face. Game size 96 px tall (size chart). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3667,6 +3711,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/characters/farmer_tired.svg",
+        "normal": "assets/characters/farmer_tired_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Same farmer as character.farmer, exhausted: slumped, droopy eyes, wavy mouth, blue sweat drop. No speech bubble. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3838,6 +3893,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/animals/buffalo.svg",
+        "normal": "assets/animals/buffalo_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo BODY only (no head, no tail): keep the pose, egret on its back, and the part pivots (parts.pivot_from_anchor). Grey buffalo in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3885,6 +3951,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/animals/buffalo_head.svg",
+        "normal": "assets/animals/buffalo_head_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo head: keep the neck pivot at the anchor, horns in white/straw tones, grey head in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -3932,6 +4009,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/animals/buffalo_tail.svg",
+        "normal": "assets/animals/buffalo_tail_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo tail: keep the pivot at the anchor. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4042,6 +4130,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/dragon_jar.svg",
+        "normal": "assets/props/dragon_jar_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Ratchaburi dragon jar: keep the wide iso rim with water and sky reflection, gold bands, cloud swirls and the yellow dragon, coconut-shell ladle. Glaze in clay/dark tones, one small hard highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4089,6 +4188,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/ox_cart.svg",
+        "normal": "assets/props/ox_cart_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The wooden ox cart: keep the bed, woven side panels, baskets of produce, spoked wheels with thickness and hub, shaft and parking stand. No sign, no text. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4136,6 +4246,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/signboard.svg",
+        "normal": "assets/props/signboard_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The blank arrow board pointing right: wood tones, grain lines, no text (the game writes on it). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -4183,6 +4304,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/props/signpole.svg",
+        "normal": "assets/props/signpole_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The signpost pole: a square timber post in wood_dark tones with a pointed cap. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5059,6 +5191,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/spirit_house_iso.svg",
+        "normal": "assets/scenery/spirit_house_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Phra Phum spirit house: keep every part (stepped plinth, pillar, platform, pavilion, two-tier roof, spire, offerings, garlands). White parts in white tones, gold in yellow tones, red roof in red tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5106,6 +5249,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/thai_house_iso.svg",
+        "normal": "assets/scenery/thai_house_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The farmer's teak stilt house: keep the L-shaped layout, veranda, stair, gables with ngao horns, shingled roofs, the hammock, jar and bench under the house. Teak walls in wood/wood_dark tones, roof shingles in wood_dark, gable sunburst boards in wood. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5153,6 +5307,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/cloud.svg",
+        "normal": "assets/scenery/cloud_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. A puffy cloud in white tones with the locked outline; flat bottom. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5656,6 +5821,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_coconut_lean_iso.svg",
+        "normal": "assets/scenery/palm_coconut_lean_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5704,6 +5880,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_coconut_twin_iso.svg",
+        "normal": "assets/scenery/palm_coconut_twin_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5752,6 +5939,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_coconut_dwarf_iso.svg",
+        "normal": "assets/scenery/palm_coconut_dwarf_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5800,6 +5998,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_sugar_tall_iso.svg",
+        "normal": "assets/scenery/palm_sugar_tall_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5848,6 +6057,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_sugar_ladder_iso.svg",
+        "normal": "assets/scenery/palm_sugar_ladder_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5896,6 +6116,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_sugar_pair_iso.svg",
+        "normal": "assets/scenery/palm_sugar_pair_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -5944,6 +6175,17 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se"
+        ],
+        "output": "assets/scenery/palm_betel_cluster_iso.svg",
+        "normal": "assets/scenery/palm_betel_cluster_iso_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
       }
     },
     {
@@ -6176,6 +6418,269 @@
         "kit.tree_round_a",
         "kit.fence_span_se"
       ]
+    },
+    {
+      "id": "ground.farm",
+      "category": "ground",
+      "priority": 1,
+      "name_th": "พื้นไร่",
+      "name_en": "Farm ground (kit)",
+      "output": "assets/backgrounds/ground_farm.svg",
+      "format": "svg",
+      "canvas": [
+        1400,
+        600
+      ],
+      "anchor": [
+        300,
+        0
+      ],
+      "scale": 1,
+      "style": "flat-v3",
+      "tags": [
+        "walkable",
+        "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for the farm, 1400×600 canvas (centred 800×600 safe area; canvas x = safe x + 300). Farm grid: grid point (gx, gy) is at safe-area x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16. Paint only flat things plus the far backdrop, in art style v3 like ground.pen (broad three-tone grass patches, few small flower clusters, outlines only on water edges, paddy dikes and the path): (1) The farm is a clearing; beyond the grid lines gx = -6.2 and gy = -6.5 (the two back edges) a dense, distant, hazy forest wall, flat and low-contrast, filling the top of the stage (the game stands kit trees in front of it). (2) Rice paddies inside the clearing over gx -6.2…-2.7 (all gy): flooded fields in water tones with planted rice rows in leaf tones, slim grassy dikes in grass tones; one golden ripe field; a raised grassy mound (โคก) centred on (-4.4, 0.2), radii 1.5 × 2.6 tiles, plain grass on top. (3) An irrigation canal: water over gx -2.62…-2.26 with muddy banks, and a flat plank footbridge across it at gy ≈ 2.9. (4) Plain grass everywhere else in the clearing, including under the yard (gx -0.8…9.8, gy -0.8…7.8: the game draws the raised yard, the field bunds and the plots there, so keep it plain), the house site (gx 2.3…6.4, gy -4.9…-1.4) and the shrine site. (5) The buffalo paddock floor over gx 8…12.6, gy -5…-2: muddy grass with hoof marks (the game draws its fences). (6) A lotus pond centred on grid (14.6, -3.2) = safe-area (860, 408), about 190 × 80 px, with a thin muddy rim and flat lily pads. (7) A worn dirt path from the yard's front-right edge along grid (9.8, 5) → (13, 3.6) → (17, 2.4) → (24, 1), passing the signpost at safe-area (752, 532), into the right bleed. NO standing objects (no trees in the clearing, bushes, fences, house, shrine, hut, scarecrow, haystacks, rocks, reeds, animals or people) and no cast shadows. HUD covers y 0–46, the toolbar y 532–600.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/bg.farm.jpg",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.field_hut",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ห้างนา",
+      "name_en": "Rice-field hut (ห้างนา)",
+      "output": "assets/kit/field_hut.svg",
+      "format": "svg",
+      "canvas": [
+        130,
+        120
+      ],
+      "anchor": [
+        65,
+        104
+      ],
+      "scale": 1,
+      "footprint": [
+        1.6,
+        1.6
+      ],
+      "height_px": 70,
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A small Thai rice-field shelter on four bamboo stilts: a raised slatted bamboo floor about 25 px up, a low railing on one side, a steep thatched straw roof (ridge running up-right to down-left) with irregular overlapping rows and a tied ridge bundle, a rolled mat and a clay water pot on the floor. Stands in the paddies; the stilt feet sit in shallow water, so the bottom 6 px of the stilts are slightly darker. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.field_hut.png",
+      "normal": "assets/kit/field_hut_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.scarecrow",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "หุ่นไล่กา",
+      "name_en": "Scarecrow (หุ่นไล่กา)",
+      "output": "assets/kit/scarecrow.svg",
+      "format": "svg",
+      "canvas": [
+        44,
+        64
+      ],
+      "anchor": [
+        22,
+        58
+      ],
+      "scale": 1,
+      "footprint": [
+        0.4,
+        0.4
+      ],
+      "height_px": 50,
+      "style": "flat-v3",
+      "tags": [
+        "decor"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A Thai paddy scarecrow: a bamboo cross frame, an old indigo shirt stuffed with straw, a pha khao ma checked cloth tied at the waist, a woven ngob straw hat, straw tufts at the sleeves, and a few tin-can rattles on a string. Friendly, not scary. Stands in shallow paddy water. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.scarecrow.png",
+      "normal": "assets/kit/scarecrow_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.tree_golden_shower",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นราชพฤกษ์",
+      "name_en": "Golden shower tree (ราชพฤกษ์)",
+      "output": "assets/kit/tree_golden_shower.svg",
+      "format": "svg",
+      "canvas": [
+        160,
+        180
+      ],
+      "anchor": [
+        80,
+        170
+      ],
+      "scale": 1,
+      "footprint": [
+        1.4,
+        1.4
+      ],
+      "height_px": 160,
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A golden shower tree (Cassia fistula, ราชพฤกษ์) in bloom: a slender grey-brown trunk splitting into upward branches, an open airy crown of light-green leaf sprays with many long hanging chains of bright yellow flowers. The yellow chains use the yellow tones; leaves leaf tones; trunk wood tones. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.tree_golden_shower.png",
+      "normal": "assets/kit/tree_golden_shower_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.tree_flame",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นหางนกยูงฝรั่ง",
+      "name_en": "Flame tree (หางนกยูงฝรั่ง)",
+      "output": "assets/kit/tree_flame.svg",
+      "format": "svg",
+      "canvas": [
+        180,
+        170
+      ],
+      "anchor": [
+        90,
+        160
+      ],
+      "scale": 1,
+      "footprint": [
+        1.6,
+        1.6
+      ],
+      "height_px": 150,
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "occlude"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A flame tree (Delonix regia) in bloom: a short thick trunk with a wide flat umbrella crown, fern-like leaf sprays, and the crown's top covered in clusters of red-orange flowers (red and orange tones), a few long dark seed pods hanging. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.tree_flame.png",
+      "normal": "assets/kit/tree_flame_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.flower_patch",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ดอกไม้",
+      "name_en": "Flower patch",
+      "output": "assets/kit/flower_patch.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        30
+      ],
+      "anchor": [
+        25,
+        24
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.4
+      ],
+      "height_px": 18,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "edge",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A low patch of Thai garden flowers growing from the grass: orange and yellow marigolds (ดาวเรือง) and a few pink zinnias with short leafy stems, about 18 px tall. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.flower_patch.png",
+      "normal": "assets/kit/flower_patch_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
     },
     {
       "id": "kit.fence_span_se",

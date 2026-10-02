@@ -168,61 +168,33 @@ function mulberry32(a) {
   return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
 }
 
-// pieces: [id, count, zones, radius in tiles (keeps neighbours apart), height px, tall, may flip]
-const PEN_RECIPE = {
-  seed: 23,
-  floor: [-0.7, -0.7, 13.2, 13.2],                           // the pen floor plus the fence line: kept clear
-  landmarks: [['kit.duck_house', -1.4, 3.6, 1, false, 1.9]], // [id, u, v, scale, flip, radius]
-  pond: { c: [890, 252], r: [150, 64] },                     // the painted pond (screen ellipse)
-  keepClear: [[10, 92, 200, 330], [14, 392, 170, 446], [14, 540, 140, 592], [380, 500, 720, 540]],   // Uncle Mee + bubble, shop and back buttons, prop labels
-  pieces: [
-    ['kit.tree_round_a', 2, ['back', 'bleed'], .9, 170, true, false],
-    ['kit.tree_round_b', 3, ['back', 'bleed'], .8, 140, true, true],
-    ['kit.bamboo_clump', 3, ['back', 'bleed'], .8, 185, true, false],
-    ['scenery.banana_young_iso', 1, ['margin', 'back'], .8, 120, true, false],
-    ['scenery.banana_fruiting_iso', 1, ['margin', 'back'], .8, 120, true, false],
-    ['scenery.banana_ripe_iso', 1, ['margin', 'back'], .8, 120, true, false],
-    ['scenery.banana_old_iso', 1, ['margin', 'back'], .8, 120, true, false],
-    ['scenery.banana_harvested_iso', 1, ['margin', 'back'], .8, 100, true, false],
-    ['kit.haystack', 4, ['margin', 'front'], .6, 52, false, true],
-    ['kit.water_jar', 2, ['margin', 'front'], .4, 44, false, false],
-    ['kit.bush_a', 5, ['edge', 'back', 'margin'], .6, 40, false, true],
-    ['kit.bush_b', 6, ['edge', 'back', 'margin', 'front'], .45, 30, false, true],
-    ['kit.reeds', 6, ['rim'], .3, 46, false, true],
-    ['kit.egret', 2, ['rim'], .25, 40, false, false],
-    ['kit.rock_a', 3, ['rim', 'edge', 'margin', 'front'], .4, 22, false, true],
-    ['kit.rock_b', 5, ['edge', 'margin', 'front'], .3, 16, false, true],
-  ],
-};
-
+// A scene recipe for buildScene():
+//   range [u0, u1, v0, v1]   grid area to sample;  maxY: lowest base point on screen
+//   blocked(u, v, x, y, id)  ground nothing may stand on (floors, fields, paths...)
+//   zones {name: fn(u, v, x, y)}   where each piece may go;  tallOk(u, v, x, y, h)   extra rules for tall pieces
+//   water(x, y, grow)        normalised distance to the water (< 1 inside); `rim` pieces sit on its edge
+//   keepClear [[x0, y0, x1, y1]] screen rects (UI, props, labels);  occupied [[u, v, radius]] already-placed sprites
+//   landmarks [[id, u, v, scale, flip, radius]] hand-placed kit pieces
+//   pieces [[id, count, zones, radius in tiles, height px, tall, may flip]]
 function buildScene(R, seed, pt) {
-  const rnd = mulberry32(seed), placed = R.landmarks.map(([id, u, v, , , rad]) => ({ id, u, v, rad, tall: true }));
-  const [fu0, fv0, fu1, fv1] = R.floor;
-  const pondR = (x, y, grow = 0) => Math.hypot((x - R.pond.c[0]) / (R.pond.r[0] + grow), (y - R.pond.c[1]) / (R.pond.r[1] + grow * .45));
-  const zone = {
-    back: (u, v, x, y) => (u < fu0 || v < fv0) && y > 70 && y < 360,
-    bleed: (u, v, x) => x < -20 || x > 820,
-    margin: (u, v, x) => x < 70 || x > 760,
-    front: (u, v) => u > fu1 || v > fv1,
-    edge: (u, v) => { const d = Math.hypot(Math.max(fu0 - u, 0, u - fu1), Math.max(fv0 - v, 0, v - fv1)); return d > .1 && d < 1.3; },
-    rim: (u, v, x, y) => { const k = pondR(x, y); return k > .93 && k < 1.12; },
-  };
+  const rnd = mulberry32(seed), [u0, u1, v0, v1] = R.range, water = R.water || (() => Infinity);
+  const placed = R.landmarks.map(([id, u, v, , , rad]) => ({ id, u, v, rad, tall: true }))
+    .concat((R.occupied || []).map(([u, v, rad]) => ({ id: '', u, v, rad, tall: true })));
   const out = [], stats = {};
   for (const [id, n, zones, rad, h, tall, flip] of R.pieces) {
     stats[id] = 0;
     for (let i = 0; i < n; i++) {
       for (let tries = 0; tries < 3000; tries++) {
-        const u = -22 + rnd() * 52, v = -22 + rnd() * 52, [x, y] = pt(u, v);
-        if (x < -290 || x > 1090 || y < 64 || y > 596) continue;                         // on the stage
-        if (u > fu0 && u < fu1 && v > fv0 && v < fv1) continue;                          // R1: the pen floor stays clear
-        if (!zones.some(z => zone[z](u, v, x, y))) continue;
-        if (tall && (y < 120 || (y > 400 && x > 0 && x < 800))) continue;                // R4/R9: tall pieces at the back or in the bleed
-        const onRim = zones.includes('rim') && zone.rim(u, v, x, y);
-        if (pondR(x, y) < .93 || (!onRim && pondR(x, y, rad * 40) < 1.05)) continue;    // R3: nothing in the water; only rim pieces at its edge
-        if (tall && pondR(x, y - h * .5, h * .5) < 1.05) continue;                        // R3/R4: no crown hanging over the pond
-        if (tall && Math.hypot(Math.max(fu0 - u, 0, u - fu1), Math.max(fv0 - v, 0, v - fv1)) < 2.2) continue;   // R4: tall things stand back from the pen
+        const u = u0 + rnd() * (u1 - u0), v = v0 + rnd() * (v1 - v0), [x, y] = pt(u, v);
+        if (x < -290 || x > 1090 || y < 64 || y > R.maxY) continue;                      // on the stage
+        if (R.blocked(u, v, x, y, id)) continue;                                         // R1/R2: floors, fields, paths
+        if (!zones.some(z => R.zones[z](u, v, x, y))) continue;
+        if (tall && !R.tallOk(u, v, x, y, h)) continue;                                  // R4/R9: tall pieces at the back or in the bleed
+        const onRim = zones.includes('rim') && R.zones.rim(u, v, x, y);
+        if (water(x, y) < .93 || (!onRim && water(x, y, rad * 40) < 1.05)) continue;   // R3: nothing in the water; only rim pieces at its edge
+        if (tall && water(x, y - h * .5, h * .5) < 1.05) continue;                       // R3/R4: no crown hanging over the water
         const box = [x - h * .4, y - h, x + h * .4, y];
-        if (R.keepClear.some(([a, b, c, d]) => box[0] < c && box[2] > a && box[1] < d && box[3] > b)) continue;   // R1: UI
+        if (R.keepClear.some(([a, b, c, d]) => box[0] < c && box[2] > a && box[1] < d && box[3] > b)) continue;   // R1: UI and props
         if (placed.some(p => { const d = Math.hypot(p.u - u, p.v - v); return d < p.rad + rad + (p.tall && tall ? .4 : 0) || (p.id === id && d < 2.5); })) continue;   // R5, R6
         placed.push({ id, u, v, rad, tall });
         out.push([id, +u.toFixed(2), +v.toFixed(2), +(0.9 + rnd() * .2).toFixed(2), flip && rnd() < .5]);   // R6: ±10% scale; R11: flip only if allowed
@@ -233,8 +205,50 @@ function buildScene(R, seed, pt) {
   }
   return { pieces: out, stats };
 }
+const KIT_DEBUG = typeof location !== 'undefined' && /[?&]kit=1\b/.test(location.search);
+const SCENE_SEED = name => (typeof location !== 'undefined' && +((new RegExp(`[?&]${name}=(\\d+)`).exec(location.search) || [])[1])) || 0;
 
-const PEN_SEED = (typeof location !== 'undefined' && +((/[?&]seed=(\d+)/.exec(location.search) || [])[1])) || PEN_RECIPE.seed;
+// Duck pen recipe.
+const PEN_RECIPE = (() => {
+  const floor = [-0.7, -0.7, 13.2, 13.2], [fu0, fv0, fu1, fv1] = floor;      // the pen floor plus the fence line: kept clear
+  const pond = { c: [890, 252], r: [150, 64] };                             // the painted pond (screen ellipse)
+  const water = (x, y, grow = 0) => Math.hypot((x - pond.c[0]) / (pond.r[0] + grow), (y - pond.c[1]) / (pond.r[1] + grow * .45));
+  const edgeDist = (u, v) => Math.hypot(Math.max(fu0 - u, 0, u - fu1), Math.max(fv0 - v, 0, v - fv1));
+  return {
+    seed: 23, range: [-22, 30, -22, 30], maxY: 596, floor, pond, water,
+    blocked: (u, v) => u > fu0 && u < fu1 && v > fv0 && v < fv1,
+    zones: {
+      back: (u, v, x, y) => (u < fu0 || v < fv0) && y > 70 && y < 360,
+      bleed: (u, v, x) => x < -20 || x > 820,
+      margin: (u, v, x) => x < 70 || x > 760,
+      front: (u, v) => u > fu1 || v > fv1,
+      edge: (u, v) => { const d = edgeDist(u, v); return d > .1 && d < 1.3; },
+      rim: (u, v, x, y) => { const k = water(x, y); return k > .93 && k < 1.12; },
+    },
+    tallOk: (u, v, x, y) => y >= 120 && !(y > 400 && x > 0 && x < 800) && edgeDist(u, v) >= 2.2,
+    landmarks: [['kit.duck_house', -1.4, 3.6, 1, false, 1.9]],
+    keepClear: [[10, 92, 200, 330], [14, 392, 170, 446], [14, 540, 140, 592], [380, 500, 720, 540]],   // Uncle Mee + bubble, shop and back buttons, prop labels
+    pieces: [
+      ['kit.tree_round_a', 2, ['back', 'bleed'], .9, 170, true, false],
+      ['kit.tree_round_b', 3, ['back', 'bleed'], .8, 140, true, true],
+      ['kit.bamboo_clump', 3, ['back', 'bleed'], .8, 185, true, false],
+      ['scenery.banana_young_iso', 1, ['margin', 'back'], .8, 120, true, false],
+      ['scenery.banana_fruiting_iso', 1, ['margin', 'back'], .8, 120, true, false],
+      ['scenery.banana_ripe_iso', 1, ['margin', 'back'], .8, 120, true, false],
+      ['scenery.banana_old_iso', 1, ['margin', 'back'], .8, 120, true, false],
+      ['scenery.banana_harvested_iso', 1, ['margin', 'back'], .8, 100, true, false],
+      ['kit.haystack', 4, ['margin', 'front'], .6, 52, false, true],
+      ['kit.water_jar', 2, ['margin', 'front'], .4, 44, false, false],
+      ['kit.bush_a', 5, ['edge', 'back', 'margin'], .6, 40, false, true],
+      ['kit.bush_b', 6, ['edge', 'back', 'margin', 'front'], .45, 30, false, true],
+      ['kit.reeds', 6, ['rim'], .3, 46, false, true],
+      ['kit.egret', 2, ['rim'], .25, 40, false, false],
+      ['kit.rock_a', 3, ['rim', 'edge', 'margin', 'front'], .4, 22, false, true],
+      ['kit.rock_b', 5, ['edge', 'margin', 'front'], .3, 16, false, true],
+    ],
+  };
+})();
+const PEN_SEED = SCENE_SEED('seed') || PEN_RECIPE.seed;
 const PEN_BUILD = buildScene(PEN_RECIPE, PEN_SEED, penPt);
 // `back` pieces stand outside the pen and are drawn with the background, behind Uncle Mee; `pen` pieces depth-sort
 // with the nest, trough, basket and ducks.
@@ -245,12 +259,68 @@ const PEN_LAYOUT = {
 
 // Fence runs as kit sprites [id, u, v, scale]: one span per step (stretched a little so the run ends on its
 // end point), with a post closing each run.
-function penFenceSprites() {
+function penFenceSprites() { return fenceSprites(PEN_FENCES); }
+function fenceSprites(runs) {
   const out = [];
-  for (const [[u0, v0], [u1, v1]] of PEN_FENCES) {
+  for (const [[u0, v0], [u1, v1]] of runs) {
     const len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(len)), id = u1 > u0 ? 'kit.fence_span_se' : 'kit.fence_span_sw';
     for (let i = 0; i < n; i++) out.push([id, u0 + (u1 - u0) * i / n, v0 + (v1 - v0) * i / n, len / n]);
     out.push(['kit.fence_post', u1, v1, 1]);
   }
   return out;
 }
+
+// ---- Farm scene kit. The painted ground (ground.farm) carries everything flat; the game draws the yard and field
+// bunds (isoFarmGroundV3) and the plots; kit pieces and the existing sprites stand on top, depth-sorted by gx + gy.
+const FARM_FENCES = [[[8, -5], [12.6, -5]], [[8, -5], [8, -2]], [[8, -2], [12.6, -2]]];   // the buffalo paddock
+const FARM_PATH = [[9.8, 5], [13, 3.6], [17, 2.4], [24, 1]];   // dirt path from the yard past the signpost (painted in ground.farm)
+const FARM_POND = { at: [14.6, -3.2], r: [95, 40] };           // lotus pond (painted in ground.farm): grid centre, screen radii
+const FARM_RECIPE = (() => {
+  const [cu, cv] = FARM_CLEARING, inClear = (u, v) => u > cu && v > cv;
+  const inRect = ([a, b, c, d], u, v, m = 0) => u > a - m && u < c + m && v > b - m && v < d + m;
+  const onMound = (u, v) => FARM_MOUNDS.some(([mu, mv, ru, rv]) => Math.hypot((u - mu) / ru, (v - mv) / rv) <= .85);
+  const inPaddy = (u, v) => inClear(u, v) && inRect(FARM_ZONES.paddies, u, v) && !onMound(u, v);
+  const segDist = (u, v, [a, b], [c, d]) => { const t = Math.max(0, Math.min(1, ((u - a) * (c - a) + (v - b) * (d - b)) / ((c - a) ** 2 + (d - b) ** 2))); return Math.hypot(u - a - t * (c - a), v - b - t * (d - b)); };
+  const pathDist = (u, v) => Math.min(...FARM_PATH.slice(1).map((q, i) => segDist(u, v, FARM_PATH[i], q)));
+  const pc = isoPt(...FARM_POND.at);
+  const water = (x, y, grow = 0) => Math.hypot((x - pc[0]) / (FARM_POND.r[0] + grow), (y - pc[1]) / (FARM_POND.r[1] + grow * .45));
+  return {
+    seed: 7, range: [-12, 22, -12, 16], maxY: 528, water,
+    blocked: (u, v, x, y, id) => {
+      if (inClear(u, v) && (inRect(FARM_ZONES.yard, u, v, .4) || ['canal', 'paddock', 'house', 'stairs', 'shrine'].some(z => inRect(FARM_ZONES[z], u, v, .15)))) return true;
+      if (inPaddy(u, v) && id !== 'kit.egret') return true;                      // only egrets wade in the paddies
+      return pathDist(u, v) < .8;                                                // R2: the path stays clear
+    },
+    zones: {
+      forest_edge: (u, v, x, y) => !inClear(u, v) && (u > cu - 1.4 || v > cv - 1.4) && y > 70,
+      grass: (u, v) => inClear(u, v) && !inRect(FARM_ZONES.paddies, u, v),
+      front: (u, v) => u > 10.3 || v > 8.3,
+      margin: (u, v, x) => x < 30 || x > 790,
+      paddy: (u, v) => inPaddy(u, v),
+      rim: (u, v, x, y) => { const k = water(x, y); return k > .93 && k < 1.12; },
+    },
+    tallOk: (u, v, x, y) => y >= 100 && (y < 330 || x < 0 || x > 800) && pathDist(u, v) > 1.5,
+    occupied: [[...FARM_HOUSE.at.map((n, i) => n + [1.9, 1.5][i]), 2.4], [...FARM_SHRINE, .8], [10.3, -3.5, 2.4]]
+      .concat(BANANA_SPOTS.map(([u, v]) => [u, v, .8]), PALM_SPOTS.map(([u, v]) => [u, v, .7])),
+    landmarks: [['kit.field_hut', -4.9, 4.3, 1, false, 1], ['kit.scarecrow', -3.4, 3.0, 1, false, .3], ['kit.haystack', 11.6, -4.3, .9, false, .5]],
+    keepClear: [[20, 420, 260, 545], [540, 360, 700, 545], [690, 380, 810, 545], [740, 46, 800, 170]],   // cart + sign, jar + farmer, signpost, zoom buttons
+    pieces: [
+      ['kit.tree_round_a', 3, ['forest_edge'], .9, 170, true, false],
+      ['kit.tree_round_b', 3, ['forest_edge', 'margin'], .8, 140, true, true],
+      ['kit.tree_golden_shower', 2, ['forest_edge'], .8, 160, true, false],
+      ['kit.tree_flame', 2, ['forest_edge', 'margin'], .9, 150, true, false],
+      ['kit.bamboo_clump', 4, ['forest_edge'], .8, 185, true, false],
+      ['kit.haystack', 2, ['grass', 'margin'], .6, 52, false, true],
+      ['kit.water_jar', 1, ['grass'], .4, 44, false, false],
+      ['kit.bush_a', 6, ['forest_edge', 'grass', 'margin'], .6, 40, false, true],
+      ['kit.bush_b', 6, ['forest_edge', 'grass', 'front'], .45, 30, false, true],
+      ['kit.flower_patch', 6, ['grass', 'front'], .35, 18, false, true],
+      ['kit.reeds', 5, ['rim'], .3, 46, false, true],
+      ['kit.egret', 3, ['paddy', 'rim'], .25, 40, false, false],
+      ['kit.rock_a', 2, ['grass', 'front', 'rim'], .4, 22, false, true],
+      ['kit.rock_b', 3, ['grass', 'front'], .3, 16, false, true],
+    ],
+  };
+})();
+const FARM_SEED = SCENE_SEED('farmseed') || FARM_RECIPE.seed;
+const FARM_BUILD = buildScene(FARM_RECIPE, FARM_SEED, isoPt);

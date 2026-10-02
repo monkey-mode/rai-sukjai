@@ -296,7 +296,7 @@ Night Camp's full effect stack costs about 4.5 ms per frame on their test machin
 | Scene | State |
 |---|---|
 | Duck pen | Kit done: ground + 16 pieces + 5 bananas, all with normal maps. Recipe hand-written in `PEN_LAYOUT`. |
-| Farm | Old SVG art plus painted bananas. **Next scene to convert to a kit.** |
+| Farm | Kit planned: `FARM_RECIPE` places 46 pieces with the shared builder (`?farmseed=N`), the paddock fence uses the kit fence pieces, and the yard and bunds are drawn in v3 by the game. Waiting on `ground.farm`, 5 new kit pieces and 22 restyles (see `assets/painted/_layout/farm_kit_composition.jpg`). The old `bg.farm` stays until they are done. |
 | Market interior | Front view, so it gets its own small kit later. |
 | Village map | Single painted image is fine (overview only, rule in section 1). |
 | Light | Normal maps exist; the WebGL lighting renderer is not built yet. |

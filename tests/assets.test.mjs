@@ -158,3 +158,25 @@ test('style anchors: candidates until approved; once locked, their files never c
     assert.equal(sha, f.sha256, `${id}: locked anchor changed (re-lock needs the owner's approval)`);
   }
 });
+
+test('farm kit: every placed piece is a known asset, stays off the fields, path and UI, and the pen layout is unchanged by the shared builder', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, fenceSprites, SPECS: ASSET_SPECS };', ctx);
+  const { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, fenceSprites, SPECS } = ctx.X;
+  const { manifest } = checkManifest();
+  const ids = new Set(manifest.assets.map(a => a.id));
+  assert.ok(ids.has('ground.farm') && SPECS['ground.farm']);
+  const placed = FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks).concat(fenceSprites(FARM_FENCES));
+  assert.ok(FARM_BUILD.pieces.length >= 30, 'the farm builder places its scatter');
+  const inside = ([a, b, c, d], u, v) => u > a && u < c && v > b && v < d;
+  for (const [id, u, v] of placed) {
+    assert.ok(ids.has(id) && SPECS[id], `${id} is not a known asset`);
+    const [x, y] = isoPt(u, v);
+    assert.ok(x > -300 && x < 1100 && y > 46 && y < 600, `${id} off the stage`);
+    if (id.startsWith('kit.fence')) continue;
+    assert.ok(!inside(FARM_ZONES.yard, u, v), `${id} stands on the yard`);
+    for (const [a, b, c, d] of FARM_RECIPE.keepClear) assert.ok(!(x > a && x < c && y > b && y < d), `${id} at (${u}, ${v}) covers the UI or a prop`);
+  }
+});

@@ -67,6 +67,10 @@ await game.evaluate(() => {
 });
 await game.waitForTimeout(400);
 fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/pen_kit_composition.jpg'), await game.screenshot({ type: 'jpeg', quality: 85 }));
+// the farm, same way: placeholders for every kit piece the farm recipe places
+await game.evaluate(() => { S.scene = 'farm'; ui.bgScene = null; cam.z = 1; render(); for (const sel of ['#hud', '#toolbar', '#panel', '#zoom']) { const el = document.querySelector(sel); if (el) el.style.visibility = 'hidden'; } });
+await game.waitForTimeout(400);
+fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/farm_kit_composition.jpg'), await game.screenshot({ type: 'jpeg', quality: 85 }));
 server.close();
 await browser.close();
-console.log(`${pieces.length} kit guides and pen_kit_composition.jpg in assets/painted/_layout/`);
+console.log(`${pieces.length} kit guides, pen_kit_composition.jpg and farm_kit_composition.jpg in assets/painted/_layout/`);

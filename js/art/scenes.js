@@ -3,7 +3,55 @@
 
 // Isometric farm. The painted asset covers sky, horizon, paddies, house, trees, yard, field bunds and the
 // paddock's back fence; the game adds what moves or stands in front: clouds, buffalo, the paddock front fence.
+// ---- Farm from its scene kit (FARM_RECIPE in js/art/iso.js). The game switches once ground.farm and every new kit
+// piece are done (`?kit=1` forces it with placeholders); until then it keeps bg.farm. Existing sprites (house,
+// shrine, palms, bananas, buffalo) stay where they are and pick up their v3 restyles through the loader.
+const FARM_KIT_IDS = ['ground.farm', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
+  ...new Set(FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks).map(p => p[0]))];
+function farmKitActive() { return KIT_DEBUG || FARM_KIT_IDS.every(id => Assets.has(id)); }
+const farmKitSprite = (id, u, v, k, flip, depth = u + v) => kitSprite(id, u, v, k, flip, depth, isoPt);
+
+// Yard and field bunds in art style v3 (palette tones + the locked outline), drawn by the game so they line up with
+// the plots exactly.
+function isoFarmGroundV3() {
+  const [x0, y0, x1, y1] = ISO.YARD;
+  let s = isoBlock(x0, y0, x1, y1, ISO.YARD_DEPTH, '#ecd09a', '#d4ab6c', '#a97f4a');
+  for (let fi = 0; fi < 4; fi++) {
+    const [gx, gy] = fieldOrigin(fi), m = ISO.RIM;
+    s += isoBlock(gx - m, gy - m, gx + 4 + m, gy + 3 + m, ISO.RIM_DEPTH, '#a8d468', '#82b84a', '#5f9038');
+  }
+  return s;
+}
+
+function farmKitGround() {
+  if (Assets.has('ground.farm')) return bleed(Assets.image('ground.farm'), 'ground.farm');
+  const [cu, cv] = FARM_CLEARING;   // placeholder: grass clearing, forest beyond its back edges, paddies, canal, pond, path
+  const poly = pts => pts.map(p => isoPt(...p).map(r).join(',')).join(' ');
+  const pc = isoPt(...FARM_POND.at);
+  return `<rect x="-300" width="1400" height="600" fill="#a8d468"/>` +
+    `<polygon points="${poly([[cu, 30], [cu, cv], [40, cv]])} 1400,-600 -800,-600" fill="#3f7a2e"/>` +
+    `<polygon points="${poly([[cu, cv + .1], [-2.75, cv + .1], [-2.75, 11], [cu, 11]])}" fill="#9edcf2" stroke="#5f9038" stroke-width="2"/>` +
+    `<polygon points="${poly([[-2.62, -8], [-2.26, -8], [-2.26, 11], [-2.62, 11]])}" fill="#5fbbe2"/>` +
+    ell(pc[0], pc[1], FARM_POND.r[0], FARM_POND.r[1], '#5fbbe2', 0, 2) +
+    `<polyline points="${poly(FARM_PATH)}" fill="none" stroke="#d4ab6c" stroke-width="34" stroke-linecap="round"/>`;
+}
+
 function farmBG() {
+  if (farmKitActive()) {
+    const b = FARM_SPOTS.buffalo;
+    const bGrid = [((b[0] - ISO.OX) / 32 + (b[1] - ISO.OY) / 16) / 2, ((b[1] - ISO.OY) / 16 - (b[0] - ISO.OX) / 32) / 2];
+    const fences = fenceSprites(FARM_FENCES).map(([id, u, v, k]) => farmKitSprite(id, u, v, k, false,
+      u + v + (id === 'kit.fence_span_se' || id === 'kit.fence_span_sw' ? .5 * k : 0)));
+    const items = [[bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`]]
+      .concat(fences, plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean),
+        FARM_RECIPE.landmarks.map(([id, u, v, k, flip]) => farmKitSprite(id, u, v, k, flip)),
+        FARM_BUILD.pieces.map(p => farmKitSprite(...p)));
+    return farmKitGround() + isoFarmGroundV3() + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
+  }
+  return farmBGOld();
+}
+
+function farmBGOld() {
   const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
   const clouds = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2');
   // the buffalo and the paddock's front fence join the plant sprites in one back-to-front pass
@@ -157,14 +205,13 @@ function marketCounter() {
 // ---- Duck pen from its scene kit (js/art/iso.js: PEN_LAYOUT, PEN_FENCES). The game switches to it once the painted
 // ground and every piece are done; until then it keeps the single painted bg.pen. `?kit=1` in the URL forces the kit
 // and draws a labelled box for each missing piece, to check the layout before the art arrives.
-const PEN_KIT_DEBUG = typeof location !== 'undefined' && /[?&]kit=1\b/.test(location.search);
 const PEN_KIT_IDS = ['ground.pen', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
   ...new Set(PEN_LAYOUT.back.concat(PEN_LAYOUT.pen).map(p => p[0]))];
-function penKitActive() { return PEN_KIT_DEBUG || PEN_KIT_IDS.every(id => Assets.has(id)); }
+function penKitActive() { return KIT_DEBUG || PEN_KIT_IDS.every(id => Assets.has(id)); }
 
 // A kit piece at pen grid (u, v) as a [depth, svg] item, with the soft ground shadow the game adds (not for fences).
-function kitSprite(id, u, v, k = 1, flip = false, depth) {
-  const [x, y] = penPt(u, v), sp = ASSET_SPECS[id];
+function kitSprite(id, u, v, k = 1, flip = false, depth, pt = penPt) {
+  const [x, y] = pt(u, v), sp = ASSET_SPECS[id];
   const shadow = id.startsWith('kit.fence') ? '' : `<ellipse cx="0" cy="1" rx="${r(sp.w * .3)}" ry="${r(sp.w * .09)}" fill="rgba(58,34,19,.18)"/>`;
   const has = Assets.has(id), art = has ? Assets.image(id) : kitPlaceholder(id);
   return [depth ?? y, `<g transform="translate(${r(x)} ${r(y)}) scale(${flip && has ? -k : k} ${k})">${shadow}${art}</g>`];

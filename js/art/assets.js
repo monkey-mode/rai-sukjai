@@ -49,6 +49,9 @@ const ASSET_SPECS = (() => {
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
   // Scene kit (duck pen pilot): painted pieces the game assembles scenes from, plus the scene's painted ground.
   add('ground.pen', 'assets/backgrounds/ground_pen.svg', 1400, 600, 300, 0);
+  add('ground.farm', 'assets/backgrounds/ground_farm.svg', 1400, 600, 300, 0);
+  [['field_hut', 130, 120, 65, 104], ['scarecrow', 44, 64, 22, 58], ['tree_golden_shower', 160, 180, 80, 170], ['tree_flame', 180, 170, 90, 160], ['flower_patch', 50, 30, 25, 24]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   [['fence_span_se', 48, 66, 8, 46], ['fence_span_sw', 48, 66, 40, 46], ['fence_post', 16, 48, 8, 44], ['duck_house', 240, 200, 120, 140], ['tree_round_a', 170, 190, 85, 178], ['tree_round_b', 140, 160, 70, 150], ['bamboo_clump', 120, 200, 60, 190], ['bush_a', 90, 56, 45, 48], ['bush_b', 64, 42, 32, 36], ['rock_a', 54, 34, 27, 28], ['rock_b', 40, 26, 20, 21], ['haystack', 76, 66, 38, 58], ['water_jar', 48, 54, 24, 48], ['reeds', 54, 56, 27, 50], ['egret', 32, 44, 16, 41]]
     .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
