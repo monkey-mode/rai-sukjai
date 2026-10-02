@@ -1,6 +1,6 @@
 {
   "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
-  "profile_version": 2,
+  "profile_version": 3,
   "status": "in use",
   "recorded_by": "Codex",
   "approved_anchor_process": {
@@ -11,7 +11,7 @@
   "generation": {
     "model": "OpenAI image_gen service",
     "model_version": "Provider-managed; exact model identifier and version are not exposed by image_gen.imagegen. Cannot pin or verify version consistency.",
-    "interface": "image_gen.imagegen, local referenced_image_paths, four labelled prompt sections; transparent_background true for sprites, false for ground; fences hand-authored as explicitly requested.",
+    "interface": "image_gen.imagegen, local referenced_image_paths, four labelled prompt sections; transparent_background true for sprites, false for ground; fences hand-authored as explicitly requested. Profile3 also supports explicitly scoped vector retouching and one shared generated master for counted egg variants.",
     "image_size": "Request canvas × 2; provider selects native dimensions. Export pre-trace image to canvas × 2 using full-canvas Lanczos resizing; geometry corrections are documented per piece.",
     "sampler_and_steps": "Not exposed or configurable; provider defaults.",
     "guidance_or_cfg": "Not exposed or configurable; provider defaults.",
@@ -28,7 +28,7 @@
     "trace_tool_and_settings": "vtracer 0.6.15: colormode=color, hierarchical=stacked, mode=spline, filter_speckle=4 (2x pixels), color_precision=8, layer_difference=8, corner_threshold=75, length_threshold=4, splice_threshold=45, path_precision=2. Hand-authored fences; ground geometry hand-corrected after reference generation.",
     "palette_snap_method": "Classify each material region before nearest squared-RGB-distance snap to its own light/base/shadow triplet plus line colours. Alpha threshold 110/255. Median filter 3x3 at 2x; snap tracer colours again to same allowed material palette.",
     "cleanup": "Remove only isolated connected components smaller than 4 source pixels and meaningless subpixel slivers; retain leaf sprays, nodes, grain and straw rows; no broad silhouette simplification.",
-    "outline_redraw": "Closed alpha-silhouette path, fresh #3a2213 stroke 10 source pixels (5 canvas pixels), beneath traced fills, round joins/caps. Hand-drawn pieces use 2.5 canvas px over fills. Deliberate inner contours #6b4428 at 1.2 canvas px. Ground outlines only floor edge, pond rim and paths.",
+    "outline_redraw": "Closed alpha-silhouette path, fresh #3a2213 stroke 5/gameScale canvas pixels beneath traced fills, round joins/caps. Hand-drawn pieces use2.5/gameScale canvas px over fills. Deliberate inner contours #6b4428 at1.2/gameScale canvas px. gameScale is the unchanged game size chart; kit/ground scale1. Ground outlines only floor edge, pond rim and paths.",
     "export": "SVG with viewBox = canvas, no raster, no gradients/filters/masks/patterns",
     "normal_map": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map."
   },
@@ -134,6 +134,23 @@
       "committed_source": "assets/painted/_source/kit.egret.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
       "finishing_notes": "Regenerated for stronger source outline and broader feather groups at game size. Fit whole subject to24x38 canvas px before committing source. Native-plane recovery, RDP epsilon0.15 canvas px, remove only regions under1 canvas px squared. Correct pale boundary fragments to outline colour; fresh closed5px under-stroke on source silhouette inset5 source px. Curate1.2px feather-fold and neck contours, restore visible eye, yellow bill planes and dark leg planes using their material triplets. Rounded white-feather relief sigma2.5px,80% volume/20% Laigter; yellow bill planar normals light(-.25,.65,.72), base(-.25,.1,.96), shadow(.25,-.6,.72). Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+    },
+    {
+      "id": "ground.pen",
+      "method": "hand-authored vector repair of existing approved geometry",
+      "source": "assets/painted/_source/ground.pen.png",
+      "notes": "478 grass instances -> 167 (65.1% reduction); broad grass planes, straw/grain, damp patches, duck tracks, irregular rim. Reference source is repair drawing rendered at 2x."
+    },
+    {
+      "id": "kit.bamboo_clump",
+      "method": "hand-authored foliage retouch; original culm-channel pixels vectorized at recorded vtracer settings",
+      "source": "assets/painted/_source/kit.bamboo_clump.png",
+      "notes": "122 original culm/collar/sheath material paths retained; original culm ink/material recovered in narrow stem channels to retain continuous stems. Lance-shaped drooping leaves on node branches; repair drawing source at 2x."
     }
+  ],
+  "changes_since_v2": [
+    "Game-size line compensation for immutable prop canvases: visible silhouette2.5/gameScale and inner1.2/gameScale canvas px, so rendering at the new size chart preserves the anchor line weight. Kit/ground scales remain1.",
+    "Targeted hand-authored SVG repairs for ground and bamboo foliage preserve approved geometry and culm/node/sheath paths; source images are the repaired drawing reference renders.",
+    "Egg variants use one generated and traced master egg with deterministic shared placements to guarantee exactlyN eggs and identical anchors."
   ]
 }
