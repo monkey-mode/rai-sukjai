@@ -3763,7 +3763,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3775,7 +3775,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:22:00Z",
         "file": "assets/characters/uncle_mee.svg",
-        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -3980,7 +3981,7 @@
         "review": "Reads too dark and small on the bright painted pen ground. Repaint lighter and warmer: a light khaki/tan Khaki Campbell body with cream highlights on the back and breast, a slightly darker wing, a clear bright orange bill and feet, a visible eye highlight. Fill more of the canvas (the body about 85% of the width, same base point), soft upper-left light, no ground shadow."
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3992,7 +3993,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:22:00Z",
         "file": "assets/animals/duck.svg",
-        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4230,7 +4232,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4242,7 +4244,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:30:55Z",
         "file": "assets/props/trough.svg",
-        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4292,7 +4295,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4304,7 +4307,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:30:55Z",
         "file": "assets/props/nest.svg",
-        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4355,7 +4359,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4367,7 +4371,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_1.svg",
-        "notes": "Profile v3: exactly 1 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 1 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4418,7 +4423,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4430,7 +4435,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_2.svg",
-        "notes": "Profile v3: exactly 2 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 2 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4481,7 +4487,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4493,7 +4499,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_3.svg",
-        "notes": "Profile v3: exactly 3 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 3 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4544,7 +4551,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4556,7 +4563,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_4.svg",
-        "notes": "Profile v3: exactly 4 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 4 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4607,7 +4615,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4619,7 +4627,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_5.svg",
-        "notes": "Profile v3: exactly 5 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 5 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4670,7 +4679,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4682,7 +4691,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_6.svg",
-        "notes": "Profile v3: exactly 6 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 6 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4733,7 +4743,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4745,7 +4755,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_7.svg",
-        "notes": "Profile v3: exactly 7 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 7 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4796,7 +4807,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4808,7 +4819,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_8.svg",
-        "notes": "Profile v3: exactly 8 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
+        "notes": "Profile v3: exactly 8 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4859,7 +4871,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4871,7 +4883,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_9.svg",
-        "notes": "Profile v3: exactly 9 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion."
+        "notes": "Profile v3: exactly 9 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4922,7 +4935,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4934,7 +4947,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:38:39Z",
         "file": "assets/props/egg_pile_10.svg",
-        "notes": "Profile v3: exactly 10 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion."
+        "notes": "Profile v3: exactly 10 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -4984,7 +4998,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4996,7 +5010,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T04:30:55Z",
         "file": "assets/props/egg_basket.svg",
-        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -5323,7 +5338,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5335,7 +5350,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T05:05:46Z",
         "file": "assets/scenery/banana_young_iso.svg",
-        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Smooth untorn juvenile leaves, rolled spike and two suckers; no fruit."
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Smooth untorn juvenile leaves, rolled spike and two suckers; no fruit.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -5386,7 +5402,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5398,7 +5414,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T05:05:46Z",
         "file": "assets/scenery/banana_fruiting_iso.svg",
-        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Green plump banana hands and pendant flower; flower uses locked pink triplet because the palette has no purple."
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Green plump banana hands and pendant flower; flower uses locked pink triplet because the palette has no purple.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -5449,7 +5466,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5461,7 +5478,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T05:05:46Z",
         "file": "assets/scenery/banana_ripe_iso.svg",
-        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Yellow ripe banana hands with dark tips, sparse sugar spots and dry spent blossom."
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Yellow ripe banana hands with dark tips, sparse sugar spots and dry spent blossom.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -5512,7 +5530,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5524,7 +5542,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T05:05:46Z",
         "file": "assets/scenery/banana_old_iso.svg",
-        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Browned wind-torn leaves, hanging dry sheaths and no fruit."
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Browned wind-torn leaves, hanging dry sheaths and no fruit.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -5575,7 +5594,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5587,7 +5606,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T05:05:46Z",
         "file": "assets/scenery/banana_harvested_iso.svg",
-        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Exactly two daughter plants, cut stump, fallen stem and dry leaf; concentric cut faces redrawn with planar normals."
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Exactly two daughter plants, cut stump, fallen stem and dry leaf; concentric cut faces redrawn with planar normals.",
+        "review": "Approved by the owner (2026-10-02) in the duck pen at game size."
       }
     },
     {
@@ -6139,12 +6159,12 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.pen.jpg",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/backgrounds/ground_pen.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T04:12:27Z",
       "notes": "Profile v3 vector repair: grass instances reduced 65%; broad grass patches, readable straw/grain, mud and duck tracks; irregular muddy pond rim. Pen diamond and pond centre/dimensions preserved. No standing objects, no cast shadows, no normal required.",
-      "review": "Too speckled: thousands of tiny flower/clover dots read as a noisy wallpaper at game size, while the pen floor is plain flat tan. Reverse it: (1) cut the grass specks by about 60–70% and build the grass from broad patches of its three tones with only a few small flower clusters; (2) give the pen floor readable detail like the anchors: scattered straw strands, grain, a few damp darker patches and worn duck tracks, in dirt/mud/straw tones; (3) make the pond rim slightly irregular and muddier, with a few flat lily pads. Keep the geometry, the flat-layer rule and no shadows.",
+      "review": "Almost there: grass, straw, grain, duck tracks and pond rim are approved. Fix only the damp patches on the pen floor: they are large dark grey ovals that read as holes or cast shadows. Make them fewer (3–5), about half the size, irregular in outline, in warm mud tones (#b89a6a / #8f7348, never grey or near-black), with straw strands crossing their edges so they sit in the floor. Change nothing else.",
       "negative_prompt": "cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark",
       "style": "flat-v3",
       "tags": [
@@ -6444,12 +6464,12 @@
       "reference_render": null,
       "layout": "assets/painted/_layout/kit.bamboo_clump.png",
       "normal": "assets/kit/bamboo_clump_n.png",
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/bamboo_clump.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T04:12:27Z",
       "notes": "Profile v3 vector repair: original culm, collar and sheath material paths retained; foliage rebuilt as narrow drooping lance leaves on node branches. Original anchor/height retained. Source is drawing reference render; normal uses recorded Laigter preset with rounded foliage relief and exact final alpha.",
-      "review": "The leaf sprays are spiky star/maple shapes, so the clump reads as a palm or maple. Bamboo leaves are narrow, lance-shaped and drooping, hanging in fan-like sprays from thin side branches at the nodes. Keep the culms, node collars, sheaths, height and anchor; redo only the foliage.",
+      "review": "Approved by the owner (2026-10-02): foliage fixed, matches the locked anchors.",
       "style": "flat-v3",
       "tags": [
         "block",
