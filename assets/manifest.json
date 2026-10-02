@@ -5193,7 +5193,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "needs_changes",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5205,7 +5205,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T07:01:01Z",
         "file": "assets/scenery/spirit_house_iso.svg",
-        "notes": "Profile v4, same generation/trace/Laigter settings. Retained stepped white/gold plinth, ornamented pillar and rainbow cloth, platform and lanterns, two-tier red roof, gold spire/hooks, offerings and flower garlands. Canvas76x170/anchor38,157 preserved. Palette-only; outer/inner strokes compensated for0.7 game scale; no ground shadow."
+        "notes": "Profile v4, same generation/trace/Laigter settings. Retained stepped white/gold plinth, ornamented pillar and rainbow cloth, platform and lanterns, two-tier red roof, gold spire/hooks, offerings and flower garlands. Canvas76x170/anchor38,157 preserved. Palette-only; outer/inner strokes compensated for0.7 game scale; no ground shadow.",
+        "review": "Approved in style, but at its game size (scale 0.7, about 110 px tall) it reads busy. Simplify: fewer offerings (keep 2 soda bottles, one marigold vase, one garland), drop the dancer figurines and the small lanterns, give the two-tier red roof and the gold spire a bold clean silhouette with fewer inner lines, and use larger, simpler gold kranok shapes on the pillar. Keep the canvas, anchor, pose, colours and the rainbow cloth."
       }
     },
     {
@@ -5255,7 +5256,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5267,7 +5268,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T07:01:01Z",
         "file": "assets/scenery/thai_house_iso.svg",
-        "notes": "Profile v4, same generation/trace/Laigter settings. Rich palette-only teak construction with crossing L-shaped roofs, four horns and ngao eaves, sunburst gables, veranda/handrailed stair, two pots, red hammock, clay jar and bamboo bench. Canvas277x252/anchor126,146 preserved; no ground shadow; game-scale1 strokes. SVG65KB retains construction detail and exceeds the checker advisory40KB budget."
+        "notes": "Profile v4, same generation/trace/Laigter settings. Rich palette-only teak construction with crossing L-shaped roofs, four horns and ngao eaves, sunburst gables, veranda/handrailed stair, two pots, red hammock, clay jar and bamboo bench. Canvas277x252/anchor126,146 preserved; no ground shadow; game-scale1 strokes. SVG65KB retains construction detail and exceeds the checker advisory40KB budget.",
+        "review": "Approved by the owner (2026-10-02) as a farm v3 reference."
       }
     },
     {
@@ -5831,7 +5833,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5843,7 +5845,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T07:01:01Z",
         "file": "assets/scenery/palm_coconut_lean_iso.svg",
-        "notes": "Profile v4, same generation/trace/Laigter settings. Preserved left-curving trunk and crown pose, green coconuts and hanging dry fronds. Layered pinnate sprays, wood-tone ring scars and flared foot. Canvas129x191/anchor100,183 preserved;1x game strokes; no ground shadow."
+        "notes": "Profile v4, same generation/trace/Laigter settings. Preserved left-curving trunk and crown pose, green coconuts and hanging dry fronds. Layered pinnate sprays, wood-tone ring scars and flared foot. Canvas129x191/anchor100,183 preserved;1x game strokes; no ground shadow.",
+        "review": "Approved by the owner (2026-10-02) as a farm v3 reference."
       }
     },
     {
@@ -6507,12 +6510,12 @@
       "layout": "assets/painted/_layout/kit.field_hut.png",
       "normal": "assets/kit/field_hut_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/field_hut.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T07:01:01Z",
       "notes": "Profile v4, same generation/trace/Laigter settings. Open bamboo rice-field shelter with tied ridge, irregular thatch rows, slatted deck, railing, rolled mat and clay pot. Wet stilt bottoms in darker bamboo/wood tones; no ground shadow. Guide anchor65,104; measured71px tall and54% footprint coverage; Final native-plane trace with mat/deck contours retained71% source detail; silhouette IoU0.88, closed outline99%.",
-      "review": null
+      "review": "Approved by the owner (2026-10-02) as a farm v3 reference."
     },
     {
       "id": "kit.scarecrow",
