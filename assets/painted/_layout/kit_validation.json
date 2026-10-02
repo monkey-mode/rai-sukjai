@@ -50,6 +50,54 @@
       "sourceIoU": 0.8813707832351653,
       "sourceDetail": 0.7111172887388182
     },
+    "kit.scarecrow": {
+      "height": 50,
+      "area": 2909,
+      "outlineShare": 0.8507853403141361,
+      "detail": 0.5238913716053627,
+      "colours": 52,
+      "clipped": 0,
+      "footprint": 0.11538461538461539,
+      "standing": true,
+      "sourceIoU": 0.9416182997610106,
+      "sourceDetail": 0.8067462474055974
+    },
+    "kit.tree_golden_shower": {
+      "height": 161,
+      "area": 54423,
+      "outlineShare": 0.9945717732207479,
+      "detail": 0.3473163919666318,
+      "colours": 24,
+      "clipped": 0,
+      "footprint": 0.30193236714975846,
+      "standing": true,
+      "sourceIoU": 0.9069895634278995,
+      "sourceDetail": 0.8201578193957542
+    },
+    "kit.tree_flame": {
+      "height": 151,
+      "area": 60776,
+      "outlineShare": 1,
+      "detail": 0.19624522837962355,
+      "colours": 22,
+      "clipped": 0,
+      "footprint": 0.3176470588235294,
+      "standing": true,
+      "sourceIoU": 0.9328857956134722,
+      "sourceDetail": 0.6151881574554252
+    },
+    "kit.flower_patch": {
+      "height": 18,
+      "area": 2130,
+      "outlineShare": 0.7830188679245284,
+      "detail": 0.4544600938967136,
+      "colours": 72,
+      "clipped": 0,
+      "footprint": 0.41125541125541126,
+      "standing": true,
+      "sourceIoU": 0.9461467038068709,
+      "sourceDetail": 0.742548901438212
+    },
     "kit.fence_span_se": {
       "height": 37.5,
       "area": 3441,
