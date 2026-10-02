@@ -4355,7 +4355,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4363,7 +4363,11 @@
         ],
         "output": "assets/props/egg_pile_1.svg",
         "normal": "assets/props/egg_pile_1_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_1.svg",
+        "notes": "Profile v3: exactly 1 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4414,7 +4418,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4422,7 +4426,11 @@
         ],
         "output": "assets/props/egg_pile_2.svg",
         "normal": "assets/props/egg_pile_2_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_2.svg",
+        "notes": "Profile v3: exactly 2 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4473,7 +4481,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4481,7 +4489,11 @@
         ],
         "output": "assets/props/egg_pile_3.svg",
         "normal": "assets/props/egg_pile_3_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_3.svg",
+        "notes": "Profile v3: exactly 3 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4532,7 +4544,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4540,7 +4552,11 @@
         ],
         "output": "assets/props/egg_pile_4.svg",
         "normal": "assets/props/egg_pile_4_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_4.svg",
+        "notes": "Profile v3: exactly 4 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4591,7 +4607,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4599,7 +4615,11 @@
         ],
         "output": "assets/props/egg_pile_5.svg",
         "normal": "assets/props/egg_pile_5_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_5.svg",
+        "notes": "Profile v3: exactly 5 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4650,7 +4670,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4658,7 +4678,11 @@
         ],
         "output": "assets/props/egg_pile_6.svg",
         "normal": "assets/props/egg_pile_6_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_6.svg",
+        "notes": "Profile v3: exactly 6 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4709,7 +4733,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4717,7 +4741,11 @@
         ],
         "output": "assets/props/egg_pile_7.svg",
         "normal": "assets/props/egg_pile_7_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_7.svg",
+        "notes": "Profile v3: exactly 7 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4768,7 +4796,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4776,7 +4804,11 @@
         ],
         "output": "assets/props/egg_pile_8.svg",
         "normal": "assets/props/egg_pile_8_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_8.svg",
+        "notes": "Profile v3: exactly 8 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha."
       }
     },
     {
@@ -4827,7 +4859,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4835,7 +4867,11 @@
         ],
         "output": "assets/props/egg_pile_9.svg",
         "normal": "assets/props/egg_pile_9_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_9.svg",
+        "notes": "Profile v3: exactly 9 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion."
       }
     },
     {
@@ -4886,7 +4922,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4894,7 +4930,11 @@
         ],
         "output": "assets/props/egg_pile_10.svg",
         "normal": "assets/props/egg_pile_10_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:38:39Z",
+        "file": "assets/props/egg_pile_10.svg",
+        "notes": "Profile v3: exactly 10 eggs from one shared generated/traced cream-shell master. Same canvas (50×50), anchor (24,35), egg dimensions and nest game scale. Guide-centre placements, back-to-front order; every egg has visible shell pixels. No shadow. Recorded Laigter preset, exact rendered alpha. Ninth egg moved 6 canvas px left within unchanged pile bounds to prevent complete occlusion."
       }
     },
     {

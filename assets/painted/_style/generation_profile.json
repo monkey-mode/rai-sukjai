@@ -296,6 +296,646 @@
       "bytes": 37485,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas112x114, anchor(56,92), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput224x228, transparent; no crop/pad.\nSUBJECT: A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; a soft shadow under it. Anchor = the ground under its centre. Exactly SIX visible distinct cream duck eggs. Thai woven bamboo basket, flared bowl, interlocking split-bamboo strips, wrapped diagonal rattan rim, arched handle with red lashings, straw liner. Keep the six eggs large/countable in TWO ROWS of three with each egg distinct. Basket bamboo3tones, straw3tones, eggswhite3tones, lashingsred3tones. No ground shadow.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
       "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+    },
+    {
+      "id": "prop.egg_pile_1",
+      "egg_count": 1,
+      "visible_source_pixels_per_egg": [
+        491
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          24.0,
+          28.4
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_1.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 1211,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        379
+      ]
+    },
+    {
+      "id": "prop.egg_pile_2",
+      "egg_count": 2,
+      "visible_source_pixels_per_egg": [
+        324,
+        496
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          25.7,
+          25.2
+        ],
+        [
+          22.3,
+          31.6
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_2.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 2334,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        177,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_3",
+      "egg_count": 3,
+      "visible_source_pixels_per_egg": [
+        309,
+        491,
+        489
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          22.0,
+          24.7
+        ],
+        [
+          31.4,
+          29.4
+        ],
+        [
+          18.6,
+          31.1
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_3.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 3456,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        134,
+        379,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_4",
+      "egg_count": 4,
+      "visible_source_pixels_per_egg": [
+        331,
+        307,
+        493,
+        491
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          32.2,
+          24.3
+        ],
+        [
+          19.3,
+          26.1
+        ],
+        [
+          28.7,
+          30.7
+        ],
+        [
+          15.8,
+          32.5
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_4.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 4578,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        180,
+        136,
+        382,
+        377
+      ]
+    },
+    {
+      "id": "prop.egg_pile_5",
+      "egg_count": 5,
+      "visible_source_pixels_per_egg": [
+        306,
+        331,
+        306,
+        490,
+        492
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          23.0,
+          21.4
+        ],
+        [
+          32.4,
+          26.1
+        ],
+        [
+          19.6,
+          27.8
+        ],
+        [
+          28.9,
+          32.5
+        ],
+        [
+          16.1,
+          34.2
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_5.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 5701,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        136,
+        183,
+        137,
+        378,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_6",
+      "egg_count": 6,
+      "visible_source_pixels_per_egg": [
+        305,
+        308,
+        311,
+        497,
+        488,
+        492
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          20.1,
+          21.0
+        ],
+        [
+          29.4,
+          25.7
+        ],
+        [
+          16.6,
+          27.4
+        ],
+        [
+          38.8,
+          30.4
+        ],
+        [
+          26.0,
+          32.1
+        ],
+        [
+          13.1,
+          33.8
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_6.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 6824,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        138,
+        136,
+        139,
+        380,
+        380,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_7",
+      "egg_count": 7,
+      "visible_source_pixels_per_egg": [
+        305,
+        308,
+        311,
+        497,
+        488,
+        492,
+        248
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          20.1,
+          21.0
+        ],
+        [
+          29.4,
+          25.7
+        ],
+        [
+          16.6,
+          27.4
+        ],
+        [
+          38.8,
+          30.4
+        ],
+        [
+          26.0,
+          32.1
+        ],
+        [
+          13.1,
+          33.8
+        ],
+        [
+          22.0,
+          15.8
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_7.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 7948,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        95,
+        138,
+        136,
+        139,
+        380,
+        380,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_8",
+      "egg_count": 8,
+      "visible_source_pixels_per_egg": [
+        305,
+        308,
+        311,
+        497,
+        488,
+        492,
+        230,
+        249
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          20.1,
+          21.0
+        ],
+        [
+          29.4,
+          25.7
+        ],
+        [
+          16.6,
+          27.4
+        ],
+        [
+          38.8,
+          30.4
+        ],
+        [
+          26.0,
+          32.1
+        ],
+        [
+          13.1,
+          33.8
+        ],
+        [
+          22.0,
+          15.8
+        ],
+        [
+          31.4,
+          20.5
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_8.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 9070,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        79,
+        98,
+        138,
+        136,
+        139,
+        380,
+        380,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_9",
+      "egg_count": 9,
+      "visible_source_pixels_per_egg": [
+        274,
+        308,
+        311,
+        497,
+        488,
+        492,
+        230,
+        249,
+        308
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          20.1,
+          21.0
+        ],
+        [
+          29.4,
+          25.7
+        ],
+        [
+          16.6,
+          27.4
+        ],
+        [
+          38.8,
+          30.4
+        ],
+        [
+          26.0,
+          32.1
+        ],
+        [
+          13.1,
+          33.8
+        ],
+        [
+          22.0,
+          15.8
+        ],
+        [
+          31.4,
+          20.5
+        ],
+        [
+          12.6,
+          22.2
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_9.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 10194,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        79,
+        98,
+        116,
+        143,
+        136,
+        139,
+        380,
+        380,
+        380
+      ]
+    },
+    {
+      "id": "prop.egg_pile_10",
+      "egg_count": 10,
+      "visible_source_pixels_per_egg": [
+        274,
+        308,
+        311,
+        497,
+        488,
+        492,
+        230,
+        249,
+        308,
+        254
+      ],
+      "shared_canvas": [
+        50,
+        50
+      ],
+      "anchor": [
+        24,
+        35
+      ],
+      "egg_body_dimensions": [
+        11.8,
+        13.8
+      ],
+      "placements": [
+        [
+          20.1,
+          21.0
+        ],
+        [
+          29.4,
+          25.7
+        ],
+        [
+          16.6,
+          27.4
+        ],
+        [
+          38.8,
+          30.4
+        ],
+        [
+          26.0,
+          32.1
+        ],
+        [
+          13.1,
+          33.8
+        ],
+        [
+          22.0,
+          15.8
+        ],
+        [
+          31.4,
+          20.5
+        ],
+        [
+          12.6,
+          22.2
+        ],
+        [
+          24.0,
+          10.6
+        ]
+      ],
+      "source": "assets/painted/_source/prop.egg_pile_10.png",
+      "raw": "/workspace/generated_images/exec-2657a9f3-cc79-4bcb-aedd-dbd4d84f3793.png",
+      "geometry_fit": "Original guide centres, shared generated master, no per-variant rescale or lighting rotation",
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.25,
+      "minimum_canvas_area": 0.25,
+      "bytes": 11318,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image controls only geometry: canvas50x50, anchor(24,35), one egg body centered(24,28.4), about11.8x13.8canvaspixels. Ignore guide speckle and ground shadow completely. Request100x100transparent, no crop/pad. Its geometric ellipse is only placement, not the final outline: use a natural slightly pear-shaped duck egg.\nSUBJECT: ONE single duck egg, upright with a slight organic tilt. A smooth sculpted cream shell with THREE hard-edged cel planes ONLY from white material #ffffff/#ece7dc/#c8c0ad, upper-left light, one small hard white glint. Natural rounded clean silhouette, warm-brown closed outline, no speckles, no surface noise, no cracks, no nest, no ground shadow. This is the canonical egg master for a coherent counted pyramid sequence1through10: generate only ONE egg. Keep it organic and slightly narrower at the top. No polygonal zigzag egg edges.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
+      "final_visible_shell_pixels": [
+        102,
+        79,
+        98,
+        116,
+        143,
+        136,
+        139,
+        380,
+        380,
+        380
+      ]
     }
   ],
   "changes_since_v2": [
