@@ -1892,6 +1892,110 @@
         "paths": 205,
         "bytes": 43559
       }
+    },
+    {
+      "id": "prop.ox_cart",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/prop.ox_cart.png",
+      "finishing_notes": "Woven bamboo cart with two produce baskets, near spoked wheel with thickness/hub, down-right shaft/yoke and parking stand. Kept canvas180x152, anchor78,110; scale0.6 outline compensation for2.5px visible game weight. No sign or text. Material preparation separates ladle wood and cream ornament from clay; second generated jar glint removed; SVG lossless path packing for cart. File-size advisory preserved rather than deleting woven detail.",
+      "prompt": "STYLE (look only): First three locked anchors define rich sculpted craftsmanship, irregular natural shapes, layered meaningful material construction, palette-only three-tone planes. Not primitive cartoon or soft painted pixels. Upper-left hard cel light, no ground shadow. Closed outer#3a2213 ~2.5px at GAME SIZE and curated inner#6b4428 1.2px at GAME SIZE. Materials follow own palette triplets: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}\nGEOMETRY (placement only): Image4 is current sprite geometry ONLY, has no style. Preserve EXACT occupied width/height, anchor, pose and direction within unchanged canvas[180, 152], anchor[78, 110], gameScale0.6. Do not crop or pad. Requested2x transparent source.\nSUBJECT: A traditional wooden Thai ox cart (เกวียน) in ISOMETRIC 3/4 view matching the farm grid: the bed's long axis runs along +gx (down-right), shaft and yoke pointing to the front-right, parking stand under the shaft. Open bed with woven bamboo side panels and wooden rails, loaded with two woven baskets (watermelon, mango, chilies, strawberries). Big solid spoked wheels seen at an angle (ellipses along the gx axis) with visible thickness: the tyre tread joining both faces, the spoked front face, and a protruding hub; the near wheel in front. No sign and no text (the game adds it). Anchor (78,110) = ground under the middle of the axle. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The wooden ox cart: keep the bed, woven side panels, baskets of produce, spoked wheels with thickness and hub, shaft and parking stand. No sign, no text. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes. EXACTLY TWO woven baskets of produce visible inside bed. Match current down-right shaft and yoke angle; body positioned on same axle ground point. Layered woven bamboo side panels, planks and restrained grain; near spoked wheel in front with elliptical thickness and hub. No background, no sign or labels.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background Fixed profile4, provider defaults; exact version/steps/CFG/seed/weights unexposed. Preserve meaningful sculpted material details without noise; no text, symbols, halos or ground.",
+      "referenced_image_paths": [
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.duck_house@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.tree_round_a@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.fence_span_se@4x.png",
+        "/tmp/rai-farm-old/prop.ox_cart.png"
+      ],
+      "transparent_background": true,
+      "generated_source": "/workspace/generated_images/exec-a4e21f9e-8b76-42f4-a60f-23e7632d3f8f.png",
+      "geometry_fit": {
+        "id": "prop.ox_cart",
+        "raw": "/workspace/generated_images/exec-a4e21f9e-8b76-42f4-a60f-23e7632d3f8f.png",
+        "source": "assets/painted/_source/prop.ox_cart.png",
+        "native_bbox": [
+          89,
+          98,
+          1323,
+          1060
+        ],
+        "target_bbox": [
+          5.5,
+          14.0,
+          174.0,
+          147.83333333333334
+        ],
+        "geometry_fit": {
+          "sx": 0.136547811993517,
+          "sy": 0.13911988911988912,
+          "tx": -6.652755267423014,
+          "ty": 0.36625086625086567
+        },
+        "game_scale": 0.6,
+        "cleanup_canvas_epsilon": 0.35,
+        "minimum_canvas_area": 0.35,
+        "trace_resolution": "canvas x2 normalized material planes",
+        "profile_version": 4,
+        "paths": 497,
+        "bytes": 72158
+      }
+    },
+    {
+      "id": "prop.dragon_jar",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/prop.dragon_jar.png",
+      "finishing_notes": "Clay dragon jar with wide2:1 water rim/reflection, coconut-shell ladle, cream cloud swirls and yellow dragon head on right. Own material triplets; removed extra generated glaze glint, retained one small hard highlight; original97x100 canvas/49,84anchor and0.6 game scale. Material preparation separates ladle wood and cream ornament from clay; second generated jar glint removed; SVG lossless path packing for cart. File-size advisory preserved rather than deleting woven detail.",
+      "prompt": "STYLE (look only): First three locked anchors define rich sculpted craftsmanship, irregular natural shapes, layered meaningful material construction, palette-only three-tone planes. Not primitive cartoon or soft painted pixels. Upper-left hard cel light, no ground shadow. Closed outer#3a2213 ~2.5px at GAME SIZE and curated inner#6b4428 1.2px at GAME SIZE. Materials follow own palette triplets: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}\nGEOMETRY (placement only): Image4 is current sprite geometry ONLY, has no style. Preserve EXACT occupied width/height, anchor, pose and direction within unchanged canvas[97, 100], anchor[49, 84], gameScale0.6. Do not crop or pad. Requested2x transparent source.\nSUBJECT: A big Ratchaburi dragon water jar (โอ่งมังกร) seen from the farm's raised isometric viewpoint, so the rim is a wide ellipse (about twice as wide as tall) with the water surface and sky reflection visible inside. Glazed dark reddish-brown clay with light from the upper-left, gold bands that curve with the body, cream cloud swirls, a yellow dragon wrapping around the belly with its head at the right, and a coconut-shell ladle resting on the rim. Clickable prop (selects the watering tool). No ground shadow (the game adds it). Exported from the 3D model in tools/iso-models.html by tools/export-models.mjs (true 2:1 iso projection). Anchor (49,84) = centre of the base. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Ratchaburi dragon jar: keep the wide iso rim with water and sky reflection, gold bands, cloud swirls and the yellow dragon, coconut-shell ladle. Glaze in clay/dark tones, one small hard highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes. The dragon head is on the RIGHT belly, body wraps left. Keep cream cloud swirls, gold upper and lower bands, visible water and coconut-shell ladle. One small hard left glaze highlight. Rim clearly2:1ellipse, no cast shadow.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background Fixed profile4, provider defaults; exact version/steps/CFG/seed/weights unexposed. Preserve meaningful sculpted material details without noise; no text, symbols, halos or ground.",
+      "referenced_image_paths": [
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.duck_house@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.tree_round_a@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.fence_span_se@4x.png",
+        "/tmp/rai-farm-old/prop.dragon_jar.png"
+      ],
+      "transparent_background": true,
+      "generated_source": "/workspace/generated_images/exec-e6728bfa-d327-4a70-97da-881bcc5a950e.png",
+      "geometry_fit": {
+        "id": "prop.dragon_jar",
+        "raw": "/workspace/generated_images/exec-e6728bfa-d327-4a70-97da-881bcc5a950e.png",
+        "source": "assets/painted/_source/prop.dragon_jar.png",
+        "native_bbox": [
+          141,
+          109,
+          1141,
+          1133
+        ],
+        "target_bbox": [
+          4.166666666666667,
+          4.166666666666667,
+          92.83333333333333,
+          95.83333333333333
+        ],
+        "geometry_fit": {
+          "sx": 0.08866666666666666,
+          "sy": 0.08951822916666666,
+          "tx": -8.335333333333331,
+          "ty": -5.590820312499999
+        },
+        "game_scale": 0.6,
+        "cleanup_canvas_epsilon": 0.25,
+        "minimum_canvas_area": 0.25,
+        "trace_resolution": "canvas x2 normalized material planes",
+        "profile_version": 4,
+        "paths": 118,
+        "bytes": 22734
+      }
+    },
+    {
+      "id": "prop.signboard",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/prop.signboard.png",
+      "finishing_notes": "Hand-retouched blank right-arrow board, own wood triplet, two fasteners and restrained upper/lower grain; unchanged92x40 canvas and pose, centre clear for game labels. No text.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "prop.signpole",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/prop.signpole.png",
+      "finishing_notes": "Hand-retouched square wood_dark post with pointed cap and restrained grain. Canvas12x134, anchor6,134 kept, full lower edge reaches anchor without extra padding.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
     }
   ],
   "changes_since_v2": [

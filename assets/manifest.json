@@ -4132,7 +4132,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4140,7 +4140,11 @@
         ],
         "output": "assets/props/dragon_jar.svg",
         "normal": "assets/props/dragon_jar_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Ratchaburi dragon jar: keep the wide iso rim with water and sky reflection, gold bands, cloud swirls and the yellow dragon, coconut-shell ladle. Glaze in clay/dark tones, one small hard highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Ratchaburi dragon jar: keep the wide iso rim with water and sky reflection, gold bands, cloud swirls and the yellow dragon, coconut-shell ladle. Glaze in clay/dark tones, one small hard highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:50:05.878019Z",
+        "file": "assets/props/dragon_jar.svg",
+        "notes": "Clay dragon jar with wide2:1 water rim/reflection, coconut-shell ladle, cream cloud swirls and yellow dragon head on right. Own material triplets; removed extra generated glaze glint, retained one small hard highlight; original97x100 canvas/49,84anchor and0.6 game scale."
       }
     },
     {
@@ -4190,7 +4194,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4198,7 +4202,11 @@
         ],
         "output": "assets/props/ox_cart.svg",
         "normal": "assets/props/ox_cart_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The wooden ox cart: keep the bed, woven side panels, baskets of produce, spoked wheels with thickness and hub, shaft and parking stand. No sign, no text. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The wooden ox cart: keep the bed, woven side panels, baskets of produce, spoked wheels with thickness and hub, shaft and parking stand. No sign, no text. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:50:05.877801Z",
+        "file": "assets/props/ox_cart.svg",
+        "notes": "Woven bamboo cart with two produce baskets, near spoked wheel with thickness/hub, down-right shaft/yoke and parking stand. Kept canvas180x152, anchor78,110; scale0.6 outline compensation for2.5px visible game weight. No sign or text."
       }
     },
     {
@@ -4248,7 +4256,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4256,7 +4264,11 @@
         ],
         "output": "assets/props/signboard.svg",
         "normal": "assets/props/signboard_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The blank arrow board pointing right: wood tones, grain lines, no text (the game writes on it). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The blank arrow board pointing right: wood tones, grain lines, no text (the game writes on it). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:50:05.878132Z",
+        "file": "assets/props/signboard.svg",
+        "notes": "Hand-retouched blank right-arrow board, own wood triplet, two fasteners and restrained upper/lower grain; unchanged92x40 canvas and pose, centre clear for game labels. No text."
       }
     },
     {
@@ -4306,7 +4318,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4314,7 +4326,11 @@
         ],
         "output": "assets/props/signpole.svg",
         "normal": "assets/props/signpole_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The signpost pole: a square timber post in wood_dark tones with a pointed cap. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The signpost pole: a square timber post in wood_dark tones with a pointed cap. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:50:05.878199Z",
+        "file": "assets/props/signpole.svg",
+        "notes": "Hand-retouched square wood_dark post with pointed cap and restrained grain. Canvas12x134, anchor6,134 kept, full lower edge reaches anchor without extra padding."
       }
     },
     {
