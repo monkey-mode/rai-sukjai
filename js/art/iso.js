@@ -299,16 +299,16 @@ const FARM_RECIPE = (() => {
       paddy: (u, v) => inPaddy(u, v),
       rim: (u, v, x, y) => { const k = water(x, y); return k > .93 && k < 1.12; },
     },
-    tallOk: (u, v, x, y) => y >= 100 && (y < 330 || x < 0 || x > 800) && pathDist(u, v) > 1.5,
+    tallOk: (u, v, x, y) => y >= 100 && (y < 330 || ((x < 0 || x > 800) && y < 440)) && pathDist(u, v) > 1.5,
     occupied: [[...FARM_HOUSE.at.map((n, i) => n + [1.9, 1.5][i]), 2.4], [...FARM_SHRINE, .8], [10.3, -3.5, 2.4]]
       .concat(BANANA_SPOTS.map(([u, v]) => [u, v, .8]), PALM_SPOTS.map(([u, v]) => [u, v, .7])),
-    landmarks: [['kit.field_hut', -4.9, 4.3, 1, false, 1], ['kit.scarecrow', -3.4, 3.0, 1, false, .3], ['kit.haystack', 11.6, -4.3, .9, false, .5]],
+    landmarks: [['kit.field_hut', -4.7, -2.8, 1, false, 1], ['kit.scarecrow', -5.6, -0.6, 1, false, .3], ['kit.haystack', 11.6, -4.3, .9, false, .5]],
     keepClear: [[20, 420, 260, 545], [540, 360, 700, 545], [690, 380, 810, 545], [740, 46, 800, 170]],   // cart + sign, jar + farmer, signpost, zoom buttons
     pieces: [
       ['kit.tree_round_a', 3, ['forest_edge'], .9, 170, true, false],
-      ['kit.tree_round_b', 3, ['forest_edge', 'margin'], .8, 140, true, true],
+      ['kit.tree_round_b', 3, ['forest_edge'], .8, 140, true, true],
       ['kit.tree_golden_shower', 2, ['forest_edge'], .8, 160, true, false],
-      ['kit.tree_flame', 2, ['forest_edge', 'margin'], .9, 150, true, false],
+      ['kit.tree_flame', 2, ['forest_edge'], .9, 150, true, false],
       ['kit.bamboo_clump', 4, ['forest_edge'], .8, 185, true, false],
       ['kit.haystack', 2, ['grass', 'margin'], .6, 52, false, true],
       ['kit.water_jar', 1, ['grass'], .4, 44, false, false],
