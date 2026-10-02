@@ -3481,7 +3481,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3489,7 +3489,11 @@
         ],
         "output": "assets/tiles/soil_dry.svg",
         "normal": "assets/tiles/soil_dry_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, dry: keep the exact 2:1 diamond top face (corners (32,2), (60,16), (32,30), (4,16)) and the 7 px sides; tilled furrows in dirt tones; tiles must sit on the grid with ~4 px gaps. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, dry: keep the exact 2:1 diamond top face (corners (32,2), (60,16), (32,30), (4,16)) and the 7 px sides; tilled furrows in dirt tones; tiles must sit on the grid with ~4 px gaps. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T19:14:43.186175Z",
+        "file": "assets/tiles/soil_dry.svg",
+        "notes": "Hand-retouched exact top diamond(32,2),(60,16),(32,30),(4,16), lower side drop7px. Dirt triplet: light top, base left face, shadow right; two faint wavy down-right tilled furrows and a few soil crumbs. Anchor32,16/canvas64x40 kept; source is drawing render."
       }
     },
     {
@@ -3539,7 +3543,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3547,7 +3551,11 @@
         ],
         "output": "assets/tiles/soil_wet.svg",
         "normal": "assets/tiles/soil_wet_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, watered: same geometry as tile.soil_dry, darker mud tones with a wet sheen highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Soil plot, watered: same geometry as tile.soil_dry, darker mud tones with a wet sheen highlight. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T19:14:43.186191Z",
+        "file": "assets/tiles/soil_wet.svg",
+        "notes": "Identical diamond/sides/anchor to dry tile. Warm mud triplet, darker tilled furrows, two small hard water glints. Planar OpenGL normal faces; source is drawing render."
       }
     },
     {
@@ -3597,7 +3605,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3605,7 +3613,11 @@
         ],
         "output": "assets/tiles/fertilized.svg",
         "normal": "assets/tiles/fertilized_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Fertilizer overlay: 5–7 small cream granules on the TOP FACE near its edges, nothing else. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Fertilizer overlay: 5–7 small cream granules on the TOP FACE near its edges, nothing else. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T19:14:43.186195Z",
+        "file": "assets/tiles/fertilized.svg",
+        "notes": "Transparent overlay ONLY, exactly six small cream-white granules along top-face edges. Centre left clear; same64x40canvas/32,16anchor. Thin0.8px closed granule outlines as entry prompt; no soil/sides/shadow. Source is drawing render."
       }
     },
     {
@@ -5355,7 +5367,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5363,7 +5375,11 @@
         ],
         "output": "assets/scenery/cloud.svg",
         "normal": "assets/scenery/cloud_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. A puffy cloud in white tones with the locked outline; flat bottom. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. A puffy cloud in white tones with the locked outline; flat bottom. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T19:14:43.186199Z",
+        "file": "assets/scenery/cloud.svg",
+        "notes": "Puffy cream-white cloud, own white three tones, closed2.5px brown silhouette, flat bottom, no ground shadow. Unchanged90x44canvas/45,22anchor; source is drawing render."
       }
     },
     {

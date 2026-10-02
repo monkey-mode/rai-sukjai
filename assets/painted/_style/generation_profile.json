@@ -2142,6 +2142,34 @@
         "paths": 82,
         "bytes": 13711
       }
+    },
+    {
+      "id": "tile.soil_dry",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/tile.soil_dry.png",
+      "finishing_notes": "Hand-retouched exact top diamond(32,2),(60,16),(32,30),(4,16), lower side drop7px. Dirt triplet: light top, base left face, shadow right; two faint wavy down-right tilled furrows and a few soil crumbs. Anchor32,16/canvas64x40 kept; source is drawing render. Actual Laigter1.10.7 preset unchanged, OpenGL green up, exact final diffuse alpha. No model generation claimed for these hand-retouched SVGs.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "tile.soil_wet",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/tile.soil_wet.png",
+      "finishing_notes": "Identical diamond/sides/anchor to dry tile. Warm mud triplet, darker tilled furrows, two small hard water glints. Planar OpenGL normal faces; source is drawing render. Actual Laigter1.10.7 preset unchanged, OpenGL green up, exact final diffuse alpha. No model generation claimed for these hand-retouched SVGs.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "tile.fertilized",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/tile.fertilized.png",
+      "finishing_notes": "Transparent overlay ONLY, exactly six small cream-white granules along top-face edges. Centre left clear; same64x40canvas/32,16anchor. Thin0.8px closed granule outlines as entry prompt; no soil/sides/shadow. Source is drawing render. Actual Laigter1.10.7 preset unchanged, OpenGL green up, exact final diffuse alpha. No model generation claimed for these hand-retouched SVGs.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "scenery.cloud",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/scenery.cloud.png",
+      "finishing_notes": "Puffy cream-white cloud, own white three tones, closed2.5px brown silhouette, flat bottom, no ground shadow. Unchanged90x44canvas/45,22anchor; source is drawing render. Actual Laigter1.10.7 preset unchanged, OpenGL green up, exact final diffuse alpha. No model generation claimed for these hand-retouched SVGs.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
     }
   ],
   "changes_since_v2": [

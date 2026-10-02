@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 44" width="90" height="44">
-<!-- scenery.cloud · puffy cartoon cloud, flat bottom -->
-<g stroke-linejoin="round" stroke-linecap="round">
-<path d="M10 35Q3 35 4.5 28Q6 20.5 14 21.5Q14.5 11.5 25.5 11Q30.5 3 42 5Q52 0.5 58.5 9Q68.5 6 72.5 15.5Q83.5 14.5 84.5 25Q88.5 35 78 35Z" fill="#fffaf0" stroke="#3a2213" stroke-width="2.5"/><path d="M11 33.5Q30 28.5 49 30.5Q66 27.5 79 33.5Z" fill="#e4eef3" stroke="none"/><path d="M16 25Q17 19 23 19M31 14Q34 9 41 9M61 13Q66 11 70 15" fill="none" stroke="#ffffff" stroke-width="2.2"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="44" viewBox="0 0 90 44"><g stroke-linecap="round" stroke-linejoin="round"><path fill="#ece7dc" stroke="#3a2213" stroke-width="2.5" d="M5 39q-4-1-2-8 1-7 10-7 0-9 10-11 2-7 12-6 6-5 15-1 8-3 14 4 5 0 9 7 11 0 12 10 6 12-2 12Z"/><path fill="#ffffff" d="M8 31q0-6 9-4-1-10 9-10 2-8 11-6 5-6 14-1 6-3 12 4 8-2 12 9 3 0 4 3-18-7-29-5-23 2-42 10"/><path fill="#c8c0ad" d="M6 36q17-4 35-2 18-4 36 1l7 2H6Z"/><path fill="none" stroke="#6b4428" stroke-width="1.2" d="M22 17q2-3 6-3m30-2q4-1 7 3"/></g></svg>
