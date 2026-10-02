@@ -5193,7 +5193,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5201,7 +5201,11 @@
         ],
         "output": "assets/scenery/spirit_house_iso.svg",
         "normal": "assets/scenery/spirit_house_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Phra Phum spirit house: keep every part (stepped plinth, pillar, platform, pavilion, two-tier roof, spire, offerings, garlands). White parts in white tones, gold in yellow tones, red roof in red tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Phra Phum spirit house: keep every part (stepped plinth, pillar, platform, pavilion, two-tier roof, spire, offerings, garlands). White parts in white tones, gold in yellow tones, red roof in red tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T07:01:01Z",
+        "file": "assets/scenery/spirit_house_iso.svg",
+        "notes": "Profile v4, same generation/trace/Laigter settings. Retained stepped white/gold plinth, ornamented pillar and rainbow cloth, platform and lanterns, two-tier red roof, gold spire/hooks, offerings and flower garlands. Canvas76x170/anchor38,157 preserved. Palette-only; outer/inner strokes compensated for0.7 game scale; no ground shadow."
       }
     },
     {
@@ -5251,7 +5255,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5259,7 +5263,11 @@
         ],
         "output": "assets/scenery/thai_house_iso.svg",
         "normal": "assets/scenery/thai_house_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The farmer's teak stilt house: keep the L-shaped layout, veranda, stair, gables with ngao horns, shingled roofs, the hammock, jar and bench under the house. Teak walls in wood/wood_dark tones, roof shingles in wood_dark, gable sunburst boards in wood. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The farmer's teak stilt house: keep the L-shaped layout, veranda, stair, gables with ngao horns, shingled roofs, the hammock, jar and bench under the house. Teak walls in wood/wood_dark tones, roof shingles in wood_dark, gable sunburst boards in wood. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T07:01:01Z",
+        "file": "assets/scenery/thai_house_iso.svg",
+        "notes": "Profile v4, same generation/trace/Laigter settings. Rich palette-only teak construction with crossing L-shaped roofs, four horns and ngao eaves, sunburst gables, veranda/handrailed stair, two pots, red hammock, clay jar and bamboo bench. Canvas277x252/anchor126,146 preserved; no ground shadow; game-scale1 strokes. SVG65KB retains construction detail and exceeds the checker advisory40KB budget."
       }
     },
     {
@@ -5823,7 +5831,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5831,7 +5839,11 @@
         ],
         "output": "assets/scenery/palm_coconut_lean_iso.svg",
         "normal": "assets/scenery/palm_coconut_lean_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T07:01:01Z",
+        "file": "assets/scenery/palm_coconut_lean_iso.svg",
+        "notes": "Profile v4, same generation/trace/Laigter settings. Preserved left-curving trunk and crown pose, green coconuts and hanging dry fronds. Layered pinnate sprays, wood-tone ring scars and flared foot. Canvas129x191/anchor100,183 preserved;1x game strokes; no ground shadow."
       }
     },
     {
@@ -6495,11 +6507,11 @@
       "layout": "assets/painted/_layout/kit.field_hut.png",
       "normal": "assets/kit/field_hut_n.png",
       "normal_scale": 2,
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/kit/field_hut.svg",
+      "agent": "Codex",
+      "updated_at": "2026-10-02T07:01:01Z",
+      "notes": "Profile v4, same generation/trace/Laigter settings. Open bamboo rice-field shelter with tied ridge, irregular thatch rows, slatted deck, railing, rolled mat and clay pot. Wet stilt bottoms in darker bamboo/wood tones; no ground shadow. Guide anchor65,104; measured71px tall and54% footprint coverage; Final native-plane trace with mat/deck contours retained71% source detail; silhouette IoU0.88, closed outline99%.",
       "review": null
     },
     {

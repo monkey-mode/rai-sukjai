@@ -1149,6 +1149,142 @@
           0.73
         ]
       }
+    },
+    {
+      "id": "scenery.thai_house_iso",
+      "raw": "/workspace/generated_images/exec-8acd623d-9575-4289-bb95-12e06d124e48.png",
+      "source": "assets/painted/_source/scenery.thai_house_iso.png",
+      "native_bbox": [
+        14,
+        10,
+        1306,
+        1168
+      ],
+      "target_bbox": [
+        2.5,
+        2.5,
+        274.5,
+        249.5
+      ],
+      "geometry_fit": {
+        "sx": 0.21052631578947367,
+        "sy": 0.21329879101899826,
+        "tx": -0.4473684210526314,
+        "ty": 0.36701208981001754
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 751,
+      "bytes": 83799,
+      "prompt": "STYLE (look only): Match reference images1-3: APPROVED LOCKED Rai Sukjai game anchors, sculpted rustic construction and layered botanical foliage translated into crisp cel-shaped flat palette planes. Dense meaningful detail, natural irregular silhouettes, convincing Thai construction. One sun upper-left, hard light/base/shadow tones per own material. Dark warm closed silhouette #3a2213, deliberate inner contours #6b4428. No ground shadow, no gradient, soft airbrush, noise or texture overlay. Do not simplify into childlike geometric cartoon.\nGEOMETRY (placement only): Reference image4 is the entry geometry guide ONLY. Never copy its flat primitive colours or line textures. Preserve the full original canvas, projected pose, placement and all parts. Export exactly554x504px on transparent canvas, SVG later viewBox0 0 277 252. Anchor[126, 146]. Keep the EXACT crossing L-shaped roof footprint and four gable placements from geometry reference: two front-facing sunburst gables, two back gable peaks, curled ngao tips and pointed peak horns. Keep veranda centred in the inner front corner, stairs descending lower-left with handrails, visible tall stilts, red hammock under right wing, glazed clay jar and bamboo bench under the left wing, two small veranda pots. Major structural geometry is important. Roof shingles are dark teak wood_dark, NOT straw. Shade surfaces only; EXCLUDE the ground-coloured dark polygon in the geometry image, it is a forbidden ground shadow. Canvas277x252, anchor126,146 is the back ground corner INSIDE the occupied outline, not the bottom centre. Preserve projected pose and occupied bounds.\nSUBJECT: The farmer's traditional Thai teak house (เรือนไทย) raised on tall stilts, ISOMETRIC 3/4 view built on the farm grid. L-shaped: one wing runs along +gy (its gable faces down-left) and one along +gx (its gable faces down-right); an open veranda (ชาน) fills the inner front corner, a step lower than the rooms, with a turned-baluster railing, two potted plants, and a wooden stair with handrails down to the yard. Dark teak panelled walls (ฝาปะกน) with open-shuttered windows and a dark doorway onto the veranda; steep crossing roofs of brown teak shingles with ridge caps and a valley; gable panels (หน้าจั่ว) with sunburst boards; thick barge boards ending in curled ngao at the eaves and a pointed horn at every peak, including the two back gables showing above the ridges. Under the house between the posts: a red hammock, a big glazed water jar and a bamboo bench (แคร่). Thick dark outlines, flat colours, light from the upper-left, a soft shadow on the ground under the house only. Anchor = ground at the house's back corner, which the game puts at grid FARM_HOUSE (2.4, -4.8); the footprint covers gx 2.4–6.2, gy -4.8–-1.8, the stair lands at gy -0.85 just outside the yard. The game depth-sorts it with the other sprites. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The farmer's teak stilt house: keep the L-shaped layout, veranda, stair, gables with ngao horns, shingled roofs, the hammock, jar and bench under the house. Teak walls in wood/wood_dark tones, roof shingles in wood_dark, gable sunburst boards in wood. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.\nSETTINGS: Profile4. OpenAI image_gen service, provider-managed unexposed sampler/steps/CFG/seed/reference weights, same3anchorinputs + geometryguide. Requested image size554x504, cleanalpha. Final artwork will be traced, snapped to each own material triplet and fresh outline strokes redrawn at lockedgameweights. Palette materials:{\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}. Prompt_suffix:flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative_prompt:painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Conflict resolution: retain rich sculpted material detail from locked anchors, no ground shadow even if old subject mentions one, and no words/labels/guide marks in image.",
+      "method": "Recorded profile4 vtracer/palette/Laigter pipeline; preserve entry canvas/anchor/pose; explicit material masks and hand-redrawn structural contours. House/hut use lossless palette CSS and integer-coordinate encoding after recorded SVGO; no geometry changes from encoding.",
+      "normal_settings": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
+      "final_svg_bytes": 65029
+    },
+    {
+      "id": "scenery.spirit_house_iso",
+      "raw": "/workspace/generated_images/exec-70ec84d0-4803-4aae-a288-3cd27e1f3f1e.png",
+      "source": "assets/painted/_source/scenery.spirit_house_iso.png",
+      "native_bbox": [
+        28,
+        20,
+        816,
+        1831
+      ],
+      "target_bbox": [
+        3.5714285714285716,
+        3.5714285714285716,
+        72.42857142857143,
+        166.42857142857142
+      ],
+      "geometry_fit": {
+        "sx": 0.08738216098622191,
+        "sy": 0.08992663879466749,
+        "tx": 1.124728063814358,
+        "ty": 1.7728957955352218
+      },
+      "game_scale": 0.7,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 322,
+      "bytes": 40699,
+      "prompt": "STYLE (look only): Match reference images1-3: APPROVED LOCKED Rai Sukjai game anchors, sculpted rustic construction and layered botanical foliage translated into crisp cel-shaped flat palette planes. Dense meaningful detail, natural irregular silhouettes, convincing Thai construction. One sun upper-left, hard light/base/shadow tones per own material. Dark warm closed silhouette #3a2213, deliberate inner contours #6b4428. No ground shadow, no gradient, soft airbrush, noise or texture overlay. Do not simplify into childlike geometric cartoon.\nGEOMETRY (placement only): Reference image4 is the entry geometry guide ONLY. Never copy its flat primitive colours or line textures. Preserve the full original canvas, projected pose, placement and all parts. Export exactly152x340px on transparent canvas, SVG later viewBox0 0 76 170. Anchor[38, 157]. Preserve slender stacked proportions and exact pose of the reference: stepped white plinth, one tall white pillar with golden kranok motifs and rainbow silk bows/tails, gold capital, broad white platform, sala pavilion with red walls and golden pointed doors, two-tier crossing RED TILE roofs with white/gold gables and delicate golden hooks, ringed gold spire, small white gold-capped lanterns. Keep offerings on platform AND at foot: soda bottles with straws, dancer figurines, incense bowl and blue-white marigold vases. Keep marigold chain/jasmine garland with red tassel. All these parts must read clearly as grouped detail, not tiny grey noise. Canvas76x170; anchor38,157 centreplinth. Game scale0.7 so outer silhouette3.571canvaspx visible and inner1.714canvaspx, about2.5/1.2gamepx.\nSUBJECT: The farm's Phra Phum spirit house (ศาลพระภูมิ) in ISOMETRIC 3/4 view, built on the farm grid: a stepped white plinth with gold bands; a square white pillar with a gold kranok panel on each face and rainbow cloth (ผ้าแพร) wrapped round its top, tied in a bow with hanging tails; a gold capital under a broad white platform with a gold edge and small white lanterns with gold caps on its corners; on the platform a pavilion (sala) on a low base: red walls with golden pointed doors on both front faces, white columns with gold capitals, small double stairs down both front faces; a two-tier crossing roof of red tiles with gold eave lines, pale-gold gables with a red medallion, gold toothed barge boards (bai raka), small chofa hooks at the gable peaks and hang hong at the eaves; a tall gold ringed spire (yod) on top. Offerings: red and orange soda bottles with straws, dancer figurines, an incense bowl with smoking sticks and a blue-and-white vase of marigolds on the platform; a marigold chain draped along both front edges and a jasmine garland (พวงมาลัย) with a red tassel; more vases and soda bottles at the foot. Thick dark outlines, flat colours, light from the upper-left, no ground shadow (the game adds it). The game stands it at grid (1.2, -1.6) (FARM_SHRINE in js/art/iso.js) and depth-sorts it with the plant sprites. Anchor = ground at the centre of the plinth. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Phra Phum spirit house: keep every part (stepped plinth, pillar, platform, pavilion, two-tier roof, spire, offerings, garlands). White parts in white tones, gold in yellow tones, red roof in red tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.\nSETTINGS: Profile4. OpenAI image_gen service, provider-managed unexposed sampler/steps/CFG/seed/reference weights, same3anchorinputs + geometryguide. Requested image size152x340, cleanalpha. Final artwork will be traced, snapped to each own material triplet and fresh outline strokes redrawn at lockedgameweights. Palette materials:{\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}. Prompt_suffix:flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative_prompt:painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Conflict resolution: retain rich sculpted material detail from locked anchors, no ground shadow even if old subject mentions one, and no words/labels/guide marks in image.",
+      "method": "Recorded profile4 vtracer/palette/Laigter pipeline; preserve entry canvas/anchor/pose; explicit material masks and hand-redrawn structural contours. House/hut use lossless palette CSS and integer-coordinate encoding after recorded SVGO; no geometry changes from encoding.",
+      "normal_settings": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
+      "final_svg_bytes": 33021
+    },
+    {
+      "id": "scenery.palm_coconut_lean_iso",
+      "raw": "/workspace/generated_images/exec-51b54b3c-c23e-4000-bbd9-50f58d141001.png",
+      "source": "assets/painted/_source/scenery.palm_coconut_lean_iso.png",
+      "native_bbox": [
+        32,
+        22,
+        1002,
+        1505
+      ],
+      "target_bbox": [
+        3.5,
+        2.5,
+        126.0,
+        188.5
+      ],
+      "geometry_fit": {
+        "sx": 0.12628865979381443,
+        "sy": 0.12542144302090358,
+        "tx": -0.5412371134020617,
+        "ty": -0.2592717464598788
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 297,
+      "bytes": 37582,
+      "prompt": "STYLE (look only): Match reference images1-3: APPROVED LOCKED Rai Sukjai game anchors, sculpted rustic construction and layered botanical foliage translated into crisp cel-shaped flat palette planes. Dense meaningful detail, natural irregular silhouettes, convincing Thai construction. One sun upper-left, hard light/base/shadow tones per own material. Dark warm closed silhouette #3a2213, deliberate inner contours #6b4428. No ground shadow, no gradient, soft airbrush, noise or texture overlay. Do not simplify into childlike geometric cartoon.\nGEOMETRY (placement only): Reference image4 is the entry geometry guide ONLY. Never copy its flat primitive colours or line textures. Preserve the full original canvas, projected pose, placement and all parts. Export exactly258x382px on transparent canvas, SVG later viewBox0 0 129 191. Anchor[100, 183]. Keep EXACT leftward curved lean and crown position of reference; the trunk base is at100,183, the crown at about53,38. Tall slender ring-scarred wood trunk, flared foot; arching then drooping coconut pinnate fronds radiating in three tiers with paired narrow leaflets along their curved rachis. Do NOT turn this into banana leaves, stiff palm fans or a bush. Green coconut cluster beneath crown, a few dry tan fronds hanging near trunk. Layer individual leaf sprays with transparent gaps, hard three-tone leaf planes, wood-toned ring scars. No ground grass or shadow. Canvas129x191; preserve bounds and silhouette pose.\nSUBJECT: A tall coconut palm (มะพร้าว) with a ringed trunk curving and leaning to the left, a full crown of drooping pinnate fronds and a cluster of green coconuts. ISOMETRIC sprite for the farm: trunks stay vertical (or lean as described); crowns are built in 3D — coconut fronds arch up then droop with leaflet pairs along the midrib, sugar-palm leaves are stiff fans on stalks spreading all round — and projected with the farm grid. Thick dark outlines, flat colours, light from the upper-left; no ground shadow (the game adds it). Anchor (100,183) = ground at the base of the trunk(s); a different variant stands in each spot on the farm. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.\nSETTINGS: Profile4. OpenAI image_gen service, provider-managed unexposed sampler/steps/CFG/seed/reference weights, same3anchorinputs + geometryguide. Requested image size258x382, cleanalpha. Final artwork will be traced, snapped to each own material triplet and fresh outline strokes redrawn at lockedgameweights. Palette materials:{\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}. Prompt_suffix:flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative_prompt:painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Conflict resolution: retain rich sculpted material detail from locked anchors, no ground shadow even if old subject mentions one, and no words/labels/guide marks in image.",
+      "method": "Recorded profile4 vtracer/palette/Laigter pipeline; preserve entry canvas/anchor/pose; explicit material masks and hand-redrawn structural contours. House/hut use lossless palette CSS and integer-coordinate encoding after recorded SVGO; no geometry changes from encoding.",
+      "normal_settings": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
+      "final_svg_bytes": 31435
+    },
+    {
+      "id": "kit.field_hut",
+      "raw": "/workspace/generated_images/exec-ed8c9326-0aa4-4962-870e-15ca9325c0a9.png",
+      "source": "assets/painted/_source/kit.field_hut.png",
+      "native_bbox": [
+        182,
+        65,
+        1204,
+        1115
+      ],
+      "target_bbox": [
+        8,
+        34,
+        122,
+        118
+      ],
+      "geometry_fit": {
+        "sx": 0.11154598825831702,
+        "sy": 0.08,
+        "tx": -12.301369863013697,
+        "ty": 28.8
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "trace_resolution": "native generated material planes",
+      "profile_version": 4,
+      "paths": 521,
+      "bytes": 55139,
+      "prompt": "STYLE (look only): Match reference images1-3: APPROVED LOCKED Rai Sukjai game anchors, sculpted rustic construction and layered botanical foliage translated into crisp cel-shaped flat palette planes. Dense meaningful detail, natural irregular silhouettes, convincing Thai construction. One sun upper-left, hard light/base/shadow tones per own material. Dark warm closed silhouette #3a2213, deliberate inner contours #6b4428. No ground shadow, no gradient, soft airbrush, noise or texture overlay. Do not simplify into childlike geometric cartoon.\nGEOMETRY (placement only): Reference image4 is the entry geometry guide ONLY. Never copy its flat primitive colours or line textures. Preserve the full original canvas, projected pose, placement and all parts. Export exactly260x240px on transparent canvas, SVG later viewBox0 0 130 120. Anchor[65, 104]. Guide-only image4 is NOT the look. It has only a purple anchor at65,104, green diamond footprint1.6x1.6tiles (approx102x51canvaspx), red height line70px. Design an open-sided four-stilt bamboo rice-field shelter with ridge diagonal up-right/down-left: roof peak abouty34, large irregular overlapping straw rows and tied ridge bundle, raised slatted bamboo floor about25px abovefeet, railing on one side, rolled straw mat and small glazed CLAY waterpot on deck. Posts in bamboo palette, rim/frame dark wood, straw roof warm golden. Feet distributed around guide footprint and centrebase anchored65,104; frontfeet just belowanchor, tallroofheight70px aboveanchor. NO extra animals/plants/ground/water patch; wet stilts bottom6px darker own material only. Canvas130x120. Match construction density to duck_house, never make this a tiny duck house with enclosed walls.\nSUBJECT: A small Thai rice-field shelter on four bamboo stilts: a raised slatted bamboo floor about 25 px up, a low railing on one side, a steep thatched straw roof (ridge running up-right to down-left) with irregular overlapping rows and a tied ridge bundle, a rolled mat and a clay water pot on the floor. Stands in the paddies; the stilt feet sit in shallow water, so the bottom 6 px of the stilts are slightly darker. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object in art style v3 (match the locked style anchors: rich sculpted detail, palette-only fills in each material's three tones, ~2.5 px #3a2213 silhouette, 1.2 px #6b4428 inner contours, upper-left cel light), no shadow on the ground. \nSETTINGS: Profile4. OpenAI image_gen service, provider-managed unexposed sampler/steps/CFG/seed/reference weights, same3anchorinputs + geometryguide. Requested image size260x240, cleanalpha. Final artwork will be traced, snapped to each own material triplet and fresh outline strokes redrawn at lockedgameweights. Palette materials:{\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}. Prompt_suffix:flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative_prompt:painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Conflict resolution: retain rich sculpted material detail from locked anchors, no ground shadow even if old subject mentions one, and no words/labels/guide marks in image.",
+      "method": "Recorded profile4 vtracer/palette/Laigter pipeline; preserve entry canvas/anchor/pose; explicit material masks and hand-redrawn structural contours. House/hut use lossless palette CSS and integer-coordinate encoding after recorded SVGO; no geometry changes from encoding.",
+      "normal_settings": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
+      "final_svg_bytes": 36194
     }
   ],
   "changes_since_v2": [
