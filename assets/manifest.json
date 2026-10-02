@@ -3763,7 +3763,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3771,7 +3771,11 @@
         ],
         "output": "assets/characters/uncle_mee.svg",
         "normal": "assets/characters/uncle_mee_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:22:00Z",
+        "file": "assets/characters/uncle_mee.svg",
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
       }
     },
     {
@@ -3976,7 +3980,7 @@
         "review": "Reads too dark and small on the bright painted pen ground. Repaint lighter and warmer: a light khaki/tan Khaki Campbell body with cream highlights on the back and breast, a slightly darker wing, a clear bright orange bill and feet, a visible eye highlight. Fill more of the canvas (the body about 85% of the width, same base point), soft upper-left light, no ground shadow."
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3984,7 +3988,11 @@
         ],
         "output": "assets/animals/duck.svg",
         "normal": "assets/animals/duck_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:22:00Z",
+        "file": "assets/animals/duck.svg",
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
       }
     },
     {

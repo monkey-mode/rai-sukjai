@@ -146,6 +146,66 @@
       "method": "hand-authored foliage retouch; original culm-channel pixels vectorized at recorded vtracer settings",
       "source": "assets/painted/_source/kit.bamboo_clump.png",
       "notes": "122 original culm/collar/sheath material paths retained; original culm ink/material recovered in narrow stem channels to retain continuous stems. Lance-shaped drooping leaves on node branches; repair drawing source at 2x."
+    },
+    {
+      "id": "animal.duck",
+      "raw": "/workspace/generated_images/exec-957f219c-782f-43e8-8e30-b0b559d7a8a2.png",
+      "source": "assets/painted/_source/animal.duck.png",
+      "native_bbox": [
+        215,
+        215,
+        1188,
+        1030
+      ],
+      "target_bbox": [
+        3.25,
+        3.75,
+        48.30263157894737,
+        42.0
+      ],
+      "geometry_fit": {
+        "sx": 0.046302807378157625,
+        "sy": 0.04693251533742331,
+        "tx": -6.70510358630389,
+        "ty": -6.340490797546012
+      },
+      "game_scale": 0.926829268292683,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "paths": 56,
+      "bytes": 8388,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only this subject's placement/pose guide, no style influence. Same whole canvas 51x45, anchor(26,41), same occupied bounds/pose, no cropping or padding. Request native output 102x90, transparent. It is a geometry guide only; redraw all its forms in anchor style.\nSUBJECT: A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. The game waddles it along the grid diagonal and flips it horizontally for the way back. No shadow on the ground (the game adds one). Override older dark-body wording: light warm khaki TAN with cream back and breast, darker tan folded wing, bright ORANGE bill and both webbed feet, black eye with a clearly visible white glint. No pink or red on duck. Same plump silhouette and curved neck facing DOWN-RIGHT. Own duck feather material tones dirt #ecd09a/#d4ab6c/#a97f4a and white #ffffff/#ece7dc/#c8c0ad; wing wood tones; orange only bill/feet. Body fills about85%width.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+    },
+    {
+      "id": "character.uncle_mee",
+      "raw": "/workspace/generated_images/exec-7e7a7a29-39d7-4a5b-878d-b88c133ac732.png",
+      "source": "assets/painted/_source/character.uncle_mee.png",
+      "native_bbox": [
+        22,
+        248,
+        849,
+        1720
+      ],
+      "target_bbox": [
+        2.604166666666667,
+        3.3333333333333335,
+        44.395833333333336,
+        101.16666666666667
+      ],
+      "geometry_fit": {
+        "sx": 0.05053405884723902,
+        "sy": 0.06646286231884059,
+        "tx": 1.4924173720274085,
+        "ty": -13.14945652173913
+      },
+      "game_scale": 0.96,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "paths": 242,
+      "bytes": 26210,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only this subject's placement/pose guide, no style influence. Same whole canvas 47x104, anchor(24,100), same occupied bounds/pose, no cropping or padding. Request native output 94x208, transparent. It is a geometry guide only; redraw all its forms in anchor style.\nSUBJECT: A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. No shadow on the ground (the game adds one). Chibi friendly elderly Thai farmer, not a child. Keep exact costume and pose. Hat straw3tones, skin3tones, white singlet/moustache/greyhair white3tones, blue3tones and red3tones checked cloth, nearblack dark3tones trousers, bamboo3tones staff, redflag. Crisp woven hat construction, expressive wrinkled smiling face, readable cloth folds and checks. No other accessories.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
     }
   ],
   "changes_since_v2": [
