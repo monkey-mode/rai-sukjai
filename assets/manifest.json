@@ -3655,7 +3655,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3663,7 +3663,11 @@
         ],
         "output": "assets/characters/farmer.svg",
         "normal": "assets/characters/farmer_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The player farmer, chibi: ngob straw hat tilted back, indigo mor hom shirt, red-and-white checked pha khao ma sash, dark-blue trousers, bare feet, happy face. Game size 96 px tall (size chart). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The player farmer, chibi: ngob straw hat tilted back, indigo mor hom shirt, red-and-white checked pha khao ma sash, dark-blue trousers, bare feet, happy face. Game size 96 px tall (size chart). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:59:29.299290Z",
+        "file": "assets/characters/farmer.svg",
+        "notes": "Chibi happy Thai farmer, woven ngob hat tilted back, indigo morphom shirt with three frog closures and breast pocket, red-white checked pha khaoma sash, dark-blue trousers and bare feet. Anchor25,105, canvas52x109, game size96px retained; fitted feet to original geometry."
       }
     },
     {
@@ -3713,7 +3717,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3721,7 +3725,11 @@
         ],
         "output": "assets/characters/farmer_tired.svg",
         "normal": "assets/characters/farmer_tired_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Same farmer as character.farmer, exhausted: slumped, droopy eyes, wavy mouth, blue sweat drop. No speech bubble. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Same farmer as character.farmer, exhausted: slumped, droopy eyes, wavy mouth, blue sweat drop. No speech bubble. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:59:29.299465Z",
+        "file": "assets/characters/farmer_tired.svg",
+        "notes": "Same farmer, identical hat/three frog closures/pocket/rolled cuffs/checked sash with right-side tail/dark-blue trousers/bare feet; slumped shoulders, lowered head, closed eyes, wavy mouth and blue sweatdrop. No speech bubble. Original60x109canvas/25,105anchor and96px game size preserved."
       }
     },
     {
@@ -3895,7 +3903,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3903,7 +3911,11 @@
         ],
         "output": "assets/animals/buffalo.svg",
         "normal": "assets/animals/buffalo_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo BODY only (no head, no tail): keep the pose, egret on its back, and the part pivots (parts.pivot_from_anchor). Grey buffalo in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo BODY only (no head, no tail): keep the pose, egret on its back, and the part pivots (parts.pivot_from_anchor). Grey buffalo in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:59:29.298854Z",
+        "file": "assets/animals/buffalo.svg",
+        "notes": "Scoped vector polish of original rig body: four leg meshes/egret and all geometry transforms retained, main contours rounded, opacity highlights replaced by own stone tones, dark hooves, curated muscle contours and game-scale line widths. BODY ONLY, no head/tail. Rig pivots remain head[30,-29], tail[-39,-61]. Source is hand-polished drawing render, no generation claimed."
       }
     },
     {
@@ -3953,7 +3965,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3961,7 +3973,11 @@
         ],
         "output": "assets/animals/buffalo_head.svg",
         "normal": "assets/animals/buffalo_head_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo head: keep the neck pivot at the anchor, horns in white/straw tones, grey head in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo head: keep the neck pivot at the anchor, horns in white/straw tones, grey head in stone/dark tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:59:29.299145Z",
+        "file": "assets/animals/buffalo_head.svg",
+        "notes": "Scoped vector polish retains neck pivot39,27, pose and canvas78x68. Merged segmented cream horn meshes into two continuous curved horns with own white planes; rounded stone skull/pale muzzle, nostrils and eye highlights. Source is drawing render."
       }
     },
     {
@@ -4011,7 +4027,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4019,7 +4035,11 @@
         ],
         "output": "assets/animals/buffalo_tail.svg",
         "normal": "assets/animals/buffalo_tail_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo tail: keep the pivot at the anchor. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The buffalo tail: keep the pivot at the anchor. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:59:29.299228Z",
+        "file": "assets/animals/buffalo_tail.svg",
+        "notes": "One continuous thin hanging grey tail with dark tuft; attachment pivot15,8, canvas24x42 retained. Closed silhouette and game-scale widths; source is drawing render."
       }
     },
     {

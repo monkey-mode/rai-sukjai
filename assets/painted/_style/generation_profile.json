@@ -1996,6 +1996,152 @@
       "committed_source": "assets/painted/_source/prop.signpole.png",
       "finishing_notes": "Hand-retouched square wood_dark post with pointed cap and restrained grain. Canvas12x134, anchor6,134 kept, full lower edge reaches anchor without extra padding.",
       "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "animal.buffalo",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/animal.buffalo.png",
+      "finishing_notes": "Scoped vector polish of original rig body: four leg meshes/egret and all geometry transforms retained, main contours rounded, opacity highlights replaced by own stone tones, dark hooves, curated muscle contours and game-scale line widths. BODY ONLY, no head/tail. Rig pivots remain head[30,-29], tail[-39,-61]. Source is hand-polished drawing render, no generation claimed.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "animal.buffalo_head",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/animal.buffalo_head.png",
+      "finishing_notes": "Scoped vector polish retains neck pivot39,27, pose and canvas78x68. Merged segmented cream horn meshes into two continuous curved horns with own white planes; rounded stone skull/pale muzzle, nostrils and eye highlights. Source is drawing render.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "animal.buffalo_tail",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/animal.buffalo_tail.png",
+      "finishing_notes": "One continuous thin hanging grey tail with dark tuft; attachment pivot15,8, canvas24x42 retained. Closed silhouette and game-scale widths; source is drawing render.",
+      "method": "Scoped hand-authored vector geometry/material retouch, source is final drawing render; no model generation claimed."
+    },
+    {
+      "id": "character.farmer",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/character.farmer.png",
+      "finishing_notes": "Chibi happy Thai farmer, woven ngob hat tilted back, indigo morphom shirt with three frog closures and breast pocket, red-white checked pha khaoma sash, dark-blue trousers and bare feet. Anchor25,105, canvas52x109, game size96px retained; fitted feet to original geometry. Redrew readable eyes, smile/wavy mouth and one sweatdrop as deliberate palette-only vector features at game size; same profile4 Laigter preset.",
+      "prompt": "STYLE (look only): First three locked anchors define rich sculpted craftsmanship, irregular natural shapes, layered meaningful material construction, palette-only three-tone planes. Not primitive cartoon or soft painted pixels. Upper-left hard cel light, no ground shadow. Closed outer#3a2213 ~2.5px at GAME SIZE and curated inner#6b4428 1.2px at GAME SIZE. Materials follow own palette triplets: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}\nGEOMETRY (placement only): Image4 is current sprite geometry ONLY, has no style. Preserve EXACT occupied width/height, anchor, pose and direction within unchanged canvas[52, 109], anchor[25, 105], gameScale0.9142857142857143. Do not crop or pad. Requested2x transparent source.\nSUBJECT: The player, a friendly Thai farmer standing in 3/4 view turned toward the viewer and down-left: a conical woven straw hat (งอบ) tilted back so the face shows, indigo mor hom shirt with a placket, a red-and-white checked pha khao ma sash at the waist, dark-blue trousers, bare feet, happy face. HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The player farmer, chibi: ngob straw hat tilted back, indigo mor hom shirt, red-and-white checked pha khao ma sash, dark-blue trousers, bare feet, happy face. Game size 96 px tall (size chart). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes. Friendly CHIBI farmer with readable big head and expressive face. Exact outfit: woven conicalngobhat, INDIGO morphomshirt, RED-WHITE CHECKED waist cloth, DARK BLUE full-length trousers, BARE FEET. Happy or tired as specified. No footwear, no staff or equipment.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background Fixed profile4, provider defaults; exact version/steps/CFG/seed/weights unexposed. Preserve meaningful sculpted material details without noise; no text, symbols, halos or ground.",
+      "referenced_image_paths": [
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.duck_house@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.tree_round_a@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.fence_span_se@4x.png",
+        "/tmp/rai-farm-old/character.farmer.png"
+      ],
+      "transparent_background": true,
+      "generated_source": "/workspace/generated_images/exec-5808c000-fc34-44c3-9fc1-bd8b6d51c2ff.png",
+      "geometry_registration": {
+        "original_generated_source": "/workspace/generated_images/exec-5808c000-fc34-44c3-9fc1-bd8b6d51c2ff.png",
+        "reference_geometry": "original SVG2x render",
+        "base_x_correction": -8.917538347388874,
+        "crown_height_break_from": 0.42,
+        "crown_height_break_to": 0.42,
+        "base_target_x": 22.7664,
+        "anchor": [
+          25,
+          105
+        ],
+        "canvas": [
+          52,
+          109
+        ],
+        "method": "Full original canvas2x geometry fit, gradual lower-body horizontal registration of barefoot ground point to unchanged original guide; no crop/pad."
+      },
+      "geometry_fit": {
+        "id": "character.farmer",
+        "raw": "/tmp/rai-restyle-trace/character.farmer-guidefit.png",
+        "source": "assets/painted/_source/character.farmer.png",
+        "native_bbox": [
+          5,
+          5,
+          99,
+          213
+        ],
+        "target_bbox": [
+          0,
+          0,
+          52,
+          109
+        ],
+        "geometry_fit": {
+          "sx": 0.5,
+          "sy": 0.5,
+          "tx": 0,
+          "ty": 0
+        },
+        "game_scale": 0.9142857142857143,
+        "cleanup_canvas_epsilon": 0.2,
+        "minimum_canvas_area": 0.2,
+        "trace_resolution": "native generated material planes",
+        "profile_version": 4,
+        "paths": 70,
+        "bytes": 11820
+      }
+    },
+    {
+      "id": "character.farmer_tired",
+      "profile_version": 4,
+      "committed_source": "assets/painted/_source/character.farmer_tired.png",
+      "finishing_notes": "Same farmer, identical hat/three frog closures/pocket/rolled cuffs/checked sash with right-side tail/dark-blue trousers/bare feet; slumped shoulders, lowered head, closed eyes, wavy mouth and blue sweatdrop. No speech bubble. Original60x109canvas/25,105anchor and96px game size preserved. Redrew readable eyes, smile/wavy mouth and one sweatdrop as deliberate palette-only vector features at game size; same profile4 Laigter preset.",
+      "prompt": "STYLE (look only): First three locked anchors define rich sculpted craftsmanship, irregular natural shapes, layered meaningful material construction, palette-only three-tone planes. Not primitive cartoon or soft painted pixels. Upper-left hard cel light, no ground shadow. Closed outer#3a2213 ~2.5px at GAME SIZE and curated inner#6b4428 1.2px at GAME SIZE. Materials follow own palette triplets: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}\nGEOMETRY (placement only): Image4 is current sprite geometry ONLY, has no style. Preserve EXACT occupied width/height, anchor, pose and direction within unchanged canvas[60, 109], anchor[25, 105], gameScale0.9142857142857143. Do not crop or pad. Requested2x transparent source.\nSUBJECT: Same farmer as character.farmer (identical outfit and proportions) but exhausted: slumped shoulders, head dropped forward, closed droopy eyes, a wavy mouth and a blue sweat drop. No speech bubble (the game draws it). HAND-DRAWN 3/4 view (not built from geometric primitives): organic curved shapes, clothes with folds, hands and feet, an expressive face, slightly chunky friendly proportions with a big head, thick dark outlines, flat colours with one shade on the side away from the light (upper-left), no ground shadow. Outline weight should land at about 2.5 px at the size the game draws it. Anchor = the ground between the feet. Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Same farmer as character.farmer, exhausted: slumped, droopy eyes, wavy mouth, blue sweat drop. No speech bubble. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes. Friendly CHIBI farmer with readable big head and expressive face. Exact outfit: woven conicalngobhat, INDIGO morphomshirt, RED-WHITE CHECKED waist cloth, DARK BLUE full-length trousers, BARE FEET. Happy or tired as specified. No footwear, no staff or equipment.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background Fixed profile4, provider defaults; exact version/steps/CFG/seed/weights unexposed. Preserve meaningful sculpted material details without noise; no text, symbols, halos or ground.\nOUTFIT CONSISTENCY CORRECTION: Image5 is the happy farmer just created. Make the SAME PERSON, same head/body proportions, SAME woven hat construction, SAME three INDIGO frog-button closures on shirt front (NOT white round buttons), same square breast pocket and rolled cuffs, SAME RED-WHITE CHECKED waist sash knot with tail on viewer RIGHT, same DARK BLUE trousers, BARE FEET, hair and face. Change ONLY expression and body attitude: slump shoulders, head tilted forward/down, closed droopy eyes, wavy unhappy mouth, one blue sweatdrop. Image4 controls original tired pose/anchor/canvas60x109; never duplicate the old wrong outfit. No equipment, staff, footwear, background, shadows or speechbubble.",
+      "referenced_image_paths": [
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.duck_house@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.tree_round_a@4x.png",
+        "/workspace/rai-sukjai/assets/painted/_style/anchors/kit.fence_span_se@4x.png",
+        "/tmp/rai-farm-old/character.farmer_tired.png",
+        "/workspace/generated_images/exec-5808c000-fc34-44c3-9fc1-bd8b6d51c2ff.png"
+      ],
+      "transparent_background": true,
+      "generated_source": "/workspace/generated_images/exec-e999bbc5-1037-4742-9fe3-eaf77252992d.png",
+      "geometry_registration": {
+        "original_generated_source": "/workspace/generated_images/exec-e999bbc5-1037-4742-9fe3-eaf77252992d.png",
+        "reference_geometry": "original SVG2x render",
+        "base_x_correction": -19.892909524875915,
+        "crown_height_break_from": 0.42,
+        "crown_height_break_to": 0.42,
+        "base_target_x": 22.7664,
+        "anchor": [
+          25,
+          105
+        ],
+        "canvas": [
+          60,
+          109
+        ],
+        "method": "Full original canvas2x geometry fit, gradual lower-body horizontal registration of barefoot ground point to unchanged original guide; no crop/pad."
+      },
+      "geometry_fit": {
+        "id": "character.farmer_tired",
+        "raw": "/tmp/rai-restyle-trace/character.farmer_tired-guidefit.png",
+        "source": "assets/painted/_source/character.farmer_tired.png",
+        "native_bbox": [
+          6,
+          11,
+          110,
+          213
+        ],
+        "target_bbox": [
+          0,
+          0,
+          60,
+          109
+        ],
+        "geometry_fit": {
+          "sx": 0.5,
+          "sy": 0.5,
+          "tx": 0,
+          "ty": 0
+        },
+        "game_scale": 0.9142857142857143,
+        "cleanup_canvas_epsilon": 0.2,
+        "minimum_canvas_area": 0.2,
+        "trace_resolution": "native generated material planes",
+        "profile_version": 4,
+        "paths": 82,
+        "bytes": 13711
+      }
     }
   ],
   "changes_since_v2": [
