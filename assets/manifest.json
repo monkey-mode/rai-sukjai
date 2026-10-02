@@ -6465,11 +6465,11 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.farm.jpg",
-      "status": "todo",
-      "file": null,
-      "agent": null,
-      "updated_at": null,
-      "notes": "",
+      "status": "done",
+      "file": "assets/backgrounds/ground_farm.svg",
+      "agent": "Codex",
+      "updated_at": "2026-10-02T18:22:37.647758Z",
+      "notes": "Flat terrain only. Exact P(u,v) grid, paddy strip/mound/canal/bridge/paddock/pond/path; broad grass planes, few flat flowers; no standing objects, yard/plot diamonds or cast shadows. No normal map as specified. Generated reference hand-corrected for exact coordinates; source is final corrected drawing render.",
       "review": null
     },
     {

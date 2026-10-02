@@ -26,6 +26,18 @@
       "sourceIoU": 1,
       "sourceDetail": 1.0001446689492213
     },
+    "ground.farm": {
+      "height": 0,
+      "area": 3360000,
+      "outlineShare": 0,
+      "detail": 0.01577440476190476,
+      "colours": 13,
+      "clipped": 5198,
+      "footprint": 0,
+      "standing": true,
+      "sourceIoU": 1,
+      "sourceDetail": 0.999321241374109
+    },
     "kit.field_hut": {
       "height": 70.5,
       "area": 20542,
