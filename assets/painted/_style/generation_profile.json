@@ -1285,6 +1285,38 @@
       "method": "Recorded profile4 vtracer/palette/Laigter pipeline; preserve entry canvas/anchor/pose; explicit material masks and hand-redrawn structural contours. House/hut use lossless palette CSS and integer-coordinate encoding after recorded SVGO; no geometry changes from encoding.",
       "normal_settings": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
       "final_svg_bytes": 36194
+    },
+    {
+      "id": "scenery.spirit_house_iso",
+      "raw": "/workspace/generated_images/exec-4c433319-8c22-4217-82a1-0e96d71107ea.png",
+      "source": "assets/painted/_source/scenery.spirit_house_iso.png",
+      "native_bbox": [
+        53,
+        20,
+        785,
+        1858
+      ],
+      "target_bbox": [
+        3.5714285714285716,
+        3.5714285714285716,
+        72.42857142857143,
+        166.42857142857142
+      ],
+      "geometry_fit": {
+        "sx": 0.09406713505074162,
+        "sy": 0.08860562723457173,
+        "tx": -1.4141295862607337,
+        "ty": 1.799316026737137
+      },
+      "game_scale": 0.7,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 261,
+      "bytes": 36476,
+      "prompt": "STYLE (look only): Match the3locked Rai Sukjai anchors in images1-3, and the approved Thai farm family: rich sculpted Thai forms, crisp flat cel material planes, warm brown closed silhouette #3a2213, restrained #6b4428 inner contours, upper-left single sun, no ground shadow. This is a REFINEMENT: fewer, larger readable forms at the small game scale, not more tiny details.\nGEOMETRY (placement only): Image4 old shrine guide controls ONLY layout. Keep canvas76x170, anchor38,157 at centre of stepped plinth, tall stacked proportions and isometric3/4 pose. Output152x340transparent. Keep main stepped base/pillar/platform/two-tier roof/spire geometry and rainbow cloth. Do not copy the small decorative parts in the guide. Final scale0.7; readable visibleoutline~3.571canvaspx and inner~1.714canvaspx.\nSUBJECT: SIMPLIFY the Phra Phum spirit house. EXACTLY TWO soda bottles (one red, one orange), EXACTLY ONE blue-and-white vase of marigolds, EXACTLY ONE jasmine garland with a red tassel. Put these grouped offerings on the platform where readable. No other offerings: NO incense bowl/sticks/smoke, NO dancer figurines, NO little lanterns, NO extra bottles/vases, NO marigold-chain edge beads. Keep white stepped plinth with gold bands, tall white square pillar with ONE LARGE CLEAN GOLD KRANOK emblem on each of its two visible faces, rainbow cloth around the pillar with bow/hanging tails. Keep broad white/gold platform, red sala walls and pointed golden doors, white columns, small stairs. Keep the crossing TWO-TIER RED TILE ROOF with smooth bold gold eave borders, simple clean hooks at peaks and eaves, and tall gold ringed spire. FEWER larger tile courses and spire rings, fewer inner contour marks. Bold elegant silhouette, natural Thai construction, no noisy gold microcarving. This review OVERRIDES the old subject's request for many offerings. White=white tones; gold=yellow tones; redroof=red tones, rainbowcloth palette-blue/red/pink/orange/leaf/yellow.\nSETTINGS: Profile4 unchanged. OpenAI image_gen service; modelversion/sampler/steps/CFG/seeds/referenceweights provider-managed and unexposed. Same3styleanchorimages plusgeometryguide. Requested152x340px transparentcanvas. Finaltrace with vtracer0.6.15 and own-material palette snap; freshoutlinestrokes at lockedweights; normals Laigter1.10.7 samepreset. Palette:{\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}. Prompt_suffix:flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative_prompt:painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Never any words/labels, ground shadow, background, gradients or soft airbrush. Preserve meaningful material planes, not microtexture. Review correction: remove all4corner gold-capped white lantern boxes; use source exec-fbfbc032 asgeometry forthisremoval.",
+      "method": "Profile4 recorded generation/trace/palette/normal settings; review-controlled simplification. 2bottles/1vase/1garland; no lanterns/dancers/incense. Geometryfit to immutable canvas/anchor."
     }
   ],
   "changes_since_v2": [

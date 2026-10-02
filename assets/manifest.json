@@ -5193,7 +5193,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "needs_changes",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5203,9 +5203,9 @@
         "normal": "assets/scenery/spirit_house_iso_n.png",
         "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. The Phra Phum spirit house: keep every part (stepped plinth, pillar, platform, pavilion, two-tier roof, spire, offerings, garlands). White parts in white tones, gold in yellow tones, red roof in red tones. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
         "agent": "Codex",
-        "updated_at": "2026-10-02T07:01:01Z",
+        "updated_at": "2026-10-02T18:12:30Z",
         "file": "assets/scenery/spirit_house_iso.svg",
-        "notes": "Profile v4, same generation/trace/Laigter settings. Retained stepped white/gold plinth, ornamented pillar and rainbow cloth, platform and lanterns, two-tier red roof, gold spire/hooks, offerings and flower garlands. Canvas76x170/anchor38,157 preserved. Palette-only; outer/inner strokes compensated for0.7 game scale; no ground shadow.",
+        "notes": "Profile4 unchanged. Review simplification: exactly2soda bottles,1marigold vase and1jasmine garland; no dancers, lanterns, incense or edge beads. Bold cleaner two-tier red roof/gold spire, larger simple kranok emblems; rainbow cloth retained. Canvas76x170, anchor38,157 and0.7game-scale stroke compensation unchanged. SVG/normal/source delivered.",
         "review": "Approved in style, but at its game size (scale 0.7, about 110 px tall) it reads busy. Simplify: fewer offerings (keep 2 soda bottles, one marigold vase, one garland), drop the dancer figurines and the small lanterns, give the two-tier red roof and the gold spire a bold clean silhouette with fewer inner lines, and use larger, simpler gold kranok shapes on the pillar. Keep the canvas, anchor, pose, colours and the rainbow cloth."
       }
     },
