@@ -79,6 +79,66 @@
       "clipped": 0,
       "footprint": 0.3358433734939759,
       "standing": true
+    },
+    "kit.tree_round_b": {
+      "height": 137,
+      "area": 35884,
+      "outlineShare": 1,
+      "detail": 0.16514323932671943,
+      "colours": 16,
+      "clipped": 0,
+      "footprint": 0.3689095127610209,
+      "standing": true,
+      "sourceIoU": 0.9459828393135725,
+      "sourceDetail": 0.6929039892155796
+    },
+    "kit.bamboo_clump": {
+      "height": 181,
+      "area": 46748,
+      "outlineShare": 1,
+      "detail": 0.2392401813981347,
+      "colours": 21,
+      "clipped": 0,
+      "footprint": 0.31219806763285024,
+      "standing": true,
+      "sourceIoU": 0.9342584894800793,
+      "sourceDetail": 0.6468057021513088
+    },
+    "kit.bush_a": {
+      "height": 37,
+      "area": 8569,
+      "outlineShare": 0.989010989010989,
+      "detail": 0.2632745944684327,
+      "colours": 37,
+      "clipped": 0,
+      "footprint": 0.4886499402628435,
+      "standing": true,
+      "sourceIoU": 0.9317465873293664,
+      "sourceDetail": 0.6036272849063836
+    },
+    "kit.bush_b": {
+      "height": 31.5,
+      "area": 4557,
+      "outlineShare": 0.7845659163987139,
+      "detail": 0.293614219881501,
+      "colours": 46,
+      "clipped": 0,
+      "footprint": 0.43312101910828027,
+      "standing": true,
+      "sourceIoU": 0.9002607561929595,
+      "sourceDetail": 0.6257793144344662
+    },
+    "kit.reeds": {
+      "height": 45.5,
+      "area": 4493,
+      "outlineShare": 0.9656862745098039,
+      "detail": 0.29045181393278435,
+      "colours": 47,
+      "clipped": 0,
+      "footprint": 0.36033519553072624,
+      "standing": true,
+      "sourceIoU": 0.8773480662983425,
+      "sourceDetail": 0.6869906379190325
     }
   }
 }
