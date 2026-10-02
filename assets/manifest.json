@@ -6560,11 +6560,11 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.farm.jpg",
-      "status": "needs_changes",
+      "status": "done",
       "file": "assets/backgrounds/ground_farm.svg",
       "agent": "Codex",
-      "updated_at": "2026-10-02T18:22:37.647758Z",
-      "notes": "Flat terrain only. Exact P(u,v) grid, paddy strip/mound/canal/bridge/paddock/pond/path; broad grass planes, few flat flowers; no standing objects, yard/plot diamonds or cast shadows. No normal map as specified. Generated reference hand-corrected for exact coordinates; source is final corrected drawing render.",
+      "updated_at": "2026-10-02T20:27:23Z",
+      "notes": "Far forest wall only: three receding rows of rounded canopy silhouettes, two distant palms and two bamboo silhouettes. Leaf_dark #5a9a3e/#3f7a2e in front, grass #82b84a and light leaf #8fd05c behind, far light grass #a8d468. Fresh closed #3a2213 outline at 2.5 px on nearest row only; no gradients, cast shadows or standing objects in clearing. All 47 approved non-forest SVG elements retained byte-for-byte; approved clearing pixel-identical at 2×. Targeted vector repair from a generated forest reference; _source updated as final 2800×1200 drawing render. Profile v4 byte-identical. Default farm and farmseed=12 inspected. Required checks pass; only pre-existing size/detail advisories on untouched approved assets. External Google Fonts unavailable in browser preview; fallback font used.",
       "review": "Approved except the far forest wall: beyond the clearing edges (top right especially) it reads as a flat dark-green block. Repaint it as a hazy, layered tree line like the approved ground.pen: 2–3 receding rows of rounded canopy silhouettes and a few bamboo and palm shapes, lighter and bluer-green toward the back (leaf_dark tones in front, lighter leaf/grass tones behind), with the locked outline only on the nearest row. Keep it flat and low-contrast so the kit trees in front stand out. Change nothing else: the paddies, canal, paddock floor, pond, path and grass are approved."
     },
     {
