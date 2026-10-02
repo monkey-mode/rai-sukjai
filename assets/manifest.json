@@ -5897,7 +5897,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5905,7 +5905,11 @@
         ],
         "output": "assets/scenery/palm_coconut_twin_iso.svg",
         "normal": "assets/scenery/palm_coconut_twin_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.937929Z",
+        "file": "assets/scenery/palm_coconut_twin_iso.svg",
+        "notes": "One fixed-profile4 palm batch; two V-splitting coconut trunks and crowns from one base. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
@@ -5956,7 +5960,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5964,7 +5968,11 @@
         ],
         "output": "assets/scenery/palm_coconut_dwarf_iso.svg",
         "normal": "assets/scenery/palm_coconut_dwarf_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.938265Z",
+        "file": "assets/scenery/palm_coconut_dwarf_iso.svg",
+        "notes": "One fixed-profile4 palm batch; short thick dwarf palm, dense low crown, pale-green nuts and exactly one orange nut. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
@@ -6015,7 +6023,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6023,7 +6031,11 @@
         ],
         "output": "assets/scenery/palm_sugar_tall_iso.svg",
         "normal": "assets/scenery/palm_sugar_tall_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.938421Z",
+        "file": "assets/scenery/palm_sugar_tall_iso.svg",
+        "notes": "One fixed-profile4 palm batch; straight tall scarred trunk, stiff fan leaves, dry hanging fans and dark fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
@@ -6074,7 +6086,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6082,7 +6094,11 @@
         ],
         "output": "assets/scenery/palm_sugar_ladder_iso.svg",
         "normal": "assets/scenery/palm_sugar_ladder_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.938528Z",
+        "file": "assets/scenery/palm_sugar_ladder_iso.svg",
+        "notes": "One fixed-profile4 palm batch; fan-leaf sugar palm with lashed bamboo climbing rung stubs, ties and sap tubes. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
@@ -6133,7 +6149,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6141,7 +6157,11 @@
         ],
         "output": "assets/scenery/palm_sugar_pair_iso.svg",
         "normal": "assets/scenery/palm_sugar_pair_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.938623Z",
+        "file": "assets/scenery/palm_sugar_pair_iso.svg",
+        "notes": "One fixed-profile4 palm batch; two sugar palms, unequal crown heights. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
@@ -6192,7 +6212,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6200,7 +6220,11 @@
         ],
         "output": "assets/scenery/palm_betel_cluster_iso.svg",
         "normal": "assets/scenery/palm_betel_cluster_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current file / paint.layout = geometry only). The game draws it at its existing scale (FARM_SCALE / size chart): draw strokes so they read ~2.5 px / 1.2 px at that scale. Keep this palm's variant, trunk(s), lean and crown layout; fronds as layered leaf sprays in leaf tones, trunk in wood tones with ring scars; keep accessories (ladder, sap tubes, nuts). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2 + assets/painted/_source/<id>.png. Stamp this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T18:40:40.938717Z",
+        "file": "assets/scenery/palm_betel_cluster_iso.svg",
+        "notes": "One fixed-profile4 palm batch; exactly three slender ringed areca trunks, small feathery crowns, green crownshafts and orange fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
       }
     },
     {
