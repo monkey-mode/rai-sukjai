@@ -3481,7 +3481,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3493,7 +3493,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T19:14:43.186175Z",
         "file": "assets/tiles/soil_dry.svg",
-        "notes": "Hand-retouched exact top diamond(32,2),(60,16),(32,30),(4,16), lower side drop7px. Dirt triplet: light top, base left face, shadow right; two faint wavy down-right tilled furrows and a few soil crumbs. Anchor32,16/canvas64x40 kept; source is drawing render."
+        "notes": "Hand-retouched exact top diamond(32,2),(60,16),(32,30),(4,16), lower side drop7px. Dirt triplet: light top, base left face, shadow right; two faint wavy down-right tilled furrows and a few soil crumbs. Anchor32,16/canvas64x40 kept; source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3543,7 +3544,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3555,7 +3556,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T19:14:43.186191Z",
         "file": "assets/tiles/soil_wet.svg",
-        "notes": "Identical diamond/sides/anchor to dry tile. Warm mud triplet, darker tilled furrows, two small hard water glints. Planar OpenGL normal faces; source is drawing render."
+        "notes": "Identical diamond/sides/anchor to dry tile. Warm mud triplet, darker tilled furrows, two small hard water glints. Planar OpenGL normal faces; source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3605,7 +3607,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3617,7 +3619,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T19:14:43.186195Z",
         "file": "assets/tiles/fertilized.svg",
-        "notes": "Transparent overlay ONLY, exactly six small cream-white granules along top-face edges. Centre left clear; same64x40canvas/32,16anchor. Thin0.8px closed granule outlines as entry prompt; no soil/sides/shadow. Source is drawing render."
+        "notes": "Transparent overlay ONLY, exactly six small cream-white granules along top-face edges. Centre left clear; same64x40canvas/32,16anchor. Thin0.8px closed granule outlines as entry prompt; no soil/sides/shadow. Source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3667,7 +3670,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3679,7 +3682,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:59:29.299290Z",
         "file": "assets/characters/farmer.svg",
-        "notes": "Chibi happy Thai farmer, woven ngob hat tilted back, indigo morphom shirt with three frog closures and breast pocket, red-white checked pha khaoma sash, dark-blue trousers and bare feet. Anchor25,105, canvas52x109, game size96px retained; fitted feet to original geometry."
+        "notes": "Chibi happy Thai farmer, woven ngob hat tilted back, indigo morphom shirt with three frog closures and breast pocket, red-white checked pha khaoma sash, dark-blue trousers and bare feet. Anchor25,105, canvas52x109, game size96px retained; fitted feet to original geometry.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3729,7 +3733,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3741,7 +3745,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:59:29.299465Z",
         "file": "assets/characters/farmer_tired.svg",
-        "notes": "Same farmer, identical hat/three frog closures/pocket/rolled cuffs/checked sash with right-side tail/dark-blue trousers/bare feet; slumped shoulders, lowered head, closed eyes, wavy mouth and blue sweatdrop. No speech bubble. Original60x109canvas/25,105anchor and96px game size preserved."
+        "notes": "Same farmer, identical hat/three frog closures/pocket/rolled cuffs/checked sash with right-side tail/dark-blue trousers/bare feet; slumped shoulders, lowered head, closed eyes, wavy mouth and blue sweatdrop. No speech bubble. Original60x109canvas/25,105anchor and96px game size preserved.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3915,7 +3920,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3927,7 +3932,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:59:29.298854Z",
         "file": "assets/animals/buffalo.svg",
-        "notes": "Scoped vector polish of original rig body: four leg meshes/egret and all geometry transforms retained, main contours rounded, opacity highlights replaced by own stone tones, dark hooves, curated muscle contours and game-scale line widths. BODY ONLY, no head/tail. Rig pivots remain head[30,-29], tail[-39,-61]. Source is hand-polished drawing render, no generation claimed."
+        "notes": "Scoped vector polish of original rig body: four leg meshes/egret and all geometry transforms retained, main contours rounded, opacity highlights replaced by own stone tones, dark hooves, curated muscle contours and game-scale line widths. BODY ONLY, no head/tail. Rig pivots remain head[30,-29], tail[-39,-61]. Source is hand-polished drawing render, no generation claimed.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -3977,7 +3983,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -3989,7 +3995,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:59:29.299145Z",
         "file": "assets/animals/buffalo_head.svg",
-        "notes": "Scoped vector polish retains neck pivot39,27, pose and canvas78x68. Merged segmented cream horn meshes into two continuous curved horns with own white planes; rounded stone skull/pale muzzle, nostrils and eye highlights. Source is drawing render."
+        "notes": "Scoped vector polish retains neck pivot39,27, pose and canvas78x68. Merged segmented cream horn meshes into two continuous curved horns with own white planes; rounded stone skull/pale muzzle, nostrils and eye highlights. Source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -4039,7 +4046,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4051,7 +4058,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:59:29.299228Z",
         "file": "assets/animals/buffalo_tail.svg",
-        "notes": "One continuous thin hanging grey tail with dark tuft; attachment pivot15,8, canvas24x42 retained. Closed silhouette and game-scale widths; source is drawing render."
+        "notes": "One continuous thin hanging grey tail with dark tuft; attachment pivot15,8, canvas24x42 retained. Closed silhouette and game-scale widths; source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -4164,7 +4172,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4176,7 +4184,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:50:05.878019Z",
         "file": "assets/props/dragon_jar.svg",
-        "notes": "Clay dragon jar with wide2:1 water rim/reflection, coconut-shell ladle, cream cloud swirls and yellow dragon head on right. Own material triplets; removed extra generated glaze glint, retained one small hard highlight; original97x100 canvas/49,84anchor and0.6 game scale."
+        "notes": "Clay dragon jar with wide2:1 water rim/reflection, coconut-shell ladle, cream cloud swirls and yellow dragon head on right. Own material triplets; removed extra generated glaze glint, retained one small hard highlight; original97x100 canvas/49,84anchor and0.6 game scale.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -4226,7 +4235,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4238,7 +4247,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:50:05.877801Z",
         "file": "assets/props/ox_cart.svg",
-        "notes": "Woven bamboo cart with two produce baskets, near spoked wheel with thickness/hub, down-right shaft/yoke and parking stand. Kept canvas180x152, anchor78,110; scale0.6 outline compensation for2.5px visible game weight. No sign or text."
+        "notes": "Woven bamboo cart with two produce baskets, near spoked wheel with thickness/hub, down-right shaft/yoke and parking stand. Kept canvas180x152, anchor78,110; scale0.6 outline compensation for2.5px visible game weight. No sign or text.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -4288,7 +4298,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4300,7 +4310,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:50:05.878132Z",
         "file": "assets/props/signboard.svg",
-        "notes": "Hand-retouched blank right-arrow board, own wood triplet, two fasteners and restrained upper/lower grain; unchanged92x40 canvas and pose, centre clear for game labels. No text."
+        "notes": "Hand-retouched blank right-arrow board, own wood triplet, two fasteners and restrained upper/lower grain; unchanged92x40 canvas and pose, centre clear for game labels. No text.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -4350,7 +4361,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4362,7 +4373,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:50:05.878199Z",
         "file": "assets/props/signpole.svg",
-        "notes": "Hand-retouched square wood_dark post with pointed cap and restrained grain. Canvas12x134, anchor6,134 kept, full lower edge reaches anchor without extra padding."
+        "notes": "Hand-retouched square wood_dark post with pointed cap and restrained grain. Canvas12x134, anchor6,134 kept, full lower edge reaches anchor without extra padding.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -5241,7 +5253,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5254,7 +5266,7 @@
         "updated_at": "2026-10-02T18:12:30Z",
         "file": "assets/scenery/spirit_house_iso.svg",
         "notes": "Profile4 unchanged. Review simplification: exactly2soda bottles,1marigold vase and1jasmine garland; no dancers, lanterns, incense or edge beads. Bold cleaner two-tier red roof/gold spire, larger simple kranok emblems; rainbow cloth retained. Canvas76x170, anchor38,157 and0.7game-scale stroke compensation unchanged. SVG/normal/source delivered.",
-        "review": "Approved in style, but at its game size (scale 0.7, about 110 px tall) it reads busy. Simplify: fewer offerings (keep 2 soda bottles, one marigold vase, one garland), drop the dancer figurines and the small lanterns, give the two-tier red roof and the gold spire a bold clean silhouette with fewer inner lines, and use larger, simpler gold kranok shapes on the pillar. Keep the canvas, anchor, pose, colours and the rainbow cloth."
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -5367,7 +5379,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5379,7 +5391,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T19:14:43.186199Z",
         "file": "assets/scenery/cloud.svg",
-        "notes": "Puffy cream-white cloud, own white three tones, closed2.5px brown silhouette, flat bottom, no ground shadow. Unchanged90x44canvas/45,22anchor; source is drawing render."
+        "notes": "Puffy cream-white cloud, own white three tones, closed2.5px brown silhouette, flat bottom, no ground shadow. Unchanged90x44canvas/45,22anchor; source is drawing render.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -5949,7 +5962,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5961,7 +5974,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.937929Z",
         "file": "assets/scenery/palm_coconut_twin_iso.svg",
-        "notes": "One fixed-profile4 palm batch; two V-splitting coconut trunks and crowns from one base. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; two V-splitting coconut trunks and crowns from one base. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6012,7 +6026,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6024,7 +6038,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.938265Z",
         "file": "assets/scenery/palm_coconut_dwarf_iso.svg",
-        "notes": "One fixed-profile4 palm batch; short thick dwarf palm, dense low crown, pale-green nuts and exactly one orange nut. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; short thick dwarf palm, dense low crown, pale-green nuts and exactly one orange nut. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6075,7 +6090,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6087,7 +6102,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.938421Z",
         "file": "assets/scenery/palm_sugar_tall_iso.svg",
-        "notes": "One fixed-profile4 palm batch; straight tall scarred trunk, stiff fan leaves, dry hanging fans and dark fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; straight tall scarred trunk, stiff fan leaves, dry hanging fans and dark fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6138,7 +6154,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6150,7 +6166,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.938528Z",
         "file": "assets/scenery/palm_sugar_ladder_iso.svg",
-        "notes": "One fixed-profile4 palm batch; fan-leaf sugar palm with lashed bamboo climbing rung stubs, ties and sap tubes. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; fan-leaf sugar palm with lashed bamboo climbing rung stubs, ties and sap tubes. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6201,7 +6218,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6213,7 +6230,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.938623Z",
         "file": "assets/scenery/palm_sugar_pair_iso.svg",
-        "notes": "One fixed-profile4 palm batch; two sugar palms, unequal crown heights. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; two sugar palms, unequal crown heights. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6264,7 +6282,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "done",
+        "status": "approved",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -6276,7 +6294,8 @@
         "agent": "Codex",
         "updated_at": "2026-10-02T18:40:40.938717Z",
         "file": "assets/scenery/palm_betel_cluster_iso.svg",
-        "notes": "One fixed-profile4 palm batch; exactly three slender ringed areca trunks, small feathery crowns, green crownshafts and orange fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha."
+        "notes": "One fixed-profile4 palm batch; exactly three slender ringed areca trunks, small feathery crowns, green crownshafts and orange fruit. Original canvas/anchor/base registration retained; sugar single-palm crown/trunk proportions fitted to original guide. Own-material palette planes, upper-left cel light, no ground shadow; actual Laigter preset and exact alpha.",
+        "review": "Approved by the owner (2026-10-02) in the farm at game size."
       }
     },
     {
@@ -6541,12 +6560,12 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.farm.jpg",
-      "status": "done",
+      "status": "needs_changes",
       "file": "assets/backgrounds/ground_farm.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T18:22:37.647758Z",
       "notes": "Flat terrain only. Exact P(u,v) grid, paddy strip/mound/canal/bridge/paddock/pond/path; broad grass planes, few flat flowers; no standing objects, yard/plot diamonds or cast shadows. No normal map as specified. Generated reference hand-corrected for exact coordinates; source is final corrected drawing render.",
-      "review": null
+      "review": "Approved except the far forest wall: beyond the clearing edges (top right especially) it reads as a flat dark-green block. Repaint it as a hazy, layered tree line like the approved ground.pen: 2–3 receding rows of rounded canopy silhouettes and a few bamboo and palm shapes, lighter and bluer-green toward the back (leaf_dark tones in front, lighter leaf/grass tones behind), with the locked outline only on the nearest row. Keep it flat and low-contrast so the kit trees in front stand out. Change nothing else: the paddies, canal, paddock floor, pond, path and grass are approved."
     },
     {
       "id": "kit.field_hut",
@@ -6630,12 +6649,12 @@
       "layout": "assets/painted/_layout/kit.scarecrow.png",
       "normal": "assets/kit/scarecrow_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/scarecrow.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T18:28:00.198487Z",
       "notes": "Friendly bamboo scarecrow with indigo shirt, checked cloth, ngob hat, straw sleeves and tin-can rattles. Height50px, base anchor preserved; native trace kept81% detail. Density advisory retained for owner review at game size.",
-      "review": null
+      "review": "Approved by the owner (2026-10-02) in the farm at game size."
     },
     {
       "id": "kit.tree_golden_shower",
@@ -6675,12 +6694,12 @@
       "layout": "assets/painted/_layout/kit.tree_golden_shower.png",
       "normal": "assets/kit/tree_golden_shower_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/tree_golden_shower.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T18:28:00.198750Z",
       "notes": "Airy green crown, hanging yellow flower chains, upward branches and rooted wood trunk. Height161px; native trace retains82% detail and IoU0.91. File-size and density advisories retained to preserve rich flowering detail.",
-      "review": null
+      "review": "Approved by the owner (2026-10-02) in the farm at game size."
     },
     {
       "id": "kit.tree_flame",
@@ -6720,12 +6739,12 @@
       "layout": "assets/painted/_layout/kit.tree_flame.png",
       "normal": "assets/kit/tree_flame_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/tree_flame.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T18:28:00.198865Z",
       "notes": "Wide umbrella crown, red/orange flower clusters, fern sprays and hanging dark seedpods. Height151px; 2x material-plane trace preserves source detail. Trunk planes classified wood separately from flower reds. File-size advisory.",
-      "review": null
+      "review": "Approved by the owner (2026-10-02) in the farm at game size."
     },
     {
       "id": "kit.flower_patch",
@@ -6766,12 +6785,12 @@
       "layout": "assets/painted/_layout/kit.flower_patch.png",
       "normal": "assets/kit/flower_patch_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/flower_patch.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T18:28:00.198958Z",
       "notes": "Low orange/yellow marigolds and pink zinnias with short stems and layered leaves. Height18px, anchor preserved, IoU0.95/detail74%. Small-object density advisory retained for owner review.",
-      "review": null
+      "review": "Approved by the owner (2026-10-02) in the farm at game size."
     },
     {
       "id": "kit.fence_span_se",
