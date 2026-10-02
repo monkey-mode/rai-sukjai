@@ -4230,7 +4230,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4238,7 +4238,11 @@
         ],
         "output": "assets/props/trough.svg",
         "normal": "assets/props/trough_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:30:55Z",
+        "file": "assets/props/trough.svg",
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
       }
     },
     {
@@ -4288,7 +4292,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4296,7 +4300,11 @@
         ],
         "output": "assets/props/nest.svg",
         "normal": "assets/props/nest_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:30:55Z",
+        "file": "assets/props/nest.svg",
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
       }
     },
     {
@@ -4936,7 +4944,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -4944,7 +4952,11 @@
         ],
         "output": "assets/props/egg_basket.svg",
         "normal": "assets/props/egg_basket_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T04:30:55Z",
+        "file": "assets/props/egg_basket.svg",
+        "notes": "Profile v3: locked anchor style, own-material palette, upper-left light, no cast shadow. Existing canvas/anchor/pose retained. Source at 2×; Laigter recorded preset, cleaned OpenGL volumes, exact alpha."
       }
     },
     {

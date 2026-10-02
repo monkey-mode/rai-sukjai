@@ -206,6 +206,96 @@
       "bytes": 26210,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only this subject's placement/pose guide, no style influence. Same whole canvas 47x104, anchor(24,100), same occupied bounds/pose, no cropping or padding. Request native output 94x208, transparent. It is a geometry guide only; redraw all its forms in anchor style.\nSUBJECT: A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. No shadow on the ground (the game adds one). Chibi friendly elderly Thai farmer, not a child. Keep exact costume and pose. Hat straw3tones, skin3tones, white singlet/moustache/greyhair white3tones, blue3tones and red3tones checked cloth, nearblack dark3tones trousers, bamboo3tones staff, redflag. Crisp woven hat construction, expressive wrinkled smiling face, readable cloth folds and checks. No other accessories.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
       "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+    },
+    {
+      "id": "prop.nest",
+      "raw": "/workspace/generated_images/exec-bbb5273a-12f5-4a0b-ba49-3d10c5ccd427.png",
+      "source": "assets/painted/_source/prop.nest.png",
+      "native_bbox": [
+        152,
+        76,
+        1597,
+        815
+      ],
+      "target_bbox": [
+        4.0,
+        3.475,
+        135.525,
+        68.525
+      ],
+      "geometry_fit": {
+        "sx": 0.09102076124567475,
+        "sy": 0.08802435723951287,
+        "tx": -9.835155709342562,
+        "ty": -3.214851150202978
+      },
+      "game_scale": 0.7194244604316546,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "paths": 118,
+      "bytes": 21498,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas139x72, anchor(70,36), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput278x144, transparent; no crop/pad.\nSUBJECT: A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground at its centre. THICK WOVEN STRAW RING, EMPTY CENTRAL HOLLOW, no eggs, no animals. Organic irregular overlapping straw strands and tied bundles, depth inside empty hollow shown with straw/shadow material planes. No ground shadow. Natural ellipse with same centre and position as guide. Straw tones #f4dc8e/#e0bd5e/#b8913a.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+    },
+    {
+      "id": "prop.trough",
+      "raw": "/workspace/generated_images/exec-d93a538d-a8b8-41ae-aa46-d360f66bd9b8.png",
+      "source": "assets/painted/_source/prop.trough.png",
+      "native_bbox": [
+        75,
+        98,
+        1383,
+        1015
+      ],
+      "target_bbox": [
+        7.666666666666667,
+        3.6818181818181817,
+        158.3181818181818,
+        108.31818181818181
+      ],
+      "geometry_fit": {
+        "sx": 0.11517699935131129,
+        "sy": 0.1141072667790225,
+        "tx": -0.9716082846816798,
+        "ty": -7.500693962526023
+      },
+      "game_scale": 0.6790123456790124,
+      "cleanup_canvas_epsilon": 0.45,
+      "minimum_canvas_area": 0.55,
+      "paths": 140,
+      "bytes": 20173,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas162x112, anchor(81,75), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput324x224, transparent; no crop/pad.\nSUBJECT: A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre. EMPTY wooden feeding trough on short legs; cavity contains NO food, feed, grain, water or straw. Same precise2:1isometric long box down-right. Plank construction with readable grain and cleats, upper-left lit rim, darker interior planes. Wood #dba56a/#b07a45/#7a4b27 and wood_dark #a8703e/#7d4f2a/#55331b, darkcavity #5a4a3a/#3f3226/#2a2018. Remove guide ground shadow completely.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+    },
+    {
+      "id": "prop.egg_basket",
+      "raw": "/workspace/generated_images/exec-3fb08d7e-0646-47b8-a1a3-f595fb51c1d3.png",
+      "source": "assets/painted/_source/prop.egg_basket.png",
+      "native_bbox": [
+        140,
+        62,
+        1194,
+        1157
+      ],
+      "target_bbox": [
+        4.107142857142857,
+        4.107142857142857,
+        107.89285714285714,
+        108.0
+      ],
+      "geometry_fit": {
+        "sx": 0.09846841962591488,
+        "sy": 0.09487932159165036,
+        "tx": -9.678435890485225,
+        "ty": -1.7753750815394653
+      },
+      "game_scale": 0.6086956521739131,
+      "cleanup_canvas_epsilon": 0.65,
+      "minimum_canvas_area": 0.8,
+      "paths": 328,
+      "bytes": 37485,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas112x114, anchor(56,92), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput224x228, transparent; no crop/pad.\nSUBJECT: A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; a soft shadow under it. Anchor = the ground under its centre. Exactly SIX visible distinct cream duck eggs. Thai woven bamboo basket, flared bowl, interlocking split-bamboo strips, wrapped diagonal rattan rim, arched handle with red lashings, straw liner. Keep the six eggs large/countable in TWO ROWS of three with each egg distinct. Basket bamboo3tones, straw3tones, eggswhite3tones, lashingsred3tones. No ground shadow.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
     }
   ],
   "changes_since_v2": [
