@@ -128,6 +128,54 @@
       "sourceIoU": 0.9002607561929595,
       "sourceDetail": 0.6257793144344662
     },
+    "kit.rock_a": {
+      "height": 22,
+      "area": 2956,
+      "outlineShare": 0.8960396039603961,
+      "detail": 0.2621786197564276,
+      "colours": 49,
+      "clipped": 0,
+      "footprint": 0.4779582366589327,
+      "standing": true,
+      "sourceIoU": 0.8884004058167061,
+      "sourceDetail": 0.7513690433150401
+    },
+    "kit.rock_b": {
+      "height": 16,
+      "area": 1422,
+      "outlineShare": 0.9420289855072463,
+      "detail": 0.2812939521800281,
+      "colours": 38,
+      "clipped": 0,
+      "footprint": 0.3972602739726027,
+      "standing": true,
+      "sourceIoU": 0.9361403508771929,
+      "sourceDetail": 0.7003538436958986
+    },
+    "kit.haystack": {
+      "height": 52,
+      "area": 8864,
+      "outlineShare": 0.7604456824512534,
+      "detail": 0.28598826714801445,
+      "colours": 42,
+      "clipped": 0,
+      "footprint": 0.37613636363636366,
+      "standing": true,
+      "sourceIoU": 0.9418001353485225,
+      "sourceDetail": 0.6145032177052268
+    },
+    "kit.water_jar": {
+      "height": 41.5,
+      "area": 4752,
+      "outlineShare": 1,
+      "detail": 0.22790404040404041,
+      "colours": 44,
+      "clipped": 0,
+      "footprint": 0.43478260869565216,
+      "standing": true,
+      "sourceIoU": 0.9349747474747475,
+      "sourceDetail": 0.7855528716176505
+    },
     "kit.reeds": {
       "height": 45.5,
       "area": 4493,
@@ -139,6 +187,18 @@
       "standing": true,
       "sourceIoU": 0.8773480662983425,
       "sourceDetail": 0.6869906379190325
+    },
+    "kit.egret": {
+      "height": 37.5,
+      "area": 1450,
+      "outlineShare": 0.8672199170124482,
+      "detail": 0.2910344827586207,
+      "colours": 30,
+      "clipped": 0,
+      "footprint": 0.18518518518518517,
+      "standing": true,
+      "sourceIoU": 0.9288158795345653,
+      "sourceDetail": 0.6125156498673741
     }
   }
 }
