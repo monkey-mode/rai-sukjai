@@ -110,7 +110,9 @@ const Assets = {
         // a finished painted version wins; otherwise the SVG, or its pre-rendered raster (tools/rasterize-backgrounds.mjs),
         // which is cheaper to draw on phones than a big SVG
         // a finished style-v3 file wins over an earlier painted version
-        if (a.style === 'flat-v3' && a.file && ['done', 'approved'].includes(a.status)) this.found[a.id] = a.file;
+        const rv = a.restyle_v3, fin = st => ['done', 'approved'].includes(st);
+        if (rv && rv.file && fin(rv.status)) this.found[a.id] = rv.file;                 // style-v3 restyle of an older asset
+        else if (a.style === 'flat-v3' && a.file && fin(a.status)) this.found[a.id] = a.file;
         else if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
         else if (a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
