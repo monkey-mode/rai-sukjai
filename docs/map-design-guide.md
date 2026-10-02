@@ -144,7 +144,7 @@ Our scenes are single screens on an iso grid, so the recipe is smaller. Fields:
 | `lights` | lantern spots for evening and night | (to add) |
 | `seed` | random seed for the scatter | one number |
 
-Today the pen's recipe is written out by hand in `PEN_LAYOUT`: 27 pieces plus 31 generated fence sprites. The next step is to move the hand-placed parts into a recipe object and let a seeded **builder** place the scatter by the rules below. The duck house, the nest and the trough stay hand-placed, like Night Camp's 11 landmarks.
+The pen's recipe is `PEN_RECIPE` in `js/art/iso.js`. The seeded **builder** `buildScene()` places the scatter by the rules below: 46 pieces, plus 31 fence sprites from the fence runs. The duck house, the nest and the trough stay hand-placed, like Night Camp's 11 landmarks. `index.html?seed=N` previews another arrangement.
 
 ---
 
@@ -302,4 +302,4 @@ Night Camp's full effect stack costs about 4.5 ms per frame on their test machin
 | Light | Normal maps exist; the WebGL lighting renderer is not built yet. |
 | Style | Switching to art style v3 (flat). The duck pen kit is re-issued as `needs_changes`; the painted PNGs stay in the game until the SVGs arrive. |
 | Sizes | Characters and props don't share one scale yet (Uncle Mee is 2.7× the farmer). A single size chart is to be decided. |
-| Builder | Not built; the pen recipe is placed by hand. |
+| Builder | Built for the duck pen: `PEN_RECIPE` + `buildScene()` in `js/art/iso.js` places 46 kit pieces by rules R1, R3–R6, R9 and R11. The default seed is 23; open `index.html?seed=N` to try other arrangements. |
