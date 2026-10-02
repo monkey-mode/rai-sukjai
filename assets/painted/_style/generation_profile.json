@@ -1,6 +1,6 @@
 {
   "about": "Owned by the asset agent. Records exactly how kit art is generated and finished, so every batch is made the same way. Any change to a field bumps profile_version and needs a new style test against the locked anchors. A shared seed alone does not make batches consistent: the model, its version, the reference inputs and their weights, the sampler settings and the finishing steps must all stay the same.",
-  "profile_version": 3,
+  "profile_version": 4,
   "status": "in use",
   "recorded_by": "Codex",
   "approved_anchor_process": {
@@ -30,7 +30,10 @@
     "cleanup": "Remove only isolated connected components smaller than 4 source pixels and meaningless subpixel slivers; retain leaf sprays, nodes, grain and straw rows; no broad silhouette simplification.",
     "outline_redraw": "Closed alpha-silhouette path, fresh #3a2213 stroke 5/gameScale canvas pixels beneath traced fills, round joins/caps. Hand-drawn pieces use2.5/gameScale canvas px over fills. Deliberate inner contours #6b4428 at1.2/gameScale canvas px. gameScale is the unchanged game size chart; kit/ground scale1. Ground outlines only floor edge, pond rim and paths.",
     "export": "SVG with viewBox = canvas, no raster, no gradients/filters/masks/patterns",
-    "normal_map": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map."
+    "normal_map": "Laigter 1.10.7: EnhanceHeight=60, EnhanceSoft=5, BumpHeight=75, BumpDistance=12, BumpSoft=4, BumpCut=1, InvertX=0, InvertY=0. Render final SVG at 2x, alpha-weighted Gaussian smoothing sigma=1px, normalize vectors, OpenGL green up. Clean major planes/cylinders/rounded volumes, copy exact rendered alpha; transparent RGB=(128,128,255). Ground has no normal map.",
+    "banana_trace_resolution": "Classify native generated material planes using each material palette; normalize classified planes to canvas ×2 with full-canvas geometry fit, median3×3 and nearest palette snap, then trace with the unchanged vtracer0.6.15 settings. Same preparation for all five stages.",
+    "banana_cleanup": "All five stages: simplify internal plane contours with1canvas-pixel tolerance; retain the separately redrawn silhouette at0.35canvas-pixel tolerance; discard only islands below1canvaspx² (4pixels at2x). Own leaf triplet for exposed blades, leaf_dark only in deep occlusion. No broad silhouette reduction.",
+    "svg_optimizer": "SVGO3.3.2, multipass:true, preset-default. Overrides: convertColors(shorthex:false,shortname:false), removeViewBox:false, convertPathData(floatPrecision:1), convertTransform(floatPrecision:4), cleanupNumericValues(floatPrecision:4). Same for all five bananas; palette hex colours and canvas retained."
   },
   "source_files": "For every new piece, commit the approved pre-trace image as assets/painted/_source/<id>.png (canvas × 2) so tools/validate-kit.mjs can confirm tracing kept the silhouette and detail. The anchors have no source files; their approved SVGs are the reference.",
   "source_runs": [
@@ -39,21 +42,24 @@
       "prompt": "STYLE (look only): Match the three attached locked anchor renders, rich irregular sculpted material forms, warm-brown lines and three hard cel tones. They set craftsmanship and palette only, not objects to include. Terrain marks must be readable at game size and grouped, never airbrushed. Palette grass #a8d468,#82b84a,#5f9038, dirt #ecd09a,#d4ab6c,#a97f4a, mud #b89a6a,#8f7348,#6a5233, water #9edcf2,#5fbbe2,#3a8fbf. No gradients or soft pixel texture.\nGEOMETRY (placement only): The two attached scene/layout images are placement-only. REMOVE EVERY standing object and cast shadow from them. Canvas 1400x600, export 2800x1200. Diamond packed dirt pen at canvas (820,200),(1220,400),(820,600),(420,400); pond ellipse centered (1194,253), about300x120. Far forest wall limited to top80 canvas pixels. Full canvas opaque landscape, no crop or pad. Ignore guide colours.\nSUBJECT: Wide ISOMETRIC (2:1) GROUND LAYER ONLY for Uncle Mee's duck pen, 21:9, exactly 2800×1200 px (the centred 1600×1200 is the safe area, 600 px of bleed each side). It is the flat floor of the scene, like a game map's terrain layer: the game places every standing object on top of it. Paint: sunny grass with clover and tiny flowers lying flat; the packed-earth pen floor as a diamond whose corners are at safe-area (520,200), (920,400), (520,600) and (120,400) (= image pixels (1640,400), (2440,800), (1640,1200), (840,800)), with scattered straw and grain and a few darker damp patches, no tile or grid pattern; the lotus pond water with a thin muddy rim and flat lily pads, centred at safe-area (894,253) (= image pixel (2388,506)), about 300×120 safe-area px; a couple of faint worn dirt paths. Along the TOP EDGE ONLY (the top 160 px of the image) a distant, hazy, low-contrast tree line, painted flat. LIGHT: even, soft, shadowless daylight. NO cast shadows anywhere, NO dappled tree shadows, NO shade patches, NO sun flare, NO light rays, NO vignette; the game adds all shadows and light. NOTHING that stands up except that far tree line: no bushes, shrubs, hedges, trees, flowers taller than the grass, rocks, fences, duck house, reeds, haystacks, jars, bananas, birds, animals or people. composition as in assets/painted/_layout/bg.pen.jpg minus every standing object. ART STYLE v3: flat palette-only colours (grass, dirt, mud, water tones), simple shapes, outlines only on the pen floor edge, the pond rim and paths; a few flat clover/grass marks, no texture noise. Follow these exact canvas geometry coordinates and ground-only instruction rather than including any guide scenery. No fence, house, bushes, standing trees, reeds, rocks, birds, animals or people. Tiny flat clover and flowers, scattered short straw/grain on earth, faint worn paths, shallow water with flat lily pads, distant low tree line at top edge only.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background; cast shadow, tree shadow, dappled shadow, shade, dark patches, sun flare, lens flare, light rays, god rays, vignette, bush, shrub, hedge, foliage in foreground, trees, rocks, fence, house, hut, reeds, cattail, haystack, animals, people, tiles, grid, paving, text, watermark. Ground exception: opaque full-canvas terrain, no transparent background. Same image_gen provider defaults, no exposed seed/CFG/sampler, locked 4x attached anchors, separate geometry references, upper-left light, no cast shadow. Palette-only three tones per terrain material; keep crafted surface detail, not standing objects.",
       "generated_source": "/workspace/generated_images/exec-3f35fc6f-296e-4c01-935c-65a5226970aa.png",
       "committed_source": "assets/painted/_source/ground.pen.png",
-      "finishing_notes": "Full-canvas source resized to 2x. Terrain-detail motifs traced from this reference and reused as whole SVG groups; exact floor diamond and pond geometry rebuilt, grouped flat straw/damp marks. Only noise removed; repeated geometry deduplicated to keep SVG below 40 KB. Ground is the terrain exception; no outline around grass motifs."
+      "finishing_notes": "Full-canvas source resized to 2x. Terrain-detail motifs traced from this reference and reused as whole SVG groups; exact floor diamond and pond geometry rebuilt, grouped flat straw/damp marks. Only noise removed; repeated geometry deduplicated to keep SVG below 40 KB. Ground is the terrain exception; no outline around grass motifs.",
+      "profile_version": 2
     },
     {
       "id": "kit.fence_span_sw",
       "prompt": "STYLE (look only): Match the locked fence_span_se timber, curved bamboo, collars and crossed rope ties. Same 2.5 px closed outline, 1.2 px inner contours, wood and bamboo three-tone palette.\nGEOMETRY (placement only): assets/painted/_layout/kit.fence_span_sw.png, canvas [48, 66], anchor [40, 46], footprint [0, 1], height 36. No guide colour copying.\nSUBJECT: The mirror of kit.fence_span_se: the post stands on the anchor and the two bamboo rails run down-LEFT for one tile, 32 px left and 16 px down, at heights 11 and 23 px. Paint it separately (not a flipped copy) so the light still comes from the upper-left: the lit side of the post faces left. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v2; explicit hand-drawn fence exception, separate construction with upper-left light; final 2x render is the source; recorded Laigter preset.",
       "method": "hand-authored SVG, separately constructed; no reflection of locked anchor",
       "committed_source": "assets/painted/_source/kit.fence_span_sw.png",
-      "finishing_notes": "Final SVG rendered at 2x per explicit hand-drawn exception; collars have deliberate restrained contours; no density warnings."
+      "finishing_notes": "Final SVG rendered at 2x per explicit hand-drawn exception; collars have deliberate restrained contours; no density warnings.",
+      "profile_version": 2
     },
     {
       "id": "kit.fence_post",
       "prompt": "STYLE (look only): Match the locked fence_span_se timber, curved bamboo, collars and crossed rope ties. Same 2.5 px closed outline, 1.2 px inner contours, wood and bamboo three-tone palette.\nGEOMETRY (placement only): assets/painted/_layout/kit.fence_post.png, canvas [16, 48], anchor [8, 44], footprint [0, 0], height 36. No guide colour copying.\nSUBJECT: A single square timber fence post with a pointed cap, about 36 px tall, standing on the anchor, with a rope tie. It closes the end of a fence run. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), with no shadow on the ground (the game adds shadows and, later, light from the normal map).\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Negative: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v2; explicit hand-drawn fence exception, separate construction with upper-left light; final 2x render is the source; recorded Laigter preset.",
       "method": "hand-authored SVG, separately constructed; no reflection of locked anchor",
       "committed_source": "assets/painted/_source/kit.fence_post.png",
-      "finishing_notes": "Final SVG rendered at 2x per explicit hand-drawn exception; collars have deliberate restrained contours; no density warnings."
+      "finishing_notes": "Final SVG rendered at 2x per explicit hand-drawn exception; collars have deliberate restrained contours; no density warnings.",
+      "profile_version": 2
     },
     {
       "id": "kit.tree_round_b",
@@ -61,7 +67,8 @@
       "generated_source": "/workspace/generated_images/exec-f3ab1f47-3a5d-458a-915d-3b742ecd7f7f.png",
       "committed_source": "assets/painted/_source/kit.tree_round_b.png",
       "status": "finished Set C; all required checks passed without warnings",
-      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha."
+      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.bamboo_clump",
@@ -69,7 +76,8 @@
       "generated_source": "/workspace/generated_images/exec-aaf66b1b-15d0-4eff-934f-af32770e3733.png",
       "committed_source": "assets/painted/_source/kit.bamboo_clump.png",
       "status": "finished Set C; all required checks passed without warnings",
-      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha."
+      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.bush_a",
@@ -77,7 +85,8 @@
       "generated_source": "/workspace/generated_images/exec-8811a40c-3899-405d-a93d-5be04fb15fa4.png",
       "committed_source": "assets/painted/_source/kit.bush_a.png",
       "status": "finished Set C; all required checks passed without warnings",
-      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha."
+      "finishing_notes": "Geometry fit before tracing; same recorded vtracer settings, material-specific snapping, subpixel RDP cleanup and relative-coordinate SVG compaction. Silhouette stroke inset 4 source pixels to account for pre-existing generated ink, width unchanged at 10 source pixels underneath fills. Missing meaningful material planes restored from original pre-median classifications where needed, with same tracer settings and >=4px components. Laigter preset unchanged; rounded botanical relief cleaned using material-distance volumes (Gaussian sigma 2.5px, 80% volume / 20% raw normal), normalized OpenGL vectors and exact alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.bush_b",
@@ -85,7 +94,8 @@
       "generated_source": "/workspace/generated_images/exec-84485e81-3668-471b-8126-5b8d06e51096.png",
       "committed_source": "assets/painted/_source/kit.bush_b.png",
       "status": "finished Set C; all required checks passed without warnings",
-      "finishing_notes": "Whole subject fitted to guide before exporting the committed 2x pre-trace image; bush 32px tall, reeds 46px. Recover coherent material planes by tracing native-resolution reference with the same vtracer settings, then transform into canvas coordinates; committed source remains untouched. Material palette snapped before and after tracing. Remove regions under 1 canvas px squared (4 committed-source pixels), smooth subpixel contours (bush epsilon 0.95 canvas px, reeds 0.5), retain whole leaves, fronds, stalks and cattails. Reassign stray interior brown fill fragments on the bush to leaf_dark base; retain the fresh closed 5px under-stroke and deliberately drawn 1.2px midribs. Same Laigter preset and botanical normal finishing as the rest of Set C, normalized OpenGL vectors and exact alpha. Provider controls remain unexposed; no reproducible seed/version claim."
+      "finishing_notes": "Whole subject fitted to guide before exporting the committed 2x pre-trace image; bush 32px tall, reeds 46px. Recover coherent material planes by tracing native-resolution reference with the same vtracer settings, then transform into canvas coordinates; committed source remains untouched. Material palette snapped before and after tracing. Remove regions under 1 canvas px squared (4 committed-source pixels), smooth subpixel contours (bush epsilon 0.95 canvas px, reeds 0.5), retain whole leaves, fronds, stalks and cattails. Reassign stray interior brown fill fragments on the bush to leaf_dark base; retain the fresh closed 5px under-stroke and deliberately drawn 1.2px midribs. Same Laigter preset and botanical normal finishing as the rest of Set C, normalized OpenGL vectors and exact alpha. Provider controls remain unexposed; no reproducible seed/version claim.",
+      "profile_version": 2
     },
     {
       "id": "kit.reeds",
@@ -93,7 +103,8 @@
       "generated_source": "/workspace/generated_images/exec-5a13807d-0eb3-4b3c-a853-2510e2044aec.png",
       "committed_source": "assets/painted/_source/kit.reeds.png",
       "status": "finished Set C; all required checks passed without warnings",
-      "finishing_notes": "Whole subject fitted to guide before exporting the committed 2x pre-trace image; bush 32px tall, reeds 46px. Recover coherent material planes by tracing native-resolution reference with the same vtracer settings, then transform into canvas coordinates; committed source remains untouched. Material palette snapped before and after tracing. Remove regions under 1 canvas px squared (4 committed-source pixels), smooth subpixel contours (bush epsilon 0.95 canvas px, reeds 0.5), retain whole leaves, fronds, stalks and cattails. Reassign stray interior brown fill fragments on the bush to leaf_dark base; retain the fresh closed 5px under-stroke and deliberately drawn 1.2px midribs. Same Laigter preset and botanical normal finishing as the rest of Set C, normalized OpenGL vectors and exact alpha. Provider controls remain unexposed; no reproducible seed/version claim."
+      "finishing_notes": "Whole subject fitted to guide before exporting the committed 2x pre-trace image; bush 32px tall, reeds 46px. Recover coherent material planes by tracing native-resolution reference with the same vtracer settings, then transform into canvas coordinates; committed source remains untouched. Material palette snapped before and after tracing. Remove regions under 1 canvas px squared (4 committed-source pixels), smooth subpixel contours (bush epsilon 0.95 canvas px, reeds 0.5), retain whole leaves, fronds, stalks and cattails. Reassign stray interior brown fill fragments on the bush to leaf_dark base; retain the fresh closed 5px under-stroke and deliberately drawn 1.2px midribs. Same Laigter preset and botanical normal finishing as the rest of Set C, normalized OpenGL vectors and exact alpha. Provider controls remain unexposed; no reproducible seed/version claim.",
+      "profile_version": 2
     },
     {
       "id": "kit.rock_a",
@@ -101,7 +112,8 @@
       "generated_source": "/workspace/generated_images/exec-9813d330-b0fb-4c94-b117-6dfa2983bc8c.png",
       "committed_source": "assets/painted/_source/kit.rock_a.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
-      "finishing_notes": "Fit generated stone to 46x22 canvas px before committing source. Preserve facets, moss and base grass; spatially assign moss versus grass. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Stone normals: light(-.35,.78,.52), base(-.60,.10,.79), shadow(.65,-.15,.74); rounded moss/grass relief sigma2.5px,80% volume/20% Laigter. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+      "finishing_notes": "Fit generated stone to 46x22 canvas px before committing source. Preserve facets, moss and base grass; spatially assign moss versus grass. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Stone normals: light(-.35,.78,.52), base(-.60,.10,.79), shadow(.65,-.15,.74); rounded moss/grass relief sigma2.5px,80% volume/20% Laigter. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.rock_b",
@@ -109,7 +121,8 @@
       "generated_source": "/workspace/generated_images/exec-bae37593-e4f7-4fa7-baef-41d3ffc05ca4.png",
       "committed_source": "assets/painted/_source/kit.rock_b.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
-      "finishing_notes": "Fit whole generated stone-and-three-pebble group to32x16 canvas px before committing source. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Fresh closed5px under-stroke on source silhouette inset5 source px to retain the pebble footprint. Same stone normal planes as rock_a. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+      "finishing_notes": "Fit whole generated stone-and-three-pebble group to32x16 canvas px before committing source. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Fresh closed5px under-stroke on source silhouette inset5 source px to retain the pebble footprint. Same stone normal planes as rock_a. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.haystack",
@@ -117,7 +130,8 @@
       "generated_source": "/workspace/generated_images/exec-f58d0586-5ad8-491e-a705-1762fe61e628.png",
       "committed_source": "assets/painted/_source/kit.haystack.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
-      "finishing_notes": "Fit whole generated stack to66x52 canvas px before committing source. Native-plane recovery in straw three tones, RDP epsilon0.15 canvas px, remove only regions under1 canvas px squared. Deliberately redraw1.2px inner contours along overlapping straw rows, ridge ties and a few bundle strands; retain irregular tips. Rounded straw normals: material-distance relief Gaussian sigma2.5px,80% volume/20% Laigter. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+      "finishing_notes": "Fit whole generated stack to66x52 canvas px before committing source. Native-plane recovery in straw three tones, RDP epsilon0.15 canvas px, remove only regions under1 canvas px squared. Deliberately redraw1.2px inner contours along overlapping straw rows, ridge ties and a few bundle strands; retain irregular tips. Rounded straw normals: material-distance relief Gaussian sigma2.5px,80% volume/20% Laigter. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.water_jar",
@@ -125,7 +139,8 @@
       "generated_source": "/workspace/generated_images/exec-f665b2ba-6697-41b5-89e7-57ccf4fb9381.png",
       "committed_source": "assets/painted/_source/kit.water_jar.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
-      "finishing_notes": "Proportional whole-source fit to42px height before committing source. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Explicit polygon classifies wooden lid apart from clay rim; dark tones only inside mouth, clay triplet for glaze including the hard highlight. Analytic clay ellipsoid centred x24,y29, radii19/24; rim normal(0,.88,.475), lid top(-.4,.70,.58), cut ends(-.5,-.15,.85), normalized vectors. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+      "finishing_notes": "Proportional whole-source fit to42px height before committing source. Native-plane recovery, RDP epsilon0.5 canvas px, remove only regions under1 canvas px squared. Explicit polygon classifies wooden lid apart from clay rim; dark tones only inside mouth, clay triplet for glaze including the hard highlight. Analytic clay ellipsoid centred x24,y29, radii19/24; rim normal(0,.88,.475), lid top(-.4,.70,.58), cut ends(-.5,-.15,.85), normalized vectors. Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha.",
+      "profile_version": 2
     },
     {
       "id": "kit.egret",
@@ -133,19 +148,22 @@
       "generated_source": "/workspace/generated_images/exec-69731e3e-6c2a-4e2d-816c-94edfbe91b2e.png",
       "committed_source": "assets/painted/_source/kit.egret.png",
       "status": "finished Set D; all required checks passed without warnings; kit board and normal game inspected",
-      "finishing_notes": "Regenerated for stronger source outline and broader feather groups at game size. Fit whole subject to24x38 canvas px before committing source. Native-plane recovery, RDP epsilon0.15 canvas px, remove only regions under1 canvas px squared. Correct pale boundary fragments to outline colour; fresh closed5px under-stroke on source silhouette inset5 source px. Curate1.2px feather-fold and neck contours, restore visible eye, yellow bill planes and dark leg planes using their material triplets. Rounded white-feather relief sigma2.5px,80% volume/20% Laigter; yellow bill planar normals light(-.25,.65,.72), base(-.25,.1,.96), shadow(.25,-.6,.72). Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha."
+      "finishing_notes": "Regenerated for stronger source outline and broader feather groups at game size. Fit whole subject to24x38 canvas px before committing source. Native-plane recovery, RDP epsilon0.15 canvas px, remove only regions under1 canvas px squared. Correct pale boundary fragments to outline colour; fresh closed5px under-stroke on source silhouette inset5 source px. Curate1.2px feather-fold and neck contours, restore visible eye, yellow bill planes and dark leg planes using their material triplets. Rounded white-feather relief sigma2.5px,80% volume/20% Laigter; yellow bill planar normals light(-.25,.65,.72), base(-.25,.1,.96), shadow(.25,-.6,.72). Same recorded vtracer0.6.15 parameters and3x3 median; recover native material planes in canvas coordinates while keeping the committed2x source unchanged. Laigter1.10.7 preset unchanged; alpha-weighted smoothing sigma1px, normalize OpenGL green-up vectors and copy exact final-SVG render alpha.",
+      "profile_version": 2
     },
     {
       "id": "ground.pen",
       "method": "hand-authored vector repair of existing approved geometry",
       "source": "assets/painted/_source/ground.pen.png",
-      "notes": "478 grass instances -> 167 (65.1% reduction); broad grass planes, straw/grain, damp patches, duck tracks, irregular rim. Reference source is repair drawing rendered at 2x."
+      "notes": "478 grass instances -> 167 (65.1% reduction); broad grass planes, straw/grain, damp patches, duck tracks, irregular rim. Reference source is repair drawing rendered at 2x.",
+      "profile_version": 3
     },
     {
       "id": "kit.bamboo_clump",
       "method": "hand-authored foliage retouch; original culm-channel pixels vectorized at recorded vtracer settings",
       "source": "assets/painted/_source/kit.bamboo_clump.png",
-      "notes": "122 original culm/collar/sheath material paths retained; original culm ink/material recovered in narrow stem channels to retain continuous stems. Lance-shaped drooping leaves on node branches; repair drawing source at 2x."
+      "notes": "122 original culm/collar/sheath material paths retained; original culm ink/material recovered in narrow stem channels to retain continuous stems. Lance-shaped drooping leaves on node branches; repair drawing source at 2x.",
+      "profile_version": 3
     },
     {
       "id": "animal.duck",
@@ -175,7 +193,8 @@
       "paths": 56,
       "bytes": 8388,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only this subject's placement/pose guide, no style influence. Same whole canvas 51x45, anchor(26,41), same occupied bounds/pose, no cropping or padding. Request native output 102x90, transparent. It is a geometry guide only; redraw all its forms in anchor style.\nSUBJECT: A cute game animal sprite, isolated, seen from the isometric camera (3/4 view from above). A brown Khaki Campbell laying duck in isometric 3/4 view facing DOWN-RIGHT: plump khaki-brown body, darker wing and tail tip, dark head with a small eye, orange bill and feet. The game waddles it along the grid diagonal and flips it horizontally for the way back. No shadow on the ground (the game adds one). Override older dark-body wording: light warm khaki TAN with cream back and breast, darker tan folded wing, bright ORANGE bill and both webbed feet, black eye with a clearly visible white glint. No pink or red on duck. Same plump silhouette and curved neck facing DOWN-RIGHT. Own duck feather material tones dirt #ecd09a/#d4ab6c/#a97f4a and white #ffffff/#ece7dc/#c8c0ad; wing wood tones; orange only bill/feet. Body fills about85%width.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
-      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry",
+      "profile_version": 3
     },
     {
       "id": "character.uncle_mee",
@@ -205,7 +224,8 @@
       "paths": 242,
       "bytes": 26210,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only this subject's placement/pose guide, no style influence. Same whole canvas 47x104, anchor(24,100), same occupied bounds/pose, no cropping or padding. Request native output 94x208, transparent. It is a geometry guide only; redraw all its forms in anchor style.\nSUBJECT: A cute chibi game character (head about 40% of the body height, big glossy eyes, soft blush), full colour, standing, isolated. Uncle Mee, a kind elderly duck farmer, full body in 3/4 view facing down-right into his pen: tilted-back straw hat, bald head with grey side hair and a white moustache, white singlet, a blue-and-red checked pha khao ma over one shoulder, black trousers, holding a bamboo staff with a small red flag at his side. No shadow on the ground (the game adds one). Chibi friendly elderly Thai farmer, not a child. Keep exact costume and pose. Hat straw3tones, skin3tones, white singlet/moustache/greyhair white3tones, blue3tones and red3tones checked cloth, nearblack dark3tones trousers, bamboo3tones staff, redflag. Crisp woven hat construction, expressive wrinkled smiling face, readable cloth folds and checks. No other accessories.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
-      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry",
+      "profile_version": 3
     },
     {
       "id": "prop.nest",
@@ -235,7 +255,8 @@
       "paths": 118,
       "bytes": 21498,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas139x72, anchor(70,36), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput278x144, transparent; no crop/pad.\nSUBJECT: A round woven straw nest lying on the ground: a thick straw ring with a hollow middle and a few loose straws. Leave the hollow clear: the game places the eggs in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground at its centre. THICK WOVEN STRAW RING, EMPTY CENTRAL HOLLOW, no eggs, no animals. Organic irregular overlapping straw strands and tied bundles, depth inside empty hollow shown with straw/shadow material planes. No ground shadow. Natural ellipse with same centre and position as guide. Straw tones #f4dc8e/#e0bd5e/#b8913a.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
-      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry",
+      "profile_version": 3
     },
     {
       "id": "prop.trough",
@@ -265,7 +286,8 @@
       "paths": 140,
       "bytes": 20173,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas162x112, anchor(81,75), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput324x224, transparent; no crop/pad.\nSUBJECT: A wooden duck-feed trough on short legs: a long plank box whose long side runs down-right, open top showing the dark cavity. Leave the cavity EMPTY: the game draws the feed surface inside it (cavity half-size 58×14 world px, from z 16 to 36). ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; no ground shadow beyond the soft one under it. Anchor = the ground under its centre. EMPTY wooden feeding trough on short legs; cavity contains NO food, feed, grain, water or straw. Same precise2:1isometric long box down-right. Plank construction with readable grain and cleats, upper-left lit rim, darker interior planes. Wood #dba56a/#b07a45/#7a4b27 and wood_dark #a8703e/#7d4f2a/#55331b, darkcavity #5a4a3a/#3f3226/#2a2018. Remove guide ground shadow completely.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
-      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry",
+      "profile_version": 3
     },
     {
       "id": "prop.egg_basket",
@@ -295,7 +317,8 @@
       "paths": 328,
       "bytes": 37485,
       "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth image is only the existing placement and shape guide. Keep canvas112x114, anchor(56,92), same footprint, occupied bounds and 2:1isometric projection. IGNORE any ground shadow in the guide; remove it completely. It has no style. Request nativeoutput224x228, transparent; no crop/pad.\nSUBJECT: A Thai woven bamboo basket (ตะกร้าไม้ไผ่) for selling eggs: a flared round bowl with a checkerboard weave of split bamboo strips in two tones, a thick rim wrapped with diagonal rattan binding, a tall arched split-bamboo handle lashed to the rim with red cord, a straw lining inside and six duck eggs nestled in it. ISOMETRIC 3/4 view built with the farm's 2:1 projection (screen = ((x - y)·0.894, (x + y)·0.447 - z)), same outlines, palette and light (upper-left) as the farm props; a soft shadow under it. Anchor = the ground under its centre. Exactly SIX visible distinct cream duck eggs. Thai woven bamboo basket, flared bowl, interlocking split-bamboo strips, wrapped diagonal rattan rim, arched handle with red lashings, straw liner. Keep the six eggs large/countable in TWO ROWS of three with each egg distinct. Basket bamboo3tones, straw3tones, eggswhite3tones, lashingsred3tones. No ground shadow.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
-      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry"
+      "method": "native generated material planes -> recorded vtracer -> palette snap -> subpixel clean -> fresh closed stroked outline; canvas fit from existing painted geometry",
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_1",
@@ -332,7 +355,8 @@
       "method": "Shared generated/traced egg master; original guide-centre placements; deterministic back-to-front order; ninth egg moved 6 canvas px left in variants9/10 to retain visible shell; no lighting rotation",
       "final_visible_shell_pixels": [
         379
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_2",
@@ -375,7 +399,8 @@
       "final_visible_shell_pixels": [
         177,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_3",
@@ -424,7 +449,8 @@
         134,
         379,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_4",
@@ -479,7 +505,8 @@
         136,
         382,
         377
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_5",
@@ -540,7 +567,8 @@
         137,
         378,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_6",
@@ -607,7 +635,8 @@
         380,
         380,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_7",
@@ -680,7 +709,8 @@
         380,
         380,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_8",
@@ -759,7 +789,8 @@
         380,
         380,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_9",
@@ -844,7 +875,8 @@
         380,
         380,
         380
-      ]
+      ],
+      "profile_version": 3
     },
     {
       "id": "prop.egg_pile_10",
@@ -935,12 +967,194 @@
         380,
         380,
         380
-      ]
+      ],
+      "profile_version": 3
+    },
+    {
+      "id": "scenery.banana_young_iso",
+      "raw": "/workspace/generated_images/exec-916cfe8c-84ff-4e75-af3b-48c14b8da7bc.png",
+      "source": "assets/painted/_source/scenery.banana_young_iso.png",
+      "native_bbox": [
+        124,
+        201,
+        1138,
+        1066
+      ],
+      "target_bbox": [
+        33.0,
+        59.333333333333336,
+        164.0,
+        158.66666666666666
+      ],
+      "geometry_fit": {
+        "sx": 0.1291913214990138,
+        "sy": 0.11483622350674372,
+        "tx": 16.98027613412229,
+        "ty": 36.25125240847785
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 144,
+      "bytes": 15634,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only the current plant's placement/pose guide. Canvas190x190, anchor(95,150) under the central stem group. Keep the same stage-specific sizes, ground point and spread of leaves; 2:1isometric stems vertical, leaf clusters spread to the SIDES. It has no style; do NOT copy its flat geometry or colours. Request380x380 transparent; no crop/pad, no ground shadow. Preserve leaf reach below the anchor when shown; anchor is the stem base, not the image bottom.\nSUBJECT: A young banana plant (กล้วย): one slim pale pseudostem with a few fresh, untorn light-green paddle leaves arching out, a rolled young leaf spike at the top and two small suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. YOUNG stage: slim pale-green central pseudostem, fresh untorn light-green oblong leaves, rolled central leaf spike, exactly TWO tiny daughter suckers. No fruit or flower. ALL FIVE STAGES ARE THE SAME THAI BANANA CULTIVAR: broad banana paddle leaves with curved midribs, drooping tips, smooth unbroken leaf margins on this YOUNG stage only, overlapping cylindrical sheaths, split dry fibrous sheaths and small leafy suckers. Organic sculpted silhouette and hard cel material planes, not star-shaped palm fronds or tiny-leaf tree foliage. Foliage3tones #8fd05c/#5fae3c/#3e7f2c with leaf_dark3tones only in occluded foliage. Stemsbamboo3tones #ead47e/#c9ad52/#97803a and dried sheathswood3tones #dba56a/#b07a45/#7a4b27. Ripe fruit yellow3tones #ffe680/#f7c52b/#d09a12, unripe fruit greenleaf3tones. No dirt mounds, no rocks, no standing ground grass, no decorations.\nSUBJECT CLARIFICATION: Young plant is healthy, fresh and UNTORN. Every leaf silhouette has a smooth continuous oblong perimeter. NO teeth, cuts, serrations, notches, wind tears, tattered edges or ragged fringe on young leaves. Cel plane edges may be irregular INSIDE the leaf. Preserve slim stem, rolled spike and two suckers.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Own-material native classification -> canvas×2 normalization -> fixed vtracer ->1px internal cleanup -> fresh closed silhouette and1.2px sheath strokes -> fixed SVGO3.3.2. Identical finishing settings across five stages."
+    },
+    {
+      "id": "scenery.banana_fruiting_iso",
+      "raw": "/workspace/generated_images/exec-8a15d068-d22f-442f-8960-86185f8139a6.png",
+      "source": "assets/painted/_source/scenery.banana_fruiting_iso.png",
+      "native_bbox": [
+        41,
+        64,
+        1230,
+        1161
+      ],
+      "target_bbox": [
+        17.333333333333332,
+        33.666666666666664,
+        185.0,
+        155.66666666666666
+      ],
+      "geometry_fit": {
+        "sx": 0.1410148584244463,
+        "sy": 0.11121239744758432,
+        "tx": 11.551724137931034,
+        "ty": 26.549073230021268
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 348,
+      "bytes": 34617,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only the current plant's placement/pose guide. Canvas190x190, anchor(95,150) under the central stem group. Keep the same stage-specific sizes, ground point and spread of leaves; 2:1isometric stems vertical, leaf clusters spread to the SIDES. It has no style; do NOT copy its flat geometry or colours. Request380x380 transparent; no crop/pad, no ground shadow. Preserve leaf reach below the anchor when shown; anchor is the stem base, not the image bottom.\nSUBJECT: A mature banana clump: three pseudostems of different heights with sheath streaks and dry strips, long arching oblong leaves with midribs, veins, wind tears and drooping tips, a rolled young leaf, a dry leaf hanging down, suckers, and a hanging bunch of GREEN bananas — curved, plump fingers fanned in hands (หวี) stacked down the stalk, not straight strips — ending in a purple banana flower (หัวปลี). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. FRUITING stage: same mature three-stem clump architecture as ripe stage; heavy dense hand-stacked bunch of GREEN plump curved bananas hanging on front-right main stem with individual dark tips; pendant reddish-pink flower bud, NOT yellow ripe fruit. Deep flower colour must use #c45f84, mid #ec8cae, light #f9c2d6 (locked palette has no purple). ALL FIVE STAGES ARE THE SAME THAI BANANA CULTIVAR: broad banana paddle leaves with curved midribs, drooping tips, grouped torn fringes, overlapping cylindrical sheaths, split dry fibrous sheaths and small leafy suckers. Organic sculpted silhouette and hard cel material planes, not star-shaped palm fronds or tiny-leaf tree foliage. Foliage3tones #8fd05c/#5fae3c/#3e7f2c with leaf_dark3tones only in occluded foliage. Stemsbamboo3tones #ead47e/#c9ad52/#97803a and dried sheathswood3tones #dba56a/#b07a45/#7a4b27. Ripe fruit yellow3tones #ffe680/#f7c52b/#d09a12, unripe fruit greenleaf3tones. No dirt mounds, no rocks, no standing ground grass, no decorations.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Own-material native classification -> canvas×2 normalization -> fixed vtracer ->1px internal cleanup -> fresh closed silhouette and1.2px sheath strokes -> fixed SVGO3.3.2. Identical finishing settings across five stages."
+    },
+    {
+      "id": "scenery.banana_ripe_iso",
+      "raw": "/workspace/generated_images/exec-291a3a09-52dd-48ce-bfcc-5d01ceca0561.png",
+      "source": "assets/painted/_source/scenery.banana_ripe_iso.png",
+      "native_bbox": [
+        56,
+        129,
+        1232,
+        1123
+      ],
+      "target_bbox": [
+        15.666666666666666,
+        32.0,
+        184.33333333333334,
+        158.66666666666666
+      ],
+      "geometry_fit": {
+        "sx": 0.14342403628117917,
+        "sy": 0.12743125419181756,
+        "tx": 7.634920634920633,
+        "ty": 15.561368209255534
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 371,
+      "bytes": 36424,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only the current plant's placement/pose guide. Canvas190x190, anchor(95,150) under the central stem group. Keep the same stage-specific sizes, ground point and spread of leaves; 2:1isometric stems vertical, leaf clusters spread to the SIDES. It has no style; do NOT copy its flat geometry or colours. Request380x380 transparent; no crop/pad, no ground shadow. Preserve leaf reach below the anchor when shown; anchor is the stem base, not the image bottom.\nSUBJECT: The same mature clump with a heavier bunch of RIPE YELLOW bananas (curved plump fingers in stacked hands) (dark tips, a few brown sugar spots); the banana flower is spent (withered stalk end). ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. RIPE stage: same mature three-stem architecture as fruiting, with a heavy bunch of YELLOW ripe plump curved bananas in grouped hands, dark tips and only a couple of brown sugar spots; pendant stalk ends in a SMALL DRY brown spent blossom, NOT a fresh red or pink flower. ALL FIVE STAGES ARE THE SAME THAI BANANA CULTIVAR: broad banana paddle leaves with curved midribs, drooping tips, grouped torn fringes, overlapping cylindrical sheaths, split dry fibrous sheaths and small leafy suckers. Organic sculpted silhouette and hard cel material planes, not star-shaped palm fronds or tiny-leaf tree foliage. Foliage3tones #8fd05c/#5fae3c/#3e7f2c with leaf_dark3tones only in occluded foliage. Stemsbamboo3tones #ead47e/#c9ad52/#97803a and dried sheathswood3tones #dba56a/#b07a45/#7a4b27. Ripe fruit yellow3tones #ffe680/#f7c52b/#d09a12, unripe fruit greenleaf3tones. No dirt mounds, no rocks, no standing ground grass, no decorations.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Own-material native classification -> canvas×2 normalization -> fixed vtracer ->1px internal cleanup -> fresh closed silhouette and1.2px sheath strokes -> fixed SVGO3.3.2. Identical finishing settings across five stages."
+    },
+    {
+      "id": "scenery.banana_old_iso",
+      "raw": "/workspace/generated_images/exec-5ded005d-4e42-41b6-83a8-8c07cb556e74.png",
+      "source": "assets/painted/_source/scenery.banana_old_iso.png",
+      "native_bbox": [
+        72,
+        107,
+        1211,
+        1115
+      ],
+      "target_bbox": [
+        17.333333333333332,
+        50.333333333333336,
+        180.0,
+        161.0
+      ],
+      "geometry_fit": {
+        "sx": 0.1428153350892596,
+        "sy": 0.10978835978835978,
+        "tx": 7.050629206906642,
+        "ty": 38.585978835978835
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 407,
+      "bytes": 38416,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only the current plant's placement/pose guide. Canvas190x190, anchor(95,150) under the central stem group. Keep the same stage-specific sizes, ground point and spread of leaves; 2:1isometric stems vertical, leaf clusters spread to the SIDES. It has no style; do NOT copy its flat geometry or colours. Request380x380 transparent; no crop/pad, no ground shadow. Preserve leaf reach below the anchor when shown; anchor is the stem base, not the image bottom.\nSUBJECT: An old banana clump: taller stems, sun-browned and heavily wind-torn leaves, one snapped leaf hanging down, many dry brown leaves hanging from every stem, suckers at the base. No fruit. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. OLD stage: tall clump after fruiting, exhausted and weathered, sun-browned wind-torn older leaves, ragged but broad oblong leaves, one snapped hanging leaf, dry sheaths on every stem, two lively small suckers. NO fruit or flowers. ALL FIVE STAGES ARE THE SAME THAI BANANA CULTIVAR: broad banana paddle leaves with curved midribs, drooping tips, grouped torn fringes, overlapping cylindrical sheaths, split dry fibrous sheaths and small leafy suckers. Organic sculpted silhouette and hard cel material planes, not star-shaped palm fronds or tiny-leaf tree foliage. Foliage3tones #8fd05c/#5fae3c/#3e7f2c with leaf_dark3tones only in occluded foliage. Stemsbamboo3tones #ead47e/#c9ad52/#97803a and dried sheathswood3tones #dba56a/#b07a45/#7a4b27. Ripe fruit yellow3tones #ffe680/#f7c52b/#d09a12, unripe fruit greenleaf3tones. No dirt mounds, no rocks, no standing ground grass, no decorations.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Own-material native classification -> canvas×2 normalization -> fixed vtracer ->1px internal cleanup -> fresh closed silhouette and1.2px sheath strokes -> fixed SVGO3.3.2. Identical finishing settings across five stages."
+    },
+    {
+      "id": "scenery.banana_harvested_iso",
+      "raw": "/workspace/generated_images/exec-7a179b22-8676-4b3a-b15c-e4538cb592c4.png",
+      "source": "assets/painted/_source/scenery.banana_harvested_iso.png",
+      "native_bbox": [
+        50,
+        262,
+        1206,
+        1077
+      ],
+      "target_bbox": [
+        25.0,
+        84.66666666666667,
+        178.33333333333334,
+        167.0
+      ],
+      "geometry_fit": {
+        "sx": 0.132641291810842,
+        "sy": 0.10102249488752556,
+        "tx": 18.3679354094579,
+        "ty": 58.19877300613497
+      },
+      "game_scale": 1,
+      "cleanup_canvas_epsilon": 1.0,
+      "minimum_canvas_area": 1.0,
+      "trace_resolution": "canvas x2 normalized material planes",
+      "profile_version": 4,
+      "paths": 199,
+      "bytes": 22598,
+      "prompt": "STYLE (look only): First three attached images are the LOCKED STYLE anchors of this Thai farming game. Match their rich sculpted organic forms, irregular material planes, convincing construction, dense meaningful detail and hard upper-left cel light. Material detail must survive tracing; do not turn into a plain preschool cartoon. One closed warm-brown silhouette #3a2213 about2.5gamepx and deliberate inner contours #6b4428 about1.2gamepx. Flat fills in each material's light/base/shadow palette, no ground shadow. Palette: {\"line\": {\"outline\": \"#3a2213\", \"inner\": \"#6b4428\"}, \"grass\": [\"#a8d468\", \"#82b84a\", \"#5f9038\"], \"leaf\": [\"#8fd05c\", \"#5fae3c\", \"#3e7f2c\"], \"leaf_dark\": [\"#5a9a3e\", \"#3f7a2e\", \"#2c5a24\"], \"dirt\": [\"#ecd09a\", \"#d4ab6c\", \"#a97f4a\"], \"mud\": [\"#b89a6a\", \"#8f7348\", \"#6a5233\"], \"wood\": [\"#dba56a\", \"#b07a45\", \"#7a4b27\"], \"wood_dark\": [\"#a8703e\", \"#7d4f2a\", \"#55331b\"], \"bamboo\": [\"#ead47e\", \"#c9ad52\", \"#97803a\"], \"straw\": [\"#f4dc8e\", \"#e0bd5e\", \"#b8913a\"], \"stone\": [\"#d2cdbd\", \"#a39d8c\", \"#77715f\"], \"moss\": [\"#a6c45a\", \"#7fa040\", \"#5a7a2c\"], \"clay\": [\"#d8875a\", \"#ad5e35\", \"#7a3c21\"], \"water\": [\"#9edcf2\", \"#5fbbe2\", \"#3a8fbf\"], \"white\": [\"#ffffff\", \"#ece7dc\", \"#c8c0ad\"], \"red\": [\"#ee6152\", \"#c8372d\", \"#8f2a22\"], \"pink\": [\"#f9c2d6\", \"#ec8cae\", \"#c45f84\"], \"yellow\": [\"#ffe680\", \"#f7c52b\", \"#d09a12\"], \"orange\": [\"#ffb05a\", \"#f08a2c\", \"#c0661a\"], \"blue\": [\"#9fc4f0\", \"#5f8fd6\", \"#3d63a6\"], \"skin\": [\"#ffd9b8\", \"#f2b98a\", \"#d08f62\"], \"dark\": [\"#5a4a3a\", \"#3f3226\", \"#2a2018\"]}.\nGEOMETRY (placement only): Fourth attached image is only the current plant's placement/pose guide. Canvas190x190, anchor(95,150) under the central stem group. Keep the same stage-specific sizes, ground point and spread of leaves; 2:1isometric stems vertical, leaf clusters spread to the SIDES. It has no style; do NOT copy its flat geometry or colours. Request380x380 transparent; no crop/pad, no ground shadow. Preserve leaf reach below the anchor when shown; anchor is the stem base, not the image bottom.\nSUBJECT: A banana clump after harvest: the fruiting stem is cut down to a short stump (pale concentric sheaths on the cut face), a cut stem lies on the ground, a dry leaf, and two new suckers (daughter plants) with small leaves grow around it. ISOMETRIC version for the farm: build it in 3D and project it with the farm grid — pseudostems are vertical cylinders with iso-ellipse tops; each leaf arches up and droops in the vertical plane of its own compass direction (spread the leaves to the sides, avoid pointing straight at or away from the viewer), with the two blade halves tilted up into a shallow V; the fruit bunch hangs out toward the front-right. Light from the upper-left; no ground shadow (the game adds it). Anchor (95,150) = ground at the base of the clump; leaves reaching toward the viewer extend below the anchor, keep everything inside the canvas. The farm scene is ISOMETRIC (2:1 dimetric): grid point (gx, gy) at height z maps to screen x = 290 + (gx - gy)·32, y = 226 + (gx + gy)·16 - z. Ground-plane directions: +gx runs down-right (32, 16) per tile, +gy runs down-left (-32, 16). Vertical edges stay vertical. HARVESTED stage: thick fruiting stem cut to a short stump with concentric sheath rings on cut top; a cut stem segment lying on the ground (NOT a ground shadow), dry leaf, two standing daughter plants with small green oblong leaves. NO fruit or flowers. ALL FIVE STAGES ARE THE SAME THAI BANANA CULTIVAR: broad banana paddle leaves with curved midribs, drooping tips, grouped torn fringes, overlapping cylindrical sheaths, split dry fibrous sheaths and small leafy suckers. Organic sculpted silhouette and hard cel material planes, not star-shaped palm fronds or tiny-leaf tree foliage. Foliage3tones #8fd05c/#5fae3c/#3e7f2c with leaf_dark3tones only in occluded foliage. Stemsbamboo3tones #ead47e/#c9ad52/#97803a and dried sheathswood3tones #dba56a/#b07a45/#7a4b27. Ripe fruit yellow3tones #ffe680/#f7c52b/#d09a12, unripe fruit greenleaf3tones. No dirt mounds, no rocks, no standing ground grass, no decorations.\nSUBJECT CLARIFICATION: EXACTLY TWO living daughter plants, one left and one right of the single cut stump. Each daughter has one stem. No third sucker, no extra tiny stem or foreground green sprout. Foreground objects only cut log and one dry brown leaf. Stump has no green sprouts.\nSETTINGS: flat 2D game asset, bold clean dark brown outline, flat colours, three-tone cel shading with hard edges, simple chunky shapes, limited palette, isometric 3/4 view, vector illustration, crisp edges, transparent background. Preserve rich material detail despite suffix simple-shape wording. Negative prompt: painterly, brush strokes, soft shading, airbrush, gradient, noise, grain, texture overlay, photorealistic, 3d render, glow, bloom, blur, depth of field, lens effects, tiny details, cluttered, cast shadow, text, watermark, frame, background. Profile v3: OpenAI image_gen provider defaults; no exposed sampler/steps/CFG/seed/reference weights. Exact same input roles for every sprite. Finishing vtracer0.6.15 spline, filter_speckle4, precision8, layer_difference8, corner75,length4,splice45,path_precision2; material palette snap, fresh stroked outline, Laigter1.10.7 fixed preset.",
+      "method": "Own-material native classification -> canvas×2 normalization -> fixed vtracer ->1px internal cleanup -> fresh closed silhouette and1.2px sheath strokes -> fixed SVGO3.3.2. Identical finishing settings across five stages.",
+      "cut_faces": {
+        "stump_centre": [
+          103,
+          122.2
+        ],
+        "stump_normal": [
+          0,
+          0.88,
+          0.475
+        ],
+        "fallen_end_centre": [
+          55.3,
+          158
+        ],
+        "fallen_end_normal": [
+          -0.65,
+          0.2,
+          0.73
+        ]
+      }
     }
   ],
   "changes_since_v2": [
     "Game-size line compensation for immutable prop canvases: visible silhouette2.5/gameScale and inner1.2/gameScale canvas px, so rendering at the new size chart preserves the anchor line weight. Kit/ground scales remain1.",
     "Targeted hand-authored SVG repairs for ground and bamboo foliage preserve approved geometry and culm/node/sheath paths; source images are the repaired drawing reference renders.",
-    "Egg variants use one generated and traced master egg with deterministic shared placements to guarantee exactlyN eggs and identical anchors."
+    "Egg variants use one generated and traced master egg with deterministic shared placements to guarantee exactlyN eggs and identical anchors.",
+    "Profile v4: all five banana sprites normalize their classified native material planes to canvas ×2 before the same vtracer trace, then remove only subpixel islands. Native contours exceeded the40KB SVG budget. Model/reference inputs and Laigter preset are unchanged; fresh style comparison on the kit board. Earlier sets remain recorded as profile3. Recorded1px internal-contour cleanup and SVGO3.3.2 syntax optimization to meet40KB without changing the large material planes or the separate silhouette."
   ]
 }

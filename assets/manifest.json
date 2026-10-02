@@ -5323,7 +5323,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5331,7 +5331,11 @@
         ],
         "output": "assets/scenery/banana_young_iso.svg",
         "normal": "assets/scenery/banana_young_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T05:05:46Z",
+        "file": "assets/scenery/banana_young_iso.svg",
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Smooth untorn juvenile leaves, rolled spike and two suckers; no fruit."
       }
     },
     {
@@ -5382,7 +5386,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5390,7 +5394,11 @@
         ],
         "output": "assets/scenery/banana_fruiting_iso.svg",
         "normal": "assets/scenery/banana_fruiting_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T05:05:46Z",
+        "file": "assets/scenery/banana_fruiting_iso.svg",
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Green plump banana hands and pendant flower; flower uses locked pink triplet because the palette has no purple."
       }
     },
     {
@@ -5441,7 +5449,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5449,7 +5457,11 @@
         ],
         "output": "assets/scenery/banana_ripe_iso.svg",
         "normal": "assets/scenery/banana_ripe_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T05:05:46Z",
+        "file": "assets/scenery/banana_ripe_iso.svg",
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Yellow ripe banana hands with dark tips, sparse sugar spots and dry spent blossom."
       }
     },
     {
@@ -5500,7 +5512,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5508,7 +5520,11 @@
         ],
         "output": "assets/scenery/banana_old_iso.svg",
         "normal": "assets/scenery/banana_old_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T05:05:46Z",
+        "file": "assets/scenery/banana_old_iso.svg",
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Browned wind-torn leaves, hanging dry sheaths and no fruit."
       }
     },
     {
@@ -5559,7 +5575,7 @@
         "review": null
       },
       "restyle_v3": {
-        "status": "todo",
+        "status": "done",
         "style_refs": [
           "kit.duck_house",
           "kit.tree_round_a",
@@ -5567,7 +5583,11 @@
         ],
         "output": "assets/scenery/banana_harvested_iso.svg",
         "normal": "assets/scenery/banana_harvested_iso_n.png",
-        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes."
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors; keep this entry's canvas, anchor and pose (its current painted PNG / layout guide = geometry). Size in game per paint_style.size_chart. Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": "Codex",
+        "updated_at": "2026-10-02T05:05:46Z",
+        "file": "assets/scenery/banana_harvested_iso.svg",
+        "notes": "Profile v4 shared five-stage batch; unchanged190×190canvas and(95,150)anchor, fitted to existing painted geometry bounds. Palette-only SVG with fresh silhouette and1.2px sheath contours; no ground shadow. Recorded Laigter preset, exact2x alpha. Exactly two daughter plants, cut stump, fallen stem and dry leaf; concentric cut faces redrawn with planar normals."
       }
     },
     {
