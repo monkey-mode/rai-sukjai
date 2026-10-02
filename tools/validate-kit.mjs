@@ -110,7 +110,7 @@ if (anchors.length) {
   const ad = anchors.map(id => results[id]).filter(Boolean).map(r => r.detail).sort((x, y) => x - y);
   const med = ad.length ? ad[Math.floor(ad.length / 2)] : 0;
   for (const [id, r] of Object.entries(results)) {
-    if (!med || anchors.includes(id) || id === 'ground.pen') continue;
+    if (!med || anchors.includes(id) || id.startsWith('ground.')) continue;   // grounds are flat by design
     const k = r.detail / med;
     if (k < LIMITS.anchorDetail[0]) warnings.push(`[${id}] much plainer than the style anchors (detail ×${k.toFixed(2)})`);
     if (k > LIMITS.anchorDetail[1]) warnings.push(`[${id}] much busier than the style anchors (detail ×${k.toFixed(2)})`);
