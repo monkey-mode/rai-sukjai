@@ -327,28 +327,51 @@ const FARM_BUILD = buildScene(FARM_RECIPE, FARM_SEED, isoPt);
 const FARM_FOREST = {
   seed: 31,
   edges: [['u', FARM_CLEARING[0], FARM_CLEARING[1], 14], ['v', FARM_CLEARING[1], FARM_CLEARING[0], 20]],
-  rows: [   // [offset beyond the border (tiles), spacing (tiles), shade 0..1, pieces]
-    [.2, .75, 1, ['kit.bush_a', 'kit.bush_b', 'kit.bush_a', 'kit.bush_b', 'kit.flower_patch']],
-    [.9, 1.15, 1, ['kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump', 'kit.tree_golden_shower', 'kit.tree_round_b', 'kit.tree_flame', 'kit.bamboo_clump']],
-    [2.0, 1.25, .86, ['kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump', 'kit.tree_round_a', 'kit.tree_flame']],
-    [3.1, 1.35, .72, ['kit.tree_round_b', 'kit.tree_round_a', 'kit.bamboo_clump', 'kit.tree_round_a']],
-  ],
+  fringe: ['kit.bush_a', 'kit.bush_b', 'kit.flower_patch', 'kit.rock_a', 'kit.bush_b'],             // on the border line
+  trees: ['kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump', 'kit.tree_golden_shower', 'kit.tree_flame',
+    'kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump'],                                     // weights: duplicates = more common
+  under: ['kit.bush_a', 'kit.bush_b'],                                                                // undergrowth between trees
+  depth: 4.2,          // forest band width beyond the border (tiles)
+  density: 1.1,        // trees per tile of border per tile of depth
 };
+// Shuffle-bag: every piece in the pool comes up once before any repeats, so the mix stays even but random.
+function shuffleBag(pool, rnd) {
+  let bag = [];
+  return () => { if (!bag.length) { bag = pool.slice(); for (let i = bag.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [bag[i], bag[j]] = [bag[j], bag[i]]; } } return bag.pop(); };
+}
 function forestSprites(F, pt) {
-  const rnd = mulberry32(F.seed), out = [];
+  const rnd = mulberry32(F.seed), out = [], nextTree = shuffleBag(F.trees, rnd), nextFringe = shuffleBag(F.fringe, rnd), nextUnder = shuffleBag(F.under, rnd);
+  const inside = (u, v) => u > FARM_CLEARING[0] - .1 && v > FARM_CLEARING[1] - .1;
+  const free = (u, v, d) => !out.some(p => Math.hypot(p[1] - u, p[2] - v) < d);
+  const add = (id, u, v, shade, kLo, kHi) => {
+    const [x, y] = pt(u, v);
+    if (inside(u, v) || x < -330 || x > 1130 || y < 50) return false;
+    const flip = /round_b|bush|flower|rock/.test(id) && rnd() < .5;
+    out.push([id, +u.toFixed(2), +v.toFixed(2), +(kLo + rnd() * (kHi - kLo)).toFixed(2), flip, +shade.toFixed(2)]);
+    return true;
+  };
   for (const [axis, val, from, to] of F.edges) {
-    for (const [off, gap, shade, ids] of F.rows) {
-      for (let t = from + rnd() * gap; t < to; t += gap * (0.85 + rnd() * .3)) {
-        const fixed = val - off - rnd() * .35, u = axis === 'u' ? fixed : t, v = axis === 'u' ? t : fixed;
-        if (u > FARM_CLEARING[0] - .1 && v > FARM_CLEARING[1] - .1) continue;                  // never inside the clearing
-        const [x, y] = pt(u, v);
-        if (x < -320 || x > 1120 || y < 50) continue;
-        if (out.some(p => Math.hypot(p[1] - u, p[2] - v) < gap * .6)) continue;                // the two edges meet at the corner
-        const id = ids[Math.floor(rnd() * ids.length)], flip = /round_b|bush|flower/.test(id) && rnd() < .5;
-        out.push([id, +u.toFixed(2), +v.toFixed(2), +(0.9 + rnd() * .2).toFixed(2), flip, shade]);
-      }
+    const at = (t, off) => axis === 'u' ? [val - off, t] : [t, val - off];
+    // fringe: an uneven line of bushes, flowers and rocks hugging the border
+    for (let t = from + rnd() * .5; t < to; t += .45 + rnd() * .6) {
+      const [u, v] = at(t, .1 + rnd() * .45);
+      if (free(u, v, .45)) add(nextFringe(), u, v, 1, .8, 1.15);
+    }
+    // trees: scattered through the band (no rows), denser toward the border, darker the deeper they stand
+    const n = Math.round((to - from) * F.depth * F.density);
+    for (let i = 0, tries = 0; i < n && tries < n * 30; tries++) {
+      const off = .7 + Math.pow(rnd(), 1.4) * F.depth, [u, v] = at(from + rnd() * (to - from), off);
+      if (!free(u, v, .8 + rnd() * .35)) continue;
+      const shade = 1 - (off - .7) / F.depth * .32 - rnd() * .06;
+      if (add(nextTree(), u, v, shade, .82, 1.18)) i++;
+    }
+    // undergrowth in the gaps
+    for (let i = 0; i < (to - from) * 1.2; i++) {
+      const off = .5 + rnd() * F.depth * .7, [u, v] = at(from + rnd() * (to - from), off);
+      if (free(u, v, .5)) add(nextUnder(), u, v, 1 - (off / F.depth) * .3, .85, 1.2);
     }
   }
   return out;
 }
-const FARM_FOREST_SPRITES = forestSprites(FARM_FOREST, isoPt);
+const FOREST_SEED = SCENE_SEED('forestseed') || FARM_FOREST.seed;
+const FARM_FOREST_SPRITES = forestSprites({ ...FARM_FOREST, seed: FOREST_SEED }, isoPt);
