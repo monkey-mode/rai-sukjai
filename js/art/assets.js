@@ -47,16 +47,52 @@ const ASSET_SPECS = (() => {
   add('character.uncle_mee', 'assets/characters/uncle_mee.svg', 47, 104, 24, 100);
   add('animal.duck', 'assets/animals/duck.svg', 51, 45, 26, 41);
   add('scenery.cloud', 'assets/scenery/cloud.svg', 90, 44, 45, 22);
+  // Scene kit (duck pen pilot): painted pieces the game assembles scenes from, plus the scene's painted ground.
+  add('ground.pen', 'assets/backgrounds/ground_pen.svg', 1400, 600, 300, 0);
+  add('ground.farm', 'assets/backgrounds/ground_farm.svg', 1400, 600, 300, 0);
+  // grass ground cover: each tuft in green and dry (hot season) versions, same canvas and anchor
+  [['grass_tuft_a', 40, 30, 20, 26], ['grass_tuft_b', 34, 28, 17, 24], ['grass_tuft_c', 46, 34, 23, 30], ['grass_tuft_d', 28, 22, 14, 19],
+    ['grass_tall', 48, 46, 24, 42], ['grass_edge', 32, 18, 16, 15], ['grass_flower_white', 40, 32, 20, 28], ['grass_flower_pink', 40, 32, 20, 28]]
+    .forEach(([n, w, h, ax, ay]) => ['', '_dry'].forEach(d => add(`kit.${n}${d}`, `assets/kit/${n}${d}.svg`, w, h, ax, ay)));
+  // rice clumps planted in rows in the paddies (FARM_PADDIES in js/art/iso.js)
+  [['rice_young_a', 30, 30, 15, 26], ['rice_young_b', 30, 30, 15, 26], ['rice_ripe_a', 36, 34, 18, 30], ['rice_ripe_b', 36, 34, 18, 30]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
+  [['field_hut', 130, 120, 65, 104], ['scarecrow', 44, 64, 22, 58], ['tree_golden_shower', 160, 180, 80, 170], ['tree_flame', 180, 170, 90, 160], ['flower_patch', 50, 30, 25, 24]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
+  [['fence_span_se', 48, 66, 8, 46], ['fence_span_sw', 48, 66, 40, 46], ['fence_post', 16, 48, 8, 44], ['duck_house', 240, 200, 120, 140], ['tree_round_a', 170, 190, 85, 178], ['tree_round_b', 140, 160, 70, 150], ['bamboo_clump', 120, 200, 60, 190], ['bush_a', 90, 56, 45, 48], ['bush_b', 64, 42, 32, 36], ['rock_a', 54, 34, 27, 28], ['rock_b', 40, 26, 20, 21], ['haystack', 76, 66, 38, 58], ['water_jar', 48, 54, 24, 48], ['reeds', 54, 56, 27, 50], ['egret', 32, 44, 16, 41]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   add('ui.logo', 'assets/ui/logo.svg', 480, 150, 240, 75);
   // 800x600 safe area with 300 px of bleed each side
   ['farm', 'village', 'market', 'pen'].forEach(n => add(`bg.${n}`, `assets/backgrounds/${n}.svg`, 1400, 600, 300, 0));
   return list;
 })();
 
+// Size chart for the isometric scenes (docs/style-contract.md): the in-game size of each character, animal and prop,
+// so they share one scale with the kit pieces (drawn at game size). An asset's canvas is scaled by gameScale(id);
+// `h` is the height above the ground point, `w` the width (for flat props like the nest).
+const SIZE_CHART = {
+  'character.farmer': { h: 96 }, 'character.uncle_mee': { h: 96 },    // adults: a little under the duck house (105)
+  'animal.duck': { h: 38 },
+  'prop.nest': { w: 100 }, 'prop.egg_pile': { same: 'prop.nest' },      // eggs sit in the nest, so they share its scale
+  'prop.egg_basket': { h: 56 }, 'prop.trough': { w: 110 },
+};
+function gameScale(id) {
+  const key = /^prop\.egg_pile_\d+$/.test(id) ? 'prop.egg_pile' : id, c = SIZE_CHART[key];
+  if (!c) return 1;
+  if (c.same) return gameScale(c.same);
+  const sp = ASSET_SPECS[id];
+  return c.h ? c.h / sp.ay : c.w / sp.w;
+}
+
+// Where the painted-art pass saves an asset (manifest `paint.output`): PNG sprites, WebP backgrounds.
+const paintedPath = output => output.replace(/^assets\//, 'assets/painted/').replace(/\.svg$/, output.startsWith('assets/backgrounds/') ? '.webp' : '.png');
+
 const Assets = {
-  // Manifest statuses whose files the game uses. Everything else keeps the code-drawn art.
-  USE_STATUSES: ['done', 'approved'],
+  // Manifest statuses whose files the game uses. Everything else keeps the code-drawn art. A `needs_changes` asset
+  // still has a working file, which stays in use until its replacement is done.
+  USE_STATUSES: ['done', 'approved', 'needs_changes'],
   found: {}, // id -> file path
+  normal: {}, // art file path -> its normal map (for the moving light, js/ui/light.js)
 
   has(id) { return Object.prototype.hasOwnProperty.call(this.found, id); },
 
@@ -81,8 +117,15 @@ const Assets = {
     } catch (e) { /* file:// page, probe instead */ }
     if (entries) {
       for (const a of entries) {
-        // a pre-rendered raster (tools/rasterize-backgrounds.mjs) is cheaper to draw on phones than a big SVG
-        if (ASSET_SPECS[a.id] && a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
+        if (!ASSET_SPECS[a.id]) continue;
+        // a finished painted version wins; otherwise the SVG, or its pre-rendered raster (tools/rasterize-backgrounds.mjs),
+        // which is cheaper to draw on phones than a big SVG
+        // a finished style-v3 file wins over an earlier painted version
+        const rv = a.restyle_v3, fin = st => ['done', 'approved'].includes(st);
+        if (rv && rv.file && fin(rv.status)) { this.found[a.id] = rv.file; if (rv.normal) this.normal[rv.file] = rv.normal; }   // style-v3 restyle
+        else if (a.style === 'flat-v3' && a.file && fin(a.status)) { this.found[a.id] = a.file; if (a.normal) this.normal[a.file] = a.normal; }
+        else if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
+        else if (a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }
     } else {
       const probe = src => new Promise(done => {
@@ -93,7 +136,8 @@ const Assets = {
       });
       await Promise.all(Object.entries(ASSET_SPECS).map(async ([id, sp]) => {
         const webp = sp.output.startsWith('assets/backgrounds/') && sp.output.replace(/\.svg$/, '.webp');
-        if (webp && await probe(webp)) this.found[id] = webp;
+        if (sp.output.endsWith('.svg') && await probe(paintedPath(sp.output))) this.found[id] = paintedPath(sp.output);
+        else if (webp && await probe(webp)) this.found[id] = webp;
         else if (await probe(sp.output)) this.found[id] = sp.output;
       }));
     }

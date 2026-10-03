@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 134" width="12" height="134">
-<!-- prop.signpole · wooden signpost pole. Anchor (6,134) = ground -->
-<g stroke-linejoin="round" stroke-linecap="round">
-<path d="M3 6L6 2L9 6V133H3Z" fill="#8a5a2e" stroke="#3a2213" stroke-width="2"/><path d="M5 12V60M7 70V120" fill="none" stroke="#6e4526" stroke-width="1"/><path d="M3 50H9M3 102H9" fill="none" stroke="#6e4526" stroke-width="1.2"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="134" viewBox="0 0 12 134"><g stroke-linejoin="round" stroke-linecap="round"><path d="M2.5 5L6 1.5L9.5 5V132.75H2.5Z" fill="#7d4f2a" stroke="#3a2213" stroke-width="2.5"/><path d="M3.8 5.4L6 3.1V131.5H3.8Z" fill="#a8703e"/><path d="M7 5.4L8.2 6V131.5H7Z" fill="#55331b"/><path d="M5 17q-1 11 0 17M5 91q-1 12 0 22M3.5 46l4 1M3.5 109l4 1" fill="none" stroke="#6b4428" stroke-width="1.2"/></g></svg>

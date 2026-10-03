@@ -119,6 +119,7 @@ function applyCam() {
   cam.cy = Math.min(Math.max(cam.cy, h / 2), STAGE.H - h / 2);
   const vb = `${(cam.cx - w / 2).toFixed(1)} ${(cam.cy - h / 2).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`;
   for (const el of stage.querySelectorAll(':scope > svg')) el.setAttribute('viewBox', vb);
+  if (typeof Light !== 'undefined') Light.draw();   // the light follows the camera
   zoomEl.innerHTML = S && S.scene === 'farm' && !modal.classList.contains('on')
     ? `<button data-cam="in" title="ซูมเข้า · Zoom in">+</button><button data-cam="out" title="ซูมออก · Zoom out" ${cam.z <= 1 ? 'disabled' : ''}>−</button>` : '';
 }

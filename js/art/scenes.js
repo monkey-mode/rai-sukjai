@@ -3,7 +3,114 @@
 
 // Isometric farm. The painted asset covers sky, horizon, paddies, house, trees, yard, field bunds and the
 // paddock's back fence; the game adds what moves or stands in front: clouds, buffalo, the paddock front fence.
+// ---- Farm from its scene kit (FARM_RECIPE in js/art/iso.js). The game switches once ground.farm and every new kit
+// piece are done (`?kit=1` forces it with placeholders); until then it keeps bg.farm. Existing sprites (house,
+// shrine, palms, bananas, buffalo) stay where they are and pick up their v3 restyles through the loader.
+const FARM_KIT_IDS = ['ground.farm', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
+  ...new Set(FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks, FARM_FOREST_SPRITES).map(p => p[0]))];
+function farmKitActive() { return KIT_DEBUG || FARM_KIT_IDS.every(id => Assets.has(id)); }
+const farmKitSprite = (id, u, v, k, flip, depth = u + v) => kitSprite(id, u, v, k, flip, depth, isoPt);
+
+// Yard and field bunds in art style v3 (palette tones + the locked outline), drawn by the game so they line up with
+// the plots exactly.
+function isoFarmGroundV3() {
+  const [x0, y0, x1, y1] = ISO.YARD;
+  let s = isoBlock(x0, y0, x1, y1, ISO.YARD_DEPTH, '#ecd09a', '#d4ab6c', '#a97f4a');
+  for (let fi = 0; fi < 4; fi++) {
+    const [gx, gy] = fieldOrigin(fi), m = ISO.RIM;
+    s += isoBlock(gx - m, gy - m, gx + 4 + m, gy + 3 + m, ISO.RIM_DEPTH, '#a8d468', '#82b84a', '#5f9038');
+  }
+  return s;
+}
+
+// The forest floor beyond the clearing, drawn on the grid so the border is exactly the clearing's two edge lines.
+function farmForestFloor() {
+  const [cu, cv] = FARM_CLEARING, P = (u, v) => isoPt(u, v).map(r).join(',');
+  const border = `${P(cu, 30)} ${P(cu, cv)} ${P(40, cv)}`;
+  return `<polygon points="${border} 1500,-700 -900,-700" fill="#3f7a2e"/>` +
+    `<polyline points="${border}" fill="none" stroke="#3a2213" stroke-width="2.5" stroke-linejoin="round"/>`;
+}
+const forestSprite = ([id, u, v, k, flip, shade]) => {
+  const [d, svg] = farmKitSprite(id, u, v, k, flip);
+  return [d, shade < 1 ? `<g style="filter:brightness(${shade})">${svg}</g>` : svg];
+};
+
+// ---- Grass ground cover. In the hot season the dry versions are used when they exist. The tufts never move, so once
+// their images load they are baked into one image per scene and season (fast to repaint while panning); until then,
+// or where baking is not allowed (file://), they are drawn as individual images.
+const grassDry = () => typeof S !== 'undefined' && S && seasonOf(S.day) === 'hot';
+const grassId = id => grassDry() && Assets.has(id + '_dry') ? id + '_dry' : id;
+const GRASS_BAKED = {};
+function grassLayer(scene, sprites, pt) {
+  const key = scene + (grassDry() ? ':dry' : '');
+  if (GRASS_BAKED[key]) return `<image href="${GRASS_BAKED[key]}" x="-300" y="0" width="1400" height="600"/>`;
+  const list = sprites.map(([id, u, v, k, flip]) => [grassId(id), ...pt(u, v), k, flip]).filter(([id]) => Assets.has(id) || KIT_DEBUG);
+  if (!list.length) return '';
+  if (list.every(([id]) => Assets.has(id))) bakeGrass(key, list);
+  return list.sort((a, b) => a[2] - b[2]).map(([id, x, y, k, flip]) => Assets.has(id)
+    ? `<g transform="translate(${r(x)} ${r(y)}) scale(${flip ? -k : k} ${k})">${Assets.image(id)}</g>`
+    : `<path d="M${r(x - 5)} ${r(y)}l2 -9M${r(x)} ${r(y)}v-12M${r(x + 5)} ${r(y)}l-2 -9" stroke="#2c5a24" stroke-width="2.4" stroke-linecap="round"/>`).join('');
+}
+async function bakeGrass(key, list) {
+  if (bakeGrass.busy || GRASS_BAKED[key]) return;
+  bakeGrass.busy = true;
+  try {
+    const K = 2, c = document.createElement('canvas'); c.width = 1400 * K; c.height = 600 * K;
+    const g = c.getContext('2d'), imgs = {};
+    await Promise.all([...new Set(list.map(l => l[0]))].map(id => new Promise((ok, bad) => { const i = new Image(); i.onload = () => { imgs[id] = i; ok(); }; i.onerror = bad; i.src = Assets.found[id]; })));
+    for (const [id, x, y, k, flip] of list.sort((a, b) => a[2] - b[2])) {
+      const sp = ASSET_SPECS[id];
+      g.setTransform(K * (flip ? -k : k), 0, 0, K * k, (x + 300) * K, y * K);
+      g.drawImage(imgs[id], -sp.ax, -sp.ay, sp.w, sp.h);
+    }
+    GRASS_BAKED[key] = c.toDataURL('image/webp', .9);
+    // the same tufts' normal maps, for the moving light (mirrored tufts get mirrored normals)
+    if (typeof Light !== 'undefined' && list.every(([id]) => Assets.normal[Assets.found[id]])) {
+      const n = document.createElement('canvas'); n.width = c.width; n.height = c.height;
+      const ng = n.getContext('2d'); ng.fillStyle = 'rgb(128,128,255)'; ng.fillRect(0, 0, n.width, n.height);
+      for (const [id, x, y, k, flip] of list) {
+        const sp = ASSET_SPECS[id], src = await Light.normalImage(Assets.normal[Assets.found[id]], flip);
+        ng.setTransform(K * (flip ? -k : k), 0, 0, K * k, (x + 300) * K, y * K);
+        ng.drawImage(src, -sp.ax, -sp.ay, sp.w, sp.h);
+      }
+      Light.bakedNormal.set(GRASS_BAKED[key], n);
+    }
+  } catch (e) { /* file:// or a missing tuft: keep the individual images */ }
+  bakeGrass.busy = false;
+  // redraw with the baked image; a bake asked for while this one ran (the other scene or season) starts on that render
+  const cur = typeof S !== 'undefined' && S ? S.scene + (grassDry() ? ':dry' : '') : null;
+  if (typeof ui !== 'undefined' && GRASS_BAKED[key] && (cur === key || (/^(farm|pen)/.test(cur) && !GRASS_BAKED[cur]))) { ui.bgScene = null; render(); }
+}
+
+function farmKitGround() {
+  if (Assets.has('ground.farm')) return bleed(Assets.image('ground.farm'), 'ground.farm');
+  const [cu, cv] = FARM_CLEARING;   // placeholder: grass clearing, forest beyond its back edges, paddies, canal, pond, path
+  const poly = pts => pts.map(p => isoPt(...p).map(r).join(',')).join(' ');
+  const pc = isoPt(...FARM_POND.at);
+  return `<rect x="-300" width="1400" height="600" fill="#a8d468"/>` +
+    `<polygon points="${poly([[cu, 30], [cu, cv], [40, cv]])} 1400,-600 -800,-600" fill="#3f7a2e"/>` +
+    `<polygon points="${poly([[cu, cv + .1], [-2.75, cv + .1], [-2.75, 11], [cu, 11]])}" fill="#9edcf2" stroke="#5f9038" stroke-width="2"/>` +
+    `<polygon points="${poly([[-2.62, -8], [-2.26, -8], [-2.26, 11], [-2.62, 11]])}" fill="#5fbbe2"/>` +
+    ell(pc[0], pc[1], FARM_POND.r[0], FARM_POND.r[1], '#5fbbe2', 0, 2) +
+    `<polyline points="${poly(FARM_PATH)}" fill="none" stroke="#d4ab6c" stroke-width="34" stroke-linecap="round"/>`;
+}
+
 function farmBG() {
+  if (farmKitActive()) {
+    const b = FARM_SPOTS.buffalo;
+    const bGrid = [((b[0] - ISO.OX) / 32 + (b[1] - ISO.OY) / 16) / 2, ((b[1] - ISO.OY) / 16 - (b[0] - ISO.OX) / 32) / 2];
+    const fences = fenceSprites(FARM_FENCES).map(([id, u, v, k]) => farmKitSprite(id, u, v, k, false,
+      u + v + (id === 'kit.fence_span_se' || id === 'kit.fence_span_sw' ? .5 * k : 0)));
+    const items = [[bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`]]
+      .concat(fences, plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean),
+        FARM_RECIPE.landmarks.map(([id, u, v, k, flip]) => farmKitSprite(id, u, v, k, flip)),
+        FARM_BUILD.pieces.map(p => farmKitSprite(...p)), FARM_FOREST_SPRITES.map(forestSprite));
+    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + grassLayer('farm', FARM_GRASS.concat(FARM_RICE), isoPt) + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
+  }
+  return farmBGOld();
+}
+
+function farmBGOld() {
   const [px0, py0, px1, py1] = ISO.PADDOCK, b = FARM_SPOTS.buffalo;
   const clouds = cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + cloud(120, 64, .6, 'd2');
   // the buffalo and the paddock's front fence join the plant sprites in one back-to-front pass
@@ -154,7 +261,39 @@ function marketCounter() {
   return s;
 }
 
+// ---- Duck pen from its scene kit (js/art/iso.js: PEN_LAYOUT, PEN_FENCES). The game switches to it once the painted
+// ground and every piece are done; until then it keeps the single painted bg.pen. `?kit=1` in the URL forces the kit
+// and draws a labelled box for each missing piece, to check the layout before the art arrives.
+const PEN_KIT_IDS = ['ground.pen', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
+  ...new Set(PEN_LAYOUT.back.concat(PEN_LAYOUT.pen).map(p => p[0]))];
+function penKitActive() { return KIT_DEBUG || PEN_KIT_IDS.every(id => Assets.has(id)); }
+
+// A kit piece at pen grid (u, v) as a [depth, svg] item, with the soft ground shadow the game adds (not for fences).
+function kitSprite(id, u, v, k = 1, flip = false, depth, pt = penPt) {
+  const [x, y] = pt(u, v), sp = ASSET_SPECS[id];
+  const shadow = id.startsWith('kit.fence') ? '' : `<ellipse cx="0" cy="1" rx="${r(sp.w * .3)}" ry="${r(sp.w * .09)}" fill="rgba(58,34,19,.18)"/>`;
+  const has = Assets.has(id), art = has ? Assets.image(id) : kitPlaceholder(id);
+  return [depth ?? y, `<g transform="translate(${r(x)} ${r(y)}) scale(${flip && has ? -k : k} ${k})">${shadow}${art}</g>`];
+}
+
+function kitPlaceholder(id) {
+  const sp = ASSET_SPECS[id];
+  if (id === 'kit.fence_post') return line('M0 0V-34', '#8a5a2e', 5);
+  if (id.startsWith('kit.fence_span')) { const dx = id.endsWith('se') ? 32 : -32; return line(`M0 0V-34M0 -11L${dx} 5M0 -23L${dx} -7`, '#8a5a2e', 4); }
+  return `<rect x="${-sp.ax}" y="${-sp.ay}" width="${sp.w}" height="${sp.h}" rx="6" fill="rgba(255,255,255,.3)" stroke="#6b3fa0" stroke-width="1.5" stroke-dasharray="5 3"/>` +
+    `<circle r="3" fill="#6b3fa0"/><text y="${-sp.ay + 13}" text-anchor="middle" font-family="Sarabun" font-size="10" fill="#4a2a70">${id.replace(/^(kit|scenery)\./, '')}</text>`;
+}
+
+function penKitGround() {
+  if (Assets.has('ground.pen')) return bleed(Assets.image('ground.pen'), 'ground.pen');
+  const floor = [penPt(0, 0), penPt(12.5, 0), penPt(12.5, 12.5), penPt(0, 12.5)].map(q => q.join(',')).join(' ');
+  return `<rect x="-300" width="1400" height="600" fill="#a9c95e"/><polygon points="${penPt(-9, 40).join(',')} ${penPt(-9, -11).join(',')} ${penPt(40, -11).join(',')} 2200,-900 -1500,-900" fill="#3f6a2c"/>` +
+    `<polygon points="${floor}" fill="#cdbf7e" stroke="#8a7a4a" stroke-width="2"/>` + ell(...penPt(7.5, -4.2), 150, 60, '#6fb3c4', 0, 2);
+}
+
 function penBG() {
+  if (penKitActive()) return penKitGround() + grassLayer('pen', PEN_GRASS, penPt) + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') +
+    depthSorted(PEN_LAYOUT.back.map(p => kitSprite(...p))) + uncleMee(96, 318);
   if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen'), 'bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');
   { const hills = `<path d="M0 150Q60 120 120 140Q190 110 260 138Q330 112 400 136Q470 114 540 138Q620 116 700 136Q760 120 800 132V170H0Z" fill="#5f8f3e" ${SW} stroke-width="2.5"/>`; s += hills + `<g transform="translate(-800 0)">${hills}</g><g transform="translate(800 0)">${hills}</g>`; }

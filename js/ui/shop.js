@@ -11,7 +11,7 @@ function renderPanel() {
     : `<button class="shop-open glow" data-act="shop-open" data-seller="daeng">🛒 ซื้อของป้าแดง<small>Seeds & supplies</small></button>`}
     ${BACK_TO_MAP}`;
   } else if (S.scene === 'pen') {
-    panel.innerHTML = `<div class="bubble" style="left:8px;top:6px;width:176px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
+    panel.innerHTML = `<div class="bubble" style="left:8px;top:92px;width:176px">เป็ดกินอิ่ม ไข่ก็ดกนะหลาน<small>Well-fed ducks lay every day</small></div>
     ${ui.shopOpen ? shopBoard(SELLERS[ui.shopOpen])
     : `<button class="shop-open mee glow" data-act="shop-open" data-seller="mee">🦆 ซื้อสัตว์ลุงมี<small>Ducks & feed</small></button>`}
     ${BACK_TO_MAP}`;

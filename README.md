@@ -50,6 +50,10 @@ All art comes from asset files coordinated through one central file, `assets/man
 
 `node tools/rasterize-backgrounds.mjs` renders the four backgrounds to WebP (1.5x). The game draws the WebP when it exists, since a big vector background is slow to redraw on phones; re-run it after changing a background SVG.
 
+`node tools/export-layouts.mjs` renders the current art of every asset into `assets/painted/_layout/`, at the pixel size of its painted version. The painting AI uses these as composition guides (see "Painted art pass" in assets/README.md). The game uses a painted file as soon as its `paint.status` is `done`.
+
+Scenes are built from kits of painted pieces: see [docs/map-design-guide.md](docs/map-design-guide.md) (kit, recipe and rules). `node tools/export-kit-guides.mjs` draws the guide images for scene-kit pieces (the duck pen pilot), plus `pen_kit_composition.jpg`, which shows where each piece stands. `index.html?kit=1` shows the assembled pen with placeholders for pieces that aren't painted yet.
+
 ## Screens and controls
 
 The stage is 600 high and 800–1400 wide, so it fills anything from 4:3 to 21:9 (see `style_guide.stage` in the manifest). On small screens the HUD, toolbar and shop panels are drawn larger. On the farm, zoom with the + / − buttons, the mouse wheel or a pinch, and drag to pan; phones start zoomed in on the fields.
