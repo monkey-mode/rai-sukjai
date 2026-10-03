@@ -54,6 +54,9 @@ const ASSET_SPECS = (() => {
   [['grass_tuft_a', 40, 30, 20, 26], ['grass_tuft_b', 34, 28, 17, 24], ['grass_tuft_c', 46, 34, 23, 30], ['grass_tuft_d', 28, 22, 14, 19],
     ['grass_tall', 48, 46, 24, 42], ['grass_edge', 32, 18, 16, 15], ['grass_flower_white', 40, 32, 20, 28], ['grass_flower_pink', 40, 32, 20, 28]]
     .forEach(([n, w, h, ax, ay]) => ['', '_dry'].forEach(d => add(`kit.${n}${d}`, `assets/kit/${n}${d}.svg`, w, h, ax, ay)));
+  // rice clumps planted in rows in the paddies (FARM_PADDIES in js/art/iso.js)
+  [['rice_young_a', 30, 30, 15, 26], ['rice_young_b', 30, 30, 15, 26], ['rice_ripe_a', 36, 34, 18, 30], ['rice_ripe_b', 36, 34, 18, 30]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   [['field_hut', 130, 120, 65, 104], ['scarecrow', 44, 64, 22, 58], ['tree_golden_shower', 160, 180, 80, 170], ['tree_flame', 180, 170, 90, 160], ['flower_patch', 50, 30, 25, 24]]
     .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   [['fence_span_se', 48, 66, 8, 46], ['fence_span_sw', 48, 66, 40, 46], ['fence_post', 16, 48, 8, 44], ['duck_house', 240, 200, 120, 140], ['tree_round_a', 170, 190, 85, 178], ['tree_round_b', 140, 160, 70, 150], ['bamboo_clump', 120, 200, 60, 190], ['bush_a', 90, 56, 45, 48], ['bush_b', 64, 42, 32, 36], ['rock_a', 54, 34, 27, 28], ['rock_b', 40, 26, 20, 21], ['haystack', 76, 66, 38, 58], ['water_jar', 48, 54, 24, 48], ['reeds', 54, 56, 27, 50], ['egret', 32, 44, 16, 41]]

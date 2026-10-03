@@ -71,6 +71,33 @@ fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/pen_kit_composition.jpg
 await game.evaluate(() => { S.scene = 'farm'; ui.bgScene = null; cam.z = 1; render(); for (const sel of ['#hud', '#toolbar', '#panel', '#zoom']) { const el = document.querySelector(sel); if (el) el.style.visibility = 'hidden'; } });
 await game.waitForTimeout(400);
 fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/farm_kit_composition.jpg'), await game.screenshot({ type: 'jpeg', quality: 85 }));
+// the paddy redraw guide: the approved farm ground (canvas 1400×600, canvas x = scene x + 300) with FARM_PADDIES drawn
+// on top: field outlines and states, dike centre lines and widths, the mound, and planted rice positions
+const paddies = await game.evaluate(async () => {
+  const img = await new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = 'assets/backgrounds/ground_farm.svg'; });
+  const K = 2, c = document.createElement('canvas'); c.width = 1400 * K; c.height = 600 * K;
+  const g = c.getContext('2d'); g.drawImage(img, 0, 0, c.width, c.height); g.fillStyle = 'rgba(255,255,255,.35)'; g.fillRect(0, 0, c.width, c.height);
+  g.setTransform(K, 0, 0, K, 300 * K, 0);
+  const P = (u, v) => isoPt(u, v), quad = (u0, v0, u1, v1) => { g.beginPath(); [P(u0, v0), P(u1, v0), P(u1, v1), P(u0, v1)].forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); };
+  const d = FARM_PADDIES.dike / 2;
+  for (const [u0, v0, u1, v1, st] of FARM_PADDIES.fields) {
+    quad(u0, v0, u1, v1); g.fillStyle = st === 'ripe' ? 'rgba(224,189,94,.45)' : 'rgba(95,187,226,.45)'; g.fill();
+    // the dike: a band of the dike width centred on the field edge
+    g.strokeStyle = 'rgba(63,122,38,.9)'; g.lineWidth = 2; quad(u0 - d, v0 - d, u1 + d, v1 + d); g.stroke(); quad(u0 + d, v0 + d, u1 - d, v1 - d); g.stroke();
+    g.strokeStyle = '#3a2213'; g.lineWidth = .8; g.setLineDash([4, 3]); quad(u0, v0, u1, v1); g.stroke(); g.setLineDash([]);
+    const [x, y] = P((u0 + u1) / 2, (v0 + v1) / 2); g.fillStyle = '#1d3a5a'; g.font = 'bold 11px sans-serif'; g.textAlign = 'center';
+    g.fillText(st === 'ripe' ? 'RIPE (drained, mud)' : 'FLOODED (water)', x, y);
+  }
+  for (const [mu, mv, ru, rv] of FARM_MOUNDS) {
+    g.beginPath(); for (let a = 0; a <= 64; a++) { const t = a / 64 * Math.PI * 2, [x, y] = P(mu + ru * Math.cos(t), mv + rv * Math.sin(t)); a ? g.lineTo(x, y) : g.moveTo(x, y); }
+    g.strokeStyle = '#6b3fa0'; g.lineWidth = 1.5; g.setLineDash([5, 3]); g.stroke(); g.setLineDash([]);
+    const [x, y] = P(mu, mv); g.fillStyle = '#4a2a70'; g.fillText('MOUND (keep)', x, y);
+  }
+  g.fillStyle = 'rgba(29,58,90,.8)';
+  for (const [id, u, v] of FARM_RICE) { const [x, y] = P(u, v); g.fillRect(x - 1, y - 1, 2, 2); }
+  return c.toDataURL('image/png');
+});
+save('assets/painted/_layout/ground.farm.paddies.png', paddies);
 server.close();
 await browser.close();
-console.log(`${pieces.length} kit guides, pen_kit_composition.jpg and farm_kit_composition.jpg in assets/painted/_layout/`);
+console.log(`${pieces.length} kit guides, pen_kit_composition.jpg farm_kit_composition.jpg and ground.farm.paddies.png in assets/painted/_layout/`);

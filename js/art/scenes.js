@@ -103,7 +103,7 @@ function farmBG() {
       .concat(fences, plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean),
         FARM_RECIPE.landmarks.map(([id, u, v, k, flip]) => farmKitSprite(id, u, v, k, flip)),
         FARM_BUILD.pieces.map(p => farmKitSprite(...p)), FARM_FOREST_SPRITES.map(forestSprite));
-    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + grassLayer('farm', FARM_GRASS, isoPt) + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
+    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + grassLayer('farm', FARM_GRASS.concat(FARM_RICE), isoPt) + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
   }
   return farmBGOld();
 }

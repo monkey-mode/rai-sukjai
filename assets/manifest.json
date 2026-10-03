@@ -6560,12 +6560,209 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.farm.jpg",
-      "status": "approved",
+      "status": "needs_changes",
       "file": "assets/backgrounds/ground_farm.svg",
       "agent": "Codex",
       "updated_at": "2026-10-02T20:27:23Z",
       "notes": "Far forest wall only: three receding rows of rounded canopy silhouettes, two distant palms and two bamboo silhouettes. Leaf_dark #5a9a3e/#3f7a2e in front, grass #82b84a and light leaf #8fd05c behind, far light grass #a8d468. Fresh closed #3a2213 outline at 2.5 px on nearest row only; no gradients, cast shadows or standing objects in clearing. All 47 approved non-forest SVG elements retained byte-for-byte; approved clearing pixel-identical at 2×. Targeted vector repair from a generated forest reference; _source updated as final 2800×1200 drawing render. Profile v4 byte-identical. Default farm and farmseed=12 inspected. Required checks pass; only pre-existing size/detail advisories on untouched approved assets. External Google Fonts unavailable in browser preview; fallback font used.",
-      "review": "Approved by the owner (2026-10-03): layered forest wall fixed; the farm kit is complete."
+      "review": "Owner (2026-10-03): redraw the RICE PADDIES ONLY to match the latest style. Everything outside the paddy area (gx -6.2…-2.7, between the forest border and the canal) stays byte-identical. The rice itself is no longer painted: the game plants kit.rice_* clumps in rows on top.",
+      "redraw": {
+        "area": "paddies",
+        "layout": "assets/painted/_layout/ground.farm.paddies.png",
+        "prompt": "Redraw the paddy area of ground.farm (between the forest border gx = -6.2 and the canal, gx -6.2…-2.7, all gy) to follow FARM_PADDIES in js/art/iso.js exactly, as drawn on the guide ground.farm.paddies.png (fields, dike centre lines, the mound). (1) DIKES (คันนา): slim raised grass ridges along every field edge, 0.16 tiles wide (about 7–9 px across on screen), grass tones with the light tone on the up-left face and the shadow tone on the down-right face, closed #3a2213 outline 2.5 px on both long sides where they meet the water; a few tiny grass blades on top; they meet in clean T and + joints. (2) FLOODED FIELDS (state 'young' on the guide): shallow water in the three water tones, flat and hard-edged: base tone filling the field, a light-tone band of sky reflection along each field's upper-left inside edge, a shadow-tone band along the down-right edge under the dike; 2–4 short hard-edged light ripple strokes per field. NO rice, rows, ticks or seedlings painted: the game plants rice clumps (kit.rice_young_*) in rows on top. (3) RIPE FIELDS (state 'ripe'): drained, damp field in the mud tones with a few darker wet patches and 1–2 small water puddles; NO rice painted (the game plants kit.rice_ripe_*). (4) The raised grassy mound (โคก) at (-4.4, 0.2) and the canal stay as approved. (5) Keep the flat-v3 rules: palette only, no gradients, blur or texture noise, no standing objects, no cast shadows. Re-render the normal map for the redrawn area only (water and mud flat, dikes rounded like a low ridge)."
+      }
+    },
+    {
+      "id": "kit.rice_young_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นข้าวกล้า",
+      "name_en": "Young rice clump A",
+      "output": "assets/kit/rice_young_a.svg",
+      "format": "svg",
+      "canvas": [
+        30,
+        30
+      ],
+      "anchor": [
+        15,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        0.3,
+        0.25
+      ],
+      "height_px": 20,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip",
+        "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "kit.grass_tuft_a"
+      ],
+      "prompt": "YOUNG (green) rice, A: 7–9 upright, slightly arching narrow leaves in a vase shape, taller in the middle, tips leaning a little to the right; leaf / grass tones (bright fresh green, a touch more yellow-green than the grass tufts so the paddies read apart from the grass). RICE CLUMP for the flooded paddies; hundreds are planted in straight rows by the game, standing in shallow water (the water is in ground.farm, so paint NO water, ripples or reflection). GROUND COVER (style-contract exception, owner-approved, same as the approved grass tufts): NO outer #3a2213 outline. Crisp, hard-edged three-tone cel shapes from the palette only, upper-left sun: light tone on blades and heads facing up-left, base tone in the middle, shadow tone on the down-right side and at the base; a few 1 px inner lines in the shadow tone may separate blades. Chunky and readable at game size like the approved grass tufts (same blade width, same shading), never hair-thin or noisy. The clump grows from one tight base point on the anchor (rice is transplanted as a bundle), its base 2–3 px in the darkest tone where it meets the water line. Transparent background, no ground shadow, no soil. Isometric camera about 30° down.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rice_young_a.png",
+      "normal": "assets/kit/rice_young_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.rice_young_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นข้าวกล้า",
+      "name_en": "Young rice clump B",
+      "output": "assets/kit/rice_young_b.svg",
+      "format": "svg",
+      "canvas": [
+        30,
+        30
+      ],
+      "anchor": [
+        15,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        0.3,
+        0.25
+      ],
+      "height_px": 18,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip",
+        "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "kit.grass_tuft_a"
+      ],
+      "prompt": "YOUNG (green) rice, B: the same plant as A but a different clump: 6–8 leaves, a little shorter and wider, tips leaning left; same tones as A. RICE CLUMP for the flooded paddies; hundreds are planted in straight rows by the game, standing in shallow water (the water is in ground.farm, so paint NO water, ripples or reflection). GROUND COVER (style-contract exception, owner-approved, same as the approved grass tufts): NO outer #3a2213 outline. Crisp, hard-edged three-tone cel shapes from the palette only, upper-left sun: light tone on blades and heads facing up-left, base tone in the middle, shadow tone on the down-right side and at the base; a few 1 px inner lines in the shadow tone may separate blades. Chunky and readable at game size like the approved grass tufts (same blade width, same shading), never hair-thin or noisy. The clump grows from one tight base point on the anchor (rice is transplanted as a bundle), its base 2–3 px in the darkest tone where it meets the water line. Transparent background, no ground shadow, no soil. Isometric camera about 30° down.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rice_young_b.png",
+      "normal": "assets/kit/rice_young_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.rice_ripe_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รวงข้าวสุก",
+      "name_en": "Ripe rice clump A",
+      "output": "assets/kit/rice_ripe_a.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        34
+      ],
+      "anchor": [
+        18,
+        30
+      ],
+      "scale": 1,
+      "footprint": [
+        0.3,
+        0.25
+      ],
+      "height_px": 24,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip",
+        "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "kit.grass_tuft_a"
+      ],
+      "prompt": "RIPE (golden) rice, A: the same clump grown up: 6–8 straw-tone leaves with 4–5 heavy golden panicles (rice heads) arching over and drooping to the right, grains suggested by a few hard-edged bumps along each head; straw tones for heads and upper leaves, a little grass shadow tone left at the base. RICE CLUMP for the flooded paddies; hundreds are planted in straight rows by the game, standing in shallow water (the water is in ground.farm, so paint NO water, ripples or reflection). GROUND COVER (style-contract exception, owner-approved, same as the approved grass tufts): NO outer #3a2213 outline. Crisp, hard-edged three-tone cel shapes from the palette only, upper-left sun: light tone on blades and heads facing up-left, base tone in the middle, shadow tone on the down-right side and at the base; a few 1 px inner lines in the shadow tone may separate blades. Chunky and readable at game size like the approved grass tufts (same blade width, same shading), never hair-thin or noisy. The clump grows from one tight base point on the anchor (rice is transplanted as a bundle), its base 2–3 px in the darkest tone where it meets the water line. Transparent background, no ground shadow, no soil. Isometric camera about 30° down.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rice_ripe_a.png",
+      "normal": "assets/kit/rice_ripe_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.rice_ripe_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รวงข้าวสุก",
+      "name_en": "Ripe rice clump B",
+      "output": "assets/kit/rice_ripe_b.svg",
+      "format": "svg",
+      "canvas": [
+        36,
+        34
+      ],
+      "anchor": [
+        18,
+        30
+      ],
+      "scale": 1,
+      "footprint": [
+        0.3,
+        0.25
+      ],
+      "height_px": 22,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip",
+        "water"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "kit.grass_tuft_a"
+      ],
+      "prompt": "RIPE (golden) rice, B: a different ripe clump: 3–4 panicles drooping to the left, slightly shorter and rounder; same tones as A. RICE CLUMP for the flooded paddies; hundreds are planted in straight rows by the game, standing in shallow water (the water is in ground.farm, so paint NO water, ripples or reflection). GROUND COVER (style-contract exception, owner-approved, same as the approved grass tufts): NO outer #3a2213 outline. Crisp, hard-edged three-tone cel shapes from the palette only, upper-left sun: light tone on blades and heads facing up-left, base tone in the middle, shadow tone on the down-right side and at the base; a few 1 px inner lines in the shadow tone may separate blades. Chunky and readable at game size like the approved grass tufts (same blade width, same shading), never hair-thin or noisy. The clump grows from one tight base point on the anchor (rice is transplanted as a bundle), its base 2–3 px in the darkest tone where it meets the water line. Transparent background, no ground shadow, no soil. Isometric camera about 30° down.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rice_ripe_b.png",
+      "normal": "assets/kit/rice_ripe_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
     },
     {
       "id": "kit.grass_tuft_a",

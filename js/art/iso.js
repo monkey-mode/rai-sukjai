@@ -409,3 +409,35 @@ const PEN_GRASS = grassSprites({
   seed: 13, range: [-22, 30, -22, 30], step: .5,
   blocked: (u, v, x, y) => PEN_RECIPE.blocked(u, v) || PEN_RECIPE.water(x, y) < 1.08,
 }, penPt);
+
+// ---- Rice paddies (flooded fields, painted in ground.farm without rice). The fields are rectangles on the farm grid,
+// separated by grassy dikes (คันนา) along their edges; the game plants rice clumps in straight rows inside each field,
+// young and green or ripe and golden, and bakes them with the grass. [gx0, gy0, gx1, gy1, state]
+const FARM_PADDIES = {
+  dike: .16,                                       // dike width in tiles (centred on each field edge)
+  inset: .24,                                      // clear water between a dike's centre line and the first row
+  row: .3, step: .27,                              // row spacing (across gx) and clump spacing along a row (gy)
+  fields: [
+    [-6.2, -6.5, -4.5, -4.4, 'young'], [-4.5, -6.5, -2.75, -4.4, 'young'],
+    [-6.2, -4.4, -2.75, -2.5, 'ripe'],
+    [-6.2, -2.5, -2.75, 3.0, 'young'],             // around the mound (FARM_MOUNDS): rice only in the water
+    [-6.2, 3.0, -4.5, 6.1, 'ripe'], [-4.5, 3.0, -2.75, 6.1, 'young'],
+    [-6.2, 6.1, -2.75, 16, 'young'],                // runs on into the left bleed
+  ],
+};
+const RICE_KIT = { young: ['kit.rice_young_a', 'kit.rice_young_b'], ripe: ['kit.rice_ripe_a', 'kit.rice_ripe_b'] };
+function riceSprites({ fields, inset, row, step }, { seed = 17, clear = [], pt = isoPt } = {}) {
+  const rnd = mulberry32(seed), out = [];
+  const onMound = (u, v) => FARM_MOUNDS.some(([mu, mv, ru, rv]) => Math.hypot((u - mu) / ru, (v - mv) / rv) <= 1.05);
+  for (const [u0, v0, u1, v1, state] of fields) {
+    const n = Math.floor((u1 - u0 - 2 * inset) / row), uOff = u0 + (u1 - u0 - n * row) / 2;
+    for (let i = 0; i <= n; i++) for (let v = v0 + inset; v <= v1 - inset + 1e-9; v += step) {
+      const u = uOff + i * row + (rnd() - .5) * .04, gv = v + (rnd() - .5) * .05, [x, y] = pt(u, gv);
+      const id = RICE_KIT[state][rnd() < .5 ? 0 : 1], k = +(.88 + rnd() * .2).toFixed(2), flip = rnd() < .5;
+      if (x < -310 || x > 1110 || y < 50 || y > 600 || onMound(u, gv) || clear.some(([cu, cv, cr]) => Math.hypot(u - cu, gv - cv) < cr)) continue;
+      out.push([id, +u.toFixed(2), +gv.toFixed(2), k, flip]);
+    }
+  }
+  return out;
+}
+const FARM_RICE = riceSprites(FARM_PADDIES, { clear: FARM_RECIPE.landmarks.map(([, u, v]) => [u, v, .7]) });

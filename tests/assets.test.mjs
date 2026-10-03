@@ -206,3 +206,27 @@ test('grass ground cover: tufts only on open grass (never on the yard, fields, p
     assert.ok(byId[v].tags.includes('groundcover'), `${v} must be tagged groundcover`);
   }
 });
+
+test('rice paddies: clumps in rows inside the fields, never on the mound, dikes or near the hut and scarecrow', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, SPECS: ASSET_SPECS };', ctx);
+  const { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, SPECS } = ctx.X;
+  const { manifest } = checkManifest();
+  const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  assert.ok(FARM_RICE.length > 200, 'rice is planted');
+  for (const [id, u, v] of FARM_RICE) {
+    const f = FARM_PADDIES.fields.find(([a, b, c, d]) => u >= a && u <= c && v >= b && v <= d);
+    assert.ok(f, `rice outside the paddies at (${u}, ${v})`);
+    assert.ok(id.includes(f[4]), `${id} planted in a ${f[4]} field`);
+    const edge = Math.min(u - f[0], f[2] - u, v - f[1], f[3] - v);
+    assert.ok(edge > FARM_PADDIES.dike / 2 + .05, `rice on a dike at (${u}, ${v})`);
+    for (const [mu, mv, ru, rv] of FARM_MOUNDS) assert.ok(Math.hypot((u - mu) / ru, (v - mv) / rv) > 1, `rice on the mound at (${u}, ${v})`);
+    for (const [, lu, lv] of FARM_RECIPE.landmarks) assert.ok(Math.hypot(u - lu, v - lv) >= .7, `rice under a landmark at (${u}, ${v})`);
+  }
+  for (const id of new Set(FARM_RICE.map(p => p[0]))) {
+    assert.ok(SPECS[id] && byId[id], `${id} missing`);
+    assert.ok(byId[id].tags.includes('groundcover'), `${id} must be tagged groundcover`);
+  }
+});
