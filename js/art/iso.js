@@ -289,6 +289,8 @@ const FARM_RECIPE = (() => {
     blocked: (u, v, x, y, id) => {
       if (!inClear(u, v)) return true;                                           // beyond the border: the forest generator's ground
       if (inClear(u, v) && (inRect(FARM_ZONES.yard, u, v, .4) || ['canal', 'paddock', 'house', 'stairs', 'shrine'].some(z => inRect(FARM_ZONES[z], u, v, .15)))) return true;
+      // standing pieces are wider than their anchor: keep their bodies from hanging over the canal and the paddies
+      if (id !== 'grass' && id !== 'kit.egret' && inClear(u, v) && inRect([FARM_ZONES.paddies[0], FARM_ZONES.paddies[1], FARM_ZONES.canal[2], FARM_ZONES.canal[3]], u, v, .9) && !onMound(u, v)) return true;
       if (inPaddy(u, v) && id !== 'kit.egret') return true;                      // only egrets wade in the paddies
       return pathDist(u, v) < .8;                                                // R2: the path stays clear
     },

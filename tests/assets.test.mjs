@@ -211,8 +211,11 @@ test('rice paddies: clumps in rows inside the fields, never on the mound, dikes 
   const vm = await import('node:vm');
   const ctx = vm.createContext({});
   vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
-    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, SPECS: ASSET_SPECS };', ctx);
-  const { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, SPECS } = ctx.X;
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, FARM_BUILD, SPECS: ASSET_SPECS };', ctx);
+  const { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, FARM_BUILD, SPECS } = ctx.X;
+  // standing pieces keep their bodies clear of the canal and the paddies (egrets wade in them; the mound is dry land)
+  for (const [id, u, v] of FARM_BUILD.pieces) if (id !== 'kit.egret' && u > -6.2 && v > -6.5)
+    assert.ok(u >= FARM_ZONES.canal[2] + .9 || u < FARM_ZONES.paddies[0] || (FARM_MOUNDS.some(([mu, mv, ru, rv]) => Math.hypot((u - mu) / ru, (v - mv) / rv) <= .85)), `${id} at (${u}, ${v}) hangs over the canal or a paddy`);
   // the grass stays out of the paddies (the mound is grass) and the canal, along their whole length
   const onMound = (u, v) => FARM_MOUNDS.some(([mu, mv, ru, rv]) => Math.hypot((u - mu) / ru, (v - mv) / rv) <= 1);
   for (const [, u, v] of FARM_GRASS) {
