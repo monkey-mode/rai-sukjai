@@ -99,7 +99,7 @@ for (const a of pieces) {
     if (k < LIMITS.height[0] || k > LIMITS.height[1]) errors.push(`${tag} ${Math.round(r.height)} px tall, contract says ~${a.height_px} px`);
   }
   if (kit && r.clipped > 4) warnings.push(`${tag} touches the canvas edge (${r.clipped} px): it may be clipped`);
-  if (kit && r.outlineShare < LIMITS.outline) errors.push(`${tag} only ${Math.round(r.outlineShare * 100)}% of the silhouette edge is the outline colour: redraw the closed outline`);
+  if (kit && !(a.tags || []).includes('groundcover') && r.outlineShare < LIMITS.outline) errors.push(`${tag} only ${Math.round(r.outlineShare * 100)}% of the silhouette edge is the outline colour: redraw the closed outline`);
   if (kit && (a.tags || []).includes('block') && /house|hut|shed/.test(a.id) && r.footprint < LIMITS.footprintBlock) errors.push(`${tag} covers ${Math.round(r.footprint * 100)}% of its footprint diamond: the building must fill its footprint`);
   if (r.sourceIoU !== undefined) {
     if (r.sourceIoU < LIMITS.sourceIoU) errors.push(`${tag} silhouette changed after tracing (IoU ${r.sourceIoU.toFixed(2)} vs the approved source)`);
@@ -110,7 +110,7 @@ if (anchors.length) {
   const ad = anchors.map(id => results[id]).filter(Boolean).map(r => r.detail).sort((x, y) => x - y);
   const med = ad.length ? ad[Math.floor(ad.length / 2)] : 0;
   for (const [id, r] of Object.entries(results)) {
-    if (!med || anchors.includes(id) || id.startsWith('ground.')) continue;   // grounds are flat by design
+    if (!med || anchors.includes(id) || id.startsWith('ground.') || id.startsWith('kit.grass_')) continue;   // grounds are flat by design
     const k = r.detail / med;
     if (k < LIMITS.anchorDetail[0]) warnings.push(`[${id}] much plainer than the style anchors (detail ×${k.toFixed(2)})`);
     if (k > LIMITS.anchorDetail[1]) warnings.push(`[${id}] much busier than the style anchors (detail ×${k.toFixed(2)})`);

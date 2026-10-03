@@ -212,9 +212,10 @@ function posHand() { handEl.style.transform = `translate(${ui.px + 8}px, ${ui.py
 
 function render() {
   if (!S) return;
-  if (ui.bgScene !== S.scene) {
+  const bgKey = S.scene + (grassDry() ? ':dry' : '');      // the grass changes with the season
+  if (ui.bgScene !== bgKey) {
     bgEl.innerHTML = { map: villageBG, market: marketBG, pen: penBG }[S.scene]?.() ?? farmBG();
-    ui.bgScene = S.scene;
+    ui.bgScene = bgKey;
   }
   renderAnim();
   if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else if (S.scene === 'map') renderMap(); else dynEl.innerHTML = '';

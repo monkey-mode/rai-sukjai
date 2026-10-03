@@ -35,6 +35,40 @@ const forestSprite = ([id, u, v, k, flip, shade]) => {
   return [d, shade < 1 ? `<g style="filter:brightness(${shade})">${svg}</g>` : svg];
 };
 
+// ---- Grass ground cover. In the hot season the dry versions are used when they exist. The tufts never move, so once
+// their images load they are baked into one image per scene and season (fast to repaint while panning); until then,
+// or where baking is not allowed (file://), they are drawn as individual images.
+const grassDry = () => typeof S !== 'undefined' && S && seasonOf(S.day) === 'hot';
+const grassId = id => grassDry() && Assets.has(id + '_dry') ? id + '_dry' : id;
+const GRASS_BAKED = {};
+function grassLayer(scene, sprites, pt) {
+  const key = scene + (grassDry() ? ':dry' : '');
+  if (GRASS_BAKED[key]) return `<image href="${GRASS_BAKED[key]}" x="-300" y="0" width="1400" height="600"/>`;
+  const list = sprites.map(([id, u, v, k, flip]) => [grassId(id), ...pt(u, v), k, flip]).filter(([id]) => Assets.has(id) || KIT_DEBUG);
+  if (!list.length) return '';
+  if (list.every(([id]) => Assets.has(id))) bakeGrass(key, list);
+  return list.sort((a, b) => a[2] - b[2]).map(([id, x, y, k, flip]) => Assets.has(id)
+    ? `<g transform="translate(${r(x)} ${r(y)}) scale(${flip ? -k : k} ${k})">${Assets.image(id)}</g>`
+    : `<path d="M${r(x - 5)} ${r(y)}l2 -9M${r(x)} ${r(y)}v-12M${r(x + 5)} ${r(y)}l-2 -9" stroke="#2c5a24" stroke-width="2.4" stroke-linecap="round"/>`).join('');
+}
+async function bakeGrass(key, list) {
+  if (bakeGrass.busy || GRASS_BAKED[key]) return;
+  bakeGrass.busy = true;
+  try {
+    const K = 2, c = document.createElement('canvas'); c.width = 1400 * K; c.height = 600 * K;
+    const g = c.getContext('2d'), imgs = {};
+    await Promise.all([...new Set(list.map(l => l[0]))].map(id => new Promise((ok, bad) => { const i = new Image(); i.onload = () => { imgs[id] = i; ok(); }; i.onerror = bad; i.src = Assets.found[id]; })));
+    for (const [id, x, y, k, flip] of list.sort((a, b) => a[2] - b[2])) {
+      const sp = ASSET_SPECS[id];
+      g.setTransform(K * (flip ? -k : k), 0, 0, K * k, (x + 300) * K, y * K);
+      g.drawImage(imgs[id], -sp.ax, -sp.ay, sp.w, sp.h);
+    }
+    GRASS_BAKED[key] = c.toDataURL('image/webp', .9);
+    if (typeof ui !== 'undefined' && S && S.scene + (grassDry() ? ':dry' : '') === key) { ui.bgScene = null; render(); }
+  } catch (e) { /* file:// or a missing tuft: keep the individual images */ }
+  bakeGrass.busy = false;
+}
+
 function farmKitGround() {
   if (Assets.has('ground.farm')) return bleed(Assets.image('ground.farm'), 'ground.farm');
   const [cu, cv] = FARM_CLEARING;   // placeholder: grass clearing, forest beyond its back edges, paddies, canal, pond, path
@@ -58,7 +92,7 @@ function farmBG() {
       .concat(fences, plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean),
         FARM_RECIPE.landmarks.map(([id, u, v, k, flip]) => farmKitSprite(id, u, v, k, flip)),
         FARM_BUILD.pieces.map(p => farmKitSprite(...p)), FARM_FOREST_SPRITES.map(forestSprite));
-    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
+    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + grassLayer('farm', FARM_GRASS, isoPt) + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
   }
   return farmBGOld();
 }
@@ -245,7 +279,7 @@ function penKitGround() {
 }
 
 function penBG() {
-  if (penKitActive()) return penKitGround() + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') +
+  if (penKitActive()) return penKitGround() + grassLayer('pen', PEN_GRASS, penPt) + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') +
     depthSorted(PEN_LAYOUT.back.map(p => kitSprite(...p))) + uncleMee(96, 318);
   if (Assets.has('bg.pen')) return bleed(Assets.image('bg.pen'), 'bg.pen') + cloud(430, 40, .8, '') + cloud(630, 30, .6, 'd2') + uncleMee(96, 318);
   let s = `<rect x="-300" width="1400" height="160" fill="#9fd6ee"/>` + cloud(640, 80, .8, '') + cloud(360, 70, .6, 'd2');

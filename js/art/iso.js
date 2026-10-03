@@ -375,3 +375,37 @@ function forestSprites(F, pt) {
 }
 const FOREST_SEED = SCENE_SEED('forestseed') || FARM_FOREST.seed;
 const FARM_FOREST_SPRITES = forestSprites({ ...FARM_FOREST, seed: FOREST_SEED }, isoPt);
+
+// ---- Grass ground cover (docs/style-contract.md: ground cover). Hundreds of small tufts over the open grass, placed
+// by a density map: dense in open grass, thinning raggedly toward anything blocked (yard, fields, paths, water,
+// floors), with soft patches from value noise. Tufts carry no outer outline and are baked into one image layer.
+const GRASS_KIT = [   // [id, weight]
+  ['kit.grass_tuft_a', 6], ['kit.grass_tuft_b', 6], ['kit.grass_tuft_c', 5], ['kit.grass_tuft_d', 4],
+  ['kit.grass_tall', 2], ['kit.grass_flower_white', 1], ['kit.grass_flower_pink', .7],
+];
+function grassSprites({ blocked, range: [u0, u1, v0, v1], step = .42, seed = 11, maxY = 600 }, pt) {
+  const rnd = mulberry32(seed), out = [];
+  const ph = [rnd() * 6, rnd() * 6, rnd() * 6, rnd() * 6];
+  const noise = (u, v) => .5 + .25 * Math.sin(u * .9 + ph[0]) * Math.cos(v * .7 + ph[1]) + .25 * Math.sin((u + v) * .45 + ph[2]) * Math.sin((u - v) * .6 + ph[3]);
+  const total = GRASS_KIT.reduce((a, [, w]) => a + w, 0);
+  const pick = () => { let r = rnd() * total; for (const [id, w] of GRASS_KIT) if ((r -= w) < 0) return id; return GRASS_KIT[0][0]; };
+  const ring = [[1, 0], [-1, 0], [0, 1], [0, -1], [.7, .7], [-.7, .7], [.7, -.7], [-.7, -.7]];
+  for (let u = u0; u < u1; u += step) for (let v = v0; v < v1; v += step) {
+    const gu = u + (rnd() - .5) * step, gv = v + (rnd() - .5) * step, [x, y] = pt(gu, gv);
+    if (x < -310 || x > 1110 || y < 50 || y > maxY || blocked(gu, gv, x, y)) continue;
+    const open = ring.filter(([a, b]) => { const [xx, yy] = pt(gu + a * .6, gv + b * .6); return !blocked(gu + a * .6, gv + b * .6, xx, yy); }).length / ring.length;
+    const density = open * open * (.45 + .55 * noise(gu, gv));
+    if (rnd() > density) continue;
+    const id = open < .75 ? (rnd() < .6 ? 'kit.grass_edge' : 'kit.grass_tuft_d') : pick();
+    out.push([id, +gu.toFixed(2), +gv.toFixed(2), +(.85 + rnd() * .3).toFixed(2), rnd() < .5]);
+  }
+  return out;
+}
+const FARM_GRASS = grassSprites({
+  seed: 11, range: [-6.4, 26, -6.6, 22],
+  blocked: (u, v, x, y) => FARM_RECIPE.blocked(u, v, x, y, 'grass') || FARM_RECIPE.water(x, y) < 1.08,
+}, isoPt);
+const PEN_GRASS = grassSprites({
+  seed: 13, range: [-22, 30, -22, 30], step: .5,
+  blocked: (u, v, x, y) => PEN_RECIPE.blocked(u, v) || PEN_RECIPE.water(x, y) < 1.08,
+}, penPt);

@@ -6568,6 +6568,742 @@
       "review": "Approved by the owner (2026-10-03): layered forest wall fixed; the farm kit is complete."
     },
     {
+      "id": "kit.grass_tuft_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft A",
+      "output": "assets/kit/grass_tuft_a.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        30
+      ],
+      "anchor": [
+        20,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 22,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft of 9–12 blades, rounded fan shape, slightly taller on the left. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_a.png",
+      "normal": "assets/kit/grass_tuft_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_a_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft A — dry",
+      "output": "assets/kit/grass_tuft_a_dry.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        30
+      ],
+      "anchor": [
+        20,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 22,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft of 9–12 blades, rounded fan shape, slightly taller on the left. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_a_dry.png",
+      "normal": "assets/kit/grass_tuft_a_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft B",
+      "output": "assets/kit/grass_tuft_b.svg",
+      "format": "svg",
+      "canvas": [
+        34,
+        28
+      ],
+      "anchor": [
+        17,
+        24
+      ],
+      "scale": 1,
+      "footprint": [
+        0.45,
+        0.3
+      ],
+      "height_px": 20,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft of 7–10 blades, more upright and narrow than tuft A, one blade bent over to the right. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_b.png",
+      "normal": "assets/kit/grass_tuft_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_b_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft B — dry",
+      "output": "assets/kit/grass_tuft_b_dry.svg",
+      "format": "svg",
+      "canvas": [
+        34,
+        28
+      ],
+      "anchor": [
+        17,
+        24
+      ],
+      "scale": 1,
+      "footprint": [
+        0.45,
+        0.3
+      ],
+      "height_px": 20,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft of 7–10 blades, more upright and narrow than tuft A, one blade bent over to the right. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_b_dry.png",
+      "normal": "assets/kit/grass_tuft_b_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_c",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft C",
+      "output": "assets/kit/grass_tuft_c.svg",
+      "format": "svg",
+      "canvas": [
+        46,
+        34
+      ],
+      "anchor": [
+        23,
+        30
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.4
+      ],
+      "height_px": 26,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A wide, full grass tuft of 12–15 blades in two layers (a darker back layer and a lighter front layer). GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_c.png",
+      "normal": "assets/kit/grass_tuft_c_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_c_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft C — dry",
+      "output": "assets/kit/grass_tuft_c_dry.svg",
+      "format": "svg",
+      "canvas": [
+        46,
+        34
+      ],
+      "anchor": [
+        23,
+        30
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.4
+      ],
+      "height_px": 26,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A wide, full grass tuft of 12–15 blades in two layers (a darker back layer and a lighter front layer). GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_c_dry.png",
+      "normal": "assets/kit/grass_tuft_c_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_d",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft D (small)",
+      "output": "assets/kit/grass_tuft_d.svg",
+      "format": "svg",
+      "canvas": [
+        28,
+        22
+      ],
+      "anchor": [
+        14,
+        19
+      ],
+      "scale": 1,
+      "footprint": [
+        0.35,
+        0.25
+      ],
+      "height_px": 15,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A small low tuft of 5–7 short blades. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_d.png",
+      "normal": "assets/kit/grass_tuft_d_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tuft_d_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft D (small) — dry",
+      "output": "assets/kit/grass_tuft_d_dry.svg",
+      "format": "svg",
+      "canvas": [
+        28,
+        22
+      ],
+      "anchor": [
+        14,
+        19
+      ],
+      "scale": 1,
+      "footprint": [
+        0.35,
+        0.25
+      ],
+      "height_px": 15,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A small low tuft of 5–7 short blades. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tuft_d_dry.png",
+      "normal": "assets/kit/grass_tuft_d_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tall",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Tall grass clump",
+      "output": "assets/kit/grass_tall.svg",
+      "format": "svg",
+      "canvas": [
+        48,
+        46
+      ],
+      "anchor": [
+        24,
+        42
+      ],
+      "scale": 1,
+      "footprint": [
+        0.55,
+        0.4
+      ],
+      "height_px": 38,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A tall clump of 12–16 long arching blades, a couple of them bending over at the tips, plus two thin seed-head stalks. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tall.png",
+      "normal": "assets/kit/grass_tall_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_tall_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Tall grass clump — dry",
+      "output": "assets/kit/grass_tall_dry.svg",
+      "format": "svg",
+      "canvas": [
+        48,
+        46
+      ],
+      "anchor": [
+        24,
+        42
+      ],
+      "scale": 1,
+      "footprint": [
+        0.55,
+        0.4
+      ],
+      "height_px": 38,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A tall clump of 12–16 long arching blades, a couple of them bending over at the tips, plus two thin seed-head stalks. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_tall_dry.png",
+      "normal": "assets/kit/grass_tall_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_edge",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Edge wisps",
+      "output": "assets/kit/grass_edge.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        18
+      ],
+      "anchor": [
+        16,
+        15
+      ],
+      "scale": 1,
+      "footprint": [
+        0.45,
+        0.3
+      ],
+      "height_px": 10,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Sparse low grass wisps for the ragged edge where grass meets dirt: 4–6 short separate blades spread wide, lots of gap between them. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_edge.png",
+      "normal": "assets/kit/grass_edge_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_edge_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Edge wisps — dry",
+      "output": "assets/kit/grass_edge_dry.svg",
+      "format": "svg",
+      "canvas": [
+        32,
+        18
+      ],
+      "anchor": [
+        16,
+        15
+      ],
+      "scale": 1,
+      "footprint": [
+        0.45,
+        0.3
+      ],
+      "height_px": 10,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Sparse low grass wisps for the ragged edge where grass meets dirt: 4–6 short separate blades spread wide, lots of gap between them. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_edge_dry.png",
+      "normal": "assets/kit/grass_edge_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_flower_white",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft with white flowers",
+      "output": "assets/kit/grass_flower_white.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        28
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 24,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft (like tuft A) with 3 small white daisy-like flowers on thin stems poking above it (white tones, yellow centres). GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_flower_white.png",
+      "normal": "assets/kit/grass_flower_white_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_flower_white_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft with white flowers — dry",
+      "output": "assets/kit/grass_flower_white_dry.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        28
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 24,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft (like tuft A) with 3 small white daisy-like flowers on thin stems poking above it (white tones, yellow centres). GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_flower_white_dry.png",
+      "normal": "assets/kit/grass_flower_white_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_flower_pink",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า",
+      "name_en": "Grass tuft with pink flowers",
+      "output": "assets/kit/grass_flower_pink.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        28
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 24,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft with 2–3 small pink flowers (pink tones) on thin stems poking above it. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_flower_pink.png",
+      "normal": "assets/kit/grass_flower_pink_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
+      "id": "kit.grass_flower_pink_dry",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอหญ้า (แห้ง)",
+      "name_en": "Grass tuft with pink flowers — dry",
+      "output": "assets/kit/grass_flower_pink_dry.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        28
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.35
+      ],
+      "height_px": 24,
+      "style": "flat-v3",
+      "tags": [
+        "groundcover",
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A medium grass tuft with 2–3 small pink flowers (pink tones) on thin stems poking above it. GROUND COVER (style-contract exception, owner-approved): NO outer #3a2213 outline. Build the tuft from crisp, hard-edged blade shapes in the grass/leaf palette tones only: darkest tone at the base and on blades facing down-right, base tone in the middle, light tone on the tips and on blades facing up-left (upper-left sun); a few blades may carry a 1 px inner line in the shadow tone to separate them. Blades are broad, slightly curved, pointed leaves fanning up and out from one base point, like the reference farm games: chunky and readable, not hair-thin, not noisy. The base sits on the anchor; the bottom 2–3 px fade into the darkest tone so the tuft grows out of the ground. Transparent background, no ground shadow, no soil, no stones. Seen from the game's isometric camera (about 30° down), so the base reads as a small flat ellipse. DRY (hot season) version: the SAME silhouette, blade layout and canvas as the green version, recoloured to sun-dried grass: straw tones for most blades with a few grass-tone blades left at the base; flowers (if any) keep their colour.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.grass_flower_pink_dry.png",
+      "normal": "assets/kit/grass_flower_pink_dry_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": "",
+      "review": null
+    },
+    {
       "id": "kit.field_hut",
       "category": "kit",
       "priority": 1,
@@ -7739,6 +8475,7 @@
       "prop.egg_basket": "56 px tall",
       "prop.trough": "110 px wide",
       "reference": "duck house 105 px, round tree 140–170 px, fence post 36 px"
-    }
+    },
+    "ground_cover": "Owner-approved exception to the locked outline rule: pieces tagged `groundcover` (grass tufts) have NO outer outline, because hundreds of them are placed per scene and outlines would form a noisy web. They still use only palette tones, hard-edged three-tone shading and the upper-left sun. Every standing object keeps the outline."
   }
 }

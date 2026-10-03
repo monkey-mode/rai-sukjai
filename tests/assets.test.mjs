@@ -186,3 +186,23 @@ test('farm kit: every placed piece is a known asset, stays off the fields, path 
     for (const [a, b, c, d] of FARM_RECIPE.keepClear) assert.ok(!(x > a && x < c && y > b && y < d), `${id} at (${u}, ${v}) covers the UI or a prop`);
   }
 });
+
+test('grass ground cover: tufts only on open grass (never on the yard, fields, paths, water or pen floor) and every tuft has a green and a dry asset', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { isoPt, penPt, FARM_GRASS, PEN_GRASS, FARM_RECIPE, PEN_RECIPE, SPECS: ASSET_SPECS };', ctx);
+  const { isoPt, penPt, FARM_GRASS, PEN_GRASS, FARM_RECIPE, PEN_RECIPE, SPECS } = ctx.X;
+  const { manifest } = checkManifest();
+  const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  assert.ok(FARM_GRASS.length > 300 && PEN_GRASS.length > 300, 'grass is placed');
+  for (const [id, u, v] of FARM_GRASS) {
+    const [x, y] = isoPt(u, v);
+    assert.ok(!FARM_RECIPE.blocked(u, v, x, y, 'grass') && FARM_RECIPE.water(x, y) >= 1, `farm tuft on blocked ground at (${u}, ${v})`);
+  }
+  for (const [id, u, v] of PEN_GRASS) { const [x, y] = penPt(u, v); assert.ok(!PEN_RECIPE.blocked(u, v) && PEN_RECIPE.water(x, y) >= 1, `pen tuft on the floor or water at (${u}, ${v})`); }
+  for (const id of new Set(FARM_GRASS.concat(PEN_GRASS).map(p => p[0]))) for (const v of [id, id + '_dry']) {
+    assert.ok(SPECS[v] && byId[v], `${v} missing`);
+    assert.ok(byId[v].tags.includes('groundcover'), `${v} must be tagged groundcover`);
+  }
+});
