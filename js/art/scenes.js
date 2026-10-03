@@ -7,7 +7,7 @@
 // piece are done (`?kit=1` forces it with placeholders); until then it keeps bg.farm. Existing sprites (house,
 // shrine, palms, bananas, buffalo) stay where they are and pick up their v3 restyles through the loader.
 const FARM_KIT_IDS = ['ground.farm', 'kit.fence_span_se', 'kit.fence_span_sw', 'kit.fence_post',
-  ...new Set(FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks).map(p => p[0]))];
+  ...new Set(FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks, FARM_FOREST_SPRITES).map(p => p[0]))];
 function farmKitActive() { return KIT_DEBUG || FARM_KIT_IDS.every(id => Assets.has(id)); }
 const farmKitSprite = (id, u, v, k, flip, depth = u + v) => kitSprite(id, u, v, k, flip, depth, isoPt);
 
@@ -22,6 +22,18 @@ function isoFarmGroundV3() {
   }
   return s;
 }
+
+// The forest floor beyond the clearing, drawn on the grid so the border is exactly the clearing's two edge lines.
+function farmForestFloor() {
+  const [cu, cv] = FARM_CLEARING, P = (u, v) => isoPt(u, v).map(r).join(',');
+  const border = `${P(cu, 30)} ${P(cu, cv)} ${P(40, cv)}`;
+  return `<polygon points="${border} 1500,-700 -900,-700" fill="#3f7a2e"/>` +
+    `<polyline points="${border}" fill="none" stroke="#3a2213" stroke-width="2.5" stroke-linejoin="round"/>`;
+}
+const forestSprite = ([id, u, v, k, flip, shade]) => {
+  const [d, svg] = farmKitSprite(id, u, v, k, flip);
+  return [d, shade < 1 ? `<g style="filter:brightness(${shade})">${svg}</g>` : svg];
+};
 
 function farmKitGround() {
   if (Assets.has('ground.farm')) return bleed(Assets.image('ground.farm'), 'ground.farm');
@@ -45,8 +57,8 @@ function farmBG() {
     const items = [[bGrid[0] + bGrid[1], `<g transform="translate(${b[0]} ${b[1]}) scale(${FARM_SCALE.buffalo}) translate(${-b[0]} ${-b[1]})">${buffalo(b[0], b[1])}</g>`]]
       .concat(fences, plantSprites(), [spiritHouseSprite(), houseSprite()].filter(Boolean),
         FARM_RECIPE.landmarks.map(([id, u, v, k, flip]) => farmKitSprite(id, u, v, k, flip)),
-        FARM_BUILD.pieces.map(p => farmKitSprite(...p)));
-    return farmKitGround() + isoFarmGroundV3() + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
+        FARM_BUILD.pieces.map(p => farmKitSprite(...p)), FARM_FOREST_SPRITES.map(forestSprite));
+    return farmKitGround() + farmForestFloor() + isoFarmGroundV3() + cloud(250, 76, 1, '') + cloud(470, 58, .75, 'd2') + depthSorted(items);
   }
   return farmBGOld();
 }

@@ -296,7 +296,7 @@ Night Camp's full effect stack costs about 4.5 ms per frame on their test machin
 | Scene | State |
 |---|---|
 | Duck pen | Kit done: ground + 16 pieces + 5 bananas, all with normal maps. Recipe hand-written in `PEN_LAYOUT`. |
-| Farm | Kit complete in style v3: `ground.farm` + 5 farm pieces + the shared pen kit, placed by `FARM_RECIPE` (`?farmseed=N`); the house, shrine, palms, cart, jar, signs, buffalo, farmer and soil tiles are restyled in v3. Crops, produce and UI icons are still the older art. |
+| Farm | Kit complete in style v3: `ground.farm` + 5 farm pieces + the shared pen kit, placed by `FARM_RECIPE` (`?farmseed=N`); the house, shrine, palms, cart, jar, signs, buffalo, farmer and soil tiles are restyled in v3. The forest border is built from kit trees in rows along the clearing's two grid edges (`FARM_FOREST` / `forestSprites()`), with a bush fringe on the border line and darker back rows. Crops, produce and UI icons are still the older art. |
 | Market interior | Front view, so it gets its own small kit later. |
 | Village map | Single painted image is fine (overview only, rule in section 1). |
 | Light | Normal maps exist; the WebGL lighting renderer is not built yet. |

@@ -287,6 +287,7 @@ const FARM_RECIPE = (() => {
   return {
     seed: 7, range: [-12, 22, -12, 16], maxY: 528, water,
     blocked: (u, v, x, y, id) => {
+      if (!inClear(u, v)) return true;                                           // beyond the border: the forest generator's ground
       if (inClear(u, v) && (inRect(FARM_ZONES.yard, u, v, .4) || ['canal', 'paddock', 'house', 'stairs', 'shrine'].some(z => inRect(FARM_ZONES[z], u, v, .15)))) return true;
       if (inPaddy(u, v) && id !== 'kit.egret') return true;                      // only egrets wade in the paddies
       return pathDist(u, v) < .8;                                                // R2: the path stays clear
@@ -305,15 +306,10 @@ const FARM_RECIPE = (() => {
     landmarks: [['kit.field_hut', -4.7, -2.8, 1, false, 1], ['kit.scarecrow', -5.6, -0.6, 1, false, .3], ['kit.haystack', 11.6, -4.3, .9, false, .5]],
     keepClear: [[20, 420, 260, 545], [540, 360, 700, 545], [690, 380, 810, 545], [740, 46, 800, 170]],   // cart + sign, jar + farmer, signpost, zoom buttons
     pieces: [
-      ['kit.tree_round_a', 3, ['forest_edge'], .9, 170, true, false],
-      ['kit.tree_round_b', 3, ['forest_edge'], .8, 140, true, true],
-      ['kit.tree_golden_shower', 2, ['forest_edge'], .8, 160, true, false],
-      ['kit.tree_flame', 2, ['forest_edge'], .9, 150, true, false],
-      ['kit.bamboo_clump', 4, ['forest_edge'], .8, 185, true, false],
       ['kit.haystack', 2, ['grass', 'margin'], .6, 52, false, true],
       ['kit.water_jar', 1, ['grass'], .4, 44, false, false],
-      ['kit.bush_a', 6, ['forest_edge', 'grass', 'margin'], .6, 40, false, true],
-      ['kit.bush_b', 6, ['forest_edge', 'grass', 'front'], .45, 30, false, true],
+      ['kit.bush_a', 5, ['grass', 'margin'], .6, 40, false, true],
+      ['kit.bush_b', 5, ['grass', 'front'], .45, 30, false, true],
       ['kit.flower_patch', 6, ['grass', 'front'], .35, 18, false, true],
       ['kit.reeds', 5, ['rim'], .3, 46, false, true],
       ['kit.egret', 3, ['paddy', 'rim'], .25, 40, false, false],
@@ -324,3 +320,35 @@ const FARM_RECIPE = (() => {
 })();
 const FARM_SEED = SCENE_SEED('farmseed') || FARM_RECIPE.seed;
 const FARM_BUILD = buildScene(FARM_RECIPE, FARM_SEED, isoPt);
+
+// ---- Forest border (map rules R4, R7). The clearing's two back edges are straight grid lines (FARM_CLEARING), so
+// the forest is planted in rows parallel to them: a bush fringe on the border hides the trunks, then rows of trees
+// receding into the forest, darker the deeper they stand. Edges: [fixed axis, value, from, to] along the other axis.
+const FARM_FOREST = {
+  seed: 31,
+  edges: [['u', FARM_CLEARING[0], FARM_CLEARING[1], 14], ['v', FARM_CLEARING[1], FARM_CLEARING[0], 20]],
+  rows: [   // [offset beyond the border (tiles), spacing (tiles), shade 0..1, pieces]
+    [.2, .75, 1, ['kit.bush_a', 'kit.bush_b', 'kit.bush_a', 'kit.bush_b', 'kit.flower_patch']],
+    [.9, 1.15, 1, ['kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump', 'kit.tree_golden_shower', 'kit.tree_round_b', 'kit.tree_flame', 'kit.bamboo_clump']],
+    [2.0, 1.25, .86, ['kit.tree_round_a', 'kit.tree_round_b', 'kit.bamboo_clump', 'kit.tree_round_a', 'kit.tree_flame']],
+    [3.1, 1.35, .72, ['kit.tree_round_b', 'kit.tree_round_a', 'kit.bamboo_clump', 'kit.tree_round_a']],
+  ],
+};
+function forestSprites(F, pt) {
+  const rnd = mulberry32(F.seed), out = [];
+  for (const [axis, val, from, to] of F.edges) {
+    for (const [off, gap, shade, ids] of F.rows) {
+      for (let t = from + rnd() * gap; t < to; t += gap * (0.85 + rnd() * .3)) {
+        const fixed = val - off - rnd() * .35, u = axis === 'u' ? fixed : t, v = axis === 'u' ? t : fixed;
+        if (u > FARM_CLEARING[0] - .1 && v > FARM_CLEARING[1] - .1) continue;                  // never inside the clearing
+        const [x, y] = pt(u, v);
+        if (x < -320 || x > 1120 || y < 50) continue;
+        if (out.some(p => Math.hypot(p[1] - u, p[2] - v) < gap * .6)) continue;                // the two edges meet at the corner
+        const id = ids[Math.floor(rnd() * ids.length)], flip = /round_b|bush|flower/.test(id) && rnd() < .5;
+        out.push([id, +u.toFixed(2), +v.toFixed(2), +(0.9 + rnd() * .2).toFixed(2), flip, shade]);
+      }
+    }
+  }
+  return out;
+}
+const FARM_FOREST_SPRITES = forestSprites(FARM_FOREST, isoPt);

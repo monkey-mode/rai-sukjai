@@ -163,13 +163,19 @@ test('farm kit: every placed piece is a known asset, stays off the fields, path 
   const vm = await import('node:vm');
   const ctx = vm.createContext({});
   vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
-    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, fenceSprites, SPECS: ASSET_SPECS };', ctx);
-  const { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, fenceSprites, SPECS } = ctx.X;
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, FARM_CLEARING, FARM_FOREST_SPRITES, fenceSprites, SPECS: ASSET_SPECS };', ctx);
+  const { isoPt, FARM_BUILD, FARM_RECIPE, FARM_ZONES, FARM_FENCES, FARM_CLEARING, FARM_FOREST_SPRITES, fenceSprites, SPECS } = ctx.X;
   const { manifest } = checkManifest();
   const ids = new Set(manifest.assets.map(a => a.id));
   assert.ok(ids.has('ground.farm') && SPECS['ground.farm']);
   const placed = FARM_BUILD.pieces.concat(FARM_RECIPE.landmarks).concat(fenceSprites(FARM_FENCES));
-  assert.ok(FARM_BUILD.pieces.length >= 30, 'the farm builder places its scatter');
+  assert.ok(FARM_BUILD.pieces.length >= 20, 'the farm builder places its scatter');
+  assert.ok(FARM_FOREST_SPRITES.length >= 60, 'the forest border is planted');
+  for (const [id, u, v] of FARM_FOREST_SPRITES) {
+    assert.ok(ids.has(id) && SPECS[id], `${id} is not a known asset`);
+    assert.ok(!(u > FARM_CLEARING[0] && v > FARM_CLEARING[1]), `forest ${id} at (${u}, ${v}) stands inside the clearing`);
+  }
+  for (const [id, u, v] of FARM_BUILD.pieces) assert.ok(u > FARM_CLEARING[0] && v > FARM_CLEARING[1], `${id} at (${u}, ${v}) is scattered beyond the border`);
   const inside = ([a, b, c, d], u, v) => u > a && u < c && v > b && v < d;
   for (const [id, u, v] of placed) {
     assert.ok(ids.has(id) && SPECS[id], `${id} is not a known asset`);
