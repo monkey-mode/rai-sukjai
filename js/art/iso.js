@@ -102,8 +102,8 @@ function isoFence(a, b, step = .6, pt = isoPt) {
 // Ground the farm background already uses; sprites must not stand here ([gx0, gy0, gx1, gy1] grid rects).
 const FARM_ZONES = {
   yard: [-0.8, -0.8, 9.8, 7.8],      // dirt yard and fields
-  canal: [-2.75, -8, -2.15, 11],     // irrigation canal and its muddy banks
-  paddies: [-9.8, -9, -2.7, 11],     // flooded rice fields: trees only on a FARM_MOUNDS island
+  canal: [-2.75, -8, -2.15, 17],     // irrigation canal and its muddy banks
+  paddies: [-9.8, -9, -2.7, 17],     // flooded rice fields: trees only on a FARM_MOUNDS island
   paddock: [8, -5, 12.6, -2],        // buffalo paddock
   house: [2.3, -4.9, 6.4, -1.4],     // Thai house footprint under its eaves (FARM_HOUSE)
   stairs: [4.2, -1.4, 5.0, -0.8],    // the house's stair down to the yard

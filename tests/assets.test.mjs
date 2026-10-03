@@ -211,8 +211,15 @@ test('rice paddies: clumps in rows inside the fields, never on the mound, dikes 
   const vm = await import('node:vm');
   const ctx = vm.createContext({});
   vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
-    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, SPECS: ASSET_SPECS };', ctx);
-  const { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, SPECS } = ctx.X;
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, SPECS: ASSET_SPECS };', ctx);
+  const { FARM_RICE, FARM_PADDIES, FARM_MOUNDS, FARM_RECIPE, FARM_GRASS, FARM_ZONES, SPECS } = ctx.X;
+  // the grass stays out of the paddies (the mound is grass) and the canal, along their whole length
+  const onMound = (u, v) => FARM_MOUNDS.some(([mu, mv, ru, rv]) => Math.hypot((u - mu) / ru, (v - mv) / rv) <= 1);
+  for (const [, u, v] of FARM_GRASS) {
+    assert.ok(onMound(u, v) || !FARM_PADDIES.fields.some(([a, b, c, d]) => u >= a - .1 && u <= c + .1 && v >= b && v <= d), `grass in a paddy at (${u}, ${v})`);
+    const [c0, , c1] = FARM_ZONES.canal; assert.ok(u <= c0 || u >= c1, `grass in the canal at (${u}, ${v})`);
+  }
+  for (const [, , , , gy1] of FARM_PADDIES.fields.map(f => [0, ...f])) assert.ok(gy1 <= FARM_ZONES.paddies[3] && gy1 <= FARM_ZONES.canal[3], 'FARM_ZONES.paddies/canal must cover every field');
   const { manifest } = checkManifest();
   const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
   assert.ok(FARM_RICE.length > 200, 'rice is planted');
