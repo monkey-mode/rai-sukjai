@@ -1,0 +1,14994 @@
+{
+ "about": "Coordinates are web-game scene px: x right, y DOWN, the 800×600 safe area spans x 0..800 (bleed to -300 and 1100). In Unity: position = (x / 100, -y / 100). `placed` is every sprite exactly as the web game draws it, in draw order (back to front) — anchor point, scale (already includes the size chart), flip. `layout` is the data the web game builds the scene from (grid coordinates), to rebuild or edit it in Unity.",
+ "placed": [
+  {
+   "layer": "background",
+   "order": 0,
+   "id": "ground.farm",
+   "x": 0,
+   "y": 0,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 1,
+   "id": "baked:grass",
+   "x": -300,
+   "y": 600,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 2,
+   "id": "scenery.cloud",
+   "x": 229.57,
+   "y": 68,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "drift "
+  },
+  {
+   "layer": "background",
+   "order": 3,
+   "id": "scenery.cloud",
+   "x": 448.04,
+   "y": 52,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": "drift d2"
+  },
+  {
+   "layer": "background",
+   "order": 4,
+   "id": "kit.bamboo_clump",
+   "x": 450,
+   "y": 51,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 5,
+   "id": "kit.tree_round_b",
+   "x": 48.7,
+   "y": 52.2,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 6,
+   "id": "kit.bamboo_clump",
+   "x": 524.6,
+   "y": 52.7,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 7,
+   "id": "kit.tree_round_a",
+   "x": -40.6,
+   "y": 53.7,
+   "scale": [
+    1.02,
+    1.02
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 8,
+   "id": "kit.bush_b",
+   "x": 208.7,
+   "y": 54.5,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 9,
+   "id": "kit.bush_b",
+   "x": 389.8,
+   "y": 54.8,
+   "scale": [
+    0.93,
+    0.93
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 10,
+   "id": "kit.tree_flame",
+   "x": 612.2,
+   "y": 55.9,
+   "scale": [
+    1.16,
+    1.16
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 11,
+   "id": "kit.bamboo_clump",
+   "x": 99.6,
+   "y": 56.6,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 12,
+   "id": "kit.bush_b",
+   "x": 157.5,
+   "y": 57.7,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 13,
+   "id": "kit.tree_round_b",
+   "x": 6.5,
+   "y": 59.9,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 14,
+   "id": "kit.tree_round_b",
+   "x": 658,
+   "y": 64.1,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 15,
+   "id": "kit.bamboo_clump",
+   "x": 136.1,
+   "y": 65.5,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 16,
+   "id": "kit.bush_b",
+   "x": 582.5,
+   "y": 65.7,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 17,
+   "id": "kit.flower_patch",
+   "x": 411.6,
+   "y": 66,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 18,
+   "id": "kit.tree_round_a",
+   "x": 51.6,
+   "y": 72.2,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 19,
+   "id": "kit.bamboo_clump",
+   "x": 503.4,
+   "y": 72.9,
+   "scale": [
+    0.98,
+    0.98
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 20,
+   "id": "kit.flower_patch",
+   "x": 190.5,
+   "y": 73.5,
+   "scale": [
+    1.07,
+    1.07
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 21,
+   "id": "kit.bush_a",
+   "x": 162.6,
+   "y": 74.6,
+   "scale": [
+    1.18,
+    1.18
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 22,
+   "id": "kit.tree_golden_shower",
+   "x": -101.7,
+   "y": 75.3,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 23,
+   "id": "kit.bamboo_clump",
+   "x": 89.7,
+   "y": 75.3,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 24,
+   "id": "kit.bamboo_clump",
+   "x": -57.8,
+   "y": 78,
+   "scale": [
+    0.99,
+    0.99
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 25,
+   "id": "kit.bamboo_clump",
+   "x": 570.6,
+   "y": 78,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 26,
+   "id": "kit.bush_a",
+   "x": 531.9,
+   "y": 78.8,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 27,
+   "id": "kit.bush_a",
+   "x": 435,
+   "y": 82.5,
+   "scale": [
+    0.82,
+    0.82
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 28,
+   "id": "kit.tree_flame",
+   "x": 625.4,
+   "y": 84.2,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 29,
+   "id": "kit.tree_flame",
+   "x": -6,
+   "y": 85.7,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 30,
+   "id": "kit.bush_b",
+   "x": 156.2,
+   "y": 87.1,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 31,
+   "id": "kit.rock_a",
+   "x": 454.2,
+   "y": 87.6,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 32,
+   "id": "kit.tree_round_a",
+   "x": -132.4,
+   "y": 89.7,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 33,
+   "id": "kit.tree_golden_shower",
+   "x": 74,
+   "y": 92.4,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 34,
+   "id": "kit.bush_a",
+   "x": 49.7,
+   "y": 92.4,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 35,
+   "id": "kit.bamboo_clump",
+   "x": 526.2,
+   "y": 93.8,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 36,
+   "id": "kit.tree_round_b",
+   "x": 701.5,
+   "y": 94.2,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 37,
+   "id": "kit.tree_round_a",
+   "x": 755,
+   "y": 95.3,
+   "scale": [
+    1.1,
+    1.1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 38,
+   "id": "kit.bush_b",
+   "x": 470.2,
+   "y": 100.4,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 39,
+   "id": "kit.rock_a",
+   "x": 133.2,
+   "y": 102.2,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 40,
+   "id": "kit.tree_golden_shower",
+   "x": 560.7,
+   "y": 103.1,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 41,
+   "id": "kit.tree_flame",
+   "x": -72.2,
+   "y": 103.1,
+   "scale": [
+    1.1,
+    1.1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 42,
+   "id": "kit.field_hut",
+   "x": 229.2,
+   "y": 106,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 43,
+   "id": "kit.tree_golden_shower",
+   "x": 637.2,
+   "y": 108.7,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 44,
+   "id": "kit.tree_round_a",
+   "x": 24.4,
+   "y": 110.2,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 45,
+   "id": "kit.tree_round_b",
+   "x": -21.7,
+   "y": 111.8,
+   "scale": [
+    1.16,
+    1.16
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 46,
+   "id": "kit.bush_b",
+   "x": 505.7,
+   "y": 113,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 47,
+   "id": "kit.tree_round_a",
+   "x": -116.4,
+   "y": 114,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 48,
+   "id": "kit.flower_patch",
+   "x": 101.8,
+   "y": 114.3,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 49,
+   "id": "kit.tree_round_a",
+   "x": 748.6,
+   "y": 114.8,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 50,
+   "id": "kit.egret",
+   "x": 170.6,
+   "y": 116.4,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 51,
+   "id": "kit.tree_flame",
+   "x": 801.4,
+   "y": 117.5,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 52,
+   "id": "kit.tree_round_a",
+   "x": 686.2,
+   "y": 121.7,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 53,
+   "id": "kit.bush_b",
+   "x": 65,
+   "y": 122.8,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 54,
+   "id": "kit.tree_golden_shower",
+   "x": 585,
+   "y": 124.9,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 55,
+   "id": "kit.flower_patch",
+   "x": 528.7,
+   "y": 125.8,
+   "scale": [
+    0.82,
+    0.82
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 56,
+   "id": "kit.bamboo_clump",
+   "x": -159.6,
+   "y": 126.3,
+   "scale": [
+    0.89,
+    0.89
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 57,
+   "id": "kit.bush_a",
+   "x": -57.2,
+   "y": 126.3,
+   "scale": [
+    1.17,
+    1.17
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 58,
+   "id": "kit.scarecrow",
+   "x": 130,
+   "y": 126.8,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 59,
+   "id": "kit.bush_a",
+   "x": 429.5,
+   "y": 128.4,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 60,
+   "id": "kit.bamboo_clump",
+   "x": -217.2,
+   "y": 132.1,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 61,
+   "id": "kit.tree_flame",
+   "x": 721,
+   "y": 132.7,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 62,
+   "id": "kit.bamboo_clump",
+   "x": 632.4,
+   "y": 134.2,
+   "scale": [
+    1.18,
+    1.18
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 63,
+   "id": "kit.tree_round_a",
+   "x": -95,
+   "y": 134.3,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 64,
+   "id": "kit.bush_a",
+   "x": 545.4,
+   "y": 135.8,
+   "scale": [
+    0.93,
+    0.93
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 65,
+   "id": "kit.tree_golden_shower",
+   "x": 787.6,
+   "y": 136.2,
+   "scale": [
+    0.87,
+    0.87
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 66,
+   "id": "kit.bamboo_clump",
+   "x": -27.4,
+   "y": 139.9,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 67,
+   "id": "kit.bamboo_clump",
+   "x": 849.7,
+   "y": 141.4,
+   "scale": [
+    1.17,
+    1.17
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 68,
+   "id": "kit.tree_round_a",
+   "x": 672.7,
+   "y": 142.8,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 69,
+   "id": "kit.bush_a",
+   "x": 43,
+   "y": 143.1,
+   "scale": [
+    0.93,
+    0.93
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 70,
+   "id": "kit.tree_round_a",
+   "x": -260.7,
+   "y": 146.5,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 71,
+   "id": "kit.bush_a",
+   "x": 19.9,
+   "y": 147.3,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 72,
+   "id": "kit.rock_a",
+   "x": 584.7,
+   "y": 147.8,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 73,
+   "id": "kit.tree_round_a",
+   "x": 737,
+   "y": 151,
+   "scale": [
+    1.01,
+    1.01
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 74,
+   "id": "kit.tree_round_b",
+   "x": -59.1,
+   "y": 151.3,
+   "scale": [
+    0.84,
+    0.84
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 75,
+   "id": "kit.tree_round_a",
+   "x": 772.9,
+   "y": 156.1,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 76,
+   "id": "kit.tree_golden_shower",
+   "x": -221.4,
+   "y": 158.2,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 77,
+   "id": "kit.bush_b",
+   "x": 596.9,
+   "y": 158.3,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 78,
+   "id": "kit.tree_round_a",
+   "x": -166.6,
+   "y": 158.6,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 79,
+   "id": "kit.bamboo_clump",
+   "x": 829.2,
+   "y": 159,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 80,
+   "id": "kit.bush_b",
+   "x": 522.3,
+   "y": 159.8,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 81,
+   "id": "kit.tree_round_b",
+   "x": -111,
+   "y": 160.9,
+   "scale": [
+    1.1,
+    1.1
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 82,
+   "id": "kit.bush_b",
+   "x": -7,
+   "y": 161,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 83,
+   "id": "scenery.banana_old_iso",
+   "x": 315.6,
+   "y": 162,
+   "scale": [
+    0.8,
+    0.8
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 84,
+   "id": "kit.tree_round_b",
+   "x": 676.2,
+   "y": 163.8,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 85,
+   "id": "kit.tree_round_b",
+   "x": -263.3,
+   "y": 165.4,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 86,
+   "id": "kit.bush_b",
+   "x": -26.2,
+   "y": 168.7,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 87,
+   "id": "kit.tree_round_a",
+   "x": 866.3,
+   "y": 170.8,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 88,
+   "id": "kit.bush_b",
+   "x": 610.6,
+   "y": 171,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 89,
+   "id": "kit.bamboo_clump",
+   "x": -73.8,
+   "y": 171.4,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 90,
+   "id": "kit.tree_flame",
+   "x": 727.8,
+   "y": 174.8,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 91,
+   "id": "kit.tree_round_b",
+   "x": -200.2,
+   "y": 176.4,
+   "scale": [
+    0.98,
+    0.98
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 92,
+   "id": "scenery.palm_coconut_dwarf_iso",
+   "x": 69.2,
+   "y": 176.4,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 93,
+   "id": "kit.tree_golden_shower",
+   "x": 791.8,
+   "y": 177.7,
+   "scale": [
+    0.97,
+    0.97
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 94,
+   "id": "kit.bamboo_clump",
+   "x": -112.6,
+   "y": 180.9,
+   "scale": [
+    0.89,
+    0.89
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 95,
+   "id": "kit.bush_b",
+   "x": 636.2,
+   "y": 182.2,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 96,
+   "id": "scenery.banana_harvested_iso",
+   "x": 139.6,
+   "y": 182.8,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 97,
+   "id": "kit.bush_b",
+   "x": 813.2,
+   "y": 184.6,
+   "scale": [
+    0.98,
+    0.98
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 98,
+   "id": "kit.bamboo_clump",
+   "x": -242.8,
+   "y": 184.9,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 99,
+   "id": "kit.tree_round_b",
+   "x": 890.6,
+   "y": 185.2,
+   "scale": [
+    0.84,
+    0.84
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 100,
+   "id": "kit.tree_golden_shower",
+   "x": -299.1,
+   "y": 187.1,
+   "scale": [
+    0.87,
+    0.87
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 101,
+   "id": "kit.rock_a",
+   "x": 664.1,
+   "y": 188.1,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 102,
+   "id": "kit.flower_patch",
+   "x": -46.3,
+   "y": 188.7,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 103,
+   "id": "kit.bush_b",
+   "x": 748.9,
+   "y": 190.8,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 104,
+   "id": "kit.tree_round_a",
+   "x": 844.6,
+   "y": 191,
+   "scale": [
+    1.01,
+    1.01
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 105,
+   "id": "kit.bamboo_clump",
+   "x": -153.8,
+   "y": 191.9,
+   "scale": [
+    0.93,
+    0.93
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 106,
+   "id": "kit.tree_round_b",
+   "x": 927.4,
+   "y": 192.1,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 107,
+   "id": "scenery.banana_fruiting_iso",
+   "x": 253.2,
+   "y": 194.8,
+   "scale": [
+    0.8,
+    0.8
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 108,
+   "id": "kit.tree_round_a",
+   "x": 731.6,
+   "y": 199.4,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 109,
+   "id": "kit.rock_a",
+   "x": -85,
+   "y": 200.4,
+   "scale": [
+    0.97,
+    0.97
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 110,
+   "id": "kit.tree_round_b",
+   "x": 890,
+   "y": 204.1,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 111,
+   "id": "kit.tree_flame",
+   "x": 774.2,
+   "y": 205,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 112,
+   "id": "kit.bush_a",
+   "x": 679.1,
+   "y": 205.5,
+   "scale": [
+    1.02,
+    1.02
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 113,
+   "id": "kit.bamboo_clump",
+   "x": -300.1,
+   "y": 207.1,
+   "scale": [
+    1.11,
+    1.11
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 114,
+   "id": "kit.tree_golden_shower",
+   "x": 979.9,
+   "y": 208.1,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 115,
+   "id": "kit.tree_flame",
+   "x": -232.6,
+   "y": 208.2,
+   "scale": [
+    1.12,
+    1.12
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 116,
+   "id": "kit.tree_golden_shower",
+   "x": 834,
+   "y": 209,
+   "scale": [
+    0.89,
+    0.89
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 117,
+   "id": "kit.bush_b",
+   "x": 799.1,
+   "y": 209.8,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 118,
+   "id": "kit.bush_b",
+   "x": -107.4,
+   "y": 210.6,
+   "scale": [
+    1.12,
+    1.12
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 119,
+   "id": "kit.bush_b",
+   "x": -206.6,
+   "y": 211.9,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 120,
+   "id": "kit.bush_b",
+   "x": -274.8,
+   "y": 212.1,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 121,
+   "id": "kit.flower_patch",
+   "x": 700.9,
+   "y": 214.5,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 122,
+   "id": "scenery.spirit_house_iso",
+   "x": 379.6,
+   "y": 219.6,
+   "scale": [
+    0.7,
+    0.7
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 123,
+   "id": "kit.rock_a",
+   "x": -124.7,
+   "y": 219.6,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 124,
+   "id": "kit.egret",
+   "x": -42.5,
+   "y": 222.6,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 125,
+   "id": "kit.tree_round_b",
+   "x": -183.6,
+   "y": 223.4,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 126,
+   "id": "kit.tree_round_a",
+   "x": 927.4,
+   "y": 226,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 127,
+   "id": "kit.tree_round_b",
+   "x": -255,
+   "y": 226.5,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 128,
+   "id": "kit.tree_round_b",
+   "x": 837.2,
+   "y": 227.9,
+   "scale": [
+    0.89,
+    0.89
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 129,
+   "id": "kit.tree_round_b",
+   "x": 791.1,
+   "y": 229.8,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 130,
+   "id": "kit.bush_a",
+   "x": 729,
+   "y": 233.4,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 131,
+   "id": "kit.tree_round_a",
+   "x": 1000.4,
+   "y": 233.4,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 132,
+   "id": "kit.bush_b",
+   "x": -142.6,
+   "y": 234,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 133,
+   "id": "kit.tree_round_b",
+   "x": -310.6,
+   "y": 234.8,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 134,
+   "id": "kit.bamboo_clump",
+   "x": 880.7,
+   "y": 235.3,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 135,
+   "id": "kit.flower_patch",
+   "x": -161.5,
+   "y": 241.5,
+   "scale": [
+    0.98,
+    0.98
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 136,
+   "id": "scenery.thai_house_iso",
+   "x": 520.4,
+   "y": 187.6,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 137,
+   "id": "kit.bush_b",
+   "x": 758.2,
+   "y": 242.2,
+   "scale": [
+    0.97,
+    0.97
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 138,
+   "id": "kit.bamboo_clump",
+   "x": 1039.1,
+   "y": 246.6,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 139,
+   "id": "kit.bush_b",
+   "x": 778.3,
+   "y": 248.1,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 140,
+   "id": "kit.tree_round_b",
+   "x": 829.2,
+   "y": 250.2,
+   "scale": [
+    1.17,
+    1.17
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 141,
+   "id": "kit.bush_b",
+   "x": -291.4,
+   "y": 252.7,
+   "scale": [
+    1.17,
+    1.17
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 142,
+   "id": "kit.bush_a",
+   "x": -184.9,
+   "y": 253.8,
+   "scale": [
+    0.99,
+    0.99
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 143,
+   "id": "kit.bamboo_clump",
+   "x": -243.1,
+   "y": 255.4,
+   "scale": [
+    0.89,
+    0.89
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 144,
+   "id": "kit.tree_round_a",
+   "x": 963.6,
+   "y": 257.5,
+   "scale": [
+    1.03,
+    1.03
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 145,
+   "id": "kit.tree_round_a",
+   "x": -314.8,
+   "y": 258.6,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 146,
+   "id": "kit.tree_round_b",
+   "x": 921.4,
+   "y": 258.8,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 147,
+   "id": "scenery.palm_coconut_lean_iso",
+   "x": 118.8,
+   "y": 262,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 148,
+   "id": "scenery.banana_young_iso",
+   "x": 427.6,
+   "y": 262.8,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 149,
+   "id": "kit.flower_patch",
+   "x": 728.1,
+   "y": 263,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 150,
+   "id": "kit.rock_a",
+   "x": 798.5,
+   "y": 263.6,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 151,
+   "id": "kit.tree_golden_shower",
+   "x": 876.9,
+   "y": 264.1,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 152,
+   "id": "kit.tree_flame",
+   "x": 1019.9,
+   "y": 264.9,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 153,
+   "id": "kit.flower_patch",
+   "x": -214.6,
+   "y": 270,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 154,
+   "id": "kit.bamboo_clump",
+   "x": -292.1,
+   "y": 274.8,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 155,
+   "id": "kit.flower_patch",
+   "x": 834,
+   "y": 275,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 156,
+   "id": "kit.tree_round_b",
+   "x": 1095.1,
+   "y": 275.3,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 157,
+   "id": "kit.rock_b",
+   "x": 795,
+   "y": 276.2,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 158,
+   "id": "kit.tree_golden_shower",
+   "x": 986.3,
+   "y": 276.9,
+   "scale": [
+    0.85,
+    0.85
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 159,
+   "id": "kit.tree_flame",
+   "x": 947.3,
+   "y": 279.1,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 160,
+   "id": "kit.fence_span_se",
+   "x": 706,
+   "y": 274,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 161,
+   "id": "kit.fence_span_sw",
+   "x": 706,
+   "y": 274,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 162,
+   "id": "kit.tree_flame",
+   "x": 911.1,
+   "y": 282.8,
+   "scale": [
+    0.86,
+    0.86
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 163,
+   "id": "kit.bush_b",
+   "x": -277.4,
+   "y": 286.3,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 164,
+   "id": "kit.rock_a",
+   "x": -245,
+   "y": 286.8,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 165,
+   "id": "kit.tree_round_b",
+   "x": 1046.8,
+   "y": 287,
+   "scale": [
+    0.84,
+    0.84
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 166,
+   "id": "kit.bush_a",
+   "x": 859,
+   "y": 287.8,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 167,
+   "id": "scenery.palm_coconut_twin_iso",
+   "x": 54.8,
+   "y": 294,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 168,
+   "id": "kit.tree_round_a",
+   "x": -324.1,
+   "y": 294,
+   "scale": [
+    1.17,
+    1.17
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 169,
+   "id": "kit.fence_span_se",
+   "x": 735.4,
+   "y": 288.7,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 170,
+   "id": "kit.fence_span_sw",
+   "x": 674,
+   "y": 290,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 171,
+   "id": "kit.bush_b",
+   "x": -272.2,
+   "y": 299.4,
+   "scale": [
+    0.84,
+    0.84
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 172,
+   "id": "kit.bamboo_clump",
+   "x": 1117.2,
+   "y": 301.4,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 173,
+   "id": "kit.bamboo_clump",
+   "x": 942.2,
+   "y": 301.5,
+   "scale": [
+    0.99,
+    0.99
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 174,
+   "id": "kit.bush_a",
+   "x": -292.1,
+   "y": 305.2,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 175,
+   "id": "kit.bush_b",
+   "x": 879.1,
+   "y": 305.5,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 176,
+   "id": "kit.bamboo_clump",
+   "x": 1013.2,
+   "y": 309.5,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 177,
+   "id": "kit.fence_span_se",
+   "x": 764.9,
+   "y": 303.4,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 178,
+   "id": "kit.fence_span_sw",
+   "x": 642,
+   "y": 306,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 179,
+   "id": "kit.bush_a",
+   "x": 937.7,
+   "y": 315.3,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 180,
+   "id": "kit.rock_a",
+   "x": 896.4,
+   "y": 316.4,
+   "scale": [
+    1.14,
+    1.14
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 181,
+   "id": "kit.egret",
+   "x": -230.6,
+   "y": 317.7,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 182,
+   "id": "kit.bush_b",
+   "x": -310.6,
+   "y": 319,
+   "scale": [
+    1.02,
+    1.02
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 183,
+   "id": "scenery.banana_ripe_iso",
+   "x": 541.2,
+   "y": 321.2,
+   "scale": [
+    0.78,
+    0.78
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 184,
+   "id": "kit.tree_round_a",
+   "x": 1106.3,
+   "y": 321.2,
+   "scale": [
+    1.16,
+    1.16
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 185,
+   "id": "kit.tree_round_b",
+   "x": 1068.2,
+   "y": 321.7,
+   "scale": [
+    0.83,
+    0.83
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 186,
+   "id": "kit.fence_post",
+   "x": 610,
+   "y": 322,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 187,
+   "id": "scenery.palm_betel_cluster_iso",
+   "x": 859.6,
+   "y": 325.2,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 188,
+   "id": "kit.fence_span_se",
+   "x": 794.3,
+   "y": 318.2,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 189,
+   "id": "scenery.palm_sugar_tall_iso",
+   "x": -14,
+   "y": 326.8,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 190,
+   "id": "kit.fence_span_se",
+   "x": 610,
+   "y": 322,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 191,
+   "id": "kit.bush_b",
+   "x": 925.2,
+   "y": 331.4,
+   "scale": [
+    0.88,
+    0.88
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 192,
+   "id": "animal.buffalo_tail",
+   "x": 692.75,
+   "y": 288.25,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": "atail"
+  },
+  {
+   "layer": "background",
+   "order": 193,
+   "id": "animal.buffalo",
+   "x": 722,
+   "y": 334,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 194,
+   "id": "animal.buffalo_head",
+   "x": 744.5,
+   "y": 312.25,
+   "scale": [
+    0.75,
+    0.75
+   ],
+   "flipX": false,
+   "cls": "ahead"
+  },
+  {
+   "layer": "background",
+   "order": 195,
+   "id": "kit.flower_patch",
+   "x": 963.9,
+   "y": 337.4,
+   "scale": [
+    1.01,
+    1.01
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 196,
+   "id": "kit.bamboo_clump",
+   "x": 1015.1,
+   "y": 337.7,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 197,
+   "id": "kit.bamboo_clump",
+   "x": 1123.9,
+   "y": 339.6,
+   "scale": [
+    1.15,
+    1.15
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 198,
+   "id": "kit.fence_span_se",
+   "x": 823.8,
+   "y": 332.9,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 199,
+   "id": "kit.haystack",
+   "x": 798.8,
+   "y": 342.8,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 200,
+   "id": "kit.fence_span_se",
+   "x": 639.4,
+   "y": 336.7,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 201,
+   "id": "kit.fence_post",
+   "x": 853.2,
+   "y": 347.6,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 202,
+   "id": "kit.flower_patch",
+   "x": 973.8,
+   "y": 348.4,
+   "scale": [
+    1.13,
+    1.13
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 203,
+   "id": "kit.bamboo_clump",
+   "x": 1073,
+   "y": 352.9,
+   "scale": [
+    1.05,
+    1.05
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 204,
+   "id": "kit.fence_span_se",
+   "x": 668.9,
+   "y": 351.4,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 205,
+   "id": "scenery.palm_sugar_ladder_iso",
+   "x": -78,
+   "y": 358.8,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 206,
+   "id": "kit.bush_a",
+   "x": 1001.4,
+   "y": 361.8,
+   "scale": [
+    0.88,
+    0.88
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 207,
+   "id": "kit.reeds",
+   "x": 853.8,
+   "y": 363.9,
+   "scale": [
+    1.01,
+    1.01
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 208,
+   "id": "kit.fence_span_se",
+   "x": 698.3,
+   "y": 366.2,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 209,
+   "id": "kit.bush_b",
+   "x": 1029.5,
+   "y": 381.4,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 210,
+   "id": "kit.flower_patch",
+   "x": 973.2,
+   "y": 381.7,
+   "scale": [
+    0.93,
+    0.93
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 211,
+   "id": "kit.tree_round_b",
+   "x": 1109.2,
+   "y": 382.5,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 212,
+   "id": "kit.fence_span_se",
+   "x": 727.8,
+   "y": 380.9,
+   "scale": [
+    0.92,
+    0.92
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 213,
+   "id": "kit.bush_b",
+   "x": 1046.8,
+   "y": 388.7,
+   "scale": [
+    0.98,
+    0.98
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 214,
+   "id": "scenery.palm_sugar_pair_iso",
+   "x": -145.2,
+   "y": 392.4,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 215,
+   "id": "kit.bush_a",
+   "x": -27.4,
+   "y": 392.4,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 216,
+   "id": "kit.fence_post",
+   "x": 757.2,
+   "y": 395.6,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 217,
+   "id": "kit.bush_b",
+   "x": 19.9,
+   "y": 397.2,
+   "scale": [
+    0.95,
+    0.95
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 218,
+   "id": "kit.rock_a",
+   "x": 1064.1,
+   "y": 400.2,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 219,
+   "id": "kit.flower_patch",
+   "x": 1081.7,
+   "y": 409.4,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 220,
+   "id": "kit.bush_a",
+   "x": 1120.1,
+   "y": 418.3,
+   "scale": [
+    1.02,
+    1.02
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 221,
+   "id": "kit.reeds",
+   "x": 940.9,
+   "y": 425.7,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 222,
+   "id": "kit.rock_a",
+   "x": 939.9,
+   "y": 447.3,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 223,
+   "id": "kit.bush_b",
+   "x": -239.9,
+   "y": 451.3,
+   "scale": [
+    0.91,
+    0.91
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 224,
+   "id": "kit.flower_patch",
+   "x": -9.5,
+   "y": 453.5,
+   "scale": [
+    0.99,
+    0.99
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 225,
+   "id": "kit.bush_a",
+   "x": 1066,
+   "y": 455.3,
+   "scale": [
+    0.97,
+    0.97
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 226,
+   "id": "kit.flower_patch",
+   "x": 858.6,
+   "y": 457.8,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 227,
+   "id": "kit.bush_a",
+   "x": -98.2,
+   "y": 463.3,
+   "scale": [
+    1.07,
+    1.07
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 228,
+   "id": "kit.flower_patch",
+   "x": -204.1,
+   "y": 474.3,
+   "scale": [
+    0.96,
+    0.96
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 229,
+   "id": "kit.bush_a",
+   "x": 831.4,
+   "y": 474.6,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 230,
+   "id": "kit.haystack",
+   "x": 994.3,
+   "y": 483.1,
+   "scale": [
+    0.94,
+    0.94
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 231,
+   "id": "kit.bush_b",
+   "x": 1049.7,
+   "y": 485.2,
+   "scale": [
+    1.01,
+    1.01
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 232,
+   "id": "kit.rock_b",
+   "x": -116.4,
+   "y": 488.7,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 233,
+   "id": "kit.water_jar",
+   "x": 293.2,
+   "y": 503.4,
+   "scale": [
+    1.09,
+    1.09
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 234,
+   "id": "kit.rock_b",
+   "x": 914,
+   "y": 510.8,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 235,
+   "id": "kit.bush_b",
+   "x": 518.8,
+   "y": 512.2,
+   "scale": [
+    1.06,
+    1.06
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 236,
+   "id": "kit.rock_a",
+   "x": 1087.1,
+   "y": 516.4,
+   "scale": [
+    1.07,
+    1.07
+   ],
+   "flipX": true,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 237,
+   "id": "kit.haystack",
+   "x": -47.9,
+   "y": 520.7,
+   "scale": [
+    1.04,
+    1.04
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 238,
+   "id": "kit.flower_patch",
+   "x": 858,
+   "y": 522.8,
+   "scale": [
+    1.08,
+    1.08
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "dynamic",
+   "order": 239,
+   "id": "tile.soil_dry",
+   "x": 290,
+   "y": 242,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 240,
+   "id": "tile.soil_dry",
+   "x": 258,
+   "y": 258,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 241,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 258,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 242,
+   "id": "tile.soil_dry",
+   "x": 226,
+   "y": 274,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 243,
+   "id": "tile.soil_dry",
+   "x": 290,
+   "y": 274,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 244,
+   "id": "tile.soil_dry",
+   "x": 354,
+   "y": 274,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 245,
+   "id": "tile.soil_dry",
+   "x": 258,
+   "y": 290,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 246,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 290,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 247,
+   "id": "tile.soil_dry",
+   "x": 386,
+   "y": 290,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 248,
+   "id": "tile.soil_dry",
+   "x": 162,
+   "y": 306,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 249,
+   "id": "tile.soil_dry",
+   "x": 290,
+   "y": 306,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 250,
+   "id": "tile.soil_dry",
+   "x": 354,
+   "y": 306,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 251,
+   "id": "tile.soil_dry",
+   "x": 130,
+   "y": 322,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 252,
+   "id": "tile.soil_dry",
+   "x": 194,
+   "y": 322,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 253,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 322,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 254,
+   "id": "tile.soil_dry",
+   "x": 450,
+   "y": 322,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 255,
+   "id": "tile.soil_dry",
+   "x": 98,
+   "y": 338,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 256,
+   "id": "tile.soil_dry",
+   "x": 162,
+   "y": 338,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 257,
+   "id": "tile.soil_dry",
+   "x": 226,
+   "y": 338,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 258,
+   "id": "tile.soil_dry",
+   "x": 418,
+   "y": 338,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 259,
+   "id": "tile.soil_dry",
+   "x": 482,
+   "y": 338,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 260,
+   "id": "tile.soil_dry",
+   "x": 130,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 261,
+   "id": "tile.soil_dry",
+   "x": 194,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 262,
+   "id": "tile.soil_dry",
+   "x": 258,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 263,
+   "id": "tile.soil_dry",
+   "x": 386,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 264,
+   "id": "tile.soil_dry",
+   "x": 450,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 265,
+   "id": "tile.soil_dry",
+   "x": 514,
+   "y": 354,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 266,
+   "id": "tile.soil_dry",
+   "x": 162,
+   "y": 370,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 267,
+   "id": "tile.soil_dry",
+   "x": 226,
+   "y": 370,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 268,
+   "id": "tile.soil_dry",
+   "x": 418,
+   "y": 370,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 269,
+   "id": "tile.soil_dry",
+   "x": 482,
+   "y": 370,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 270,
+   "id": "tile.soil_dry",
+   "x": 546,
+   "y": 370,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 271,
+   "id": "tile.soil_dry",
+   "x": 194,
+   "y": 386,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 272,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 386,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 273,
+   "id": "tile.soil_dry",
+   "x": 450,
+   "y": 386,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 274,
+   "id": "tile.soil_dry",
+   "x": 514,
+   "y": 386,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 275,
+   "id": "tile.soil_dry",
+   "x": 290,
+   "y": 402,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 276,
+   "id": "tile.soil_dry",
+   "x": 354,
+   "y": 402,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 277,
+   "id": "tile.soil_dry",
+   "x": 482,
+   "y": 402,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 278,
+   "id": "tile.soil_dry",
+   "x": 258,
+   "y": 418,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 279,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 418,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 280,
+   "id": "tile.soil_dry",
+   "x": 386,
+   "y": 418,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 281,
+   "id": "tile.soil_dry",
+   "x": 290,
+   "y": 434,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 282,
+   "id": "tile.soil_dry",
+   "x": 354,
+   "y": 434,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 283,
+   "id": "tile.soil_dry",
+   "x": 418,
+   "y": 434,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 284,
+   "id": "tile.soil_dry",
+   "x": 322,
+   "y": 450,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 285,
+   "id": "tile.soil_dry",
+   "x": 386,
+   "y": 450,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 286,
+   "id": "tile.soil_dry",
+   "x": 354,
+   "y": 466,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": "plot"
+  },
+  {
+   "layer": "dynamic",
+   "order": 287,
+   "id": "prop.ox_cart",
+   "x": 150,
+   "y": 491.6,
+   "scale": [
+    0.6,
+    0.6
+   ],
+   "flipX": false,
+   "cls": "hot "
+  },
+  {
+   "layer": "dynamic",
+   "order": 288,
+   "id": "prop.dragon_jar",
+   "x": 584,
+   "y": 480,
+   "scale": [
+    0.6,
+    0.6
+   ],
+   "flipX": false,
+   "cls": "jar"
+  },
+  {
+   "layer": "dynamic",
+   "order": 289,
+   "id": "character.farmer",
+   "x": 652,
+   "y": 473.74,
+   "scale": [
+    0.9143,
+    0.9143
+   ],
+   "flipX": false,
+   "cls": "farmer-idle"
+  },
+  {
+   "layer": "dynamic",
+   "order": 290,
+   "id": "prop.signpole",
+   "x": 752,
+   "y": 532,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "dynamic",
+   "order": 291,
+   "id": "prop.signboard",
+   "x": 705,
+   "y": 409.5,
+   "scale": [
+    1.118,
+    1
+   ],
+   "flipX": false,
+   "cls": "sign "
+  },
+  {
+   "layer": "dynamic",
+   "order": 292,
+   "id": "prop.signboard",
+   "x": 705,
+   "y": 405.5,
+   "scale": [
+    1.118,
+    1
+   ],
+   "flipX": false,
+   "cls": "sign "
+  }
+ ],
+ "layout": {
+  "grid": {
+   "origin": [
+    290,
+    226
+   ],
+   "tile": [
+    64,
+    32
+   ],
+   "formula": "x = 290 + (gx - gy)*32, y = 226 + (gx + gy)*16 - z"
+  },
+  "ISO": {
+   "TW": 64,
+   "TH": 32,
+   "OX": 290,
+   "OY": 226,
+   "TILE_DEPTH": 7,
+   "YARD": [
+    -0.8,
+    -0.8,
+    9.8,
+    7.8
+   ],
+   "YARD_DEPTH": 12,
+   "RIM": 0.25,
+   "RIM_DEPTH": 6,
+   "PADDOCK": [
+    8,
+    -5,
+    12.6,
+    -2
+   ]
+  },
+  "FARM_ZONES": {
+   "yard": [
+    -0.8,
+    -0.8,
+    9.8,
+    7.8
+   ],
+   "canal": [
+    -2.75,
+    -8,
+    -2.15,
+    17
+   ],
+   "paddies": [
+    -9.8,
+    -9,
+    -2.7,
+    17
+   ],
+   "paddock": [
+    8,
+    -5,
+    12.6,
+    -2
+   ],
+   "house": [
+    2.3,
+    -4.9,
+    6.4,
+    -1.4
+   ],
+   "stairs": [
+    4.2,
+    -1.4,
+    5,
+    -0.8
+   ],
+   "shrine": [
+    0.7,
+    -2.1,
+    1.7,
+    -1.1
+   ]
+  },
+  "FARM_HOUSE": {
+   "at": [
+    2.4,
+    -4.8
+   ],
+   "depth": 1
+  },
+  "FARM_SHRINE": [
+   1.2,
+   -1.6
+  ],
+  "FARM_MOUNDS": [
+   [
+    -4.4,
+    0.2,
+    1.5,
+    2.6
+   ]
+  ],
+  "FARM_CLEARING": [
+   -6.2,
+   -6.5
+  ],
+  "FARM_FENCES": [
+   [
+    [
+     8,
+     -5
+    ],
+    [
+     12.6,
+     -5
+    ]
+   ],
+   [
+    [
+     8,
+     -5
+    ],
+    [
+     8,
+     -2
+    ]
+   ],
+   [
+    [
+     8,
+     -2
+    ],
+    [
+     12.6,
+     -2
+    ]
+   ]
+  ],
+  "FARM_PATH": [
+   [
+    9.8,
+    5
+   ],
+   [
+    13,
+    3.6
+   ],
+   [
+    17,
+    2.4
+   ],
+   [
+    24,
+    1
+   ]
+  ],
+  "FARM_POND": {
+   "at": [
+    14.6,
+    -3.2
+   ],
+   "r": [
+    95,
+    40
+   ]
+  },
+  "FARM_SPOTS": {
+   "cart": [
+    84,
+    491
+   ],
+   "cartSign": [
+    34,
+    452
+   ],
+   "jar": [
+    584,
+    392
+   ],
+   "farmer": [
+    652,
+    474
+   ],
+   "buffalo": [
+    722,
+    334
+   ]
+  },
+  "FARM_SCALE": {
+   "shrine": 0.7,
+   "buffalo": 0.75,
+   "jar": 0.6,
+   "cart": 0.6,
+   "farmer": 0.9142857142857143
+  },
+  "BANANA_SPOTS": [
+   [
+    -1.55,
+    -0.4,
+    "fruiting",
+    0.8
+   ],
+   [
+    -1.6,
+    -2.4,
+    "old",
+    0.8
+   ],
+   [
+    3.3,
+    -1,
+    "young",
+    0.75
+   ],
+   [
+    -3.7,
+    1,
+    "harvested",
+    0.75
+   ],
+   [
+    6.9,
+    -0.95,
+    "ripe",
+    0.78
+   ]
+  ],
+  "PALM_SPOTS": [
+   [
+    -5,
+    1.9,
+    "coconut_dwarf",
+    1
+   ],
+   [
+    -1.55,
+    3.8,
+    "coconut_lean",
+    1
+   ],
+   [
+    -1.55,
+    5.8,
+    "coconut_twin",
+    1
+   ],
+   [
+    -1.6,
+    7.9,
+    "sugar_tall",
+    1.04
+   ],
+   [
+    -1.6,
+    9.9,
+    "sugar_ladder",
+    1
+   ],
+   [
+    -1.6,
+    12,
+    "sugar_pair",
+    1
+   ],
+   [
+    12,
+    -5.8,
+    "betel_cluster",
+    0.95
+   ]
+  ],
+  "FARM_PADDIES": {
+   "dike": 0.16,
+   "inset": 0.24,
+   "row": 0.55,
+   "step": 0.42,
+   "fields": [
+    [
+     -6.2,
+     -6.5,
+     -4.5,
+     -4.4,
+     "young"
+    ],
+    [
+     -4.5,
+     -6.5,
+     -2.75,
+     -4.4,
+     "young"
+    ],
+    [
+     -6.2,
+     -4.4,
+     -2.75,
+     -2.5,
+     "ripe"
+    ],
+    [
+     -6.2,
+     -2.5,
+     -2.75,
+     3,
+     "young"
+    ],
+    [
+     -6.2,
+     3,
+     -4.5,
+     6.1,
+     "ripe"
+    ],
+    [
+     -4.5,
+     3,
+     -2.75,
+     6.1,
+     "young"
+    ],
+    [
+     -6.2,
+     6.1,
+     -2.75,
+     16,
+     "young"
+    ]
+   ]
+  },
+  "plots": [
+   {
+    "field": 0,
+    "plot": 0,
+    "gx": 0,
+    "gy": 0,
+    "centre": [
+     290,
+     242
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 1,
+    "gx": 1,
+    "gy": 0,
+    "centre": [
+     322,
+     258
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 2,
+    "gx": 2,
+    "gy": 0,
+    "centre": [
+     354,
+     274
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 3,
+    "gx": 3,
+    "gy": 0,
+    "centre": [
+     386,
+     290
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 4,
+    "gx": 0,
+    "gy": 1,
+    "centre": [
+     258,
+     258
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 5,
+    "gx": 1,
+    "gy": 1,
+    "centre": [
+     290,
+     274
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 6,
+    "gx": 2,
+    "gy": 1,
+    "centre": [
+     322,
+     290
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 7,
+    "gx": 3,
+    "gy": 1,
+    "centre": [
+     354,
+     306
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 8,
+    "gx": 0,
+    "gy": 2,
+    "centre": [
+     226,
+     274
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 9,
+    "gx": 1,
+    "gy": 2,
+    "centre": [
+     258,
+     290
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 10,
+    "gx": 2,
+    "gy": 2,
+    "centre": [
+     290,
+     306
+    ]
+   },
+   {
+    "field": 0,
+    "plot": 11,
+    "gx": 3,
+    "gy": 2,
+    "centre": [
+     322,
+     322
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 0,
+    "gx": 5,
+    "gy": 0,
+    "centre": [
+     450,
+     322
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 1,
+    "gx": 6,
+    "gy": 0,
+    "centre": [
+     482,
+     338
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 2,
+    "gx": 7,
+    "gy": 0,
+    "centre": [
+     514,
+     354
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 3,
+    "gx": 8,
+    "gy": 0,
+    "centre": [
+     546,
+     370
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 4,
+    "gx": 5,
+    "gy": 1,
+    "centre": [
+     418,
+     338
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 5,
+    "gx": 6,
+    "gy": 1,
+    "centre": [
+     450,
+     354
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 6,
+    "gx": 7,
+    "gy": 1,
+    "centre": [
+     482,
+     370
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 7,
+    "gx": 8,
+    "gy": 1,
+    "centre": [
+     514,
+     386
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 8,
+    "gx": 5,
+    "gy": 2,
+    "centre": [
+     386,
+     354
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 9,
+    "gx": 6,
+    "gy": 2,
+    "centre": [
+     418,
+     370
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 10,
+    "gx": 7,
+    "gy": 2,
+    "centre": [
+     450,
+     386
+    ]
+   },
+   {
+    "field": 1,
+    "plot": 11,
+    "gx": 8,
+    "gy": 2,
+    "centre": [
+     482,
+     402
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 0,
+    "gx": 0,
+    "gy": 4,
+    "centre": [
+     162,
+     306
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 1,
+    "gx": 1,
+    "gy": 4,
+    "centre": [
+     194,
+     322
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 2,
+    "gx": 2,
+    "gy": 4,
+    "centre": [
+     226,
+     338
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 3,
+    "gx": 3,
+    "gy": 4,
+    "centre": [
+     258,
+     354
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 4,
+    "gx": 0,
+    "gy": 5,
+    "centre": [
+     130,
+     322
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 5,
+    "gx": 1,
+    "gy": 5,
+    "centre": [
+     162,
+     338
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 6,
+    "gx": 2,
+    "gy": 5,
+    "centre": [
+     194,
+     354
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 7,
+    "gx": 3,
+    "gy": 5,
+    "centre": [
+     226,
+     370
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 8,
+    "gx": 0,
+    "gy": 6,
+    "centre": [
+     98,
+     338
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 9,
+    "gx": 1,
+    "gy": 6,
+    "centre": [
+     130,
+     354
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 10,
+    "gx": 2,
+    "gy": 6,
+    "centre": [
+     162,
+     370
+    ]
+   },
+   {
+    "field": 2,
+    "plot": 11,
+    "gx": 3,
+    "gy": 6,
+    "centre": [
+     194,
+     386
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 0,
+    "gx": 5,
+    "gy": 4,
+    "centre": [
+     322,
+     386
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 1,
+    "gx": 6,
+    "gy": 4,
+    "centre": [
+     354,
+     402
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 2,
+    "gx": 7,
+    "gy": 4,
+    "centre": [
+     386,
+     418
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 3,
+    "gx": 8,
+    "gy": 4,
+    "centre": [
+     418,
+     434
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 4,
+    "gx": 5,
+    "gy": 5,
+    "centre": [
+     290,
+     402
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 5,
+    "gx": 6,
+    "gy": 5,
+    "centre": [
+     322,
+     418
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 6,
+    "gx": 7,
+    "gy": 5,
+    "centre": [
+     354,
+     434
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 7,
+    "gx": 8,
+    "gy": 5,
+    "centre": [
+     386,
+     450
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 8,
+    "gx": 5,
+    "gy": 6,
+    "centre": [
+     258,
+     418
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 9,
+    "gx": 6,
+    "gy": 6,
+    "centre": [
+     290,
+     434
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 10,
+    "gx": 7,
+    "gy": 6,
+    "centre": [
+     322,
+     450
+    ]
+   },
+   {
+    "field": 3,
+    "plot": 11,
+    "gx": 8,
+    "gy": 6,
+    "centre": [
+     354,
+     466
+    ]
+   }
+  ],
+  "pieces": [
+   [
+    "kit.haystack",
+    3.93,
+    14.49,
+    1.04,
+    false
+   ],
+   [
+    "kit.haystack",
+    19.04,
+    -2.97,
+    0.94,
+    false
+   ],
+   [
+    "kit.water_jar",
+    8.72,
+    8.62,
+    1.09,
+    false
+   ],
+   [
+    "kit.bush_a",
+    0.24,
+    10.16,
+    1.04,
+    false
+   ],
+   [
+    "kit.bush_a",
+    19.29,
+    -4.96,
+    0.97,
+    true
+   ],
+   [
+    "kit.bush_a",
+    16.23,
+    -0.69,
+    1.09,
+    false
+   ],
+   [
+    "kit.bush_a",
+    1.35,
+    13.48,
+    1.07,
+    false
+   ],
+   [
+    "kit.bush_a",
+    -0.87,
+    -5.23,
+    1,
+    false
+   ],
+   [
+    "kit.bush_b",
+    -1.24,
+    15.32,
+    0.91,
+    false
+   ],
+   [
+    "kit.bush_b",
+    19.97,
+    -3.77,
+    1.01,
+    false
+   ],
+   [
+    "kit.bush_b",
+    1.13,
+    9.57,
+    0.95,
+    true
+   ],
+   [
+    "kit.bush_b",
+    1.56,
+    -5.7,
+    1.05,
+    true
+   ],
+   [
+    "kit.bush_b",
+    12.52,
+    5.37,
+    1.06,
+    true
+   ],
+   [
+    "kit.flower_patch",
+    15.54,
+    -5.81,
+    0.93,
+    true
+   ],
+   [
+    "kit.flower_patch",
+    8,
+    -5.69,
+    0.96,
+    true
+   ],
+   [
+    "kit.flower_patch",
+    16.13,
+    -1.64,
+    1,
+    false
+   ],
+   [
+    "kit.flower_patch",
+    0.04,
+    15.48,
+    0.96,
+    true
+   ],
+   [
+    "kit.flower_patch",
+    18.15,
+    0.4,
+    1.08,
+    false
+   ],
+   [
+    "kit.flower_patch",
+    2.43,
+    11.79,
+    0.99,
+    false
+   ],
+   [
+    "kit.reeds",
+    16.41,
+    -3.93,
+    1.09,
+    false
+   ],
+   [
+    "kit.reeds",
+    13.12,
+    -4.5,
+    1.01,
+    false
+   ],
+   [
+    "kit.egret",
+    -5.27,
+    11,
+    0.94,
+    false
+   ],
+   [
+    "kit.egret",
+    -5.29,
+    -1.56,
+    1.05,
+    false
+   ],
+   [
+    "kit.egret",
+    -5.3,
+    5.09,
+    0.9,
+    false
+   ],
+   [
+    "kit.rock_a",
+    17.07,
+    -3.24,
+    1.09,
+    false
+   ],
+   [
+    "kit.rock_a",
+    21.53,
+    -3.38,
+    1.07,
+    true
+   ],
+   [
+    "kit.rock_b",
+    9.46,
+    -6.32,
+    0.91,
+    true
+   ],
+   [
+    "kit.rock_b",
+    18.65,
+    -0.85,
+    1.06,
+    true
+   ],
+   [
+    "kit.rock_b",
+    1.86,
+    14.56,
+    1.04,
+    true
+   ]
+  ],
+  "landmarks": [
+   [
+    "kit.field_hut",
+    -4.7,
+    -2.8,
+    1,
+    false,
+    1
+   ],
+   [
+    "kit.scarecrow",
+    -5.6,
+    -0.6,
+    1,
+    false,
+    0.3
+   ],
+   [
+    "kit.haystack",
+    11.6,
+    -4.3,
+    0.9,
+    false,
+    0.5
+   ]
+  ],
+  "forest": [
+   [
+    "kit.bush_b",
+    -6.63,
+    -4.09,
+    0.95,
+    false,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -6.32,
+    -3.21,
+    1.07,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.43,
+    -2.25,
+    1.03,
+    false,
+    1
+   ],
+   [
+    "kit.rock_a",
+    -6.32,
+    -1.42,
+    0.86,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -6.43,
+    -0.55,
+    1.04,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.74,
+    0.29,
+    1.09,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    -6.45,
+    1.27,
+    0.93,
+    true,
+    1
+   ],
+   [
+    "kit.bush_a",
+    -6.68,
+    1.76,
+    1.14,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.67,
+    2.61,
+    0.94,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.73,
+    3.15,
+    1.14,
+    false,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -6.42,
+    4.09,
+    0.94,
+    false,
+    1
+   ],
+   [
+    "kit.rock_a",
+    -6.66,
+    5.06,
+    0.97,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.69,
+    5.73,
+    1.12,
+    true,
+    1
+   ],
+   [
+    "kit.rock_a",
+    -6.68,
+    6.28,
+    1.13,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.51,
+    7.01,
+    0.92,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -6.57,
+    7.54,
+    0.98,
+    true,
+    1
+   ],
+   [
+    "kit.bush_a",
+    -6.55,
+    8.29,
+    0.99,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -6.51,
+    9.26,
+    0.86,
+    true,
+    1
+   ],
+   [
+    "kit.rock_a",
+    -6.46,
+    10.26,
+    0.92,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.49,
+    11.08,
+    0.84,
+    true,
+    1
+   ],
+   [
+    "kit.bush_a",
+    -6.62,
+    11.57,
+    1,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -6.48,
+    12.29,
+    1.02,
+    false,
+    1
+   ],
+   [
+    "kit.tree_flame",
+    -9.5,
+    1.82,
+    1.1,
+    false,
+    0.79
+   ],
+   [
+    "kit.bamboo_clump",
+    -8,
+    5.87,
+    0.93,
+    false,
+    0.87
+   ],
+   [
+    "kit.tree_round_a",
+    -8.43,
+    10.47,
+    0.86,
+    false,
+    0.82
+   ],
+   [
+    "kit.tree_round_b",
+    -9.62,
+    -0.76,
+    1.11,
+    true,
+    0.79
+   ],
+   [
+    "kit.bamboo_clump",
+    -10.14,
+    3.91,
+    0.89,
+    false,
+    0.73
+   ],
+   [
+    "kit.tree_round_a",
+    -7.77,
+    0.53,
+    1,
+    false,
+    0.91
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.65,
+    2.27,
+    1.13,
+    false,
+    0.93
+   ],
+   [
+    "kit.tree_golden_shower",
+    -7.55,
+    -0.8,
+    1.05,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_b",
+    -9.11,
+    9.66,
+    0.83,
+    false,
+    0.79
+   ],
+   [
+    "kit.bamboo_clump",
+    -10.86,
+    4.99,
+    0.83,
+    false,
+    0.64
+   ],
+   [
+    "kit.tree_round_b",
+    -7.48,
+    7.32,
+    1.14,
+    false,
+    0.93
+   ],
+   [
+    "kit.bamboo_clump",
+    -9.81,
+    8.63,
+    1.11,
+    false,
+    0.75
+   ],
+   [
+    "kit.tree_round_a",
+    -10.55,
+    -0.22,
+    1.02,
+    false,
+    0.7
+   ],
+   [
+    "kit.tree_round_a",
+    -8.88,
+    3.15,
+    0.96,
+    false,
+    0.8
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.41,
+    9.25,
+    0.89,
+    false,
+    0.93
+   ],
+   [
+    "kit.tree_flame",
+    -9.01,
+    0.24,
+    1,
+    false,
+    0.78
+   ],
+   [
+    "kit.tree_round_b",
+    -9.21,
+    6.11,
+    0.98,
+    true,
+    0.82
+   ],
+   [
+    "kit.bamboo_clump",
+    -8.27,
+    -2.32,
+    1.08,
+    false,
+    0.88
+   ],
+   [
+    "kit.tree_round_b",
+    -8.3,
+    4.23,
+    1.1,
+    true,
+    0.84
+   ],
+   [
+    "kit.tree_round_a",
+    -10.86,
+    2.34,
+    1.11,
+    false,
+    0.66
+   ],
+   [
+    "kit.bamboo_clump",
+    -10.06,
+    0.81,
+    0.99,
+    false,
+    0.72
+   ],
+   [
+    "kit.tree_golden_shower",
+    -10.42,
+    7.99,
+    0.87,
+    false,
+    0.69
+   ],
+   [
+    "kit.tree_round_b",
+    -10.54,
+    6.75,
+    1.05,
+    false,
+    0.71
+   ],
+   [
+    "kit.tree_flame",
+    -8.72,
+    7.61,
+    1.12,
+    false,
+    0.8
+   ],
+   [
+    "kit.tree_golden_shower",
+    -10.11,
+    5.87,
+    1.03,
+    false,
+    0.71
+   ],
+   [
+    "kit.tree_round_b",
+    -8.5,
+    8.53,
+    1.08,
+    true,
+    0.85
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.39,
+    3.98,
+    1.06,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_b",
+    -9.2,
+    -1.66,
+    1.06,
+    true,
+    0.78
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.57,
+    10.62,
+    0.91,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_a",
+    -9.24,
+    5.03,
+    0.86,
+    false,
+    0.8
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.42,
+    -2.61,
+    1,
+    false,
+    0.93
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.7,
+    4.88,
+    0.89,
+    false,
+    0.93
+   ],
+   [
+    "kit.tree_golden_shower",
+    -10.83,
+    1.41,
+    1.06,
+    false,
+    0.69
+   ],
+   [
+    "kit.tree_round_a",
+    -11.09,
+    6.12,
+    0.91,
+    false,
+    0.67
+   ],
+   [
+    "kit.tree_round_a",
+    -7.47,
+    11.72,
+    1.17,
+    false,
+    0.93
+   ],
+   [
+    "kit.tree_round_a",
+    -9.85,
+    2.85,
+    0.85,
+    false,
+    0.72
+   ],
+   [
+    "kit.tree_round_a",
+    -8.53,
+    -1.08,
+    0.9,
+    false,
+    0.86
+   ],
+   [
+    "kit.bamboo_clump",
+    -7.84,
+    -1.58,
+    1.03,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_b",
+    -7.79,
+    3.12,
+    0.84,
+    true,
+    0.93
+   ],
+   [
+    "kit.tree_round_b",
+    -8.44,
+    1.3,
+    1.16,
+    true,
+    0.86
+   ],
+   [
+    "kit.bamboo_clump",
+    -9.61,
+    7.04,
+    1.15,
+    false,
+    0.74
+   ],
+   [
+    "kit.bush_a",
+    -7.93,
+    -0.42,
+    1.08,
+    true,
+    0.88
+   ],
+   [
+    "kit.bush_b",
+    -7.33,
+    -3.19,
+    0.91,
+    false,
+    0.92
+   ],
+   [
+    "kit.bush_b",
+    -9.26,
+    8.39,
+    1.13,
+    false,
+    0.78
+   ],
+   [
+    "kit.bush_a",
+    -8.54,
+    2.31,
+    1.17,
+    true,
+    0.83
+   ],
+   [
+    "kit.bush_b",
+    -6.98,
+    10.75,
+    0.9,
+    false,
+    0.94
+   ],
+   [
+    "kit.bush_a",
+    -6.72,
+    -2.74,
+    1.18,
+    false,
+    0.96
+   ],
+   [
+    "kit.bush_b",
+    -8.2,
+    7.32,
+    0.96,
+    true,
+    0.86
+   ],
+   [
+    "kit.bush_b",
+    -8.25,
+    9.92,
+    1.17,
+    false,
+    0.85
+   ],
+   [
+    "kit.bush_b",
+    -3.79,
+    -6.91,
+    0.93,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    -3.1,
+    -6.9,
+    1,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    -2.22,
+    -6.75,
+    0.82,
+    true,
+    1
+   ],
+   [
+    "kit.rock_a",
+    -1.76,
+    -6.89,
+    0.95,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -1.11,
+    -6.74,
+    0.96,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    -0.16,
+    -6.9,
+    1.03,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    0.6,
+    -6.86,
+    0.82,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    1.17,
+    -6.81,
+    0.93,
+    true,
+    1
+   ],
+   [
+    "kit.rock_a",
+    2.16,
+    -7.05,
+    0.96,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    2.68,
+    -6.91,
+    0.92,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    3.29,
+    -6.73,
+    1.11,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    4.04,
+    -6.78,
+    0.91,
+    false,
+    1
+   ],
+   [
+    "kit.rock_a",
+    4.66,
+    -7.03,
+    0.94,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    5.44,
+    -6.72,
+    1.02,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    6.06,
+    -6.78,
+    0.9,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    7.09,
+    -6.63,
+    0.83,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    7.82,
+    -6.81,
+    0.97,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    8.32,
+    -6.94,
+    0.92,
+    true,
+    1
+   ],
+   [
+    "kit.rock_a",
+    9.12,
+    -6.77,
+    1.09,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    10.03,
+    -6.97,
+    1.05,
+    false,
+    1
+   ],
+   [
+    "kit.bush_a",
+    10.82,
+    -6.96,
+    0.92,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    11.69,
+    -6.72,
+    0.9,
+    false,
+    1
+   ],
+   [
+    "kit.rock_a",
+    12.3,
+    -6.65,
+    1.14,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    13.22,
+    -6.63,
+    0.88,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    14.01,
+    -7.05,
+    1.01,
+    false,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    14.51,
+    -6.86,
+    1.13,
+    true,
+    1
+   ],
+   [
+    "kit.bush_a",
+    15.36,
+    -6.87,
+    0.88,
+    false,
+    1
+   ],
+   [
+    "kit.bush_b",
+    16.41,
+    -6.7,
+    1,
+    true,
+    1
+   ],
+   [
+    "kit.bush_b",
+    16.91,
+    -6.74,
+    0.98,
+    false,
+    1
+   ],
+   [
+    "kit.rock_a",
+    17.54,
+    -6.65,
+    1,
+    true,
+    1
+   ],
+   [
+    "kit.flower_patch",
+    18.1,
+    -6.64,
+    0.9,
+    true,
+    1
+   ],
+   [
+    "kit.bush_a",
+    18.98,
+    -6.96,
+    1.02,
+    false,
+    1
+   ],
+   [
+    "kit.bamboo_clump",
+    -0.24,
+    -9.01,
+    1.08,
+    false,
+    0.82
+   ],
+   [
+    "kit.tree_round_b",
+    0.69,
+    -10.81,
+    0.83,
+    false,
+    0.69
+   ],
+   [
+    "kit.bamboo_clump",
+    13.91,
+    -8.69,
+    0.83,
+    false,
+    0.85
+   ],
+   [
+    "kit.tree_round_b",
+    10.89,
+    -8.84,
+    0.94,
+    false,
+    0.83
+   ],
+   [
+    "kit.tree_round_b",
+    17.69,
+    -7.91,
+    0.96,
+    true,
+    0.92
+   ],
+   [
+    "kit.tree_round_a",
+    3.69,
+    -10.64,
+    1.15,
+    false,
+    0.73
+   ],
+   [
+    "kit.tree_round_a",
+    7.28,
+    -10.73,
+    0.85,
+    false,
+    0.73
+   ],
+   [
+    "kit.tree_flame",
+    6.91,
+    -8.22,
+    1,
+    false,
+    0.87
+   ],
+   [
+    "kit.bamboo_clump",
+    12.55,
+    -7.83,
+    0.99,
+    false,
+    0.91
+   ],
+   [
+    "kit.bamboo_clump",
+    16.58,
+    -9.48,
+    1.15,
+    false,
+    0.77
+   ],
+   [
+    "kit.tree_golden_shower",
+    1.76,
+    -9.09,
+    1.15,
+    false,
+    0.84
+   ],
+   [
+    "kit.tree_flame",
+    -0.28,
+    -10.35,
+    1.16,
+    false,
+    0.76
+   ],
+   [
+    "kit.bamboo_clump",
+    12.35,
+    -11.06,
+    0.92,
+    false,
+    0.7
+   ],
+   [
+    "kit.tree_round_b",
+    4.09,
+    -7.98,
+    0.85,
+    false,
+    0.89
+   ],
+   [
+    "kit.tree_round_a",
+    7.57,
+    -9.76,
+    1.01,
+    false,
+    0.75
+   ],
+   [
+    "kit.tree_golden_shower",
+    6.33,
+    -9.35,
+    0.97,
+    false,
+    0.79
+   ],
+   [
+    "kit.tree_round_b",
+    2.31,
+    -10.55,
+    0.86,
+    true,
+    0.74
+   ],
+   [
+    "kit.tree_round_a",
+    11.51,
+    -9.54,
+    1.03,
+    false,
+    0.81
+   ],
+   [
+    "kit.bamboo_clump",
+    -1.45,
+    -8.12,
+    0.98,
+    false,
+    0.91
+   ],
+   [
+    "kit.bamboo_clump",
+    15.28,
+    -10.57,
+    0.95,
+    false,
+    0.74
+   ],
+   [
+    "kit.tree_golden_shower",
+    0.39,
+    -8.07,
+    0.9,
+    false,
+    0.89
+   ],
+   [
+    "kit.tree_round_b",
+    13.73,
+    -9.92,
+    0.84,
+    true,
+    0.77
+   ],
+   [
+    "kit.tree_flame",
+    5.24,
+    -8.44,
+    1.08,
+    false,
+    0.89
+   ],
+   [
+    "kit.tree_round_a",
+    2.93,
+    -9.45,
+    1.14,
+    false,
+    0.8
+   ],
+   [
+    "kit.tree_golden_shower",
+    4.97,
+    -10.58,
+    0.87,
+    false,
+    0.69
+   ],
+   [
+    "kit.tree_round_a",
+    11.33,
+    -10.87,
+    0.9,
+    false,
+    0.71
+   ],
+   [
+    "kit.bamboo_clump",
+    16.2,
+    -8.27,
+    1.05,
+    false,
+    0.89
+   ],
+   [
+    "kit.tree_round_a",
+    4.64,
+    -9.33,
+    1.01,
+    false,
+    0.82
+   ],
+   [
+    "kit.tree_golden_shower",
+    10.36,
+    -7.98,
+    0.85,
+    false,
+    0.92
+   ],
+   [
+    "kit.bamboo_clump",
+    9.52,
+    -8.94,
+    1.06,
+    false,
+    0.82
+   ],
+   [
+    "kit.bamboo_clump",
+    2.48,
+    -8.22,
+    1.18,
+    false,
+    0.89
+   ],
+   [
+    "kit.tree_round_b",
+    15.15,
+    -9.17,
+    0.83,
+    true,
+    0.82
+   ],
+   [
+    "kit.bamboo_clump",
+    -1.75,
+    -9.08,
+    1.14,
+    false,
+    0.83
+   ],
+   [
+    "kit.tree_round_b",
+    8.69,
+    -10.06,
+    0.95,
+    false,
+    0.74
+   ],
+   [
+    "kit.tree_round_a",
+    9.96,
+    -9.96,
+    1.06,
+    false,
+    0.79
+   ],
+   [
+    "kit.bamboo_clump",
+    -2.97,
+    -7.97,
+    0.85,
+    false,
+    0.9
+   ],
+   [
+    "kit.bamboo_clump",
+    14.82,
+    -7.84,
+    0.9,
+    false,
+    0.92
+   ],
+   [
+    "kit.tree_round_a",
+    5.36,
+    -9.73,
+    1.13,
+    false,
+    0.77
+   ],
+   [
+    "kit.tree_golden_shower",
+    12.47,
+    -9.29,
+    0.85,
+    false,
+    0.8
+   ],
+   [
+    "kit.tree_round_b",
+    14.12,
+    -11.04,
+    1.04,
+    false,
+    0.65
+   ],
+   [
+    "kit.tree_flame",
+    0.81,
+    -9.67,
+    0.85,
+    false,
+    0.76
+   ],
+   [
+    "kit.tree_golden_shower",
+    7.97,
+    -9.03,
+    0.89,
+    false,
+    0.86
+   ],
+   [
+    "kit.tree_flame",
+    4.6,
+    -11.38,
+    0.9,
+    false,
+    0.68
+   ],
+   [
+    "kit.bamboo_clump",
+    6.1,
+    -11.39,
+    1.17,
+    false,
+    0.67
+   ],
+   [
+    "kit.tree_golden_shower",
+    10.22,
+    -11.34,
+    0.83,
+    false,
+    0.68
+   ],
+   [
+    "kit.tree_round_b",
+    9.18,
+    -7.67,
+    1.17,
+    true,
+    0.95
+   ],
+   [
+    "kit.tree_round_b",
+    8.9,
+    -11.02,
+    1.11,
+    true,
+    0.71
+   ],
+   [
+    "kit.tree_round_b",
+    7.95,
+    -7.71,
+    1.15,
+    true,
+    0.95
+   ],
+   [
+    "kit.tree_round_a",
+    3.38,
+    -8.58,
+    0.86,
+    false,
+    0.85
+   ],
+   [
+    "kit.tree_golden_shower",
+    1.45,
+    -7.77,
+    1.13,
+    false,
+    0.94
+   ],
+   [
+    "kit.tree_flame",
+    11.48,
+    -7.93,
+    0.86,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_b",
+    8.61,
+    -8.49,
+    0.89,
+    false,
+    0.9
+   ],
+   [
+    "kit.bamboo_clump",
+    6.33,
+    -10.52,
+    0.96,
+    false,
+    0.7
+   ],
+   [
+    "kit.tree_flame",
+    12.62,
+    -10.19,
+    0.85,
+    false,
+    0.73
+   ],
+   [
+    "kit.tree_round_a",
+    3.18,
+    -11.35,
+    1.1,
+    false,
+    0.63
+   ],
+   [
+    "kit.tree_flame",
+    3.82,
+    -9.65,
+    1,
+    false,
+    0.77
+   ],
+   [
+    "kit.tree_flame",
+    11.93,
+    -8.61,
+    1,
+    false,
+    0.86
+   ],
+   [
+    "kit.tree_round_b",
+    8.11,
+    -10.66,
+    0.84,
+    false,
+    0.7
+   ],
+   [
+    "kit.bamboo_clump",
+    -0.44,
+    -7.82,
+    1.03,
+    false,
+    0.91
+   ],
+   [
+    "kit.tree_round_a",
+    6.07,
+    -7.73,
+    0.83,
+    false,
+    0.92
+   ],
+   [
+    "kit.tree_round_a",
+    15.73,
+    -9.78,
+    1.16,
+    false,
+    0.78
+   ],
+   [
+    "kit.bush_b",
+    7.45,
+    -8.46,
+    1,
+    false,
+    0.86
+   ],
+   [
+    "kit.bush_b",
+    -0.44,
+    -9.58,
+    1.11,
+    true,
+    0.78
+   ],
+   [
+    "kit.bush_a",
+    -0.82,
+    -8.38,
+    1.15,
+    false,
+    0.87
+   ],
+   [
+    "kit.bush_b",
+    6.07,
+    -8.27,
+    1.14,
+    false,
+    0.87
+   ],
+   [
+    "kit.bush_a",
+    12.91,
+    -7.33,
+    1.04,
+    true,
+    0.94
+   ],
+   [
+    "kit.bush_b",
+    6.88,
+    -9.47,
+    0.98,
+    true,
+    0.79
+   ]
+  ],
+  "grass": [
+   [
+    "kit.grass_tuft_d",
+    -5.54,
+    0.49,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -5.05,
+    -0.21,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -5.19,
+    0.23,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -5.24,
+    0.75,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.73,
+    -1.38,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.68,
+    -1.04,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -4.75,
+    -0.65,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.58,
+    -0.51,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -4.85,
+    -0.02,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.84,
+    0.37,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -4.88,
+    0.82,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -4.85,
+    1.3,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.72,
+    1.77,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -4.3,
+    -1.5,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -4.45,
+    -1.09,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -4.48,
+    -0.83,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -4.11,
+    -0.44,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -4.09,
+    0,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -4.17,
+    0.84,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -4.5,
+    1.47,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -3.84,
+    -1.47,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -3.86,
+    -0.83,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -3.89,
+    -0.38,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -3.95,
+    0.11,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -3.86,
+    0.52,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -3.7,
+    1.14,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -3.94,
+    1.18,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -3.56,
+    -0.51,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -3.59,
+    0.71,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.79,
+    -4.89,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.68,
+    -3.98,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    -1.74,
+    -2.65,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    -1.85,
+    -2.55,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.83,
+    3.38,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    -1.75,
+    7.14,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.94,
+    10.88,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    -1.83,
+    11.71,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.6,
+    12.98,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.76,
+    16.87,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.4,
+    -5.8,
+    0.97,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -1.38,
+    -4.6,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.3,
+    -4.07,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.39,
+    -3.7,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.29,
+    -3.13,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.31,
+    -2.22,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.28,
+    -2.16,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.45,
+    -1.77,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    -1.37,
+    -0.05,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    -1.34,
+    0.49,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.56,
+    2.37,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.34,
+    3.56,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    -1.36,
+    4.25,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    -1.35,
+    6.28,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.17,
+    8.64,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.39,
+    9.17,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.18,
+    10.28,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -1.4,
+    10.79,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.19,
+    11.6,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.43,
+    11.95,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.16,
+    12.5,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    -1.36,
+    12.8,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -1.43,
+    13.35,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.22,
+    13.52,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.42,
+    14.11,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -1.26,
+    14.59,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.35,
+    15.08,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.35,
+    16.14,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.46,
+    16.61,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.06,
+    -6.02,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.82,
+    -5.8,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -1.09,
+    -5.48,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.87,
+    -4.88,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.07,
+    -4.4,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.74,
+    -3.75,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.85,
+    -2.9,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.88,
+    -1.47,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.83,
+    8.9,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.83,
+    9.19,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.86,
+    10.2,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -1.12,
+    10.56,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.99,
+    11.23,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.75,
+    11.37,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.97,
+    12.47,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -1.09,
+    12.82,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.85,
+    13.71,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.94,
+    14.32,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.9,
+    15.33,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -1.14,
+    15.76,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.91,
+    15.99,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.73,
+    17.85,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.56,
+    -5.9,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.34,
+    -5.5,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.48,
+    -4.88,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.72,
+    -4.28,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.35,
+    -3.35,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.35,
+    -2.68,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.65,
+    -1.62,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.56,
+    9.82,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.53,
+    10.78,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.4,
+    11.04,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.44,
+    11.39,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.55,
+    12.13,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    -0.41,
+    12.83,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.62,
+    14.02,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    -0.39,
+    14.42,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.52,
+    14.74,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    -0.5,
+    15.08,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.53,
+    15.52,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.36,
+    16.25,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.69,
+    17,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.33,
+    17.68,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -0.21,
+    -5.99,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.03,
+    -5.83,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.13,
+    -5.33,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.11,
+    -4.52,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.08,
+    -3.61,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.23,
+    -2.62,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -0.04,
+    -2.4,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.1,
+    -2.03,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -0.21,
+    -1.71,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.05,
+    8.87,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    -0.06,
+    9.19,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.02,
+    10.73,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.04,
+    11.18,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.1,
+    11.42,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    -0.16,
+    11.73,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.27,
+    12.28,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.23,
+    12.87,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.01,
+    13.04,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    -0.23,
+    13.48,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.03,
+    13.97,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.11,
+    14.27,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.09,
+    14.78,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.08,
+    15.07,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    -0.06,
+    16.05,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    -0.11,
+    16.6,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    -0.18,
+    16.82,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    -0.3,
+    17.23,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    -0.28,
+    18.15,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    -0.02,
+    18.44,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.37,
+    -5.82,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.12,
+    -5.14,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.13,
+    -4.08,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    0.11,
+    -3.54,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.26,
+    8.45,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.53,
+    9.22,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.33,
+    10.18,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.47,
+    10.64,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.41,
+    10.84,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    0.27,
+    11.74,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.32,
+    12.62,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.35,
+    13.18,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.23,
+    13.6,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.43,
+    15.31,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.15,
+    15.82,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.17,
+    16.18,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.19,
+    16.34,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.39,
+    16.85,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.21,
+    17.39,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.2,
+    17.92,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.3,
+    18.04,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.88,
+    -5.59,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.9,
+    -5.28,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.63,
+    -4.86,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.63,
+    -4.03,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.91,
+    -3.56,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.91,
+    -3.22,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.88,
+    -2.62,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    0.64,
+    8.21,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.94,
+    9.18,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    0.69,
+    9.88,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.67,
+    10.7,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    0.61,
+    11.08,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.94,
+    11.39,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.61,
+    12.36,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.77,
+    12.69,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.53,
+    13.67,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    0.85,
+    13.99,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.93,
+    14.21,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.56,
+    14.86,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.54,
+    15.18,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    0.55,
+    15.57,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.94,
+    15.87,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.56,
+    16.32,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.92,
+    17.06,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    0.6,
+    17.37,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.54,
+    17.69,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.79,
+    18.01,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.75,
+    18.59,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.91,
+    19.15,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    0.65,
+    19.35,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.25,
+    -6.46,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.37,
+    -6.36,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.22,
+    -5.77,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.07,
+    -5.21,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.27,
+    -4.12,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    0.97,
+    -3.64,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    1.28,
+    -3.39,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.01,
+    -2.77,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    1.29,
+    9.34,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    1.11,
+    9.68,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.19,
+    10.18,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.22,
+    11.63,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    1.24,
+    12.33,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.96,
+    13.43,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.28,
+    13.81,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.06,
+    14.56,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.18,
+    14.91,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.25,
+    15.11,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    1.18,
+    15.74,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.04,
+    15.96,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    0.97,
+    16.58,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.07,
+    17.09,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.1,
+    17.23,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.16,
+    17.78,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.15,
+    18.87,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    0.99,
+    19.54,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    1.39,
+    -6.23,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.75,
+    -5.78,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.4,
+    -5.15,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.52,
+    -5.07,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.46,
+    -4.42,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.58,
+    -3.76,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    1.55,
+    -3.28,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.78,
+    8.84,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.78,
+    10.36,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.45,
+    11.03,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.45,
+    11.76,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.63,
+    12.34,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.72,
+    12.68,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.53,
+    14.04,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.54,
+    14.51,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.64,
+    15.77,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.58,
+    16.3,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.43,
+    17.38,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.75,
+    17.93,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.65,
+    18.04,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.54,
+    18.76,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.72,
+    19.21,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.49,
+    19.43,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.65,
+    19.71,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    2.15,
+    -6.12,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    1.89,
+    -5.67,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.79,
+    -3.14,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.01,
+    -2.53,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.09,
+    8.72,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.2,
+    9.06,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.03,
+    9.49,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2,
+    10.41,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.87,
+    11.42,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.82,
+    12.04,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    1.95,
+    12.41,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.92,
+    12.84,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.84,
+    13.83,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.14,
+    15.04,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    1.85,
+    15.77,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.89,
+    16.23,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    1.89,
+    16.82,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.84,
+    17.92,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.13,
+    18.17,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.01,
+    18.61,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    1.86,
+    18.99,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    1.9,
+    19.42,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    2.52,
+    -6.36,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.57,
+    -5.81,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.48,
+    8.8,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    2.54,
+    9.31,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.38,
+    10.21,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.56,
+    10.73,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.48,
+    11,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.56,
+    11.29,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.45,
+    12.42,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.57,
+    13.68,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.47,
+    14.41,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.34,
+    15.45,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.5,
+    16.42,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.36,
+    16.71,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    2.29,
+    17.23,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.4,
+    17.8,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.22,
+    18.08,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.31,
+    18.83,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.59,
+    19.3,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.52,
+    19.69,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    2.3,
+    20.31,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    2.62,
+    20.56,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.98,
+    -5.93,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    2.79,
+    9.15,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.84,
+    9.54,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.69,
+    9.85,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.67,
+    10.36,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    2.67,
+    10.46,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    2.85,
+    10.89,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.99,
+    11.58,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.84,
+    11.99,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.03,
+    12.14,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.84,
+    12.77,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.78,
+    12.97,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.02,
+    13.99,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.65,
+    15.49,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.02,
+    16.19,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.78,
+    17.01,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    2.68,
+    17.27,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    2.91,
+    17.66,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    3.02,
+    18.21,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    2.86,
+    19.1,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.78,
+    19.43,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    2.66,
+    19.81,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.26,
+    -5.96,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.24,
+    -5.3,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    3.06,
+    8.65,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.25,
+    9.14,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.41,
+    10.31,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.41,
+    10.58,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.41,
+    10.9,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.38,
+    12.62,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.36,
+    13.05,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.32,
+    13.44,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.4,
+    14.14,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.18,
+    14.57,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    3.1,
+    15.02,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    3.12,
+    15.21,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.46,
+    15.48,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    3.18,
+    16.46,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.08,
+    17.59,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.21,
+    18.37,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.13,
+    18.59,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.28,
+    19.14,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    3.23,
+    19.51,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    3.84,
+    -5.87,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.51,
+    8.87,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.51,
+    9.4,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.7,
+    9.71,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.87,
+    10.2,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.63,
+    10.71,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.48,
+    10.93,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.69,
+    11.27,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.74,
+    11.73,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    3.78,
+    12.46,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.69,
+    12.88,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.82,
+    13.08,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.67,
+    13.64,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.62,
+    13.81,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.82,
+    14.79,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.75,
+    15.4,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    3.85,
+    15.73,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.66,
+    16.29,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.81,
+    16.37,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    3.82,
+    17.11,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.76,
+    17.42,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.85,
+    18.19,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.49,
+    18.5,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    3.8,
+    18.88,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.68,
+    19.45,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.31,
+    -5.85,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.26,
+    9.41,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.04,
+    9.9,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.15,
+    10.27,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.13,
+    10.62,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4,
+    11.58,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.07,
+    11.77,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.13,
+    12.22,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.02,
+    12.61,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    3.9,
+    13.13,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.28,
+    13.37,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    3.99,
+    14.1,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.18,
+    14.55,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.12,
+    14.63,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    4.25,
+    15.41,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.29,
+    15.49,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.19,
+    15.91,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.1,
+    16.35,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.21,
+    17.51,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.11,
+    17.63,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.01,
+    18.25,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.07,
+    18.57,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    3.99,
+    19,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.38,
+    -5.58,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    4.45,
+    8.44,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.72,
+    10.48,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.51,
+    10.94,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    4.56,
+    11.33,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.58,
+    12.08,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    4.49,
+    12.2,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.53,
+    12.93,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.34,
+    13.16,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.52,
+    13.67,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.66,
+    14.01,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.35,
+    14.4,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.43,
+    14.86,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.43,
+    15.28,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    4.64,
+    15.56,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    4.52,
+    16.11,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.32,
+    16.97,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.34,
+    17.31,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.35,
+    18.48,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.88,
+    -5.56,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.77,
+    -5.35,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.81,
+    8.71,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.1,
+    9.39,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.92,
+    10.13,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.04,
+    11.27,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    4.82,
+    12.16,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.87,
+    12.58,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.97,
+    12.95,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.99,
+    13.61,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    5,
+    14.02,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.81,
+    14.67,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    4.78,
+    16.19,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    5,
+    16.68,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    4.91,
+    16.75,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    4.9,
+    18.09,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.5,
+    -6.19,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.36,
+    -5.55,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.55,
+    -5.44,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.53,
+    -5.08,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.28,
+    8.72,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.18,
+    8.94,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.32,
+    10.22,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.56,
+    10.93,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.52,
+    11.55,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.39,
+    11.79,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.25,
+    12.11,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    5.3,
+    12.79,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    5.2,
+    13.12,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.47,
+    13.73,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.19,
+    14.09,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.34,
+    14.44,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.47,
+    14.95,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.19,
+    15.13,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    5.21,
+    15.51,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.25,
+    16.46,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.55,
+    17.19,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.24,
+    17.57,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    5.81,
+    -6.41,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    5.82,
+    -6.08,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.81,
+    -5.94,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.66,
+    8.67,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.69,
+    9.78,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    5.57,
+    10.34,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.77,
+    11.24,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.71,
+    11.88,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.95,
+    12.14,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.67,
+    12.59,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.88,
+    13.23,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.76,
+    13.54,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.81,
+    13.82,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.64,
+    14.27,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    5.57,
+    14.82,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    5.64,
+    15.11,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    5.62,
+    15.78,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    5.67,
+    16.21,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    5.79,
+    17.1,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.29,
+    -5.8,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.19,
+    -5.33,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.12,
+    8.85,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.26,
+    9.78,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.4,
+    11.06,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6,
+    11.53,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.23,
+    13.3,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.06,
+    13.45,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.23,
+    13.78,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.25,
+    14.77,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.11,
+    15.05,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    6.22,
+    15.58,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    6.06,
+    16.18,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.37,
+    16.39,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    6.6,
+    -6.01,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.7,
+    -5.8,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.49,
+    -5.19,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    6.66,
+    -3.98,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.71,
+    8.94,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.82,
+    9.46,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    6.62,
+    10.37,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    6.61,
+    10.88,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.6,
+    11.66,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    6.66,
+    12.02,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    6.64,
+    12.13,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    6.44,
+    12.55,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.74,
+    13.26,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.62,
+    14.07,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.56,
+    15.45,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    6.61,
+    16.02,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    6.62,
+    16.57,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    7.02,
+    -5.9,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.2,
+    -5.27,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.16,
+    -4.77,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.08,
+    -4.11,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.13,
+    -3.3,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    6.97,
+    -2.71,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    7.1,
+    8.36,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.22,
+    8.74,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    7.23,
+    10.06,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.23,
+    10.53,
+    1,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    6.97,
+    11.07,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    6.94,
+    11.43,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.05,
+    11.95,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.09,
+    12.39,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.2,
+    12.67,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.18,
+    13.25,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.07,
+    13.62,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.15,
+    15,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    7.62,
+    -5.99,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.52,
+    -5.39,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.37,
+    -4.39,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.31,
+    -3.5,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    7.53,
+    -2.92,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.28,
+    8.98,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.54,
+    9.51,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.56,
+    9.77,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.67,
+    10.54,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.46,
+    10.91,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.5,
+    11.77,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.57,
+    12.15,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.42,
+    13.37,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.55,
+    14.02,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.38,
+    14.85,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    7.3,
+    15.95,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.82,
+    -5.58,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    7.76,
+    -5.09,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.79,
+    -4.23,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.04,
+    8.75,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.99,
+    9.55,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    8,
+    9.79,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.99,
+    10.02,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.99,
+    10.42,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.07,
+    11.11,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    7.69,
+    11.28,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.03,
+    12.03,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    7.92,
+    12.39,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.9,
+    12.88,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.91,
+    13.28,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.01,
+    14.37,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    7.68,
+    14.83,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    7.75,
+    15.2,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.29,
+    -6,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    8.31,
+    -5.72,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.38,
+    8.88,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.37,
+    9.42,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.29,
+    9.69,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    8.25,
+    10.33,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    8.16,
+    10.47,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    8.15,
+    11.19,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.43,
+    11.66,
+    0.97,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.22,
+    11.88,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.33,
+    12.28,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.25,
+    12.89,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.33,
+    14.18,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.3,
+    14.36,
+    0.97,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.14,
+    14.69,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    8.72,
+    -6.21,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    8.62,
+    -5.76,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.88,
+    8.82,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    8.52,
+    9.5,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    8.53,
+    9.65,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.51,
+    10.01,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    8.92,
+    10.84,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.79,
+    11.96,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    8.76,
+    12.51,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    8.82,
+    12.89,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    8.69,
+    12.97,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    8.74,
+    14.12,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.31,
+    -5.96,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    9.01,
+    8.49,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.04,
+    8.91,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    8.97,
+    9.93,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.14,
+    10.31,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.24,
+    10.76,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.3,
+    11.05,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.24,
+    11.89,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    9.13,
+    12.11,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    9.13,
+    12.91,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.03,
+    13.17,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.13,
+    14.06,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    9.5,
+    -1.22,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    9.5,
+    8.95,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.64,
+    9.36,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.36,
+    9.57,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    9.51,
+    10.35,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.68,
+    10.83,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    9.62,
+    10.91,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.55,
+    11.43,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    9.68,
+    12.71,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    9.45,
+    13.07,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    10.07,
+    -5.92,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.06,
+    -1.43,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    9.99,
+    9.98,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.13,
+    10.11,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    9.93,
+    10.53,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.04,
+    11.08,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    9.83,
+    11.39,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    9.98,
+    12.08,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    10.18,
+    12.23,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.54,
+    -6.38,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.6,
+    -0.93,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.51,
+    -0.85,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.37,
+    2.68,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.32,
+    6.84,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.59,
+    8.16,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    10.49,
+    9.36,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.34,
+    9.7,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.29,
+    10.22,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    10.4,
+    10.63,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.23,
+    11.16,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.4,
+    11.53,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.5,
+    12.21,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.37,
+    12.83,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.02,
+    -0.8,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.01,
+    0.78,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.87,
+    1.95,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.79,
+    2.05,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.71,
+    2.44,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.93,
+    3.5,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.97,
+    5.67,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.83,
+    6.55,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    10.84,
+    6.97,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    10.65,
+    7.14,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.67,
+    7.5,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.9,
+    8.26,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.61,
+    8.37,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    10.65,
+    9.65,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.96,
+    10.58,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    10.91,
+    11.54,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.8,
+    11.72,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    10.78,
+    12.39,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.26,
+    -6.07,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.44,
+    -5.58,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    11.34,
+    -5.43,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.15,
+    -1.24,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.26,
+    -0.84,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.21,
+    -0.15,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.42,
+    1.49,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    11.13,
+    1.81,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.19,
+    2.08,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.19,
+    6.09,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.1,
+    6.6,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.33,
+    7.05,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.17,
+    7.98,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.16,
+    8.45,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.43,
+    8.95,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.4,
+    10.08,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.31,
+    10.81,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.07,
+    11.73,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.62,
+    -5.8,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.47,
+    0.2,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.54,
+    0.47,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.63,
+    1.49,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.46,
+    1.85,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.58,
+    2.22,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.72,
+    2.6,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.61,
+    5.84,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.83,
+    6.36,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.87,
+    6.78,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.51,
+    7.45,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.53,
+    7.94,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.78,
+    8.44,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.59,
+    9.78,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.8,
+    10.19,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.6,
+    10.51,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.55,
+    11.27,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.27,
+    -6.48,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.14,
+    -0.86,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.05,
+    0.09,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.25,
+    1.04,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.09,
+    1.53,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    11.9,
+    2.08,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    11.98,
+    2.57,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.08,
+    6.6,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    11.88,
+    7.08,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    11.9,
+    7.8,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.21,
+    8.28,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.21,
+    8.42,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    12.16,
+    9.43,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.23,
+    10.31,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    11.89,
+    10.83,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    11.88,
+    10.89,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    12.71,
+    -6.39,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.37,
+    -5.9,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.62,
+    -1.09,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.46,
+    -0.5,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.71,
+    0.57,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    12.63,
+    1.73,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.54,
+    2.18,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    12.67,
+    5.23,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.53,
+    6.17,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.6,
+    6.59,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    12.55,
+    6.89,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.51,
+    7.16,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.67,
+    8.22,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.65,
+    8.36,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.58,
+    9.34,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    12.33,
+    9.82,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.77,
+    -5.57,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.99,
+    -5.34,
+    1,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    13,
+    -1.31,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    12.86,
+    -0.34,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.95,
+    -0.04,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.13,
+    0.36,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.1,
+    0.91,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.86,
+    1.29,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.03,
+    2.28,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    13.01,
+    5.12,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.03,
+    6.1,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    12.75,
+    6.26,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    12.99,
+    7.11,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    12.83,
+    8.38,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    12.94,
+    8.88,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.5,
+    -5.57,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    13.45,
+    -5.37,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.26,
+    -0.79,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    13.15,
+    -0.04,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    13.14,
+    0.73,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.2,
+    1.28,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.19,
+    1.65,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.27,
+    2.32,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    13.54,
+    5.18,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    13.49,
+    6.08,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.27,
+    6.81,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    13.52,
+    7.18,
+    1,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    13.5,
+    7.52,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.2,
+    8.08,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    13.51,
+    8.55,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    13.38,
+    9.79,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.69,
+    -5.8,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.68,
+    -5.47,
+    1.09,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.93,
+    -0.82,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.61,
+    -0.25,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    13.83,
+    0.39,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.69,
+    0.94,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.64,
+    1.36,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    13.78,
+    2.1,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.96,
+    5.07,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.97,
+    6.05,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    13.62,
+    6.46,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    13.91,
+    7.3,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    13.95,
+    7.49,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    13.76,
+    8.58,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    13.93,
+    9.39,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.05,
+    -6.04,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    14.33,
+    -5.89,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    14.01,
+    -5.43,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.22,
+    -1.09,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    14.24,
+    -0.92,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.13,
+    -0.46,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    13.98,
+    0.14,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.09,
+    0.49,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.13,
+    0.96,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.21,
+    1.65,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    14.11,
+    4.39,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.21,
+    5,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.02,
+    5.57,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.09,
+    5.87,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.01,
+    6.58,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.17,
+    6.76,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    14.33,
+    7.06,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    14.13,
+    7.81,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.2,
+    8.21,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.14,
+    8.73,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    14,
+    8.91,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.5,
+    -1.07,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.46,
+    -0.7,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    14.64,
+    0.17,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    14.55,
+    0.51,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    14.55,
+    1.04,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.67,
+    1.36,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.62,
+    1.68,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.4,
+    4.23,
+    0.85,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.5,
+    4.87,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.56,
+    5.11,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.62,
+    5.53,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.57,
+    6.16,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    14.53,
+    6.27,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.78,
+    6.7,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    14.49,
+    7.44,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    14.48,
+    7.63,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.47,
+    7.95,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.55,
+    8.4,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.02,
+    -0.66,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.89,
+    0.01,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    15.03,
+    0.7,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.21,
+    0.99,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.06,
+    1.29,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    14.86,
+    1.73,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    15.16,
+    3.91,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.03,
+    4.42,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    14.86,
+    4.86,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.83,
+    5.35,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.84,
+    5.44,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.08,
+    6.27,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.01,
+    6.69,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    14.83,
+    7.4,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    15.19,
+    7.69,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    14.83,
+    8.18,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    15.46,
+    -6.31,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    15.56,
+    -0.42,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.32,
+    0.09,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.29,
+    0.61,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    15.39,
+    0.82,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    15.49,
+    1.36,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    15.42,
+    1.67,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.25,
+    4.25,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.46,
+    4.81,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    15.38,
+    5.06,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.46,
+    5.75,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.39,
+    6.61,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.31,
+    7.01,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.48,
+    7.27,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.39,
+    7.6,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    15.81,
+    -5.64,
+    0.97,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.88,
+    -1.25,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    15.67,
+    -0.58,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    15.99,
+    -0.37,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.94,
+    0.28,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.69,
+    0.52,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    15.74,
+    1.16,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.02,
+    1.34,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    15.85,
+    1.78,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.85,
+    4.54,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.96,
+    5.77,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    15.69,
+    6.01,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    15.95,
+    6.31,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    15.72,
+    6.75,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    16.47,
+    -5.79,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    16.23,
+    -5.21,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    16.23,
+    -1.02,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    16.25,
+    -0.25,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    16.48,
+    0.03,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    16.19,
+    0.7,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    16.36,
+    0.76,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.43,
+    6.21,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    16.41,
+    6.56,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.36,
+    6.74,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.85,
+    -5.79,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.5,
+    -5.11,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    16.52,
+    -4.61,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    16.8,
+    -3.6,
+    1,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    16.77,
+    -0.93,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    16.69,
+    -0.93,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    16.63,
+    -0.43,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.77,
+    0.16,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.87,
+    0.71,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    16.63,
+    1.13,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    16.54,
+    4.4,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.76,
+    4.6,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.6,
+    5.32,
+    1.14,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    17.14,
+    -6.16,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    16.92,
+    -5.78,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.14,
+    -5.31,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.28,
+    -4.9,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.25,
+    -4.37,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.19,
+    -1.69,
+    0.89,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.08,
+    -1.32,
+    0.88,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.25,
+    -0.84,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.26,
+    -0.21,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    16.94,
+    -0.06,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.19,
+    0.63,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.21,
+    0.83,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.32,
+    3.6,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    16.98,
+    3.71,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    17.3,
+    4.13,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.17,
+    4.59,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.3,
+    5.67,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    16.93,
+    6.09,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.43,
+    -5.27,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.61,
+    -4.89,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.65,
+    -4.34,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.33,
+    -3.88,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.56,
+    -3.84,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    17.74,
+    -3.29,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.68,
+    -2.74,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.42,
+    -2.58,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.35,
+    -1.94,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.36,
+    -1.51,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    17.5,
+    -1.27,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.69,
+    3.67,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.65,
+    4.04,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.39,
+    4.45,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.52,
+    4.93,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    17.97,
+    -6.47,
+    0.9,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.89,
+    -6.22,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.77,
+    -5.14,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.15,
+    -4.72,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.11,
+    -4.42,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    17.81,
+    -4.27,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.86,
+    -3.77,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.77,
+    -3.22,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.96,
+    -1.8,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.99,
+    -0.77,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.04,
+    -0.17,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.14,
+    0.23,
+    0.95,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    17.98,
+    1.26,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.08,
+    3.47,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    17.95,
+    3.72,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    17.77,
+    5,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.47,
+    -5.66,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    18.47,
+    -5.15,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.27,
+    -4.82,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.38,
+    -4.42,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.38,
+    -4.01,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.53,
+    -3.63,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.26,
+    -3.29,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    18.26,
+    -2.97,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.42,
+    -2.22,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.49,
+    -1.92,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.55,
+    -1.74,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    18.31,
+    -0.07,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.24,
+    0.67,
+    0.97,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.2,
+    3.43,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    18.46,
+    3.89,
+    0.85,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    18.29,
+    4.56,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    18.91,
+    -6.38,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.66,
+    -5.6,
+    1.04,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    18.61,
+    -5.45,
+    1.13,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    18.84,
+    -5.13,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    18.78,
+    -4.46,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    18.7,
+    -4.05,
+    1.14,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    18.67,
+    -3.73,
+    1.1,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    18.63,
+    -3.3,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    18.98,
+    -2.67,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    18.86,
+    -2.04,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.77,
+    -0.82,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.76,
+    0.02,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    18.83,
+    0.5,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_edge",
+    19,
+    1.09,
+    0.95,
+    true
+   ],
+   [
+    "kit.grass_flower_pink",
+    18.99,
+    3.3,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    18.84,
+    4.5,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    19.05,
+    -5.55,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    19.35,
+    -4.94,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.33,
+    -4.03,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    19.29,
+    -3.52,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    19.14,
+    -3.38,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.03,
+    -2.9,
+    0.91,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.15,
+    -2.06,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    19.35,
+    0.35,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.09,
+    3.46,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    19.21,
+    4.01,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.08,
+    4.29,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    19.83,
+    -5.66,
+    0.97,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.54,
+    -5.41,
+    1.07,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    19.69,
+    -5.06,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    19.72,
+    -4.7,
+    1.12,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.51,
+    -4.06,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.58,
+    -3.57,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    19.77,
+    -3.38,
+    1.15,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.63,
+    -3.01,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.63,
+    -2.25,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    19.67,
+    -1.87,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tall",
+    19.51,
+    -1.43,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.76,
+    -1.23,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    19.77,
+    -0.8,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    19.45,
+    -0.31,
+    0.87,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.58,
+    0.11,
+    0.96,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    19.64,
+    0.64,
+    1.15,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.66,
+    3.52,
+    1.01,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.03,
+    -5.44,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    19.86,
+    -5.04,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.15,
+    -4.59,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.96,
+    -4.22,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.15,
+    -3.64,
+    1.11,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.99,
+    -3.11,
+    1.1,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.13,
+    -2.72,
+    1.08,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.09,
+    -2.28,
+    0.99,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    19.88,
+    -2,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.11,
+    -1.65,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    20.18,
+    -1.18,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.07,
+    -0.12,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.22,
+    0,
+    1.07,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.21,
+    0.46,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.53,
+    -5.08,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.61,
+    -4.18,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    20.54,
+    -3.62,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.48,
+    -3.42,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.43,
+    -2.76,
+    0.93,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.68,
+    -2.4,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.55,
+    -2.07,
+    1.02,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.48,
+    -1.74,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.59,
+    -1.08,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.68,
+    -0.89,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.63,
+    -0.48,
+    0.99,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.77,
+    -4.41,
+    0.96,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.91,
+    -3.91,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.86,
+    -3.71,
+    1.09,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.74,
+    -2.82,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    20.82,
+    -2.3,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.71,
+    -2.17,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    20.74,
+    -1.11,
+    0.94,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.97,
+    -0.8,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    20.75,
+    -0.31,
+    1.02,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    20.89,
+    0.12,
+    1.08,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    20.77,
+    0.55,
+    1.12,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    21.44,
+    -3.33,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    21.47,
+    -1.91,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_flower_white",
+    21.31,
+    -1.61,
+    1,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    21.15,
+    -0.96,
+    1.05,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    21.5,
+    -0.87,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_flower_white",
+    21.17,
+    -0.18,
+    1,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    21.45,
+    -0.02,
+    0.98,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    21.94,
+    -3.14,
+    0.88,
+    false
+   ],
+   [
+    "kit.grass_tuft_c",
+    21.76,
+    -2.76,
+    1.11,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    21.74,
+    -2.33,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    21.77,
+    -2.06,
+    1.06,
+    false
+   ],
+   [
+    "kit.grass_flower_pink",
+    21.54,
+    -0.83,
+    0.86,
+    true
+   ],
+   [
+    "kit.grass_tuft_d",
+    21.71,
+    0.27,
+    0.92,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    22.02,
+    -2.49,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    22.04,
+    -2.13,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    22.31,
+    -1.68,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    22,
+    -1.17,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    21.95,
+    -0.66,
+    0.86,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    22.33,
+    0.16,
+    1.06,
+    true
+   ],
+   [
+    "kit.grass_tuft_a",
+    22.41,
+    -2.41,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    22.43,
+    -1.81,
+    0.92,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    22.7,
+    -1.42,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    22.72,
+    -0.73,
+    1.01,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    22.65,
+    -0.4,
+    0.89,
+    true
+   ],
+   [
+    "kit.grass_edge",
+    22.44,
+    0.24,
+    1.03,
+    true
+   ],
+   [
+    "kit.grass_tuft_c",
+    23.19,
+    -2.39,
+    0.91,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    23.21,
+    -1.57,
+    1.05,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    22.93,
+    -1.06,
+    0.93,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    23.14,
+    -0.51,
+    1.03,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    22.95,
+    -0.37,
+    1.13,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    23.22,
+    -1.95,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_b",
+    23.32,
+    -1.58,
+    0.94,
+    false
+   ],
+   [
+    "kit.grass_tuft_d",
+    23.56,
+    -0.79,
+    0.87,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    24.02,
+    -1.49,
+    1.04,
+    false
+   ],
+   [
+    "kit.grass_tuft_a",
+    23.74,
+    -1.25,
+    0.98,
+    false
+   ],
+   [
+    "kit.grass_tall",
+    23.7,
+    -0.62,
+    0.9,
+    true
+   ],
+   [
+    "kit.grass_tuft_b",
+    24.35,
+    -1.08,
+    0.9,
+    false
+   ]
+  ],
+  "rice": [
+   [
+    "kit.rice_young_a",
+    -5.89,
+    -5.01,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.35,
+    -5.44,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.33,
+    -5.01,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.79,
+    -5.82,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.79,
+    -5.42,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.78,
+    -5,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.16,
+    -6.27,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.18,
+    -5.83,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.16,
+    -5.41,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.17,
+    -4.99,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.62,
+    -6.28,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.64,
+    -5.84,
+    0.8,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.61,
+    -5.42,
+    0.85,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.62,
+    -5.01,
+    0.89,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.08,
+    -6.26,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.06,
+    -5.84,
+    0.89,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.07,
+    -5.43,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.08,
+    -5.02,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.87,
+    -4.16,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.85,
+    -3.74,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.84,
+    -3.3,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.84,
+    -2.92,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.3,
+    -4.16,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.28,
+    -3.73,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.31,
+    -3.34,
+    0.81,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.73,
+    -4.16,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -4.76,
+    -3.72,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.21,
+    -4.17,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.21,
+    -3.76,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.22,
+    -3.31,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -3.63,
+    -4.18,
+    0.86,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -3.65,
+    -3.73,
+    0.8,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -3.65,
+    -3.34,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -3.63,
+    -2.9,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -3.09,
+    -4.18,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -3.11,
+    -3.74,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -3.09,
+    -3.31,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -3.09,
+    -2.92,
+    0.91,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.85,
+    -2.27,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.87,
+    -1.83,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    -1.44,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.83,
+    1.51,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.85,
+    1.95,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.85,
+    2.34,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.29,
+    -2.25,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.63,
+    -2.24,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.1,
+    -2.24,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.1,
+    -1.83,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.08,
+    -1.4,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    1.96,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    2.35,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.92,
+    3.25,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.92,
+    3.64,
+    0.91,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.91,
+    4.1,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.92,
+    4.51,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.92,
+    4.92,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.88,
+    5.33,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.9,
+    5.77,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.35,
+    3.23,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.35,
+    3.65,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.34,
+    4.1,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.34,
+    4.5,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.34,
+    4.93,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -5.34,
+    5.34,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_ripe_a",
+    -5.35,
+    5.77,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.82,
+    3.25,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.82,
+    3.68,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.8,
+    4.1,
+    0.95,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -4.79,
+    4.49,
+    0.86,
+    false
+   ],
+   [
+    "kit.rice_ripe_a",
+    -4.78,
+    4.93,
+    0.8,
+    false
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.8,
+    5.32,
+    0.88,
+    true
+   ],
+   [
+    "kit.rice_ripe_b",
+    -4.79,
+    5.74,
+    0.88,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.17,
+    3.25,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.18,
+    3.65,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.17,
+    4.06,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.18,
+    4.52,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.16,
+    4.91,
+    0.85,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.16,
+    5.33,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.19,
+    5.76,
+    0.86,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.62,
+    3.22,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.61,
+    3.67,
+    0.85,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.63,
+    4.06,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.64,
+    4.5,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.63,
+    4.94,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.63,
+    5.32,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.63,
+    5.75,
+    0.84,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.08,
+    3.25,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.08,
+    3.66,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.06,
+    4.06,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    4.51,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    4.9,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.06,
+    5.36,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.09,
+    5.75,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.83,
+    6.35,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    6.77,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    7.19,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.87,
+    7.62,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    8,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.86,
+    8.42,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.87,
+    8.85,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.84,
+    9.27,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.83,
+    9.68,
+    0.89,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.84,
+    10.1,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    10.54,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.85,
+    10.96,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.86,
+    11.38,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.84,
+    11.79,
+    0.92,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.86,
+    12.23,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.85,
+    12.62,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.31,
+    6.36,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.32,
+    6.74,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.31,
+    7.17,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.29,
+    7.6,
+    0.85,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.29,
+    8.01,
+    0.84,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.31,
+    8.42,
+    0.93,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.3,
+    8.85,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.3,
+    9.29,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.3,
+    9.68,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.29,
+    10.14,
+    0.89,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.29,
+    10.54,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.31,
+    10.96,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -5.3,
+    11.38,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -5.31,
+    11.78,
+    0.88,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.32,
+    12.23,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -5.28,
+    12.64,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -5.31,
+    13.05,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.75,
+    6.36,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.75,
+    6.77,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.77,
+    7.17,
+    0.91,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.76,
+    7.62,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.76,
+    8.03,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.75,
+    8.45,
+    0.93,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.75,
+    8.86,
+    0.95,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.77,
+    9.26,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.76,
+    9.68,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.75,
+    10.12,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.74,
+    10.52,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.74,
+    10.97,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.74,
+    11.39,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.74,
+    11.8,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.74,
+    12.21,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.73,
+    12.65,
+    0.82,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.76,
+    13.05,
+    0.95,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.75,
+    13.46,
+    0.93,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.75,
+    13.92,
+    0.93,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    6.34,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    6.75,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.19,
+    7.2,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    7.6,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.2,
+    8.03,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.18,
+    8.44,
+    0.92,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.19,
+    8.86,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.21,
+    9.29,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    9.72,
+    0.8,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    10.14,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.18,
+    10.53,
+    0.84,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    10.96,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.19,
+    11.38,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -4.19,
+    11.81,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.22,
+    12.23,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.21,
+    12.66,
+    0.95,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -4.2,
+    13.04,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -4.22,
+    13.46,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.2,
+    13.92,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -4.2,
+    14.32,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.67,
+    6.33,
+    0.86,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.66,
+    6.78,
+    0.92,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.64,
+    7.17,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.66,
+    7.6,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.63,
+    8.03,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.66,
+    8.43,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.66,
+    8.88,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.67,
+    9.26,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.66,
+    9.72,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.64,
+    10.14,
+    0.83,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.65,
+    10.52,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.67,
+    10.97,
+    0.84,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.64,
+    11.39,
+    0.87,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.64,
+    11.79,
+    0.81,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.65,
+    12.24,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.64,
+    12.63,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.66,
+    13.07,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.66,
+    13.48,
+    0.86,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.64,
+    13.92,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.64,
+    14.32,
+    0.87,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.67,
+    14.72,
+    0.94,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.1,
+    6.36,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.12,
+    6.74,
+    0.89,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.11,
+    7.2,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.12,
+    7.59,
+    0.81,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.1,
+    8.01,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.1,
+    8.42,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.12,
+    8.87,
+    0.8,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.12,
+    9.3,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.11,
+    9.68,
+    0.81,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.09,
+    10.12,
+    0.85,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.11,
+    10.53,
+    0.84,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    10.98,
+    0.95,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.12,
+    11.37,
+    0.94,
+    false
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    11.79,
+    0.88,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.12,
+    12.2,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.1,
+    12.66,
+    0.93,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.12,
+    13.05,
+    0.91,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.08,
+    13.47,
+    0.93,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.09,
+    13.89,
+    0.9,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.12,
+    14.31,
+    0.82,
+    true
+   ],
+   [
+    "kit.rice_young_a",
+    -3.11,
+    14.75,
+    0.83,
+    false
+   ],
+   [
+    "kit.rice_young_b",
+    -3.08,
+    15.16,
+    0.9,
+    true
+   ],
+   [
+    "kit.rice_young_b",
+    -3.1,
+    15.58,
+    0.8,
+    true
+   ]
+  ],
+  "fenceSprites": [
+   [
+    "kit.fence_span_se",
+    8,
+    -5,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    8.92,
+    -5,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    9.84,
+    -5,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    10.76,
+    -5,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    11.68,
+    -5,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_post",
+    12.6,
+    -5,
+    1
+   ],
+   [
+    "kit.fence_span_sw",
+    8,
+    -5,
+    1
+   ],
+   [
+    "kit.fence_span_sw",
+    8,
+    -4,
+    1
+   ],
+   [
+    "kit.fence_span_sw",
+    8,
+    -3,
+    1
+   ],
+   [
+    "kit.fence_post",
+    8,
+    -2,
+    1
+   ],
+   [
+    "kit.fence_span_se",
+    8,
+    -2,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    8.92,
+    -2,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    9.84,
+    -2,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    10.76,
+    -2,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_span_se",
+    11.68,
+    -2,
+    0.9199999999999999
+   ],
+   [
+    "kit.fence_post",
+    12.6,
+    -2,
+    1
+   ]
+  ],
+  "lamps": [
+   [
+    491.59999999999997,
+    228.39999999999998,
+    120,
+    1,
+    0.72,
+    0.38
+   ],
+   [
+    488.4,
+    152.8,
+    90,
+    1,
+    0.78,
+    0.45
+   ],
+   [
+    379.6,
+    147.6,
+    70,
+    1,
+    0.66,
+    0.3
+   ],
+   [
+    144,
+    451,
+    70,
+    1,
+    0.7,
+    0.35
+   ]
+  ]
+ }
+}

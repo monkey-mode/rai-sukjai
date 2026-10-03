@@ -1,0 +1,4633 @@
+{
+ "about": "Every sprite the web game uses. PNGs are 2× game size: import with Pixels Per Unit = 200 (1 Unity unit = 100 game px), Filter Mode Bilinear, Compression Normal or High Quality, Generate Mip Maps off, pivot = Custom with the `pivot` below (the ground point the sprite stands on). Scale each instance by `gameScale` × the placement scale. Normal maps: Texture Type Normal map is NOT used by the 2D renderer; add them as the sprite's Secondary Texture named _NormalMap.",
+ "ppu": 200,
+ "sprites": {
+  "crop.phakbung.s1": {
+   "file": "Sprites/crop/crop.phakbung.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phakbung.s2": {
+   "file": "Sprites/crop/crop.phakbung.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phakbung.s3": {
+   "file": "Sprites/crop/crop.phakbung.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phakbung.s4": {
+   "file": "Sprites/crop/crop.phakbung.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phakbung.s5": {
+   "file": "Sprites/crop/crop.phakbung.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.khana.s1": {
+   "file": "Sprites/crop/crop.khana.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.khana.s2": {
+   "file": "Sprites/crop/crop.khana.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.khana.s3": {
+   "file": "Sprites/crop/crop.khana.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.khana.s4": {
+   "file": "Sprites/crop/crop.khana.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.khana.s5": {
+   "file": "Sprites/crop/crop.khana.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.manthet.s1": {
+   "file": "Sprites/crop/crop.manthet.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.manthet.s2": {
+   "file": "Sprites/crop/crop.manthet.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.manthet.s3": {
+   "file": "Sprites/crop/crop.manthet.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.manthet.s4": {
+   "file": "Sprites/crop/crop.manthet.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.manthet.s5": {
+   "file": "Sprites/crop/crop.manthet.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phrik.s1": {
+   "file": "Sprites/crop/crop.phrik.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phrik.s2": {
+   "file": "Sprites/crop/crop.phrik.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phrik.s3": {
+   "file": "Sprites/crop/crop.phrik.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phrik.s4": {
+   "file": "Sprites/crop/crop.phrik.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.phrik.s5": {
+   "file": "Sprites/crop/crop.phrik.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.thua.s1": {
+   "file": "Sprites/crop/crop.thua.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.thua.s2": {
+   "file": "Sprites/crop/crop.thua.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.thua.s3": {
+   "file": "Sprites/crop/crop.thua.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.thua.s4": {
+   "file": "Sprites/crop/crop.thua.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.thua.s5": {
+   "file": "Sprites/crop/crop.thua.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.strawberry.s1": {
+   "file": "Sprites/crop/crop.strawberry.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.strawberry.s2": {
+   "file": "Sprites/crop/crop.strawberry.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.strawberry.s3": {
+   "file": "Sprites/crop/crop.strawberry.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.strawberry.s4": {
+   "file": "Sprites/crop/crop.strawberry.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.strawberry.s5": {
+   "file": "Sprites/crop/crop.strawberry.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.mango.s1": {
+   "file": "Sprites/crop/crop.mango.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.mango.s2": {
+   "file": "Sprites/crop/crop.mango.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.mango.s3": {
+   "file": "Sprites/crop/crop.mango.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.mango.s4": {
+   "file": "Sprites/crop/crop.mango.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.mango.s5": {
+   "file": "Sprites/crop/crop.mango.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.watermelon.s1": {
+   "file": "Sprites/crop/crop.watermelon.s1.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.watermelon.s2": {
+   "file": "Sprites/crop/crop.watermelon.s2.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.watermelon.s3": {
+   "file": "Sprites/crop/crop.watermelon.s3.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.watermelon.s4": {
+   "file": "Sprites/crop/crop.watermelon.s4.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.watermelon.s5": {
+   "file": "Sprites/crop/crop.watermelon.s5.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.withered": {
+   "file": "Sprites/crop/crop.withered.png",
+   "normal": null,
+   "category": "crop",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "crop.bugs": {
+   "file": "Sprites/crop_overlay/crop.bugs.png",
+   "normal": null,
+   "category": "crop_overlay",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    128,
+    128
+   ],
+   "gamePx": [
+    64,
+    64
+   ],
+   "anchorGamePx": [
+    32,
+    56
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.phakbung": {
+   "file": "Sprites/produce_icon/produce.phakbung.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.khana": {
+   "file": "Sprites/produce_icon/produce.khana.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.manthet": {
+   "file": "Sprites/produce_icon/produce.manthet.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.phrik": {
+   "file": "Sprites/produce_icon/produce.phrik.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.thua": {
+   "file": "Sprites/produce_icon/produce.thua.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.strawberry": {
+   "file": "Sprites/produce_icon/produce.strawberry.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.mango": {
+   "file": "Sprites/produce_icon/produce.mango.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.watermelon": {
+   "file": "Sprites/produce_icon/produce.watermelon.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "produce.egg": {
+   "file": "Sprites/produce_icon/produce.egg.png",
+   "normal": null,
+   "category": "produce_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    64,
+    64
+   ],
+   "gamePx": [
+    32,
+    32
+   ],
+   "anchorGamePx": [
+    16,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.phakbung": {
+   "file": "Sprites/seed_packet/seed.phakbung.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.khana": {
+   "file": "Sprites/seed_packet/seed.khana.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.manthet": {
+   "file": "Sprites/seed_packet/seed.manthet.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.phrik": {
+   "file": "Sprites/seed_packet/seed.phrik.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.thua": {
+   "file": "Sprites/seed_packet/seed.thua.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.strawberry": {
+   "file": "Sprites/seed_packet/seed.strawberry.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.mango": {
+   "file": "Sprites/seed_packet/seed.mango.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "seed.watermelon": {
+   "file": "Sprites/seed_packet/seed.watermelon.png",
+   "normal": null,
+   "category": "seed_packet",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    80
+   ],
+   "gamePx": [
+    36,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tool.water": {
+   "file": "Sprites/tool_icon/tool.water.png",
+   "normal": null,
+   "category": "tool_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    72
+   ],
+   "gamePx": [
+    36,
+    36
+   ],
+   "anchorGamePx": [
+    18,
+    18
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tool.fertilize": {
+   "file": "Sprites/tool_icon/tool.fertilize.png",
+   "normal": null,
+   "category": "tool_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    72
+   ],
+   "gamePx": [
+    36,
+    36
+   ],
+   "anchorGamePx": [
+    18,
+    18
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tool.spray": {
+   "file": "Sprites/tool_icon/tool.spray.png",
+   "normal": null,
+   "category": "tool_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    72
+   ],
+   "gamePx": [
+    36,
+    36
+   ],
+   "anchorGamePx": [
+    18,
+    18
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tool.cut": {
+   "file": "Sprites/tool_icon/tool.cut.png",
+   "normal": null,
+   "category": "tool_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    72
+   ],
+   "gamePx": [
+    36,
+    36
+   ],
+   "anchorGamePx": [
+    18,
+    18
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tool.pick": {
+   "file": "Sprites/tool_icon/tool.pick.png",
+   "normal": null,
+   "category": "tool_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    72,
+    72
+   ],
+   "gamePx": [
+    36,
+    36
+   ],
+   "anchorGamePx": [
+    18,
+    18
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.sun": {
+   "file": "Sprites/hud_icon/hud.sun.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.rain": {
+   "file": "Sprites/hud_icon/hud.rain.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.sound_on": {
+   "file": "Sprites/hud_icon/hud.sound_on.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.sound_off": {
+   "file": "Sprites/hud_icon/hud.sound_off.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.menu": {
+   "file": "Sprites/hud_icon/hud.menu.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.feed": {
+   "file": "Sprites/hud_icon/hud.feed.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "hud.duck": {
+   "file": "Sprites/hud_icon/hud.duck.png",
+   "normal": null,
+   "category": "hud_icon",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    48,
+    48
+   ],
+   "gamePx": [
+    24,
+    24
+   ],
+   "anchorGamePx": [
+    12,
+    12
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tile.soil_dry": {
+   "file": "Sprites/tile/tile.soil_dry.png",
+   "normal": "Sprites/tile/tile.soil_dry_n.png",
+   "category": "tile",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    128,
+    80
+   ],
+   "gamePx": [
+    64,
+    40
+   ],
+   "anchorGamePx": [
+    32,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.6
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tile.soil_wet": {
+   "file": "Sprites/tile/tile.soil_wet.png",
+   "normal": "Sprites/tile/tile.soil_wet_n.png",
+   "category": "tile",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    128,
+    80
+   ],
+   "gamePx": [
+    64,
+    40
+   ],
+   "anchorGamePx": [
+    32,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.6
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "tile.fertilized": {
+   "file": "Sprites/tile_overlay/tile.fertilized.png",
+   "normal": "Sprites/tile_overlay/tile.fertilized_n.png",
+   "category": "tile_overlay",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    128,
+    80
+   ],
+   "gamePx": [
+    64,
+    40
+   ],
+   "anchorGamePx": [
+    32,
+    16
+   ],
+   "pivot": [
+    0.5,
+    0.6
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "character.farmer": {
+   "file": "Sprites/character/character.farmer.png",
+   "normal": "Sprites/character/character.farmer_n.png",
+   "category": "character",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    104,
+    218
+   ],
+   "gamePx": [
+    52,
+    109
+   ],
+   "anchorGamePx": [
+    25,
+    105
+   ],
+   "pivot": [
+    0.4808,
+    0.0367
+   ],
+   "gameScale": 0.9143,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "character.farmer_tired": {
+   "file": "Sprites/character/character.farmer_tired.png",
+   "normal": "Sprites/character/character.farmer_tired_n.png",
+   "category": "character",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    120,
+    218
+   ],
+   "gamePx": [
+    60,
+    109
+   ],
+   "anchorGamePx": [
+    25,
+    105
+   ],
+   "pivot": [
+    0.4167,
+    0.0367
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "character.auntie_daeng": {
+   "file": "Sprites/character/character.auntie_daeng.png",
+   "normal": null,
+   "category": "character",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    116,
+    158
+   ],
+   "gamePx": [
+    58,
+    79
+   ],
+   "anchorGamePx": [
+    38,
+    74
+   ],
+   "pivot": [
+    0.6552,
+    0.0633
+   ],
+   "gameScale": 0.6757,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "character.uncle_mee": {
+   "file": "Sprites/character/character.uncle_mee.png",
+   "normal": "Sprites/character/character.uncle_mee_n.png",
+   "category": "character",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    94,
+    208
+   ],
+   "gamePx": [
+    47,
+    104
+   ],
+   "anchorGamePx": [
+    24,
+    100
+   ],
+   "pivot": [
+    0.5106,
+    0.0385
+   ],
+   "gameScale": 0.96,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "animal.buffalo": {
+   "file": "Sprites/animal/animal.buffalo.png",
+   "normal": "Sprites/animal/animal.buffalo_n.png",
+   "category": "animal",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    196,
+    200
+   ],
+   "gamePx": [
+    98,
+    100
+   ],
+   "anchorGamePx": [
+    52,
+    78
+   ],
+   "pivot": [
+    0.5306,
+    0.22
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "animal.buffalo_head": {
+   "file": "Sprites/animal/animal.buffalo_head.png",
+   "normal": "Sprites/animal/animal.buffalo_head_n.png",
+   "category": "animal",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    156,
+    136
+   ],
+   "gamePx": [
+    78,
+    68
+   ],
+   "anchorGamePx": [
+    39,
+    27
+   ],
+   "pivot": [
+    0.5,
+    0.6029
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "animal.buffalo_tail": {
+   "file": "Sprites/animal/animal.buffalo_tail.png",
+   "normal": "Sprites/animal/animal.buffalo_tail_n.png",
+   "category": "animal",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    48,
+    84
+   ],
+   "gamePx": [
+    24,
+    42
+   ],
+   "anchorGamePx": [
+    15,
+    8
+   ],
+   "pivot": [
+    0.625,
+    0.8095
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "animal.duck": {
+   "file": "Sprites/animal/animal.duck.png",
+   "normal": "Sprites/animal/animal.duck_n.png",
+   "category": "animal",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    102,
+    90
+   ],
+   "gamePx": [
+    51,
+    45
+   ],
+   "anchorGamePx": [
+    26,
+    41
+   ],
+   "pivot": [
+    0.5098,
+    0.0889
+   ],
+   "gameScale": 0.9268,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.dragon_jar": {
+   "file": "Sprites/prop/prop.dragon_jar.png",
+   "normal": "Sprites/prop/prop.dragon_jar_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    194,
+    200
+   ],
+   "gamePx": [
+    97,
+    100
+   ],
+   "anchorGamePx": [
+    49,
+    84
+   ],
+   "pivot": [
+    0.5052,
+    0.16
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.ox_cart": {
+   "file": "Sprites/prop/prop.ox_cart.png",
+   "normal": "Sprites/prop/prop.ox_cart_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    360,
+    304
+   ],
+   "gamePx": [
+    180,
+    152
+   ],
+   "anchorGamePx": [
+    78,
+    110
+   ],
+   "pivot": [
+    0.4333,
+    0.2763
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.signboard": {
+   "file": "Sprites/prop/prop.signboard.png",
+   "normal": "Sprites/prop/prop.signboard_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    184,
+    80
+   ],
+   "gamePx": [
+    92,
+    40
+   ],
+   "anchorGamePx": [
+    0,
+    0
+   ],
+   "pivot": [
+    0,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.signpole": {
+   "file": "Sprites/prop/prop.signpole.png",
+   "normal": "Sprites/prop/prop.signpole_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    24,
+    268
+   ],
+   "gamePx": [
+    12,
+    134
+   ],
+   "anchorGamePx": [
+    6,
+    134
+   ],
+   "pivot": [
+    0.5,
+    0
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.trough": {
+   "file": "Sprites/prop/prop.trough.png",
+   "normal": "Sprites/prop/prop.trough_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    324,
+    224
+   ],
+   "gamePx": [
+    162,
+    112
+   ],
+   "anchorGamePx": [
+    81,
+    75
+   ],
+   "pivot": [
+    0.5,
+    0.3304
+   ],
+   "gameScale": 0.679,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.nest": {
+   "file": "Sprites/prop/prop.nest.png",
+   "normal": "Sprites/prop/prop.nest_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    278,
+    144
+   ],
+   "gamePx": [
+    139,
+    72
+   ],
+   "anchorGamePx": [
+    70,
+    36
+   ],
+   "pivot": [
+    0.5036,
+    0.5
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_1": {
+   "file": "Sprites/prop/prop.egg_pile_1.png",
+   "normal": "Sprites/prop/prop.egg_pile_1_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_2": {
+   "file": "Sprites/prop/prop.egg_pile_2.png",
+   "normal": "Sprites/prop/prop.egg_pile_2_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_3": {
+   "file": "Sprites/prop/prop.egg_pile_3.png",
+   "normal": "Sprites/prop/prop.egg_pile_3_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_4": {
+   "file": "Sprites/prop/prop.egg_pile_4.png",
+   "normal": "Sprites/prop/prop.egg_pile_4_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_5": {
+   "file": "Sprites/prop/prop.egg_pile_5.png",
+   "normal": "Sprites/prop/prop.egg_pile_5_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_6": {
+   "file": "Sprites/prop/prop.egg_pile_6.png",
+   "normal": "Sprites/prop/prop.egg_pile_6_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_7": {
+   "file": "Sprites/prop/prop.egg_pile_7.png",
+   "normal": "Sprites/prop/prop.egg_pile_7_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_8": {
+   "file": "Sprites/prop/prop.egg_pile_8.png",
+   "normal": "Sprites/prop/prop.egg_pile_8_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_9": {
+   "file": "Sprites/prop/prop.egg_pile_9.png",
+   "normal": "Sprites/prop/prop.egg_pile_9_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_pile_10": {
+   "file": "Sprites/prop/prop.egg_pile_10.png",
+   "normal": "Sprites/prop/prop.egg_pile_10_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    100
+   ],
+   "gamePx": [
+    50,
+    50
+   ],
+   "anchorGamePx": [
+    24,
+    35
+   ],
+   "pivot": [
+    0.48,
+    0.3
+   ],
+   "gameScale": 0.7194,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "prop.egg_basket": {
+   "file": "Sprites/prop/prop.egg_basket.png",
+   "normal": "Sprites/prop/prop.egg_basket_n.png",
+   "category": "prop",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    224,
+    228
+   ],
+   "gamePx": [
+    112,
+    114
+   ],
+   "anchorGamePx": [
+    56,
+    92
+   ],
+   "pivot": [
+    0.5,
+    0.193
+   ],
+   "gameScale": 0.6087,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.spirit_house_iso": {
+   "file": "Sprites/scenery/scenery.spirit_house_iso.png",
+   "normal": "Sprites/scenery/scenery.spirit_house_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    152,
+    340
+   ],
+   "gamePx": [
+    76,
+    170
+   ],
+   "anchorGamePx": [
+    38,
+    157
+   ],
+   "pivot": [
+    0.5,
+    0.0765
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.thai_house_iso": {
+   "file": "Sprites/scenery/scenery.thai_house_iso.png",
+   "normal": "Sprites/scenery/scenery.thai_house_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    554,
+    504
+   ],
+   "gamePx": [
+    277,
+    252
+   ],
+   "anchorGamePx": [
+    126,
+    146
+   ],
+   "pivot": [
+    0.4549,
+    0.4206
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.cloud": {
+   "file": "Sprites/scenery/scenery.cloud.png",
+   "normal": "Sprites/scenery/scenery.cloud_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    180,
+    88
+   ],
+   "gamePx": [
+    90,
+    44
+   ],
+   "anchorGamePx": [
+    45,
+    22
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.banana_young_iso": {
+   "file": "Sprites/scenery/scenery.banana_young_iso.png",
+   "normal": "Sprites/scenery/scenery.banana_young_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    380,
+    380
+   ],
+   "gamePx": [
+    190,
+    190
+   ],
+   "anchorGamePx": [
+    95,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.2105
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.banana_fruiting_iso": {
+   "file": "Sprites/scenery/scenery.banana_fruiting_iso.png",
+   "normal": "Sprites/scenery/scenery.banana_fruiting_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    380,
+    380
+   ],
+   "gamePx": [
+    190,
+    190
+   ],
+   "anchorGamePx": [
+    95,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.2105
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.banana_ripe_iso": {
+   "file": "Sprites/scenery/scenery.banana_ripe_iso.png",
+   "normal": "Sprites/scenery/scenery.banana_ripe_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    380,
+    380
+   ],
+   "gamePx": [
+    190,
+    190
+   ],
+   "anchorGamePx": [
+    95,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.2105
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.banana_old_iso": {
+   "file": "Sprites/scenery/scenery.banana_old_iso.png",
+   "normal": "Sprites/scenery/scenery.banana_old_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    380,
+    380
+   ],
+   "gamePx": [
+    190,
+    190
+   ],
+   "anchorGamePx": [
+    95,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.2105
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.banana_harvested_iso": {
+   "file": "Sprites/scenery/scenery.banana_harvested_iso.png",
+   "normal": "Sprites/scenery/scenery.banana_harvested_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    380,
+    380
+   ],
+   "gamePx": [
+    190,
+    190
+   ],
+   "anchorGamePx": [
+    95,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.2105
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_coconut_lean_iso": {
+   "file": "Sprites/scenery/scenery.palm_coconut_lean_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_coconut_lean_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    258,
+    382
+   ],
+   "gamePx": [
+    129,
+    191
+   ],
+   "anchorGamePx": [
+    100,
+    183
+   ],
+   "pivot": [
+    0.7752,
+    0.0419
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_coconut_twin_iso": {
+   "file": "Sprites/scenery/scenery.palm_coconut_twin_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_coconut_twin_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    352,
+    362
+   ],
+   "gamePx": [
+    176,
+    181
+   ],
+   "anchorGamePx": [
+    92,
+    174
+   ],
+   "pivot": [
+    0.5227,
+    0.0387
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_coconut_dwarf_iso": {
+   "file": "Sprites/scenery/scenery.palm_coconut_dwarf_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_coconut_dwarf_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    210,
+    202
+   ],
+   "gamePx": [
+    105,
+    101
+   ],
+   "anchorGamePx": [
+    51,
+    93
+   ],
+   "pivot": [
+    0.4857,
+    0.0792
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_sugar_tall_iso": {
+   "file": "Sprites/scenery/scenery.palm_sugar_tall_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_sugar_tall_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    168,
+    398
+   ],
+   "gamePx": [
+    84,
+    199
+   ],
+   "anchorGamePx": [
+    42,
+    191
+   ],
+   "pivot": [
+    0.5,
+    0.0402
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_sugar_ladder_iso": {
+   "file": "Sprites/scenery/scenery.palm_sugar_ladder_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_sugar_ladder_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    164,
+    376
+   ],
+   "gamePx": [
+    82,
+    188
+   ],
+   "anchorGamePx": [
+    41,
+    180
+   ],
+   "pivot": [
+    0.5,
+    0.0426
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_sugar_pair_iso": {
+   "file": "Sprites/scenery/scenery.palm_sugar_pair_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_sugar_pair_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    220,
+    396
+   ],
+   "gamePx": [
+    110,
+    198
+   ],
+   "anchorGamePx": [
+    57,
+    189
+   ],
+   "pivot": [
+    0.5182,
+    0.0455
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "scenery.palm_betel_cluster_iso": {
+   "file": "Sprites/scenery/scenery.palm_betel_cluster_iso.png",
+   "normal": "Sprites/scenery/scenery.palm_betel_cluster_iso_n.png",
+   "category": "scenery",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    238,
+    370
+   ],
+   "gamePx": [
+    119,
+    185
+   ],
+   "anchorGamePx": [
+    61,
+    177
+   ],
+   "pivot": [
+    0.5126,
+    0.0432
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "bg.farm": {
+   "file": "Sprites/background/bg.farm.png",
+   "normal": null,
+   "category": "background",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "bg.village": {
+   "file": "Sprites/background/bg.village.png",
+   "normal": null,
+   "category": "background",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "bg.market": {
+   "file": "Sprites/background/bg.market.png",
+   "normal": null,
+   "category": "background",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "bg.pen": {
+   "file": "Sprites/background/bg.pen.png",
+   "normal": null,
+   "category": "background",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  },
+  "ground.pen": {
+   "file": "Sprites/ground/ground.pen.png",
+   "normal": null,
+   "category": "ground",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": [
+    "walkable",
+    "water"
+   ]
+  },
+  "ground.farm": {
+   "file": "Sprites/ground/ground.farm.png",
+   "normal": "Sprites/ground/ground.farm_n.png",
+   "category": "ground",
+   "style": "flat-v3",
+   "status": "done",
+   "sizePx": [
+    2800,
+    1200
+   ],
+   "gamePx": [
+    1400,
+    600
+   ],
+   "anchorGamePx": [
+    300,
+    0
+   ],
+   "pivot": [
+    0.2143,
+    1
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": [
+    "walkable",
+    "water"
+   ]
+  },
+  "kit.rice_young_a": {
+   "file": "Sprites/kit/kit.rice_young_a.png",
+   "normal": "Sprites/kit/kit.rice_young_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "done",
+   "sizePx": [
+    60,
+    60
+   ],
+   "gamePx": [
+    30,
+    30
+   ],
+   "anchorGamePx": [
+    15,
+    26
+   ],
+   "pivot": [
+    0.5,
+    0.1333
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.3,
+    0.25
+   ],
+   "heightPx": 20,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip",
+    "water"
+   ]
+  },
+  "kit.rice_young_b": {
+   "file": "Sprites/kit/kit.rice_young_b.png",
+   "normal": "Sprites/kit/kit.rice_young_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "done",
+   "sizePx": [
+    60,
+    60
+   ],
+   "gamePx": [
+    30,
+    30
+   ],
+   "anchorGamePx": [
+    15,
+    26
+   ],
+   "pivot": [
+    0.5,
+    0.1333
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.3,
+    0.25
+   ],
+   "heightPx": 18,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip",
+    "water"
+   ]
+  },
+  "kit.rice_ripe_a": {
+   "file": "Sprites/kit/kit.rice_ripe_a.png",
+   "normal": "Sprites/kit/kit.rice_ripe_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "done",
+   "sizePx": [
+    72,
+    68
+   ],
+   "gamePx": [
+    36,
+    34
+   ],
+   "anchorGamePx": [
+    18,
+    30
+   ],
+   "pivot": [
+    0.5,
+    0.1176
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.3,
+    0.25
+   ],
+   "heightPx": 24,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip",
+    "water"
+   ]
+  },
+  "kit.rice_ripe_b": {
+   "file": "Sprites/kit/kit.rice_ripe_b.png",
+   "normal": "Sprites/kit/kit.rice_ripe_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "done",
+   "sizePx": [
+    72,
+    68
+   ],
+   "gamePx": [
+    36,
+    34
+   ],
+   "anchorGamePx": [
+    18,
+    30
+   ],
+   "pivot": [
+    0.5,
+    0.1176
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.3,
+    0.25
+   ],
+   "heightPx": 22,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip",
+    "water"
+   ]
+  },
+  "kit.grass_tuft_a": {
+   "file": "Sprites/kit/kit.grass_tuft_a.png",
+   "normal": "Sprites/kit/kit.grass_tuft_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    60
+   ],
+   "gamePx": [
+    40,
+    30
+   ],
+   "anchorGamePx": [
+    20,
+    26
+   ],
+   "pivot": [
+    0.5,
+    0.1333
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 22,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_a_dry": {
+   "file": "Sprites/kit/kit.grass_tuft_a_dry.png",
+   "normal": "Sprites/kit/kit.grass_tuft_a_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    60
+   ],
+   "gamePx": [
+    40,
+    30
+   ],
+   "anchorGamePx": [
+    20,
+    26
+   ],
+   "pivot": [
+    0.5,
+    0.1333
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 22,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_b": {
+   "file": "Sprites/kit/kit.grass_tuft_b.png",
+   "normal": "Sprites/kit/kit.grass_tuft_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    68,
+    56
+   ],
+   "gamePx": [
+    34,
+    28
+   ],
+   "anchorGamePx": [
+    17,
+    24
+   ],
+   "pivot": [
+    0.5,
+    0.1429
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.45,
+    0.3
+   ],
+   "heightPx": 20,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_b_dry": {
+   "file": "Sprites/kit/kit.grass_tuft_b_dry.png",
+   "normal": "Sprites/kit/kit.grass_tuft_b_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    68,
+    56
+   ],
+   "gamePx": [
+    34,
+    28
+   ],
+   "anchorGamePx": [
+    17,
+    24
+   ],
+   "pivot": [
+    0.5,
+    0.1429
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.45,
+    0.3
+   ],
+   "heightPx": 20,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_c": {
+   "file": "Sprites/kit/kit.grass_tuft_c.png",
+   "normal": "Sprites/kit/kit.grass_tuft_c_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    92,
+    68
+   ],
+   "gamePx": [
+    46,
+    34
+   ],
+   "anchorGamePx": [
+    23,
+    30
+   ],
+   "pivot": [
+    0.5,
+    0.1176
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.6,
+    0.4
+   ],
+   "heightPx": 26,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_c_dry": {
+   "file": "Sprites/kit/kit.grass_tuft_c_dry.png",
+   "normal": "Sprites/kit/kit.grass_tuft_c_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    92,
+    68
+   ],
+   "gamePx": [
+    46,
+    34
+   ],
+   "anchorGamePx": [
+    23,
+    30
+   ],
+   "pivot": [
+    0.5,
+    0.1176
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.6,
+    0.4
+   ],
+   "heightPx": 26,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_d": {
+   "file": "Sprites/kit/kit.grass_tuft_d.png",
+   "normal": "Sprites/kit/kit.grass_tuft_d_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    56,
+    44
+   ],
+   "gamePx": [
+    28,
+    22
+   ],
+   "anchorGamePx": [
+    14,
+    19
+   ],
+   "pivot": [
+    0.5,
+    0.1364
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.35,
+    0.25
+   ],
+   "heightPx": 15,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tuft_d_dry": {
+   "file": "Sprites/kit/kit.grass_tuft_d_dry.png",
+   "normal": "Sprites/kit/kit.grass_tuft_d_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    56,
+    44
+   ],
+   "gamePx": [
+    28,
+    22
+   ],
+   "anchorGamePx": [
+    14,
+    19
+   ],
+   "pivot": [
+    0.5,
+    0.1364
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.35,
+    0.25
+   ],
+   "heightPx": 15,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tall": {
+   "file": "Sprites/kit/kit.grass_tall.png",
+   "normal": "Sprites/kit/kit.grass_tall_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    96,
+    92
+   ],
+   "gamePx": [
+    48,
+    46
+   ],
+   "anchorGamePx": [
+    24,
+    42
+   ],
+   "pivot": [
+    0.5,
+    0.087
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.55,
+    0.4
+   ],
+   "heightPx": 38,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_tall_dry": {
+   "file": "Sprites/kit/kit.grass_tall_dry.png",
+   "normal": "Sprites/kit/kit.grass_tall_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    96,
+    92
+   ],
+   "gamePx": [
+    48,
+    46
+   ],
+   "anchorGamePx": [
+    24,
+    42
+   ],
+   "pivot": [
+    0.5,
+    0.087
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.55,
+    0.4
+   ],
+   "heightPx": 38,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_edge": {
+   "file": "Sprites/kit/kit.grass_edge.png",
+   "normal": "Sprites/kit/kit.grass_edge_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    64,
+    36
+   ],
+   "gamePx": [
+    32,
+    18
+   ],
+   "anchorGamePx": [
+    16,
+    15
+   ],
+   "pivot": [
+    0.5,
+    0.1667
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.45,
+    0.3
+   ],
+   "heightPx": 10,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_edge_dry": {
+   "file": "Sprites/kit/kit.grass_edge_dry.png",
+   "normal": "Sprites/kit/kit.grass_edge_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    64,
+    36
+   ],
+   "gamePx": [
+    32,
+    18
+   ],
+   "anchorGamePx": [
+    16,
+    15
+   ],
+   "pivot": [
+    0.5,
+    0.1667
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.45,
+    0.3
+   ],
+   "heightPx": 10,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_flower_white": {
+   "file": "Sprites/kit/kit.grass_flower_white.png",
+   "normal": "Sprites/kit/kit.grass_flower_white_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    64
+   ],
+   "gamePx": [
+    40,
+    32
+   ],
+   "anchorGamePx": [
+    20,
+    28
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 24,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_flower_white_dry": {
+   "file": "Sprites/kit/kit.grass_flower_white_dry.png",
+   "normal": "Sprites/kit/kit.grass_flower_white_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    64
+   ],
+   "gamePx": [
+    40,
+    32
+   ],
+   "anchorGamePx": [
+    20,
+    28
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 24,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_flower_pink": {
+   "file": "Sprites/kit/kit.grass_flower_pink.png",
+   "normal": "Sprites/kit/kit.grass_flower_pink_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    64
+   ],
+   "gamePx": [
+    40,
+    32
+   ],
+   "anchorGamePx": [
+    20,
+    28
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 24,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.grass_flower_pink_dry": {
+   "file": "Sprites/kit/kit.grass_flower_pink_dry.png",
+   "normal": "Sprites/kit/kit.grass_flower_pink_dry_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    64
+   ],
+   "gamePx": [
+    40,
+    32
+   ],
+   "anchorGamePx": [
+    20,
+    28
+   ],
+   "pivot": [
+    0.5,
+    0.125
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.5,
+    0.35
+   ],
+   "heightPx": 24,
+   "tags": [
+    "groundcover",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.field_hut": {
+   "file": "Sprites/kit/kit.field_hut.png",
+   "normal": "Sprites/kit/kit.field_hut_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    260,
+    240
+   ],
+   "gamePx": [
+    130,
+    120
+   ],
+   "anchorGamePx": [
+    65,
+    104
+   ],
+   "pivot": [
+    0.5,
+    0.1333
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.6,
+    1.6
+   ],
+   "heightPx": 70,
+   "tags": [
+    "block",
+    "occlude"
+   ]
+  },
+  "kit.scarecrow": {
+   "file": "Sprites/kit/kit.scarecrow.png",
+   "normal": "Sprites/kit/kit.scarecrow_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    88,
+    128
+   ],
+   "gamePx": [
+    44,
+    64
+   ],
+   "anchorGamePx": [
+    22,
+    58
+   ],
+   "pivot": [
+    0.5,
+    0.0938
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.4,
+    0.4
+   ],
+   "heightPx": 50,
+   "tags": [
+    "decor"
+   ]
+  },
+  "kit.tree_golden_shower": {
+   "file": "Sprites/kit/kit.tree_golden_shower.png",
+   "normal": "Sprites/kit/kit.tree_golden_shower_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    320,
+    360
+   ],
+   "gamePx": [
+    160,
+    180
+   ],
+   "anchorGamePx": [
+    80,
+    170
+   ],
+   "pivot": [
+    0.5,
+    0.0556
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.4,
+    1.4
+   ],
+   "heightPx": 160,
+   "tags": [
+    "block",
+    "occlude"
+   ]
+  },
+  "kit.tree_flame": {
+   "file": "Sprites/kit/kit.tree_flame.png",
+   "normal": "Sprites/kit/kit.tree_flame_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    360,
+    340
+   ],
+   "gamePx": [
+    180,
+    170
+   ],
+   "anchorGamePx": [
+    90,
+    160
+   ],
+   "pivot": [
+    0.5,
+    0.0588
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.6,
+    1.6
+   ],
+   "heightPx": 150,
+   "tags": [
+    "block",
+    "occlude"
+   ]
+  },
+  "kit.flower_patch": {
+   "file": "Sprites/kit/kit.flower_patch.png",
+   "normal": "Sprites/kit/kit.flower_patch_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    100,
+    60
+   ],
+   "gamePx": [
+    50,
+    30
+   ],
+   "anchorGamePx": [
+    25,
+    24
+   ],
+   "pivot": [
+    0.5,
+    0.2
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.6,
+    0.4
+   ],
+   "heightPx": 18,
+   "tags": [
+    "decor",
+    "edge",
+    "flip"
+   ]
+  },
+  "kit.fence_span_se": {
+   "file": "Sprites/kit/kit.fence_span_se.png",
+   "normal": "Sprites/kit/kit.fence_span_se_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    96,
+    132
+   ],
+   "gamePx": [
+    48,
+    66
+   ],
+   "anchorGamePx": [
+    8,
+    46
+   ],
+   "pivot": [
+    0.1667,
+    0.303
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1,
+    0
+   ],
+   "heightPx": 36,
+   "tags": [
+    "occlude",
+    "edge",
+    "block"
+   ]
+  },
+  "kit.fence_span_sw": {
+   "file": "Sprites/kit/kit.fence_span_sw.png",
+   "normal": "Sprites/kit/kit.fence_span_sw_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    96,
+    132
+   ],
+   "gamePx": [
+    48,
+    66
+   ],
+   "anchorGamePx": [
+    40,
+    46
+   ],
+   "pivot": [
+    0.8333,
+    0.303
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0,
+    1
+   ],
+   "heightPx": 36,
+   "tags": [
+    "occlude",
+    "edge",
+    "block"
+   ]
+  },
+  "kit.fence_post": {
+   "file": "Sprites/kit/kit.fence_post.png",
+   "normal": "Sprites/kit/kit.fence_post_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    32,
+    96
+   ],
+   "gamePx": [
+    16,
+    48
+   ],
+   "anchorGamePx": [
+    8,
+    44
+   ],
+   "pivot": [
+    0.5,
+    0.0833
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0,
+    0
+   ],
+   "heightPx": 36,
+   "tags": [
+    "occlude",
+    "edge",
+    "block"
+   ]
+  },
+  "kit.duck_house": {
+   "file": "Sprites/kit/kit.duck_house.png",
+   "normal": "Sprites/kit/kit.duck_house_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    480,
+    400
+   ],
+   "gamePx": [
+    240,
+    200
+   ],
+   "anchorGamePx": [
+    120,
+    140
+   ],
+   "pivot": [
+    0.5,
+    0.3
+   ],
+   "gameScale": 1,
+   "footprint": [
+    2.8,
+    2.8
+   ],
+   "heightPx": 105,
+   "tags": [
+    "block",
+    "occlude",
+    "light"
+   ]
+  },
+  "kit.tree_round_a": {
+   "file": "Sprites/kit/kit.tree_round_a.png",
+   "normal": "Sprites/kit/kit.tree_round_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    340,
+    380
+   ],
+   "gamePx": [
+    170,
+    190
+   ],
+   "anchorGamePx": [
+    85,
+    178
+   ],
+   "pivot": [
+    0.5,
+    0.0632
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.5,
+    1.5
+   ],
+   "heightPx": 170,
+   "tags": [
+    "block",
+    "occlude"
+   ]
+  },
+  "kit.tree_round_b": {
+   "file": "Sprites/kit/kit.tree_round_b.png",
+   "normal": "Sprites/kit/kit.tree_round_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    280,
+    320
+   ],
+   "gamePx": [
+    140,
+    160
+   ],
+   "anchorGamePx": [
+    70,
+    150
+   ],
+   "pivot": [
+    0.5,
+    0.0625
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.2,
+    1.2
+   ],
+   "heightPx": 140,
+   "tags": [
+    "block",
+    "occlude",
+    "flip"
+   ]
+  },
+  "kit.bamboo_clump": {
+   "file": "Sprites/kit/kit.bamboo_clump.png",
+   "normal": "Sprites/kit/kit.bamboo_clump_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    240,
+    400
+   ],
+   "gamePx": [
+    120,
+    200
+   ],
+   "anchorGamePx": [
+    60,
+    190
+   ],
+   "pivot": [
+    0.5,
+    0.05
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.4,
+    1.4
+   ],
+   "heightPx": 185,
+   "tags": [
+    "block",
+    "occlude",
+    "edge"
+   ]
+  },
+  "kit.bush_a": {
+   "file": "Sprites/kit/kit.bush_a.png",
+   "normal": "Sprites/kit/kit.bush_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    180,
+    112
+   ],
+   "gamePx": [
+    90,
+    56
+   ],
+   "anchorGamePx": [
+    45,
+    48
+   ],
+   "pivot": [
+    0.5,
+    0.1429
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1.2,
+    0.8
+   ],
+   "heightPx": 40,
+   "tags": [
+    "edge",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.bush_b": {
+   "file": "Sprites/kit/kit.bush_b.png",
+   "normal": "Sprites/kit/kit.bush_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    128,
+    84
+   ],
+   "gamePx": [
+    64,
+    42
+   ],
+   "anchorGamePx": [
+    32,
+    36
+   ],
+   "pivot": [
+    0.5,
+    0.1429
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.9,
+    0.6
+   ],
+   "heightPx": 30,
+   "tags": [
+    "edge",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.rock_a": {
+   "file": "Sprites/kit/kit.rock_a.png",
+   "normal": "Sprites/kit/kit.rock_a_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    108,
+    68
+   ],
+   "gamePx": [
+    54,
+    34
+   ],
+   "anchorGamePx": [
+    27,
+    28
+   ],
+   "pivot": [
+    0.5,
+    0.1765
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.8,
+    0.6
+   ],
+   "heightPx": 22,
+   "tags": [
+    "block",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.rock_b": {
+   "file": "Sprites/kit/kit.rock_b.png",
+   "normal": "Sprites/kit/kit.rock_b_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    80,
+    52
+   ],
+   "gamePx": [
+    40,
+    26
+   ],
+   "anchorGamePx": [
+    20,
+    21
+   ],
+   "pivot": [
+    0.5,
+    0.1923
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.6,
+    0.4
+   ],
+   "heightPx": 16,
+   "tags": [
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.haystack": {
+   "file": "Sprites/kit/kit.haystack.png",
+   "normal": "Sprites/kit/kit.haystack_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    152,
+    132
+   ],
+   "gamePx": [
+    76,
+    66
+   ],
+   "anchorGamePx": [
+    38,
+    58
+   ],
+   "pivot": [
+    0.5,
+    0.1212
+   ],
+   "gameScale": 1,
+   "footprint": [
+    1,
+    1
+   ],
+   "heightPx": 52,
+   "tags": [
+    "block",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.water_jar": {
+   "file": "Sprites/kit/kit.water_jar.png",
+   "normal": "Sprites/kit/kit.water_jar_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    96,
+    108
+   ],
+   "gamePx": [
+    48,
+    54
+   ],
+   "anchorGamePx": [
+    24,
+    48
+   ],
+   "pivot": [
+    0.5,
+    0.1111
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.6,
+    0.6
+   ],
+   "heightPx": 44,
+   "tags": [
+    "block",
+    "decor"
+   ]
+  },
+  "kit.reeds": {
+   "file": "Sprites/kit/kit.reeds.png",
+   "normal": "Sprites/kit/kit.reeds_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    108,
+    112
+   ],
+   "gamePx": [
+    54,
+    56
+   ],
+   "anchorGamePx": [
+    27,
+    50
+   ],
+   "pivot": [
+    0.5,
+    0.1071
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.8,
+    0.5
+   ],
+   "heightPx": 46,
+   "tags": [
+    "edge",
+    "decor",
+    "flip"
+   ]
+  },
+  "kit.egret": {
+   "file": "Sprites/kit/kit.egret.png",
+   "normal": "Sprites/kit/kit.egret_n.png",
+   "category": "kit",
+   "style": "flat-v3",
+   "status": "approved",
+   "sizePx": [
+    64,
+    88
+   ],
+   "gamePx": [
+    32,
+    44
+   ],
+   "anchorGamePx": [
+    16,
+    41
+   ],
+   "pivot": [
+    0.5,
+    0.0682
+   ],
+   "gameScale": 1,
+   "footprint": [
+    0.3,
+    0.3
+   ],
+   "heightPx": 40,
+   "tags": [
+    "decor"
+   ]
+  },
+  "ui.logo": {
+   "file": "Sprites/ui/ui.logo.png",
+   "normal": null,
+   "category": "ui",
+   "style": "legacy",
+   "status": "done",
+   "sizePx": [
+    960,
+    300
+   ],
+   "gamePx": [
+    480,
+    150
+   ],
+   "anchorGamePx": [
+    240,
+    75
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "gameScale": 1,
+   "footprint": null,
+   "heightPx": null,
+   "tags": []
+  }
+ }
+}

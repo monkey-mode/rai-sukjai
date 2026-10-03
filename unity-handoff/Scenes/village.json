@@ -1,0 +1,838 @@
+{
+ "about": "Coordinates are web-game scene px: x right, y DOWN, the 800×600 safe area spans x 0..800 (bleed to -300 and 1100). In Unity: position = (x / 100, -y / 100). `placed` is every sprite exactly as the web game draws it, in draw order (back to front) — anchor point, scale (already includes the size chart), flip. `layout` is the data the web game builds the scene from (grid coordinates), to rebuild or edit it in Unity.",
+ "placed": [
+  {
+   "layer": "background",
+   "order": 0,
+   "id": "bg.village",
+   "x": 0,
+   "y": 0,
+   "scale": [
+    1,
+    1
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 1,
+   "id": "scenery.cloud",
+   "x": 158.71,
+   "y": 44.4,
+   "scale": [
+    0.7,
+    0.7
+   ],
+   "flipX": false,
+   "cls": "drift "
+  },
+  {
+   "layer": "background",
+   "order": 2,
+   "id": "scenery.cloud",
+   "x": 597.46,
+   "y": 31.6,
+   "scale": [
+    0.55,
+    0.55
+   ],
+   "flipX": false,
+   "cls": "drift d2"
+  },
+  {
+   "layer": "background",
+   "order": 3,
+   "id": "scenery.spirit_house_iso",
+   "x": 592,
+   "y": 204.4,
+   "scale": [
+    0.35,
+    0.35
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 4,
+   "id": "scenery.thai_house_iso",
+   "x": 844.8,
+   "y": 263.6,
+   "scale": [
+    0.55,
+    0.55
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 5,
+   "id": "scenery.banana_ripe_iso",
+   "x": 617.6,
+   "y": 306.8,
+   "scale": [
+    0.5,
+    0.5
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 6,
+   "id": "scenery.palm_sugar_tall_iso",
+   "x": 528,
+   "y": 354.8,
+   "scale": [
+    0.6,
+    0.6
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 7,
+   "id": "scenery.palm_coconut_lean_iso",
+   "x": 950.4,
+   "y": 358,
+   "scale": [
+    0.6,
+    0.6
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 8,
+   "id": "scenery.banana_fruiting_iso",
+   "x": 220.8,
+   "y": 370.8,
+   "scale": [
+    0.45,
+    0.45
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 9,
+   "id": "character.farmer",
+   "x": 336,
+   "y": 396.4,
+   "scale": [
+    0.5,
+    0.5
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 10,
+   "id": "animal.buffalo_tail",
+   "x": 699.95,
+   "y": 442.25,
+   "scale": [
+    0.35,
+    0.35
+   ],
+   "flipX": false,
+   "cls": "atail"
+  },
+  {
+   "layer": "background",
+   "order": 11,
+   "id": "animal.buffalo",
+   "x": 713.6,
+   "y": 463.6,
+   "scale": [
+    0.35,
+    0.35
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 12,
+   "id": "animal.buffalo_head",
+   "x": 724.1,
+   "y": 453.45,
+   "scale": [
+    0.35,
+    0.35
+   ],
+   "flipX": false,
+   "cls": "ahead"
+  },
+  {
+   "layer": "background",
+   "order": 13,
+   "id": "scenery.palm_coconut_dwarf_iso",
+   "x": 771.2,
+   "y": 466.8,
+   "scale": [
+    0.7,
+    0.7
+   ],
+   "flipX": false,
+   "cls": null
+  },
+  {
+   "layer": "background",
+   "order": 14,
+   "id": "character.uncle_mee",
+   "x": 246.4,
+   "y": 486,
+   "scale": [
+    0.9,
+    0.9
+   ],
+   "flipX": false,
+   "cls": null
+  }
+ ],
+ "layout": {
+  "grid": {
+   "formula": "x = 400 + (u - v)*32, y = 70 + (u + v)*16 - z"
+  },
+  "VILLAGE": {
+   "lanes": [
+    [
+     [
+      8,
+      -8
+     ],
+     [
+      8,
+      26
+     ]
+    ],
+    [
+     [
+      -8,
+      8
+     ],
+     [
+      26,
+      8
+     ]
+    ]
+   ],
+   "laneW": 1,
+   "plaza": [
+    7.2,
+    7.2,
+    11.6,
+    11.6
+   ],
+   "farm": [
+    11.4,
+    -0.6,
+    18.4,
+    7
+   ],
+   "fields": [
+    11.8,
+    1.6,
+    17.6,
+    6.6
+   ],
+   "pen": [
+    11.4,
+    12.2,
+    15,
+    16.4
+   ],
+   "temple": [
+    1.2,
+    1.2,
+    7,
+    5.6
+   ],
+   "houses": [
+    1,
+    11.8,
+    6.4,
+    17.4
+   ],
+   "pond": [
+    16.4,
+    11.4,
+    1.6,
+    1
+   ]
+  },
+  "VILLAGE_PLACES": [
+   {
+    "id": "farm",
+    "th": "ไร่ของเรา",
+    "en": "Our farm",
+    "at": [
+     784,
+     378.4
+    ],
+    "hit": [
+     11,
+     0,
+     18,
+     7
+    ]
+   },
+   {
+    "id": "market",
+    "th": "ตลาด",
+    "en": "Market",
+    "at": [
+     400,
+     420.4
+    ],
+    "hit": [
+     6.8,
+     6.8,
+     11.4,
+     11.4
+    ]
+   },
+   {
+    "id": "pen",
+    "th": "คอกเป็ดลุงมี",
+    "en": "Uncle Mee's ducks",
+    "at": [
+     297.6,
+     571.5999999999999
+    ],
+    "hit": [
+     11,
+     11.8,
+     15.2,
+     16.7
+    ]
+   },
+   {
+    "id": "temple",
+    "th": "วัด",
+    "en": "Temple",
+    "at": [
+     419.20000000000005,
+     218.8
+    ],
+    "hit": [
+     1.5,
+     1.5,
+     7,
+     5.5
+    ],
+    "soon": true
+   },
+   {
+    "id": "houses",
+    "th": "บ้านเพื่อนบ้าน",
+    "en": "Neighbours",
+    "at": [
+     -22.400000000000034,
+     424.4
+    ],
+    "hit": [
+     1,
+     11.8,
+     6.4,
+     17.4
+    ],
+    "soon": true
+   }
+  ],
+  "VILLAGE_FENCES": [
+   [
+    [
+     11.4,
+     12.2
+    ],
+    [
+     15,
+     12.2
+    ]
+   ],
+   [
+    [
+     11.4,
+     12.2
+    ],
+    [
+     11.4,
+     16.4
+    ]
+   ],
+   [
+    [
+     15,
+     12.2
+    ],
+    [
+     15,
+     16.4
+    ]
+   ],
+   [
+    [
+     11.4,
+     16.4
+    ],
+    [
+     13,
+     16.4
+    ]
+   ]
+  ],
+  "landmarks": [
+   [
+    "kit.map_temple",
+    4.2,
+    3.4,
+    1,
+    false,
+    2.6
+   ],
+   [
+    "kit.map_spirit_house",
+    7.4,
+    1,
+    1,
+    false,
+    0.4
+   ],
+   [
+    "kit.map_house_a",
+    2.6,
+    13.2,
+    1,
+    false,
+    1.4
+   ],
+   [
+    "kit.map_house_b",
+    4.8,
+    16,
+    1,
+    true,
+    1.4
+   ],
+   [
+    "kit.map_market",
+    9.6,
+    9.6,
+    1,
+    false,
+    2.2
+   ],
+   [
+    "kit.map_duck_house",
+    12.4,
+    13.4,
+    1,
+    false,
+    0.9
+   ],
+   [
+    "kit.map_farmhouse",
+    16.4,
+    0.4,
+    1,
+    false,
+    1.4
+   ],
+   [
+    "kit.map_haystack",
+    12.4,
+    0.6,
+    1,
+    false,
+    0.5
+   ]
+  ],
+  "pieces": [
+   [
+    "kit.map_tree_a",
+    -7.03,
+    9.18,
+    0.91,
+    false
+   ],
+   [
+    "kit.map_tree_a",
+    -1.93,
+    14.44,
+    0.99,
+    true
+   ],
+   [
+    "kit.map_tree_a",
+    -7.43,
+    12.99,
+    0.94,
+    true
+   ],
+   [
+    "kit.map_tree_a",
+    19.27,
+    0.66,
+    1.06,
+    false
+   ],
+   [
+    "kit.map_tree_a",
+    18.98,
+    11,
+    1,
+    true
+   ],
+   [
+    "kit.map_tree_a",
+    22.37,
+    5.99,
+    1.08,
+    true
+   ],
+   [
+    "kit.map_tree_a",
+    -2.6,
+    6.74,
+    1.04,
+    true
+   ],
+   [
+    "kit.map_tree_b",
+    15.28,
+    -3.09,
+    0.95,
+    false
+   ],
+   [
+    "kit.map_tree_b",
+    0.17,
+    11.18,
+    1.1,
+    true
+   ],
+   [
+    "kit.map_tree_b",
+    -6.2,
+    14.72,
+    1,
+    false
+   ],
+   [
+    "kit.map_tree_b",
+    3.22,
+    -1.72,
+    0.94,
+    true
+   ],
+   [
+    "kit.map_tree_b",
+    5.07,
+    9.77,
+    0.98,
+    true
+   ],
+   [
+    "kit.map_tree_b",
+    -0.44,
+    20.22,
+    0.99,
+    true
+   ],
+   [
+    "kit.map_tree_b",
+    2.5,
+    21.03,
+    1.02,
+    false
+   ],
+   [
+    "kit.map_palm",
+    -2.58,
+    4.9,
+    0.94,
+    true
+   ],
+   [
+    "kit.map_palm",
+    22.14,
+    1.06,
+    0.94,
+    false
+   ],
+   [
+    "kit.map_palm",
+    11.71,
+    -5.26,
+    1.1,
+    false
+   ],
+   [
+    "kit.map_palm",
+    -1.76,
+    11.29,
+    1.06,
+    false
+   ],
+   [
+    "kit.map_palm",
+    5.69,
+    -3.73,
+    1.05,
+    true
+   ],
+   [
+    "kit.map_bamboo",
+    -2.15,
+    9.95,
+    1.04,
+    false
+   ],
+   [
+    "kit.map_bamboo",
+    -4.8,
+    11.49,
+    0.91,
+    false
+   ],
+   [
+    "kit.map_bamboo",
+    25.31,
+    5.08,
+    0.91,
+    false
+   ],
+   [
+    "kit.map_bamboo",
+    21.89,
+    9.8,
+    0.95,
+    false
+   ],
+   [
+    "kit.map_banana",
+    13.27,
+    17.43,
+    0.97,
+    false
+   ],
+   [
+    "kit.map_banana",
+    13.82,
+    -6.36,
+    1.09,
+    true
+   ],
+   [
+    "kit.map_banana",
+    3.18,
+    20.27,
+    0.92,
+    true
+   ],
+   [
+    "kit.map_banana",
+    18.38,
+    10,
+    1.08,
+    true
+   ],
+   [
+    "kit.map_banana",
+    9.54,
+    1,
+    0.96,
+    true
+   ],
+   [
+    "kit.map_bush",
+    -5.65,
+    12.15,
+    1.05,
+    true
+   ],
+   [
+    "kit.map_bush",
+    4.2,
+    19.13,
+    1.03,
+    true
+   ],
+   [
+    "kit.map_bush",
+    9.07,
+    -2.4,
+    1.08,
+    false
+   ],
+   [
+    "kit.map_bush",
+    20.82,
+    6.85,
+    1,
+    false
+   ],
+   [
+    "kit.map_bush",
+    12.68,
+    -8.18,
+    0.98,
+    true
+   ],
+   [
+    "kit.map_bush",
+    0.67,
+    15.13,
+    0.91,
+    false
+   ],
+   [
+    "kit.map_bush",
+    16.11,
+    -3.97,
+    1.02,
+    false
+   ],
+   [
+    "kit.map_bush",
+    13.23,
+    -2.27,
+    0.99,
+    false
+   ],
+   [
+    "kit.map_bush",
+    -9.5,
+    10.27,
+    1,
+    false
+   ],
+   [
+    "kit.map_bush",
+    12.57,
+    11.77,
+    0.94,
+    true
+   ]
+  ],
+  "fenceSprites": [
+   [
+    "kit.map_fence_span_se",
+    11.4,
+    12.2,
+    0.8999999999999999
+   ],
+   [
+    "kit.map_fence_span_se",
+    12.3,
+    12.2,
+    0.8999999999999999
+   ],
+   [
+    "kit.map_fence_span_se",
+    13.2,
+    12.2,
+    0.8999999999999999
+   ],
+   [
+    "kit.map_fence_span_se",
+    14.1,
+    12.2,
+    0.8999999999999999
+   ],
+   [
+    "kit.map_fence_post",
+    15,
+    12.2,
+    1
+   ],
+   [
+    "kit.map_fence_span_sw",
+    11.4,
+    12.2,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    11.4,
+    13.25,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    11.4,
+    14.299999999999999,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    11.4,
+    15.349999999999998,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_post",
+    11.4,
+    16.4,
+    1
+   ],
+   [
+    "kit.map_fence_span_sw",
+    15,
+    12.2,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    15,
+    13.25,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    15,
+    14.299999999999999,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_span_sw",
+    15,
+    15.349999999999998,
+    1.0499999999999998
+   ],
+   [
+    "kit.map_fence_post",
+    15,
+    16.4,
+    1
+   ],
+   [
+    "kit.map_fence_span_se",
+    11.4,
+    16.4,
+    0.7999999999999998
+   ],
+   [
+    "kit.map_fence_span_se",
+    12.2,
+    16.4,
+    0.7999999999999998
+   ],
+   [
+    "kit.map_fence_post",
+    13,
+    16.4,
+    1
+   ]
+  ],
+  "kitActiveInWebGame": false
+ }
+}
