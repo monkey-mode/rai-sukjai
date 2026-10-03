@@ -34,3 +34,12 @@ test('the sun crosses from left to right, lamps light up at dusk, night stays pl
   const dusk = daylight(18).tint;
   assert.ok(dusk[0] > dusk[2] + .3, 'evening is warm');
 });
+
+test('cast shadows fall away from the sun: long morning and evening, short at noon, none at night', () => {
+  const m = daylight(7.5).shadow, n = daylight(12).shadow, e = daylight(16.5).shadow;
+  assert.ok(m.skew > .3 && e.skew < -.3, 'morning shadows fall right, evening shadows left');
+  assert.ok(Math.abs(n.skew) < .05, 'noon shadows barely lean');
+  assert.ok(n.squash < m.squash && n.squash < e.squash, 'noon shadows are the shortest');
+  assert.ok(n.strength > .7);
+  for (const h of [5, 20, 21]) assert.equal(daylight(h).shadow.strength, 0, `no sun shadows at ${h}`);
+});

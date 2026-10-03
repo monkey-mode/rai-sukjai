@@ -40,6 +40,9 @@ function daylight(hour) {
     sunStrength: smooth(5.6, 7.2, hour) * (1 - smooth(18.2, 19.4, hour)),
     lamps: smooth(17.6, 19.2, hour),                     // windows and lanterns light up at dusk
     relief: .55,                                          // how strongly the normal maps shape the light (0 = flat)
+    // cast shadows on the ground plane: per pixel of height, `skew` px sideways (away from the sun) and `squash` px
+    // back up the screen; long in the morning and evening, short at noon; gone at night
+    shadow: { skew: -L[0] / len * (.25 + 1.6 * (1 - elev)), squash: .16 + .26 * (1 - elev), strength: .8 * smooth(5.6, 7.2, hour) * (1 - smooth(17.6, 19, hour)) },
   };
 }
 
