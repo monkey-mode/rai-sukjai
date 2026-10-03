@@ -99,6 +99,23 @@ Tracing, palette reduction and export must keep the approved silhouette and deta
 
 `node tools/kit-board.mjs` writes `assets/painted/_layout/kit_board.png`: every kit piece at its actual in-game size, on one isometric grid, next to the characters and props. Check every batch on it before stamping `done`. A piece that looks heavier, brighter, busier, plainer, bigger, or lit differently from the anchors is not done.
 
+### 3.5 Delivery to the Unity game
+
+The game is being ported to Unity (mobile); see `unity-handoff/PORTING.md`. **The style, this contract, the anchors,
+the profile and the checks do not change.** This repo stays the art source: the SVG is the master, plus the
+`_source` image, the normal map and the manifest stamps. Engine-specific notes:
+
+- **Resolution:** the SVG master is rasterised for Unity at 2× game size (`tools/export-unity.mjs`, PPU 200). Keep
+  every piece clean at 2× and 3×: no hairlines thinner than the 1.2 px inner contour, and no detail that only works
+  at 1×.
+- **Normal maps:** Unity's 2D renderer uses the same OpenGL convention (green = up) at canvas × 2, so make them
+  exactly as before. Keep the alpha exact: the normal map's silhouette must match the art's.
+- **Pivot = anchor:** Unity stands each sprite on its manifest `anchor`, so the anchor must be the true ground
+  contact point. A piece that floats in the game has its anchor too low or its base too high.
+- **Still no painted ground shadow:** Unity adds the cast and contact shadows.
+- **After stamping a batch:** run `node tools/export-unity.mjs` and commit the updated `unity-handoff/`, so the Unity
+  project can pick the new sprites up.
+
 ---
 
 ## 4. Order of work

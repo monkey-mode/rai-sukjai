@@ -63,6 +63,8 @@ If the mechanics agent changes an asset's `prompt`, `canvas` or `anchor` after i
 
 ## Rules for the asset agent
 
+**Unity port:** the game is moving to Unity (mobile). Art is still made here to the same style contract; after each approved batch run `node tools/export-unity.mjs` to refresh `unity-handoff/` (see `docs/style-contract.md` §3.5 and `unity-handoff/PORTING.md`).
+
 1. Read `style_guide`, the asset's `categories` entry, its `prompt` and its `reference` SVG. For an existing asset the reference is its current file: it shows the size, pose, framing and style the game expects. When redrawing, keep the subject, proportions, canvas and anchor unless the prompt says otherwise.
 2. Work in priority order: `node tools/check-assets.mjs --queue` lists what's next (`needs_changes` first).
 3. Before starting an asset, stamp `"status": "in_progress"`, `"agent": "<your name>"` and `"updated_at": "<ISO time>"`.
