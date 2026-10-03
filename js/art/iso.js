@@ -416,7 +416,7 @@ const PEN_GRASS = grassSprites({
 const FARM_PADDIES = {
   dike: .16,                                       // dike width in tiles (centred on each field edge)
   inset: .24,                                      // clear water between a dike's centre line and the first row
-  row: .3, step: .27,                              // row spacing (across gx) and clump spacing along a row (gy)
+  row: .55, step: .42,                              // row spacing (across gx) and clump spacing along a row (gy)
   fields: [
     [-6.2, -6.5, -4.5, -4.4, 'young'], [-4.5, -6.5, -2.75, -4.4, 'young'],
     [-6.2, -4.4, -2.75, -2.5, 'ripe'],
@@ -433,7 +433,7 @@ function riceSprites({ fields, inset, row, step }, { seed = 17, clear = [], pt =
     const n = Math.floor((u1 - u0 - 2 * inset) / row), uOff = u0 + (u1 - u0 - n * row) / 2;
     for (let i = 0; i <= n; i++) for (let v = v0 + inset; v <= v1 - inset + 1e-9; v += step) {
       const u = uOff + i * row + (rnd() - .5) * .04, gv = v + (rnd() - .5) * .05, [x, y] = pt(u, gv);
-      const id = RICE_KIT[state][rnd() < .5 ? 0 : 1], k = +(.88 + rnd() * .2).toFixed(2), flip = rnd() < .5;
+      const id = RICE_KIT[state][rnd() < .5 ? 0 : 1], k = +(.8 + rnd() * .15).toFixed(2), flip = rnd() < .5;
       if (x < -310 || x > 1110 || y < 50 || y > 600 || onMound(u, gv) || clear.some(([cu, cv, cr]) => Math.hypot(u - cu, gv - cv) < cr)) continue;
       out.push([id, +u.toFixed(2), +gv.toFixed(2), k, flip]);
     }

@@ -75,9 +75,11 @@ async function bakeGrass(key, list) {
       }
       Light.bakedNormal.set(GRASS_BAKED[key], n);
     }
-    if (typeof ui !== 'undefined' && S && S.scene + (grassDry() ? ':dry' : '') === key) { ui.bgScene = null; render(); }
   } catch (e) { /* file:// or a missing tuft: keep the individual images */ }
   bakeGrass.busy = false;
+  // redraw with the baked image; a bake asked for while this one ran (the other scene or season) starts on that render
+  const cur = typeof S !== 'undefined' && S ? S.scene + (grassDry() ? ':dry' : '') : null;
+  if (typeof ui !== 'undefined' && GRASS_BAKED[key] && (cur === key || (/^(farm|pen)/.test(cur) && !GRASS_BAKED[cur]))) { ui.bgScene = null; render(); }
 }
 
 function farmKitGround() {

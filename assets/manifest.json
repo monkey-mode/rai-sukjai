@@ -6560,6 +6560,8 @@
       "reference": null,
       "reference_render": null,
       "layout": "assets/painted/_layout/bg.farm.jpg",
+      "normal": "assets/backgrounds/ground_farm_n.png",
+      "normal_scale": 2,
       "status": "done",
       "file": "assets/backgrounds/ground_farm.svg",
       "agent": "Codex",
