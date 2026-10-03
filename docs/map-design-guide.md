@@ -299,7 +299,7 @@ Night Camp's full effect stack costs about 4.5 ms per frame on their test machin
 | Farm | Kit complete in style v3: `ground.farm` + 5 farm pieces + the shared pen kit, placed by `FARM_RECIPE` (`?farmseed=N`); the house, shrine, palms, cart, jar, signs, buffalo, farmer and soil tiles are restyled in v3. The forest border is built from kit trees in rows along the clearing's two grid edges (`FARM_FOREST` / `forestSprites()`), with a bush fringe on the border line and darker back rows. Crops, produce and UI icons are still the older art. |
 | Market interior | Front view, so it gets its own small kit later. |
 | Village map | Single painted image is fine (overview only, rule in section 1). |
-| Light | Normal maps exist; the WebGL lighting renderer is not built yet. |
+| Light | Built (`js/ui/light.js`, `js/art/daylight.js`): the clock follows energy (06:00–21:00). A normal buffer is drawn from every sprite's normal map at its on-screen transform, and two WebGL layers (multiply + screen) give time-of-day colour, a sun moving left to right, normal-map relief, and lamp glow at the house, shrine, cart and duck house. Farm and pen only. `?time=H` previews an hour; `?light=0` turns it off. Not yet: cast shadows, bloom, mist, depth of field. |
 | Style | Switching to art style v3 (flat). The duck pen kit is re-issued as `needs_changes`; the painted PNGs stay in the game until the SVGs arrive. |
 | Sizes | Characters and props don't share one scale yet (Uncle Mee is 2.7× the farmer). A single size chart is to be decided. |
 | Builder | Built for the duck pen: `PEN_RECIPE` + `buildScene()` in `js/art/iso.js` places 46 kit pieces by rules R1, R3–R6, R9 and R11. The default seed is 23; open `index.html?seed=N` to try other arrangements. |

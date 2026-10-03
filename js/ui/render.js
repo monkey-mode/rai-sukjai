@@ -164,7 +164,7 @@ function renderAnim() { animEl.innerHTML = ''; }   // animated layers now live i
 function renderHUD() {
   const d = dateOf(S.day), se = seasonOf(S.day), inv = S.inventory;
   hud.innerHTML = `<div class="hb wx" title="${S.rain ? 'ฝนตก · Rain' : 'แดดออก · Sunny'}">${S.rain ? icon('rain') : icon('sun')}</div>
-  <div class="hb date"><b>วันที่ ${S.day}<span> / ${CONFIG.LAST_DAY}</span></b><small>${d.date} ${MONTHS_TH[d.month]} · ${MONTHS_EN[d.month]} ${d.date}</small></div>
+  <div class="hb date"><b>วันที่ ${S.day}<span> / ${CONFIG.LAST_DAY}</span></b><small>${d.date} ${MONTHS_TH[d.month]} · ${MONTHS_EN[d.month]} ${d.date} · ${clockText()}</small></div>
   <div class="hb season s-${se}"><b>${SEASONS[se].th}</b><small>${SEASONS[se].en}${S.rain ? ' · ฝนตก' : ''}</small></div>
   <div class="hb money"><b>฿${fmt(S.money)}</b><small>เงิน · Money</small></div>
   <div class="hb energy ${S.energy < CONFIG.TIRED_BELOW ? 'low' : ''}"><div class="ebar"><i style="width:${S.energy / CONFIG.MAX_ENERGY * 100}%"></i></div><small>แรง Energy ${S.energy}${S.energy < CONFIG.TIRED_BELOW ? ' · เหนื่อย!' : ''}</small></div>
@@ -221,4 +221,5 @@ function render() {
   if (S.scene === 'farm') renderFarm(); else if (S.scene === 'pen') renderPen(); else if (S.scene === 'map') renderMap(); else dynEl.innerHTML = '';
   renderPanel(); renderHUD(); renderToolbar(); renderFx(); renderHand();
   if (typeof applyCam === 'function') applyCam();
+  if (typeof Light !== 'undefined') Light.update();
 }

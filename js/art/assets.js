@@ -89,6 +89,7 @@ const Assets = {
   // still has a working file, which stays in use until its replacement is done.
   USE_STATUSES: ['done', 'approved', 'needs_changes'],
   found: {}, // id -> file path
+  normal: {}, // art file path -> its normal map (for the moving light, js/ui/light.js)
 
   has(id) { return Object.prototype.hasOwnProperty.call(this.found, id); },
 
@@ -118,8 +119,8 @@ const Assets = {
         // which is cheaper to draw on phones than a big SVG
         // a finished style-v3 file wins over an earlier painted version
         const rv = a.restyle_v3, fin = st => ['done', 'approved'].includes(st);
-        if (rv && rv.file && fin(rv.status)) this.found[a.id] = rv.file;                 // style-v3 restyle of an older asset
-        else if (a.style === 'flat-v3' && a.file && fin(a.status)) this.found[a.id] = a.file;
+        if (rv && rv.file && fin(rv.status)) { this.found[a.id] = rv.file; if (rv.normal) this.normal[rv.file] = rv.normal; }   // style-v3 restyle
+        else if (a.style === 'flat-v3' && a.file && fin(a.status)) { this.found[a.id] = a.file; if (a.normal) this.normal[a.file] = a.normal; }
         else if (a.paint && a.paint.file && this.USE_STATUSES.includes(a.paint.status)) this.found[a.id] = a.paint.file;
         else if (a.file && this.USE_STATUSES.includes(a.status)) this.found[a.id] = a.raster || a.file;
       }

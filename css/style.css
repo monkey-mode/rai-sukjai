@@ -6,6 +6,7 @@ html,body{margin:0;height:100%;background:#2a1a0f;overflow:hidden;font-family:'S
 #stage{position:relative;width:800px;height:600px;flex:none;overflow:hidden;background:#bccb6c;transform-origin:50% 50%}
 #stage>svg{position:absolute;left:0;top:0;width:100%;height:600px}
 #bg,#anim,#fx,#dyn{pointer-events:none}
+.light-layer{position:absolute;left:0;top:0;width:100%;height:600px;pointer-events:none}
 #dyn [data-act]{pointer-events:auto;cursor:pointer}
 .k{font-family:'Kanit',sans-serif}
 small.en,.en{font-family:'Sarabun',sans-serif;font-size:10px;font-weight:400;opacity:.8;line-height:1.1}

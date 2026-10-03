@@ -64,6 +64,17 @@ async function bakeGrass(key, list) {
       g.drawImage(imgs[id], -sp.ax, -sp.ay, sp.w, sp.h);
     }
     GRASS_BAKED[key] = c.toDataURL('image/webp', .9);
+    // the same tufts' normal maps, for the moving light (mirrored tufts get mirrored normals)
+    if (typeof Light !== 'undefined' && list.every(([id]) => Assets.normal[Assets.found[id]])) {
+      const n = document.createElement('canvas'); n.width = c.width; n.height = c.height;
+      const ng = n.getContext('2d'); ng.fillStyle = 'rgb(128,128,255)'; ng.fillRect(0, 0, n.width, n.height);
+      for (const [id, x, y, k, flip] of list) {
+        const sp = ASSET_SPECS[id], src = await Light.normalImage(Assets.normal[Assets.found[id]], flip);
+        ng.setTransform(K * (flip ? -k : k), 0, 0, K * k, (x + 300) * K, y * K);
+        ng.drawImage(src, -sp.ax, -sp.ay, sp.w, sp.h);
+      }
+      Light.bakedNormal.set(GRASS_BAKED[key], n);
+    }
     if (typeof ui !== 'undefined' && S && S.scene + (grassDry() ? ':dry' : '') === key) { ui.bgScene = null; render(); }
   } catch (e) { /* file:// or a missing tuft: keep the individual images */ }
   bakeGrass.busy = false;
