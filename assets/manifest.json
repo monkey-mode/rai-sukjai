@@ -6606,12 +6606,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_a.png",
       "normal": "assets/kit/grass_tuft_a_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_a.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Rounded fan, taller left; 9–12 blades.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_a_dry",
@@ -6652,12 +6652,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_a_dry.png",
       "normal": "assets/kit/grass_tuft_a_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_a_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_b",
@@ -6698,12 +6698,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_b.png",
       "normal": "assets/kit/grass_tuft_b_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_b.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Upright narrow fan; 7–10 blades with one bent right.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_b_dry",
@@ -6744,12 +6744,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_b_dry.png",
       "normal": "assets/kit/grass_tuft_b_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_b_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_c",
@@ -6790,12 +6790,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_c.png",
       "normal": "assets/kit/grass_tuft_c_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_c.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Wide layered fan; 12–15 blades with darker back and lit front.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_c_dry",
@@ -6836,12 +6836,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_c_dry.png",
       "normal": "assets/kit/grass_tuft_c_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_c_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_d",
@@ -6882,12 +6882,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_d.png",
       "normal": "assets/kit/grass_tuft_d_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_d.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Low fan of 5 short broad blades.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tuft_d_dry",
@@ -6928,12 +6928,12 @@
       "layout": "assets/painted/_layout/kit.grass_tuft_d_dry.png",
       "normal": "assets/kit/grass_tuft_d_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tuft_d_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tall",
@@ -6974,12 +6974,12 @@
       "layout": "assets/painted/_layout/kit.grass_tall.png",
       "normal": "assets/kit/grass_tall_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tall.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Arching 12–16-blade clump, exactly two green seed heads; unwanted flowers removed in generated revision.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_tall_dry",
@@ -7020,12 +7020,12 @@
       "layout": "assets/painted/_layout/kit.grass_tall_dry.png",
       "normal": "assets/kit/grass_tall_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_tall_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_edge",
@@ -7066,12 +7066,12 @@
       "layout": "assets/painted/_layout/kit.grass_edge.png",
       "normal": "assets/kit/grass_edge_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_edge.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Exactly six disconnected single blades with broad transparent gaps and three deliberate 1 px inner midribs in the grass shadow tone; generated revisions rejected common fan and paired leaves.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_edge_dry",
@@ -7112,12 +7112,12 @@
       "layout": "assets/painted/_layout/kit.grass_edge_dry.png",
       "normal": "assets/kit/grass_edge_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_edge_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_flower_white",
@@ -7158,12 +7158,12 @@
       "layout": "assets/painted/_layout/kit.grass_flower_white.png",
       "normal": "assets/kit/grass_flower_white_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_flower_white.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Exactly three white daisies; redrew their small yellow centres after palette tracing for game-size readability.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_flower_white_dry",
@@ -7204,12 +7204,12 @@
       "layout": "assets/painted/_layout/kit.grass_flower_white_dry.png",
       "normal": "assets/kit/grass_flower_white_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_flower_white_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_flower_pink",
@@ -7250,12 +7250,12 @@
       "layout": "assets/painted/_layout/kit.grass_flower_pink.png",
       "normal": "assets/kit/grass_flower_pink_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_flower_pink.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Generated in one shared green batch and traced from native-resolution palette planes to preserve blade detail; profile v4 parameters unchanged. Chunky pointed blades, upper-left palette cel light, dark basal foliage; no outer outline (owner-approved groundcover exception), no soil or cast shadow. Canvas/anchor retained; source is fitted actual pre-trace reference at canvas×2. Actual Laigter 1.10.7 preset with rounded foliage cleanup and exact alpha. Two open pink blossoms and one pink bud; restored the two tiny yellow centres after palette tracing.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.grass_flower_pink_dry",
@@ -7296,12 +7296,12 @@
       "layout": "assets/painted/_layout/kit.grass_flower_pink_dry.png",
       "normal": "assets/kit/grass_flower_pink_dry_n.png",
       "normal_scale": 2,
-      "status": "done",
+      "status": "approved",
       "file": "assets/kit/grass_flower_pink_dry.svg",
       "agent": "Codex",
       "updated_at": "2026-10-03T10:48:01Z",
       "notes": "Exact green SVG contours and blade layout: only green fills and own-shadow inner strokes recoloured to the straw triplet; short basal green plane(s) retained, all flower colours unchanged. Same canvas/anchor, exact identical rendered alpha. Derived source recolours the green pre-trace PNG with alpha/flowers retained. Normal map copied from green because geometry is identical. Profile v4 parameters unchanged.",
-      "review": null
+      "review": "Approved by the owner (2026-10-03) in the farm and pen, both seasons."
     },
     {
       "id": "kit.field_hut",
