@@ -3794,6 +3794,23 @@
         "updated_at": null,
         "notes": "",
         "review": null
+      },
+      "restyle_v3": {
+        "status": "todo",
+        "style_refs": [
+          "kit.duck_house",
+          "kit.tree_round_a",
+          "kit.fence_span_se",
+          "character.uncle_mee"
+        ],
+        "output": "assets/characters/auntie_daeng.svg",
+        "normal": "assets/characters/auntie_daeng_n.png",
+        "note": "Redraw in art style v3 (docs/style-contract.md) to match the locked anchors and the approved v3 Uncle Mee and farmer; keep this entry's canvas, anchor and pose (UPPER BODY behind her counter, open golden fan raised to the side). She now stands in the ISOMETRIC market behind kit.stall_daeng_counter, 3/4 view toward the lower right like Uncle Mee. Size in game per paint_style.size_chart (50 px from waist to the top of her bun). Deliver SVG at `output` (replaces the old SVG) + normal map at canvas×2. Stamp done by setting this block's status/file/agent/updated_at/notes.",
+        "agent": null,
+        "updated_at": null,
+        "file": null,
+        "notes": null,
+        "review": null
       }
     },
     {
@@ -6575,6 +6592,1414 @@
       }
     },
     {
+      "id": "kit.shophouse_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ห้องแถวไม้",
+      "name_en": "Wooden shophouse A",
+      "output": "assets/kit/shophouse_a.svg",
+      "format": "svg",
+      "canvas": [
+        220,
+        296
+      ],
+      "anchor": [
+        110,
+        250
+      ],
+      "scale": 1,
+      "footprint": [
+        3,
+        2
+      ],
+      "height_px": 230,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "One unit of an old two-storey wooden Thai shophouse (ห้องแถวไม้) at the back of the market square, about 3 × 2 tiles: dark teak plank walls, the ground floor fully open toward the square (down-left face) with folding wooden shutter doors pushed aside and a few goods inside in shadow, a narrow balcony with a carved wooden railing on the upper floor, two tall shuttered windows, a corrugated-zinc gable roof (ridge running up-left to down-right) with a little rust, a small faded shop sign board (blank: no letters) over the opening. Unit A: warm teak brown with green shutters. The anchor is the ground under its centre; its neighbours stand 3 tiles to either side, so its side walls are plain. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.shophouse_a.png",
+      "normal": "assets/kit/shophouse_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.shophouse_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ห้องแถวไม้",
+      "name_en": "Wooden shophouse B",
+      "output": "assets/kit/shophouse_b.svg",
+      "format": "svg",
+      "canvas": [
+        220,
+        296
+      ],
+      "anchor": [
+        110,
+        250
+      ],
+      "scale": 1,
+      "footprint": [
+        3,
+        2
+      ],
+      "height_px": 230,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The same wooden Thai shophouse as shophouse_a (same size, roof and structure so a row of them lines up), different details: paler weathered planks, blue-grey shutters, a striped canvas sun blind over the ground-floor opening, potted plants on the balcony and a hanging cage-bird lantern. Blank sign board, no letters. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.shophouse_b.png",
+      "normal": "assets/kit/shophouse_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.stall_daeng_back",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "แผงป้าแดง (หลัง)",
+      "name_en": "Auntie Daeng stall: back",
+      "output": "assets/kit/stall_daeng_back.svg",
+      "format": "svg",
+      "canvas": [
+        200,
+        200
+      ],
+      "anchor": [
+        100,
+        168
+      ],
+      "scale": 1,
+      "footprint": [
+        1.6,
+        2.4
+      ],
+      "height_px": 150,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The BACK half of Auntie Daeng's market stall, about 1.6 × 2.4 tiles: four bamboo corner posts, a sloped red-and-white striped canvas awning on a bamboo frame high above (the vendor stands under it), back shelves of woven baskets and jars with chillies, garlic and seed packets, a bunch of bananas and strings of dried chillies hanging from the frame, a blank wooden name board hung under the front edge of the awning (the game writes her name on it). NO counter at the front: the counter is a separate piece (kit.stall_daeng_counter) drawn in front of Auntie Daeng. The open front faces down-right. The anchor is the ground under the stall's centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.stall_daeng_back.png",
+      "normal": "assets/kit/stall_daeng_back_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.stall_daeng_counter",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "แผงป้าแดง (เคาน์เตอร์)",
+      "name_en": "Auntie Daeng stall: counter",
+      "output": "assets/kit/stall_daeng_counter.svg",
+      "format": "svg",
+      "canvas": [
+        140,
+        100
+      ],
+      "anchor": [
+        70,
+        72
+      ],
+      "scale": 1,
+      "footprint": [
+        0.7,
+        2.2
+      ],
+      "height_px": 62,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The FRONT COUNTER of Auntie Daeng's stall, a long low wooden table about 0.7 × 2.2 tiles (running up-right to down-left) covered with a red-and-white gingham cloth hanging down the front, with three round woven baskets of produce on top (red chillies, golden mangoes, purple eggplants), a small hand scale and a few loose vegetables. It stands in front of Auntie Daeng and hides her below the waist. The anchor is the ground under its centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.stall_daeng_counter.png",
+      "normal": "assets/kit/stall_daeng_counter_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.stall_veg",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "แผงผัก",
+      "name_en": "Neighbour vegetable stall",
+      "output": "assets/kit/stall_veg.svg",
+      "format": "svg",
+      "canvas": [
+        190,
+        190
+      ],
+      "anchor": [
+        95,
+        158
+      ],
+      "scale": 1,
+      "footprint": [
+        1.6,
+        2.2
+      ],
+      "height_px": 140,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A neighbour's vegetable stall, about 1.6 × 2.2 tiles: a bamboo frame with a green tarpaulin awning, a slatted wooden table piled with greens (morning glory bundles, long beans, cabbages, herbs), plastic-free woven baskets and banana-leaf wrapped bundles, a low stool. No vendor (empty, the seller is away). Open front faces down-right. The anchor is the ground under its centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.stall_veg.png",
+      "normal": "assets/kit/stall_veg_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.stall_umbrella",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "แผงร่มตลาด",
+      "name_en": "Market umbrella stall",
+      "output": "assets/kit/stall_umbrella.svg",
+      "format": "svg",
+      "canvas": [
+        160,
+        200
+      ],
+      "anchor": [
+        80,
+        176
+      ],
+      "scale": 1,
+      "footprint": [
+        1.4,
+        1.4
+      ],
+      "height_px": 175,
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A typical Thai market umbrella stall: a big round market umbrella (red and white canvas segments, a little faded) on a wooden pole over a low folding table about 1.4 × 1.4 tiles with fruit on trays (rambutans, pomelos, bananas) and two woven baskets beside it on the ground. No vendor. The anchor is the ground under the pole. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.stall_umbrella.png",
+      "normal": "assets/kit/stall_umbrella_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.lantern_post",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "เสาตะเกียง",
+      "name_en": "Lantern post",
+      "output": "assets/kit/lantern_post.svg",
+      "format": "svg",
+      "canvas": [
+        34,
+        124
+      ],
+      "anchor": [
+        17,
+        118
+      ],
+      "scale": 1,
+      "footprint": [
+        0.3,
+        0.3
+      ],
+      "height_px": 110,
+      "style": "flat-v3",
+      "tags": [
+        "light"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A simple wooden lantern post for the market: a weathered square post on a small stone footing, a curved iron bracket at the top with a hanging glass-and-tin oil lantern (unlit look: pale glass, the game adds the glow at night), a little rope wound round the post. The lamp's centre is about 100 px above the anchor (ground under the post). Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.lantern_post.png",
+      "normal": "assets/kit/lantern_post_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.bench",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ม้านั่ง",
+      "name_en": "Wooden bench",
+      "output": "assets/kit/bench.svg",
+      "format": "svg",
+      "canvas": [
+        84,
+        52
+      ],
+      "anchor": [
+        42,
+        40
+      ],
+      "scale": 1,
+      "footprint": [
+        1.4,
+        0.4
+      ],
+      "height_px": 30,
+      "style": "flat-v3",
+      "tags": [
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A rustic wooden market bench, about 1.4 × 0.4 tiles, running up-right to down-left: a thick plank seat on two splayed leg frames with a cross brace, worn edges and a knot or two. The anchor is the ground under its centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.bench.png",
+      "normal": "assets/kit/bench_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.basket_veg",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ตะกร้าผัก",
+      "name_en": "Basket of vegetables",
+      "output": "assets/kit/basket_veg.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        42
+      ],
+      "anchor": [
+        25,
+        34
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.5
+      ],
+      "height_px": 28,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A round woven bamboo basket on the ground heaped with vegetables (cabbage, long beans, chillies, a pumpkin). The anchor is the ground under its centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.basket_veg.png",
+      "normal": "assets/kit/basket_veg_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.basket_fruit",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ตะกร้าผลไม้",
+      "name_en": "Basket of fruit",
+      "output": "assets/kit/basket_fruit.svg",
+      "format": "svg",
+      "canvas": [
+        50,
+        42
+      ],
+      "anchor": [
+        25,
+        34
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.5
+      ],
+      "height_px": 28,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A round woven bamboo basket on the ground heaped with fruit (mangoes, rambutans, a bunch of small bananas on top). The anchor is the ground under its centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.basket_fruit.png",
+      "normal": "assets/kit/basket_fruit_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.crate_stack",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ลังไม้",
+      "name_en": "Stack of crates",
+      "output": "assets/kit/crate_stack.svg",
+      "format": "svg",
+      "canvas": [
+        60,
+        66
+      ],
+      "anchor": [
+        30,
+        56
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.6
+      ],
+      "height_px": 48,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Two or three rough wooden slat crates stacked slightly askew, the top one holding coconuts or pumpkins. The anchor is the ground under the stack's centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.crate_stack.png",
+      "normal": "assets/kit/crate_stack_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.rice_sacks",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กระสอบข้าว",
+      "name_en": "Rice sacks",
+      "output": "assets/kit/rice_sacks.svg",
+      "format": "svg",
+      "canvas": [
+        66,
+        50
+      ],
+      "anchor": [
+        33,
+        42
+      ],
+      "scale": 1,
+      "footprint": [
+        0.8,
+        0.6
+      ],
+      "height_px": 34,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Three plump woven rice sacks (pale straw-coloured with a faded printed stripe, no letters) leaning together, one with its top folded open showing rice. The anchor is the ground under their centre. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.rice_sacks.png",
+      "normal": "assets/kit/rice_sacks_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.dog",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "หมาวัด",
+      "name_en": "Sleeping village dog",
+      "output": "assets/kit/dog.svg",
+      "format": "svg",
+      "canvas": [
+        56,
+        34
+      ],
+      "anchor": [
+        28,
+        28
+      ],
+      "scale": 1,
+      "footprint": [
+        0.7,
+        0.4
+      ],
+      "height_px": 20,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A friendly tan Thai village dog curled up asleep on the ground, nose on its paws, one ear flopped over, tail curled round. The anchor is the ground under its body. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.dog.png",
+      "normal": "assets/kit/dog_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_temple",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "วัด (แผนที่)",
+      "name_en": "Temple (map)",
+      "output": "assets/kit/map_temple.svg",
+      "format": "svg",
+      "canvas": [
+        280,
+        240
+      ],
+      "anchor": [
+        140,
+        182
+      ],
+      "scale": 1,
+      "footprint": [
+        4,
+        3.6
+      ],
+      "height_px": 170,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The village temple (วัด) on the map: a white-walled ordination hall (โบสถ์) with a tiered red-and-gold roof with gold chofa finials, standing on a raised white base with steps, a small white chedi beside it and a low white boundary wall with a gate on the down-right side, a bodhi tree's edge allowed at one corner. About 4 × 3.6 tiles at map scale. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_temple.png",
+      "normal": "assets/kit/map_temple_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_spirit_house",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ศาลพระภูมิ (แผนที่)",
+      "name_en": "Spirit house (map)",
+      "output": "assets/kit/map_spirit_house.svg",
+      "format": "svg",
+      "canvas": [
+        28,
+        50
+      ],
+      "anchor": [
+        14,
+        46
+      ],
+      "scale": 1,
+      "footprint": [
+        0.4,
+        0.4
+      ],
+      "height_px": 42,
+      "style": "flat-v3",
+      "tags": [
+        "decor"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A small gold-and-red Thai spirit house (ศาลพระภูมิ) on a white pillar, with a tiny garland. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_spirit_house.png",
+      "normal": "assets/kit/map_spirit_house_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_house_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "บ้านเพื่อนบ้าน A (แผนที่)",
+      "name_en": "Neighbour house A (map)",
+      "output": "assets/kit/map_house_a.svg",
+      "format": "svg",
+      "canvas": [
+        140,
+        130
+      ],
+      "anchor": [
+        70,
+        96
+      ],
+      "scale": 1,
+      "footprint": [
+        2.2,
+        1.8
+      ],
+      "height_px": 85,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A neighbour's wooden Thai stilt house on the map: dark plank walls on stilts, a steep thatched or zinc gable roof, a front ladder-stair, a water jar under the house. About 2.2 × 1.8 tiles at map scale. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_house_a.png",
+      "normal": "assets/kit/map_house_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_house_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "บ้านเพื่อนบ้าน B (แผนที่)",
+      "name_en": "Neighbour house B (map)",
+      "output": "assets/kit/map_house_b.svg",
+      "format": "svg",
+      "canvas": [
+        140,
+        130
+      ],
+      "anchor": [
+        70,
+        96
+      ],
+      "scale": 1,
+      "footprint": [
+        2.2,
+        1.8
+      ],
+      "height_px": 85,
+      "style": "flat-v3",
+      "tags": [
+        "block",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A second neighbour house, same size as house A but different: lighter bamboo walls, a red-brown tiled roof, a small veranda with a hammock, potted plants. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_house_b.png",
+      "normal": "assets/kit/map_house_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_market",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ตลาด (แผนที่)",
+      "name_en": "Market (map)",
+      "output": "assets/kit/map_market.svg",
+      "format": "svg",
+      "canvas": [
+        220,
+        150
+      ],
+      "anchor": [
+        110,
+        100
+      ],
+      "scale": 1,
+      "footprint": [
+        3,
+        3
+      ],
+      "height_px": 80,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The village market at the crossroads, map scale, about 3 × 3 tiles: Auntie Daeng's stall with its red-and-white striped awning in front, a red-and-white market umbrella and a blue-and-white one over tables of produce, a green tarp vegetable stall at the back, baskets and crates between them. One combined piece. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_market.png",
+      "normal": "assets/kit/map_market_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_duck_house",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "เล้าเป็ด (แผนที่)",
+      "name_en": "Duck house (map)",
+      "output": "assets/kit/map_duck_house.svg",
+      "format": "svg",
+      "canvas": [
+        90,
+        80
+      ],
+      "anchor": [
+        45,
+        62
+      ],
+      "scale": 1,
+      "footprint": [
+        1.4,
+        1.4
+      ],
+      "height_px": 52,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Uncle Mee's small bamboo duck house on stilts with a thatched roof and a plank ramp, map scale (the map version of kit.duck_house). MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_duck_house.png",
+      "normal": "assets/kit/map_duck_house_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_farmhouse",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "บ้านไร่ (แผนที่)",
+      "name_en": "Our farmhouse (map)",
+      "output": "assets/kit/map_farmhouse.svg",
+      "format": "svg",
+      "canvas": [
+        150,
+        150
+      ],
+      "anchor": [
+        75,
+        112
+      ],
+      "scale": 1,
+      "footprint": [
+        2.4,
+        2
+      ],
+      "height_px": 110,
+      "style": "flat-v3",
+      "tags": [
+        "block"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "Our farm's traditional Thai teak house on stilts, map scale: steep gabled roof with the curling ends (the map version of the farm's Thai house), a veranda and stair, a water jar. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_farmhouse.png",
+      "normal": "assets/kit/map_farmhouse_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_haystack",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กองฟาง (แผนที่)",
+      "name_en": "Haystack (map)",
+      "output": "assets/kit/map_haystack.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        34
+      ],
+      "anchor": [
+        20,
+        30
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.6
+      ],
+      "height_px": 26,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A small rounded rice-straw haystack, map scale (the map version of kit.haystack). MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_haystack.png",
+      "normal": "assets/kit/map_haystack_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_tree_a",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นไม้ A (แผนที่)",
+      "name_en": "Tree A (map)",
+      "output": "assets/kit/map_tree_a.svg",
+      "format": "svg",
+      "canvas": [
+        90,
+        100
+      ],
+      "anchor": [
+        45,
+        94
+      ],
+      "scale": 1,
+      "footprint": [
+        0.9,
+        0.9
+      ],
+      "height_px": 85,
+      "style": "flat-v3",
+      "tags": [
+        "tall",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A round broadleaf tree at map scale (the map version of kit.tree_round_a): twisted trunk, layered leaf clusters in leaf and leaf_dark tones. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_tree_a.png",
+      "normal": "assets/kit/map_tree_a_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_tree_b",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นไม้ B (แผนที่)",
+      "name_en": "Tree B (map)",
+      "output": "assets/kit/map_tree_b.svg",
+      "format": "svg",
+      "canvas": [
+        80,
+        88
+      ],
+      "anchor": [
+        40,
+        82
+      ],
+      "scale": 1,
+      "footprint": [
+        0.8,
+        0.8
+      ],
+      "height_px": 75,
+      "style": "flat-v3",
+      "tags": [
+        "tall",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A second, smaller and taller-crowned broadleaf tree at map scale (the map version of kit.tree_round_b). MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_tree_b.png",
+      "normal": "assets/kit/map_tree_b_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_palm",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "ต้นตาล (แผนที่)",
+      "name_en": "Palm (map)",
+      "output": "assets/kit/map_palm.svg",
+      "format": "svg",
+      "canvas": [
+        60,
+        104
+      ],
+      "anchor": [
+        30,
+        100
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.5
+      ],
+      "height_px": 95,
+      "style": "flat-v3",
+      "tags": [
+        "tall",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A sugar palm (ตาลโตนด) at map scale: tall straight trunk with ring scars and a round crown of fan leaves. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_palm.png",
+      "normal": "assets/kit/map_palm_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_bamboo",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กอไผ่ (แผนที่)",
+      "name_en": "Bamboo clump (map)",
+      "output": "assets/kit/map_bamboo.svg",
+      "format": "svg",
+      "canvas": [
+        64,
+        104
+      ],
+      "anchor": [
+        32,
+        100
+      ],
+      "scale": 1,
+      "footprint": [
+        0.7,
+        0.7
+      ],
+      "height_px": 95,
+      "style": "flat-v3",
+      "tags": [
+        "tall"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A bamboo clump at map scale (the map version of kit.bamboo_clump): arching culms with node collars and feathery leaf sprays. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_bamboo.png",
+      "normal": "assets/kit/map_bamboo_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_banana",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "กล้วย (แผนที่)",
+      "name_en": "Banana plant (map)",
+      "output": "assets/kit/map_banana.svg",
+      "format": "svg",
+      "canvas": [
+        56,
+        62
+      ],
+      "anchor": [
+        28,
+        58
+      ],
+      "scale": 1,
+      "footprint": [
+        0.6,
+        0.6
+      ],
+      "height_px": 55,
+      "style": "flat-v3",
+      "tags": [
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A banana plant at map scale: a few broad torn leaves on a short pseudo-stem, one hanging bunch. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_banana.png",
+      "normal": "assets/kit/map_banana_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_bush",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "พุ่มไม้ (แผนที่)",
+      "name_en": "Bush (map)",
+      "output": "assets/kit/map_bush.svg",
+      "format": "svg",
+      "canvas": [
+        44,
+        28
+      ],
+      "anchor": [
+        22,
+        24
+      ],
+      "scale": 1,
+      "footprint": [
+        0.5,
+        0.4
+      ],
+      "height_px": 22,
+      "style": "flat-v3",
+      "tags": [
+        "decor",
+        "flip"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "A low leafy bush at map scale, a few small flowers. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_bush.png",
+      "normal": "assets/kit/map_bush_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_fence_span_se",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รั้ว (แผนที่) SE",
+      "name_en": "Fence span SE (map)",
+      "output": "assets/kit/map_fence_span_se.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        34
+      ],
+      "anchor": [
+        6,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        1,
+        0
+      ],
+      "height_px": 18,
+      "style": "flat-v3",
+      "tags": [
+        "fence"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "One span of the pen's bamboo-and-timber fence at map scale (the map version of kit.fence_span_se): a post at the anchor and two rails running one tile toward the lower right. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_fence_span_se.png",
+      "normal": "assets/kit/map_fence_span_se_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_fence_span_sw",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "รั้ว (แผนที่) SW",
+      "name_en": "Fence span SW (map)",
+      "output": "assets/kit/map_fence_span_sw.svg",
+      "format": "svg",
+      "canvas": [
+        40,
+        34
+      ],
+      "anchor": [
+        34,
+        26
+      ],
+      "scale": 1,
+      "footprint": [
+        0,
+        1
+      ],
+      "height_px": 18,
+      "style": "flat-v3",
+      "tags": [
+        "fence"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The same fence span at map scale running one tile toward the lower left (the map version of kit.fence_span_sw): a post at the anchor and two rails. MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_fence_span_sw.png",
+      "normal": "assets/kit/map_fence_span_sw_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "kit.map_fence_post",
+      "category": "kit",
+      "priority": 1,
+      "name_th": "เสารั้ว (แผนที่)",
+      "name_en": "Fence post (map)",
+      "output": "assets/kit/map_fence_post.svg",
+      "format": "svg",
+      "canvas": [
+        12,
+        26
+      ],
+      "anchor": [
+        6,
+        24
+      ],
+      "scale": 1,
+      "footprint": [
+        0.2,
+        0.2
+      ],
+      "height_px": 20,
+      "style": "flat-v3",
+      "tags": [
+        "fence"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se"
+      ],
+      "prompt": "The end post of the map fence (the map version of kit.fence_post). MAP SCALE (the village map): drawn about HALF the size of its scene version, but with the SAME locked outline weight (about 2.5 px visible) and the same palette, shading and hand-made character; detail simplified so it still reads at this small size (fewer planks, leaves in bigger clusters), never a flat icon. Seen from the game's isometric camera (2:1, looking down about 30°): ground lines run diagonally, vertical edges stay vertical. Drawn as ONE isolated object on a transparent background, in art style v3 (bold #3a2213 outline, palette-only flat fills, 3-tone cel shading, light from the upper-left), matching the locked anchors' sculpted, hand-made detail, with no shadow on the ground (the game adds cast shadows and moving light from the normal map).",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/kit.map_fence_post.png",
+      "normal": "assets/kit/map_fence_post_n.png",
+      "normal_scale": 2,
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "ground.market",
+      "category": "ground",
+      "priority": 1,
+      "name_th": "พื้นตลาด",
+      "name_en": "Market ground (kit)",
+      "output": "assets/backgrounds/ground_market.svg",
+      "format": "svg",
+      "canvas": [
+        1400,
+        600
+      ],
+      "anchor": [
+        300,
+        0
+      ],
+      "scale": 1,
+      "style": "flat-v3",
+      "tags": [
+        "walkable"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "ground.farm"
+      ],
+      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for the market, 1400×600 canvas (centred 800×600 safe area). Market grid: grid point (u, v) is at safe-area x = 400 + (u - v)·32, y = 150 + (u + v)·16 (canvas x = safe x + 300). Paint only flat things, in art style v3 like ground.farm (broad three-tone patches, outlines only on edges that matter): (1) The market square: packed earth over u 0…11, v 0…11 in the dirt tones, worn smoother and lighter along the paths people walk (from the front-left corner to the back and across to the right), a few flat stones, scattered straw and leaves, a shallow puddle, a cleaner swept patch in front of Auntie Daeng's stall around (5, 9.6); a slim outlined kerb of flat stones along the square's two front edges. (2) Behind the square's back-right edge (v < -0.6): a narrow strip of paving and the flat dark ground under the shophouse row (the game stands the shophouses there) fading into a low, hazy, flat backdrop of distant roofs and trees at the very top. (3) Along the back-left edge (u < -0.8): grass with a few flat flower clusters (the game plants trees there). (4) Outside the square in front: grass with a dirt lane leaving the square from its front corner toward the bottom of the stage (the way back to the village). (5) A small open drain (ร่อง) with a plank over it along the square's front-right edge. NO standing objects (no stalls, shophouses, trees, bushes, posts, baskets, people or animals) and no cast shadows. HUD covers y 0–46, the toolbar y 532–600. Use the composition guide (market_kit_composition.jpg) for where the standing pieces go, so the ground under them is plain.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/market_kit_composition.jpg",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
+      "id": "ground.village",
+      "category": "ground",
+      "priority": 1,
+      "name_th": "พื้นหมู่บ้าน",
+      "name_en": "Village map ground (kit)",
+      "output": "assets/backgrounds/ground_village.svg",
+      "format": "svg",
+      "canvas": [
+        1400,
+        600
+      ],
+      "anchor": [
+        300,
+        0
+      ],
+      "scale": 1,
+      "style": "flat-v3",
+      "tags": [
+        "walkable"
+      ],
+      "style_refs": [
+        "kit.duck_house",
+        "kit.tree_round_a",
+        "kit.fence_span_se",
+        "ground.farm"
+      ],
+      "prompt": "Wide ISOMETRIC (2:1) GROUND LAYER ONLY for the village MAP, 1400×600 canvas (centred 800×600 safe area). Village grid: grid point (u, v) is at safe-area x = 400 + (u - v)·32, y = 70 + (u + v)·16 (canvas x = safe x + 300). MAP SCALE: details about half the size of the scene grounds, same flat-v3 style and outline weight. Paint only flat things: (1) Two dirt lanes 1 tile wide, one along u = 8 and one along v = 8, crossing at the market; worn wheel ruts and a few puddles; outlined edges. (2) The market square at the crossroads, u and v 7.2…11.6, packed earth (the game stands the market piece on it). (3) Our farm over u 11.4…18.4, v -0.6…7: a pale yard with four small vegetable beds in rows (crop rows painted flat in leaf tones) over u 11.8…17.6, v 1.6…6.6, and a small rice-paddy strip along its back edge. (4) Uncle Mee's pen floor over u 11.4…15, v 12.2…16.4: bare earth with straw (the game draws the fence and duck house). (5) A small lotus pond centred on (16.4, 11.4), radii 1.6 × 1 tiles, with a thin outlined rim. (6) The temple courtyard over u 1.2…7, v 1.2…5.6: pale swept ground with a paved path to the lane. (7) The neighbours' yards over u 1…6.4, v 11.8…17.4: packed earth with a vegetable patch and a woodpile area (flat). (8) Grass everywhere else, with broad three-tone patches; a low, hazy, flat forest wall along the very top edge. NO standing objects (no buildings, trees, bushes, fences, stalls or people) and no cast shadows. HUD covers y 0–46, the toolbar y 532–600. Use the composition guide (village_kit_composition.jpg) for where the standing pieces go.",
+      "reference": null,
+      "reference_render": null,
+      "layout": "assets/painted/_layout/village_kit_composition.jpg",
+      "status": "todo",
+      "file": null,
+      "agent": null,
+      "updated_at": null,
+      "notes": null,
+      "review": null
+    },
+    {
       "id": "kit.rice_young_a",
       "category": "kit",
       "priority": 1,
@@ -8673,7 +10098,8 @@
       "prop.nest": "100 px wide (egg piles share its scale)",
       "prop.egg_basket": "56 px tall",
       "prop.trough": "110 px wide",
-      "reference": "duck house 105 px, round tree 140–170 px, fence post 36 px"
+      "reference": "duck house 105 px, round tree 140–170 px, fence post 36 px",
+      "character.auntie_daeng": "50 px from waist to the top of her bun (upper body behind her counter)"
     },
     "ground_cover": "Owner-approved exception to the locked outline rule: pieces tagged `groundcover` (grass tufts) have NO outer outline, because hundreds of them are placed per scene and outlines would form a noisy web. They still use only palette tones, hard-edged three-tone shading and the upper-left sun. Every standing object keeps the outline."
   }

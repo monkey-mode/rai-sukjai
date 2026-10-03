@@ -240,3 +240,24 @@ test('rice paddies: clumps in rows inside the fields, never on the mound, dikes 
     assert.ok(byId[id].tags.includes('groundcover'), `${id} must be tagged groundcover`);
   }
 });
+
+test('market and village kits: every piece is a known asset, on the stage and clear of the UI', async () => {
+  const vm = await import('node:vm');
+  const ctx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../js/logic/config.js', import.meta.url), 'utf8') + fs.readFileSync(new URL('../js/art/assets.js', import.meta.url), 'utf8') +
+    fs.readFileSync(new URL('../js/art/iso.js', import.meta.url), 'utf8') + ';this.X = { mktPt, vPt, MARKET, MARKET_RECIPE, MARKET_BUILD, VILLAGE_RECIPE, VILLAGE_BUILD, VILLAGE_FENCES, fenceSprites, SPECS: ASSET_SPECS };', ctx);
+  const X = ctx.X, { manifest } = checkManifest();
+  const byId = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  for (const [R, B, pt, extra] of [[X.MARKET_RECIPE, X.MARKET_BUILD, X.mktPt, ['ground.market', 'kit.stall_daeng_back', 'kit.stall_daeng_counter']],
+    [X.VILLAGE_RECIPE, X.VILLAGE_BUILD, X.vPt, ['ground.village', ...X.fenceSprites(X.VILLAGE_FENCES, 'kit.map_fence').map(p => p[0])]]]) {
+    for (const [id, n] of R.pieces) assert.ok(B.stats[id] >= Math.ceil(n / 2), `${id}: only ${B.stats[id]} of ${n} placed`);
+    for (const id of new Set(B.pieces.concat(R.landmarks).map(p => p[0]).concat(extra))) assert.ok(X.SPECS[id] && byId[id], `${id} missing from ASSET_SPECS or the manifest`);
+    for (const [id, u, v] of B.pieces) {
+      const [x, y] = pt(u, v), h = R.pieces.find(p => p[0] === id)[4], box = [x - h * .4, y - h, x + h * .4, y];
+      for (const [a, b, c, d] of R.keepClear) assert.ok(!(box[0] < c && box[2] > a && box[1] < d && box[3] > b), `${id} at (${u}, ${v}) covers the UI`);
+    }
+  }
+  // Auntie Daeng stands inside her stall, between its back and its counter
+  const [, ys] = X.mktPt(...X.MARKET.stall), [, yd] = X.mktPt(...X.MARKET.daeng), [, yc] = X.mktPt(...X.MARKET.counter);
+  assert.ok(ys < yd && yd < yc, 'stall back, Auntie Daeng, counter: drawn in that order');
+});

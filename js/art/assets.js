@@ -54,6 +54,17 @@ const ASSET_SPECS = (() => {
   [['grass_tuft_a', 40, 30, 20, 26], ['grass_tuft_b', 34, 28, 17, 24], ['grass_tuft_c', 46, 34, 23, 30], ['grass_tuft_d', 28, 22, 14, 19],
     ['grass_tall', 48, 46, 24, 42], ['grass_edge', 32, 18, 16, 15], ['grass_flower_white', 40, 32, 20, 28], ['grass_flower_pink', 40, 32, 20, 28]]
     .forEach(([n, w, h, ax, ay]) => ['', '_dry'].forEach(d => add(`kit.${n}${d}`, `assets/kit/${n}${d}.svg`, w, h, ax, ay)));
+  // market kit (scene scale) and the village map kit (map scale: about half size, same outline weight)
+  add('ground.market', 'assets/backgrounds/ground_market.svg', 1400, 600, 300, 0);
+  add('ground.village', 'assets/backgrounds/ground_village.svg', 1400, 600, 300, 0);
+  [['shophouse_a', 220, 296, 110, 250], ['shophouse_b', 220, 296, 110, 250], ['stall_daeng_back', 200, 200, 100, 168], ['stall_daeng_counter', 140, 100, 70, 72],
+    ['stall_veg', 190, 190, 95, 158], ['stall_umbrella', 160, 200, 80, 176], ['lantern_post', 34, 124, 17, 118], ['bench', 84, 52, 42, 40],
+    ['basket_veg', 50, 42, 25, 34], ['basket_fruit', 50, 42, 25, 34], ['crate_stack', 60, 66, 30, 56], ['rice_sacks', 66, 50, 33, 42], ['dog', 56, 34, 28, 28],
+    ['map_temple', 280, 240, 140, 182], ['map_spirit_house', 28, 50, 14, 46], ['map_house_a', 140, 130, 70, 96], ['map_house_b', 140, 130, 70, 96],
+    ['map_market', 220, 150, 110, 100], ['map_duck_house', 90, 80, 45, 62], ['map_farmhouse', 150, 150, 75, 112], ['map_haystack', 40, 34, 20, 30],
+    ['map_tree_a', 90, 100, 45, 94], ['map_tree_b', 80, 88, 40, 82], ['map_palm', 60, 104, 30, 100], ['map_bamboo', 64, 104, 32, 100],
+    ['map_banana', 56, 62, 28, 58], ['map_bush', 44, 28, 22, 24], ['map_fence_span_se', 40, 34, 6, 26], ['map_fence_span_sw', 40, 34, 34, 26], ['map_fence_post', 12, 26, 6, 24]]
+    .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
   // rice clumps planted in rows in the paddies (FARM_PADDIES in js/art/iso.js)
   [['rice_young_a', 30, 30, 15, 26], ['rice_young_b', 30, 30, 15, 26], ['rice_ripe_a', 36, 34, 18, 30], ['rice_ripe_b', 36, 34, 18, 30]]
     .forEach(([n, w, h, ax, ay]) => add(`kit.${n}`, `assets/kit/${n}.svg`, w, h, ax, ay));
@@ -75,6 +86,7 @@ const SIZE_CHART = {
   'animal.duck': { h: 38 },
   'prop.nest': { w: 100 }, 'prop.egg_pile': { same: 'prop.nest' },      // eggs sit in the nest, so they share its scale
   'prop.egg_basket': { h: 56 }, 'prop.trough': { w: 110 },
+  'character.auntie_daeng': { h: 50 },                                // upper body above her counter (waist to bun)
 };
 function gameScale(id) {
   const key = /^prop\.egg_pile_\d+$/.test(id) ? 'prop.egg_pile' : id, c = SIZE_CHART[key];

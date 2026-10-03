@@ -30,7 +30,7 @@ for (const a of pieces) {
     g.strokeStyle = '#6b3fa0'; g.lineWidth = 1 / k * 2; g.setLineDash([4, 3]); g.strokeRect(.5, .5, w - 1, h - 1); g.setLineDash([]);
     // ground footprint: fence spans start at the anchor, everything else is centred on it
     const P = (u, v) => [ax + (u - v) * 32, ay + (u + v) * 16];
-    const span = a.id.startsWith('kit.fence_span');
+    const span = /^kit\.(map_)?fence_span/.test(a.id);
     const [u0, v0] = span ? [0, 0] : [-fu / 2, -fv / 2], [u1, v1] = span ? [fu, fv] : [fu / 2, fv / 2];
     g.fillStyle = 'rgba(120,180,80,.35)'; g.strokeStyle = '#3f7a26'; g.lineWidth = 1;
     g.beginPath(); [P(u0, v0), P(u1, v0), P(u1, v1), P(u0, v1)].forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.fill(); g.stroke();
@@ -71,6 +71,13 @@ fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/pen_kit_composition.jpg
 await game.evaluate(() => { S.scene = 'farm'; ui.bgScene = null; cam.z = 1; render(); for (const sel of ['#hud', '#toolbar', '#panel', '#zoom']) { const el = document.querySelector(sel); if (el) el.style.visibility = 'hidden'; } });
 await game.waitForTimeout(400);
 fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout/farm_kit_composition.jpg'), await game.screenshot({ type: 'jpeg', quality: 85 }));
+// the market and the village map, same way
+for (const [scene, file] of [['market', 'market_kit_composition.jpg'], ['map', 'village_kit_composition.jpg']]) {
+  await game.evaluate(sc => { S.scene = sc; ui.bgScene = null; cam.z = 1; render(); }, scene);
+  await game.waitForTimeout(400);
+  fs.writeFileSync(path.join(ROOT, 'assets/painted/_layout', file), await game.screenshot({ type: 'jpeg', quality: 85 }));
+}
+
 // the paddy redraw guide: the approved farm ground (canvas 1400×600, canvas x = scene x + 300) with FARM_PADDIES drawn
 // on top: field outlines and states, dike centre lines and widths, the mound, and planted rice positions
 const paddies = await game.evaluate(async () => {
@@ -100,4 +107,4 @@ const paddies = await game.evaluate(async () => {
 save('assets/painted/_layout/ground.farm.paddies.png', paddies);
 server.close();
 await browser.close();
-console.log(`${pieces.length} kit guides, pen_kit_composition.jpg farm_kit_composition.jpg and ground.farm.paddies.png in assets/painted/_layout/`);
+console.log(`${pieces.length} kit guides, pen_kit_composition.jpg farm/market/village_kit_composition.jpg and ground.farm.paddies.png in assets/painted/_layout/`);

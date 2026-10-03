@@ -260,12 +260,12 @@ const PEN_LAYOUT = {
 // Fence runs as kit sprites [id, u, v, scale]: one span per step (stretched a little so the run ends on its
 // end point), with a post closing each run.
 function penFenceSprites() { return fenceSprites(PEN_FENCES); }
-function fenceSprites(runs) {
+function fenceSprites(runs, kit = 'kit.fence') {   // kit: 'kit.fence' (scenes) or 'kit.map_fence' (the village map)
   const out = [];
   for (const [[u0, v0], [u1, v1]] of runs) {
-    const len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(len)), id = u1 > u0 ? 'kit.fence_span_se' : 'kit.fence_span_sw';
+    const len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(len)), id = u1 > u0 ? `${kit}_span_se` : `${kit}_span_sw`;
     for (let i = 0; i < n; i++) out.push([id, u0 + (u1 - u0) * i / n, v0 + (v1 - v0) * i / n, len / n]);
-    out.push(['kit.fence_post', u1, v1, 1]);
+    out.push([`${kit}_post`, u1, v1, 1]);
   }
   return out;
 }
@@ -443,3 +443,109 @@ function riceSprites({ fields, inset, row, step }, { seed = 17, clear = [], pt =
   return out;
 }
 const FARM_RICE = riceSprites(FARM_PADDIES, { clear: FARM_RECIPE.landmarks.map(([, u, v]) => [u, v, .7]) });
+
+
+// ---- Market scene kit (isometric, same scale as the farm and pen). A packed-earth market square on its own grid
+// (mktPt), a row of wooden shophouses (ห้องแถวไม้) along its back-right edge, trees along the back-left, Auntie
+// Daeng's stall front-left (the shop's speech bubble sits over her), two neighbours' stalls and market clutter.
+const mktPt = (u, v, z = 0) => [400 + (u - v) * 32, 150 + (u + v) * 16 - z];
+const MARKET = {
+  plaza: [0, 0, 11, 11],                     // the packed-earth square (painted in ground.market)
+  daeng: [5.0, 9.6],                         // where Auntie Daeng stands, behind her counter
+  stall: [4.5, 9.6], counter: [5.7, 9.6],    // her stall (back: posts, roof, shelves) and its counter in front of her
+};
+const MARKET_RECIPE = (() => {
+  const [p0, q0, p1, q1] = MARKET.plaza, inPlaza = (u, v, m = 0) => u > p0 + m && u < p1 - m && v > q0 + m && v < q1 - m;
+  return {
+    seed: 41, range: [-10, 20, -8, 20], maxY: 596,
+    blocked: (u, v) => (v < -.6 && u > -1) || (Math.abs(u - v) < .8 && u + v > 21),   // the shophouse row; the lane back to the village
+    zones: {
+      plaza: (u, v) => inPlaza(u, v, .4),
+      edge: (u, v) => inPlaza(u, v, -.9) && !inPlaza(u, v, .2),            // just inside or outside the square's edge
+      backleft: (u, v, x, y) => u < -.8 && v > -1 && y > 90,
+      front: (u, v) => u > p1 + .6 || v > q1 + .6,
+      margin: (u, v, x) => x < 40 || x > 760,
+    },
+    tallOk: (u, v, x, y) => y >= 100 && (u < -.8 || x < 0 || x > 800),
+    landmarks: [
+      ['kit.shophouse_a', 1.6, -2.2, 1, false, 1.6], ['kit.shophouse_b', 4.7, -2.2, 1, false, 1.6],
+      ['kit.shophouse_a', 7.8, -2.2, 1, false, 1.6], ['kit.shophouse_b', 10.9, -2.2, 1, false, 1.6],
+      ['kit.stall_umbrella', 3, 2.6, 1, false, 1.1], ['kit.stall_veg', 8.4, 2.4, 1, false, 1.3],
+      ['kit.stall_umbrella', 13.6, 3, 1, true, 1.1],
+      ['kit.lantern_post', 1, 7.4, 1, false, .4], ['kit.lantern_post', 6.4, .9, 1, false, .4], ['kit.lantern_post', 11.6, 5.6, 1, false, .4],
+      ['kit.bench', 8.6, 9.9, 1, false, .7],
+    ],
+    occupied: [[...MARKET.stall, 1.5], [...MARKET.counter, .9]],
+    keepClear: [[236, 196, 416, 262], [460, 280, 640, 332], [14, 540, 170, 592], [205, 260, 310, 400]],   // bubble, shop button, back button, Auntie Daeng
+    pieces: [
+      ['kit.tree_round_a', 2, ['backleft'], .9, 170, true, false],
+      ['kit.tree_round_b', 2, ['backleft', 'margin'], .8, 140, true, true],
+      ['kit.bamboo_clump', 2, ['backleft'], .8, 185, true, false],
+      ['scenery.banana_fruiting_iso', 1, ['backleft', 'margin'], .8, 120, true, false],
+      ['kit.basket_veg', 4, ['plaza', 'edge'], .35, 30, false, true],
+      ['kit.basket_fruit', 3, ['plaza', 'edge'], .35, 30, false, true],
+      ['kit.crate_stack', 3, ['edge', 'plaza'], .4, 48, false, true],
+      ['kit.rice_sacks', 2, ['edge'], .4, 34, false, true],
+      ['kit.water_jar', 2, ['edge', 'margin'], .4, 44, false, false],
+      ['kit.dog', 1, ['plaza', 'edge'], .4, 18, false, true],
+      ['kit.bush_a', 3, ['front', 'margin', 'backleft'], .6, 40, false, true],
+      ['kit.bush_b', 4, ['front', 'margin'], .45, 30, false, true],
+      ['kit.flower_patch', 4, ['front', 'edge', 'margin'], .35, 18, false, true],
+      ['kit.rock_b', 2, ['front', 'margin'], .3, 16, false, true],
+    ],
+  };
+})();
+const MARKET_SEED = SCENE_SEED('marketseed') || MARKET_RECIPE.seed;
+const MARKET_BUILD = buildScene(MARKET_RECIPE, MARKET_SEED, mktPt);
+const MARKET_GRASS = grassSprites({
+  seed: 19, range: [-10, 20, -8, 20], step: .5,
+  blocked: (u, v) => MARKET_RECIPE.blocked(u, v) || (Math.abs(u - v) < .8 && u + v > 21) ||   // the lane back to the village
+    (u > MARKET.plaza[0] - .3 && u < MARKET.plaza[2] + .3 && v > MARKET.plaza[1] - .3 && v < MARKET.plaza[3] + .3),
+}, mktPt);
+
+// ---- Village map kit (map scale: one tile = 64 × 32 px like the scenes, but every piece is painted about half
+// the size of its scene version, with the same locked outline weight). Places sit where the tappable areas are
+// (VILLAGE_PLACES in js/art/scenes.js); two lanes cross at the market. Trees and bushes fill the rest.
+const vPt = (u, v, z = 0) => [400 + (u - v) * 32, 70 + (u + v) * 16 - z];
+const VILLAGE = {
+  lanes: [[[8, -8], [8, 26]], [[-8, 8], [26, 8]]], laneW: 1,       // dirt lanes (painted in ground.village)
+  plaza: [7.2, 7.2, 11.6, 11.6],                                   // the market square at the crossroads
+  farm: [11.4, -.6, 18.4, 7], fields: [11.8, 1.6, 17.6, 6.6],      // our farm and its crop rows (painted)
+  pen: [11.4, 12.2, 15, 16.4],                                     // Uncle Mee's pen floor (painted), fenced by the game
+  temple: [1.2, 1.2, 7, 5.6], houses: [1, 11.8, 6.4, 17.4],
+  pond: [16.4, 11.4, 1.6, 1],                                        // centre and radii in tiles (painted)
+};
+const VILLAGE_FENCES = [[[11.4, 12.2], [15, 12.2]], [[11.4, 12.2], [11.4, 16.4]], [[15, 12.2], [15, 16.4]], [[11.4, 16.4], [13, 16.4]]];
+const VILLAGE_RECIPE = (() => {
+  const inRect = ([a, b, c, d], u, v, m = 0) => u > a - m && u < c + m && v > b - m && v < d + m;
+  const onLane = (u, v) => VILLAGE.lanes.some(([[a, b], [c, d]]) => a === c ? Math.abs(u - a) < VILLAGE.laneW / 2 + .5 : Math.abs(v - b) < VILLAGE.laneW / 2 + .5);
+  return {
+    seed: 53, range: [-10, 26, -10, 26], maxY: 596,
+    blocked: (u, v) => onLane(u, v) || ['plaza', 'farm', 'pen', 'temple', 'houses'].some(z => inRect(VILLAGE[z], u, v, .3)) ||
+      Math.hypot(u - VILLAGE.pond[0], v - VILLAGE.pond[1]) < 2.2,
+    zones: {
+      back: (u, v, x, y) => y < 230 && y > 60,
+      margin: (u, v, x) => x < 60 || x > 740,
+      between: (u, v, x, y) => y >= 230,
+    },
+    tallOk: (u, v, x, y) => y > 70,
+    landmarks: [
+      ['kit.map_temple', 4.2, 3.4, 1, false, 2.6], ['kit.map_spirit_house', 7.4, 1, 1, false, .4],
+      ['kit.map_house_a', 2.6, 13.2, 1, false, 1.4], ['kit.map_house_b', 4.8, 16, 1, true, 1.4],
+      ['kit.map_market', 9.6, 9.6, 1, false, 2.2],
+      ['kit.map_duck_house', 12.4, 13.4, 1, false, .9],
+      ['kit.map_farmhouse', 16.4, .4, 1, false, 1.4], ['kit.map_haystack', 12.4, .6, 1, false, .5],
+    ],
+    keepClear: [[14, 540, 170, 592]],
+    pieces: [
+      ['kit.map_tree_a', 7, ['back', 'margin', 'between'], .7, 85, true, true],
+      ['kit.map_tree_b', 7, ['back', 'margin', 'between'], .6, 75, true, true],
+      ['kit.map_palm', 5, ['back', 'between', 'margin'], .4, 95, true, true],
+      ['kit.map_bamboo', 4, ['back', 'margin'], .5, 95, true, false],
+      ['kit.map_banana', 5, ['between', 'margin', 'back'], .4, 55, false, true],
+      ['kit.map_bush', 10, ['between', 'margin', 'back'], .35, 22, false, true],
+    ],
+  };
+})();
+const VILLAGE_SEED = SCENE_SEED('villageseed') || VILLAGE_RECIPE.seed;
+const VILLAGE_BUILD = buildScene(VILLAGE_RECIPE, VILLAGE_SEED, vPt);

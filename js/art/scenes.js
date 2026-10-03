@@ -191,7 +191,6 @@ function farmBackdropIso() {
 
 // Village map: the hub between places. The painted asset (its own iso grid, vPt) has the lanes, the farm fields,
 // the market roofs, the pen, temple and houses; sprites add the landmarks shared with the farm and a few locals.
-const vPt = (u, v, z = 0) => [400 + (u - v) * 32, 70 + (u + v) * 16 - z];
 // Tappable places: a name plate at `at` and an invisible hit diamond [u0, v0, u1, v1] over the area.
 const VILLAGE_PLACES = [
   { id: 'farm', th: 'ไร่ของเรา', en: 'Our farm', at: vPt(17.2, 5.2, 50), hit: [11, 0, 18, 7] },
@@ -201,7 +200,32 @@ const VILLAGE_PLACES = [
   { id: 'houses', th: 'บ้านเพื่อนบ้าน', en: 'Neighbours', at: vPt(4.6, 17.8, 4), hit: [1, 11.8, 6.4, 17.4], soon: true },
 ];
 
+// The village map from its map-scale kit (VILLAGE_RECIPE in js/art/iso.js) once ground.village and every map piece
+// are done (`?kit=1` forces it with placeholders); until then the single painted bg.village.
+const VILLAGE_KIT_IDS = ['ground.village', 'kit.map_fence_span_se', 'kit.map_fence_span_sw', 'kit.map_fence_post',
+  ...new Set(VILLAGE_BUILD.pieces.concat(VILLAGE_RECIPE.landmarks).map(p => p[0]))];
+function villageKitActive() { return KIT_DEBUG || VILLAGE_KIT_IDS.every(id => Assets.has(id)); }
+function villageKitBG() {
+  const ground = Assets.has('ground.village') ? bleed(Assets.image('ground.village'), 'ground.village') : villagePlaceholderGround();
+  const spr = (id, u, v, k, flip) => kitSprite(id, u, v, k, flip, undefined, vPt);
+  const fences = fenceSprites(VILLAGE_FENCES, 'kit.map_fence').map(([id, u, v, k]) =>
+    kitSprite(id, u, v, k, false, vPt(u + (id.endsWith('_se') ? .5 * k : 0), v + (id.endsWith('_sw') ? .5 * k : 0))[1], vPt));
+  const chars = [['character.farmer', 9.2, 11.6], ['character.uncle_mee', 10.8, 15.4]].filter(([id]) => Assets.has(id))
+    .map(([id, u, v]) => { const [x, y] = vPt(u, v); return [y, charAsset(id, x, y, gameScale(id) * .5)]; });   // people at map scale
+  const b = vPt(17.4, 7.6);
+  return ground + cloud(180, 50, .7, '') + cloud(620, 36, .55, 'd2') + depthSorted(VILLAGE_RECIPE.landmarks.map(p => spr(...p))
+    .concat(VILLAGE_BUILD.pieces.map(p => spr(...p)), fences, chars, [[b[1], scaled(b[0], b[1], .35, buffalo(...b))]]));
+}
+function villagePlaceholderGround() {
+  const quad = ([a, b, c, d], fill) => `<polygon points="${[vPt(a, b), vPt(c, b), vPt(c, d), vPt(a, d)].map(q => q.map(r).join(',')).join(' ')}" fill="${fill}"/>`;
+  return `<rect x="-300" width="1400" height="600" fill="#a9c95e"/>` + VILLAGE.lanes.map(([[a, b], [c, d]]) =>
+    quad(a === c ? [a - .5, b, a + .5, d] : [a, b - .5, c, b + .5], '#d9b77e')).join('') +
+    ['plaza', 'farm', 'pen', 'temple', 'houses'].map(z => quad(VILLAGE[z], z === 'farm' ? '#c9b07a' : '#d8c08a')).join('') + quad(VILLAGE.fields, '#8fbf5a') +
+    ell(...vPt(VILLAGE.pond[0], VILLAGE.pond[1]), VILLAGE.pond[2] * 45, VILLAGE.pond[3] * 22, '#6fb3c4', 0, 2);
+}
+
 function villageBG() {
+  if (villageKitActive()) return villageKitBG();
   const img = (id, [x, y], k) => Assets.has(id) ? [y, `<g transform="translate(${r(x)} ${r(y)}) scale(${k})">${Assets.image(id)}</g>`] : null;
   const back = Assets.has('bg.village') ? bleed(Assets.image('bg.village'), 'bg.village') : `<rect x="-300" width="1400" height="600" fill="#a9c95e"/>`;
   const b = vPt(17.2, 7.4);
@@ -218,7 +242,28 @@ function villageBG() {
 }
 
 // Market interior (front view): Auntie Daeng behind her counter under the stall's sign.
+// The market from its scene kit (MARKET_RECIPE in js/art/iso.js), isometric like the farm and pen, once ground.market
+// and every piece are done (`?kit=1` forces it with placeholders); until then the old front-view stall.
+const MARKET_KIT_IDS = ['ground.market', 'kit.stall_daeng_back', 'kit.stall_daeng_counter',
+  ...new Set(MARKET_BUILD.pieces.concat(MARKET_RECIPE.landmarks).map(p => p[0]))];
+function marketKitActive() { return KIT_DEBUG || MARKET_KIT_IDS.every(id => Assets.has(id)); }
+function marketKitBG() {
+  const [p0, q0, p1, q1] = MARKET.plaza;
+  const ground = Assets.has('ground.market') ? bleed(Assets.image('ground.market'), 'ground.market')
+    : `<rect x="-300" width="1400" height="600" fill="#a9c95e"/><polygon points="${[mktPt(-1, -8), mktPt(40, -8), mktPt(40, -.6), mktPt(-1, -.6)].map(q => q.map(r).join(',')).join(' ')}" fill="#8a7a5a"/>` +
+      `<polygon points="${[mktPt(p0, q0), mktPt(p1, q0), mktPt(p1, q1), mktPt(p0, q1)].map(q => q.map(r).join(',')).join(' ')}" fill="#d8bf8a" stroke="#8a6a3a" stroke-width="2"/>`;
+  const spr = (id, u, v, k, flip) => kitSprite(id, u, v, k, flip, undefined, mktPt);
+  const [dx, dy] = mktPt(...MARKET.daeng, 40);                     // her waist, just below the counter top
+  const daeng = [mktPt(...MARKET.daeng)[1], Assets.has('character.auntie_daeng') ? charAsset('character.auntie_daeng', dx, dy, gameScale('character.auntie_daeng')) : ''];
+  const [sx, sy] = mktPt(MARKET.stall[0] + .9, MARKET.stall[1], 132);
+  const sign = `<g transform="translate(${r(sx)} ${r(sy)})"><rect x="-46" y="-12" width="92" height="24" rx="5" fill="#fff4d6" ${SW} stroke-width="2.2"/>` +
+    `<text y="6" text-anchor="middle" font-family="Kanit" font-size="15" font-weight="700" fill="#c8372d">แผงป้าแดง</text></g>`;
+  return ground + grassLayer('market', MARKET_GRASS, mktPt) + depthSorted(MARKET_RECIPE.landmarks.map(p => spr(...p)).concat(MARKET_BUILD.pieces.map(p => spr(...p)),
+    [spr('kit.stall_daeng_back', ...MARKET.stall), daeng, spr('kit.stall_daeng_counter', ...MARKET.counter)])) + sign;
+}
+
 function marketBG() {
+  if (marketKitActive()) return marketKitBG();
   const back = Assets.has('bg.market') ? bleed(Assets.image('bg.market'), 'bg.market') : marketBackdrop();
   return back + `<g transform="translate(104 150)"><rect x="-80" y="-18" width="160" height="36" rx="8" fill="#fff4d6" ${SW} stroke-width="2.6"/>` +
     `<text y="7" text-anchor="middle" font-family="Kanit" font-size="20" font-weight="700" fill="#c8372d">แผงป้าแดง</text></g>` + auntieDaeng(190, 410) + marketCounter();

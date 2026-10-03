@@ -62,7 +62,7 @@ async function analyse(a, svgText, sourcePng) {
       }
     }
     // ground contact: opaque pixels inside the footprint diamond centred (or, for fence spans, starting) on the anchor
-    const [fu, fv] = a.footprint || [0, 0], span = a.id.startsWith('kit.fence_span');
+    const [fu, fv] = a.footprint || [0, 0], span = /^kit\.(map_)?fence_span/.test(a.id);
     const P = (u, v) => [ax + (u - v) * 32 * S, ay + (u + v) * 16 * S];
     const [u0, v0, u1, v1] = span ? [0, 0, fu, fv] : [-fu / 2, -fv / 2, fu / 2, fv / 2];
     const dia = [P(u0, v0), P(u1, v0), P(u1, v1), P(u0, v1)];
