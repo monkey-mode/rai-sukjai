@@ -73,6 +73,58 @@ Keep a clone of the art repo next to this project (`../rai-sukjai`). Pull it bef
    `Assets/Handoff/`, re-run the importer editor script (pivots, PPU 200, `_NormalMap` secondary textures, atlases)
    and check the scene against its `*_reference.png`.
 
+## Talking to the asset agent: the prompt template
+
+The owner relays everything: you never contact the asset agent directly. Use this shape for every asset-agent prompt.
+Fill in the `<…>` parts; keep the rest as it is.
+
+```
+Pull first: git fetch origin claude/affectionate-bohr-it5tgr && git checkout claude/affectionate-bohr-it5tgr && git pull origin claude/affectionate-bohr-it5tgr
+
+You are the asset agent for ไร่สุขใจ (Rai Sukjai). Task: <what to paint, and why>. Read docs/style-contract.md, assets/painted/_style/generation_profile.json (use it unchanged) and the locked anchors in assets/painted/_style/anchors/*@4x.png. Match the approved kit: <the approved pieces closest to this task, to compare on the kit board>.
+
+SCOPE (manifest status todo; follow each entry's prompt, canvas, anchor, footprint, height_px and its layout guide assets/painted/_layout/<id>.png exactly):
+Set 1 – <name>: <ids that share materials>
+Set 2 – <name>: <ids>
+<restyles: the restyle_v3 blocks to fill, and what to keep: canvas, anchor, pose>
+<ground layers: follow the prompt and the composition guide; ground only, no standing objects, no cast shadows>
+
+Important geometry notes:
+- <anchors, how pieces combine (back/front parts), what the game draws itself (text, glow, shadows), no lettering>
+
+For every piece: commit the approved pre-trace image to assets/painted/_source/<id>.png (canvas × 2); trace, snap to the palette and redraw the outline per style-contract §3.3; export the SVG to `output`; render the normal map to `normal` (canvas × 2, OpenGL, the recorded Laigter settings).
+
+VALIDATE before stamping:
+- node tools/check-assets.mjs → OK
+- node tools/validate-kit.mjs <ids> → no ERROR lines; finish with a FULL run so kit_validation.json covers every piece
+- node tools/kit-board.mjs → compare at game size with <reference pieces>
+- node --test tests/*.test.mjs → all pass
+- in the web game (index.html, ?kit=1 for unfinished scenes): <what to look at>
+- node tools/export-unity.mjs, then commit the updated unity-handoff/ with the art
+
+MANIFEST EDITS: only the stamp fields (status → done, file, agent, updated_at, notes) on these entries (and inside restyle_v3 blocks), plus generation_profile.json only to fill a NOT RECORDED field (any change bumps profile_version), plus the _source images. If something needs another change, list it in the handoff instead.
+
+Commit per set with clear messages and push to claude/affectionate-bohr-it5tgr.
+
+HANDOFF: reply with this block filled in, for the owner to paste back:
+=== HANDOFF: <name> ===
+Commits: <sha per set>
+<per set: id: status / height px / notes, one line each>
+Checks: check-assets <OK/warnings>; validate-kit <summary, full run>; tests <pass/fail>
+In game: <what you checked, any issue>
+Profile: version <n>, changed? <yes/no + why>
+Open questions or deviations: <list, or none>
+=== END HANDOFF ===
+```
+
+For a **fix round** (art sent back after review), keep the same shape but name only the pieces to fix, say exactly
+what is wrong and what must stay unchanged (for example "everything outside the paddy area stays byte-identical"),
+and ask the asset agent to confirm that in the handoff.
+
+**What the asset agent cannot do, so you do it:** add or rename manifest fields (like a `normal` on an existing
+entry), change code, layouts, recipes or tests, or approve anything. Its handoff lists these under "Open questions";
+handle them when you review.
+
 ## Rules that must not be broken
 
 - **Style anchors are locked:** `kit.duck_house`, `kit.tree_round_a` and `kit.fence_span_se`. Their sha256 hashes
