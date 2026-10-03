@@ -3,7 +3,7 @@
 This contract makes every kit piece look like it came from the same hand, and makes every batch match the last one. It applies to everything in categories `kit` and `ground` (`style: "flat-v3"` in `assets/manifest.json`).
 
 - **Owner:** the owner approves the style anchors and any change to this contract.
-- **Mechanics agent (Claude Code):** keeps the contract, the checks and the layouts.
+- **Mechanics agent (the main agent: Claude Code or whichever coding agent runs the project):** keeps the contract, the checks and the layouts.
 - **Asset agent:** produces art to it and records how in `assets/painted/_style/generation_profile.json`.
 
 **Quality target.** The owner's Night Camp asset board sets the bar:
